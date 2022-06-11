@@ -1,0 +1,30 @@
+name: Flat
+
+on:
+  push:
+    paths:
+      - .github/workflows/flat.yml # Only run a new workflow every time this file (flat.yaml) file changes
+  workflow_dispatch: # Required even though this is currently empty
+  schedule:
+    - cron: '5 4 * * *' # Run every day at 04:05 
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps: # This workflow has 3 steps
+      # The first step is to check out the repository so it can read the files inside of it and do other operations
+      - name: Check out repo
+        uses: actions/checkout@v2
+      # This step installs Deno, which is a new Javascript runtime that improves on Node. We'll use it for postprocessing later
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
+      # The third step is a Flat Action step. We fetch the data in the http_url and save it as downloaded_filename
+      - name: Fetch data 
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://www.githubstatus.com/history.atom # The data to fetch every 5 minutes
+          downloaded_filename: github-status-history.atom # The http_url gets saved and renamed in our repository as btc-price.json
+          # postprocess: postprocess.js # A postprocessing javascript or typescript file written in Deno
+          # mask: true # optional param to mask the source http_url from the commit. Look at README for more options
