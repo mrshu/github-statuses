@@ -4,17 +4,33 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-10-03T08:04:31Z</updated>
+  <updated>2022-10-05T05:00:40Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/11314069</id>
-    <published>2022-10-05T04:00:00Z</published>
-    <updated>2022-09-29T14:04:44Z</updated>
+    <published>2022-10-05T05:00:40Z</published>
+    <updated>2022-10-05T05:00:40Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6w7lf30qkgqq"/>
     <title>GitHub Enterprise Importer Maintenance</title>
-    <content type="html">&lt;p&gt;&lt;strong&gt;THIS IS A SCHEDULED EVENT Oct &lt;var data-var='date'&gt;5&lt;/var&gt;, &lt;var data-var='time'&gt;04:00&lt;/var&gt; - &lt;var data-var='time'&gt;05:00&lt;/var&gt; UTC&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;14:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Enterprise Importer will be undergoing scheduled maintenance. During this time, all migrations will be paused. You will be able to queue new migrations, but they will not start until the end of the maintenance window.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;05:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;04:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Scheduled maintenance is currently in progress. We will provide updates as necessary.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;14:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Enterprise Importer will be undergoing scheduled maintenance. During this time, all migrations will be paused. You will be able to queue new migrations, but they will not start until the end of the maintenance window.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/11430054</id>
+    <published>2022-10-04T21:34:55Z</published>
+    <updated>2022-10-04T21:34:55Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pn4l6g1wlg3x"/>
+    <title>Incident with Codespaces</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing recovery in Codespace creation, but are continue to investigate the underlying cause to ensure stability&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This issue does not impact starting existing Codespaces. If you experience issues starting a new Codespace, you can try using a region other than us-east&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Codespaces in the us-east region(s). Users in that location may not be able to connect to their Codespaces during this time. We are investigating contributing factors and will update you on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/11413491</id>
+    <published>2022-10-04T15:54:59Z</published>
+    <updated>2022-10-04T15:54:59Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/znnw195p1vf9"/>
+    <title>Incident with Codespaces</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;15:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;15:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/11302308</id>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8gpymn7rystj"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;17:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;16:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to work to restore Actions to full health.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;15:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to work to mitigate intermittent job failures.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;15:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with service(s): Actions, API Requests. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;15:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - API Requests is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;14:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/10847032</id>
-    <published>2022-08-17T17:27:24Z</published>
-    <updated>2022-08-17T17:27:24Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/2nd6fyb4drjx"/>
-    <title>Incident with Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;17:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;17:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/10837590</id>
-    <published>2022-08-16T16:32:27Z</published>
-    <updated>2022-08-16T16:32:27Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/bdtztmrydlwz"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;16:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;16:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are still verifying our hotfix for Codespaces web client us-east outage.  Note:  Workaround is to use VS Code desktop client.  ETA ~45m&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;15:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are testing a hotfix for our Codespaces web client us-east outage.  Note:  Workaround is to use VS Code desktop client.  ETA ~1h.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;14:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the issue with Codespaces in the us-east region preventing web client use.  Please use the VS Code desktop client as a workaround.   Hotfix is underway, ETA 1h.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;13:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified an issue that impacts some Codespaces customers and are working on mitigation.We will continue to keep you updated on progress.&lt;br /&gt;&lt;br /&gt;The VS Code desktop client can be used as a workaround.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;13:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
