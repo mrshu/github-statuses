@@ -4,17 +4,33 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-10-26T14:40:05Z</updated>
+  <updated>2022-10-27T17:23:40Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/12637627</id>
+    <published>2022-11-04T03:00:00Z</published>
+    <updated>2022-10-27T17:00:38Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/3ktldkb3r6f8"/>
+    <title>GitHub Importer Maintenance</title>
+    <content type="html">&lt;p&gt;&lt;strong&gt;THIS IS A SCHEDULED EVENT Nov &lt;var data-var='date'&gt;4&lt;/var&gt;, &lt;var data-var='time'&gt;03:00&lt;/var&gt; - &lt;var data-var='time'&gt;04:00&lt;/var&gt; UTC&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;17:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Importer—namely the “Import repository” (https://github.com/new/import) UI on GitHub.com and the "Source Imports" (https://docs.github.com/en/rest/migrations/source-imports) REST API—will be undergoing scheduled maintenance. During this time, no new source imports will be processed. You will not be able to start new source imports until the end of the maintenance window.&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:www.githubstatus.com,2005:Incident/12382877</id>
-    <published>2022-10-27T15:00:00Z</published>
-    <updated>2022-10-20T16:54:12Z</updated>
+    <published>2022-10-27T16:00:30Z</published>
+    <updated>2022-10-27T16:00:30Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lpslbfcw2czs"/>
     <title>GitHub Importer Maintenance</title>
-    <content type="html">&lt;p&gt;&lt;strong&gt;THIS IS A SCHEDULED EVENT Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;15:00&lt;/var&gt; - &lt;var data-var='time'&gt;16:00&lt;/var&gt; UTC&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Importer—namely the “Import repository” (https://github.com/new/import) UI on GitHub.com and the "Source Imports" (https://docs.github.com/en/rest/migrations/source-imports) REST API—will be undergoing scheduled maintenance. During this time, no new source imports will be processed. You will not be able to start new source imports until the end of the maintenance window.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;16:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;15:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Scheduled maintenance is currently in progress. We will provide updates as necessary.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Importer—namely the “Import repository” (https://github.com/new/import) UI on GitHub.com and the "Source Imports" (https://docs.github.com/en/rest/migrations/source-imports) REST API—will be undergoing scheduled maintenance. During this time, no new source imports will be processed. You will not be able to start new source imports until the end of the maintenance window.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/12631333</id>
+    <published>2022-10-27T06:31:32Z</published>
+    <updated>2022-10-27T06:31:32Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/z9dd32bvfgp3"/>
+    <title>Incident with Pull Requests</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;06:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;06:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified a potential fix for the issue where users were experiencing unresponsive code blob views.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;05:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We found an issue that impacts some customers when looking at code blob view. We are currently investigating the root cause.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;04:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/12624069</id>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8blgv351d71j"/>
     <title>Incident on 2022-09-13</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;18:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;15:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating and mitigating intermittent availability issues on some GitHub services.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11120525</id>
-    <published>2022-09-13T16:08:25Z</published>
-    <updated>2022-09-13T16:08:25Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/3z36qpp2c0z1"/>
-    <title>Incident with Issues</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;16:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;15:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Issues.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11083702</id>
-    <published>2022-09-09T01:12:28Z</published>
-    <updated>2022-09-09T01:12:28Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/p38y9j23bt7b"/>
-    <title>Incident with Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;01:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;00:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Mitigation efforts are continuing and we are seeing signs of recovery for some affected users.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;23:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to mitigate the issue impacting some of our customers.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;22:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the source of the issue impacting some of our customers. We continue to mitigate the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;21:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We found an issue that impacts some customers. We are working on a mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;19:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
   </entry>
 </feed>
