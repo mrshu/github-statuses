@@ -4,17 +4,33 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-11-07T04:41:42Z</updated>
+  <updated>2022-11-08T01:21:58Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/12746857</id>
+    <published>2022-11-08T01:21:57Z</published>
+    <updated>2022-11-08T01:21:58Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/jrzkpt9g8zm6"/>
+    <title>Incident on 2022-11-07 19:07 UTC</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;01:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;20:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating and mitigating intermittent availability issues on some GitHub services.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/12746148</id>
+    <published>2022-11-07T20:06:51Z</published>
+    <updated>2022-11-07T20:06:51Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/ysp25kyy4lz2"/>
+    <title>Incident with Issues</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;20:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;19:07&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Issues.&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:www.githubstatus.com,2005:Incident/12739088</id>
-    <published>2022-11-07T04:41:42Z</published>
-    <updated>2022-11-07T04:41:42Z</updated>
+    <published>2022-11-07T05:12:39Z</published>
+    <updated>2022-11-07T05:12:39Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6j4vyplhgy51"/>
     <title>Incident with Git Operations and Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;04:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations and Pull Requests.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;05:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;04:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations and Pull Requests.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/12732564</id>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pn4l6g1wlg3x"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing recovery in Codespace creation, but are continue to investigate the underlying cause to ensure stability&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This issue does not impact starting existing Codespaces. If you experience issues starting a new Codespace, you can try using a region other than us-east&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Codespaces in the us-east region(s). Users in that location may not be able to connect to their Codespaces during this time. We are investigating contributing factors and will update you on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11413491</id>
-    <published>2022-10-04T15:54:59Z</published>
-    <updated>2022-10-04T15:54:59Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/znnw195p1vf9"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;15:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;15:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11302308</id>
-    <published>2022-09-28T19:56:47Z</published>
-    <updated>2022-09-28T19:56:47Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/m574010k9c5l"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;19:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;19:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with Codespaces in eu-west region. The origin issue is resolved, however customers may experience delays in creation and resumption as we process the backlog of requests.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;18:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespaces is now experiencing degraded performance. We are still investigating and will provide an update when we have one.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;18:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with Codespaces in all regions due to VMs not coming online. We have applied a mitigation that resolved the underlying issue, and we are processing the backlog of requests.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;17:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Codespaces in eu-west and se-asia regions. Users may not be able to connect to Codespaces during this time. We will update on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;17:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
