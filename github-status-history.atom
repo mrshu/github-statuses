@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-11-08T01:21:58Z</updated>
+  <updated>2022-11-09T02:23:40Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/12760686</id>
+    <published>2022-11-09T01:53:56Z</published>
+    <updated>2022-11-09T01:53:56Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/74y4xlr09qll"/>
+    <title>Incident with Actions, API Requests, Codespaces, Copilot, Git Operations, Issues, Packages, Pages, Pull Requests and Webhooks</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;01:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;01:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/12746857</id>
     <published>2022-11-08T01:21:57Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6w7lf30qkgqq"/>
     <title>GitHub Enterprise Importer Maintenance</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;05:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;04:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Scheduled maintenance is currently in progress. We will provide updates as necessary.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;14:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - GitHub Enterprise Importer will be undergoing scheduled maintenance. During this time, all migrations will be paused. You will be able to queue new migrations, but they will not start until the end of the maintenance window.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11430054</id>
-    <published>2022-10-04T21:34:55Z</published>
-    <updated>2022-10-04T21:34:55Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pn4l6g1wlg3x"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing recovery in Codespace creation, but are continue to investigate the underlying cause to ensure stability&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;21:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This issue does not impact starting existing Codespaces. If you experience issues starting a new Codespace, you can try using a region other than us-east&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Codespaces in the us-east region(s). Users in that location may not be able to connect to their Codespaces during this time. We are investigating contributing factors and will update you on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;20:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
