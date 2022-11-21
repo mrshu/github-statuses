@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-11-19T08:18:05Z</updated>
+  <updated>2022-11-20T20:23:31Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/13506127</id>
+    <published>2022-11-20T19:55:50Z</published>
+    <updated>2022-11-20T19:55:50Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/svd79g61q1wf"/>
+    <title>Incident with Codespaces</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;19:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;19:23&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/13321900</id>
     <published>2022-11-18T04:11:53Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/gq1x0j8bv67v"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified an issue with the checkout action download which was causing elevated actions failures. We have performed some mitigations and are continuing investigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;10:48&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11473013</id>
-    <published>2022-10-05T17:41:24Z</published>
-    <updated>2022-10-05T17:41:24Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/smn1qtqvbsb6"/>
-    <title>Incident with Actions</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;17:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;17:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate this issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;17:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing recovery in Actions and will update status when all runs are no longer delayed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;16:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhooks is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;16:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to see recovery and have added capacity to speed recovery time. We still expect to see slower than normal Actions job runs and webhook deliveries.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;15:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;15:02&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to monitor webhook deliveries following our earlier mitigation. Next update in 20 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;14:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We found an issue that impacts some of customers related to webhook delivery. We have implemented a mitigation and are monitoring for impact. Next update in 15 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;14:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespaces is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;13:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified reports of Codespaces not creating/resuming successfully in eu-west region at 1230 UTC. We mitigated this issue and have seen recovery since 1315 UTC. Next update in 15 mins.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;13:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhooks is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;13:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
