@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2022-11-23T08:03:54Z</updated>
+  <updated>2022-11-25T04:13:55Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/13670974</id>
+    <published>2022-11-25T04:13:55Z</published>
+    <updated>2022-11-25T04:13:55Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/69flmdbxhtsk"/>
+    <title>Incident with Copilot</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;04:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/13506127</id>
     <published>2022-11-20T19:55:50Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/7hfyz8mjg663"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;02:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Everything is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;02:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespaces is now experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;23:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespaces is now experiencing degraded availability. We are still investigating and will provide an update when we have one.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;23:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/11532198</id>
-    <published>2022-10-06T11:40:48Z</published>
-    <updated>2022-10-06T11:40:48Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/gq1x0j8bv67v"/>
-    <title>Incident with Actions</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified an issue with the checkout action download which was causing elevated actions failures. We have performed some mitigations and are continuing investigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;10:48&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions.&lt;/p&gt;</content>
   </entry>
 </feed>
