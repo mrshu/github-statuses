@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-01-26T08:12:16Z</updated>
+  <updated>2023-01-28T03:53:38Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/15957215</id>
+    <published>2023-01-28T03:53:38Z</published>
+    <updated>2023-01-28T03:53:38Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/mxq7707n6gcf"/>
+    <title>Incident with Packages</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;03:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with Packages. We will continue to update users as we progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;03:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of degraded performance of Packages&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;02:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Packages.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/15936935</id>
     <published>2023-01-26T00:38:45Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/zms09plx5zps"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;14:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;14:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/13694881</id>
-    <published>2022-11-26T01:41:30Z</published>
-    <updated>2022-11-26T01:41:30Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/3208bb8blz5k"/>
-    <title>Incident with Copilot</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;01:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;01:18&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We found an issue that impacts small subset of customers. We are working on mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;00:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot.&lt;/p&gt;</content>
   </entry>
 </feed>
