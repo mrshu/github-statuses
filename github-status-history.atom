@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-03-25T07:57:20Z</updated>
+  <updated>2023-03-26T22:43:04Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/16654849</id>
+    <published>2023-03-26T22:27:26Z</published>
+    <updated>2023-03-26T22:27:26Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/ngfhz9jts91q"/>
+    <title>Incident with Packages</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;22:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;22:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Packages.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/16635620</id>
     <published>2023-03-24T21:10:10Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/qfxsh2sgz70d"/>
     <title>Incident with Git Operations</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;19:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;19:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/16114824</id>
-    <published>2023-02-13T03:34:21Z</published>
-    <updated>2023-02-13T03:34:21Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/3n3gqvfnj0np"/>
-    <title>Incident with Issues and Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;03:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;03:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Issues and Pull Requests.&lt;/p&gt;</content>
   </entry>
 </feed>
