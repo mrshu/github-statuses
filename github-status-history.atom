@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-07-04T07:53:11Z</updated>
+  <updated>2023-07-05T11:37:34Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/17767486</id>
+    <published>2023-07-05T11:37:28Z</published>
+    <updated>2023-07-05T11:37:28Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pr0ptqcw6q8d"/>
+    <title>Incident with Pull Requests</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pull Requests is continuing to operate normally following earlier issues.&lt;br /&gt;&lt;br /&gt;We are synchronising impacted pull requests in the background. If there are any further issues we will status again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Reprocessing of unprocessed pushes from earlier continues. We will continue to provide progress updates.&lt;br /&gt;&lt;br /&gt;Reminder that all new pushes are working as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;10:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified impacted pushes to repositories and are reprocessing these. We will provide updates as we progress.&lt;br /&gt;&lt;br /&gt;As previously stated, all new pushes will be processed as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;09:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are working to identify all impacted pushes. Once identified, we will reprocess these. We will provide updates as we progress.&lt;br /&gt;&lt;br /&gt;As previously stated, all new pushes will be processed as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;07:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified an issue that caused pull requests to not reflect additional git pushes over the last several hours. New pushes will now be processed as normal.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;05:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/17752430</id>
     <published>2023-07-03T13:47:36Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lhw4ny5js29b"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;15:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;15:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with service(s): Actions. A subset of customers are experiencing run start delays and job failures. We are deploying a fix to mitigate the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;14:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/16992966</id>
-    <published>2023-04-28T12:45:06Z</published>
-    <updated>2023-04-28T12:45:06Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/5h6hwm15zt11"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;12:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;12:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
