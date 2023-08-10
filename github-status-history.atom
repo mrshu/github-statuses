@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-08-08T07:47:07Z</updated>
+  <updated>2023-08-09T20:14:05Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/18098471</id>
+    <published>2023-08-09T20:14:05Z</published>
+    <updated>2023-08-09T20:14:05Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/nwb8m3ppfxw6"/>
+    <title>Incident with Git Operations and Actions</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;20:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;20:02&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Git Operations is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;19:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;19:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/18024095</id>
     <published>2023-08-01T20:28:01Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/17c40y7spfgl"/>
     <title>Incident with Pull Requests</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;12:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;12:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Our team continues to mitigate the impacted search results however we are going to status to green due to impact on overall service. We will continue to post updates on the status page as we mitigate&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;12:23&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are aware search results for PRs are returning incomplete results in certain scenarios. This is impacting most users. No other search results are impacted. All other PR functionality is working.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;11:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/17503553</id>
-    <published>2023-06-07T18:39:02Z</published>
-    <updated>2023-06-07T18:39:02Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/1g1gkh0qpyvs"/>
-    <title>Incident with Actions, Pull Requests and Webhooks</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;18:39&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;18:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Repository push workers are continuing to catch up with enqueued jobs.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;17:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the problem and are waiting for our repository push workers to catch up with enqueued jobs.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;17:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the cause of delayed processing for commits pushed to repositories and are actively working on mitigating this issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;17:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhooks is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;17:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is experiencing degraded performance. We are still investigating and will provide an update when we have one.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;16:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pushes to repositories may take longer for a significant number of customers. We are actively investigating.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;16:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Pull Requests.&lt;/p&gt;</content>
   </entry>
 </feed>
