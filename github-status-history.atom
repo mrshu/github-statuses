@@ -4,10 +4,26 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-08-29T21:58:10Z</updated>
+  <updated>2023-08-30T21:43:11Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/18325445</id>
+    <published>2023-08-30T21:04:08Z</published>
+    <updated>2023-08-30T21:04:08Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/cbhwcvtkfr34"/>
+    <title>We are investigating reports of degraded performance.</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;21:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;20:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/18323061</id>
+    <published>2023-08-30T20:53:20Z</published>
+    <updated>2023-08-30T20:53:20Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/f7lz4nc72bvp"/>
+    <title>Incident with Webhooks</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;20:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;20:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhook delays have been reduced significantly. We anticipate returning to nominal service soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;19:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The remediation for Webhook delivery delays has been implemented. We will continue to keep users updated on Webhook latency improvements.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;18:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are addressing the source of Webhook delays, and will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;17:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the source of delay in webhook deliveries and are in the process of implementing a fix.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;16:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating increased delivery time issues with Webhooks. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;16:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Webhooks&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/18309893</id>
     <published>2023-08-29T21:58:10Z</published>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/x4llkxfv8kn4"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;18:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;17:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified a problematic configuration change that caused Codespaces creations and resumes to fail. The change has been reverted and users should start seeing improvements soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;17:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/17791514</id>
-    <published>2023-07-07T17:15:00Z</published>
-    <updated>2023-07-07T17:15:00Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/hz717kx2gsvq"/>
-    <title>Incident with Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;17:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;16:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The fix has been confirmed to work in production and is in the process of being deployed to all users.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;16:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified a bug with Pull Requests where "change base branch" dropdown menu is not responding. We are in the process of shipping a fix.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 7&lt;/var&gt;, &lt;var data-var='time'&gt;15:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/17767486</id>
-    <published>2023-07-05T11:37:28Z</published>
-    <updated>2023-07-05T11:37:28Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pr0ptqcw6q8d"/>
-    <title>Incident with Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pull Requests is continuing to operate normally following earlier issues.&lt;br /&gt;&lt;br /&gt;We are synchronising impacted pull requests in the background. If there are any further issues we will status again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;11:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Reprocessing of unprocessed pushes from earlier continues. We will continue to provide progress updates.&lt;br /&gt;&lt;br /&gt;Reminder that all new pushes are working as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;10:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified impacted pushes to repositories and are reprocessing these. We will provide updates as we progress.&lt;br /&gt;&lt;br /&gt;As previously stated, all new pushes will be processed as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;09:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are working to identify all impacted pushes. Once identified, we will reprocess these. We will provide updates as we progress.&lt;br /&gt;&lt;br /&gt;As previously stated, all new pushes will be processed as usual.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;07:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified an issue that caused pull requests to not reflect additional git pushes over the last several hours. New pushes will now be processed as normal.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;05:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests.&lt;/p&gt;</content>
   </entry>
 </feed>
