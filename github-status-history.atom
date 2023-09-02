@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-08-31T07:56:30Z</updated>
+  <updated>2023-09-01T15:06:06Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/18349696</id>
+    <published>2023-09-01T15:06:06Z</published>
+    <updated>2023-09-01T15:06:06Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/wz41ffzj8937"/>
+    <title>Incident with Codespaces</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;15:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;14:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - A limited number of users in the UK and Western Europe are experiencing issues starting or reconnecting to GitHub Codespaces. We are investigating the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;14:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/18325445</id>
     <published>2023-08-30T21:04:08Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/shbq71s0g00z"/>
     <title>Incident with Git Operations and Pull Requests</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;16:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;16:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pull Requests is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;16:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the issue causing slow git operations for some customers and operations should now be performing normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;16:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Some customers may be experiencing slow git operations. We have identified the cause of the issue and are working on a mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;15:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pull Requests is experiencing degraded performance. We are still investigating and will provide an update when we have one.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;15:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/17836340</id>
-    <published>2023-07-12T18:08:00Z</published>
-    <updated>2023-07-12T18:08:00Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/x4llkxfv8kn4"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;18:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;17:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified a problematic configuration change that caused Codespaces creations and resumes to fail. The change has been reverted and users should start seeing improvements soon.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;17:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces.&lt;/p&gt;</content>
   </entry>
 </feed>
