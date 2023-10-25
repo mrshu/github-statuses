@@ -4,17 +4,17 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-10-23T07:59:18Z</updated>
+  <updated>2023-10-24T13:57:16Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/18888976</id>
     <published>2023-10-22T16:07:58Z</published>
-    <updated>2023-10-22T16:07:58Z</updated>
+    <updated>2023-10-24T13:57:16Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lw4dvwltm025"/>
     <title>Incident with Git Operations</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;16:07&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the cause of the issue and are awaiting positive confirmation from impacted customers that the issue is fully resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are currently investigating reports from some customers encountering errors when cloning repositories via workflows or via the command line. We do not currently have an ETA for resolution. Next update in 30 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;16:07&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;br /&gt;&lt;br /&gt;From 11:21 to 16:07 UTC some GitHub customers experienced errors cloning via workflows or via the command line.&lt;br /&gt;&lt;br /&gt;A third-party configuration change resulted in an unexpected behavior to our systems that resulted in Git clone failures. Once we detected the change we were able to disable it, and our systems started operating normally.&lt;br /&gt;&lt;br /&gt;With the incident mitigated, we are working with our third-party provider to improve subsequent configuration change rollouts.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the cause of the issue and are awaiting positive confirmation from impacted customers that the issue is fully resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are currently investigating reports from some customers encountering errors when cloning repositories via workflows or via the command line. We do not currently have an ETA for resolution. Next update in 30 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;15:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/18825532</id>
