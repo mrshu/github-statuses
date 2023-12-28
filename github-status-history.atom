@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-12-27T04:00:57Z</updated>
+  <updated>2023-12-27T19:25:23Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/19544647</id>
+    <published>2023-12-27T19:25:23Z</published>
+    <updated>2023-12-27T19:25:23Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/hzd6d6xhjpl6"/>
+    <title>Incident with Pages</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;19:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;19:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - A recent update to an Action that GitHub Pages deployer service relies on impacted that service, and was corrected and redeployed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;19:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We've identified the cause of some Pages errors and are deploying a mitigating fix now.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;19:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to investigate issues with Pages, and will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;18:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pages workflow builds which use the actions actions/upload-pages-artifact@v3 and actions/deploy-pages@v4 are currently failing.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;18:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pages&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/19539589</id>
     <published>2023-12-27T04:00:57Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/c85syxc7gnbx"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;21:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;21:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Creates and resumes in US West are working normally&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;20:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespace resumes in US West are currently impacted. New Codespaces are working normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;20:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/18553979</id>
-    <published>2023-09-20T09:33:57Z</published>
-    <updated>2023-09-20T09:33:57Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/ctr28sphxc4c"/>
-    <title>Incident with Actions</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;09:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;09:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the Actions notifications and the service is recovering.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;09:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions notifications are experiencing degraded performance. We are currently investigating.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;09:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
   </entry>
 </feed>
