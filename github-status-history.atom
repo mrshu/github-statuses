@@ -4,10 +4,26 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2023-12-27T19:25:23Z</updated>
+  <updated>2023-12-29T02:04:44Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/19554848</id>
+    <published>2023-12-29T02:04:44Z</published>
+    <updated>2023-12-29T02:04:44Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/1h37j1mb9xnx"/>
+    <title>We are investigating reports of degraded performance.</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;02:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;01:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Users without an existing valid session are unable to login and will see an error page.  We are working on a mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;01:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/19548383</id>
+    <published>2023-12-28T06:57:42Z</published>
+    <updated>2023-12-28T06:57:42Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lt4kyp4tgx45"/>
+    <title>We are investigating reports of degraded performance.</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have deployed a fix and email service should be restored shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:48&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing issues sending some pull request, actions and other notification emails. Some emails may not be received as the result of activity on GitHub. Web and mobile push notifications are not affected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/19544647</id>
     <published>2023-12-27T19:25:23Z</published>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/tpykx175y6jt"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;00:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On September 27, 2023 at 00:12 UTC, our alerting systems detected an increase in the time it took GitHub Actions workflow runs to start. During the incident, some customers experienced delays in starting Github Actions workflow runs and receiving status updates for in-progress runs. The root cause was identified to be a change that was deployed to an internal distributed event streaming platform which resulted in several worker nodes to go over a misconfigured memory limit. This caused these nodes to restart leading to a reduced job processing throughput. Github Actions relies on events delivered through this event streaming platform to start workflow runs and update their status. Delays in receiving these events led to run delays for about 40% of the Actions workflows.&lt;br /&gt;	&lt;br /&gt;We mitigated this through a rollback of the offending change at 00:18 UTC. This allowed our event streaming platform to catch up with the backlog of workflow runs that were queued during the incident. The backlog was processed by 00:44 UTC. We have additional repair items in place to prevent a recurrence in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;00:23&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/18578590</id>
-    <published>2023-09-22T17:39:54Z</published>
-    <updated>2023-09-22T17:39:54Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/4ypqyv8zbrck"/>
-    <title>Incident with Pages</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:39&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the issue with Pages deploys and are actively working to mitigate the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pages&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/18559428</id>
-    <published>2023-09-20T21:05:57Z</published>
-    <updated>2023-09-20T21:05:57Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/c85syxc7gnbx"/>
-    <title>Incident with Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;21:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;21:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Creates and resumes in US West are working normally&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;20:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespace resumes in US West are currently impacted. New Codespaces are working normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;20:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
   </entry>
 </feed>
