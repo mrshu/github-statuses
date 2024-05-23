@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-05-22T00:50:07Z</updated>
+  <updated>2024-05-23T04:13:59Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -19,10 +19,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/20833952</id>
     <published>2024-05-20T17:05:48Z</published>
-    <updated>2024-05-20T17:05:48Z</updated>
+    <updated>2024-05-22T19:13:58Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/915nn7rmqth9"/>
     <title>We are investigating reports of degraded performance.</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;17:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;17:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are beginning to see recovery rendering Jupyter notebooks and are continuing to monitor.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers may experience errors viewing rendered Jupyter notebooks from PR diff pages or the files tab&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;17:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between May 19th 3:40AM UTC and May 20th 5:40PM UTC the service responsible for rendering Jupyter notebooks was degraded. During this time customers were unable to render Jupyter Notebooks.&lt;br /&gt;&lt;br /&gt;This occurred due to an issue with a Redis dependency which was mitigated by restarting. An issue with our monitoring led to a delay in our response. We are working to improve the quality and accuracy of our monitors to reduce the time to detection.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;17:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are beginning to see recovery rendering Jupyter notebooks and are continuing to monitor.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers may experience errors viewing rendered Jupyter notebooks from PR diff pages or the files tab&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/20800199</id>
