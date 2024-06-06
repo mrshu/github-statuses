@@ -4,10 +4,26 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-06-05T03:04:27Z</updated>
+  <updated>2024-06-06T04:21:39Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/21015719</id>
+    <published>2024-06-06T04:21:39Z</published>
+    <updated>2024-06-06T04:21:39Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/fr6wzzpg0bsv"/>
+    <title>Incident with Packages</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;04:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Packages. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;04:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Packages&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/21009829</id>
+    <published>2024-06-05T19:27:21Z</published>
+    <updated>2024-06-05T19:27:21Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/9zxft4pnrhbt"/>
+    <title>Incident with Issues</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;19:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;19:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Issues is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;19:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to troubleshoot the problem with issues timeline.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;18:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to troubleshoot the problem with issues timeline.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;18:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're continuing to investigate the problem.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;17:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're seeing issues related to the issues timeline service, we're investigating and we will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;17:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Issues&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/20938285</id>
     <published>2024-05-30T17:22:55Z</published>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/xcjgp37zx5dt"/>
     <title>Incident with Actions</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;20:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On April 9, 2024, between 18:00 and 20:17 UTC, Actions was degraded and had failures for new and existing customers. During this time, Actions failed to start for 5,426 new repositories, and 1% of runs for existing customers were delayed, with half of those failing due to an infrastructure error.&lt;br /&gt;&lt;br /&gt;The root cause was an expired certificate which caused authentication to fail between internal services. The incident was mitigated once the cert was rotated.&lt;br /&gt;&lt;br /&gt;We are working to improve our automation to ensure certs are rotated before expiration.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;19:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to work to resolve issues with repositories not being able to enable Actions and Actions network configuration setup not working properly. We have confirmed a fix and are in the process of deploying it to production. Another update will be shared within the next 30 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;19:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We continue to work to resolve issues with repositories not being able to enable Actions and Actions network configuration setup not working properly. We will provide additional information shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;18:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are aware of issues with repositories not being able to enable Actions. We are in the process of restoring full functionality and will provide additional information shortly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;18:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/20483650</id>
-    <published>2024-04-09T05:10:21Z</published>
-    <updated>2024-04-12T22:09:05Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6tgmk1j7b4rn"/>
-    <title>We are investigating reports of degraded performance.</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;05:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On April 9, 2024, between 04:32 UTC and 05:10 UTC, an outage occurred in Github Packages, specifically impacting the download functionality of NPM Packages. All attempts to download NPM Packages failed during this period. Upon investigation, we found a recent code change in the NPM Registry to be the root cause. The customer impact was limited to users of NPM Registry, with no effects on other registries.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by rolling back the problematic change. We are following up with repair items to cover our observability gaps and implementing measures in our CI process to detect such failures early before they can impact customers.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;04:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with downloading NPM packages. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;04:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/20462209</id>
-    <published>2024-04-06T02:22:00Z</published>
-    <updated>2024-04-09T14:43:24Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/mxksyxp6t1b1"/>
-    <title>Incident with Pages</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;02:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On April 6, 2024, between 00:00:00 UTC and 02:20:05 UTC, access to Private Pages on the *.pages.github.io domain was degraded while the deployed TLS certificate was expired. Service was restored by uploading the renewed certificate to our CDN. This was due to a process error and a gap in our alerting. While the certificate was renewed and updated in our internal vault, it was not deployed to the CDN.&lt;br /&gt;&lt;br /&gt;We are working to reduce potential for errors in our certificate renewal process as well as adding the *.pages.github.io domain to our existing TLS alerting system.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;01:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with private pages due to an expired certificate&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;01:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pages&lt;/p&gt;</content>
   </entry>
 </feed>
