@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-06-30T08:26:41Z</updated>
+  <updated>2024-07-02T01:14:44Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/21279789</id>
+    <published>2024-07-02T01:14:44Z</published>
+    <updated>2024-07-02T01:14:44Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/4dq0ww5d0q7j"/>
+    <title>Incident with Git Operations</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;01:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;01:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - As a result of rerouting traffic, we have seen overall network link health return to normal.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;00:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating connection issues with one of our network links. We are working to reroute traffic.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;00:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating intermittent network connection issues. These issues appear to be limited to customers hosted on AWS that are connecting to GitHub's network.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;23:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're investigating reports of intermittent timeouts and connection errors for git clone operations.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;22:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/21251038</id>
     <published>2024-06-28T22:51:40Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/jnlhc0lml6pp"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;18:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between 4:40 UTC and 18:47 UTC on April 18th, approximately 200 users experienced issues creating and reconnecting to Codespaces. After investigation it was determined that the nearly 100% of those users were internal to GitHub. There was very little customer impact during this incident.&lt;br /&gt;&lt;br /&gt;We are discussing improvements to our monitoring so we can more quickly discern internal and external impact and avoid potentially confusing public status.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;18:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Codespaces customers using our 16 core machines in West US 2 and West US 3 region may experience issues creating new Codespaces and resuming existing Codespaces. We suggest any customers experiencing issues switch to the East US region.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;18&lt;/var&gt;, &lt;var data-var='time'&gt;18:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/20551752</id>
-    <published>2024-04-17T00:48:52Z</published>
-    <updated>2024-04-25T20:49:15Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8jd596s0lt7s"/>
-    <title>Incident with Copilot</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;00:48&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On April 16th, 2024, between 22:31 UTC and 00:11 UTC, Copilot chat users experienced elevated request errors. On average, the error rate was 1.2% and peaked at 5.2%. This was due to a rolling application upgrade applied to a backend system during a maintenance event.&lt;br /&gt;&lt;br /&gt;The incident was resolved once the rolling upgrade was completed.&lt;br /&gt;&lt;br /&gt;We are working to improve monitoring and alerting of our services, be more resilient to failures, and coordinate maintenance events to reduce our time to detection and mitigation of issues like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;00:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're continuing to investigate issues with Copilot&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;23:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Copilot is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;23:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're investigating issues with Copilot availability&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;23:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
