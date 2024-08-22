@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-08-20T07:51:20Z</updated>
+  <updated>2024-08-21T15:11:06Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/21839481</id>
+    <published>2024-08-21T15:11:06Z</published>
+    <updated>2024-08-21T15:11:06Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/3vhw289ftnqp"/>
+    <title>Incident with Actions</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;15:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;15:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have seen recovery and Actions workflow runs are now running as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;14:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing reduced delays for Actions workflow runs to get triggered. We are continuing to investigate how to further reduce impact on customers and recover more quickly.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;14:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of users seeing delays for Actions workflow runs to get triggered.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;14:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/21754049</id>
     <published>2024-08-15T13:59:49Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8532wfbvwqgr"/>
     <title>Disruption with GitHub Docs</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;16:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On July 3, 2024, between 1:34 PM UTC and 4:42 PM UTC the GitHub documentation was degraded and showed a 500 on non-cached pages. On average, the error rate was 2-5% and peaked at 5% of requests to the service. This was due to an observability misconfiguration. We mitigated the incident by updating the observability configuration and redeploying. We are working to reduce our time to detection and mitigation of issues like this one in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;16:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Mitigation measures have been rolled out and we're seeing errors disappear in our telemetry. We'll continue to monitor our services closely to ensure the docs site is fully healthy.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;15:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified a likely cause of the errors with GitHub Docs and are working on a mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;15:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/21289093</id>
-    <published>2024-07-02T19:24:49Z</published>
-    <updated>2024-07-18T16:15:59Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/5dvz23w3gl38"/>
-    <title>Disruption with GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On July 02, 2024, between 18:21 UTC and 19:24 UTC the code search service was degraded and returned elevated 500 HTTP status responses. On average, the error rate was 38% of code search requests. This was due to a bad deployment causing some user's rate limit calculations to error while processing code search requests. This impacted approximately 2,000 users.&lt;br /&gt;We mitigated the incident by rolling back the bad deployment along with resetting rate limits for all users.&lt;br /&gt;We have identified and implemented updates in the testing of rate limit calculations to prevent this problem from happening again, and clarified deployment processes for verification before a full production rollout to minimize impact in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - API Requests is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The fix has been rolled out and our telemetry indicates that the errors with code search have resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:18&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - An issue with faulty data in an in-memory storage causes around one third of code search requests to fail. The team has identified the issue and is working on rolling out a fix.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;18:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - API Requests is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;18:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
