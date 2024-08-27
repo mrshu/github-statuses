@@ -4,17 +4,17 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-08-25T08:58:23Z</updated>
+  <updated>2024-08-26T21:33:57Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/21858990</id>
     <published>2024-08-22T17:28:06Z</published>
-    <updated>2024-08-22T17:28:06Z</updated>
+    <updated>2024-08-26T21:33:57Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/30jg3tzwbv93"/>
     <title>Incident with Actions</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with failed workflow runs due to internal errors. We are seeing signs of recovery and continuing to monitor the situation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;16:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On August 22, 2024, between 16:10 UTC and 17:28 UTC, Actions experienced degraded performance leading to failed workflow runs. On average, 2.5% of workflow runs failed to start with the failure rate peaking at 6%. In addition we saw a 1% error rate for Actions API endpoints. This was due to an Actions service being deployed to faulty hardware that had an incorrect memory configuration, leading to significant performance degradation of those pods due to insufficient memory.&lt;br /&gt;&lt;br /&gt;The impact was mitigated when the pods were evicted automatically and moved to healthy hosts. The faulty hardware was disabled to prevent a recurrence. We are improving our health checks to ensure that unhealthy hardware is consistently marked offline automatically. We are also improving our monitoring and deployment practices to reduce our time to detection and automated mitigation at the service layer for issues like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;17:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with failed workflow runs due to internal errors. We are seeing signs of recovery and continuing to monitor the situation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;16:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/21839481</id>
