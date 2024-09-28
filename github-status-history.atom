@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-09-26T16:40:16Z</updated>
+  <updated>2024-09-27T20:49:50Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -19,10 +19,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22284983</id>
     <published>2024-09-25T19:19:01Z</published>
-    <updated>2024-09-25T19:19:01Z</updated>
+    <updated>2024-09-27T20:49:50Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/1g9v7rry4z86"/>
     <title>Incident with Actions Runs</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're seeing issues related to Actions runs failing to download actions at the start of a job. We're investigating the cause and working on mitigations for customers impacted by this issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions and Pages&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On September 25th, 2024 from 18:32 UTC to 19:13 UTC, Actions service experienced a degradation during a production deployment, leading to actions failing to be downloaded at the start of a job. On average, 21% of Actions workflow runs failed to start during the course of the incident. The issue was traced back to a bug in an internal service responsible for generating the URLs used by the Actions runner to download actions.&lt;br /&gt;&lt;br /&gt;To mitigate the impact, we rolled back the affecting deployment. We are implementing new monitors to improve our detection and response time for this class of issues in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're seeing issues related to Actions runs failing to download actions at the start of a job. We're investigating the cause and working on mitigations for customers impacted by this issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;19:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions and Pages&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22283075</id>
