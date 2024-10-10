@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-10-08T23:32:54Z</updated>
+  <updated>2024-10-09T13:47:27Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -27,10 +27,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22381154</id>
     <published>2024-09-27T15:30:00Z</published>
-    <updated>2024-10-03T17:37:07Z</updated>
+    <updated>2024-10-09T13:47:27Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/wlb83pxg009y"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;15:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On September 27th, 2024 from 10:26 to 10:34 UTC, some users listing project releases may have encountered a 500 error.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;15:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between September 27, 2024, 15:26 UTC and September 27, 2024, 15:34 UTC the Repositories Releases service was degraded. During this time 9% of requests to list releases via API or the webpage received a `500 Internal Server` error.&lt;br /&gt;&lt;br /&gt;This was due to a bug in our software roll out strategy. The rollout was reverted starting at 15:30 UTC, which began to restore functionality. The rollback was completed at 15:34 UTC.&lt;br /&gt;&lt;br /&gt;We are continuing to improve our testing infrastructure to ensure that bugs such as this one can be detected before they make their way into production.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22287041</id>
