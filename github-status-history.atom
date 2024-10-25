@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-10-24T04:24:19Z</updated>
+  <updated>2024-10-24T22:13:48Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/22651827</id>
+    <published>2024-10-24T06:55:06Z</published>
+    <updated>2024-10-24T06:55:06Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/xy3hrpmg4r3k"/>
+    <title>Incident with GitHub Community Discussions</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;06:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;06:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are aware of an issue that is preventing users from creating new posts in Community Discussions (community.github.com). Users may see a 500 error when they attempt to post a new discussion. We are currently working to resolve.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Oct &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;06:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22512439</id>
     <published>2024-10-12T01:11:28Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/1kn4kywmvgz4"/>
     <title>[Retroactive] Incident with Pull Requests</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;18:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Beginning at 6:52 PM UTC on August 6, 2024 and lasting until 6:59 PM UTC, some customers of github.com saw errors when navigating to a Pull Request. The error rate peaked at ~5% for logged in users. This was due to a change which was rolled back after alerts fired during the deployment.&lt;br /&gt;&lt;br /&gt;We did not status before we completed the rollback, and the incident is currently resolved. We are sorry for the delayed post on githubstatus.com.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/21586637</id>
-    <published>2024-07-31T21:21:29Z</published>
-    <updated>2024-08-02T15:34:18Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/cr44n0knc7xj"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;21:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Beginning at 8:38 PM UTC on July 31, 2024 and lasting until 9:28 PM UTC on July 31, 2024, some customers of github.com saw errors when navigating to the Billing pages and/or when updating their payment method. These errors were caused due to a degradation in one of our partner services. A fix was deployed by the partner services and the Billing pages are back to being functional. &lt;br /&gt;&lt;br /&gt;For improved detection of such issues in future, we will work with the partner service to identify levers we can use to get an earlier indication of issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;21:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Our partner service outage has been resolved, and our service has recovered.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;21:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the issue is caused by a service outage to a partner, and we are working with the partner to resolve the incident.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;20:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of users seeing some errors in Billing functionality and Billing pages.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;20:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
