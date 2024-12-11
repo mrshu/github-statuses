@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2024-12-09T07:53:34Z</updated>
+  <updated>2024-12-10T14:03:45Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -99,10 +99,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22897467</id>
     <published>2024-11-19T12:03:43Z</published>
-    <updated>2024-11-19T12:03:43Z</updated>
+    <updated>2024-12-10T14:03:45Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/b85tj3x6n4vz"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;12:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have resolved the issue but are waiting for queues to catch up.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're investigating an issue with two-factor authentication in the GitHub mobile app&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;12:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On November 19, 2024, between 10:56:00 UTC and 12:03:00 UTC the notifications service was degraded and stopped sending notifications. On average, notifications delivery was delayed about 1 hour. This was due to a database host coming out of a regular maintenance process in read only-mode.&lt;br /&gt;We mitigated the incident by making the host writable again. After that the notifications delivery recovered and any delivery job that had failed during the incident was successfully retried.&lt;br /&gt;We are working to improve our observability across database clusters to reduce our time to detection and mitigation of issues like this one in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have resolved the issue but are waiting for queues to catch up.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're investigating an issue with two-factor authentication in the GitHub mobile app&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;19&lt;/var&gt;, &lt;var data-var='time'&gt;11:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/22936938</id>
