@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-01-14T22:17:28Z</updated>
+  <updated>2025-01-15T14:48:40Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -83,10 +83,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/23095063</id>
     <published>2024-12-06T17:17:36Z</published>
-    <updated>2024-12-06T23:17:15Z</updated>
+    <updated>2025-01-15T14:48:40Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/d33mtmnttgsh"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;17:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Upon further investigation, the degradation in migrations in the EU was caused by an internal configuration issue, which was promptly identified and resolved. No customer migrations were impacted during this time and the issue only affected GitHub Enterprise Cloud - EU and had no impact on Github.com. The service is now fully operational. We are following up by improving our processes for these internal configuration changes to prevent a recurrence, and to have incidents that affect GitHub Enterprise Cloud - EU be reported on https://eu.githubstatus.com/.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;17:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Migrations are failing for a subset of users in the EU region with data residency. We believe we have resolved the issue and are monitoring for resolution.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;16:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;17:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Upon further investigation, the degradation in migrations in the EU was caused by an internal configuration issue, which was promptly identified and resolved. No customer migrations were impacted during this time and the issue only affected GitHub Enterprise Cloud - EU and had no impact on GitHub.com. The service is now fully operational. We are following up by improving our processes for these internal configuration changes to prevent a recurrence, and to have incidents that affect GitHub Enterprise Cloud - EU be reported on https://eu.githubstatus.com/.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;17:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Migrations are failing for a subset of users in the EU region with data residency. We believe we have resolved the issue and are monitoring for resolution.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;16:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/23070020</id>
