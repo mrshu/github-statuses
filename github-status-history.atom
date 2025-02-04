@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-02-02T08:07:00Z</updated>
+  <updated>2025-02-03T20:20:24Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/23824745</id>
+    <published>2025-02-03T19:37:49Z</published>
+    <updated>2025-02-03T19:38:09Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/m8ntcjv1w4pr"/>
+    <title>[Retroactive] Incident with some GitHub services</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;19:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - A component that imports external git repositories into GitHub had an incident that was caused by the improper internal configuration of a gem. We have since rolled back to a stable version, and all migrations are able to resume.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/23746865</id>
     <published>2025-01-30T15:39:53Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/ltyqfp67463z"/>
     <title>Disruption with GitHub Search</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;15:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between 13:30 and 15:00 UTC, repository searches were timing out for most users. The ongoing efforts from the &lt;a href="https://www.githubstatus.com/incidents/dnq4lp93t62f"&gt;similar incident last week&lt;/a&gt; helped uncover the main contributing factors. We have deployed short-term mitigations and identified longer term work to proactively identify and limit resource-intensive searches.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;15:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Search is now operating normally. We are declaring this issue resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;15:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are now observing signs of complete recovery in search. We will continue to monitor and assess.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;14:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We're observing signs of recovery in search, we will continue to monitor.&lt;br /&gt;&lt;br /&gt;Next update within 15 minutes.&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;14:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing failures in repos, users, discussions, and wikis search. Customers may see failing searches and searching by topic may fail to load. &lt;br /&gt;&lt;br /&gt;Code and issues search continue to be available.&lt;br /&gt;&lt;br /&gt;The team is investigating, next update in 30m.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;13:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing failures in search. Customers may see failing searches and searching by topic may fail to load.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;13:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/22960458</id>
-    <published>2024-11-25T12:17:35Z</published>
-    <updated>2024-12-02T15:46:10Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/nbscbkxwxjrx"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;12:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On November 25th, 2024 between 10:38 UTC and 12:00 UTC the Claude model for GitHub Copilot Chat experienced degraded performance. During the impact, all requests to Claude would result in an immediate error to the user. This was due to upstream errors with one of our infrastructure providers, which have since been mitigated.&lt;br /&gt;&lt;br /&gt;We are working with our infrastructure providers to reduce time to detection and implement additional failover options to mitigate issues like this one in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;12:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This incident has been mitigated; we are now seeing requests succeeding to the Claude 3.5 Sonnet model in Copilot.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;11:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The team is continuing to investigate errors using the Claude 3.5 Sonnet v2 model and has engaged our partners.&lt;br /&gt;&lt;br /&gt;All requests to this model are failing, but other Copilot models are functional and can be used as an alternative.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;11:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Users cannot use the Claude 3.5 Sonnet model in GitHub Copilot currently, in both VS Code and GitHub.com chat.  The team is investigating.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;10:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
