@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-02-05T11:44:32Z</updated>
+  <updated>2025-02-06T11:13:43Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/23866630</id>
+    <published>2025-02-06T11:13:43Z</published>
+    <updated>2025-02-06T11:13:43Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/yhn3m0yqdxmc"/>
+    <title>Incident with GIT LFS and Other Requests</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This issue has been mitigated.  We will continue to investigate root causes to ensure this does not reoccur.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have scaled out database resources and rolled back recent changes and are seeing signs of mitigation, but are monitoring to ensure complete recovery.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;10:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are attempting to scale databases to handle observed load spikes, as well as investigating other mitigation approaches.&lt;br /&gt;&lt;br /&gt;Customers may intermittently experience failures to fetch repositories with LFS, as well as increased latency and errors across the API.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;09:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating failed Git LFS requests and potentially slow API requests.&lt;br /&gt;&lt;br /&gt;Customers may experience failures to fetch repositories with LFS.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;09:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for API Requests&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/23854368</id>
     <published>2025-02-05T11:44:32Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/fjntvyfzm8kn"/>
     <title>Incident with Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;07:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;07:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified the issue and applied a mitigation, resulting in the cessation of timeouts. While we are considering this incident resolved for now, we are continuing to investigate the root cause and plan to implement a permanent fix. Updates will follow as we progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with timeouts in some requests in Codespaces. We will update you on mitigation progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/22992082</id>
-    <published>2024-11-28T05:11:03Z</published>
-    <updated>2024-11-28T05:11:03Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/y5pb0bxhlcxz"/>
-    <title>Incident with Sporadic Timeouts in Codespaces</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;05:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;05:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We identified and addressed failures in two proxy servers and applied mitigation. Since then, timeouts have ceased, and we are considering the incident resolved. We will continue to monitor the situation closely and provide updates if any changes occur.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;04:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating some network proxy issues that may be contributing to the timeouts in a small percentage of requests in Codespaces. We will continue to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;04:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate issues with timeouts in a small percentage of requests in Codespaces. We will update you on mitigation progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;03:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with timeouts in some requests in Codespaces. Some users may not be able to connect to their Codespaces at this time. We will update you on mitigation progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;03:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
   </entry>
 </feed>
