@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-02-12T23:10:48Z</updated>
+  <updated>2025-02-13T15:05:54Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -19,7 +19,7 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/23866630</id>
     <published>2025-02-06T11:13:43Z</published>
-    <updated>2025-02-06T11:13:43Z</updated>
+    <updated>2025-02-13T15:05:54Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/yhn3m0yqdxmc"/>
     <title>Incident with GIT LFS and Other Requests</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - This issue has been mitigated.  We will continue to investigate root causes to ensure this does not reoccur.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;11:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have scaled out database resources and rolled back recent changes and are seeing signs of mitigation, but are monitoring to ensure complete recovery.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;10:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are attempting to scale databases to handle observed load spikes, as well as investigating other mitigation approaches.&lt;br /&gt;&lt;br /&gt;Customers may intermittently experience failures to fetch repositories with LFS, as well as increased latency and errors across the API.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;09:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating failed Git LFS requests and potentially slow API requests.&lt;br /&gt;&lt;br /&gt;Customers may experience failures to fetch repositories with LFS.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt; 6&lt;/var&gt;, &lt;var data-var='time'&gt;09:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for API Requests&lt;/p&gt;</content>
