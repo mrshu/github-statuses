@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-03-02T01:30:21Z</updated>
+  <updated>2025-03-03T04:23:07Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24211089</id>
+    <published>2025-03-03T04:23:07Z</published>
+    <updated>2025-03-03T04:23:07Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/291w7fn43fy1"/>
+    <title>Incident with Issues, Git Operations and API Requests</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;04:23&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing intermittent timeouts across our various services. We are currently investigating and will provide updates.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;04:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhooks is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;04:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for API Requests, Git Operations and Issues&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24179186</id>
     <published>2025-03-01T02:00:21Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/bll83wkgdd2m"/>
     <title>Disruption connecting to Codespaces</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;21:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On January 14, 2025, between 19:13 UTC and 21:210 UTC the Codespaces service was degraded and led to connection failures with running codespaces, with a 7.6% failure rate for connections during the degradation. Users with bad connections could not use impacted codespaces until they were stopped and restarted.&lt;br /&gt;&lt;br /&gt;This was caused by bad connections left behind after a deployment in an upstream dependency that the Codespaces service still provided to clients. The incident self-mitigated as new connections replaced stale ones. We are coordinating to ensure connection stability with future deployments of this nature.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;21:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are beginning to see recovery for users connecting to Codespaces. Any users continuing to see impact should attempt a restart.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;20:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of timeouts for Codespaces users creating new or connecting to existing Codespaces. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;20:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Codespaces&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/23543623</id>
-    <published>2025-01-14T00:28:58Z</published>
-    <updated>2025-01-14T00:50:13Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/qd96yfgvmcf9"/>
-    <title>Incident with Git Operations</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;00:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On January 13, 2025, between 23:35 UTC and 00:24 UTC all Git operations were unavailable due to a configuration change causing our internal load balancer to drop requests between services that Git relies upon.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by rolling back the configuration change.&lt;br /&gt;&lt;br /&gt;We are improving our monitoring and deployment practices to reduce our time to detection and automated mitigation for issues like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;14&lt;/var&gt;, &lt;var data-var='time'&gt;00:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We've identified a cause of degraded git operations, which may affect other GitHub services that rely upon git. We're working to remediate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;23:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;23:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pages is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;23:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Git Operations&lt;/p&gt;</content>
   </entry>
 </feed>
