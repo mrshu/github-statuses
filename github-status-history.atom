@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-03-16T23:18:56Z</updated>
+  <updated>2025-03-18T03:46:07Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24371689</id>
+    <published>2025-03-17T23:02:33Z</published>
+    <updated>2025-03-17T23:02:33Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/y8x4xw6j3q84"/>
+    <title>Incident with Issues</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;23:02&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;23:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We saw a spike in error rate with issues related pages and API requests due to some problems with restarts in our kubernetes infrastructure that, at peak, caused 0.165% of requests to see timeouts or errors related to these API surfaces over a 15 minute period. At this time we see minimal impact and are continuing to investigate the cause of the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;21:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with service(s): Issues We're continuing to investigate. Users may see intermittent HTTP 500 responses when using Issues. Retrying the request may succeed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;20:51&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with service(s): Issues We're continuing to investigate. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;19:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with service(s): Issues. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;18:39&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Issues&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24314215</id>
     <published>2025-03-12T14:07:12Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/r6j3fnl9j58q"/>
     <title>Disruption with some GitHub services</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;23:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On January 27th, 2025, between 23:32:00 UTC and 23:41:00 UTC the Audit Log Streaming service experienced an approximate 9 minute delay of Audit Log Events. Our systems maintained data continuity and we experienced no data loss. There was no impact to the Audit Log API or the Audit Log user interface. Any configured Audit Log Streaming endpoints received all relevant Audit Log Events (but they were delayed) and normal service was restored after the incident's resolution.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;23:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Our Audit Log Streaming service is experiencing degradation but is experiencing no data outage.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;23:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/23723119</id>
-    <published>2025-01-26T21:00:00Z</published>
-    <updated>2025-01-28T14:43:18Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/7p05r5610bqd"/>
-    <title>Incident With Migration Service</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;26&lt;/var&gt;, &lt;var data-var='time'&gt;21:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between Sunday 20:50 UTC and Monday 15:20 UTC the Migrations service was unable to process migrations. This was due to a invalid infrastructure credential. &lt;br /&gt;&lt;br /&gt;We mitigated the issue by updating the credential internally.&lt;br /&gt;&lt;br /&gt;Mechanisms and automation will be implemented to detect and prevent this issue again in the future.&lt;/p&gt;</content>
   </entry>
 </feed>
