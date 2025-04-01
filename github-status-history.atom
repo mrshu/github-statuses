@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-03-31T02:55:30Z</updated>
+  <updated>2025-04-01T04:04:19Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24528290</id>
+    <published>2025-03-31T17:57:30Z</published>
+    <updated>2025-03-31T17:57:31Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/thpkk85p1sjy"/>
+    <title>Disruption with some GitHub services</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;17:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;16:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are currently applying a mitigation to resolve an issue with managing marketing email subscriptions.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;31&lt;/var&gt;, &lt;var data-var='time'&gt;16:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24502377</id>
     <published>2025-03-28T22:50:53Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pnl2xrj64d7p"/>
     <title>Incident with Packages</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;01:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On February 25, 2025, between 00:17 UTC and 01:08 UTC, GitHub Packages experienced a service degradation, leading to failures uploading and downloading packages, along with increased latency for all requests to GitHub Packages registry. At peak impact, about 14% of uploads and downloads failed, and all Packages requests were delayed by an average of 7 seconds. The incident was caused by the rollout of a database configuration change that resulted in a degradation in database performance. We mitigated the incident by rolling back the contributing change and failing over the database. In response to this incident, we are tuning database configurations and resolving a source of deadlocks. We are also redistributing certain workloads to read replicas to reduce latency and enhance overall database performance.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;01:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have confirmed recovery for the majority of our systems. Some systems may still experience higher than normal latency as they catch up.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;00:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the issue impacting packages and have rolled out a fix. We are seeing signs of recovery and continue to monitor the situation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;00:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Packages&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/24121839</id>
-    <published>2025-02-24T22:14:08Z</published>
-    <updated>2025-03-03T17:38:20Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/9qsgrx7yc13z"/>
-    <title>Claude 3.5 Sonnet model is unavailable in Copilot</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;22:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On February 24, 2025 between 21:42 UTC and 22:14 UTC the Claude 3.5 Sonnet model for GitHub Copilot Chat experienced degraded performance. During the impact, all requests to Claude 3.5 Sonnet would result in an immediate error to the user. This was due to misconfiguration within one of our infrastructure providers that has since been mitigated.&lt;br /&gt;&lt;br /&gt;We are working to prevent this error from occurring in the future by implementing additional failover options. Additionally we are updating our playbooks and alerting to reduce time to detection.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;22:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We were able to quickly identify the problem and resolve this issue. Claude 3.5 Sonnet is available again.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;22:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - At this time, we are unable to serve requests to the Claude 3.5 Sonnet on Copilot. No other models are affected. We are investigating the issue and will provide updates as we discovery more information.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;24&lt;/var&gt;, &lt;var data-var='time'&gt;22:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
   </entry>
 </feed>
