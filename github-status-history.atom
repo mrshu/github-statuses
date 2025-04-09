@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-04-08T01:19:22Z</updated>
+  <updated>2025-04-09T04:03:47Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24600599</id>
+    <published>2025-04-08T18:21:16Z</published>
+    <updated>2025-04-08T18:21:16Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/mdfybxmvbp0z"/>
+    <title>Vision requests are unavailable for certain models on Copilot Chat on github.com</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The issue has been resolved now, and we're actively monitoring the service for any further issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;17:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Image attachments are not available for some models on Copilot chat on github.com. The issue has been identified and the fix is in progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;17:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24584381</id>
     <published>2025-04-07T02:31:17Z</published>
@@ -35,10 +43,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24549960</id>
     <published>2025-04-02T20:20:00Z</published>
-    <updated>2025-04-02T20:20:00Z</updated>
+    <updated>2025-04-08T19:32:50Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/d3t3d2jn3b0j"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;20:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are aware that the generation of the Dormant Users Report is delayed for some of our customers, and that the resulting report may be inaccurate. We are actively investigating the root cause and a possible remediation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;20:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between 2025-03-27 12:00 UTC and 2025-04-03 16:00 UTC, the GitHub Enterprise Cloud Dormant Users report was degraded and falsely indicated that dormant users were active within their business. This was due to increased load on a database from a non-performant query.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by increasing the capacity of the database, and installing monitors for this specific report to improve observability for future. As a long-term solution, we are rewriting the Dormant Users report to optimize how it queries for user activity, which will result in significantly faster and accurate report generation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are aware that the generation of the Dormant Users Report is delayed for some of our customers, and that the resulting report may be inaccurate. We are actively investigating the root cause and a possible remediation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt; 2&lt;/var&gt;, &lt;var data-var='time'&gt;19:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24534352</id>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/5ylj8dpvg096"/>
     <title>Scheduled Codespaces Maintenance</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;02:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;17:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Scheduled maintenance is currently in progress. We will provide updates as necessary.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;21:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - Codespaces will be undergoing maintenance in Europe and Southeast Asia from 17:00 UTC Friday February 28 to 02:00 UTC Saturday March 1. Maintenance will begin in North Europe at 17:00 UTC Friday February 28, followed by Southeast Asia, concluding in UK South. Each region will take 2-3 hours to complete.&lt;br /&gt;&lt;br /&gt;During this time period, users may experience connectivity issues with new and existing Codespaces.&lt;br /&gt;&lt;br /&gt;Please ensure that any uncommitted changes that you may need during the maintenance window are committed and pushed. Codespaces with any uncommitted changes will be accessible as usual once maintenance is complete.&lt;br /&gt;&lt;br /&gt;Thank you for your patience as we work to improve our systems.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/24183556</id>
-    <published>2025-02-28T06:55:57Z</published>
-    <updated>2025-03-04T22:43:05Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/36ftd36c921f"/>
-    <title>Elevated Request Latency for Write operations on github.com and api.github.com</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On February 28th, 2025, between 05:49 UTC and 06:55 UTC, a newly deployed background job caused increased load on GitHub’s primary database hosts, resulting in connection pool exhaustion. This led to degraded performance, manifesting as increased latency for write operations and elevated request timeout rates across multiple services.&lt;br /&gt;&lt;br /&gt;The incident was mitigated by halting execution of the problematic background job and disabling the feature flag controlling the job execution. To prevent similar incidents in the future, we are collaborating on a plan to improve our production signals to better detect and respond to query performance issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Issues and Pull Requests are experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;06:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
