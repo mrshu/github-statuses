@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-04-12T23:15:56Z</updated>
+  <updated>2025-04-14T03:55:55Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24645866</id>
+    <published>2025-04-12T20:00:00Z</published>
+    <updated>2025-04-13T15:28:47Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/jfvgcls9swln"/>
+    <title>[Retroactive] Access from China temporarily blocked for users that were not logged in</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;20:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Due to a configuration change with unintended impact, users that were not logged in who tried to visit GitHub.com from China were temporarily unable to access the site. For users already logged in, they could continue to access the site successfully. Impact started 2025/04/12 at 20:01 UTC. Impact was mitigated 2025/04/13 at 14:55 UTC.&lt;br /&gt;&lt;br /&gt;The configuration changes that caused this impact have been reversed and users should no longer see problems when trying to access GitHub.com.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24623827</id>
     <published>2025-04-11T00:51:49Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/nhcpszxtqxtm"/>
     <title>Some Actions users are seeing their workflow jobs failing to start</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;14:07&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 12, 2025, between 13:28 UTC and 14:07 UTC, the Actions service experienced degradation leading to run start delays. During the incident, about 0.6% of workflow runs failed to start, 0.8% of workflow runs were delayed by an average of one hour, and 0.1% of runs ultimately ended with an infrastructure failure. The issue stemmed from connectivity problems between the Actions services and certain nodes within one of our Redis clusters. The service began recovering once connectivity to the Redis cluster was restored at 13:41 UTC. These connectivity issues are typically not a concern because we can fail over to healthier replicas. However, due to an unrelated issue, there was a replication delay at the time of the incident, and failing over would have caused a greater impact on our customers. We are working on improving our resiliency and automation processes for this infrastructure to improve the speed of diagnosing and resolving similar issues in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;13:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have applied a mitigation for the affected Redis node, and are starting to see recovery with Action workflow executions.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;13:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/24277394</id>
-    <published>2025-03-08T18:11:56Z</published>
-    <updated>2025-03-11T23:26:36Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/m7vl0x8k3j9c"/>
-    <title>Incident with Actions and Pages</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 8, 2025, between 17:16 UTC and 18:02 UTC, GitHub Actions and Pages services experienced degraded performance leading to delays in workflow runs and Pages deployments. During this time, 34% of Actions workflow runs experienced delays, and a small percentage of runs using GitHub-hosted runners failed to start. Additionally, Pages deployments for sites without a custom Actions workflow (93% of them) did not run, preventing new changes from being deployed. &lt;br /&gt;&lt;br /&gt;An unexpected data shape led to crashes in some of our pods. We mitigated the incident by excluding the affected pods and correcting the data that led to the crashes. We’ve fixed the source of the unexpected data shape and have improved the overall resilience of our service against such occurrences.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions run start delays are mitigated. Actions runs that failed will need to be re-run. Impacted Pages updates will need to re-run their deployments.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;18:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Pages is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;17:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating impact to Actions run start delays, about 40% of runs are not starting within five minutes and Pages deployments are impacted for GitHub hosted runners.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;17:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions and Pages&lt;/p&gt;</content>
   </entry>
 </feed>
