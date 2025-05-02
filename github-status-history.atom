@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-04-30T21:22:23Z</updated>
+  <updated>2025-05-02T03:55:55Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/24848610</id>
+    <published>2025-05-01T23:13:18Z</published>
+    <updated>2025-05-01T23:13:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/9zmv2mqqxsbm"/>
+    <title>Issue Attachments Failing to Upload</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;23:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;23:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the underlying cause of attachment upload failures to Issues and mitigated it by rolling back a feature flag. If you are still experiencing failures when uploading attachments to Issues, please reload your page.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;22:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating attachment upload failures on Issues. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;22:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Issues&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/24836733</id>
     <published>2025-04-30T21:05:36Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/cyf5mhwh42tt"/>
     <title>[Retroactive] Incident with Migrations Submitted Via GitHub UI</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;23&lt;/var&gt;, &lt;var data-var='time'&gt;18:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between 2024-03-23 18:10 UTC and 2024-03-24 16:10 UTC, migration jobs submitted through the GitHub UI experienced processing delays and increased failure rates. This issue only affected migrations initiated via the web interface. Migrations started through the API or the command line tool continued to function normally. We are sorry for the delayed post on githubstatus.com.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/24411620</id>
-    <published>2025-03-21T13:44:16Z</published>
-    <updated>2025-03-24T16:58:44Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/kgjdbjz65clj"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;13:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 21st, 2025, between 11:45 UTC and 13:20 UTC, users were unable to interact with GitHub Copilot Chat in GitHub. The issue was caused by a recently deployed Ruby change that unintentionally overwrote a global value. This led to GitHub Copilot Chat in GitHub being misconfigured with an invalid URL, preventing it from connecting to our chat server. Other Copilot clients were not affected.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by identifying the source of the problematic query and rolling back the deployment.&lt;br /&gt;&lt;br /&gt;We are reviewing our deployment tooling to reduce the time to mitigate similar incidents in the future. In parallel, we are also improving our test coverage for this category of error to prevent them from being deployed to production.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;13:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Copilot is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;13:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Mitigation is complete and we are seeing full recovery for GitHub Copilot Chat in GitHub.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;13:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the problem and have a mitigation in progress.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;13:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Copilot is experiencing degraded performance. We are continuing to investigate.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;12:42&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues with GitHub Copilot Chat in GitHub. We will continue to keep users updated on progress toward mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;12:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
