@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-07-22T02:01:11Z</updated>
+  <updated>2025-07-23T02:01:12Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/25891369</id>
+    <published>2025-07-22T18:49:46Z</published>
+    <updated>2025-07-22T18:49:46Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/bq1m45stqm8s"/>
+    <title>Incident with Copilot and Claude Sonnet 4</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;18:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;18:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Claude Sonnet 4 model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;br /&gt;&lt;br /&gt;Other models are available and working as expected.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;22&lt;/var&gt;, &lt;var data-var='time'&gt;18:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/25872946</id>
     <published>2025-07-21T09:48:02Z</published>
@@ -27,10 +35,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/25820186</id>
     <published>2025-07-16T08:58:41Z</published>
-    <updated>2025-07-16T08:58:41Z</updated>
+    <updated>2025-07-22T17:27:16Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8pk9qxksg7cj"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have seen recovery on our provider's side but have not yet confirmed if the issue is fully resolved. We will update our status in the next 20 minutes as we know more.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Claude 3.7 Sonnet model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On July 16, 2025, between 05:20 UTC and 08:30 UTC, the Copilot service experienced degraded availability for Claude 3.7 requests. Around 10% of Claude 3.7 requests failed during this time. The issue was caused by an upstream problem affecting our ability to serve requests.&lt;br /&gt;We mitigated by rerouting capacity and monitoring recovery. We are improving detection and mitigation to reduce future impact.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have seen recovery on our provider's side but have not yet confirmed if the issue is fully resolved. We will update our status in the next 20 minutes as we know more.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Claude 3.7 Sonnet model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/25835365</id>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6nxmxxqcgmh7"/>
     <title>Codespaces billing is delayed</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt;10&lt;/var&gt;, &lt;var data-var='time'&gt;19:08&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On June 10, 2025, between 12:15 UTC and 19:04 UTC, Codespaces billing data processing experienced delays due to capacity issues in our worker pool. Approximately 57% of codespaces were affected during this incident, during which some customers may have observed incomplete or delayed billing usage information in their dashboards and usage reports, and may not have received timely notifications about approaching usage or spending limits. &lt;br /&gt;&lt;br /&gt;The incident was caused by an increase in the number of jobs in our worker pool without a corresponding increase in capacity, resulting in a backlog of unprocessed Codespaces billing jobs. &lt;br /&gt;&lt;br /&gt;We mitigated the issue by scaling up worker capacity, allowing the backlog to clear and billing data to catch up. We started seeing recovery immediately at 17:40 UTC and were fully caught up by 19:04 UTC.&lt;br /&gt;&lt;br /&gt;To prevent recurrence, we are moving critical billing jobs into a dedicated worker pool monitored by the Codespaces team, and are reviewing alerting thresholds to ensure more rapid detection and mitigation of delays in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt;10&lt;/var&gt;, &lt;var data-var='time'&gt;18:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We've increased capacity to process the codespaces billing jobs and see are seeing recovery, we expect a full mitigation within the hour.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt;10&lt;/var&gt;, &lt;var data-var='time'&gt;17:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/25427285</id>
-    <published>2025-06-10T14:46:32Z</published>
-    <updated>2025-06-25T16:07:16Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/5n51wd9mnkz0"/>
-    <title>Incident with Pull Requests</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt;10&lt;/var&gt;, &lt;var data-var='time'&gt;14:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On June 10, 2025, between 14:28 UTC and 14:45 UTC the pull request service experienced a period of degraded performance, resulting in merge error rates exceeding 1%. The root cause was an overloaded host in our Git infrastructure.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by removing this host from the actual set of valid replicas until the host was healthy again.&lt;br /&gt;&lt;br /&gt;We are working to improve the various mechanisms that are in place in our existing infrastructure to protect us from such problems, and we will be revisiting why in this particular scenario they didn't protect us as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jun &lt;var data-var='date'&gt;10&lt;/var&gt;, &lt;var data-var='time'&gt;14:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Pull Requests&lt;/p&gt;</content>
   </entry>
 </feed>
