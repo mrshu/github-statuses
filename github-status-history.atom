@@ -4,7 +4,7 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-08-27T21:36:28Z</updated>
+  <updated>2025-08-29T01:40:58Z</updated>
   <author>
     <name>GitHub</name>
   </author>
@@ -35,10 +35,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/26183695</id>
     <published>2025-08-20T16:37:16Z</published>
-    <updated>2025-08-20T16:37:16Z</updated>
+    <updated>2025-08-28T15:25:53Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/2cl0fjn559ty"/>
     <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have verified that we fixed the sign up flow and are working to ensure we don't introduce an issue like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers may experience issues when signing up for new GitHub accounts. We are actively working on a mitigation and will post an update within 30 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between 15:49 and 16:37 UTC on 20 Aug 2025, creating a new GitHub account via the web signup page consistently returned server errors, and users were unable to complete signup during this 48-minute window. We detected the issue at 16:04 UTC and restored normal signup functionality by 16:37 UTC. A recent change to signup flow logic caused all attempts to error. The change was rolled back to restore service. This exposed a gap in our test coverage that we are fixing.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have verified that we fixed the sign up flow and are working to ensure we don't introduce an issue like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:24&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers may experience issues when signing up for new GitHub accounts. We are actively working on a mitigation and will post an update within 30 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Aug &lt;var data-var='date'&gt;20&lt;/var&gt;, &lt;var data-var='time'&gt;16:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/26171249</id>
