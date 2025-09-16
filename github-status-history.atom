@@ -4,17 +4,25 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-09-14T19:55:55Z</updated>
+  <updated>2025-09-16T01:01:07Z</updated>
   <author>
     <name>GitHub</name>
   </author>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/26430076</id>
-    <published>2025-09-13T22:39:11Z</published>
-    <updated>2025-09-13T22:39:11Z</updated>
+    <published>2025-09-15T21:01:03Z</published>
+    <updated>2025-09-15T21:01:03Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/n3vgjzqv7d18"/>
     <title>Repository search is degraded</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;22:39&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Most searchable repositories should again be visible in search results. Up to 1.5% of repositories may still be missing from search results.&lt;br /&gt;&lt;br /&gt;Many different actions synchronize the repository state with the search index, so we expect natural recovery for repositories that see more frequent user and API-driven interactions. &lt;br /&gt;&lt;br /&gt;A complete index reconciliation is underway to restore stagnant repositories that were deleted from the index. We will update again once we have a clear timeline of when we expect full recovery for those missing search results.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;12:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers are not seeing repositories they expect to see in search results. We have restored a snapshot of this search index from Fri 12 Sep at 21:00 UTC. Changes made since then will be unavailable while we work to backfill the rest of the search index. Any new changes will be available in near-real time as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;12:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;21:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;22:39&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Most searchable repositories should again be visible in search results. Up to 1.5% of repositories may still be missing from search results.&lt;br /&gt;&lt;br /&gt;Many different actions synchronize the repository state with the search index, so we expect natural recovery for repositories that see more frequent user and API-driven interactions. &lt;br /&gt;&lt;br /&gt;A complete index reconciliation is underway to restore stagnant repositories that were deleted from the index. We will update again once we have a clear timeline of when we expect full recovery for those missing search results.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;12:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers are not seeing repositories they expect to see in search results. We have restored a snapshot of this search index from Fri 12 Sep at 21:00 UTC. Changes made since then will be unavailable while we work to backfill the rest of the search index. Any new changes will be available in near-real time as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;12:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/26450306</id>
+    <published>2025-09-15T18:28:36Z</published>
+    <updated>2025-09-15T18:28:36Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/ffh1r1w0hj6h"/>
+    <title>Disruption with some GitHub services</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/26396329</id>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/j3byj17b8m1t"/>
     <title>Some Copilot Models Experiencing Degraded Performance</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;07:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On July 21, 2025, between 07:20 UTC and 08:00 UTC, the Copilot service experienced degraded availability for Claude 4 requests. 2% of Claude 4 requests failed during this time. The issue was caused by an upstream problem affecting our ability to serve requests.&lt;br /&gt;We mitigated by rerouting capacity and monitoring recovery. We are improving detection and mitigation to reduce future impact.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;07:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/25820186</id>
-    <published>2025-07-16T08:58:41Z</published>
-    <updated>2025-07-22T17:27:16Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/8pk9qxksg7cj"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On July 16, 2025, between 05:20 UTC and 08:30 UTC, the Copilot service experienced degraded availability for Claude 3.7 requests. Around 10% of Claude 3.7 requests failed during this time. The issue was caused by an upstream problem affecting our ability to serve requests.&lt;br /&gt;We mitigated by rerouting capacity and monitoring recovery. We are improving detection and mitigation to reduce future impact.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have seen recovery on our provider's side but have not yet confirmed if the issue is fully resolved. We will update our status in the next 20 minutes as we know more.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Claude 3.7 Sonnet model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jul &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;08:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
