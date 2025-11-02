@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-11-01T02:05:57Z</updated>
+  <updated>2025-11-02T00:45:59Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/26962592</id>
+    <published>2025-11-01T06:14:40Z</published>
+    <updated>2025-11-01T06:14:40Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/xkvk1yhmqfdl"/>
+    <title>Incident with using workflow_dispatch for Actions</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;06:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;06:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Actions is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;06:14&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the issue for manually dispatching workflows via the UI&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;05:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the cause of the issue and are working towards a mitigation&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;05:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating issues manually dispatching workflows via the GitHub UI for Actions. The Workflow Dispatch API is unaffected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 1&lt;/var&gt;, &lt;var data-var='time'&gt;04:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Actions&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/26947406</id>
     <published>2025-10-30T23:00:46Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/t291vx7m731z"/>
     <title>Disruption with some GitHub services</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;17:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On September 29, 2025 between 16:26 UTC and 17:33 UTC the Copilot API experienced a partial degradation causing intermittent erroneous 404 responses for an average of 0.2% of GitHub MCP server requests, peaking at times around 2% of requests. The issue stemmed from an upgrade of an internal dependency which exposed a misconfiguration in the service.&lt;br /&gt;&lt;br /&gt;We resolved the incident by rolling back the upgrade to address the misconfiguration. We fixed the configuration issue and will improve documentation and rollout process to prevent similar issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;17:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Customers are getting 404 responses when connecting to the GitHub MCP server. We have reverted a change we believe is contributing to the impact, and are seeing resolution in deployed environments.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;29&lt;/var&gt;, &lt;var data-var='time'&gt;16:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/26554560</id>
-    <published>2025-09-25T17:36:18Z</published>
-    <updated>2025-09-29T22:28:29Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/xcn454p4wqtz"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;17:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On September 26, 2025 between 16:22 UTC and 18:32 UTC raw file access was degraded for a small set of four repositories. On average, raw file access error rate was 0.01% and peaked at 0.16% of requests. This was due to a caching bug exposed by excessive traffic to a handful of repositories. &lt;br /&gt;&lt;br /&gt;We mitigated the incident by resetting the state of the cache for raw file access and are working to improve cache usage and testing to prevent issues like this in the future.&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;17:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are seeing issues related to our ability to serve raw file access across a small percentage of our requests.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Sep &lt;var data-var='date'&gt;25&lt;/var&gt;, &lt;var data-var='time'&gt;17:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are currently investigating this issue.&lt;/p&gt;</content>
   </entry>
 </feed>
