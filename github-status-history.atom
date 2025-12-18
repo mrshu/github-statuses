@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2025-12-17T01:21:02Z</updated>
+  <updated>2025-12-18T03:41:37Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/27635148</id>
+    <published>2025-12-16T12:00:00Z</published>
+    <updated>2025-12-17T19:04:34Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lctp4bzd37h2"/>
+    <title>Incident With Copilot</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;12:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - From 11:50-12:25 UTC, Copilot Coding Agent was unable to process new agent requests.  This affected all users creating new jobs during this timeframe, while existing jobs remained unaffected.  The cause of this issue was a change to the actions configuration where Copilot Coding Agent runs, which caused the setup of the Actions runner to fail, and the issue was resolved by rolling back this change.&lt;br /&gt;As a short term solution, we hope to increase our alerting criteria so that we can be alerted more quickly when an incident occurs, and in the long term we hope to harden our runner configuration to be more resilient against errors.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/27602231</id>
     <published>2025-12-15T18:22:12Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/d5c8rxcwt7xw"/>
     <title>Copilot Code Completions partially unavailable</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;23:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On November 5, 2025, between 21:46 and 23:36 UTC, ghost text requests experienced errors from upstream model providers that resulted in 0.9% of users seeing elevated error rates.&lt;br /&gt;&lt;br /&gt;During the service disruption, users were automatically re-routed to healthy model hosts but may have experienced increased latency in response times as a result of re-routing.&lt;br /&gt;&lt;br /&gt;We are updating our monitors and tuning our failover mechanism to more quickly mitigate issues like this in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;23:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified and resolved the underlying issues with Code Completions. Customers should see full recovery.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;22:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating increased error rates affecting Copilot Code Completions. Some users may experience delays or partial unavailability. Our engineering team is monitoring the situation and working to identify the cause.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;22:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/27152998</id>
-    <published>2025-11-04T22:00:00Z</published>
-    <updated>2025-11-13T21:57:04Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/0xpyl7hs9hm6"/>
-    <title>Incident With GitHub Enterprise Importer</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Nov &lt;var data-var='date'&gt; 4&lt;/var&gt;, &lt;var data-var='time'&gt;22:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On November 4, 2025, GitHub Enterprise Importer experienced a period of degraded migration performance and elevated error rates between 18:04 UTC and 23:36 UTC. During this interval customers queueing and running migrations experienced prolonged queue times and slower processing.&lt;br /&gt;&lt;br /&gt;The degradation was ultimately connected to higher than normal system load, once load was reduced error rates returned to normal. The investigation is ongoing to pinpoint the precise root cause and prevent future recurrence.&lt;br /&gt;&lt;br /&gt;Long-term work is planned to strengthen system resilience under high load and promote better visibility into migration status for customers.&lt;/p&gt;</content>
   </entry>
 </feed>
