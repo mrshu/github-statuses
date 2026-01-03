@@ -31,14 +31,20 @@ Enrich incidents with impact level by scraping the incident pages (cached):
 uv run python scripts/extract_incidents.py --out out --enrich-impact
 ```
 
+## Automation
+After each Flat data update, a GitHub Action runs the parser and commits outputs to `parsed/`.
+
 Run tests:
 ```
 uv run python -m unittest discover -s tests
 ```
 
 ## Outputs
-- `out/incidents.json`: merged incident timeline records
-- `out/incidents.jsonl`: one JSON object per incident (default)
-- `out/incidents/`: per-incident JSON files when using `--incidents-format split`
-- `out/segments.csv`: per-status timeline segments for Gantt/phase views
-- `out/downtime_windows.csv`: downtime windows for incident bar charts
+Outputs are written to the directory passed to `--out` (local examples use `out/`).
+The automation workflow writes to `parsed/`.
+
+- `<out>/incidents.json`: merged incident timeline records
+- `<out>/incidents.jsonl`: one JSON object per incident (default)
+- `<out>/incidents/`: per-incident JSON files when using `--incidents-format split`
+- `<out>/segments.csv`: per-status timeline segments for Gantt/phase views
+- `<out>/downtime_windows.csv`: downtime windows for incident bar charts
