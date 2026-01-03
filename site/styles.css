@@ -142,7 +142,7 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -216,6 +216,10 @@ main {
   font-size: 0.85rem;
 }
 
+.hero-panel .status-meta {
+  margin-top: 0;
+}
+
 .divider {
   width: 1px;
   height: 14px;
@@ -229,6 +233,14 @@ main {
   border: 1px solid #f0eee8;
   box-shadow: var(--shadow);
   position: relative;
+}
+
+.hero-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .hero-panel h3 {
@@ -574,6 +586,11 @@ details ul {
   }
 
   .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-panel-header {
     flex-direction: column;
     align-items: flex-start;
   }

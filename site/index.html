@@ -30,25 +30,22 @@
 
     <main>
       <section class="hero" data-animate>
-        <div class="hero-status" id="statusCard">
-          <div class="status-pill" id="statusBadge">Loading status…</div>
-          <h2 id="statusHeadline">Retrieving service health</h2>
-          <p id="statusMessage">Parsing incident history and uptime windows.</p>
-          <div class="status-meta">
-            <span id="lastUpdated">Last updated —</span>
-            <span class="divider"></span>
-            <span id="incidentCount">0 incidents in last 90 days</span>
+        <div class="hero-panel hero-panel-full">
+          <div class="hero-panel-header">
+            <h3>Last 90 days uptime</h3>
+            <div class="status-meta">
+              <span id="lastUpdated">Last updated —</span>
+              <span class="divider"></span>
+              <span id="incidentCount">0 incidents in last 90 days</span>
+            </div>
           </div>
-        </div>
-        <div class="hero-panel">
-          <h3>Last 90 days uptime</h3>
           <div class="uptime-row">
             <div class="uptime-label">
               <span>GitHub Platform</span>
               <span class="uptime-percent" id="uptimePercent">—</span>
             </div>
-          <div class="uptime-bars" id="uptimeBars"></div>
-          <div class="uptime-tooltip" id="uptimeTooltip" aria-hidden="true"></div>
+            <div class="uptime-bars" id="uptimeBars"></div>
+            <div class="uptime-tooltip" id="uptimeTooltip" aria-hidden="true"></div>
             <div class="uptime-axis">
               <span>90 days ago</span>
               <span>Today</span>

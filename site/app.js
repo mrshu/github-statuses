@@ -16,12 +16,6 @@ const impactLabel = {
   major: 'Major',
 };
 
-const statusLabel = {
-  none: 'Archive only',
-  maintenance: 'Maintenance recorded',
-  minor: 'Recent minor impact',
-  major: 'Recent major impact',
-};
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en-US', {
@@ -260,25 +254,6 @@ const render = async () => {
     return published >= since;
   });
   document.getElementById('incidentCount').textContent = `${recentIncidents.length} incidents in last 90 days`;
-
-  const latestIncident = incidents[0];
-  const latestImpact = latestIncident?.impact || 'none';
-  const status = latestImpact;
-
-  const statusBadge = document.getElementById('statusBadge');
-  statusBadge.className = `status-pill ${status}`;
-  statusBadge.textContent = statusLabel[status] || statusLabel.none;
-
-  const statusHeadline = document.getElementById('statusHeadline');
-  const statusMessage = document.getElementById('statusMessage');
-  if (latestIncident) {
-    const latestDate = formatDate(new Date(latestIncident.published_at));
-    statusHeadline.textContent = `Latest recorded impact: ${impactLabel[status] || 'Operational'}`;
-    statusMessage.textContent = `Last incident logged on ${latestDate}. This mirror reflects archived status history, not live monitoring.`;
-  } else {
-    statusHeadline.textContent = 'No incidents recorded';
-    statusMessage.textContent = 'This mirror reflects archived status history, not live monitoring.';
-  }
 
   const timeline = document.getElementById('incidentTimeline');
   timeline.innerHTML = '';
