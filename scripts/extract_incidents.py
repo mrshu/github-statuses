@@ -452,6 +452,12 @@ def main():
         default=0.5,
         help="Delay in seconds between impact fetches.",
     )
+    parser.add_argument(
+        "--incidents-format",
+        choices=["jsonl", "split", "json"],
+        default="jsonl",
+        help="Output format for incidents (default: jsonl).",
+    )
     args = parser.parse_args()
 
     commits_raw = run_git(["log", "--format=%H", "--", args.path])
@@ -482,9 +488,24 @@ def main():
     out_dir = args.out
     os.makedirs(out_dir, exist_ok=True)
 
-    incidents_path = f"{out_dir}/incidents.json"
-    with open(incidents_path, "w", encoding="utf-8") as handle:
-        json.dump(finalized, handle, indent=2, ensure_ascii=True)
+    incidents_path = None
+    if args.incidents_format == "json":
+        incidents_path = f"{out_dir}/incidents.json"
+        with open(incidents_path, "w", encoding="utf-8") as handle:
+            json.dump(finalized, handle, indent=2, ensure_ascii=True)
+    elif args.incidents_format == "jsonl":
+        incidents_path = f"{out_dir}/incidents.jsonl"
+        with open(incidents_path, "w", encoding="utf-8") as handle:
+            for incident in finalized:
+                handle.write(json.dumps(incident, ensure_ascii=True))
+                handle.write("\n")
+    else:
+        incidents_dir = f"{out_dir}/incidents"
+        os.makedirs(incidents_dir, exist_ok=True)
+        for incident in finalized:
+            incident_path = os.path.join(incidents_dir, f"{incident['id']}.json")
+            with open(incident_path, "w", encoding="utf-8") as handle:
+                json.dump(incident, handle, indent=2, ensure_ascii=True)
 
     if not args.no_segments:
         segments_path = f"{out_dir}/segments.csv"
@@ -527,7 +548,10 @@ def main():
                     }
                 )
 
-    print(f"Wrote {len(finalized)} incidents to {incidents_path}")
+    if incidents_path:
+        print(f"Wrote {len(finalized)} incidents to {incidents_path}")
+    else:
+        print(f"Wrote {len(finalized)} incidents to {out_dir}/incidents/")
 
 
 if __name__ == "__main__":

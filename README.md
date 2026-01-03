@@ -20,6 +20,12 @@ Run the extractor for the last year (UTC example):
 uv run python scripts/extract_incidents.py --out out_last_year --since 2025-01-03 --until 2026-01-03
 ```
 
+Use JSONL (default) or split per-incident outputs:
+```
+uv run python scripts/extract_incidents.py --out out --incidents-format jsonl
+uv run python scripts/extract_incidents.py --out out --incidents-format split
+```
+
 Enrich incidents with impact level by scraping the incident pages (cached):
 ```
 uv run python scripts/extract_incidents.py --out out --enrich-impact
@@ -32,5 +38,7 @@ uv run python -m unittest discover -s tests
 
 ## Outputs
 - `out/incidents.json`: merged incident timeline records
+- `out/incidents.jsonl`: one JSON object per incident (default)
+- `out/incidents/`: per-incident JSON files when using `--incidents-format split`
 - `out/segments.csv`: per-status timeline segments for Gantt/phase views
 - `out/downtime_windows.csv`: downtime windows for incident bar charts
