@@ -1,17 +1,17 @@
 :root {
   color-scheme: light;
-  --bg: #f6f3ee;
-  --bg-2: #fefbf7;
-  --ink: #1b1b1f;
-  --muted: #5b5f6a;
+  --bg: #f6f8fa;
+  --bg-2: #ffffff;
+  --ink: #24292f;
+  --muted: #57606a;
   --card: #ffffff;
-  --border: #e5e0d7;
-  --accent: #2f6bff;
-  --operational: #2ea44f;
-  --minor: #f1a23a;
-  --major: #e0564a;
-  --maintenance: #3c78d8;
-  --shadow: 0 28px 60px -40px rgba(0, 0, 0, 0.4);
+  --border: #d0d7de;
+  --accent: #0969da;
+  --operational: #2da44e;
+  --minor: #d97706;
+  --major: #cf222e;
+  --maintenance: #1f6feb;
+  --shadow: 0 20px 40px -30px rgba(0, 0, 0, 0.35);
   --radius: 18px;
   --radius-sm: 12px;
   --mono: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
@@ -25,7 +25,7 @@
 body {
   margin: 0;
   font-family: var(--mono);
-  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%, #f1ece3 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 55%, #f6f8fa 100%);
   color: var(--ink);
   min-height: 100vh;
 }
@@ -42,7 +42,7 @@ a:hover {
 .grain {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   mix-blend-mode: multiply;
   z-index: 0;
@@ -166,7 +166,7 @@ main {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.85rem;
-  background: #e9f7ed;
+  background: #eaf6ec;
   color: var(--operational);
 }
 
@@ -234,7 +234,7 @@ main {
   background: var(--card);
   border-radius: var(--radius);
   padding: 24px 28px;
-  border: 1px solid #f0eee8;
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -281,7 +281,7 @@ main {
 .uptime-bars span {
   height: 26px;
   border-radius: 6px;
-  background: #dfe9df;
+  background: #dfe4ea;
   cursor: pointer;
   transition: transform 0.12s ease;
 }
@@ -296,7 +296,7 @@ main {
   position: absolute;
   min-width: 220px;
   max-width: 320px;
-  background: #fffdf9;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.5);
@@ -388,19 +388,19 @@ main {
 }
 
 .uptime-bars span.operational {
-  background: rgba(46, 164, 79, 0.7);
+  background: rgba(45, 164, 78, 0.85);
 }
 
 .uptime-bars span.minor {
-  background: rgba(241, 162, 58, 0.8);
+  background: rgba(217, 119, 6, 0.85);
 }
 
 .uptime-bars span.major {
-  background: rgba(224, 86, 74, 0.9);
+  background: rgba(207, 34, 46, 0.85);
 }
 
 .uptime-bars span.maintenance {
-  background: rgba(60, 120, 216, 0.8);
+  background: rgba(31, 111, 235, 0.85);
 }
 
 .uptime-axis {
@@ -453,7 +453,7 @@ main {
   background: var(--card);
   border-radius: var(--radius);
   padding: 22px 28px;
-  border: 1px solid #f0eee8;
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
@@ -477,7 +477,7 @@ main {
 .empty {
   padding: 20px;
   border-radius: var(--radius-sm);
-  background: #f8f6f2;
+  background: #f6f8fa;
   color: var(--muted);
   margin-top: 16px;
 }
@@ -496,7 +496,7 @@ main {
   border: 1px solid var(--border);
   padding: 14px 16px;
   margin-bottom: 10px;
-  background: #fbfaf7;
+  background: #ffffff;
 }
 
 .incident-title {
@@ -527,23 +527,23 @@ main {
 }
 
 .badge.minor {
-  background: rgba(241, 162, 58, 0.2);
-  color: #8a5505;
+  background: rgba(217, 119, 6, 0.16);
+  color: #8a4b00;
 }
 
 .badge.major {
-  background: rgba(224, 86, 74, 0.2);
-  color: #8a1e14;
+  background: rgba(207, 34, 46, 0.16);
+  color: #8a1f24;
 }
 
 .badge.maintenance {
-  background: rgba(60, 120, 216, 0.2);
-  color: #1f3f7d;
+  background: rgba(31, 111, 235, 0.16);
+  color: #1f4d8f;
 }
 
 .badge.none,
 .badge.operational {
-  background: rgba(46, 164, 79, 0.2);
+  background: rgba(45, 164, 78, 0.16);
   color: #1b5f33;
 }
 
@@ -574,8 +574,8 @@ main {
 .components span {
   padding: 4px 10px;
   border-radius: 999px;
-  background: #f3f0ea;
-  border: 1px solid #e3ddd2;
+  background: #f6f8fa;
+  border: 1px solid var(--border);
 }
 
 details {
