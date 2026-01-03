@@ -1,0 +1,609 @@
+incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
+9632825,2022-03-26T01:43:00Z,2022-03-26T03:35:00Z,112,updates,Incident with Codespaces,minor
+9630129,2022-03-25T17:35:00Z,2022-03-28T15:02:00Z,4167,updates,Team Synchronization for GitHub is Paused,maintenance
+9622130,2022-03-24T19:11:00Z,2022-03-28T15:02:00Z,5511,updates,Migrations to GitHub are Paused,maintenance
+9629077,2022-03-25T15:31:00Z,2022-03-28T15:03:00Z,4292,updates,Scheduled Maintenance for GitHub Actions,maintenance
+9649877,2022-03-28T16:02:00Z,2022-03-28T20:09:00Z,247,updates,Incident with GitHub Pages,minor
+9656609,2022-03-29T10:26:00Z,2022-03-29T11:23:00Z,57,updates,Incident with GitHub Actions,major
+9668510,2022-03-30T16:21:00Z,2022-03-30T19:20:00Z,179,updates,Incident with GitHub Actions,minor
+9683123,2022-04-01T07:07:00Z,2022-04-01T12:39:00Z,332,updates,Incident with Codespaces,major
+9722689,2022-04-06T15:25:00Z,2022-04-06T15:34:00Z,9,updates,Incident with GitHub Pages,minor
+9723156,2022-04-06T16:37:00Z,2022-04-09T01:00:00Z,3383,updates,Scheduled Maintenance for GitHub Actions,maintenance
+9769203,2022-04-12T16:33:00Z,2022-04-12T18:46:00Z,133,updates,Incident with GitHub Actions,minor
+9778392,2022-04-13T20:35:00Z,2022-04-14T01:28:00Z,293,updates,Incident with GitHub Actions and Codespaces,minor
+9812322,2022-04-19T14:10:00Z,2022-04-19T18:42:00Z,272,updates,Incident with Codespaces,minor
+9848679,2022-04-25T08:59:00Z,2022-04-25T14:07:00Z,308,updates,Incident with GitHub Packages and GitHub Pages,none
+9861926,2022-04-27T03:40:00Z,2022-04-27T04:56:00Z,76,updates,Incident with Codespaces,minor
+9967638,2022-05-11T15:55:00Z,2022-05-11T17:48:00Z,113,updates,Incident with Pull Requests and Webhooks,minor
+9978751,2022-05-12T21:11:00Z,2022-05-16T21:00:00Z,5749,updates,Insights charts maintenance,maintenance
+10014951,2022-05-17T21:31:00Z,2022-05-17T22:15:00Z,44,updates,Incident with GitHub Actions,minor
+10035829,2022-05-20T09:44:00Z,2022-05-20T10:34:00Z,50,updates,Incident with GitHub Packages and GitHub Pages,major
+10066560,2022-05-24T18:59:00Z,2022-05-24T21:56:00Z,177,updates,Incident with Codespaces,minor
+10070972,2022-05-25T10:13:00Z,2022-05-25T13:30:00Z,197,updates,Incident with GitHub Packages,minor
+10085324,2022-05-27T04:26:00Z,2022-05-27T04:47:00Z,21,updates,Incident with API Requests,major
+10086238,2022-05-27T07:36:00Z,2022-05-27T08:57:00Z,81,updates,"Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks",major
+10122187,2022-06-01T09:40:00Z,2022-06-01T10:28:00Z,48,updates,Incident with GitHub Actions,major
+10187767,2022-06-08T18:48:00Z,2022-06-08T19:13:00Z,25,updates,Incident with Codespaces,minor
+10262931,2022-06-13T11:28:00Z,2022-06-13T13:52:00Z,144,updates,Incident with GitHub Actions,minor
+10266025,2022-06-13T15:13:00Z,2022-06-13T15:41:00Z,28,updates,Incident with GitHub Packages,minor
+10330972,2022-06-17T03:54:00Z,2022-06-17T06:06:00Z,132,updates,Incident with GitHub Actions,minor
+10356121,2022-06-20T01:45:00Z,2022-06-20T03:53:00Z,128,updates,Incident with Codespaces,minor
+10362851,2022-06-20T20:45:00Z,2022-06-20T23:02:00Z,137,updates,Incident with GitHub Actions and Webhooks,minor
+10367914,2022-06-21T08:55:00Z,2022-06-21T12:22:00Z,207,updates,Incident with GitHub Actions,minor
+10371759,2022-06-21T17:02:00Z,2022-06-21T18:12:00Z,70,updates,Incident with Copilot,major
+10378306,2022-06-22T12:12:00Z,2022-06-22T12:57:00Z,45,updates,Incident with GitHub Packages and GitHub Pages,minor
+10423620,2022-06-28T17:16:00Z,2022-06-28T17:42:00Z,26,updates,Incident with Codespaces,major
+10436094,2022-06-29T14:48:00Z,2022-06-29T16:15:00Z,87,updates,"Incident with GitHub Actions, API Requests, Codespaces, Git Operations, GitHub Packages, and GitHub Pages",major
+10436807,2022-06-29T16:24:00Z,2022-06-29T19:56:00Z,212,updates,GitHub Enterprise Importer Maintenance,maintenance
+10449408,2022-07-01T09:30:00Z,2022-07-01T09:48:00Z,18,updates,Incident with Git Operations and Issues,minor
+10625640,2022-07-18T14:39:00Z,2022-07-18T16:09:00Z,90,updates,Incident with GitHub Actions,minor
+10704395,2022-07-27T22:29:00Z,2022-07-28T06:24:00Z,475,updates,Incident with Codespaces,minor
+10793447,2022-08-10T00:17:00Z,2022-08-10T01:30:00Z,73,updates,"Incident with Actions, API Requests, Pages and Pull Requests",minor
+10829333,2022-08-15T10:50:00Z,2022-08-15T13:18:00Z,148,updates,Incident with Codespaces,minor
+10837590,2022-08-16T13:38:00Z,2022-08-16T16:32:00Z,174,updates,Incident with Codespaces,minor
+10847032,2022-08-17T17:19:00Z,2022-08-17T17:27:00Z,8,updates,Incident with Pull Requests,minor
+10853547,2022-08-18T14:33:00Z,2022-08-18T17:36:00Z,183,updates,Incident with Actions,minor
+10864694,2022-08-20T03:04:00Z,2022-08-20T03:24:00Z,20,updates,Incident with API Requests,minor
+10876329,2022-08-21T17:07:00Z,2022-08-21T19:18:00Z,131,updates,Incident with Codespaces,minor
+10902590,2022-08-24T18:09:00Z,2022-08-24T18:26:00Z,17,updates,Incident with Actions,minor
+10919847,2022-08-25T14:10:00Z,2022-08-25T15:29:00Z,79,updates,Incident with Actions,minor
+10931958,2022-08-25T23:11:00Z,2022-08-25T23:35:00Z,24,updates,Incident with Actions and Pages,minor
+11010167,2022-08-29T12:51:00Z,2022-08-29T18:31:00Z,340,updates,Incident with Codespaces,major
+11067887,2022-09-06T22:05:00Z,2022-09-06T22:20:00Z,15,updates,Incident on 2022-09-06 22:05 UTC,minor
+11068157,2022-09-06T22:56:00Z,2022-09-07T00:08:00Z,72,updates,Incident on 2022-09-06 22:56 UTC,minor
+11069950,2022-09-07T05:56:00Z,2022-09-07T08:45:00Z,169,updates,Incident with Packages,minor
+11071962,2022-09-07T11:55:00Z,2022-09-07T12:21:00Z,26,updates,Incident with Issues,minor
+11073303,2022-09-07T15:02:00Z,2022-09-07T16:16:00Z,74,updates,Incident with Actions,minor
+11073325,2022-09-07T15:04:00Z,2022-09-08T00:00:00Z,536,updates,Incident on 2022-09-07 15:04 UTC,none
+11083702,2022-09-08T19:44:00Z,2022-09-09T01:12:00Z,328,updates,Incident with Pull Requests,minor
+11120967,2022-09-13T15:57:00Z,2022-09-14T18:05:00Z,1568,updates,Incident on 2022-09-13,none
+11120525,2022-09-13T15:10:00Z,2022-09-13T16:08:00Z,58,updates,Incident with Issues,minor
+11189649,2022-09-20T08:03:00Z,2022-09-20T08:04:00Z,1,updates,Incident with Actions,minor
+11192142,2022-09-20T12:10:00Z,2022-09-20T14:15:00Z,125,updates,An update from GitHub,none
+11224125,2022-09-22T19:04:00Z,2022-09-22T22:23:00Z,199,updates,Incident with Issues and Pull Requests,minor
+11286596,2022-09-27T14:33:00Z,2022-09-27T15:06:00Z,33,updates,Incident with Actions,minor
+11294323,2022-09-28T03:53:00Z,2022-09-28T05:09:00Z,76,updates,Incident with Codespaces,minor
+11302308,2022-09-28T17:22:00Z,2022-09-28T19:56:00Z,154,updates,Incident with Codespaces,major
+11413491,2022-10-04T15:04:00Z,2022-10-04T15:54:00Z,50,updates,Incident with Codespaces,minor
+11430054,2022-10-04T20:34:00Z,2022-10-04T21:34:00Z,60,updates,Incident with Codespaces,minor
+11314069,2022-09-29T14:04:00Z,2022-10-05T05:00:00Z,8096,updates,GitHub Enterprise Importer Maintenance,maintenance
+11457811,2022-10-05T06:30:00Z,2022-10-05T07:01:00Z,31,updates,Incident with Actions,major
+11473013,2022-10-05T13:19:00Z,2022-10-05T17:41:00Z,262,updates,Incident with Actions,minor
+11532198,2022-10-06T10:48:00Z,2022-10-06T11:40:00Z,52,updates,Incident with Actions,minor
+11919354,2022-10-12T23:27:00Z,2022-10-13T02:58:00Z,211,updates,Incident with Codespaces,major
+11978369,2022-10-13T20:47:00Z,2022-10-13T21:30:00Z,43,updates,Incident with Issues,major
+12254530,2022-10-18T15:53:00Z,2022-10-18T16:16:00Z,23,updates,Incident with Actions,minor
+12319842,2022-10-19T17:39:00Z,2022-10-19T20:23:00Z,164,updates,Incident with API Requests,minor
+12460634,2022-10-21T23:06:00Z,2022-10-21T23:59:00Z,53,updates,Incident with Git Operations,minor
+12546104,2022-10-23T14:18:00Z,2022-10-23T17:36:00Z,198,updates,Incident with Codespaces,minor
+12613890,2022-10-25T17:19:00Z,2022-10-25T18:44:00Z,85,updates,Incident with Issues and Pull Requests,minor
+12618394,2022-10-26T00:47:00Z,2022-10-26T04:34:00Z,227,updates,Incident with Codespaces and Issues,major
+12624069,2022-10-26T14:07:00Z,2022-10-26T14:40:00Z,33,updates,Incident with Issues,minor
+12631333,2022-10-27T04:59:00Z,2022-10-27T06:31:00Z,92,updates,Incident with Pull Requests,minor
+12382877,2022-10-20T16:54:00Z,2022-10-27T16:00:00Z,10026,updates,GitHub Importer Maintenance,maintenance
+12686329,2022-11-01T19:46:00Z,2022-11-01T21:25:00Z,99,updates,Incident with Issues and Pull Requests,minor
+12707425,2022-11-03T16:10:00Z,2022-11-03T16:38:00Z,28,updates,Incident with Actions,major
+12707861,2022-11-03T16:54:00Z,2022-11-03T17:12:00Z,18,updates,Incident with Actions,minor
+12637627,2022-10-27T17:00:00Z,2022-11-04T04:01:00Z,10741,updates,GitHub Importer Maintenance,maintenance
+12721331,2022-11-04T23:41:00Z,2022-11-04T23:56:00Z,15,updates,Incident with Codespaces,minor
+12732564,2022-11-06T08:54:00Z,2022-11-06T09:13:00Z,19,updates,Incident with Issues,minor
+12739088,2022-11-07T04:41:00Z,2022-11-07T05:12:00Z,31,updates,Incident with Git Operations and Pull Requests,minor
+12746148,2022-11-07T19:07:00Z,2022-11-07T20:06:00Z,59,updates,Incident with Issues,minor
+12746857,2022-11-07T20:29:00Z,2022-11-08T01:21:00Z,292,updates,Incident on 2022-11-07 19:07 UTC,none
+12760686,2022-11-09T01:45:00Z,2022-11-09T01:53:00Z,8,updates,"Incident with Actions, API Requests, Codespaces, Copilot, Git Operations, Issues, Packages, Pages, Pull Requests and Webhooks",minor
+13134177,2022-11-15T14:32:00Z,2022-11-15T15:53:00Z,81,updates,Incident with Codespaces,minor
+13321900,2022-11-18T03:59:00Z,2022-11-18T04:11:00Z,12,updates,Incident with Actions,minor
+13506127,2022-11-20T19:23:00Z,2022-11-20T19:55:00Z,32,updates,Incident with Codespaces,minor
+13670974,2022-11-25T04:13:00Z,2022-11-25T06:24:00Z,131,updates,Incident with Copilot,minor
+13673551,2022-11-25T14:39:00Z,2022-11-25T16:34:00Z,115,updates,Incident with Packages and Pages,major
+13694881,2022-11-26T00:46:00Z,2022-11-26T01:41:00Z,55,updates,Incident with Copilot,minor
+13866274,2022-11-28T14:19:00Z,2022-11-28T14:49:00Z,30,updates,Incident with Actions,minor
+13945716,2022-11-29T16:43:00Z,2022-11-29T17:05:00Z,22,updates,Incident with Codespaces,minor
+14012953,2022-11-30T16:02:00Z,2022-11-30T17:13:00Z,71,updates,Investigating reports of degraded performance.,none
+14426337,2022-12-05T17:31:00Z,2022-12-05T18:40:00Z,69,updates,Incident with Git Operations and Pull Requests,minor
+14513407,2022-12-06T17:53:00Z,2022-12-06T20:58:00Z,185,updates,Incident with Codespaces,minor
+14792978,2022-12-10T02:37:00Z,2022-12-10T03:00:00Z,23,updates,Incident with Issues and Pull Requests,minor
+15101486,2022-12-13T17:39:00Z,2022-12-13T18:43:00Z,64,updates,Incident with Git Operations and Pull Requests,minor
+15271570,2022-12-15T19:42:00Z,2022-12-15T20:00:00Z,18,updates,Incident with API Requests,minor
+15272710,2022-12-15T20:00:00Z,2022-12-15T20:37:00Z,37,updates,Investigating reports of degraded performance.,none
+15610630,2022-12-20T00:09:00Z,2022-12-20T01:38:00Z,89,updates,Incident with Actions,minor
+15635370,2022-12-20T06:55:00Z,2022-12-20T07:58:00Z,63,updates,Incident with Actions,minor
+15746143,2022-12-31T00:07:00Z,2022-12-31T01:47:00Z,100,updates,Incident with Codespaces,minor
+15753394,2023-01-01T16:33:00Z,2023-01-01T18:28:00Z,115,updates,Incident with Codespaces,minor
+15793354,2023-01-07T22:50:00Z,2023-01-07T23:30:00Z,40,updates,Incident with Actions,minor
+15812232,2023-01-10T17:04:00Z,2023-01-10T18:14:00Z,70,updates,Incident with Actions and Git Operations,minor
+15824287,2023-01-12T03:59:00Z,2023-01-12T04:55:00Z,56,updates,Incident with Copilot,minor
+15843556,2023-01-14T15:13:00Z,2023-01-14T16:58:00Z,105,updates,Incident with Codespaces,minor
+15855305,2023-01-16T15:51:00Z,2023-01-16T16:43:00Z,52,updates,Incident with Actions,minor
+15875011,2023-01-18T18:16:00Z,2023-01-18T20:16:00Z,120,updates,Incident with Copilot,minor
+15877748,2023-01-19T01:48:00Z,2023-01-19T02:21:00Z,33,updates,Incident with Actions and Pages,minor
+15883847,2023-01-19T15:57:00Z,2023-01-19T20:51:00Z,294,updates,"Incident with Actions, Git Operations and Pages",minor
+15928732,2023-01-25T07:53:00Z,2023-01-25T09:10:00Z,77,updates,"Incident with Actions, API Requests, Codespaces and Copilot",minor
+15929867,2023-01-25T09:14:00Z,2023-01-25T10:39:00Z,85,updates,Incident with Actions,minor
+15936935,2023-01-25T23:59:00Z,2023-01-26T00:38:00Z,39,updates,Incident with API Requests and Pull Requests,minor
+15957215,2023-01-28T02:40:00Z,2023-01-28T05:06:00Z,146,updates,Incident with Packages,minor
+15960043,2023-01-28T10:59:00Z,2023-01-28T11:45:00Z,46,updates,Incident with Codespaces,minor
+15973500,2023-01-30T12:07:00Z,2023-01-30T17:12:00Z,305,updates,Incident with Actions,minor
+15978513,2023-01-30T21:48:00Z,2023-01-30T22:23:00Z,35,updates,Incident with Packages and Pages,major
+15985108,2023-01-31T14:06:00Z,2023-01-31T21:23:00Z,437,updates,Incident with Codespaces,minor
+15990553,2023-02-01T00:54:00Z,2023-02-01T01:11:00Z,17,updates,Incident with Webhooks,minor
+16005673,2023-02-02T11:29:00Z,2023-02-02T11:55:00Z,26,updates,Investigating reports of degraded performance.,none
+16008216,2023-02-02T16:15:00Z,2023-02-02T20:02:00Z,227,updates,Investigating reports of degraded performance.,none
+16039321,2023-02-06T09:50:00Z,2023-02-06T10:55:00Z,65,updates,Incident with Codespaces,minor
+16046306,2023-02-06T21:49:00Z,2023-02-06T22:56:00Z,67,updates,Incident with Actions,minor
+16055870,2023-02-07T17:26:00Z,2023-02-07T18:17:00Z,51,updates,Incident with Actions,minor
+16056438,2023-02-07T18:40:00Z,2023-02-07T19:18:00Z,38,updates,Incident with Codespaces,minor
+16057746,2023-02-07T21:30:00Z,2023-02-08T17:05:00Z,1175,updates,Incident with Codespaces,minor
+16051676,2023-02-07T10:08:00Z,2023-02-09T09:09:00Z,2821,updates,Planned maintenance on GitHub Package Registry,maintenance
+16114824,2023-02-13T03:09:00Z,2023-02-13T03:34:00Z,25,updates,Incident with Issues and Pull Requests,minor
+16139141,2023-02-14T19:00:00Z,2023-02-14T19:16:00Z,16,updates,Incident with Git Operations,minor
+16141249,2023-02-15T00:04:00Z,2023-02-15T00:17:00Z,13,updates,Incident with Codespaces,minor
+16170432,2023-02-17T00:35:00Z,2023-02-17T00:50:00Z,15,updates,Incident with Git Operations,minor
+16184432,2023-02-18T03:45:00Z,2023-02-18T05:02:00Z,77,updates,"Incident with Actions, API Requests, code-scanning, Codespaces, Issues, orgs, Packages, Pages, Pull Requests, repositories, teams and Webhooks",major
+16184971,2023-02-18T05:18:00Z,2023-02-18T05:29:00Z,11,updates,Incident with Actions,minor
+16196728,2023-02-19T13:54:00Z,2023-02-19T14:38:00Z,44,updates,Incident with Actions and Pull Requests,minor
+16297985,2023-02-27T20:53:00Z,2023-02-27T23:48:00Z,175,updates,Incident with Packages,minor
+16306253,2023-02-28T16:05:00Z,2023-02-28T17:31:00Z,86,updates,Incident with Actions and Codespaces,major
+16307208,2023-02-28T17:55:00Z,2023-02-28T18:08:00Z,13,updates,Incident with Codespaces,minor
+16313724,2023-03-01T12:19:00Z,2023-03-01T15:26:00Z,187,updates,Incident with Packages and Pages,major
+16326398,2023-03-02T18:26:00Z,2023-03-02T18:43:00Z,17,updates,Incident with Git Operations,minor
+16328275,2023-03-02T23:37:00Z,2023-03-03T01:55:00Z,138,updates,Incident with Actions and Pages,major
+16335004,2023-03-03T17:32:00Z,2023-03-03T21:14:00Z,222,updates,Investigating reports of degraded performance.,none
+16351646,2023-03-06T08:39:00Z,2023-03-06T09:19:00Z,40,updates,Incident with Codespaces,minor
+16354562,2023-03-06T14:43:00Z,2023-03-06T16:14:00Z,91,updates,Incident with Codespaces,minor
+16379765,2023-03-07T18:20:00Z,2023-03-07T18:54:00Z,34,updates,Incident with Git Operations,minor
+16402015,2023-03-09T14:34:00Z,2023-03-09T16:36:00Z,122,updates,Incident with Webhooks,minor
+16511954,2023-03-15T14:07:00Z,2023-03-15T15:27:00Z,80,updates,"Incident with Actions, Packages and Pages",major
+16577028,2023-03-20T15:56:00Z,2023-03-20T17:01:00Z,65,updates,"Incident with API Requests, Git Operations, Issues and Pull Requests",minor
+16594489,2023-03-21T17:22:00Z,2023-03-21T17:43:00Z,21,updates,Incident with Codespaces,minor
+16610486,2023-03-22T20:23:00Z,2023-03-22T22:41:00Z,138,updates,Incident with Codespaces,minor
+16613916,2023-03-23T03:51:00Z,2023-03-23T04:55:00Z,64,updates,Incident with Codespaces,minor
+16628502,2023-03-24T08:27:00Z,2023-03-24T08:42:00Z,15,updates,Incident with Actions,minor
+16635620,2023-03-24T20:49:00Z,2023-03-24T21:10:00Z,21,updates,Incident with Pages,minor
+16654849,2023-03-26T22:13:00Z,2023-03-26T22:27:00Z,14,updates,Incident with Packages,minor
+16662130,2023-03-27T12:25:00Z,2023-03-27T13:29:00Z,64,updates,"Incident with Actions, API Requests, Codespaces, Git Operations, Issues, Pages and Pull Requests",major
+16677649,2023-03-28T15:45:00Z,2023-03-28T17:07:00Z,82,updates,Incident with Actions,minor
+16687746,2023-03-29T14:21:00Z,2023-03-29T19:03:00Z,282,updates,"Incident with Actions, Codespaces and Pages",major
+16703381,2023-03-31T01:16:00Z,2023-03-31T02:08:00Z,52,updates,"Incident with Git Operations, Issues and Pull Requests",minor
+16739973,2023-04-03T18:35:00Z,2023-04-03T19:00:00Z,25,updates,Incident with Actions and Pages,minor
+16741255,2023-04-03T20:57:00Z,2023-04-03T22:41:00Z,104,updates,Incident with Git Operations,minor
+16893018,2023-04-17T17:17:00Z,2023-04-17T17:42:00Z,25,updates,Incident with Codespaces,minor
+16894154,2023-04-17T19:28:00Z,2023-04-17T19:53:00Z,25,updates,Incident with Actions and Pages,minor
+16899764,2023-04-18T09:28:00Z,2023-04-18T09:51:00Z,23,updates,"Incident with Git Operations, Issues and Pull Requests",major
+16902322,2023-04-18T14:35:00Z,2023-04-18T15:29:00Z,54,updates,"Incident with Actions, Issues, Pull Requests and Webhooks",minor
+16913590,2023-04-19T18:28:00Z,2023-04-19T19:27:00Z,59,updates,Incident with Actions,minor
+16951843,2023-04-24T12:57:00Z,2023-04-24T13:27:00Z,30,updates,Incident with Actions,minor
+16956296,2023-04-24T21:14:00Z,2023-04-25T03:18:00Z,364,updates,"Incident with Actions, API Requests, Copilot and Git Operations",minor
+16966884,2023-04-25T23:26:00Z,2023-04-26T00:29:00Z,63,updates,Incident with Copilot,major
+16979844,2023-04-27T08:59:00Z,2023-04-27T09:56:00Z,57,updates,Incident with Packages,major
+16992966,2023-04-28T12:26:00Z,2023-04-28T12:45:00Z,19,updates,Incident with Codespaces,major
+17121215,2023-05-02T14:58:00Z,2023-05-02T15:49:00Z,51,updates,Incident with Actions,minor
+17144928,2023-05-04T15:55:00Z,2023-05-04T16:23:00Z,28,updates,"Incident with Actions, API Requests, Codespaces, Copilot, Git Operations, Issues, Pages, Pull Requests and Webhooks",major
+17190148,2023-05-09T08:07:00Z,2023-05-09T10:04:00Z,117,updates,Incident with Pull Requests,minor
+17191819,2023-05-09T11:32:00Z,2023-05-09T21:14:00Z,582,updates,"Incident with Actions, API Requests, Codespaces, Git Operations, Issues, Pages, Pull Requests and Webhooks",major
+17200197,2023-05-09T22:39:00Z,2023-05-10T00:06:00Z,87,updates,Incident with Git Operations,minor
+17206638,2023-05-10T13:00:00Z,2023-05-11T00:34:00Z,694,updates,"Incident with Actions, API Requests, Codespaces, Git Operations, Pages and Pull Requests",minor
+17218594,2023-05-11T13:33:00Z,2023-05-11T19:00:00Z,327,updates,"Incident with Actions, API Requests, Codespaces, Git Operations, Issues, Pages, Pull Requests and Webhooks",minor
+17258797,2023-05-15T20:14:00Z,2023-05-15T20:28:00Z,14,updates,Incident with Copilot,minor
+17270782,2023-05-16T21:14:00Z,2023-05-16T21:32:00Z,18,updates,"Incident with Actions, API Requests, Codespaces, Git Operations, Issues, Pages and Pull Requests",major
+17275191,2023-05-17T07:36:00Z,2023-05-17T09:58:00Z,142,updates,Incident with Codespaces,minor
+17503553,2023-06-07T16:45:00Z,2023-06-07T18:39:00Z,114,updates,"Incident with Actions, Pull Requests and Webhooks",major
+17511886,2023-06-08T11:58:00Z,2023-06-08T12:55:00Z,57,updates,Incident with Pull Requests,minor
+17526931,2023-06-09T22:18:00Z,2023-06-09T23:17:00Z,59,updates,Incident with Pull Requests,minor
+17552632,2023-06-12T22:43:00Z,2023-06-13T00:17:00Z,94,updates,Incident with Actions and Pages,minor
+17584543,2023-06-15T16:34:00Z,2023-06-15T16:57:00Z,23,updates,Incident with Pages,minor
+17585950,2023-06-15T19:22:00Z,2023-06-15T19:36:00Z,14,updates,Incident with Copilot,minor
+17598715,2023-06-16T23:46:00Z,2023-06-16T23:59:00Z,13,updates,Investigating reports of degraded performance.,none
+17624479,2023-06-19T22:47:00Z,2023-06-19T23:09:00Z,22,updates,Incident with Actions,minor
+17678039,2023-06-25T06:40:00Z,2023-06-25T07:01:00Z,21,updates,Incident with Actions and Pull Requests,minor
+17708219,2023-06-28T11:21:00Z,2023-06-28T11:37:00Z,16,updates,Incident with Issues and Pull Requests,minor
+17713701,2023-06-28T22:59:00Z,2023-06-29T06:43:00Z,464,updates,"Incident with Actions, API Requests and Pages",minor
+17720747,2023-06-29T14:51:00Z,2023-06-29T17:19:00Z,148,updates,Incident with Actions,minor
+17722171,2023-06-29T17:52:00Z,2023-06-29T18:36:00Z,44,updates,Incident On 2023-06-29,critical
+17752430,2023-07-03T13:18:00Z,2023-07-03T13:47:00Z,29,updates,Incident with Pull Requests,minor
+17767486,2023-07-05T05:54:00Z,2023-07-05T11:37:00Z,343,updates,Incident with Pull Requests,minor
+17791514,2023-07-07T15:53:00Z,2023-07-07T17:15:00Z,82,updates,Incident with Pull Requests,minor
+17836340,2023-07-12T17:38:00Z,2023-07-12T18:08:00Z,30,updates,Incident with Codespaces,minor
+17890412,2023-07-18T15:44:00Z,2023-07-18T16:44:00Z,60,updates,Incident with Git Operations and Pull Requests,minor
+17922271,2023-07-21T13:12:00Z,2023-07-21T14:01:00Z,49,updates,"Incident with Actions, API Requests, Git Operations, Packages, Pages and Pull Requests",minor
+17959889,2023-07-25T22:33:00Z,2023-07-25T22:43:00Z,10,updates,Investigating reports of degraded performance.,none
+17965932,2023-07-26T13:50:00Z,2023-07-26T15:04:00Z,74,updates,Incident with Pull Requests,minor
+17980092,2023-07-27T22:04:00Z,2023-07-28T01:08:00Z,184,updates,Incident with Pull Requests,minor
+17984154,2023-07-28T09:31:00Z,2023-07-28T10:00:00Z,29,updates,Incident with Issues,minor
+17986381,2023-07-28T14:49:00Z,2023-07-28T15:45:00Z,56,updates,Incident with Pull Requests,minor
+18024095,2023-08-01T20:12:00Z,2023-08-01T20:28:00Z,16,updates,Incident with Copilot,minor
+18098471,2023-08-09T19:42:00Z,2023-08-09T20:14:00Z,32,updates,Incident with Git Operations and Actions,minor
+18107886,2023-08-10T17:35:00Z,2023-08-10T21:20:00Z,225,updates,Incident with Webhooks and Actions,minor
+18119831,2023-08-11T20:44:00Z,2023-08-11T21:41:00Z,57,updates,We are investigating reports of degraded performance.,minor
+18154445,2023-08-15T17:24:00Z,2023-08-15T17:41:00Z,17,updates,Incident with Webhooks,minor
+18154446,2023-08-15T17:24:00Z,2023-08-15T21:46:00Z,262,updates,Incident with Webhooks,minor
+18176434,2023-08-17T18:36:00Z,2023-08-17T19:09:00Z,33,updates,Incident with Actions,minor
+18176671,2023-08-17T19:12:00Z,2023-08-17T19:28:00Z,16,updates,We are investigating reports of degraded performance.,minor
+18212482,2023-08-21T17:27:00Z,2023-08-21T18:41:00Z,74,updates,Incident with Actions,minor
+18222663,2023-08-22T15:59:00Z,2023-08-22T17:01:00Z,62,updates,Incident with Actions,minor
+18234104,2023-08-23T15:38:00Z,2023-08-23T16:23:00Z,45,updates,Incident with Webhooks,minor
+18301056,2023-08-29T01:59:00Z,2023-08-29T02:36:00Z,37,updates,"Incident with Actions, Pull Requests and Webhooks",minor
+18308335,2023-08-29T15:13:00Z,2023-08-29T15:35:00Z,22,updates,Incident with Codespaces,minor
+18308926,2023-08-29T16:05:00Z,2023-08-29T16:16:00Z,11,updates,We are investigating reports of degraded performance.,minor
+18309893,2023-08-29T17:29:00Z,2023-08-29T21:58:00Z,269,updates,Incident with Webhooks,minor
+18323061,2023-08-30T16:45:00Z,2023-08-30T20:53:00Z,248,updates,Incident with Webhooks,minor
+18325445,2023-08-30T20:56:00Z,2023-08-30T21:04:00Z,8,updates,We are investigating reports of degraded performance.,minor
+18349696,2023-09-01T14:35:00Z,2023-09-01T15:06:00Z,31,updates,Incident with Codespaces,minor
+18383707,2023-09-04T14:21:00Z,2023-09-04T14:48:00Z,27,updates,Incident with Actions,minor
+18387515,2023-09-04T21:28:00Z,2023-09-04T21:56:00Z,28,updates,Incident with Actions,minor
+18390137,2023-09-05T03:18:00Z,2023-09-05T03:27:00Z,9,updates,Incident with Actions,minor
+18390565,2023-09-05T04:17:00Z,2023-09-05T05:10:00Z,53,updates,"Incident with API Requests, Pull Requests and Actions",minor
+18391769,2023-09-05T06:59:00Z,2023-09-05T14:19:00Z,440,updates,Incident with Git Operations and Actions,minor
+18397360,2023-09-05T16:30:00Z,2023-09-05T17:01:00Z,31,updates,"Incident with Actions, Pages, Pull Requests, Codespaces, API Requests, Issues, Webhooks and Packages",major
+18405639,2023-09-06T08:21:00Z,2023-09-06T11:41:00Z,200,updates,Incident with Git Operations,minor
+18413002,2023-09-06T20:32:00Z,2023-09-06T21:58:00Z,86,updates,Incident with Webhooks,minor
+18419904,2023-09-07T10:02:00Z,2023-09-07T10:38:00Z,36,updates,Incident with Git Operations,minor
+18486200,2023-09-13T03:45:00Z,2023-09-13T07:16:00Z,211,updates,Incident with Codespaces,minor
+18499199,2023-09-14T09:35:00Z,2023-09-14T10:21:00Z,46,updates,Incident with Codespaces,minor
+18539261,2023-09-18T21:16:00Z,2023-09-18T21:26:00Z,10,updates,Incident with Codespaces,minor
+18539350,2023-09-18T21:28:00Z,2023-09-18T21:33:00Z,5,updates,We are investigating reports of degraded performance.,minor
+18545635,2023-09-19T13:21:00Z,2023-09-19T14:04:00Z,43,updates,Incident with Pull Requests,minor
+18549324,2023-09-19T20:57:00Z,2023-09-20T04:28:00Z,451,updates,"Incident with Issues, API Requests and Git Operations",major
+18553979,2023-09-20T09:20:00Z,2023-09-20T09:33:00Z,13,updates,Incident with Actions,minor
+18559428,2023-09-20T20:21:00Z,2023-09-20T21:05:00Z,44,updates,Incident with Codespaces,minor
+18578590,2023-09-22T17:10:00Z,2023-09-22T17:39:00Z,29,updates,Incident with Pages,minor
+18616715,2023-09-27T00:23:00Z,2023-09-27T00:58:00Z,35,updates,Incident with Actions,minor
+18699288,2023-10-05T14:18:00Z,2023-10-05T16:42:00Z,144,updates,Incident with Pull Requests,minor
+18703944,2023-10-06T01:12:00Z,2023-10-06T02:59:00Z,107,updates,Incident with API Requests,minor
+18732977,2023-10-09T14:51:00Z,2023-10-09T15:18:00Z,27,updates,Incident with Pull Requests,minor
+18825532,2023-10-17T11:14:00Z,2023-10-17T13:49:00Z,155,updates,Incident with Codespaces,major
+18888976,2023-10-22T15:16:00Z,2023-10-22T16:07:00Z,51,updates,Incident with Git Operations,minor
+18923106,2023-10-25T12:10:00Z,2023-10-25T13:02:00Z,52,updates,Incident with Copilot,minor
+18927539,2023-10-25T20:50:00Z,2023-10-25T22:15:00Z,85,updates,Incident with Copilot,minor
+19011858,2023-11-03T16:10:00Z,2023-11-03T19:21:00Z,191,updates,"Incident with Git Operations, Issues, Pull Requests, Actions, API Requests, Codespaces, Packages, Pages and Webhooks",major
+19046007,2023-11-07T13:44:00Z,2023-11-07T14:25:00Z,41,updates,Incident with API Requests and Issues,minor
+19089302,2023-11-11T01:26:00Z,2023-11-11T02:14:00Z,48,updates,"Incident with Pages, Webhooks and Actions",minor
+19111238,2023-11-13T21:13:00Z,2023-11-13T21:38:00Z,25,updates,We are investigating reports of degraded performance.,minor
+19125900,2023-11-15T09:50:00Z,2023-11-15T11:34:00Z,104,updates,We are investigating reports of degraded performance.,minor
+19186262,2023-11-21T10:11:00Z,2023-11-21T11:27:00Z,76,updates,Incident with Actions,minor
+19228757,2023-11-27T19:43:00Z,2023-11-27T21:11:00Z,88,updates,"Incident with Pull Requests, Issues, Webhooks and Actions",minor
+19235767,2023-11-28T17:24:00Z,2023-11-28T17:59:00Z,35,updates,Incident with Actions and Webhooks,minor
+19236112,2023-11-28T18:09:00Z,2023-11-28T19:40:00Z,91,updates,We are investigating reports of degraded performance.,minor
+19262410,2023-12-01T15:49:00Z,2023-12-01T18:16:00Z,147,updates,Incident with Copilot,minor
+19474069,2023-12-18T21:17:00Z,2023-12-18T21:26:00Z,9,updates,Incident with Git Operations and Pull Requests,minor
+19483257,2023-12-19T21:12:00Z,2023-12-19T22:50:00Z,98,updates,"Incident with Packages, Issues, Pull Requests and Webhooks",minor
+19539585,2023-12-27T02:51:00Z,2023-12-27T03:06:00Z,15,updates,Incident with Codespaces and API Requests,minor
+19539589,2023-12-27T02:53:00Z,2023-12-27T04:00:00Z,67,updates,Incident with Codespaces,major
+19544647,2023-12-27T18:29:00Z,2023-12-27T19:25:00Z,56,updates,Incident with Pages,minor
+19548383,2023-12-28T06:43:00Z,2023-12-28T06:57:00Z,14,updates,We are investigating reports of degraded performance.,major
+19554848,2023-12-29T01:41:00Z,2023-12-29T02:04:00Z,23,updates,We are investigating reports of degraded performance.,minor
+19560110,2023-12-29T18:17:00Z,2023-12-29T18:33:00Z,16,updates,Incident with API Requests,minor
+19560904,2023-12-29T20:05:00Z,2023-12-29T21:21:00Z,76,updates,We are investigating reports of degraded performance.,minor
+19601822,2024-01-03T12:42:00Z,2024-01-03T17:05:00Z,263,updates,We are investigating reports of degraded performance.,minor
+19649919,2024-01-08T20:22:00Z,2024-01-08T23:41:00Z,199,updates,Incident with Codespaces,minor
+19653031,2024-01-09T04:59:00Z,2024-01-09T05:44:00Z,45,updates,We are investigating reports of degraded performance.,minor
+19656564,2024-01-09T13:02:00Z,2024-01-09T14:40:00Z,98,updates,"Incident with Issues, API Requests, Pull Requests, Actions, Pages, Git Operations, Webhooks, Packages and Codespaces",major
+19780875,2024-01-21T03:45:00Z,2024-01-21T06:19:00Z,154,updates,Incident with Actions,minor
+19780832,2024-01-21T03:38:00Z,2024-01-21T09:34:00Z,356,updates,Incident with Codespaces,major
+19807320,2024-01-23T15:50:00Z,2024-01-23T18:53:00Z,183,updates,We are investigating reports of degraded performance.,major
+19850844,2024-01-28T01:00:00Z,2024-01-28T14:00:00Z,780,postmortem,We are investigating reports of degraded performance.,minor
+19876035,2024-01-31T14:14:00Z,2024-01-31T14:57:00Z,43,updates,We are investigating reports of degraded performance.,major
+19881217,2024-02-01T03:13:00Z,2024-02-01T04:41:00Z,88,updates,We are investigating reports of degraded performance.,minor
+19910963,2024-02-05T09:40:00Z,2024-02-05T09:53:00Z,13,updates,Incident with Git Operations,minor
+19947047,2024-02-09T11:09:00Z,2024-02-09T11:28:00Z,19,updates,Incident with Webhooks,minor
+19966019,2024-02-12T11:38:00Z,2024-02-12T12:39:00Z,61,updates,Incident with Copilot,minor
+19966692,2024-02-12T13:28:00Z,2024-02-12T18:14:00Z,286,updates,Incident with Copilot,minor
+20040093,2024-02-21T17:20:00Z,2024-02-21T17:30:00Z,10,updates,Incident with Actions,minor
+20081184,2024-02-26T18:34:00Z,2024-02-26T19:37:00Z,63,postmortem,"Incident with Webhooks, Actions, Pull Requests and Issues",major
+20082035,2024-02-26T21:01:00Z,2024-02-26T21:40:00Z,39,updates,We are investigating reports of degraded performance.,major
+20105717,2024-02-29T10:33:00Z,2024-02-29T12:27:00Z,114,updates,"Incident with Issues, Webhooks and Actions",minor
+20132654,2024-03-01T14:17:00Z,2024-03-01T15:54:00Z,97,postmortem,"Incident with Pull Requests, Actions and Issues",minor
+20135877,2024-03-01T17:00:00Z,2024-03-01T17:42:00Z,42,postmortem,"Incident with API Requests, Copilot, Git Operations, Actions and Pages",minor
+20212410,2024-03-11T06:30:00Z,2024-03-11T11:45:00Z,315,postmortem,Incident with Copilot,minor
+20217989,2024-03-11T19:02:00Z,2024-03-11T19:22:00Z,20,updates,Incident with Actions,minor
+20219651,2024-03-11T23:01:00Z,2024-03-12T01:00:00Z,119,updates,"Incident with API Requests, Git Operations, Webhooks and Copilot",major
+20229283,2024-03-12T23:39:00Z,2024-03-13T01:58:00Z,139,updates,Incident with Pull Requests,minor
+20272496,2024-03-15T19:42:00Z,2024-03-15T20:24:00Z,42,postmortem,Incident with Codespaces and API Requests,major
+20272593,2024-03-15T20:07:00Z,2024-03-15T20:28:00Z,21,updates,Incident with Actions and Pages,minor
+20443672,2024-04-03T23:59:00Z,2024-04-04T01:10:00Z,71,updates,"Incident with Actions, API Requests and Webhooks",minor
+20455824,2024-04-05T08:28:00Z,2024-04-05T08:48:00Z,20,updates,"Incident with Issues, API Requests, Pull Requests and Codespaces",minor
+20455837,2024-04-05T08:31:00Z,2024-04-05T08:53:00Z,22,updates,We are investigating reports of degraded performance.,major
+20455850,2024-04-05T08:33:00Z,2024-04-05T09:18:00Z,45,updates,"Incident with Pages, Actions, Codespaces, API Requests, Issues and Pull Requests",major
+20462209,2024-04-06T01:52:00Z,2024-04-06T02:22:00Z,30,updates,Incident with Pages,minor
+20483650,2024-04-09T04:32:00Z,2024-04-09T05:10:00Z,38,postmortem,We are investigating reports of degraded performance.,minor
+20489412,2024-04-09T18:36:00Z,2024-04-09T20:17:00Z,101,updates,Incident with Actions,minor
+20494482,2024-04-10T09:22:00Z,2024-04-10T09:38:00Z,16,updates,Incident with Issues and Pull Requests,major
+20497442,2024-04-10T16:12:00Z,2024-04-10T18:07:00Z,115,updates,Incident with Codespaces,minor
+20498552,2024-04-10T18:41:00Z,2024-04-10T19:03:00Z,22,updates,"Incident with Git Operations, API Requests, Actions, Pages, Issues and Copilot",major
+20530168,2024-04-14T14:21:00Z,2024-04-14T21:53:00Z,452,updates,We are investigating reports of degraded performance.,major
+20537427,2024-04-15T12:58:00Z,2024-04-15T14:53:00Z,115,updates,Incident with Copilot,minor
+20551752,2024-04-16T23:51:00Z,2024-04-17T00:48:00Z,57,updates,Incident with Copilot,minor
+20571321,2024-04-18T18:25:00Z,2024-04-18T18:47:00Z,22,updates,Incident with Codespaces,minor
+20621931,2024-04-24T10:56:00Z,2024-04-24T11:01:00Z,5,updates,Incident with Git Operations,minor
+20621859,2024-04-24T10:45:00Z,2024-04-24T16:16:00Z,331,updates,"Incident with Pull Requests, Git Operations, Actions, API Requests, Issues and Webhooks",minor
+20625392,2024-04-24T17:40:00Z,2024-04-24T18:20:00Z,40,updates,Incident with Pull Requests,minor
+20642925,2024-04-26T15:10:00Z,2024-04-26T16:49:00Z,99,updates,We are investigating reports of degraded performance.,minor
+20693830,2024-05-02T19:07:00Z,2024-05-03T02:45:00Z,458,updates,We are investigating reports of degraded performance.,minor
+20730441,2024-05-07T14:23:00Z,2024-05-07T15:55:00Z,92,updates,"Incident with Issues, API Requests and Pull Requests",minor
+20775725,2024-05-13T13:23:00Z,2024-05-13T15:44:00Z,141,updates,Incident with Copilot,minor
+20778761,2024-05-13T19:03:00Z,2024-05-13T19:57:00Z,54,postmortem,Incident with Actions,minor
+20787399,2024-05-14T18:37:00Z,2024-05-14T21:04:00Z,147,updates,We are investigating reports of degraded performance.,minor
+20800199,2024-05-16T04:10:00Z,2024-05-16T05:02:00Z,52,postmortem,Incident with Actions,minor
+20833952,2024-05-20T16:47:00Z,2024-05-20T17:05:00Z,18,updates,We are investigating reports of degraded performance.,minor
+20841162,2024-05-21T11:40:00Z,2024-05-21T19:06:00Z,446,postmortem,Incident with Actions,minor
+20863096,2024-05-23T15:31:00Z,2024-05-23T16:02:00Z,31,updates,Incident with Codespaces,minor
+20910208,2024-05-28T20:17:00Z,2024-05-28T21:24:00Z,67,updates,Incident with Codespaces,minor
+20938285,2024-05-30T17:14:00Z,2024-05-30T17:22:00Z,8,updates,Incident with Copilot,minor
+21009829,2024-06-05T17:05:00Z,2024-06-05T19:27:00Z,142,postmortem,Incident with Issues,major
+21015719,2024-06-06T04:21:00Z,2024-06-06T04:43:00Z,22,updates,Incident with Packages,minor
+21078205,2024-06-11T20:33:00Z,2024-06-11T21:39:00Z,66,updates,Incident with Actions,minor
+21148992,2024-06-18T17:14:00Z,2024-06-18T18:09:00Z,55,updates,We are investigating degraded performance for GitHub Enterprise Importer migrations,minor
+21156994,2024-06-19T11:58:00Z,2024-06-19T12:53:00Z,55,updates,Incident with Copilot Pull Request Summaries,minor
+21242609,2024-06-27T21:16:00Z,2024-06-27T21:42:00Z,26,updates,Disruption with GitHub services,major
+21243659,2024-06-27T23:34:00Z,2024-06-27T23:44:00Z,10,updates,Incident with Codespaces,minor
+21251038,2024-06-28T17:34:00Z,2024-06-28T22:51:00Z,317,updates,Delays in changes to organization membership,minor
+21279789,2024-07-01T22:59:00Z,2024-07-02T01:14:00Z,135,updates,Incident with Git Operations,minor
+21289093,2024-07-02T18:21:00Z,2024-07-02T19:24:00Z,63,postmortem,Disruption with GitHub services,minor
+21298778,2024-07-03T15:24:00Z,2024-07-03T16:40:00Z,76,updates,Disruption with GitHub Docs,minor
+21319915,2024-07-05T16:31:00Z,2024-07-05T18:08:00Z,97,postmortem,Incident with Webhooks and Actions,major
+21349015,2024-07-08T19:01:00Z,2024-07-08T19:45:00Z,44,updates,Incident with Issues and Pages,minor
+21380971,2024-07-11T10:20:00Z,2024-07-11T14:00:00Z,220,postmortem,Incident with Copilot,minor
+21398869,2024-07-13T00:18:00Z,2024-07-13T19:27:00Z,1149,updates,Incident with Copilot,major
+21424650,2024-07-16T00:53:00Z,2024-07-16T03:07:00Z,134,updates,Disruption with some GitHub services,major
+21442737,2024-07-17T16:21:00Z,2024-07-17T17:06:00Z,45,updates,Incident with multiple GitHub services,minor
+21443579,2024-07-17T17:56:00Z,2024-07-17T18:13:00Z,17,updates,Incident with Codespaces,minor
+21456889,2024-07-18T22:47:00Z,2024-07-19T02:38:00Z,231,updates,Issues enabling actions and running jobs on GitHub,minor
+21458536,2024-07-19T02:10:00Z,2024-07-19T04:47:00Z,157,updates,Incident with Codespaces,minor
+21506412,2024-07-23T21:40:00Z,2024-07-23T22:00:00Z,20,postmortem,Disruption with GitHub Copilot Chat,minor
+21526628,2024-07-25T18:44:00Z,2024-07-25T19:20:00Z,36,updates,Events are delayed across GitHub,minor
+21527660,2024-07-25T21:04:00Z,2024-07-25T21:05:00Z,1,updates,Linking internal teams to external IDP groups was broken for some users between 15:17-20:44 UTC,minor
+21570952,2024-07-30T13:36:00Z,2024-07-30T14:22:00Z,46,updates,Incident with Codespaces,minor
+21573639,2024-07-30T18:19:00Z,2024-07-30T22:10:00Z,231,updates,Actions runs using large hosted runners delayed for some customers,minor
+21577714,2024-07-31T00:52:00Z,2024-07-31T03:37:00Z,165,updates,Incident with Codespaces,minor
+21580456,2024-07-31T07:05:00Z,2024-07-31T09:01:00Z,116,postmortem,Disruption in service with some Redis clusters,minor
+21586637,2024-07-31T20:38:00Z,2024-07-31T21:21:00Z,43,updates,Disruption with some GitHub services,minor
+21663216,2024-08-06T18:30:00Z,2024-08-06T18:30:00Z,0,updates,[Retroactive] Incident with Pull Requests,minor
+21720793,2024-08-12T14:03:00Z,2024-08-12T14:15:00Z,12,updates,Disruption with some GitHub services,minor
+21720847,2024-08-12T14:09:00Z,2024-08-12T14:41:00Z,32,updates,Incident with Webhooks,minor
+21731722,2024-08-13T13:00:00Z,2024-08-13T13:23:00Z,23,postmortem,Disruption with some GitHub services,minor
+21748191,2024-08-14T23:11:00Z,2024-08-15T00:30:00Z,79,updates,All GitHub services are experiencing significant disruptions,major
+21754049,2024-08-15T13:14:00Z,2024-08-15T13:43:00Z,29,postmortem,Incident with starting Action Workflows,minor
+21839481,2024-08-21T13:48:00Z,2024-08-21T15:00:00Z,72,postmortem,Incident with Actions,minor
+21858990,2024-08-22T16:10:00Z,2024-08-22T17:28:00Z,78,postmortem,Incident with Actions,minor
+21936136,2024-08-27T22:37:00Z,2024-08-27T23:26:00Z,49,updates,Disruption with some GitHub services,minor
+21952389,2024-08-28T22:02:00Z,2024-08-28T23:43:00Z,101,updates,Disruption with some GitHub services,minor
+21967456,2024-08-29T19:29:00Z,2024-08-29T21:54:00Z,145,updates,Disruption with some GitHub services,minor
+22064375,2024-09-05T15:55:00Z,2024-09-05T17:24:00Z,89,updates,Disruption with some GitHub services,minor
+22152566,2024-09-13T05:42:00Z,2024-09-13T07:13:00Z,91,updates,"Processing delays to some Issues, Pull Requests and Webhooks",minor
+22169514,2024-09-14T22:10:00Z,2024-09-14T22:43:00Z,33,updates,Incident with Pull Requests,minor
+22182729,2024-09-16T13:24:00Z,2024-09-16T14:28:00Z,64,postmortem,Disruption with Git SSH,minor
+22186983,2024-09-16T21:11:00Z,2024-09-16T22:20:00Z,69,postmortem,Incident with Pages and Actions,major
+22274725,2024-09-24T20:54:00Z,2024-09-24T21:04:00Z,10,updates,Incident with Codespaces start and creation,major
+22283075,2024-09-25T15:25:00Z,2024-09-25T16:03:00Z,38,updates,Incident with Git Operations,minor
+22284983,2024-09-25T19:11:00Z,2024-09-25T19:19:00Z,8,updates,Incident with Actions Runs,minor
+22287041,2024-09-25T23:39:00Z,2024-09-26T05:08:00Z,329,updates,Degraded performance for some Copilot users,minor
+22381154,2024-09-27T15:30:00Z,2024-09-27T15:30:00Z,0,updates,Disruption with some GitHub services,none
+22336802,2024-09-30T11:08:00Z,2024-09-30T11:26:00Z,18,updates,Incident with Codespaces,major
+22463089,2024-10-08T17:02:00Z,2024-10-08T23:32:00Z,390,updates,Isolated Codespaces creation failures in the West Europe region,minor
+22512439,2024-10-11T17:53:00Z,2024-10-12T01:11:00Z,438,updates,Disruption with some GitHub services,major
+22651827,2024-10-24T06:12:00Z,2024-10-24T06:55:00Z,43,updates,Incident with GitHub Community Discussions,minor
+22710111,2024-10-30T07:25:00Z,2024-10-30T09:42:00Z,137,updates,Incident with Actions,minor
+22936938,2024-11-06T11:00:00Z,2024-11-06T11:00:00Z,0,updates,[Retroactive] Merge Queues not processing queued Pull Requests in some repositories,minor
+22897467,2024-11-19T11:36:00Z,2024-11-19T12:03:00Z,27,updates,Disruption with some GitHub services,major
+22924587,2024-11-21T14:30:00Z,2024-11-21T15:53:00Z,83,postmortem,Repository searches not working for some users,minor
+22960458,2024-11-25T10:51:00Z,2024-11-25T12:17:00Z,86,updates,Disruption with some GitHub services,minor
+22962175,2024-11-25T13:57:00Z,2024-11-25T15:25:00Z,88,updates,Disruption with GitHub Search,minor
+22992082,2024-11-28T03:29:00Z,2024-11-28T05:11:00Z,102,updates,Incident with Sporadic Timeouts in Codespaces,minor
+22993115,2024-11-28T06:27:00Z,2024-11-28T07:01:00Z,34,updates,Incident with Codespaces,minor
+23031540,2024-12-01T23:18:00Z,2024-12-02T01:05:00Z,107,updates,Disruption with some GitHub services,minor
+23046714,2024-12-03T04:11:00Z,2024-12-03T04:39:00Z,28,updates,Disruption with some GitHub services,minor
+23055857,2024-12-03T19:35:00Z,2024-12-03T20:05:00Z,30,postmortem,Incident with Pull Requests and API Requests,minor
+23058715,2024-12-03T23:30:00Z,2024-12-03T23:30:00Z,0,updates,[Retroactive] Incident with Pull Requests,minor
+23070020,2024-12-04T18:58:00Z,2024-12-04T19:27:00Z,29,updates,Disruption with some GitHub services,minor
+23095063,2024-12-06T16:58:00Z,2024-12-06T17:17:00Z,19,updates,Disruption with some GitHub services,minor
+23233596,2024-12-17T14:51:00Z,2024-12-17T16:00:00Z,69,updates,Live updates on pages not loading reliably,major
+23274163,2024-12-20T16:18:00Z,2024-12-20T16:44:00Z,26,updates,Disruption with some GitHub services,major
+23417382,2025-01-02T22:09:00Z,2025-01-03T00:19:00Z,130,updates,Incident with Actions,minor
+23468172,2025-01-07T14:49:00Z,2025-01-07T16:39:00Z,110,updates,Incident with Actions resulting in degraded performance,minor
+23487850,2025-01-09T01:26:00Z,2025-01-09T01:56:00Z,30,postmortem,Incident with Webhooks,major
+23490363,2025-01-09T07:15:00Z,2025-01-09T08:30:00Z,75,updates,Some GitHub Actions may not run,minor
+23496521,2025-01-09T17:12:00Z,2025-01-09T20:00:00Z,168,updates,Issues with VNet Injected Larger Hosted Runners in East US 2,minor
+23543623,2025-01-13T23:35:00Z,2025-01-14T00:24:00Z,49,postmortem,Incident with Git Operations,major
+23556124,2025-01-14T20:55:00Z,2025-01-14T21:20:00Z,25,updates,Disruption connecting to Codespaces,minor
+23575724,2025-01-16T00:45:00Z,2025-01-16T09:40:00Z,535,postmortem,Incident with Pull Request Rebase Merges,minor
+23665952,2025-01-23T10:25:00Z,2025-01-23T17:27:00Z,422,updates,Incident with Actions,minor
+23723119,2025-01-26T21:00:00Z,2025-01-26T21:00:00Z,0,updates,Incident With Migration Service,none
+23716236,2025-01-27T23:32:00Z,2025-01-27T23:41:00Z,9,updates,Disruption with some GitHub services,minor
+23735682,2025-01-29T14:52:00Z,2025-01-29T16:30:00Z,98,updates,Disruption with some GitHub services,minor
+23746865,2025-01-30T14:29:00Z,2025-01-30T15:39:00Z,70,updates,Incident with Pull Requests and Issues,major
+23824745,2025-02-03T19:37:00Z,2025-02-03T19:37:00Z,0,updates,[Retroactive] Incident with some GitHub services,major
+23854368,2025-02-05T08:58:00Z,2025-02-05T11:44:00Z,166,updates,Actions Larger Runners Provisioning Delays,minor
+23866630,2025-02-06T09:42:00Z,2025-02-06T11:13:00Z,91,updates,Incident with GIT LFS and Other Requests,minor
+23939893,2025-02-12T21:51:00Z,2025-02-12T23:10:00Z,79,updates,Claude Sonnet unavailable in GitHub Copilot,minor
+24098798,2025-02-13T07:30:00Z,2025-02-13T07:30:00Z,0,updates,[Retroactive] Incident with Migrations service,minor
+23991123,2025-02-14T20:06:00Z,2025-02-15T04:15:00Z,489,updates,Disruption with some GitHub services,minor
+24025277,2025-02-16T12:08:00Z,2025-02-16T12:44:00Z,36,updates,Disruption with some GitHub services,minor
+24119402,2025-02-24T15:17:00Z,2025-02-24T17:08:00Z,111,postmortem,Incident with Issues,minor
+24118928,2025-02-24T15:17:00Z,2025-02-24T18:31:00Z,194,updates,Disruption with some GitHub services,minor
+24121839,2025-02-24T22:06:00Z,2025-02-24T22:14:00Z,8,updates,Claude 3.5 Sonnet model is unavailable in Copilot,minor
+24122683,2025-02-25T00:17:00Z,2025-02-25T01:08:00Z,51,postmortem,Incident with Packages,minor
+24130245,2025-02-25T14:40:00Z,2025-02-25T15:45:00Z,65,updates,Claude 3.7 Sonnet Partially Unavailable,minor
+24131153,2025-02-25T15:12:00Z,2025-02-25T16:50:00Z,98,updates,Disruption with some GitHub services,major
+24166591,2025-02-26T14:51:00Z,2025-02-26T17:19:00Z,148,postmortem,Incident with Actions and Packages,minor
+24174245,2025-02-27T11:30:00Z,2025-02-27T12:22:00Z,52,postmortem,Disruption with some GitHub services,minor
+24183556,2025-02-28T06:12:00Z,2025-02-28T06:55:00Z,43,updates,Elevated Request Latency for Write operations on github.com and api.github.com,minor
+24179186,2025-02-27T21:09:00Z,2025-03-01T02:00:00Z,1731,updates,Scheduled Codespaces Maintenance,maintenance
+24211089,2025-03-03T04:20:00Z,2025-03-03T05:31:00Z,71,updates,"Incident with Issues, Git Operations and API Requests",minor
+24265365,2025-03-07T10:03:00Z,2025-03-07T11:24:00Z,81,updates,Disruption with some GitHub services,minor
+24277394,2025-03-08T17:16:00Z,2025-03-08T18:02:00Z,46,postmortem,Incident with Actions and Pages,minor
+24314215,2025-03-12T13:28:00Z,2025-03-12T14:07:00Z,39,postmortem,Some Actions users are seeing their workflow jobs failing to start,minor
+24371689,2025-03-17T18:39:00Z,2025-03-17T23:02:00Z,263,updates,Incident with Issues,minor
+24381480,2025-03-18T15:05:00Z,2025-03-18T17:15:00Z,130,updates,macos-15-arm64 hosted runner queue delays,minor
+24382018,2025-03-18T15:58:00Z,2025-03-18T18:45:00Z,167,updates,Disruption with some GitHub services,minor
+24384038,2025-03-18T19:28:00Z,2025-03-19T05:00:00Z,572,updates,Scheduled Migrations Maintenance,maintenance
+24386116,2025-03-18T23:45:00Z,2025-03-19T00:55:00Z,70,updates,Incident with Actions: Queue Run Failures,minor
+24405771,2025-03-20T19:24:00Z,2025-03-20T20:42:00Z,78,postmortem,Incident with Pages,minor
+24407817,2025-03-21T02:12:00Z,2025-03-21T03:08:00Z,56,updates,Incident with Codespaces,minor
+24409173,2025-03-21T06:21:00Z,2025-03-21T09:34:00Z,193,updates,Intermittent GitHub Actions workflow failures,minor
+24411620,2025-03-21T12:40:00Z,2025-03-21T13:44:00Z,64,updates,Disruption with some GitHub services,minor
+24441152,2025-03-23T18:00:00Z,2025-03-23T18:00:00Z,0,updates,[Retroactive] Incident with Migrations Submitted Via GitHub UI,minor
+24492327,2025-03-27T23:49:00Z,2025-03-28T01:40:00Z,111,updates,Disruption with Pull Request Ref Updates,minor
+24499597,2025-03-28T17:53:00Z,2025-03-28T18:14:00Z,21,updates,Disruption with some GitHub services,major
+24502377,2025-03-28T22:50:00Z,2025-03-28T22:50:00Z,0,updates,[Retroactive] Disruption with Pull Request Ref Updates,none
+24528290,2025-03-31T16:27:00Z,2025-03-31T17:57:00Z,90,updates,Disruption with some GitHub services,major
+24534352,2025-04-01T08:31:00Z,2025-04-01T09:29:00Z,58,updates,Disruption with some GitHub services,minor
+24548451,2025-04-02T16:11:00Z,2025-04-03T17:00:00Z,1489,updates,Scheduled Codespaces Maintenance,maintenance
+24549960,2025-04-02T19:08:00Z,2025-04-02T20:20:00Z,72,updates,Disruption with some GitHub services,minor
+24560388,2025-04-03T18:51:00Z,2025-04-03T19:12:00Z,21,updates,Disruption with some GitHub services,minor
+24584381,2025-04-07T02:19:00Z,2025-04-07T02:31:00Z,12,updates,Disruption with some GitHub services,minor
+24600599,2025-04-08T17:53:00Z,2025-04-08T18:21:00Z,28,updates,Vision requests are unavailable for certain models on Copilot Chat on github.com,minor
+24606422,2025-04-09T07:01:00Z,2025-04-09T09:31:00Z,150,postmortem,Incident with Pull Requests,minor
+24613351,2025-04-09T11:27:00Z,2025-04-09T12:39:00Z,72,postmortem,Disruption with some Pull Requests stuck in processing state,minor
+24623827,2025-04-11T00:28:00Z,2025-04-11T00:51:00Z,23,updates,Incident with Codespaces,major
+24645866,2025-04-12T20:00:00Z,2025-04-12T20:00:00Z,0,updates,[Retroactive] Access from China temporarily blocked for users that were not logged in,major
+24663970,2025-04-15T13:30:00Z,2025-04-15T14:12:00Z,42,updates,Disruption with some GitHub services for Safari Users,minor
+24666624,2025-04-15T18:20:00Z,2025-04-17T17:35:00Z,2835,updates,Disruption with some GitHub services,minor
+24676888,2025-04-16T15:22:00Z,2025-04-16T17:26:00Z,124,updates,Incident with Pull Requests,minor
+24694695,2025-04-17T15:30:00Z,2025-04-22T16:30:00Z,7260,updates,Codespaces Scheduled Maintenance,maintenance
+24753567,2025-04-23T07:00:00Z,2025-04-23T07:20:00Z,20,postmortem,"Incident with Issues, API Requests and Pages",major
+24763281,2025-04-23T21:38:00Z,2025-04-23T22:20:00Z,42,updates,Disruption with some GitHub services,major
+24810628,2025-04-28T08:03:00Z,2025-04-28T11:09:00Z,186,updates,"Incident with Git Operations, API Requests and Issues",minor
+24821797,2025-04-29T10:05:00Z,2025-04-29T12:52:00Z,167,updates,Delays for web and email notification delivery,minor
+24836733,2025-04-30T08:02:00Z,2025-04-30T09:05:00Z,63,postmortem,Disruption with Pull Request Ref Updates,minor
+24848610,2025-05-01T22:28:00Z,2025-05-01T23:13:00Z,45,updates,Issue Attachments Failing to Upload,major
+24903911,2025-05-06T19:29:00Z,2025-05-08T16:30:00Z,2701,updates,Codespaces Scheduled Maintenance,maintenance
+24935746,2025-05-08T14:40:00Z,2025-05-08T16:27:00Z,107,postmortem,Incident with Git Operations,minor
+24994971,2025-05-12T14:53:00Z,2025-05-12T15:06:00Z,13,updates,Disruption with some GitHub services,minor
+25020423,2025-05-13T19:52:00Z,2025-05-15T16:30:00Z,2678,updates,Codespaces Scheduled Maintenance,maintenance
+25035810,2025-05-14T14:39:00Z,2025-05-15T01:02:00Z,623,updates,Disruption with Gemini 2.5 Pro model,minor
+25052281,2025-05-15T07:00:00Z,2025-05-15T10:38:00Z,218,updates,Disruption with some GitHub services,minor
+25058728,2025-05-15T12:41:00Z,2025-05-15T22:58:00Z,617,updates,Disruption with Gemini 2.5 Pro,minor
+25084763,2025-05-16T09:22:00Z,2025-05-16T15:24:00Z,362,updates,Disruption with some GitHub services,minor
+25090474,2025-05-16T13:46:00Z,2025-05-17T02:27:00Z,761,updates,GitHub Enterprise Importer (GEI) is experiencing degraded throughput,minor
+25189632,2025-05-20T13:10:00Z,2025-05-20T16:08:00Z,178,updates,Elevated error rates for Claude Sonnet 3.7,minor
+25196531,2025-05-20T18:18:00Z,2025-05-20T19:53:00Z,95,postmortem,Incident with Copilot,minor
+25212747,2025-05-21T09:00:00Z,2025-05-21T09:00:00Z,0,updates,Incident with Webhooks,none
+25227885,2025-05-22T07:06:00Z,2025-05-22T09:10:00Z,124,postmortem,Delayed GitHub Actions Jobs,minor
+25243966,2025-05-23T17:40:00Z,2025-05-23T18:30:00Z,50,postmortem,Disruption with some GitHub services,minor
+25261970,2025-05-26T06:20:00Z,2025-05-26T09:45:00Z,205,postmortem,We're experiencing errors,minor
+25281050,2025-05-27T10:00:00Z,2025-05-27T10:00:00Z,0,updates,[Retroactive] Incident with Git Operations,none
+25275453,2025-05-27T12:20:00Z,2025-05-27T12:41:00Z,21,updates,Disruption with some GitHub services,minor
+25275516,2025-05-27T09:31:00Z,2025-05-27T13:31:00Z,240,postmortem,Incident with Actions,minor
+25287025,2025-05-28T11:11:00Z,2025-05-28T14:43:00Z,212,updates,Disruption with some GitHub services,major
+25233647,2025-05-22T15:26:00Z,2025-05-29T16:30:00Z,10144,updates,Codespaces Scheduled Maintenance,maintenance
+25303483,2025-05-29T21:01:00Z,2025-05-31T04:30:00Z,1889,updates,Codespaces Scheduled Maintenance,maintenance
+25310297,2025-05-30T08:10:00Z,2025-05-30T16:00:00Z,470,postmortem,Disruption with some GitHub services,major
+25364469,2025-06-04T14:35:00Z,2025-06-04T15:50:00Z,75,postmortem,Incident with Actions,minor
+25378142,2025-06-05T18:00:00Z,2025-06-05T19:29:00Z,89,updates,Incident with Actions,major
+25385487,2025-06-06T09:58:00Z,2025-06-06T12:40:00Z,162,updates,Incident with Copilot,minor
+25429897,2025-06-06T23:00:00Z,2025-06-06T23:00:00Z,0,updates,Incident With Copilot,none
+25427285,2025-06-10T14:28:00Z,2025-06-10T14:45:00Z,17,postmortem,Incident with Pull Requests,minor
+25429519,2025-06-10T12:15:00Z,2025-06-10T19:04:00Z,409,postmortem,Codespaces billing is delayed,minor
+25429820,2025-06-10T18:17:00Z,2025-06-11T01:51:00Z,454,updates,Disruption with some GitHub services,minor
+25457111,2025-06-12T18:50:00Z,2025-06-12T20:26:00Z,96,updates,Incident with Actions,minor
+25456062,2025-06-12T17:55:00Z,2025-06-12T21:07:00Z,192,postmortem,Some Copilot chat models are failing requests,major
+25514408,2025-06-17T19:32:00Z,2025-06-17T20:03:00Z,31,postmortem,Incident with multiple GitHub services,major
+25525202,2025-06-18T15:15:00Z,2025-06-18T19:29:00Z,254,postmortem,Partial Degradation in Issues Experience,minor
+25525421,2025-06-18T08:21:00Z,2025-06-18T18:47:00Z,626,postmortem,Partial Actions Cache degradation,minor
+25528319,2025-06-18T22:39:00Z,2025-06-18T23:13:00Z,34,updates,Disruption with some GitHub services,minor
+25544403,2025-06-20T10:49:00Z,2025-06-20T11:20:00Z,31,updates,Disruption with the GitHub mobile android application,minor
+25581556,2025-06-24T10:55:00Z,2025-06-24T12:26:00Z,91,updates,Repository Navigation Bar Missing in GitHub Enterprise Cloud,minor
+25603097,2025-06-26T14:42:00Z,2025-06-26T18:05:00Z,203,updates,GitHub Enterprise Importer delays,minor
+25607112,2025-06-26T17:10:00Z,2025-06-26T23:30:00Z,380,postmortem,Disruption with some GitHub services,minor
+25644426,2025-06-30T19:00:00Z,2025-06-30T19:00:00Z,0,updates,Incident With Actions,none
+25641810,2025-06-30T19:13:00Z,2025-06-30T19:55:00Z,42,updates,Disruption with Claude 3.7 Sonnet in Copilot Chat,minor
+25662931,2025-07-02T09:54:00Z,2025-07-02T10:16:00Z,22,updates,Disruption with some GitHub services,minor
+25666876,2025-07-02T16:09:00Z,2025-07-02T16:23:00Z,14,updates,Disruption with some GitHub services,minor
+25673661,2025-07-03T05:39:00Z,2025-07-03T07:12:00Z,93,updates,Disruption with some GitHub services,minor
+25723844,2025-07-07T22:03:00Z,2025-07-07T22:22:00Z,19,updates,Disruption with some GitHub services,minor
+25724106,2025-07-07T21:14:00Z,2025-07-07T22:34:00Z,80,postmortem,Disruption with some GitHub services,minor
+25734614,2025-07-08T14:20:00Z,2025-07-08T16:30:00Z,130,postmortem,Incident with Actions,minor
+25835365,2025-07-15T20:00:00Z,2025-07-15T20:00:00Z,0,updates,[Retroactive] Disruption with some GitHub Services,minor
+25820186,2025-07-16T05:20:00Z,2025-07-16T08:30:00Z,190,postmortem,Disruption with some GitHub services,minor
+25873107,2025-07-21T07:20:00Z,2025-07-21T08:00:00Z,40,postmortem,Some Copilot Models Experiencing Degraded Performance,minor
+25872946,2025-07-21T07:15:00Z,2025-07-21T09:48:00Z,153,updates,Incident with Issues,minor
+25891369,2025-07-22T18:35:00Z,2025-07-22T18:49:00Z,14,updates,Incident with Copilot and Claude Sonnet 4,minor
+25901045,2025-07-23T15:31:00Z,2025-07-23T16:30:00Z,59,updates,Incident with Actions Hosted Runners,minor
+25950222,2025-07-28T16:50:00Z,2025-07-29T01:23:00Z,513,updates,Disruption with some GitHub services,minor
+25952721,2025-07-28T22:40:00Z,2025-07-29T02:06:00Z,206,updates,"Incident with Issues, API Requests and Pull Requests",minor
+25952435,2025-07-28T21:41:00Z,2025-07-29T03:15:00Z,334,updates,GitHub Enterprise Importer migrations are stalled,major
+25956769,2025-07-29T10:41:00Z,2025-07-29T12:05:00Z,84,updates,Increase in 429s for Git Operations,minor
+25992666,2025-08-01T09:20:00Z,2025-08-01T10:55:00Z,95,updates,Disruption with some GitHub services,minor
+26032879,2025-08-05T15:42:00Z,2025-08-05T16:14:00Z,32,updates,Incident with pull requests,major
+26033991,2025-08-05T17:53:00Z,2025-08-05T19:46:00Z,113,updates,Incident with Pull Requests,minor
+26093653,2025-08-11T18:51:00Z,2025-08-11T18:57:00Z,6,updates,Disruption with some GitHub services,minor
+26103057,2025-08-12T13:30:00Z,2025-08-12T17:14:00Z,224,postmortem,Incident with search on GitHub we are seeing increased failure rates,major
+26121476,2025-08-14T02:30:00Z,2025-08-14T06:14:00Z,224,postmortem,Incident with Actions,minor
+26128099,2025-08-14T17:50:00Z,2025-08-14T18:08:00Z,18,postmortem,Incident with Packages,minor
+26171249,2025-08-19T13:35:00Z,2025-08-19T14:33:00Z,58,postmortem,Disruption with some GitHub services,minor
+26183695,2025-08-20T16:14:00Z,2025-08-20T16:37:00Z,23,updates,Disruption with some GitHub services,minor
+26190305,2025-08-21T06:25:00Z,2025-08-21T06:58:00Z,33,updates,Incident with Issues and Git Operations,minor
+26195593,2025-08-21T15:54:00Z,2025-08-21T18:13:00Z,139,updates,Incident with Actions,minor
+26259467,2025-08-27T20:41:00Z,2025-08-27T21:27:00Z,46,updates,Disruption with some GitHub services,major
+26316711,2025-09-02T15:17:00Z,2025-09-02T15:44:00Z,27,updates,Loading avatars might fail for a 0.5% of total users and 100% users around the Arabian Peninsula. We are investigating.,minor
+26342409,2025-09-04T18:16:00Z,2025-09-04T20:25:00Z,129,updates,Degraded REST API success rates for some customers,minor
+26396329,2025-09-10T13:23:00Z,2025-09-10T14:02:00Z,39,updates,Incident with Actions,minor
+26430076,2025-09-13T12:44:00Z,2025-09-15T21:01:00Z,3377,updates,Repository search is degraded,minor
+26450306,2025-09-15T18:21:00Z,2025-09-15T18:28:00Z,7,updates,Disruption with some GitHub services,major
+26462194,2025-09-16T17:14:00Z,2025-09-16T17:45:00Z,31,updates,Creating GitHub apps using the REST API will fail with a 401 error,minor
+26462594,2025-09-16T17:55:00Z,2025-09-16T18:30:00Z,35,updates,Unauthenticated LFS requests for public repos are returning unexpected 401 errors,minor
+26473036,2025-09-17T15:04:00Z,2025-09-17T17:55:00Z,171,updates,Incident with Codespaces,minor
+26531614,2025-09-23T15:29:00Z,2025-09-23T17:38:00Z,129,postmortem,Disruption with some GitHub services,minor
+26532100,2025-09-23T17:28:00Z,2025-09-23T17:41:00Z,13,updates,Incident with Pages and Actions,minor
+26534607,2025-09-23T22:22:00Z,2025-09-24T00:26:00Z,124,updates,Incident with Copilot,minor
+26538990,2025-09-24T09:08:00Z,2025-09-24T09:18:00Z,10,updates,Claude Opus 4 is experiencing degraded performance,minor
+26542071,2025-09-23T15:29:00Z,2025-09-23T17:38:00Z,129,postmortem,Disruption with some GitHub services,major
+26554560,2025-09-25T17:00:00Z,2025-09-25T17:36:00Z,36,updates,Disruption with some GitHub services,minor
+26591278,2025-09-29T16:45:00Z,2025-09-29T17:33:00Z,48,updates,Disruption with some GitHub services,major
+26592339,2025-09-29T18:39:00Z,2025-09-29T19:12:00Z,33,updates,Disruption with Gemini 2.5 Pro and Gemini 2.0 Flash in Copilot,minor
+26610255,2025-10-01T07:59:00Z,2025-10-01T16:55:00Z,536,updates,Degraded Performance for GitHub Actions MacOS Runners,minor
+26615316,2025-10-01T16:43:00Z,2025-10-02T22:33:00Z,1790,updates,Degraded Gemini 2.5 Pro experience in Copilot,minor
+26633369,2025-10-03T02:41:00Z,2025-10-03T03:47:00Z,66,updates,Incident with Copilot,minor
+26679334,2025-10-07T19:48:00Z,2025-10-08T00:05:00Z,257,updates,Disruption with some GitHub services,minor
+26701366,2025-10-09T13:52:00Z,2025-10-09T13:56:00Z,4,updates,Multiple GitHub API endpoints are experiencing errors,minor
+26702024,2025-10-09T14:45:00Z,2025-10-09T16:40:00Z,115,updates,Incident with Webhooks,major
+26752063,2025-10-14T14:05:00Z,2025-10-14T16:00:00Z,115,updates,Disruption with GPT-5-mini in Copilot,minor
+26754510,2025-10-14T18:26:00Z,2025-10-14T18:57:00Z,31,updates,Disruption with some GitHub services,minor
+26788390,2025-10-17T13:11:00Z,2025-10-17T14:12:00Z,61,updates,Disruption with push notifications,major
+26815001,2025-10-20T08:05:00Z,2025-10-20T10:50:00Z,165,postmortem,Codespaces creation failling,major
+26820913,2025-10-20T14:46:00Z,2025-10-20T16:40:00Z,114,updates,Disruption with Grok Code Fast 1 in Copilot,minor
+26833707,2025-10-21T07:55:00Z,2025-10-21T12:20:00Z,265,postmortem,Incident with Actions,minor
+26837586,2025-10-21T16:00:00Z,2025-10-21T17:39:00Z,99,updates,Disruption with some GitHub services,minor
+26848498,2025-10-22T14:06:00Z,2025-10-22T15:17:00Z,71,postmortem,Incident with API Requests,minor
+26861074,2025-10-23T15:54:00Z,2025-10-23T19:20:00Z,206,postmortem,Incident with Actions - Larger hosted runners,minor
+26869397,2025-10-24T09:31:00Z,2025-10-24T10:10:00Z,39,updates,git operations over ssh seeing increased latency on github.com,minor
+26872058,2025-10-24T14:17:00Z,2025-10-24T14:17:00Z,0,updates,githubstatus.com was unavailable UTC 2025 Oct 24 02:55 to 03:13,none
+26903197,2025-10-27T16:25:00Z,2025-10-27T17:51:00Z,86,updates,Disruption with viewing some repository pages from large organizations,minor
+26916087,2025-10-28T16:39:00Z,2025-10-28T17:11:00Z,32,updates,Inconsistent results when using the Haiku 4.5 model,minor
+26933445,2025-10-29T21:34:00Z,2025-10-29T21:49:00Z,15,updates,Disruption with Copilot Bing search tool,minor
+26929372,2025-10-29T16:17:00Z,2025-10-29T23:15:00Z,418,updates,"Experiencing connection issues across Actions, Codespaces, and possibly other services",major
+26947406,2025-10-30T22:47:00Z,2025-10-30T23:00:00Z,13,updates,Disruption with some GitHub services,minor
+26962592,2025-11-01T02:30:00Z,2025-11-01T06:14:00Z,224,postmortem,Incident with using workflow_dispatch for Actions,minor
+26989085,2025-11-03T14:10:00Z,2025-11-03T19:20:00Z,310,postmortem,Incident with Packages,minor
+27152998,2025-11-04T22:00:00Z,2025-11-04T22:00:00Z,0,updates,Incident With GitHub Enterprise Importer,none
+27031453,2025-11-05T22:56:00Z,2025-11-05T23:26:00Z,30,updates,Copilot Code Completions partially unavailable,minor
+27032025,2025-11-05T23:41:00Z,2025-11-06T00:06:00Z,25,updates,Incident with Copilot,minor
+27116491,2025-11-11T16:28:00Z,2025-11-11T20:54:00Z,266,postmortem,Larger hosted runners experiencing delays,minor
+27129684,2025-11-12T14:23:00Z,2025-11-12T17:39:00Z,196,updates,Delay in notification deliveries,minor
+27135994,2025-11-12T22:10:00Z,2025-11-12T23:04:00Z,54,postmortem,Disruption with some GitHub services,minor
+27147551,2025-11-13T15:00:00Z,2025-11-13T15:13:00Z,13,updates,Some users may experience failing git push and pull operations.,minor
+27202654,2025-11-17T16:52:00Z,2025-11-17T19:08:00Z,136,updates,Disruption with some GitHub services,major
+27206562,2025-11-17T23:01:00Z,2025-11-18T00:10:00Z,69,updates,Disruption with some GitHub services,minor
+27227444,2025-11-18T20:39:00Z,2025-11-18T21:59:00Z,80,updates,Git operation failures,major
+27240563,2025-11-19T16:13:00Z,2025-11-21T00:22:00Z,1929,updates,Disruption with some GitHub services,minor
+27241880,2025-11-19T17:48:00Z,2025-11-19T18:07:00Z,19,updates,Incident with Actions,minor
+27256736,2025-11-20T18:04:00Z,2025-11-20T19:24:00Z,80,updates,Disruption with some GitHub services,minor
+27304707,2025-11-24T13:10:00Z,2025-11-24T15:04:00Z,114,updates,Disruption with some GitHub services,minor
+27358197,2025-11-28T06:59:00Z,2025-11-28T08:23:00Z,84,updates,Incident with Copilot,major
+27565032,2025-12-03T22:21:00Z,2025-12-03T23:44:00Z,83,postmortem,Webhooks delivery degradation,none
+27467592,2025-12-05T18:38:00Z,2025-12-05T22:20:00Z,222,updates,Team synchronization is experiencing delays for non enterprise managed users,minor
+27507130,2025-12-08T19:51:00Z,2025-12-08T21:06:00Z,75,updates,Potential disruption with our Agent Control Plane UI Settings,major
+27508195,2025-12-08T21:28:00Z,2025-12-08T22:33:00Z,65,updates,Disruption with some GitHub services,minor
+27527949,2025-12-10T09:11:00Z,2025-12-10T11:05:00Z,114,updates,Some Actions customers experiencing run start delays,minor
+27530605,2025-12-10T13:34:00Z,2025-12-10T14:52:00Z,78,updates,Some macOS Actions jobs routing to Ubuntu instead,minor
+27547484,2025-12-11T15:47:00Z,2025-12-11T17:53:00Z,126,updates,We are investigating a rise in request failures on several services,minor
+27549493,2025-12-11T18:40:00Z,2025-12-11T20:05:00Z,85,updates,Disruptions in Login and Signup Flows,minor
+27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
+27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
+27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
+27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
+27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
+27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
+27719490,2025-12-23T09:56:00Z,2025-12-23T10:32:00Z,36,updates,Incident with Issues and Pull Requests,minor
+27843035,2026-01-01T21:24:00Z,2026-01-01T22:31:00Z,67,updates,Disruption with some GitHub services,minor
