@@ -32,6 +32,9 @@ const formatTime = (date) =>
     timeZone: 'UTC',
   }).format(date);
 
+const incidentStartDate = (incident) =>
+  incident.downtime_start ? new Date(incident.downtime_start) : new Date(incident.published_at);
+
 const parseJSONL = (text) =>
   text
     .split(/\r?\n/)
@@ -250,8 +253,8 @@ const render = async () => {
 
   const since = rangeStart.getTime();
   const recentIncidents = incidents.filter((incident) => {
-    const published = new Date(incident.published_at).getTime();
-    return published >= since;
+    const start = incidentStartDate(incident).getTime();
+    return start >= since;
   });
   document.getElementById('incidentCount').textContent = `${recentIncidents.length} incidents in last 90 days`;
 
@@ -260,7 +263,7 @@ const render = async () => {
 
   const grouped = new Map();
   incidents.forEach((incident) => {
-    const date = formatDate(new Date(incident.published_at));
+    const date = formatDate(incidentStartDate(incident));
     if (!grouped.has(date)) grouped.set(date, []);
     grouped.get(date).push(incident);
   });
@@ -322,8 +325,8 @@ const renderIncidentCard = (incident, compact = false) => {
 
   const meta = document.createElement('div');
   meta.className = 'incident-meta';
-  const published = new Date(incident.published_at);
-  meta.textContent = `${formatTime(published)} UTC • ${incident.duration_minutes ?? '—'} min impact`;
+  const start = incidentStartDate(incident);
+  meta.textContent = `${formatTime(start)} UTC • ${incident.duration_minutes ?? '—'} min impact`;
   card.appendChild(meta);
 
   const timeline = document.createElement('div');
