@@ -1,0 +1,9 @@
+[project]
+name = "github-statuses"
+version = "0.1.0"
+description = "Parse GitHub status history into incident timelines."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.uv]
+package = false
