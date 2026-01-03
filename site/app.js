@@ -16,23 +16,11 @@ const impactLabel = {
   major: 'Major',
 };
 
-const statusCopy = {
-  none: {
-    headline: 'All systems operational',
-    message: 'We are not aware of any current issues across GitHub services.',
-  },
-  maintenance: {
-    headline: 'Maintenance underway',
-    message: 'Scheduled maintenance is in progress for GitHub services.',
-  },
-  minor: {
-    headline: 'Degraded performance',
-    message: 'Some GitHub services are experiencing degraded performance.',
-  },
-  major: {
-    headline: 'Major outage',
-    message: 'GitHub services are currently experiencing a major outage.',
-  },
+const statusLabel = {
+  none: 'Archive only',
+  maintenance: 'Maintenance recorded',
+  minor: 'Recent minor impact',
+  major: 'Recent major impact',
 };
 
 const formatDate = (date) =>
@@ -190,37 +178,23 @@ const render = async () => {
   });
   document.getElementById('incidentCount').textContent = `${recentIncidents.length} incidents in last 90 days`;
 
-  const active = incidents.filter((incident) => {
-    const sequence = incident.status_sequence || [];
-    const lastStatus = sequence[sequence.length - 1];
-    return lastStatus && lastStatus !== 'Resolved';
-  });
+  const latestIncident = incidents[0];
+  const latestImpact = latestIncident?.impact || 'none';
+  const status = latestImpact;
 
-  const activeContainer = document.getElementById('activeIncidents');
-  if (active.length) {
-    activeContainer.innerHTML = '';
-    active.forEach((incident) => {
-      activeContainer.appendChild(renderIncidentCard(incident, true));
-    });
-  }
-
-  const highestActiveImpact = active.reduce((acc, incident) => {
-    const impact = incident.impact || 'none';
-    return impactRank[impact] > impactRank[acc] ? impact : acc;
-  }, 'none');
-
-  const status = highestActiveImpact || 'none';
   const statusBadge = document.getElementById('statusBadge');
   statusBadge.className = `status-pill ${status}`;
-  statusBadge.textContent = impactLabel[status] || 'Operational';
+  statusBadge.textContent = statusLabel[status] || statusLabel.none;
 
   const statusHeadline = document.getElementById('statusHeadline');
   const statusMessage = document.getElementById('statusMessage');
-  statusHeadline.textContent = statusCopy[status]?.headline || statusCopy.none.headline;
-  statusMessage.textContent = statusCopy[status]?.message || statusCopy.none.message;
-
-  if (!active.length) {
-    document.getElementById('statusCard').classList.add('operational');
+  if (latestIncident) {
+    const latestDate = formatDate(new Date(latestIncident.published_at));
+    statusHeadline.textContent = `Latest recorded impact: ${impactLabel[status] || 'Operational'}`;
+    statusMessage.textContent = `Last incident logged on ${latestDate}. This mirror reflects archived status history, not live monitoring.`;
+  } else {
+    statusHeadline.textContent = 'No incidents recorded';
+    statusMessage.textContent = 'This mirror reflects archived status history, not live monitoring.';
   }
 
   const timeline = document.getElementById('incidentTimeline');
