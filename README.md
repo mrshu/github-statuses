@@ -39,6 +39,10 @@ Run tests:
 uv run python -m unittest discover -s tests
 ```
 
+## Status site
+Static site lives in `site/` and reads data from `parsed/`.
+Serve the repo root with any static server to view it locally.
+
 ## Outputs
 Outputs are written to the directory passed to `--out` (local examples use `out/`).
 The automation workflow writes to `parsed/`.

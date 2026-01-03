@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Status Mirror</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="brand-text">
+          <p class="eyebrow">Missing page archive</p>
+          <h1>GitHub Status Mirror</h1>
+        </div>
+      </div>
+      <button class="ghost-button" type="button">Subscribe to updates</button>
+    </header>
+
+    <main>
+      <section class="hero" data-animate>
+        <div class="hero-status" id="statusCard">
+          <div class="status-pill" id="statusBadge">Loading status…</div>
+          <h2 id="statusHeadline">Retrieving service health</h2>
+          <p id="statusMessage">Parsing incident history and uptime windows.</p>
+          <div class="status-meta">
+            <span id="lastUpdated">Last updated —</span>
+            <span class="divider"></span>
+            <span id="incidentCount">0 incidents in last 90 days</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Last 90 days uptime</h3>
+          <div class="uptime-row">
+            <div class="uptime-label">
+              <span>GitHub Platform</span>
+              <span class="uptime-percent" id="uptimePercent">—</span>
+            </div>
+            <div class="uptime-bars" id="uptimeBars"></div>
+            <div class="uptime-axis">
+              <span>90 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+          <div class="legend" id="legend">
+            <span class="legend-item"><span class="dot operational"></span>Operational</span>
+            <span class="legend-item"><span class="dot maintenance"></span>Maintenance</span>
+            <span class="legend-item"><span class="dot minor"></span>Minor</span>
+            <span class="legend-item"><span class="dot major"></span>Major</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" data-animate>
+        <div class="panel-header">
+          <h3>Active incidents</h3>
+          <p class="muted">Live from the archived GitHub status feed.</p>
+        </div>
+        <div id="activeIncidents" class="empty">No active incidents reported.</div>
+      </section>
+
+      <section class="panel" data-animate>
+        <div class="panel-header">
+          <h3>Incident timeline</h3>
+          <div class="panel-actions">
+            <button class="ghost-button" type="button" id="togglePast">Show more</button>
+          </div>
+        </div>
+        <div id="incidentTimeline"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built from archived GitHub Status history. This mirror reconstructs service
+        health from the public status feed.
+      </p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
