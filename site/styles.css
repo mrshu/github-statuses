@@ -54,8 +54,10 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 48px 8vw 32px;
+  padding: 48px 24px 32px;
   gap: 24px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .brand {
@@ -134,10 +136,12 @@ a:hover {
 main {
   position: relative;
   z-index: 1;
-  padding: 0 8vw 64px;
+  padding: 0 24px 64px;
   display: flex;
   flex-direction: column;
   gap: 28px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .hero {
@@ -550,9 +554,11 @@ details ul {
 }
 
 .site-footer {
-  padding: 32px 8vw 48px;
+  padding: 32px 24px 48px;
   color: var(--muted);
   font-size: 0.8rem;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 [data-animate] {
