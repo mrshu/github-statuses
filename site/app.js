@@ -128,6 +128,7 @@ const render = async () => {
   rangeEnd.setUTCDate(rangeEnd.getUTCDate() + 1);
 
   const daySeverity = new Array(90).fill(0);
+  const dayIncidents = Array.from({ length: 90 }, () => new Map());
   const clippedIntervals = [];
 
   windows.forEach((row) => {
@@ -146,6 +147,18 @@ const render = async () => {
       const index = Math.floor((current - rangeStart) / 86400000);
       if (index >= 0 && index < daySeverity.length) {
         daySeverity[index] = Math.max(daySeverity[index], impactRank[impact] ?? 0);
+        const incidentId = row.incident_id || row.title;
+        if (incidentId) {
+          const existing = dayIncidents[index].get(incidentId);
+          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+            dayIncidents[index].set(incidentId, {
+              id: incidentId,
+              title: row.title || 'Incident',
+              impact,
+              duration: row.duration_minutes || null,
+            });
+          }
+        }
       }
       current = new Date(current.getTime() + 86400000);
     }
@@ -160,12 +173,82 @@ const render = async () => {
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
 
   const uptimeBars = document.getElementById('uptimeBars');
+  const uptimeTooltip = document.getElementById('uptimeTooltip');
+  const heroPanel = document.querySelector('.hero-panel');
   uptimeBars.innerHTML = '';
-  daySeverity.forEach((severity) => {
+  uptimeTooltip.classList.remove('active');
+
+  daySeverity.forEach((severity, index) => {
     const span = document.createElement('span');
     const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
     span.className = impact === 'none' ? 'operational' : impact;
+    span.dataset.dayIndex = String(index);
+    span.tabIndex = 0;
     uptimeBars.appendChild(span);
+  });
+
+  const severityToImpact = (severity) =>
+    Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+
+  const positionTooltip = (target) => {
+    const panelRect = heroPanel.getBoundingClientRect();
+    const barRect = target.getBoundingClientRect();
+    const tooltipRect = uptimeTooltip.getBoundingClientRect();
+    const padding = 12;
+    let left = barRect.left - panelRect.left + barRect.width / 2;
+    left = Math.max(tooltipRect.width / 2 + padding, Math.min(left, panelRect.width - tooltipRect.width / 2 - padding));
+    let top = barRect.top - panelRect.top - tooltipRect.height - 12;
+    if (top < padding) {
+      top = barRect.bottom - panelRect.top + 12;
+    }
+    uptimeTooltip.style.left = `${left}px`;
+    uptimeTooltip.style.top = `${top}px`;
+  };
+
+  const showTooltip = (target) => {
+    const index = Number(target.dataset.dayIndex || 0);
+    const date = new Date(rangeStart.getTime() + index * 86400000);
+    const incidents = Array.from(dayIncidents[index]?.values() || []);
+    const severity = daySeverity[index] ?? 0;
+    const impact = severityToImpact(severity);
+
+    const incidentMarkup = incidents.length
+      ? `<ul class=\"tooltip-incidents\">${incidents
+          .slice(0, 4)
+          .map((item) => `<li>${item.title}</li>`)
+          .join('')}</ul>`
+      : '<p class=\"tooltip-incidents\">No incidents recorded.</p>';
+
+    uptimeTooltip.innerHTML = `
+      <div class=\"tooltip-date\">${formatDate(date)}</div>
+      <div class=\"tooltip-impact\">
+        <span class=\"tooltip-dot ${impact}\"></span>
+        ${impactLabel[impact] || 'Operational'}
+      </div>
+      ${incidentMarkup}
+    `;
+    uptimeTooltip.classList.add('active');
+    uptimeTooltip.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(() => positionTooltip(target));
+  };
+
+  const hideTooltip = () => {
+    uptimeTooltip.classList.remove('active');
+    uptimeTooltip.setAttribute('aria-hidden', 'true');
+  };
+
+  uptimeBars.querySelectorAll('span').forEach((bar) => {
+    bar.addEventListener('mouseenter', () => showTooltip(bar));
+    bar.addEventListener('focus', () => showTooltip(bar));
+    bar.addEventListener('mouseleave', hideTooltip);
+    bar.addEventListener('blur', hideTooltip);
+    bar.addEventListener('click', () => {
+      if (uptimeTooltip.classList.contains('active')) {
+        hideTooltip();
+      } else {
+        showTooltip(bar);
+      }
+    });
   });
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;

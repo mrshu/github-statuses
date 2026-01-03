@@ -228,6 +228,7 @@ main {
   padding: 24px 28px;
   border: 1px solid #f0eee8;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .hero-panel h3 {
@@ -263,6 +264,85 @@ main {
   height: 22px;
   border-radius: 6px;
   background: #dfe9df;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.uptime-bars span:hover,
+.uptime-bars span:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.uptime-tooltip {
+  position: absolute;
+  min-width: 220px;
+  max-width: 320px;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.5);
+  padding: 14px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.uptime-tooltip.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.tooltip-date {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.tooltip-impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tooltip-dot.operational,
+.tooltip-dot.none {
+  background: var(--operational);
+}
+
+.tooltip-dot.minor {
+  background: var(--minor);
+}
+
+.tooltip-dot.major {
+  background: var(--major);
+}
+
+.tooltip-dot.maintenance {
+  background: var(--maintenance);
+}
+
+.tooltip-incidents {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  color: var(--muted);
+}
+
+.tooltip-incidents li {
+  margin-bottom: 4px;
 }
 
 .uptime-bars span.operational {
