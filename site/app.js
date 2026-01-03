@@ -183,8 +183,6 @@ const render = async () => {
   uptimeBars.innerHTML = '';
   uptimeTooltip.classList.remove('active');
 
-  let tooltipLocked = false;
-  let activeBar = null;
   let hideTimeout = null;
 
   daySeverity.forEach((severity, index) => {
@@ -207,23 +205,24 @@ const render = async () => {
     let left = barRect.left - panelRect.left + barRect.width / 2;
     left = Math.max(tooltipRect.width / 2 + padding, Math.min(left, panelRect.width - tooltipRect.width / 2 - padding));
     let top = barRect.top - panelRect.top - tooltipRect.height - 12;
+    let arrowPlacement = "bottom";
     if (top < padding) {
       top = barRect.bottom - panelRect.top + 12;
+      arrowPlacement = "top";
     }
     uptimeTooltip.style.left = `${left}px`;
     uptimeTooltip.style.top = `${top}px`;
+    const tooltipLeft = left - tooltipRect.width / 2;
+    const arrowLeft = barRect.left - panelRect.left + barRect.width / 2 - tooltipLeft;
+    uptimeTooltip.style.setProperty("--arrow-left", `${arrowLeft}px`);
+    uptimeTooltip.dataset.arrow = arrowPlacement;
   };
 
-  const showTooltip = (target, lock = false) => {
-    if (tooltipLocked && activeBar && target !== activeBar && !lock) {
-      return;
-    }
+  const showTooltip = (target) => {
     if (hideTimeout) {
       window.clearTimeout(hideTimeout);
       hideTimeout = null;
     }
-    tooltipLocked = lock ? true : tooltipLocked;
-    activeBar = target;
     const index = Number(target.dataset.dayIndex || 0);
     const date = new Date(rangeStart.getTime() + index * 86400000);
     const incidents = Array.from(dayIncidents[index]?.values() || []);
@@ -257,13 +256,11 @@ const render = async () => {
   };
 
   const hideTooltip = () => {
-    if (tooltipLocked) return;
     uptimeTooltip.classList.remove('active');
     uptimeTooltip.setAttribute('aria-hidden', 'true');
   };
 
   const scheduleHide = () => {
-    if (tooltipLocked) return;
     if (hideTimeout) window.clearTimeout(hideTimeout);
     hideTimeout = window.setTimeout(() => {
       hideTooltip();
@@ -275,15 +272,6 @@ const render = async () => {
     bar.addEventListener('focus', () => showTooltip(bar));
     bar.addEventListener('mouseleave', scheduleHide);
     bar.addEventListener('blur', scheduleHide);
-    bar.addEventListener('click', () => {
-      if (tooltipLocked && activeBar === bar) {
-        tooltipLocked = false;
-        hideTooltip();
-        return;
-      }
-      tooltipLocked = true;
-      showTooltip(bar, true);
-    });
   });
 
   uptimeTooltip.addEventListener('mouseenter', () => {
@@ -291,13 +279,6 @@ const render = async () => {
   });
 
   uptimeTooltip.addEventListener('mouseleave', scheduleHide);
-
-  document.addEventListener('click', (event) => {
-    if (!uptimeTooltip.classList.contains('active')) return;
-    if (heroPanel.contains(event.target)) return;
-    tooltipLocked = false;
-    hideTooltip();
-  });
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
   document.getElementById('lastUpdated').textContent = `Last updated ${formatDate(lastUpdated)}`;

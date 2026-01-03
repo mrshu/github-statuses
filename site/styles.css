@@ -316,6 +316,25 @@ main {
   pointer-events: auto;
 }
 
+.uptime-tooltip::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  left: var(--arrow-left, 50%);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.uptime-tooltip[data-arrow="bottom"]::before {
+  bottom: -7px;
+}
+
+.uptime-tooltip[data-arrow="top"]::before {
+  top: -7px;
+}
+
 .tooltip-date {
   font-weight: 600;
   font-size: 0.85rem;
