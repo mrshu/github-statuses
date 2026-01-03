@@ -114,6 +114,12 @@ const render = async () => {
 
   const incidents = parseJSONL(incidentsText);
   const windows = parseCSV(windowsText);
+  const incidentById = new Map();
+  incidents.forEach((incident) => {
+    if (incident.id) {
+      incidentById.set(String(incident.id), incident);
+    }
+  });
 
   incidents.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
@@ -147,12 +153,14 @@ const render = async () => {
         const incidentId = row.incident_id || row.title;
         if (incidentId) {
           const existing = dayIncidents[index].get(incidentId);
+          const fullIncident = incidentById.get(String(row.incident_id || '')) || null;
           if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
             dayIncidents[index].set(incidentId, {
               id: incidentId,
-              title: row.title || 'Incident',
+              title: fullIncident?.title || row.title || 'Incident',
               impact,
               duration: row.duration_minutes || null,
+              url: fullIncident?.url || null,
             });
           }
         }
@@ -174,6 +182,10 @@ const render = async () => {
   const heroPanel = document.querySelector('.hero-panel');
   uptimeBars.innerHTML = '';
   uptimeTooltip.classList.remove('active');
+
+  let tooltipLocked = false;
+  let activeBar = null;
+  let hideTimeout = null;
 
   daySeverity.forEach((severity, index) => {
     const span = document.createElement('span');
@@ -202,7 +214,16 @@ const render = async () => {
     uptimeTooltip.style.top = `${top}px`;
   };
 
-  const showTooltip = (target) => {
+  const showTooltip = (target, lock = false) => {
+    if (tooltipLocked && activeBar && target !== activeBar && !lock) {
+      return;
+    }
+    if (hideTimeout) {
+      window.clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+    tooltipLocked = lock ? true : tooltipLocked;
+    activeBar = target;
     const index = Number(target.dataset.dayIndex || 0);
     const date = new Date(rangeStart.getTime() + index * 86400000);
     const incidents = Array.from(dayIncidents[index]?.values() || []);
@@ -212,7 +233,13 @@ const render = async () => {
     const incidentMarkup = incidents.length
       ? `<ul class=\"tooltip-incidents\">${incidents
           .slice(0, 4)
-          .map((item) => `<li>${item.title}</li>`)
+          .map((item) => {
+            const title = item.title;
+            if (item.url) {
+              return `<li><a href=\"${item.url}\" target=\"_blank\" rel=\"noreferrer\">${title}</a></li>`;
+            }
+            return `<li>${title}</li>`;
+          })
           .join('')}</ul>`
       : '<p class=\"tooltip-incidents\">No incidents recorded.</p>';
 
@@ -230,22 +257,46 @@ const render = async () => {
   };
 
   const hideTooltip = () => {
+    if (tooltipLocked) return;
     uptimeTooltip.classList.remove('active');
     uptimeTooltip.setAttribute('aria-hidden', 'true');
+  };
+
+  const scheduleHide = () => {
+    if (tooltipLocked) return;
+    if (hideTimeout) window.clearTimeout(hideTimeout);
+    hideTimeout = window.setTimeout(() => {
+      hideTooltip();
+    }, 120);
   };
 
   uptimeBars.querySelectorAll('span').forEach((bar) => {
     bar.addEventListener('mouseenter', () => showTooltip(bar));
     bar.addEventListener('focus', () => showTooltip(bar));
-    bar.addEventListener('mouseleave', hideTooltip);
-    bar.addEventListener('blur', hideTooltip);
+    bar.addEventListener('mouseleave', scheduleHide);
+    bar.addEventListener('blur', scheduleHide);
     bar.addEventListener('click', () => {
-      if (uptimeTooltip.classList.contains('active')) {
+      if (tooltipLocked && activeBar === bar) {
+        tooltipLocked = false;
         hideTooltip();
-      } else {
-        showTooltip(bar);
+        return;
       }
+      tooltipLocked = true;
+      showTooltip(bar, true);
     });
+  });
+
+  uptimeTooltip.addEventListener('mouseenter', () => {
+    if (hideTimeout) window.clearTimeout(hideTimeout);
+  });
+
+  uptimeTooltip.addEventListener('mouseleave', scheduleHide);
+
+  document.addEventListener('click', (event) => {
+    if (!uptimeTooltip.classList.contains('active')) return;
+    if (heroPanel.contains(event.target)) return;
+    tooltipLocked = false;
+    hideTooltip();
   });
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;

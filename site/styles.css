@@ -313,6 +313,7 @@ main {
 .uptime-tooltip.active {
   opacity: 1;
   transform: translate(-50%, 0);
+  pointer-events: auto;
 }
 
 .tooltip-date {
@@ -361,6 +362,10 @@ main {
 
 .tooltip-incidents li {
   margin-bottom: 4px;
+}
+
+.tooltip-incidents a {
+  color: inherit;
 }
 
 .uptime-bars span.operational {
