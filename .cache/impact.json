@@ -3,2435 +3,4241 @@
   "items": {
     "https://www.githubstatus.com/incidents/6ddp6v8g5t72": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:48.312599Z"
+      "components": [
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:31.497558Z"
     },
     "https://www.githubstatus.com/incidents/dk61qxd21mtl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:48.990054Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:32.164318Z"
     },
     "https://www.githubstatus.com/incidents/plgzz71xn6zq": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:26:49.820240Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:32.897472Z"
     },
     "https://www.githubstatus.com/incidents/l76qh74ryp16": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:50.463921Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:33.617930Z"
     },
     "https://www.githubstatus.com/incidents/jbhcrj5xtggx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:51.346960Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:34.416664Z"
     },
     "https://www.githubstatus.com/incidents/qd96yfgvmcf9": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:26:52.036723Z"
+      "components": [
+        "Git Operations",
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:46:35.097901Z"
     },
     "https://www.githubstatus.com/incidents/bll83wkgdd2m": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:52.986227Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:35.731347Z"
     },
     "https://www.githubstatus.com/incidents/78wybrzyv0wf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:53.890942Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:36.518597Z"
     },
     "https://www.githubstatus.com/incidents/gszmt35n7k20": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:54.731221Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:37.302026Z"
     },
     "https://www.githubstatus.com/incidents/7p05r5610bqd": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:26:55.713958Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:38.092684Z"
     },
     "https://www.githubstatus.com/incidents/r6j3fnl9j58q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:56.412905Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:38.754462Z"
     },
     "https://www.githubstatus.com/incidents/wg7n9ns64dsd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:57.419093Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:39.481233Z"
     },
     "https://www.githubstatus.com/incidents/nm83zrdky73y": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:26:58.209854Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:40.215239Z"
     },
     "https://www.githubstatus.com/incidents/m8ntcjv1w4pr": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:26:58.896905Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:40.877186Z"
     },
     "https://www.githubstatus.com/incidents/4s0n40wj3l02": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:26:59.404552Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:41.543312Z"
     },
     "https://www.githubstatus.com/incidents/yhn3m0yqdxmc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:00.211166Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:42.306927Z"
     },
     "https://www.githubstatus.com/incidents/6g38m7fyc324": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:00.846464Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:42.979703Z"
     },
     "https://www.githubstatus.com/incidents/x07y6vhlvqg2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:01.519822Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:43.704169Z"
     },
     "https://www.githubstatus.com/incidents/zxtwqgc613rl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:02.280506Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:44.423954Z"
     },
     "https://www.githubstatus.com/incidents/nhzd9qzv27l8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:02.852685Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:45.141887Z"
     },
     "https://www.githubstatus.com/incidents/t4vt31qhjx6q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:03.596107Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:45.798779Z"
     },
     "https://www.githubstatus.com/incidents/135x076mn3tf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:04.403028Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:46.596135Z"
     },
     "https://www.githubstatus.com/incidents/9qsgrx7yc13z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:05.068293Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:47.264561Z"
     },
     "https://www.githubstatus.com/incidents/pnl2xrj64d7p": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:05.771273Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:46:48.079948Z"
     },
     "https://www.githubstatus.com/incidents/tskzz9n0bjpt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:06.553645Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:48.741647Z"
     },
     "https://www.githubstatus.com/incidents/flt2rxl1dg1t": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:07.247588Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:49.480453Z"
     },
     "https://www.githubstatus.com/incidents/2lxm4wb8wy3r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:08.076694Z"
+      "components": [
+        "Actions",
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:46:50.269002Z"
     },
     "https://www.githubstatus.com/incidents/3zss4vv50thx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:08.740252Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:51.168698Z"
     },
     "https://www.githubstatus.com/incidents/36ftd36c921f": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:09.410189Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:51.954028Z"
     },
     "https://www.githubstatus.com/incidents/5ylj8dpvg096": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:10.393397Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:52.941526Z"
     },
     "https://www.githubstatus.com/incidents/291w7fn43fy1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:11.195315Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:46:53.769922Z"
     },
     "https://www.githubstatus.com/incidents/lb0d8kp99f2v": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:11.892877Z"
+      "components": [
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:54.672221Z"
     },
     "https://www.githubstatus.com/incidents/m7vl0x8k3j9c": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:12.529438Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:46:55.588462Z"
     },
     "https://www.githubstatus.com/incidents/nhcpszxtqxtm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:13.290687Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:56.392212Z"
     },
     "https://www.githubstatus.com/incidents/y8x4xw6j3q84": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:13.987467Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:46:57.043951Z"
     },
     "https://www.githubstatus.com/incidents/yz50lpc8d4xq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:14.620809Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:57.695353Z"
     },
     "https://www.githubstatus.com/incidents/fpkvkrdmh033": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:15.389101Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:58.394389Z"
     },
     "https://www.githubstatus.com/incidents/tldgc85p3q2d": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:16.030079Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:59.082131Z"
     },
     "https://www.githubstatus.com/incidents/lg4s05t6ttxb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:16.512136Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:59.723641Z"
     },
     "https://www.githubstatus.com/incidents/kpkc9bwsd42f": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:17.177783Z"
+      "components": [
+        "Webhooks",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:47:00.405384Z"
     },
     "https://www.githubstatus.com/incidents/t1x87c1ntdcr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:17.832506Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:47:01.179312Z"
     },
     "https://www.githubstatus.com/incidents/slgf0l5smt3j": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:18.610922Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:01.873110Z"
     },
     "https://www.githubstatus.com/incidents/kgjdbjz65clj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:19.381529Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:02.708549Z"
     },
     "https://www.githubstatus.com/incidents/cyf5mhwh42tt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:20.178074Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:03.342192Z"
     },
     "https://www.githubstatus.com/incidents/lnvht7g03czs": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:20.848623Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:03.983415Z"
     },
     "https://www.githubstatus.com/incidents/vhzbr55p9jtx": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:21.572531Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:04.673359Z"
     },
     "https://www.githubstatus.com/incidents/7s7z64qbl194": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:27:22.290601Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:05.377766Z"
     },
     "https://www.githubstatus.com/incidents/thpkk85p1sjy": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:23.144674Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:06.003861Z"
     },
     "https://www.githubstatus.com/incidents/mr6vzllykhmw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:23.977926Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:06.684515Z"
     },
     "https://www.githubstatus.com/incidents/xb49wskhzrm2": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:24.730273Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:07.470435Z"
     },
     "https://www.githubstatus.com/incidents/d3t3d2jn3b0j": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:26.074662Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:08.218649Z"
     },
     "https://www.githubstatus.com/incidents/6xn7r7hhrq72": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:26.822120Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:08.974500Z"
     },
     "https://www.githubstatus.com/incidents/cjq2q04mfydp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:28.147461Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:09.615008Z"
     },
     "https://www.githubstatus.com/incidents/mdfybxmvbp0z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:28.813477Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:10.549703Z"
     },
     "https://www.githubstatus.com/incidents/mb56b2qv4pyz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:29.611944Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:11.452982Z"
     },
     "https://www.githubstatus.com/incidents/vxfd5br11t6v": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:30.143459Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:12.501576Z"
     },
     "https://www.githubstatus.com/incidents/6kf8j273wf0l": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:30.835063Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:47:13.374970Z"
     },
     "https://www.githubstatus.com/incidents/jfvgcls9swln": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:31.641101Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:14.124602Z"
     },
     "https://www.githubstatus.com/incidents/0r3t35cbghdy": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:32.280827Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:15.056037Z"
     },
     "https://www.githubstatus.com/incidents/jmfzh1p2yrg2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:32.973209Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:16.015076Z"
     },
     "https://www.githubstatus.com/incidents/jhs2z7c69yfd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:33.791750Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:16.839718Z"
     },
     "https://www.githubstatus.com/incidents/znhjr4vqqcdw": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:34.361369Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:17.523679Z"
     },
     "https://www.githubstatus.com/incidents/lrby2hyk80dh": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:35.075886Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:47:18.234284Z"
     },
     "https://www.githubstatus.com/incidents/7hdyxpt7sdzm": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:35.745933Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:19.006995Z"
     },
     "https://www.githubstatus.com/incidents/7lbnm9mg6549": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:36.439945Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:19.657164Z"
     },
     "https://www.githubstatus.com/incidents/jvyb8cp9h0lh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:37.095275Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:20.342805Z"
     },
     "https://www.githubstatus.com/incidents/7r0jg1plygfm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:37.826402Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:21.106783Z"
     },
     "https://www.githubstatus.com/incidents/9zmv2mqqxsbm": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:38.529504Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:47:21.767201Z"
     },
     "https://www.githubstatus.com/incidents/hkp6z7kt2qm6": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:39.200699Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:22.439028Z"
     },
     "https://www.githubstatus.com/incidents/42gtccf6dd98": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:39.940719Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:23.210698Z"
     },
     "https://www.githubstatus.com/incidents/gxf0jzns6rn2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:40.633663Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:23.956677Z"
     },
     "https://www.githubstatus.com/incidents/bs901hhxgw33": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:41.314729Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:24.781469Z"
     },
     "https://www.githubstatus.com/incidents/kpv13bbn84n5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:41.888672Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:25.448551Z"
     },
     "https://www.githubstatus.com/incidents/hjylhb7b8zcq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:42.722762Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:26.182697Z"
     },
     "https://www.githubstatus.com/incidents/pzrqw1n5ynw3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:43.244925Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:26.881764Z"
     },
     "https://www.githubstatus.com/incidents/3nn1p9h5b76h": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:44.044134Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:27.637664Z"
     },
     "https://www.githubstatus.com/incidents/71tl7pkqysgw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:44.815433Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:28.443577Z"
     },
     "https://www.githubstatus.com/incidents/rkkhrht3j3y3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:45.344365Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:29.111113Z"
     },
     "https://www.githubstatus.com/incidents/d3nnz2ckp2f7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:46.063001Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:29.752354Z"
     },
     "https://www.githubstatus.com/incidents/89gkzpf9fc20": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:27:46.594803Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:30.543206Z"
     },
     "https://www.githubstatus.com/incidents/cbdzqm5fw0fm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:47.397780Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:31.228805Z"
     },
     "https://www.githubstatus.com/incidents/y71cytztvck9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:48.148287Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:31.945625Z"
     },
     "https://www.githubstatus.com/incidents/d0nm3xcdc5jw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:49.014847Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Actions",
+        "Packages",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:32.682396Z"
     },
     "https://www.githubstatus.com/incidents/tyjjp463pg91": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:27:49.764767Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:33.379391Z"
     },
     "https://www.githubstatus.com/incidents/2fk03fzv6zk0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:50.585079Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:34.043952Z"
     },
     "https://www.githubstatus.com/incidents/9hzy25gws8vh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:51.242088Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:34.735181Z"
     },
     "https://www.githubstatus.com/incidents/l5jqk83qnfzd": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:52.092403Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:35.381672Z"
     },
     "https://www.githubstatus.com/incidents/67vdd3b7d1zq": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:53.015646Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:36.043557Z"
     },
     "https://www.githubstatus.com/incidents/nwjwwhj118sf": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:27:54.076729Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:36.849400Z"
     },
     "https://www.githubstatus.com/incidents/p1rf575rlqml": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:55.127079Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:37.526057Z"
     },
     "https://www.githubstatus.com/incidents/v7vmwf4pyx6y": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:56.167178Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:38.431058Z"
     },
     "https://www.githubstatus.com/incidents/ry1gsyjqj4qh": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:27:56.851354Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:47:39.435682Z"
     },
     "https://www.githubstatus.com/incidents/wqrqgd9gyvz5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:57.627655Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:40.119980Z"
     },
     "https://www.githubstatus.com/incidents/5g8smlrj5ynp": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:27:58.603693Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:40.957777Z"
     },
     "https://www.githubstatus.com/incidents/5n51wd9mnkz0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:27:59.495197Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:47:41.608088Z"
     },
     "https://www.githubstatus.com/incidents/6nxmxxqcgmh7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:00.177749Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:42.320258Z"
     },
     "https://www.githubstatus.com/incidents/gj9d2m9x4mff": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:01.082002Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:43.102539Z"
     },
     "https://www.githubstatus.com/incidents/d9xd9k1j6sl0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:01.600829Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:43.786394Z"
     },
     "https://www.githubstatus.com/incidents/j46wj670px33": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:02.371509Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:44.485174Z"
     },
     "https://www.githubstatus.com/incidents/y7lb2rg4btd7": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:03.170767Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:45.293402Z"
     },
     "https://www.githubstatus.com/incidents/7kltzm6r774q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:03.836329Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:47:46.022524Z"
     },
     "https://www.githubstatus.com/incidents/9qcwpy3ckdrf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:04.483655Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:46.799419Z"
     },
     "https://www.githubstatus.com/incidents/z8pt03f02ddv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:05.308747Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:47:47.450583Z"
     },
     "https://www.githubstatus.com/incidents/sd4v95zxm3np": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:05.999556Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:48.101905Z"
     },
     "https://www.githubstatus.com/incidents/p7mzl65jm7q3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:06.680329Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:48.901907Z"
     },
     "https://www.githubstatus.com/incidents/hw33b7tc1lv2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:07.370678Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:49.661079Z"
     },
     "https://www.githubstatus.com/incidents/3l5g70d16ldz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:08.071442Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:50.645603Z"
     },
     "https://www.githubstatus.com/incidents/crd2y6xy6knn": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:28:08.760191Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:51.460267Z"
     },
     "https://www.githubstatus.com/incidents/kkm7hd89m0yt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:09.466941Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:52.343677Z"
     },
     "https://www.githubstatus.com/incidents/x10xvvl5kk4q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:10.160570Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:53.370445Z"
     },
     "https://www.githubstatus.com/incidents/txt7rjw95rhx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:10.863805Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:54.419055Z"
     },
     "https://www.githubstatus.com/incidents/zltys99f2lgq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:11.557946Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:55.404277Z"
     },
     "https://www.githubstatus.com/incidents/djpyjb19cfjd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:12.089073Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:56.247046Z"
     },
     "https://www.githubstatus.com/incidents/f9rjhk3zh62b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:12.748953Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:56.909010Z"
     },
     "https://www.githubstatus.com/incidents/k20s3qvr28zw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:13.583617Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:47:57.741587Z"
     },
     "https://www.githubstatus.com/incidents/c66qtgw0r1lk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:14.220498Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:58.427751Z"
     },
     "https://www.githubstatus.com/incidents/8pk9qxksg7cj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:14.912129Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:59.113335Z"
     },
     "https://www.githubstatus.com/incidents/j3byj17b8m1t": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:15.680918Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:47:59.909090Z"
     },
     "https://www.githubstatus.com/incidents/btl2cjm2pzkj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:16.391652Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Packages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:00.638634Z"
     },
     "https://www.githubstatus.com/incidents/bq1m45stqm8s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:17.055075Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:01.423180Z"
     },
     "https://www.githubstatus.com/incidents/j52q1q20c8jt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:17.854606Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:02.091280Z"
     },
     "https://www.githubstatus.com/incidents/s6d4x8c6cvv5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:18.551790Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:48:02.809952Z"
     },
     "https://www.githubstatus.com/incidents/61btx2g21zc6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:19.092753Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:48:03.573952Z"
     },
     "https://www.githubstatus.com/incidents/qjbc2h6dfyvc": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:19.620008Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:04.218634Z"
     },
     "https://www.githubstatus.com/incidents/spbr5ff8hyt2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:20.145242Z"
+      "components": [
+        "Git Operations",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:04.917577Z"
     },
     "https://www.githubstatus.com/incidents/j630wwvgw9kb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:20.998500Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:05.679691Z"
     },
     "https://www.githubstatus.com/incidents/6swp0zf7lk8h": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:21.733566Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:06.458200Z"
     },
     "https://www.githubstatus.com/incidents/skmqnpynxyqs": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:22.710309Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:48:07.241581Z"
     },
     "https://www.githubstatus.com/incidents/j2fdyn2v9df9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:23.546361Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:07.877120Z"
     },
     "https://www.githubstatus.com/incidents/9rfydl2xdqqj": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:24.448523Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:48:08.551884Z"
     },
     "https://www.githubstatus.com/incidents/c2psrbjsmrxr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:25.321278Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:09.357105Z"
     },
     "https://www.githubstatus.com/incidents/fg0pp1nl4bdg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:26.028392Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:48:09.996309Z"
     },
     "https://www.githubstatus.com/incidents/lgnmptjvcl5g": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:27.044154Z"
+      "components": [
+        "Issues",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:10.866537Z"
     },
     "https://www.githubstatus.com/incidents/2cl0fjn559ty": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:27.916777Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:11.522405Z"
     },
     "https://www.githubstatus.com/incidents/g0bsmfqmq8xt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:28.612719Z"
+      "components": [
+        "Git Operations",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:48:12.202357Z"
     },
     "https://www.githubstatus.com/incidents/c7kq3ctclddp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:29.382842Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:13.011781Z"
     },
     "https://www.githubstatus.com/incidents/x7gtw6r3x2s1": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:30.020307Z"
+      "components": [
+        "API Requests",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:48:13.714288Z"
     },
     "https://www.githubstatus.com/incidents/mj067hg9slb4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:30.654522Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:14.406633Z"
     },
     "https://www.githubstatus.com/incidents/mdj41rgqwjx5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:31.437179Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:48:15.110751Z"
     },
     "https://www.githubstatus.com/incidents/s9t1dgymd4v9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:32.121181Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:15.744912Z"
     },
     "https://www.githubstatus.com/incidents/n3vgjzqv7d18": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:32.758355Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:16.462497Z"
     },
     "https://www.githubstatus.com/incidents/ffh1r1w0hj6h": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:33.584945Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:17.227692Z"
     },
     "https://www.githubstatus.com/incidents/3kjv06tdxxfn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:34.287960Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:17.886840Z"
     },
     "https://www.githubstatus.com/incidents/nh22ywy9dh84": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:35.103667Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:48:18.706900Z"
     },
     "https://www.githubstatus.com/incidents/rdzg3x1qwtb3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:35.803269Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:48:19.452816Z"
     },
     "https://www.githubstatus.com/incidents/6kcgrd38691w": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:36.724452Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:20.278123Z"
     },
     "https://www.githubstatus.com/incidents/zlzvt6h3ck58": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:37.263100Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:48:21.094739Z"
     },
     "https://www.githubstatus.com/incidents/cm1pvx7g44d5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:37.920512Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:22.073719Z"
     },
     "https://www.githubstatus.com/incidents/nv48dwqdzd54": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:38.997546Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:22.805822Z"
     },
     "https://www.githubstatus.com/incidents/pm0l7tdd6nyk": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:39.801028Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:23.804645Z"
     },
     "https://www.githubstatus.com/incidents/xcn454p4wqtz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:40.467594Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:24.773041Z"
     },
     "https://www.githubstatus.com/incidents/t291vx7m731z": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:41.142123Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:25.636833Z"
     },
     "https://www.githubstatus.com/incidents/0s5rb1l03m76": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:41.969171Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:26.388380Z"
     },
     "https://www.githubstatus.com/incidents/071h21gptcp0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:42.690505Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:27.167652Z"
     },
     "https://www.githubstatus.com/incidents/l94jr9wnhs4r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:43.539568Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:27.869415Z"
     },
     "https://www.githubstatus.com/incidents/34wtrn4nngwk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:44.063480Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:28.741637Z"
     },
     "https://www.githubstatus.com/incidents/9f6pfjj0scrd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:44.735986Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:29.402987Z"
     },
     "https://www.githubstatus.com/incidents/kk58nfytx0c7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:45.473581Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:30.144611Z"
     },
     "https://www.githubstatus.com/incidents/k7bhmjkblcwp": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:46.165041Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:48:30.882846Z"
     },
     "https://www.githubstatus.com/incidents/fpbpfb33dw5s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:46.803018Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:31.576248Z"
     },
     "https://www.githubstatus.com/incidents/g8rmr5p85tzv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:47.446785Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:32.338441Z"
     },
     "https://www.githubstatus.com/incidents/vs7qnzbydz2p": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:48.283104Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:32.979028Z"
     },
     "https://www.githubstatus.com/incidents/krd9y2m82fbn": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:48.974194Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:48:33.665895Z"
     },
     "https://www.githubstatus.com/incidents/9klytnsknx20": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:49.781652Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:34.435301Z"
     },
     "https://www.githubstatus.com/incidents/qqd6b1xb63tq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:50.471278Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:35.110173Z"
     },
     "https://www.githubstatus.com/incidents/v61nk2fpysnq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:51.200699Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:35.757879Z"
     },
     "https://www.githubstatus.com/incidents/dlvf3sfmz7dm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:51.988600Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:48:36.531951Z"
     },
     "https://www.githubstatus.com/incidents/8vql81b3xcgq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:52.906388Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:37.169425Z"
     },
     "https://www.githubstatus.com/incidents/n7hf73qtpz2l": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:53.812171Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:37.814058Z"
     },
     "https://www.githubstatus.com/incidents/jkll48jj78zv": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:28:54.856126Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:38.683559Z"
     },
     "https://www.githubstatus.com/incidents/t6fcxny6yf14": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:55.905578Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:39.336506Z"
     },
     "https://www.githubstatus.com/incidents/jlhnszknd9pj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:57.322554Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:39.992805Z"
     },
     "https://www.githubstatus.com/incidents/pch0flk719dj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:28:58.171392Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:40.777394Z"
     },
     "https://www.githubstatus.com/incidents/4jxdz4m769gy": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:28:58.979293Z"
+      "components": [
+        "Actions",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:48:41.533562Z"
     },
     "https://www.githubstatus.com/incidents/6hygvwpw2vr3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:00.300631Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:42.323833Z"
     },
     "https://www.githubstatus.com/incidents/xkvk1yhmqfdl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:01.020537Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:42.960380Z"
     },
     "https://www.githubstatus.com/incidents/y8hlsmxtgf0w": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:01.728248Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:48:43.649928Z"
     },
     "https://www.githubstatus.com/incidents/0xpyl7hs9hm6": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:29:02.414048Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:44.467719Z"
     },
     "https://www.githubstatus.com/incidents/d5c8rxcwt7xw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:03.214279Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:45.157650Z"
     },
     "https://www.githubstatus.com/incidents/gnzclztblsh3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:03.988769Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:45.969610Z"
     },
     "https://www.githubstatus.com/incidents/htcm010tcwjq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:04.725206Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:46.624073Z"
     },
     "https://www.githubstatus.com/incidents/l0brgg302bf5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:05.561773Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:47.277334Z"
     },
     "https://www.githubstatus.com/incidents/br7kz68t38cl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:06.229064Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:48.125198Z"
     },
     "https://www.githubstatus.com/incidents/1jw8ltnr1qrj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:07.118996Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:48:48.769360Z"
     },
     "https://www.githubstatus.com/incidents/3bmqzkljz8s3": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:07.871010Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:49.637695Z"
     },
     "https://www.githubstatus.com/incidents/ql19qqqmdf99": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:08.635672Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:50.542002Z"
     },
     "https://www.githubstatus.com/incidents/5q7nmlxz30sk": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:09.303971Z"
+      "components": [
+        "Git Operations",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:48:51.476155Z"
     },
     "https://www.githubstatus.com/incidents/zzl9nl31lb35": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:09.944921Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:52.261164Z"
     },
     "https://www.githubstatus.com/incidents/zs5ccnvqv64m": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:10.781836Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:53.162136Z"
     },
     "https://www.githubstatus.com/incidents/cg3wwz9dw5dg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:11.555967Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:54.189381Z"
     },
     "https://www.githubstatus.com/incidents/v6sx0dv6rv2x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:12.378520Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:48:55.085725Z"
     },
     "https://www.githubstatus.com/incidents/d4775b3j5mwm": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:13.035653Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:48:55.834463Z"
     },
     "https://www.githubstatus.com/incidents/k95d6yq4tmly": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:29:13.671598Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:56.584795Z"
     },
     "https://www.githubstatus.com/incidents/3hdjjpkvz895": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:14.479525Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:57.247893Z"
     },
     "https://www.githubstatus.com/incidents/r6fc6tyzr430": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:15.130527Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:57.933420Z"
     },
     "https://www.githubstatus.com/incidents/n4fpndtvbmwb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:15.812068Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:48:58.626424Z"
     },
     "https://www.githubstatus.com/incidents/znmz4zmsg1rv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:16.575227Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:48:59.273141Z"
     },
     "https://www.githubstatus.com/incidents/17lxd87h22fj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:17.221689Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:49:00.029312Z"
     },
     "https://www.githubstatus.com/incidents/xntfc1fz5rfb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:17.915012Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:49:00.766493Z"
     },
     "https://www.githubstatus.com/incidents/40730vhmg6y8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:18.697120Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:49:01.425343Z"
     },
     "https://www.githubstatus.com/incidents/jcbsbbfd1x9r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:19.378921Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:49:02.265490Z"
     },
     "https://www.githubstatus.com/incidents/qkr3gcys0lzx": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:20.169827Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:49:02.928138Z"
     },
     "https://www.githubstatus.com/incidents/lctp4bzd37h2": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:29:20.816227Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:49:03.598324Z"
     },
     "https://www.githubstatus.com/incidents/vkr22005hg0x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:21.815108Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:49:04.734290Z"
     },
     "https://www.githubstatus.com/incidents/x696x0g4t85l": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:22.561460Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:49:05.441719Z"
     },
     "https://www.githubstatus.com/incidents/49y7x9g06l4x": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:23.591584Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:49:06.105700Z"
     },
     "https://www.githubstatus.com/incidents/y2wxzcfbgbn2": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:29:24.270981Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:49:06.959185Z"
     },
     "https://www.githubstatus.com/incidents/ccrzb3ms9j2d": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:25.268106Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:49:07.677274Z"
     },
     "https://www.githubstatus.com/incidents/d5t56pdnjxhd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:29:26.319979Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:49:08.360351Z"
     },
     "https://www.githubstatus.com/incidents/5jfkz8q1mlql": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:22.876235Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:25.590143Z"
     },
     "https://www.githubstatus.com/incidents/qdh0m7tdrh80": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:23.539110Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:26.438925Z"
     },
     "https://www.githubstatus.com/incidents/n2vqnsg14tw2": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:24.232765Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:27.338261Z"
     },
     "https://www.githubstatus.com/incidents/9nmsrrxb5brs": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:24.999762Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:28.097812Z"
     },
     "https://www.githubstatus.com/incidents/z95g34pl8rdm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:25.683661Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:41:29.014890Z"
     },
     "https://www.githubstatus.com/incidents/3nrmdrmgqxp3": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:26.571162Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:29.968374Z"
     },
     "https://www.githubstatus.com/incidents/pzqn9rnw81mq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:27.261716Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:30.625649Z"
     },
     "https://www.githubstatus.com/incidents/41p5nmg9pc82": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:28.104193Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:31.404726Z"
     },
     "https://www.githubstatus.com/incidents/k6vy6ypz04d9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:28.807705Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:41:32.058143Z"
     },
     "https://www.githubstatus.com/incidents/xfd2x56328gl": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:29.694741Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:32.737288Z"
     },
     "https://www.githubstatus.com/incidents/p5zql65p615b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:30.448569Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:33.513504Z"
     },
     "https://www.githubstatus.com/incidents/vxvyrmy9w1vp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:31.427296Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:34.157304Z"
     },
     "https://www.githubstatus.com/incidents/1rbd2wj299yq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:32.093808Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:34.850819Z"
     },
     "https://www.githubstatus.com/incidents/b40k7ckrs7sp": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:47:32.867124Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:41:35.612735Z"
     },
     "https://www.githubstatus.com/incidents/fjrlf0wn8vmq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:33.864594Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:36.319348Z"
     },
     "https://www.githubstatus.com/incidents/d1stj7xcn4fy": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:34.548476Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:41:37.271606Z"
     },
     "https://www.githubstatus.com/incidents/rw3k5dz04rqj": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:35.248148Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:38.060973Z"
     },
     "https://www.githubstatus.com/incidents/bq3s2sp6sfch": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:36.039797Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:38.755037Z"
     },
     "https://www.githubstatus.com/incidents/gcqz5grcs4z6": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:36.699001Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:41:39.437005Z"
     },
     "https://www.githubstatus.com/incidents/d10zrmmcg364": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:37.842465Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:40.320357Z"
     },
     "https://www.githubstatus.com/incidents/v4ct6yp3lgzl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:38.979994Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:41:41.042564Z"
     },
     "https://www.githubstatus.com/incidents/yyj2cdqdjbhk": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:39.986427Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:41:41.710624Z"
     },
     "https://www.githubstatus.com/incidents/zhtplv7zd052": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:41.427898Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:42.418364Z"
     },
     "https://www.githubstatus.com/incidents/8xxms3q3qzgp": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:42.404110Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:43.058807Z"
     },
     "https://www.githubstatus.com/incidents/fbx6ysfb4mff": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:43.123235Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:43.717187Z"
     },
     "https://www.githubstatus.com/incidents/6r4sms3hcj3x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:43.873903Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:44.516550Z"
     },
     "https://www.githubstatus.com/incidents/51n85n0plvj7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:44.507780Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:41:45.166461Z"
     },
     "https://www.githubstatus.com/incidents/x2zjps0r5wxn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:45.266438Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:45.814974Z"
     },
     "https://www.githubstatus.com/incidents/tcm2gtz9cnt5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:45.971926Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:46.614684Z"
     },
     "https://www.githubstatus.com/incidents/gvzcw6sd0xxb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:46.678345Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:47.276946Z"
     },
     "https://www.githubstatus.com/incidents/x4qbck5mz9xs": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:47.468565Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:47.991381Z"
     },
     "https://www.githubstatus.com/incidents/9xb0vpwcj8gj": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:48.138764Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:41:48.714571Z"
     },
     "https://www.githubstatus.com/incidents/10vm6ctn52gx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:48.834713Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:41:49.385513Z"
     },
     "https://www.githubstatus.com/incidents/cmjzdp4f6m8r": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:49.639545Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:50.207363Z"
     },
     "https://www.githubstatus.com/incidents/qzmhbwp7f6nn": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:47:50.335417Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:50.887535Z"
     },
     "https://www.githubstatus.com/incidents/33gh4sqgw547": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:47:51.191171Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:41:51.541800Z"
     },
     "https://www.githubstatus.com/incidents/dsj40hwxnldc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:51.923105Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:41:52.324320Z"
     },
     "https://www.githubstatus.com/incidents/437q52fb70hg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:52.758822Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:52.973207Z"
     },
     "https://www.githubstatus.com/incidents/7rghmvv5crq0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:53.595246Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:53.622506Z"
     },
     "https://www.githubstatus.com/incidents/8tnqgcg1qkk1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:54.370457Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:54.513785Z"
     },
     "https://www.githubstatus.com/incidents/0hkbgpcpbkc6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:55.061122Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:55.291822Z"
     },
     "https://www.githubstatus.com/incidents/bdtztmrydlwz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:55.903700Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:56.213224Z"
     },
     "https://www.githubstatus.com/incidents/2nd6fyb4drjx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:56.570837Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:41:56.924373Z"
     },
     "https://www.githubstatus.com/incidents/8gpymn7rystj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:57.277113Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:41:57.929041Z"
     },
     "https://www.githubstatus.com/incidents/mqmzg413z93k": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:58.035646Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:41:58.797823Z"
     },
     "https://www.githubstatus.com/incidents/fhx2r88mzbyv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:58.815794Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:41:59.686521Z"
     },
     "https://www.githubstatus.com/incidents/pmw828sz2w7k": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:47:59.610274Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:00.412679Z"
     },
     "https://www.githubstatus.com/incidents/v7x4r4mplb4t": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:00.347508Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:01.290825Z"
     },
     "https://www.githubstatus.com/incidents/qjf5mzdcp335": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:01.284581Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:01.943249Z"
     },
     "https://www.githubstatus.com/incidents/hjxtlk3fvr09": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:02.012691Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:02.609360Z"
     },
     "https://www.githubstatus.com/incidents/cwp52gsftl5n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:02.771064Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "Visit www"
+      ],
+      "fetched_at": "2026-01-03T23:42:03.393323Z"
     },
     "https://www.githubstatus.com/incidents/wl09fvhb20x8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:03.457232Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "Visit www"
+      ],
+      "fetched_at": "2026-01-03T23:42:04.088591Z"
     },
     "https://www.githubstatus.com/incidents/d181frs643d4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:04.293820Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:42:04.887744Z"
     },
     "https://www.githubstatus.com/incidents/1nyvf21q5dn7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:05.104455Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:05.542755Z"
     },
     "https://www.githubstatus.com/incidents/sqcs1d0yk16q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:05.889920Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:06.204766Z"
     },
     "https://www.githubstatus.com/incidents/pz0bvrjx9ztp": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:06.570605Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:07.013108Z"
     },
     "https://www.githubstatus.com/incidents/p38y9j23bt7b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:07.417869Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:07.670134Z"
     },
     "https://www.githubstatus.com/incidents/8blgv351d71j": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:08.343179Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:08.325997Z"
     },
     "https://www.githubstatus.com/incidents/3z36qpp2c0z1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:09.342469Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:09.158609Z"
     },
     "https://www.githubstatus.com/incidents/6mdt263cpf9q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:10.394411Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:09.857969Z"
     },
     "https://www.githubstatus.com/incidents/v5bcd4pzckky": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:11.451266Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:10.654438Z"
     },
     "https://www.githubstatus.com/incidents/2n0tnk7tt6q9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:12.538475Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:11.278622Z"
     },
     "https://www.githubstatus.com/incidents/nbhb2lxyh9bb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:13.298137Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:11.990301Z"
     },
     "https://www.githubstatus.com/incidents/w29zg5h2chkp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:13.957696Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:12.775585Z"
     },
     "https://www.githubstatus.com/incidents/m574010k9c5l": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:14.864127Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:13.461997Z"
     },
     "https://www.githubstatus.com/incidents/znnw195p1vf9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:15.560452Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:14.130598Z"
     },
     "https://www.githubstatus.com/incidents/pn4l6g1wlg3x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:16.378044Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:14.930580Z"
     },
     "https://www.githubstatus.com/incidents/6w7lf30qkgqq": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:48:17.043890Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:15.594224Z"
     },
     "https://www.githubstatus.com/incidents/r5zfm12w4mbb": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:17.878267Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:16.422241Z"
     },
     "https://www.githubstatus.com/incidents/smn1qtqvbsb6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:18.630483Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:17.099785Z"
     },
     "https://www.githubstatus.com/incidents/gq1x0j8bv67v": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:19.520368Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:17.736783Z"
     },
     "https://www.githubstatus.com/incidents/7hfyz8mjg663": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:20.184347Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:18.540094Z"
     },
     "https://www.githubstatus.com/incidents/298l2r792bl7": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:20.866642Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:19.198092Z"
     },
     "https://www.githubstatus.com/incidents/w0q17vf0dzjr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:21.626268Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:19.891828Z"
     },
     "https://www.githubstatus.com/incidents/4vr2qz8lgdmq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:22.345863Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:20.693319Z"
     },
     "https://www.githubstatus.com/incidents/5kjgx4x2frkw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:23.194355Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:42:21.358216Z"
     },
     "https://www.githubstatus.com/incidents/mjcj3l3s160q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:23.891838Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:22.188779Z"
     },
     "https://www.githubstatus.com/incidents/83yg2mk1cx3c": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:24.773259Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:22.868771Z"
     },
     "https://www.githubstatus.com/incidents/qd7z2cytghrd": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:25.634310Z"
+      "components": [
+        "Issues",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:23.533333Z"
     },
     "https://www.githubstatus.com/incidents/dzd955kb7tsb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:26.335841Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:24.428528Z"
     },
     "https://www.githubstatus.com/incidents/z9dd32bvfgp3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:27.049634Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:25.226233Z"
     },
     "https://www.githubstatus.com/incidents/lpslbfcw2czs": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:48:27.915806Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:26.212644Z"
     },
     "https://www.githubstatus.com/incidents/gw33xm0hbl00": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:28.792311Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:27.263005Z"
     },
     "https://www.githubstatus.com/incidents/zbr492f1vzcy": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:29.564208Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:28.334267Z"
     },
     "https://www.githubstatus.com/incidents/9hvtdt3pn3z6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:30.252274Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:29.386785Z"
     },
     "https://www.githubstatus.com/incidents/3ktldkb3r6f8": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:48:31.055683Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:30.277553Z"
     },
     "https://www.githubstatus.com/incidents/9x0hxrdj9crr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:31.793259Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:31.103554Z"
     },
     "https://www.githubstatus.com/incidents/mcb7n71zvlgb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:32.580348Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:31.770321Z"
     },
     "https://www.githubstatus.com/incidents/6j4vyplhgy51": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:33.268176Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:32.410899Z"
     },
     "https://www.githubstatus.com/incidents/ysp25kyy4lz2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:34.014781Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:42:33.105509Z"
     },
     "https://www.githubstatus.com/incidents/jrzkpt9g8zm6": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:34.750608Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:33.793917Z"
     },
     "https://www.githubstatus.com/incidents/74y4xlr09qll": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:35.438111Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:34.503614Z"
     },
     "https://www.githubstatus.com/incidents/pk3y4xdscdc2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:36.229084Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:35.653892Z"
     },
     "https://www.githubstatus.com/incidents/9p9d329r7291": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:36.970705Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:36.419538Z"
     },
     "https://www.githubstatus.com/incidents/svd79g61q1wf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:38.006088Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:37.100592Z"
     },
     "https://www.githubstatus.com/incidents/69flmdbxhtsk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:38.747947Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:37.917308Z"
     },
     "https://www.githubstatus.com/incidents/ljwdk6qml8z8": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:48:39.757540Z"
+      "components": [
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:42:38.579785Z"
     },
     "https://www.githubstatus.com/incidents/3208bb8blz5k": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:40.802796Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:39.224683Z"
     },
     "https://www.githubstatus.com/incidents/zms09plx5zps": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:41.878399Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:40.062012Z"
     },
     "https://www.githubstatus.com/incidents/wn9bc5dt94v7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:42.819788Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:40.744668Z"
     },
     "https://www.githubstatus.com/incidents/f6nzhphqf37p": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:43.642018Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:41.403985Z"
     },
     "https://www.githubstatus.com/incidents/01g5rt6z89q2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:44.350418Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:42.188747Z"
     },
     "https://www.githubstatus.com/incidents/by950fpm0xlg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:45.211248Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:42.836521Z"
     },
     "https://www.githubstatus.com/incidents/6p0msrcyr3qt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:45.970089Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:43.685436Z"
     },
     "https://www.githubstatus.com/incidents/4p7zympgsr86": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:46.787093Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:44.348241Z"
     },
     "https://www.githubstatus.com/incidents/pkbqcn8dp6dy": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:47.440497Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:44.983587Z"
     },
     "https://www.githubstatus.com/incidents/d5158f5wh1ly": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:48:48.595722Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:42:45.676514Z"
     },
     "https://www.githubstatus.com/incidents/3y3y8nnbyt2d": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:49.412743Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:46.379962Z"
     },
     "https://www.githubstatus.com/incidents/cb6ljbzhktxd": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:50.122825Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:47.021991Z"
     },
     "https://www.githubstatus.com/incidents/1whd66ydswnx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:50.954107Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:47.695567Z"
     },
     "https://www.githubstatus.com/incidents/srn4b1fjxp8h": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:51.675006Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:48.476039Z"
     },
     "https://www.githubstatus.com/incidents/ffwkvn9j77d1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:52.509007Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:49.109070Z"
     },
     "https://www.githubstatus.com/incidents/00km0kwpz23b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:53.182969Z"
+      "components": [
+        "Git Operations",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:49.782180Z"
     },
     "https://www.githubstatus.com/incidents/n6wxc7xwrk1z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:53.915754Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:50.827763Z"
     },
     "https://www.githubstatus.com/incidents/hzgtxb033mym": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:54.650001Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:51.639251Z"
     },
     "https://www.githubstatus.com/incidents/f3kthhhjt9ss": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:55.359423Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:52.276592Z"
     },
     "https://www.githubstatus.com/incidents/tyk95n0z3pql": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:56.173489Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:52.933738Z"
     },
     "https://www.githubstatus.com/incidents/z2j6pjg527p6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:56.906546Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:42:53.728835Z"
     },
     "https://www.githubstatus.com/incidents/n18j5g7wpg0s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:57.766595Z"
+      "components": [
+        "Git Operations",
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:42:54.525675Z"
     },
     "https://www.githubstatus.com/incidents/9c941kssjk0q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:58.460770Z"
+      "components": [
+        "API Requests",
+        "Actions",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:42:55.422046Z"
     },
     "https://www.githubstatus.com/incidents/4hzj8r2jm0mn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:48:59.322365Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:56.289928Z"
     },
     "https://www.githubstatus.com/incidents/gbtkj97xtb9n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:00.014334Z"
+      "components": [
+        "API Requests",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:42:57.046946Z"
     },
     "https://www.githubstatus.com/incidents/mxq7707n6gcf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:00.704569Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:42:57.841019Z"
     },
     "https://www.githubstatus.com/incidents/96qcsn6qsl7w": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:01.475944Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:42:58.742770Z"
     },
     "https://www.githubstatus.com/incidents/d1l8lxw26y8k": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:02.165668Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:42:59.746426Z"
     },
     "https://www.githubstatus.com/incidents/zf2tk6x40gmh": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:03.012458Z"
+      "components": [
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:00.537608Z"
     },
     "https://www.githubstatus.com/incidents/zxl9k08m9xwf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:03.756834Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:01.199018Z"
     },
     "https://www.githubstatus.com/incidents/dg18mmgm4v3n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:04.612201Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:43:02.056860Z"
     },
     "https://www.githubstatus.com/incidents/1cdsggtd2q5k": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:49:05.350265Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:43:02.742765Z"
     },
     "https://www.githubstatus.com/incidents/ll8gxx3svld7": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:49:06.162977Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:43:03.404386Z"
     },
     "https://www.githubstatus.com/incidents/dyt4c3n4bqc2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:06.877657Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:04.281346Z"
     },
     "https://www.githubstatus.com/incidents/cvhhm9zxcr49": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:07.957562Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:04.928922Z"
     },
     "https://www.githubstatus.com/incidents/ygpk8m60shzm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:09.092230Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:05.603086Z"
     },
     "https://www.githubstatus.com/incidents/wy9lzdg3ycxn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:10.163650Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:06.302576Z"
     },
     "https://www.githubstatus.com/incidents/cmsz976yn1km": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:11.209735Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:07.028185Z"
     },
     "https://www.githubstatus.com/incidents/53t2nlxs8016": {
       "impact": "maintenance",
-      "fetched_at": "2026-01-03T22:49:12.241411Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:43:07.824247Z"
     },
     "https://www.githubstatus.com/incidents/3n3gqvfnj0np": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:13.105453Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:08.476060Z"
     },
     "https://www.githubstatus.com/incidents/qfxsh2sgz70d": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:13.788856Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:09.142771Z"
     },
     "https://www.githubstatus.com/incidents/ytnkrdx2ssjr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:14.582199Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:09.898293Z"
     },
     "https://www.githubstatus.com/incidents/k57pyxrflr39": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:15.230348Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:10.691270Z"
     },
     "https://www.githubstatus.com/incidents/t2xwk9mz56f4": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:16.119110Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:11.525457Z"
     },
     "https://www.githubstatus.com/incidents/mbq8jqhclh91": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:16.775087Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:12.210044Z"
     },
     "https://www.githubstatus.com/incidents/pd991fsqrw9s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:17.431097Z"
+      "components": [
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:12.950681Z"
     },
     "https://www.githubstatus.com/incidents/sn4m3hkqr4vz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:18.249811Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:43:13.654702Z"
     },
     "https://www.githubstatus.com/incidents/d6f6kjk81v33": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:18.948919Z"
+      "components": [
+        "Actions",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:14.301239Z"
     },
     "https://www.githubstatus.com/incidents/f4l7jtckk0mx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:19.818477Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:15.036512Z"
     },
     "https://www.githubstatus.com/incidents/bypf7bqdh4g0": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:20.481836Z"
+      "components": [
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:15.739256Z"
     },
     "https://www.githubstatus.com/incidents/z0kj7nzrhrn5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:21.407104Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:16.442242Z"
     },
     "https://www.githubstatus.com/incidents/qfby3shb6r3w": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:22.113482Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:17.149042Z"
     },
     "https://www.githubstatus.com/incidents/sr7zptjd0b07": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:49:22.915321Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:43:17.838399Z"
     },
     "https://www.githubstatus.com/incidents/by9x6zbmfx8y": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:23.615654Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:18.487445Z"
     },
     "https://www.githubstatus.com/incidents/00ymkms22sz7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:24.314073Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:19.158036Z"
     },
     "https://www.githubstatus.com/incidents/71v1ws5dkyhx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:25.058534Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:19.938559Z"
     },
     "https://www.githubstatus.com/incidents/dkm3dxjzynxh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:25.776015Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:43:20.596671Z"
     },
     "https://www.githubstatus.com/incidents/ybnn77s3lyf8": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:26.558303Z"
+      "components": [
+        "Actions",
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:22.330205Z"
     },
     "https://www.githubstatus.com/incidents/z5ykrdm7ykwg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:27.243569Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:23.083568Z"
     },
     "https://www.githubstatus.com/incidents/8095qt814fr4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:27.935149Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:23.724728Z"
     },
     "https://www.githubstatus.com/incidents/rzqm3bfcn80x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:28.973783Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:24.577170Z"
     },
     "https://www.githubstatus.com/incidents/yc4d45cp0pxn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:29.780474Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:25.349874Z"
     },
     "https://www.githubstatus.com/incidents/rcjsf188vx7q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:30.476569Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:26.050873Z"
     },
     "https://www.githubstatus.com/incidents/x7njwb481j9b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:31.300216Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:27.051759Z"
     },
     "https://www.githubstatus.com/incidents/ngfhz9jts91q": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:31.992518Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:43:28.427139Z"
     },
     "https://www.githubstatus.com/incidents/52z0j6phhnjs": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:32.957389Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:29.203453Z"
     },
     "https://www.githubstatus.com/incidents/chnz8v3m9dqm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:33.678621Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:30.168192Z"
     },
     "https://www.githubstatus.com/incidents/z3c6q056q332": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:34.505149Z"
+      "components": [
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:31.048694Z"
     },
     "https://www.githubstatus.com/incidents/rmc0cpn9sn8w": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:35.173545Z"
+      "components": [
+        "Git Operations",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:31.712077Z"
     },
     "https://www.githubstatus.com/incidents/0d1bcqt29hm2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:36.072282Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:32.520089Z"
     },
     "https://www.githubstatus.com/incidents/5nlnzt80fk7g": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:36.757309Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:33.210878Z"
     },
     "https://www.githubstatus.com/incidents/yqbbq78g1vpk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:37.782718Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:33.901679Z"
     },
     "https://www.githubstatus.com/incidents/5w7lb9j98x96": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:38.523651Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:34.619981Z"
     },
     "https://www.githubstatus.com/incidents/k1qts16jgtcp": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:39.533014Z"
+      "components": [
+        "Git Operations",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:35.306066Z"
     },
     "https://www.githubstatus.com/incidents/g8mb319cqjsp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:40.566171Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:36.140830Z"
     },
     "https://www.githubstatus.com/incidents/jl6ryhty8h5x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:41.617186Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:36.816579Z"
     },
     "https://www.githubstatus.com/incidents/113cggyjrxpr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:42.612264Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:37.496742Z"
     },
     "https://www.githubstatus.com/incidents/rcnl10p4hywg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:43.410097Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Actions",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:38.286735Z"
     },
     "https://www.githubstatus.com/incidents/y9cw6kf9pn72": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:44.174027Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:38.940323Z"
     },
     "https://www.githubstatus.com/incidents/vsc464zj7gv4": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:44.980723Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:43:39.639834Z"
     },
     "https://www.githubstatus.com/incidents/5h6hwm15zt11": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:45.667455Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:40.383701Z"
     },
     "https://www.githubstatus.com/incidents/lhw4ny5js29b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:46.531870Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:41.068349Z"
     },
     "https://www.githubstatus.com/incidents/c2jg911dtkjb": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:47.218448Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:41.950602Z"
     },
     "https://www.githubstatus.com/incidents/wzv2wd9zvhpr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:47.896971Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:42.626499Z"
     },
     "https://www.githubstatus.com/incidents/f0mhbz9xn497": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:48.663706Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:43.523248Z"
     },
     "https://www.githubstatus.com/incidents/wj1qbq7r9tcl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:49.393499Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:43:44.177908Z"
     },
     "https://www.githubstatus.com/incidents/pr3498h3qkfy": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:50.201774Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:44.875502Z"
     },
     "https://www.githubstatus.com/incidents/nf7s6933tnn8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:50.911286Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:45.623894Z"
     },
     "https://www.githubstatus.com/incidents/dwyd2ql4mypg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:51.748866Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:46.344588Z"
     },
     "https://www.githubstatus.com/incidents/v2xjymn61dv8": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:52.435930Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:47.178674Z"
     },
     "https://www.githubstatus.com/incidents/wbscgqf3dc4s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:53.115757Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:43:47.855328Z"
     },
     "https://www.githubstatus.com/incidents/1g1gkh0qpyvs": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:49:53.901416Z"
+      "components": [
+        "Webhooks",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:48.790596Z"
     },
     "https://www.githubstatus.com/incidents/17c40y7spfgl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:54.582411Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:49.449915Z"
     },
     "https://www.githubstatus.com/incidents/0csnqhwzxp1m": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:55.445246Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:50.271778Z"
     },
     "https://www.githubstatus.com/incidents/csnbwc85chp2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:56.129850Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:50.937152Z"
     },
     "https://www.githubstatus.com/incidents/h3vqt1fvp9tc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:56.839749Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:51.610243Z"
     },
     "https://www.githubstatus.com/incidents/6tfr2b2s2073": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:57.563900Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:52.440271Z"
     },
     "https://www.githubstatus.com/incidents/psdymfgt6p7q": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:49:58.290335Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:43:53.073990Z"
     },
     "https://www.githubstatus.com/incidents/22qm4j1kvn0h": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:59.064193Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:53.711717Z"
     },
     "https://www.githubstatus.com/incidents/tcp7119jvq7y": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:49:59.817147Z"
+      "components": [
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:54.686051Z"
     },
     "https://www.githubstatus.com/incidents/yr8dbc2p1ny4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:00.689509Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:55.718456Z"
     },
     "https://www.githubstatus.com/incidents/ws2l6203cs7g": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:01.384525Z"
+      "components": [
+        "API Requests",
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:43:56.469273Z"
     },
     "https://www.githubstatus.com/incidents/xqskfvqm07w3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:02.229943Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:43:57.467041Z"
     },
     "https://www.githubstatus.com/incidents/gqx5l06jjxhp": {
       "impact": "critical",
-      "fetched_at": "2026-01-03T22:50:02.966060Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:43:58.510953Z"
     },
     "https://www.githubstatus.com/incidents/mc06mgh6qv9r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:03.805823Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:43:59.535871Z"
     },
     "https://www.githubstatus.com/incidents/pr0ptqcw6q8d": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:04.530893Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:00.351001Z"
     },
     "https://www.githubstatus.com/incidents/hz717kx2gsvq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:05.464805Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:01.005356Z"
     },
     "https://www.githubstatus.com/incidents/x4llkxfv8kn4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:06.222157Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:01.909000Z"
     },
     "https://www.githubstatus.com/incidents/shbq71s0g00z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:07.090980Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:02.555453Z"
     },
     "https://www.githubstatus.com/incidents/6503rcn8s34s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:08.228453Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:44:03.400317Z"
     },
     "https://www.githubstatus.com/incidents/98fs1552d2nw": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:50:09.056114Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:04.090905Z"
     },
     "https://www.githubstatus.com/incidents/mbvjmqbcb1xk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:09.985361Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:05.003428Z"
     },
     "https://www.githubstatus.com/incidents/xfmyxxhcknvj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:11.054261Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:05.694260Z"
     },
     "https://www.githubstatus.com/incidents/9f8dkxjg67qq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:12.021114Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:44:06.407917Z"
     },
     "https://www.githubstatus.com/incidents/l59z35rhzdky": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:12.917619Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:07.121325Z"
     },
     "https://www.githubstatus.com/incidents/s9scz41r9wkx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:13.768451Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:44:07.843903Z"
     },
     "https://www.githubstatus.com/incidents/nwb8m3ppfxw6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:14.489849Z"
+      "components": [
+        "Git Operations",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:08.620489Z"
     },
     "https://www.githubstatus.com/incidents/rk1918knvr0w": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:15.367317Z"
+      "components": [
+        "Webhooks",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:09.334869Z"
     },
     "https://www.githubstatus.com/incidents/sz8pjjhzcy3t": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:16.005526Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:10.081139Z"
     },
     "https://www.githubstatus.com/incidents/fjj29dxw0m7c": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:16.679228Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:10.809404Z"
     },
     "https://www.githubstatus.com/incidents/ljhhhw2tplqp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:17.497825Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:11.471179Z"
     },
     "https://www.githubstatus.com/incidents/jg4xwzwflb3r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:18.164303Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:12.288430Z"
     },
     "https://www.githubstatus.com/incidents/nj39bg7wbgdq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:19.011410Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:12.924511Z"
     },
     "https://www.githubstatus.com/incidents/q8swpy90g6pp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:19.702508Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:13.575894Z"
     },
     "https://www.githubstatus.com/incidents/smms25d68d09": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:20.365719Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:14.287534Z"
     },
     "https://www.githubstatus.com/incidents/w86r7g2x32j1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:21.172692Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:14.984147Z"
     },
     "https://www.githubstatus.com/incidents/spz29wshw9mh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:21.919943Z"
+      "components": [
+        "Webhooks",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:15.743524Z"
     },
     "https://www.githubstatus.com/incidents/yyr2ghh113dj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:22.732871Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:16.557478Z"
     },
     "https://www.githubstatus.com/incidents/99rhjnxq99tp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:23.451265Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:17.235498Z"
     },
     "https://www.githubstatus.com/incidents/wqv4yvlgtq62": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:24.276220Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:18.077544Z"
     },
     "https://www.githubstatus.com/incidents/f7lz4nc72bvp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:25.027474Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:18.760412Z"
     },
     "https://www.githubstatus.com/incidents/cbhwcvtkfr34": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:25.803548Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:19.408445Z"
     },
     "https://www.githubstatus.com/incidents/wz41ffzj8937": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:26.467863Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:20.232863Z"
     },
     "https://www.githubstatus.com/incidents/76xp2jd3px64": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:27.132761Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:20.873394Z"
     },
     "https://www.githubstatus.com/incidents/tqrmcdmghldw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:27.968495Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:21.531491Z"
     },
     "https://www.githubstatus.com/incidents/w01m57lwx8r3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:28.640934Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:22.322141Z"
     },
     "https://www.githubstatus.com/incidents/c8zjb9351hlc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:29.362924Z"
+      "components": [
+        "API Requests",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:22.961344Z"
     },
     "https://www.githubstatus.com/incidents/frdfpnnt85s8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:30.087768Z"
+      "components": [
+        "Git Operations",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:23.634975Z"
     },
     "https://www.githubstatus.com/incidents/smdz34v7j8q0": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:30.846898Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:24.435278Z"
     },
     "https://www.githubstatus.com/incidents/njb4tgwrkv34": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:31.646924Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:44:25.394922Z"
     },
     "https://www.githubstatus.com/incidents/n8wpsvv7wt6x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:32.320434Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:44:26.175839Z"
     },
     "https://www.githubstatus.com/incidents/2gy2gddtv23d": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:33.142849Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:44:26.994271Z"
     },
     "https://www.githubstatus.com/incidents/ty1p9pd6pncl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:33.795181Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:27.872695Z"
     },
     "https://www.githubstatus.com/incidents/8rwpr0c6hvbc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:34.494772Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:28.898896Z"
     },
     "https://www.githubstatus.com/incidents/frp2gyhj1mjc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:35.338785Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:29.895276Z"
     },
     "https://www.githubstatus.com/incidents/ndjt4zhsr7q9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:36.019837Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:30.752456Z"
     },
     "https://www.githubstatus.com/incidents/00lscqwb6ht5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:36.833721Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:31.389640Z"
     },
     "https://www.githubstatus.com/incidents/zjchv3zvfg50": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:37.706371Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:44:32.261981Z"
     },
     "https://www.githubstatus.com/incidents/ctr28sphxc4c": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:38.612231Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:32.958395Z"
     },
     "https://www.githubstatus.com/incidents/c85syxc7gnbx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:39.639770Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:33.831949Z"
     },
     "https://www.githubstatus.com/incidents/4ypqyv8zbrck": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:40.383701Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:44:34.486191Z"
     },
     "https://www.githubstatus.com/incidents/tpykx175y6jt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:41.759986Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:35.120214Z"
     },
     "https://www.githubstatus.com/incidents/9fk4c2w43clz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:42.728628Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:35.885742Z"
     },
     "https://www.githubstatus.com/incidents/w554d74dv18j": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:43.464224Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:36.541834Z"
     },
     "https://www.githubstatus.com/incidents/gtsz1l2jc96n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:44.235665Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:37.183705Z"
     },
     "https://www.githubstatus.com/incidents/gkrfrz6r7flc": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:44.991556Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:38.004081Z"
     },
     "https://www.githubstatus.com/incidents/lw4dvwltm025": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:45.806794Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:44:38.708570Z"
     },
     "https://www.githubstatus.com/incidents/p351mbywbp0t": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:46.575459Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:44:39.347176Z"
     },
     "https://www.githubstatus.com/incidents/sbjdwn6mvht7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:47.370188Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:44:40.152463Z"
     },
     "https://www.githubstatus.com/incidents/xb30mby9fs5x": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:48.119532Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:40.861694Z"
     },
     "https://www.githubstatus.com/incidents/m61vxgn4kvh2": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:48.955484Z"
+      "components": [
+        "API Requests",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:44:41.675310Z"
     },
     "https://www.githubstatus.com/incidents/wyk0ns67krlz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:49.714971Z"
+      "components": [
+        "Webhooks",
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:44:42.348400Z"
     },
     "https://www.githubstatus.com/incidents/knl5pxnx0byt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:50.599340Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:43.001172Z"
     },
     "https://www.githubstatus.com/incidents/mnv0g944fncw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:51.293686Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:43.793999Z"
     },
     "https://www.githubstatus.com/incidents/x39xrr5m11b3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:52.098194Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:44.437642Z"
     },
     "https://www.githubstatus.com/incidents/66vhjmd266r9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:52.813237Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:45.167436Z"
     },
     "https://www.githubstatus.com/incidents/dsb3kn1zfdl7": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:53.639005Z"
+      "components": [
+        "Webhooks",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:45.926591Z"
     },
     "https://www.githubstatus.com/incidents/dq9m4n5tfyr6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:54.315359Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:46.576846Z"
     },
     "https://www.githubstatus.com/incidents/fj7v3z6fy7ym": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:54.996573Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:44:47.212168Z"
     },
     "https://www.githubstatus.com/incidents/476y2pqmb3hc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:55.766307Z"
+      "components": [
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:48.032416Z"
     },
     "https://www.githubstatus.com/incidents/d3mfyt4nqnv5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:56.435867Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:44:48.773849Z"
     },
     "https://www.githubstatus.com/incidents/xlm9bd5xq5bk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:57.308436Z"
+      "components": [
+        "API Requests",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:49.677676Z"
     },
     "https://www.githubstatus.com/incidents/rp7669f45fjw": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:58.038092Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:50.472028Z"
     },
     "https://www.githubstatus.com/incidents/hzd6d6xhjpl6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:50:58.857226Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:44:51.367225Z"
     },
     "https://www.githubstatus.com/incidents/lt4kyp4tgx45": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:50:59.523573Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:52.432095Z"
     },
     "https://www.githubstatus.com/incidents/1h37j1mb9xnx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:00.223943Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:53.393373Z"
     },
     "https://www.githubstatus.com/incidents/464b7g25n77j": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:01.005985Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:44:54.138203Z"
     },
     "https://www.githubstatus.com/incidents/1ksntt4bk3bq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:01.798904Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:55.093682Z"
     },
     "https://www.githubstatus.com/incidents/zzy7pdshgqk0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:02.580484Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:55.887806Z"
     },
     "https://www.githubstatus.com/incidents/35pgg0gc75nv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:03.345240Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:56.538426Z"
     },
     "https://www.githubstatus.com/incidents/dxthh9653wkk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:04.275190Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:44:57.232857Z"
     },
     "https://www.githubstatus.com/incidents/pxg3dz4yg7lp": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:05.306221Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:57.997551Z"
     },
     "https://www.githubstatus.com/incidents/hmvr5kpgzc45": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:06.214511Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:44:58.677645Z"
     },
     "https://www.githubstatus.com/incidents/7ck5966p1073": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:07.042209Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:44:59.493354Z"
     },
     "https://www.githubstatus.com/incidents/bsk6hmj0d7nv": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:08.271996Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:00.161439Z"
     },
     "https://www.githubstatus.com/incidents/g6drnqm54qd4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:09.043282Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:00.847583Z"
     },
     "https://www.githubstatus.com/incidents/5y8b8lsqbbyq": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:09.887682Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:01.645032Z"
     },
     "https://www.githubstatus.com/incidents/7k5wl5j4f1t4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:10.572710Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:02.311442Z"
     },
     "https://www.githubstatus.com/incidents/3k40h28fkb2r": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:11.217544Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:45:03.145999Z"
     },
     "https://www.githubstatus.com/incidents/my7r3l9lsqnk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:12.020591Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:45:03.878399Z"
     },
     "https://www.githubstatus.com/incidents/vv6z7v5w80yr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:12.712037Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:04.551051Z"
     },
     "https://www.githubstatus.com/incidents/k0qjh7s64fxk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:13.538864Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:05.329971Z"
     },
     "https://www.githubstatus.com/incidents/wn6s1w8vkk1y": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:14.246558Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:05.986801Z"
     },
     "https://www.githubstatus.com/incidents/78qz8zwhx9tj": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:14.914467Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:06.816811Z"
     },
     "https://www.githubstatus.com/incidents/f9ntcnd3fdvs": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:15.777209Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:07.443711Z"
     },
     "https://www.githubstatus.com/incidents/5lc3f39mjcq8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:16.544142Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:08.111904Z"
     },
     "https://www.githubstatus.com/incidents/wcl1sw4mzg60": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:17.340984Z"
+      "components": [
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:08.822189Z"
     },
     "https://www.githubstatus.com/incidents/7x5z8plb48t6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:18.079239Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Actions",
+        "Pages",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:09.506083Z"
     },
     "https://www.githubstatus.com/incidents/7f4bllnv3h1n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:18.831640Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:10.182892Z"
     },
     "https://www.githubstatus.com/incidents/bgnqgwyj76l4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:19.495270Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:11.063328Z"
     },
     "https://www.githubstatus.com/incidents/fr6fgvdn41sw": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:20.230553Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:11.767421Z"
     },
     "https://www.githubstatus.com/incidents/q3gl44chgxwv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:20.988511Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:45:12.657547Z"
     },
     "https://www.githubstatus.com/incidents/9ym5p2sg6w5v": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:21.655570Z"
+      "components": [
+        "API Requests",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:13.369408Z"
     },
     "https://www.githubstatus.com/incidents/m07hfg0gly20": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:22.461571Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:45:14.179313Z"
     },
     "https://www.githubstatus.com/incidents/gqj5jrvzjb5h": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:23.177655Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:14.866412Z"
     },
     "https://www.githubstatus.com/incidents/bnkkbj90yhz6": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:24.026214Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:15.580544Z"
     },
     "https://www.githubstatus.com/incidents/syg5c6b5ls76": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:24.756262Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:16.325411Z"
     },
     "https://www.githubstatus.com/incidents/5ly0psff2s5d": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:25.593733Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Pages",
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:16.989324Z"
     },
     "https://www.githubstatus.com/incidents/mxksyxp6t1b1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:26.271500Z"
+      "components": [
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:45:17.826239Z"
     },
     "https://www.githubstatus.com/incidents/6tgmk1j7b4rn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:26.953174Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:18.476232Z"
     },
     "https://www.githubstatus.com/incidents/xcjgp37zx5dt": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:27.752578Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:19.167689Z"
     },
     "https://www.githubstatus.com/incidents/k7bc8pkxpmbp": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:28.443201Z"
+      "components": [
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:45:20.771195Z"
     },
     "https://www.githubstatus.com/incidents/gqb335zdyq82": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:29.315865Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:21.704643Z"
     },
     "https://www.githubstatus.com/incidents/9zq8p50p7tkh": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:30.022581Z"
+      "components": [
+        "Git Operations",
+        "API Requests",
+        "Issues",
+        "Actions",
+        "Pages",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:22.449560Z"
     },
     "https://www.githubstatus.com/incidents/b6f4j9ljz9r6": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:30.895563Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:23.449662Z"
     },
     "https://www.githubstatus.com/incidents/clgh4y84qzc8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:31.661170Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:24.335625Z"
     },
     "https://www.githubstatus.com/incidents/8jd596s0lt7s": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:32.495530Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:25.292803Z"
     },
     "https://www.githubstatus.com/incidents/jnlhc0lml6pp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:33.232031Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:25.934342Z"
     },
     "https://www.githubstatus.com/incidents/r7641l07b67v": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:34.167886Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:45:26.765884Z"
     },
     "https://www.githubstatus.com/incidents/7txcg0j03kkg": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:34.911593Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:27.436377Z"
     },
     "https://www.githubstatus.com/incidents/lg4ndssz2n7l": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:35.917143Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:45:28.151786Z"
     },
     "https://www.githubstatus.com/incidents/84bxn520qg2m": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:36.963511Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:28.908721Z"
     },
     "https://www.githubstatus.com/incidents/6wlqmlpsn6by": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:37.985143Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:29.610615Z"
     },
     "https://www.githubstatus.com/incidents/tsrh60nkbchl": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:39.013051Z"
+      "components": [
+        "API Requests",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:45:30.461054Z"
     },
     "https://www.githubstatus.com/incidents/lpd7npwx7wb5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:39.801883Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:31.181528Z"
     },
     "https://www.githubstatus.com/incidents/f7jl0mdd2jr5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:40.499204Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:31.891112Z"
     },
     "https://www.githubstatus.com/incidents/bfkxf0w61z1n": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:41.374497Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:32.583918Z"
     },
     "https://www.githubstatus.com/incidents/2bglpcjvg7xb": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:42.064578Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:33.279611Z"
     },
     "https://www.githubstatus.com/incidents/915nn7rmqth9": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:42.918363Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:34.103274Z"
     },
     "https://www.githubstatus.com/incidents/nj47vccwm2zj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:43.630096Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:34.834360Z"
     },
     "https://www.githubstatus.com/incidents/tn6bvw0pttjr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:44.450193Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:35.725005Z"
     },
     "https://www.githubstatus.com/incidents/k8nz2ljtvzv4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:45.180476Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:36.403974Z"
     },
     "https://www.githubstatus.com/incidents/g8g6c6s72836": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:45.868503Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:37.276968Z"
     },
     "https://www.githubstatus.com/incidents/9zxft4pnrhbt": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:46.688615Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:45:37.937340Z"
     },
     "https://www.githubstatus.com/incidents/fr6wzzpg0bsv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:47.351718Z"
+      "components": [
+        "Packages"
+      ],
+      "fetched_at": "2026-01-03T23:45:38.583312Z"
     },
     "https://www.githubstatus.com/incidents/lfrlwdg67fn8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:48.197317Z"
+      "components": [
+        "API Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:39.395788Z"
     },
     "https://www.githubstatus.com/incidents/k1mlxlmdhqqp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:48.865942Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:40.055725Z"
     },
     "https://www.githubstatus.com/incidents/nzc328r69wrv": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:49.721570Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:40.705201Z"
     },
     "https://www.githubstatus.com/incidents/538zgs80s3zg": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:50.441303Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:41.638411Z"
     },
     "https://www.githubstatus.com/incidents/y0frtmhd9n2z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:51.348934Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:42.535993Z"
     },
     "https://www.githubstatus.com/incidents/9vwllhs2w1kj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:52.062783Z"
+      "components": [
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:43.247823Z"
     },
     "https://www.githubstatus.com/incidents/4dq0ww5d0q7j": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:52.887126Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:45:44.040181Z"
     },
     "https://www.githubstatus.com/incidents/5dvz23w3gl38": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:53.557540Z"
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-01-03T23:45:44.693333Z"
     },
     "https://www.githubstatus.com/incidents/8532wfbvwqgr": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:54.235586Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:45.387254Z"
     },
     "https://www.githubstatus.com/incidents/5yx1d67vq9hg": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:55.064798Z"
+      "components": [
+        "Webhooks",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:46.305779Z"
     },
     "https://www.githubstatus.com/incidents/qqw9rrs21xmn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:55.773136Z"
+      "components": [
+        "Issues",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:45:46.980143Z"
     },
     "https://www.githubstatus.com/incidents/9lmrb0ch7cnn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:56.585174Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:47.787825Z"
     },
     "https://www.githubstatus.com/incidents/3483v9fw5pm3": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:57.404753Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:45:48.473003Z"
     },
     "https://www.githubstatus.com/incidents/p55k2jdgsrgc": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:51:58.149278Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:49.198535Z"
     },
     "https://www.githubstatus.com/incidents/88003ngctf1z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:58.862960Z"
+      "components": [
+        "Git Operations",
+        "Issues",
+        "Packages",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:45:50.182942Z"
     },
     "https://www.githubstatus.com/incidents/lzyq3tjy07yq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:51:59.673360Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:51.104186Z"
     },
     "https://www.githubstatus.com/incidents/m70hk23gx3nx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:00.494786Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:45:52.081189Z"
     },
     "https://www.githubstatus.com/incidents/9rrqvvf23fhc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:01.293558Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:52.860887Z"
     },
     "https://www.githubstatus.com/incidents/4s161kygs873": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:02.010138Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:53.853729Z"
     },
     "https://www.githubstatus.com/incidents/n2969465tx0b": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:02.828452Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:54.831383Z"
     },
     "https://www.githubstatus.com/incidents/q1yjht6mt3zn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:03.728016Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:55.668843Z"
     },
     "https://www.githubstatus.com/incidents/h2mghb83nt00": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:04.623638Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:56.302601Z"
     },
     "https://www.githubstatus.com/incidents/y0gqch2dhw5l": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:05.623457Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:56.971012Z"
     },
     "https://www.githubstatus.com/incidents/s4bvfmfm297p": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:06.467961Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:45:57.745590Z"
     },
     "https://www.githubstatus.com/incidents/dy0rbtrxtwlh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:07.398799Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:45:58.396153Z"
     },
     "https://www.githubstatus.com/incidents/cr44n0knc7xj": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:08.424063Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:59.023843Z"
     },
     "https://www.githubstatus.com/incidents/1kn4kywmvgz4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:09.229413Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:45:59.814682Z"
     },
     "https://www.githubstatus.com/incidents/fnj6l879tbtw": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:09.916462Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:00.472734Z"
     },
     "https://www.githubstatus.com/incidents/ndlzqycv0dh8": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:10.740324Z"
+      "components": [
+        "Webhooks"
+      ],
+      "fetched_at": "2026-01-03T23:46:01.107084Z"
     },
     "https://www.githubstatus.com/incidents/2qxyr481ywxf": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:11.394897Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:01.942496Z"
     },
     "https://www.githubstatus.com/incidents/kz4khcgdsfdv": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:12.284685Z"
+      "components": [
+        "Git Operations",
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions",
+        "Packages",
+        "Pages",
+        "Codespaces",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:02.702288Z"
     },
     "https://www.githubstatus.com/incidents/mrpx4trfk45z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:12.942064Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:03.576992Z"
     },
     "https://www.githubstatus.com/incidents/3vhw289ftnqp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:13.665555Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:04.227879Z"
     },
     "https://www.githubstatus.com/incidents/30jg3tzwbv93": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:14.464098Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:05.037738Z"
     },
     "https://www.githubstatus.com/incidents/1zyrr8fxrl21": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:15.171595Z"
+      "components": [
+        "Git Operations",
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:46:05.788350Z"
     },
     "https://www.githubstatus.com/incidents/345t4sjty6q3": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:15.987621Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:06.650141Z"
     },
     "https://www.githubstatus.com/incidents/djwfzglh2dyq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:16.684467Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:07.330336Z"
     },
     "https://www.githubstatus.com/incidents/9dyp7zt86rp5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:17.531442Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:08.157330Z"
     },
     "https://www.githubstatus.com/incidents/v677w7xlvkss": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:18.223322Z"
+      "components": [
+        "Webhooks",
+        "Issues",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:08.818119Z"
     },
     "https://www.githubstatus.com/incidents/rzqy51mc72dx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:19.101296Z"
+      "components": [
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:09.481433Z"
     },
     "https://www.githubstatus.com/incidents/r3x7x31k7nn1": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:19.800852Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:10.280234Z"
     },
     "https://www.githubstatus.com/incidents/69sb0f8lydp4": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:20.706989Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:46:11.033440Z"
     },
     "https://www.githubstatus.com/incidents/2dxdzc3fdgdx": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:21.379297Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:11.831463Z"
     },
     "https://www.githubstatus.com/incidents/q3xqwmcxzkqq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:22.197608Z"
+      "components": [
+        "Git Operations"
+      ],
+      "fetched_at": "2026-01-03T23:46:12.478643Z"
     },
     "https://www.githubstatus.com/incidents/1g9v7rry4z86": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:22.912822Z"
+      "components": [
+        "Actions",
+        "Pages"
+      ],
+      "fetched_at": "2026-01-03T23:46:13.127399Z"
     },
     "https://www.githubstatus.com/incidents/zp4gzrqfzhrq": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:23.621860Z"
+      "components": [
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:13.924604Z"
     },
     "https://www.githubstatus.com/incidents/wlb83pxg009y": {
       "impact": "none",
-      "fetched_at": "2026-01-03T22:52:24.363876Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:14.569008Z"
     },
     "https://www.githubstatus.com/incidents/bdzwt47fwg51": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:25.075678Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:15.238067Z"
     },
     "https://www.githubstatus.com/incidents/m17w6x7syhx0": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:25.939980Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:16.072825Z"
     },
     "https://www.githubstatus.com/incidents/myvz2tsj2dh8": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:26.659211Z"
+      "components": [
+        "Actions",
+        "Copilot"
+      ],
+      "fetched_at": "2026-01-03T23:46:16.822680Z"
     },
     "https://www.githubstatus.com/incidents/xy3hrpmg4r3k": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:27.460681Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:17.595444Z"
     },
     "https://www.githubstatus.com/incidents/9yk1fbk0qjjc": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:28.207135Z"
+      "components": [
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:18.244396Z"
     },
     "https://www.githubstatus.com/incidents/17yzcr45rg2x": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:29.013250Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:18.906444Z"
     },
     "https://www.githubstatus.com/incidents/b85tj3x6n4vz": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:29.722393Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:19.939244Z"
     },
     "https://www.githubstatus.com/incidents/dnq4lp93t62f": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:30.587725Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:20.960472Z"
     },
     "https://www.githubstatus.com/incidents/nbscbkxwxjrx": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:31.274706Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:22.165274Z"
     },
     "https://www.githubstatus.com/incidents/ltyqfp67463z": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:31.948596Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:23.213959Z"
     },
     "https://www.githubstatus.com/incidents/y5pb0bxhlcxz": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:32.757841Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:24.274846Z"
     },
     "https://www.githubstatus.com/incidents/fjntvyfzm8kn": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:33.622960Z"
+      "components": [
+        "Codespaces"
+      ],
+      "fetched_at": "2026-01-03T23:46:25.055881Z"
     },
     "https://www.githubstatus.com/incidents/qq1m7mqcl6zk": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:34.633613Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:25.815865Z"
     },
     "https://www.githubstatus.com/incidents/v4d2jbm842p4": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:35.682700Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:26.619257Z"
     },
     "https://www.githubstatus.com/incidents/w6g0cmvyx3vm": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:36.737499Z"
+      "components": [
+        "API Requests",
+        "Pull Requests",
+        "Actions"
+      ],
+      "fetched_at": "2026-01-03T23:46:27.271991Z"
     },
     "https://www.githubstatus.com/incidents/lbdsk3990lz5": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:37.607741Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:27.990462Z"
     },
     "https://www.githubstatus.com/incidents/4349zxvb8stp": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:38.654723Z"
+      "components": [
+        "Webhooks",
+        "API Requests",
+        "Issues",
+        "Pull Requests"
+      ],
+      "fetched_at": "2026-01-03T23:46:28.704637Z"
     },
     "https://www.githubstatus.com/incidents/d33mtmnttgsh": {
       "impact": "minor",
-      "fetched_at": "2026-01-03T22:52:39.528604Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:29.382716Z"
     },
     "https://www.githubstatus.com/incidents/fnq063tqh7cc": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:40.184484Z"
+      "components": [
+        "Issues"
+      ],
+      "fetched_at": "2026-01-03T23:46:30.202742Z"
     },
     "https://www.githubstatus.com/incidents/5hjghvwvqztc": {
       "impact": "major",
-      "fetched_at": "2026-01-03T22:52:40.884913Z"
+      "components": null,
+      "fetched_at": "2026-01-03T23:46:30.850450Z"
     }
   }
 }

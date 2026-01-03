@@ -74,6 +74,8 @@ IMPACT_RE_2 = re.compile(
     re.IGNORECASE,
 )
 CLASS_ATTR_RE = re.compile(r"class=[\"']([^\"']+)[\"']", re.IGNORECASE)
+COMPONENTS_RE = re.compile(r"This incident affected:\s*([^.]+)", re.IGNORECASE)
+COMPONENTS_ALT_RE = re.compile(r"Affected components?:\s*([^.]+)", re.IGNORECASE)
 
 
 def run_git(args):
@@ -193,6 +195,19 @@ def extract_impact_from_html(html_text):
     return None
 
 
+def extract_components_from_html(html_text):
+    text = STRIP_TAGS_RE.sub(" ", html_text)
+    text = html.unescape(text)
+    text = " ".join(text.split())
+    match = COMPONENTS_RE.search(text) or COMPONENTS_ALT_RE.search(text)
+    if not match:
+        return None
+    raw = match.group(1).strip().rstrip(".")
+    raw = raw.replace(" and ", ", ")
+    parts = [part.strip() for part in raw.split(",") if part.strip()]
+    return parts or None
+
+
 def fetch_url(url, timeout=15):
     req = urllib.request.Request(
         url,
@@ -237,18 +252,26 @@ def enrich_impacts(incidents, cache_path, delay_seconds):
         if not url:
             continue
         cached = cache.get(url)
-        if cached and cached.get("impact"):
-            incident["impact"] = cached["impact"]
+        if cached:
+            if cached.get("impact"):
+                incident["impact"] = cached["impact"]
+            if cached.get("components"):
+                incident["components"] = cached["components"]
+        if cached and cached.get("impact") and cached.get("components") is not None:
             continue
         try:
             html_text = fetch_url(url)
         except (urllib.error.URLError, urllib.error.HTTPError):
             continue
         impact = extract_impact_from_html(html_text)
+        components = extract_components_from_html(html_text)
         if impact:
             incident["impact"] = impact
+        if components:
+            incident["components"] = components
         cache[url] = {
             "impact": impact,
+            "components": components,
             "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         }
         updated = True

@@ -119,6 +119,17 @@ class ExtractIncidentsTests(unittest.TestCase):
         html = '<div class="incident-title">No impact class</div>'
         self.assertIsNone(ei.extract_impact_from_html(html))
 
+    def test_extract_components_from_html(self):
+        html = '<div>This incident affected: Git Operations, Webhooks, and API Requests.</div>'
+        self.assertEqual(
+            ei.extract_components_from_html(html),
+            ["Git Operations", "Webhooks", "API Requests"],
+        )
+
+    def test_extract_components_from_html_none(self):
+        html = '<div>No components listed here.</div>'
+        self.assertIsNone(ei.extract_components_from_html(html))
+
 
 if __name__ == "__main__":
     unittest.main()

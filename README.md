@@ -52,3 +52,5 @@ The automation workflow writes to `parsed/`.
 - `<out>/incidents/`: per-incident JSON files when using `--incidents-format split`
 - `<out>/segments.csv`: per-status timeline segments for Gantt/phase views
 - `<out>/downtime_windows.csv`: downtime windows for incident bar charts
+
+Incident records include optional `impact` and `components` fields when enrichment is enabled.

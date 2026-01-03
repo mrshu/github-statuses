@@ -562,6 +562,22 @@ main {
   border-radius: 999px;
 }
 
+.components {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.components span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f3f0ea;
+  border: 1px solid #e3ddd2;
+}
+
 details {
   margin-top: 10px;
 }

@@ -370,6 +370,22 @@ const renderIncidentCard = (incident, compact = false) => {
   });
   card.appendChild(timeline);
 
+  if (incident.components && incident.components.length) {
+    const componentRow = document.createElement('div');
+    componentRow.className = 'components';
+    incident.components.slice(0, 4).forEach((component) => {
+      const tag = document.createElement('span');
+      tag.textContent = component;
+      componentRow.appendChild(tag);
+    });
+    if (incident.components.length > 4) {
+      const more = document.createElement('span');
+      more.textContent = `+${incident.components.length - 4} more`;
+      componentRow.appendChild(more);
+    }
+    card.appendChild(componentRow);
+  }
+
   if (!compact) {
     const details = document.createElement('details');
     const summary = document.createElement('summary');
