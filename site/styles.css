@@ -234,6 +234,7 @@ main {
 .hero-panel h3 {
   margin: 0 0 16px;
   font-family: var(--display);
+  font-size: 1.35rem;
 }
 
 .uptime-row {
@@ -246,6 +247,7 @@ main {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 1.05rem;
 }
 
 .uptime-percent {
@@ -256,12 +258,12 @@ main {
 .uptime-bars {
   display: grid;
   grid-template-columns: repeat(90, 1fr);
-  gap: 2px;
+  gap: 3px;
   align-items: center;
 }
 
 .uptime-bars span {
-  height: 22px;
+  height: 26px;
   border-radius: 6px;
   background: #dfe9df;
   cursor: pointer;
@@ -289,7 +291,7 @@ main {
   pointer-events: none;
   transform: translate(-50%, 8px);
   transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 10;
+  z-index: 50;
 }
 
 .uptime-tooltip.active {
@@ -375,6 +377,7 @@ main {
   margin-top: 16px;
   font-size: 0.75rem;
   color: var(--muted);
+  font-weight: 600;
 }
 
 .legend-item {
@@ -580,10 +583,15 @@ details ul {
   .uptime-bars {
     grid-template-columns: repeat(30, 1fr);
     grid-auto-rows: 10px;
+    gap: 4px;
   }
 
   .uptime-bars span {
-    height: 12px;
+    height: 14px;
+  }
+
+  .hero-panel h3 {
+    font-size: 1.2rem;
   }
 
   .status-meta {
