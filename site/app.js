@@ -121,6 +121,16 @@ const mergeIntervals = (intervals) => {
   return merged;
 };
 
+const minuteIndex = (date) => Math.floor(date.getTime() / 60000);
+
+const minutesBetween = (start, end) => {
+  const startMin = minuteIndex(start);
+  const endMin = Math.ceil(end.getTime() / 60000);
+  return Math.max(0, endMin - startMin);
+};
+
+const countsAsDowntime = (impact) => impact !== 'maintenance';
+
 const monthStartUTC = (date) =>
   new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1));
 
@@ -179,7 +189,9 @@ const render = async () => {
     const clipped = clipInterval(entry.start, entry.end, rangeStart, rangeEnd);
     if (!clipped) return;
     const impact = entry.impact || 'none';
-    clippedIntervals.push(clipped);
+    if (countsAsDowntime(impact)) {
+      clippedIntervals.push(clipped);
+    }
 
     let current = getDayStartUTC(clipped[0]);
     const lastDay = getDayStartUTC(clipped[1]);
@@ -206,9 +218,9 @@ const render = async () => {
   });
 
   const merged = mergeIntervals(clippedIntervals);
-  const downtimeMs = merged.reduce((sum, [start, end]) => sum + (end - start), 0);
-  const totalMs = 90 * 24 * 60 * 60 * 1000;
-  const uptime = Math.max(0, 1 - downtimeMs / totalMs);
+  const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
+  const totalMinutes = 90 * 24 * 60;
+  const uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
 
   const uptimePercent = document.getElementById('uptimePercent');
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
@@ -356,7 +368,9 @@ const render = async () => {
       const clipped = clipInterval(start, end, rangeStart, rangeEnd);
       if (!clipped) return;
       const stat = serviceStats[serviceIndex.get(component)];
-      stat.intervals.push(clipped);
+      if (countsAsDowntime(impact)) {
+        stat.intervals.push(clipped);
+      }
       let current = getDayStartUTC(clipped[0]);
       const lastDay = getDayStartUTC(clipped[1]);
       while (current <= lastDay) {
@@ -380,9 +394,9 @@ const render = async () => {
 
   serviceStats.forEach((stat) => {
     const merged = mergeIntervals(stat.intervals);
-    const downtimeMs = merged.reduce((sum, [start, end]) => sum + (end - start), 0);
-    const totalMs = 90 * 24 * 60 * 60 * 1000;
-    stat.uptime = Math.max(0, 1 - downtimeMs / totalMs);
+    const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
+    const totalMinutes = 90 * 24 * 60;
+    stat.uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
   });
 
   serviceStats.forEach((stat) => {
@@ -460,7 +474,9 @@ const render = async () => {
     windowEntries.forEach((entry) => {
       const clipped = clipInterval(entry.start, entry.end, monthStart, monthEnd);
       if (!clipped) return;
-      intervals.push(clipped);
+      if (countsAsDowntime(entry.impact || 'none')) {
+        intervals.push(clipped);
+      }
       let current = dayStartUTC(clipped[0]);
       const lastDay = dayStartUTC(clipped[1]);
       while (current <= lastDay) {
@@ -483,9 +499,9 @@ const render = async () => {
     });
 
     const merged = mergeIntervals(intervals);
-    const downtimeMs = merged.reduce((sum, [start, end]) => sum + (end - start), 0);
-    const totalMs = dayCount * 24 * 60 * 60 * 1000;
-    const uptime = Math.max(0, 1 - downtimeMs / totalMs);
+    const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
+    const totalMinutes = dayCount * 24 * 60;
+    const uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
 
     return { dayCount, daySeverity, dayIncidents, uptime };
   };
