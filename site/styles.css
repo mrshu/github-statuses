@@ -474,6 +474,60 @@ main {
   gap: 8px;
 }
 
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
+.service-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.service-row-header span {
+  color: var(--muted);
+}
+
+.service-bars {
+  display: grid;
+  grid-template-columns: repeat(90, 1fr);
+  gap: 2px;
+  align-items: center;
+}
+
+.service-bars span {
+  height: 12px;
+  border-radius: 4px;
+  background: #dfe4ea;
+}
+
+.service-bars span.operational {
+  background: rgba(45, 164, 78, 0.8);
+}
+
+.service-bars span.minor {
+  background: rgba(217, 119, 6, 0.85);
+}
+
+.service-bars span.major {
+  background: rgba(207, 34, 46, 0.85);
+}
+
+.service-bars span.maintenance {
+  background: rgba(31, 111, 235, 0.85);
+}
+
 .empty {
   padding: 20px;
   border-radius: var(--radius-sm);
@@ -655,6 +709,10 @@ details ul {
 
   .hero-panel h3 {
     font-size: 1.2rem;
+  }
+
+  .service-bars {
+    grid-template-columns: repeat(30, 1fr);
   }
 
   .status-meta {

@@ -16,6 +16,19 @@ const impactLabel = {
   major: 'Major',
 };
 
+const SERVICES = [
+  'Git Operations',
+  'Webhooks',
+  'API Requests',
+  'Issues',
+  'Pull Requests',
+  'Actions',
+  'Packages',
+  'Pages',
+  'Codespaces',
+  'Copilot',
+];
+
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en-US', {
@@ -289,6 +302,75 @@ const render = async () => {
     return start >= since;
   });
   document.getElementById('incidentCount').textContent = `${recentIncidents.length} incidents in last 90 days`;
+
+  const serviceStatus = document.getElementById('serviceStatus');
+  serviceStatus.innerHTML = '';
+
+  const serviceStats = SERVICES.map((service) => ({
+    name: service,
+    daySeverity: new Array(90).fill(0),
+    intervals: [],
+  }));
+
+  const serviceIndex = new Map(serviceStats.map((item, index) => [item.name, index]));
+
+  incidents.forEach((incident) => {
+    if (!incident.components || !incident.components.length) return;
+    if (!incident.downtime_start || !incident.downtime_end) return;
+    const start = new Date(incident.downtime_start);
+    const end = new Date(incident.downtime_end);
+    if (Number.isNaN(start) || Number.isNaN(end) || end <= start) return;
+    const impact = incident.impact || 'none';
+    incident.components.forEach((component) => {
+      if (!serviceIndex.has(component)) return;
+      const clipped = clipInterval(start, end, rangeStart, rangeEnd);
+      if (!clipped) return;
+      const stat = serviceStats[serviceIndex.get(component)];
+      stat.intervals.push(clipped);
+      let current = getDayStartUTC(clipped[0]);
+      const lastDay = getDayStartUTC(clipped[1]);
+      while (current <= lastDay) {
+        const index = Math.floor((current - rangeStart) / 86400000);
+        if (index >= 0 && index < stat.daySeverity.length) {
+          stat.daySeverity[index] = Math.max(stat.daySeverity[index], impactRank[impact] ?? 0);
+        }
+        current = new Date(current.getTime() + 86400000);
+      }
+    });
+  });
+
+  serviceStats.forEach((stat) => {
+    const merged = mergeIntervals(stat.intervals);
+    const downtimeMs = merged.reduce((sum, [start, end]) => sum + (end - start), 0);
+    const totalMs = 90 * 24 * 60 * 60 * 1000;
+    stat.uptime = Math.max(0, 1 - downtimeMs / totalMs);
+  });
+
+  serviceStats.forEach((stat) => {
+    const row = document.createElement('div');
+    row.className = 'service-row';
+
+    const header = document.createElement('div');
+    header.className = 'service-row-header';
+    const name = document.createElement('strong');
+    name.textContent = stat.name;
+    const uptimeValue = document.createElement('span');
+    uptimeValue.textContent = `${(stat.uptime * 100).toFixed(2)}% uptime`;
+    header.appendChild(name);
+    header.appendChild(uptimeValue);
+    row.appendChild(header);
+
+    const bars = document.createElement('div');
+    bars.className = 'service-bars';
+    stat.daySeverity.forEach((severity) => {
+      const span = document.createElement('span');
+      const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+      span.className = impact === 'none' ? 'operational' : impact;
+      bars.appendChild(span);
+    });
+    row.appendChild(bars);
+    serviceStatus.appendChild(row);
+  });
 
   const timeline = document.getElementById('incidentTimeline');
   timeline.innerHTML = '';
