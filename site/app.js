@@ -258,7 +258,7 @@ const render = async () => {
       );
       let top = barRect.top - panelRect.top - tooltipRect.height - 12;
       if (top < padding) {
-        top = padding;
+        top = barRect.bottom - panelRect.top + 12;
       }
       tooltip.style.left = `${left}px`;
       tooltip.style.top = `${top}px`;

@@ -307,7 +307,7 @@ main {
   pointer-events: none;
   transform: translate(-50%, 8px);
   transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 50;
+  z-index: 200;
 }
 
 .uptime-tooltip.active {
@@ -510,6 +510,7 @@ main {
   padding: 14px 16px;
   background: #ffffff;
   position: relative;
+  z-index: 0;
 }
 
 .month-header {
@@ -576,6 +577,7 @@ main {
   grid-template-columns: minmax(0, 1fr);
   gap: 10px;
   position: relative;
+  z-index: 0;
 }
 
 .service-row-header {
