@@ -237,6 +237,7 @@ main {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   position: relative;
+  overflow: visible;
 }
 
 .hero-panel-header {
@@ -453,6 +454,7 @@ main {
   box-shadow: var(--shadow);
   position: relative;
   z-index: 1;
+  overflow: visible;
 }
 
 .panel-raise {
@@ -517,6 +519,7 @@ main {
   background: #ffffff;
   position: relative;
   z-index: 0;
+  overflow: visible;
 }
 
 .month-header {
@@ -584,6 +587,7 @@ main {
   gap: 10px;
   position: relative;
   z-index: 0;
+  overflow: visible;
 }
 
 .service-row-header {
