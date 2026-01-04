@@ -298,11 +298,11 @@ main {
   position: absolute;
   min-width: 220px;
   max-width: 320px;
-  background: #ffffff;
+  background: #fffdf9;
   border: 1px solid var(--border);
   border-radius: 14px;
-  box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.5);
-  padding: 14px 16px;
+  box-shadow: 0 20px 38px -28px rgba(28, 28, 28, 0.5);
+  padding: 14px 16px 16px;
   font-size: 0.8rem;
   color: var(--muted);
   opacity: 0;
@@ -339,12 +339,31 @@ main {
   color: var(--ink);
 }
 
-.tooltip-impact {
-  display: inline-flex;
+.tooltip-summary {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(207, 201, 190, 0.2);
+  color: var(--ink);
   font-weight: 600;
+}
+
+.tooltip-duration {
+  margin-left: auto;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tooltip-related {
+  margin-top: 12px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .tooltip-dot {
@@ -372,8 +391,9 @@ main {
 }
 
 .tooltip-incidents {
-  margin: 8px 0 0;
-  padding-left: 16px;
+  margin: 6px 0 0;
+  padding-left: 0;
+  list-style: none;
   color: var(--muted);
 }
 
@@ -569,6 +589,12 @@ main {
 
 .month-day.maintenance {
   background: rgba(31, 111, 235, 0.85);
+}
+
+.month-day.future {
+  background: #e9edf1;
+  cursor: default;
+  pointer-events: none;
 }
 
 .month-empty {
@@ -837,8 +863,13 @@ details ul {
 }
 
 .hero-panel.tooltip-open,
+.hero.tooltip-open,
 .panel.tooltip-open,
 .month-card.tooltip-open,
 .service-row.tooltip-open {
   z-index: 50;
+}
+
+.hero.tooltip-open {
+  position: relative;
 }

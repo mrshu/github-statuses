@@ -16,6 +16,13 @@ const impactLabel = {
   major: 'Major',
 };
 
+const impactSummary = {
+  none: 'Operational',
+  maintenance: 'Maintenance',
+  minor: 'Partial outage',
+  major: 'Major outage',
+};
+
 const SERVICES = [
   'Git Operations',
   'Webhooks',
@@ -28,7 +35,6 @@ const SERVICES = [
   'Codespaces',
   'Copilot',
 ];
-
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en-US', {
@@ -129,6 +135,17 @@ const minutesBetween = (start, end) => {
   return Math.max(0, endMin - startMin);
 };
 
+const formatDuration = (minutes) => {
+  const total = Math.max(0, Math.round(minutes));
+  const hours = Math.floor(total / 60);
+  const mins = total % 60;
+  const parts = [];
+  if (hours) parts.push(`${hours} hr${hours === 1 ? '' : 's'}`);
+  if (mins) parts.push(`${mins} min${mins === 1 ? '' : 's'}`);
+  if (!parts.length) return '0 mins';
+  return parts.join(' ');
+};
+
 const countsAsDowntime = (impact) => impact !== 'maintenance';
 
 const monthStartUTC = (date) =>
@@ -207,7 +224,8 @@ const render = async () => {
               id: incidentId,
               title: entry.title,
               impact,
-              duration: null,
+              start: entry.start,
+              end: entry.end,
               url: entry.url,
             });
           }
@@ -284,13 +302,31 @@ const render = async () => {
         state.hideTimeout = null;
       }
       container.classList.add('tooltip-open');
+      const stackTarget = container.closest('section');
+      if (stackTarget && stackTarget !== container) {
+        stackTarget.classList.add('tooltip-open');
+      }
       const index = Number(target.dataset.dayIndex || 0);
       const date = new Date(startDate.getTime() + index * 86400000);
+      const dayStart = getDayStartUTC(date);
+      const dayEnd = new Date(dayStart.getTime() + 86400000);
       const incidents = Array.from(incidentsByDay[index]?.values() || []);
       const severity = severityByDay[index] ?? 0;
       const impact = severityToImpact(severity);
+      const downtimeIntervals = incidents
+        .filter((item) => countsAsDowntime(item.impact))
+        .map((item) => {
+          if (!item.start || !item.end) return null;
+          const start = item.start instanceof Date ? item.start : new Date(item.start);
+          const end = item.end instanceof Date ? item.end : new Date(item.end);
+          return clipInterval(start, end, dayStart, dayEnd);
+        })
+        .filter(Boolean);
+      const merged = mergeIntervals(downtimeIntervals);
+      const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
+      const duration = downtimeMinutes > 0 ? formatDuration(downtimeMinutes) : '';
 
-      const incidentMarkup = incidents.length
+      const incidentList = incidents.length
         ? `<ul class=\"tooltip-incidents\">${incidents
             .slice(0, 4)
             .map((item) => {
@@ -301,15 +337,17 @@ const render = async () => {
               return `<li>${title}</li>`;
             })
             .join('')}</ul>`
-        : '<p class=\"tooltip-incidents\">No incidents recorded.</p>';
+        : '<p class=\"tooltip-incidents\">No downtime recorded.</p>';
 
       tooltip.innerHTML = `
         <div class=\"tooltip-date\">${formatDate(date)}</div>
-        <div class=\"tooltip-impact\">
+        <div class=\"tooltip-summary\">
           <span class=\"tooltip-dot ${impact}\"></span>
-          ${impactLabel[impact] || 'Operational'}
+          <span>${impactSummary[impact] || 'Operational'}</span>
+          ${duration ? `<span class=\"tooltip-duration\">${duration}</span>` : ''}
         </div>
-        ${incidentMarkup}
+        ${incidents.length ? '<div class=\"tooltip-related\">Related</div>' : ''}
+        ${incidentList}
       `;
       tooltip.classList.add('active');
       tooltip.setAttribute('aria-hidden', 'false');
@@ -320,6 +358,10 @@ const render = async () => {
       tooltip.classList.remove('active');
       tooltip.setAttribute('aria-hidden', 'true');
       container.classList.remove('tooltip-open');
+      const stackTarget = container.closest('section');
+      if (stackTarget && stackTarget !== container) {
+        stackTarget.classList.remove('tooltip-open');
+      }
     };
 
     const scheduleHide = () => {
@@ -402,6 +444,8 @@ const render = async () => {
               id: incident.id,
               title: incident.title,
               impact,
+              start,
+              end,
               url: incident.url,
             });
           }
@@ -480,6 +524,14 @@ const render = async () => {
   const buildMonthData = (monthStart) => {
     const monthEnd = addMonthsUTC(monthStart, 1);
     const dayCount = daysInMonthUTC(monthStart);
+    const todayStart = getDayStartUTC(now);
+    let activeDayCount = dayCount;
+    if (todayStart < monthStart) {
+      activeDayCount = 0;
+    } else if (todayStart < monthEnd) {
+      activeDayCount = Math.floor((todayStart.getTime() - monthStart.getTime()) / 86400000) + 1;
+    }
+    const activeRangeEnd = new Date(monthStart.getTime() + activeDayCount * 86400000);
     const daySeverity = new Array(dayCount).fill(0);
     const dayIncidents = Array.from({ length: dayCount }, () => new Map());
     const intervals = [];
@@ -487,8 +539,11 @@ const render = async () => {
     windowEntries.forEach((entry) => {
       const clipped = clipInterval(entry.start, entry.end, monthStart, monthEnd);
       if (!clipped) return;
-      if (countsAsDowntime(entry.impact || 'none')) {
-        intervals.push(clipped);
+      if (countsAsDowntime(entry.impact || 'none') && activeDayCount > 0) {
+        const activeClip = clipInterval(entry.start, entry.end, monthStart, activeRangeEnd);
+        if (activeClip) {
+          intervals.push(activeClip);
+        }
       }
       let current = dayStartUTC(clipped[0]);
       const lastDay = dayStartUTC(clipped[1]);
@@ -503,6 +558,8 @@ const render = async () => {
               id: entry.id,
               title: entry.title,
               impact,
+              start: entry.start,
+              end: entry.end,
               url: entry.url,
             });
           }
@@ -513,8 +570,8 @@ const render = async () => {
 
     const merged = mergeIntervals(intervals);
     const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
-    const totalMinutes = dayCount * 24 * 60;
-    const uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
+    const totalMinutes = activeDayCount * 24 * 60;
+    const uptime = totalMinutes > 0 ? Math.max(0, 1 - downtimeMinutes / totalMinutes) : null;
 
     return { dayCount, daySeverity, dayIncidents, uptime };
   };
@@ -538,7 +595,7 @@ const render = async () => {
       const title = document.createElement('strong');
       title.textContent = formatMonth(monthStart);
       const uptime = document.createElement('span');
-      uptime.textContent = `${(monthData.uptime * 100).toFixed(2)}%`;
+      uptime.textContent = monthData.uptime === null ? '—' : `${(monthData.uptime * 100).toFixed(2)}%`;
       header.appendChild(title);
       header.appendChild(uptime);
       card.appendChild(header);
@@ -553,12 +610,17 @@ const render = async () => {
       }
 
       for (let dayIndex = 0; dayIndex < monthData.dayCount; dayIndex += 1) {
-        const severity = monthData.daySeverity[dayIndex];
-        const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+        const dayDate = new Date(monthStart.getTime() + dayIndex * 86400000);
         const square = document.createElement('span');
-        square.className = `month-day ${impact === 'none' ? 'operational' : impact}`;
-        square.dataset.dayIndex = String(dayIndex);
-        square.tabIndex = 0;
+        if (dayDate > today) {
+          square.className = 'month-day future';
+        } else {
+          const severity = monthData.daySeverity[dayIndex];
+          const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+          square.className = `month-day ${impact === 'none' ? 'operational' : impact}`;
+          square.dataset.dayIndex = String(dayIndex);
+          square.tabIndex = 0;
+        }
         grid.appendChild(square);
       }
 
