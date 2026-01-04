@@ -256,10 +256,9 @@ const render = async () => {
         tooltipRect.width / 2 + padding,
         Math.min(left, panelRect.width - tooltipRect.width / 2 - padding),
       );
-      let top = barRect.bottom - panelRect.top + 12;
-      const maxTop = panelRect.height - tooltipRect.height - padding;
-      if (top > maxTop) {
-        top = Math.max(padding, maxTop);
+      let top = barRect.top - panelRect.top - tooltipRect.height - 12;
+      if (top < padding) {
+        top = barRect.bottom - panelRect.top + 12;
       }
       tooltip.style.left = `${left}px`;
       tooltip.style.top = `${top}px`;
