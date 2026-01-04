@@ -327,10 +327,6 @@ main {
   transform: translateX(-50%) rotate(45deg);
 }
 
-.uptime-tooltip[data-arrow="bottom"]::before {
-  bottom: -7px;
-}
-
 .uptime-tooltip[data-arrow="top"]::before {
   top: -7px;
 }

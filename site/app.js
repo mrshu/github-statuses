@@ -222,17 +222,15 @@ const render = async () => {
         Math.min(left, panelRect.width - tooltipRect.width / 2 - padding),
       );
       let top = barRect.top - panelRect.top - tooltipRect.height - 12;
-      let arrowPlacement = 'bottom';
       if (top < padding) {
         top = barRect.bottom - panelRect.top + 12;
-        arrowPlacement = 'top';
       }
       tooltip.style.left = `${left}px`;
       tooltip.style.top = `${top}px`;
       const tooltipLeft = left - tooltipRect.width / 2;
       const arrowLeft = barRect.left - panelRect.left + barRect.width / 2 - tooltipLeft;
       tooltip.style.setProperty('--arrow-left', `${arrowLeft}px`);
-      tooltip.dataset.arrow = arrowPlacement;
+      tooltip.dataset.arrow = 'top';
     };
 
     const showTooltip = (target) => {
