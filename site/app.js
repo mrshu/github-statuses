@@ -96,6 +96,8 @@ const parseCSV = (text) => {
 const getDayStartUTC = (date) =>
   new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
 
+const dayStartUTC = getDayStartUTC;
+
 const clipInterval = (start, end, rangeStart, rangeEnd) => {
   const startMs = Math.max(start.getTime(), rangeStart.getTime());
   const endMs = Math.min(end.getTime(), rangeEnd.getTime());
