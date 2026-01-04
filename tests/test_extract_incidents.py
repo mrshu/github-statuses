@@ -126,9 +126,19 @@ class ExtractIncidentsTests(unittest.TestCase):
             ["Git Operations", "Webhooks", "API Requests"],
         )
 
+    def test_extract_components_from_html_scheduled(self):
+        html = '<div>This scheduled maintenance affected: Actions.</div>'
+        self.assertEqual(ei.extract_components_from_html(html), ["Actions"])
+
     def test_extract_components_from_html_none(self):
         html = '<div>No components listed here.</div>'
         self.assertIsNone(ei.extract_components_from_html(html))
+
+    def test_infer_components_from_text(self):
+        self.assertEqual(ei.infer_components_from_text("Incident With Copilot"), ["Copilot"])
+
+    def test_infer_components_from_text_none(self):
+        self.assertIsNone(ei.infer_components_from_text("Disruptions in Login and Signup Flows"))
 
 
 if __name__ == "__main__":

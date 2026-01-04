@@ -76,6 +76,27 @@ IMPACT_RE_2 = re.compile(
 CLASS_ATTR_RE = re.compile(r"class=[\"']([^\"']+)[\"']", re.IGNORECASE)
 COMPONENTS_RE = re.compile(r"This incident affected:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_ALT_RE = re.compile(r"Affected components?:\s*([^.]+)", re.IGNORECASE)
+COMPONENTS_MAINT_RE = re.compile(r"This scheduled maintenance affected:\s*([^.]+)", re.IGNORECASE)
+
+COMPONENT_PATTERNS = {
+    "Copilot": [r"\bcopilot\b"],
+    "Codespaces": [r"\bcodespaces?\b"],
+    "Actions": [r"\bactions?\b", r"\bworkflow runs?\b"],
+    "Pages": [r"\bpages?\b"],
+    "Packages": [r"\bpackages?\b", r"\bpackage registry\b", r"\bcontainer registry\b"],
+    "Pull Requests": [r"\bpull requests?\b", r"\bprs?\b"],
+    "Issues": [r"\bissues?\b"],
+    "Webhooks": [r"\bwebhooks?\b"],
+    "API Requests": [r"\bapi requests?\b", r"\bapi\b"],
+    "Git Operations": [
+        r"\bgit operations?\b",
+        r"\bgit push\b",
+        r"\bgit pull\b",
+        r"\bgit fetch\b",
+        r"\bgit clone\b",
+        r"\bgit\b",
+    ],
+}
 
 
 def run_git(args):
@@ -199,7 +220,7 @@ def extract_components_from_html(html_text):
     text = STRIP_TAGS_RE.sub(" ", html_text)
     text = html.unescape(text)
     text = " ".join(text.split())
-    match = COMPONENTS_RE.search(text) or COMPONENTS_ALT_RE.search(text)
+    match = COMPONENTS_RE.search(text) or COMPONENTS_MAINT_RE.search(text) or COMPONENTS_ALT_RE.search(text)
     if not match:
         return None
     raw = match.group(1).strip().rstrip(".")
@@ -218,6 +239,33 @@ def fetch_url(url, timeout=15):
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", errors="replace")
+
+
+def infer_components_from_text(text):
+    if not text:
+        return None
+    normalized = " ".join(text.split())
+    matches = []
+    for component, patterns in COMPONENT_PATTERNS.items():
+        for pattern in patterns:
+            if re.search(pattern, normalized, re.IGNORECASE):
+                matches.append(component)
+                break
+    return matches or None
+
+
+def infer_components_for_incident(incident):
+    if incident.get("components"):
+        return
+    parts = [incident.get("title") or ""]
+    for update in incident.get("updates") or []:
+        message = update.get("message")
+        if message:
+            parts.append(message)
+    components = infer_components_from_text(" ".join(parts))
+    if components:
+        incident["components"] = components
+        incident["components_source"] = "inferred"
 
 
 def load_impact_cache(path):
@@ -507,6 +555,9 @@ def main():
 
     if args.enrich_impact:
         enrich_impacts(finalized, args.impact_cache, args.impact_delay)
+
+    for incident in finalized:
+        infer_components_for_incident(incident)
 
     out_dir = args.out
     os.makedirs(out_dir, exist_ok=True)
