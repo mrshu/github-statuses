@@ -119,6 +119,15 @@ const mergeIntervals = (intervals) => {
   return merged;
 };
 
+const monthStartUTC = (date) =>
+  new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1));
+
+const addMonthsUTC = (date, delta) =>
+  new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + delta, 1));
+
+const daysInMonthUTC = (date) =>
+  new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
+
 const render = async () => {
   const [incidentsText, windowsText] = await Promise.all([
     fetch(INCIDENTS_URL).then((res) => res.text()),
@@ -143,18 +152,31 @@ const render = async () => {
   const rangeEnd = new Date(today);
   rangeEnd.setUTCDate(rangeEnd.getUTCDate() + 1);
 
+  const windowEntries = windows
+    .map((row) => {
+      if (!row.downtime_start || !row.downtime_end) return null;
+      const start = new Date(row.downtime_start);
+      const end = new Date(row.downtime_end);
+      if (Number.isNaN(start) || Number.isNaN(end)) return null;
+      return {
+        id: row.incident_id || row.title,
+        title: row.title || 'Incident',
+        impact: row.impact || 'none',
+        start,
+        end,
+        url: incidentById.get(String(row.incident_id || ''))?.url || null,
+      };
+    })
+    .filter(Boolean);
+
   const daySeverity = new Array(90).fill(0);
   const dayIncidents = Array.from({ length: 90 }, () => new Map());
   const clippedIntervals = [];
 
-  windows.forEach((row) => {
-    if (!row.downtime_start || !row.downtime_end) return;
-    const start = new Date(row.downtime_start);
-    const end = new Date(row.downtime_end);
-    if (Number.isNaN(start) || Number.isNaN(end)) return;
-    const clipped = clipInterval(start, end, rangeStart, rangeEnd);
+  windowEntries.forEach((entry) => {
+    const clipped = clipInterval(entry.start, entry.end, rangeStart, rangeEnd);
     if (!clipped) return;
-    const impact = row.impact || 'none';
+    const impact = entry.impact || 'none';
     clippedIntervals.push(clipped);
 
     let current = getDayStartUTC(clipped[0]);
@@ -163,17 +185,16 @@ const render = async () => {
       const index = Math.floor((current - rangeStart) / 86400000);
       if (index >= 0 && index < daySeverity.length) {
         daySeverity[index] = Math.max(daySeverity[index], impactRank[impact] ?? 0);
-        const incidentId = row.incident_id || row.title;
+        const incidentId = entry.id || entry.title;
         if (incidentId) {
           const existing = dayIncidents[index].get(incidentId);
-          const fullIncident = incidentById.get(String(row.incident_id || '')) || null;
           if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
             dayIncidents[index].set(incidentId, {
               id: incidentId,
-              title: fullIncident?.title || row.title || 'Incident',
+              title: entry.title,
               impact,
-              duration: row.duration_minutes || null,
-              url: fullIncident?.url || null,
+              duration: null,
+              url: entry.url,
             });
           }
         }
@@ -208,7 +229,7 @@ const render = async () => {
   const severityToImpact = (severity) =>
     Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
 
-  const attachTooltip = (bars, tooltip, container, severityByDay, incidentsByDay) => {
+  const attachTooltip = (bars, tooltip, container, severityByDay, incidentsByDay, startDate) => {
     let hideTimeout = null;
 
     const positionTooltip = (target) => {
@@ -239,7 +260,7 @@ const render = async () => {
         hideTimeout = null;
       }
       const index = Number(target.dataset.dayIndex || 0);
-      const date = new Date(rangeStart.getTime() + index * 86400000);
+      const date = new Date(startDate.getTime() + index * 86400000);
       const incidents = Array.from(incidentsByDay[index]?.values() || []);
       const severity = severityByDay[index] ?? 0;
       const impact = severityToImpact(severity);
@@ -283,6 +304,7 @@ const render = async () => {
     };
 
     bars.querySelectorAll('span').forEach((bar) => {
+      if (bar.dataset.dayIndex === undefined) return;
       bar.addEventListener('mouseenter', () => showTooltip(bar));
       bar.addEventListener('focus', () => showTooltip(bar));
       bar.addEventListener('mouseleave', scheduleHide);
@@ -296,7 +318,7 @@ const render = async () => {
     tooltip.addEventListener('mouseleave', scheduleHide);
   };
 
-  attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents);
+  attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents, rangeStart);
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
   document.getElementById('lastUpdated').textContent = `Last updated ${formatDate(lastUpdated)}`;
@@ -392,10 +414,154 @@ const render = async () => {
     tooltip.setAttribute('aria-hidden', 'true');
     row.appendChild(tooltip);
 
-    attachTooltip(bars, tooltip, row, stat.daySeverity, stat.dayIncidents);
+    attachTooltip(bars, tooltip, row, stat.daySeverity, stat.dayIncidents, rangeStart);
 
     serviceStatus.appendChild(row);
   });
+
+  const historyGrid = document.getElementById('historyGrid');
+  const historyPrev = document.getElementById('historyPrev');
+  const historyNext = document.getElementById('historyNext');
+  const historyRange = document.getElementById('historyRange');
+
+  const incidentDates = incidents
+    .map((incident) => incidentStartDate(incident))
+    .filter((date) => !Number.isNaN(date));
+  const earliest = incidentDates.reduce(
+    (min, date) => (date < min ? date : min),
+    incidentDates[0] || rangeStart,
+  );
+  const latest = incidentDates.reduce(
+    (max, date) => (date > max ? date : max),
+    incidentDates[0] || rangeStart,
+  );
+
+  const minMonth = monthStartUTC(earliest);
+  const maxMonth = monthStartUTC(latest);
+  const maxViewStart = addMonthsUTC(maxMonth, -2);
+
+  let viewStart = addMonthsUTC(maxMonth, -2);
+  if (viewStart < minMonth) {
+    viewStart = minMonth;
+  }
+
+  const formatMonth = (date) =>
+    new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date);
+
+  const buildMonthData = (monthStart) => {
+    const monthEnd = addMonthsUTC(monthStart, 1);
+    const dayCount = daysInMonthUTC(monthStart);
+    const daySeverity = new Array(dayCount).fill(0);
+    const dayIncidents = Array.from({ length: dayCount }, () => new Map());
+    const intervals = [];
+
+    windowEntries.forEach((entry) => {
+      const clipped = clipInterval(entry.start, entry.end, monthStart, monthEnd);
+      if (!clipped) return;
+      intervals.push(clipped);
+      let current = dayStartUTC(clipped[0]);
+      const lastDay = dayStartUTC(clipped[1]);
+      while (current <= lastDay) {
+        const index = (current - monthStart) / 86400000;
+        if (index >= 0 && index < dayCount) {
+          const impact = entry.impact || 'none';
+          daySeverity[index] = Math.max(daySeverity[index], impactRank[impact] ?? 0);
+          const existing = dayIncidents[index].get(entry.id);
+          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+            dayIncidents[index].set(entry.id, {
+              id: entry.id,
+              title: entry.title,
+              impact,
+              url: entry.url,
+            });
+          }
+        }
+        current = new Date(current.getTime() + 86400000);
+      }
+    });
+
+    const merged = mergeIntervals(intervals);
+    const downtimeMs = merged.reduce((sum, [start, end]) => sum + (end - start), 0);
+    const totalMs = dayCount * 24 * 60 * 60 * 1000;
+    const uptime = Math.max(0, 1 - downtimeMs / totalMs);
+
+    return { dayCount, daySeverity, dayIncidents, uptime };
+  };
+
+  const renderHistory = () => {
+    historyGrid.innerHTML = '';
+    const months = [viewStart, addMonthsUTC(viewStart, 1), addMonthsUTC(viewStart, 2)];
+    const lastMonth = months[2];
+    historyRange.textContent = `${formatMonth(months[0])} to ${formatMonth(lastMonth)}`;
+
+    months.forEach((monthStart) => {
+      if (monthStart < minMonth || monthStart > maxMonth) {
+        return;
+      }
+      const monthData = buildMonthData(monthStart);
+      const card = document.createElement('div');
+      card.className = 'month-card';
+
+      const header = document.createElement('div');
+      header.className = 'month-header';
+      const title = document.createElement('strong');
+      title.textContent = formatMonth(monthStart);
+      const uptime = document.createElement('span');
+      uptime.textContent = `${(monthData.uptime * 100).toFixed(2)}%`;
+      header.appendChild(title);
+      header.appendChild(uptime);
+      card.appendChild(header);
+
+      const grid = document.createElement('div');
+      grid.className = 'month-grid';
+      const pad = monthStart.getUTCDay();
+      for (let i = 0; i < pad; i += 1) {
+        const empty = document.createElement('span');
+        empty.className = 'month-empty';
+        grid.appendChild(empty);
+      }
+
+      for (let dayIndex = 0; dayIndex < monthData.dayCount; dayIndex += 1) {
+        const severity = monthData.daySeverity[dayIndex];
+        const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+        const square = document.createElement('span');
+        square.className = `month-day ${impact === 'none' ? 'operational' : impact}`;
+        square.dataset.dayIndex = String(dayIndex);
+        square.tabIndex = 0;
+        grid.appendChild(square);
+      }
+
+      card.appendChild(grid);
+
+      const tooltip = document.createElement('div');
+      tooltip.className = 'uptime-tooltip history-tooltip';
+      tooltip.setAttribute('aria-hidden', 'true');
+      card.appendChild(tooltip);
+
+      attachTooltip(grid, tooltip, card, monthData.daySeverity, monthData.dayIncidents, monthStart);
+
+      historyGrid.appendChild(card);
+    });
+
+    historyPrev.disabled = viewStart <= minMonth;
+    historyNext.disabled = viewStart >= maxViewStart;
+  };
+
+  historyPrev.addEventListener('click', () => {
+    if (viewStart <= minMonth) return;
+    viewStart = addMonthsUTC(viewStart, -1);
+    if (viewStart < minMonth) viewStart = minMonth;
+    renderHistory();
+  });
+
+  historyNext.addEventListener('click', () => {
+    if (viewStart >= maxViewStart) return;
+    viewStart = addMonthsUTC(viewStart, 1);
+    if (viewStart > maxViewStart) viewStart = maxViewStart;
+    renderHistory();
+  });
+
+  renderHistory();
 
   const timeline = document.getElementById('incidentTimeline');
   timeline.innerHTML = '';

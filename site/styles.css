@@ -470,6 +470,100 @@ main {
   gap: 8px;
 }
 
+.history-header {
+  align-items: center;
+}
+
+.history-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.month-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #ffffff;
+  position: relative;
+}
+
+.month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.month-header span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.month-day,
+.month-empty {
+  width: 100%;
+  height: 12px;
+  border-radius: 4px;
+  background: #dfe4ea;
+}
+
+.month-day {
+  cursor: pointer;
+}
+
+.month-day.operational {
+  background: rgba(45, 164, 78, 0.8);
+}
+
+.month-day.minor {
+  background: rgba(217, 119, 6, 0.85);
+}
+
+.month-day.major {
+  background: rgba(207, 34, 46, 0.85);
+}
+
+.month-day.maintenance {
+  background: rgba(31, 111, 235, 0.85);
+}
+
+.month-empty {
+  background: transparent;
+  pointer-events: none;
+}
+
 .service-list {
   display: flex;
   flex-direction: column;

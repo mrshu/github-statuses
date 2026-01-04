@@ -69,6 +69,18 @@
       </section>
 
       <section class="panel" data-animate>
+        <div class="panel-header history-header">
+          <h3>Uptime history</h3>
+          <div class="history-controls">
+            <button class="icon-button" type="button" id="historyPrev" aria-label="Previous period">‹</button>
+            <span id="historyRange">Loading…</span>
+            <button class="icon-button" type="button" id="historyNext" aria-label="Next period">›</button>
+          </div>
+        </div>
+        <div id="historyGrid" class="history-grid"></div>
+      </section>
+
+      <section class="panel" data-animate>
         <div class="panel-header">
           <h3>Incident timeline</h3>
           <div class="panel-actions">
