@@ -458,9 +458,6 @@ main {
   overflow: visible;
 }
 
-.tooltip-open {
-  z-index: 40;
-}
 
 .panel-raise {
   z-index: 10;
@@ -836,4 +833,11 @@ details ul {
     opacity: 1;
     transform: none;
   }
+}
+
+.hero-panel.tooltip-open,
+.panel.tooltip-open,
+.month-card.tooltip-open,
+.service-row.tooltip-open {
+  z-index: 50;
 }
