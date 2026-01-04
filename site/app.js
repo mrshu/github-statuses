@@ -196,8 +196,6 @@ const render = async () => {
   uptimeBars.innerHTML = '';
   uptimeTooltip.classList.remove('active');
 
-  let hideTimeout = null;
-
   daySeverity.forEach((severity, index) => {
     const span = document.createElement('span');
     const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
@@ -210,88 +208,97 @@ const render = async () => {
   const severityToImpact = (severity) =>
     Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
 
-  const positionTooltip = (target) => {
-    const panelRect = heroPanel.getBoundingClientRect();
-    const barRect = target.getBoundingClientRect();
-    const tooltipRect = uptimeTooltip.getBoundingClientRect();
-    const padding = 12;
-    let left = barRect.left - panelRect.left + barRect.width / 2;
-    left = Math.max(tooltipRect.width / 2 + padding, Math.min(left, panelRect.width - tooltipRect.width / 2 - padding));
-    let top = barRect.top - panelRect.top - tooltipRect.height - 12;
-    let arrowPlacement = "bottom";
-    if (top < padding) {
-      top = barRect.bottom - panelRect.top + 12;
-      arrowPlacement = "top";
-    }
-    uptimeTooltip.style.left = `${left}px`;
-    uptimeTooltip.style.top = `${top}px`;
-    const tooltipLeft = left - tooltipRect.width / 2;
-    const arrowLeft = barRect.left - panelRect.left + barRect.width / 2 - tooltipLeft;
-    uptimeTooltip.style.setProperty("--arrow-left", `${arrowLeft}px`);
-    uptimeTooltip.dataset.arrow = arrowPlacement;
+  const attachTooltip = (bars, tooltip, container, severityByDay, incidentsByDay) => {
+    let hideTimeout = null;
+
+    const positionTooltip = (target) => {
+      const panelRect = container.getBoundingClientRect();
+      const barRect = target.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const padding = 12;
+      let left = barRect.left - panelRect.left + barRect.width / 2;
+      left = Math.max(
+        tooltipRect.width / 2 + padding,
+        Math.min(left, panelRect.width - tooltipRect.width / 2 - padding),
+      );
+      let top = barRect.top - panelRect.top - tooltipRect.height - 12;
+      let arrowPlacement = 'bottom';
+      if (top < padding) {
+        top = barRect.bottom - panelRect.top + 12;
+        arrowPlacement = 'top';
+      }
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${top}px`;
+      const tooltipLeft = left - tooltipRect.width / 2;
+      const arrowLeft = barRect.left - panelRect.left + barRect.width / 2 - tooltipLeft;
+      tooltip.style.setProperty('--arrow-left', `${arrowLeft}px`);
+      tooltip.dataset.arrow = arrowPlacement;
+    };
+
+    const showTooltip = (target) => {
+      if (hideTimeout) {
+        window.clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+      const index = Number(target.dataset.dayIndex || 0);
+      const date = new Date(rangeStart.getTime() + index * 86400000);
+      const incidents = Array.from(incidentsByDay[index]?.values() || []);
+      const severity = severityByDay[index] ?? 0;
+      const impact = severityToImpact(severity);
+
+      const incidentMarkup = incidents.length
+        ? `<ul class=\"tooltip-incidents\">${incidents
+            .slice(0, 4)
+            .map((item) => {
+              const title = item.title;
+              if (item.url) {
+                return `<li><a href=\"${item.url}\" target=\"_blank\" rel=\"noreferrer\">${title}</a></li>`;
+              }
+              return `<li>${title}</li>`;
+            })
+            .join('')}</ul>`
+        : '<p class=\"tooltip-incidents\">No incidents recorded.</p>';
+
+      tooltip.innerHTML = `
+        <div class=\"tooltip-date\">${formatDate(date)}</div>
+        <div class=\"tooltip-impact\">
+          <span class=\"tooltip-dot ${impact}\"></span>
+          ${impactLabel[impact] || 'Operational'}
+        </div>
+        ${incidentMarkup}
+      `;
+      tooltip.classList.add('active');
+      tooltip.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => positionTooltip(target));
+    };
+
+    const hideTooltip = () => {
+      tooltip.classList.remove('active');
+      tooltip.setAttribute('aria-hidden', 'true');
+    };
+
+    const scheduleHide = () => {
+      if (hideTimeout) window.clearTimeout(hideTimeout);
+      hideTimeout = window.setTimeout(() => {
+        hideTooltip();
+      }, 120);
+    };
+
+    bars.querySelectorAll('span').forEach((bar) => {
+      bar.addEventListener('mouseenter', () => showTooltip(bar));
+      bar.addEventListener('focus', () => showTooltip(bar));
+      bar.addEventListener('mouseleave', scheduleHide);
+      bar.addEventListener('blur', scheduleHide);
+    });
+
+    tooltip.addEventListener('mouseenter', () => {
+      if (hideTimeout) window.clearTimeout(hideTimeout);
+    });
+
+    tooltip.addEventListener('mouseleave', scheduleHide);
   };
 
-  const showTooltip = (target) => {
-    if (hideTimeout) {
-      window.clearTimeout(hideTimeout);
-      hideTimeout = null;
-    }
-    const index = Number(target.dataset.dayIndex || 0);
-    const date = new Date(rangeStart.getTime() + index * 86400000);
-    const incidents = Array.from(dayIncidents[index]?.values() || []);
-    const severity = daySeverity[index] ?? 0;
-    const impact = severityToImpact(severity);
-
-    const incidentMarkup = incidents.length
-      ? `<ul class=\"tooltip-incidents\">${incidents
-          .slice(0, 4)
-          .map((item) => {
-            const title = item.title;
-            if (item.url) {
-              return `<li><a href=\"${item.url}\" target=\"_blank\" rel=\"noreferrer\">${title}</a></li>`;
-            }
-            return `<li>${title}</li>`;
-          })
-          .join('')}</ul>`
-      : '<p class=\"tooltip-incidents\">No incidents recorded.</p>';
-
-    uptimeTooltip.innerHTML = `
-      <div class=\"tooltip-date\">${formatDate(date)}</div>
-      <div class=\"tooltip-impact\">
-        <span class=\"tooltip-dot ${impact}\"></span>
-        ${impactLabel[impact] || 'Operational'}
-      </div>
-      ${incidentMarkup}
-    `;
-    uptimeTooltip.classList.add('active');
-    uptimeTooltip.setAttribute('aria-hidden', 'false');
-    requestAnimationFrame(() => positionTooltip(target));
-  };
-
-  const hideTooltip = () => {
-    uptimeTooltip.classList.remove('active');
-    uptimeTooltip.setAttribute('aria-hidden', 'true');
-  };
-
-  const scheduleHide = () => {
-    if (hideTimeout) window.clearTimeout(hideTimeout);
-    hideTimeout = window.setTimeout(() => {
-      hideTooltip();
-    }, 120);
-  };
-
-  uptimeBars.querySelectorAll('span').forEach((bar) => {
-    bar.addEventListener('mouseenter', () => showTooltip(bar));
-    bar.addEventListener('focus', () => showTooltip(bar));
-    bar.addEventListener('mouseleave', scheduleHide);
-    bar.addEventListener('blur', scheduleHide);
-  });
-
-  uptimeTooltip.addEventListener('mouseenter', () => {
-    if (hideTimeout) window.clearTimeout(hideTimeout);
-  });
-
-  uptimeTooltip.addEventListener('mouseleave', scheduleHide);
+  attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents);
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
   document.getElementById('lastUpdated').textContent = `Last updated ${formatDate(lastUpdated)}`;
@@ -309,6 +316,7 @@ const render = async () => {
   const serviceStats = SERVICES.map((service) => ({
     name: service,
     daySeverity: new Array(90).fill(0),
+    dayIncidents: Array.from({ length: 90 }, () => new Map()),
     intervals: [],
   }));
 
@@ -333,6 +341,15 @@ const render = async () => {
         const index = Math.floor((current - rangeStart) / 86400000);
         if (index >= 0 && index < stat.daySeverity.length) {
           stat.daySeverity[index] = Math.max(stat.daySeverity[index], impactRank[impact] ?? 0);
+          const existing = stat.dayIncidents[index].get(incident.id);
+          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+            stat.dayIncidents[index].set(incident.id, {
+              id: incident.id,
+              title: incident.title,
+              impact,
+              url: incident.url,
+            });
+          }
         }
         current = new Date(current.getTime() + 86400000);
       }
@@ -362,13 +379,23 @@ const render = async () => {
 
     const bars = document.createElement('div');
     bars.className = 'service-bars';
-    stat.daySeverity.forEach((severity) => {
+    stat.daySeverity.forEach((severity, index) => {
       const span = document.createElement('span');
       const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
       span.className = impact === 'none' ? 'operational' : impact;
+      span.dataset.dayIndex = String(index);
+      span.tabIndex = 0;
       bars.appendChild(span);
     });
     row.appendChild(bars);
+
+    const tooltip = document.createElement('div');
+    tooltip.className = 'uptime-tooltip service-tooltip';
+    tooltip.setAttribute('aria-hidden', 'true');
+    row.appendChild(tooltip);
+
+    attachTooltip(bars, tooltip, row, stat.daySeverity, stat.dayIncidents);
+
     serviceStatus.appendChild(row);
   });
 

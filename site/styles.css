@@ -485,6 +485,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 10px;
+  position: relative;
 }
 
 .service-row-header {
@@ -510,6 +511,7 @@ main {
   height: 12px;
   border-radius: 4px;
   background: #dfe4ea;
+  cursor: pointer;
 }
 
 .service-bars span.operational {
