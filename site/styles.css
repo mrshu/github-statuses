@@ -451,6 +451,12 @@ main {
   padding: 22px 28px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.panel-raise {
+  z-index: 10;
 }
 
 .panel-header {
