@@ -244,7 +244,7 @@ const render = async () => {
     Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
 
   const attachTooltip = (bars, tooltip, container, severityByDay, incidentsByDay, startDate) => {
-    let hideTimeout = null;
+    const state = tooltip._tooltipState || (tooltip._tooltipState = { hideTimeout: null });
 
     const positionTooltip = (target) => {
       const panelRect = container.getBoundingClientRect();
@@ -269,9 +269,9 @@ const render = async () => {
     };
 
     const showTooltip = (target) => {
-      if (hideTimeout) {
-        window.clearTimeout(hideTimeout);
-        hideTimeout = null;
+      if (state.hideTimeout) {
+        window.clearTimeout(state.hideTimeout);
+        state.hideTimeout = null;
       }
       container.classList.add('tooltip-open');
       const index = Number(target.dataset.dayIndex || 0);
@@ -313,8 +313,8 @@ const render = async () => {
     };
 
     const scheduleHide = () => {
-      if (hideTimeout) window.clearTimeout(hideTimeout);
-      hideTimeout = window.setTimeout(() => {
+      if (state.hideTimeout) window.clearTimeout(state.hideTimeout);
+      state.hideTimeout = window.setTimeout(() => {
         hideTooltip();
       }, 120);
     };
@@ -327,11 +327,13 @@ const render = async () => {
       bar.addEventListener('blur', scheduleHide);
     });
 
-    tooltip.addEventListener('mouseenter', () => {
-      if (hideTimeout) window.clearTimeout(hideTimeout);
-    });
-
-    tooltip.addEventListener('mouseleave', scheduleHide);
+    if (!tooltip.dataset.bound) {
+      tooltip.addEventListener('mouseenter', () => {
+        if (state.hideTimeout) window.clearTimeout(state.hideTimeout);
+      });
+      tooltip.addEventListener('mouseleave', scheduleHide);
+      tooltip.dataset.bound = 'true';
+    }
   };
 
   attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents, rangeStart);
@@ -348,6 +350,11 @@ const render = async () => {
 
   const serviceStatus = document.getElementById('serviceStatus');
   serviceStatus.innerHTML = '';
+  const servicePanel = serviceStatus.closest('.panel');
+  const serviceTooltip = document.createElement('div');
+  serviceTooltip.className = 'uptime-tooltip service-tooltip';
+  serviceTooltip.setAttribute('aria-hidden', 'true');
+  servicePanel.appendChild(serviceTooltip);
 
   const serviceStats = SERVICES.map((service) => ({
     name: service,
@@ -428,12 +435,7 @@ const render = async () => {
     row.appendChild(bars);
     serviceStatus.appendChild(row);
 
-    const tooltip = document.createElement('div');
-    tooltip.className = 'uptime-tooltip service-tooltip';
-    tooltip.setAttribute('aria-hidden', 'true');
-    serviceStatus.appendChild(tooltip);
-
-    attachTooltip(bars, tooltip, serviceStatus, stat.daySeverity, stat.dayIncidents, rangeStart);
+    attachTooltip(bars, serviceTooltip, servicePanel, stat.daySeverity, stat.dayIncidents, rangeStart);
   });
 
   const historyGrid = document.getElementById('historyGrid');
