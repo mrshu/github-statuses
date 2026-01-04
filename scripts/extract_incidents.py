@@ -78,25 +78,54 @@ COMPONENTS_RE = re.compile(r"This incident affected:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_ALT_RE = re.compile(r"Affected components?:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_MAINT_RE = re.compile(r"This scheduled maintenance affected:\s*([^.]+)", re.IGNORECASE)
 
-COMPONENT_PATTERNS = {
-    "Copilot": [r"\bcopilot\b"],
-    "Codespaces": [r"\bcodespaces?\b"],
-    "Actions": [r"\bactions?\b", r"\bworkflow runs?\b"],
-    "Pages": [r"\bpages?\b"],
-    "Packages": [r"\bpackages?\b", r"\bpackage registry\b", r"\bcontainer registry\b"],
-    "Pull Requests": [r"\bpull requests?\b", r"\bprs?\b"],
-    "Issues": [r"\bissues?\b"],
-    "Webhooks": [r"\bwebhooks?\b"],
-    "API Requests": [r"\bapi requests?\b", r"\bapi\b"],
+COMPONENT_SCHEMA = {
+    "Git Operations": "Git operations like git push, pull, clone, or fetch failures.",
+    "Webhooks": "Webhook delivery failures, delays, or retries.",
+    "API Requests": "API errors, rate limits, or API request failures.",
+    "Issues": "Issues creation, viewing, or updates.",
+    "Pull Requests": "Pull request creation, merging, or viewing.",
+    "Actions": "GitHub Actions workflows, runners, or build execution.",
+    "Packages": "Package registry, container registry, or package downloads.",
+    "Pages": "GitHub Pages builds, publishing, or access.",
+    "Codespaces": "Codespaces creation, access, or performance.",
+    "Copilot": "GitHub Copilot availability, suggestions, or auth.",
+}
+
+COMPONENT_ALIASES = {
     "Git Operations": [
         r"\bgit operations?\b",
-        r"\bgit push\b",
-        r"\bgit pull\b",
-        r"\bgit fetch\b",
-        r"\bgit clone\b",
+        r"\bgit (push|pull|fetch|clone)\b",
         r"\bgit\b",
     ],
+    "Webhooks": [r"\bwebhooks?\b"],
+    "API Requests": [
+        r"\bapi requests?\b",
+        r"\bgithub api\b",
+        r"\brest api\b",
+        r"\bgraphql\b",
+        r"\bapi rate\b",
+    ],
+    "Issues": [
+        r"\bissues?\b",
+        r"\bissues and pull requests\b",
+        r"\bissue creation\b",
+        r"\bissue comments?\b",
+    ],
+    "Pull Requests": [r"\bpull requests?\b", r"\bprs?\b", r"\bmerge (pull|requests?)\b"],
+    "Actions": [r"\bgithub actions\b", r"\bworkflow runs?\b", r"\bworkflow\b", r"\bactions\b"],
+    "Packages": [r"\bpackage registry\b", r"\bcontainer registry\b", r"\bpackages?\b"],
+    "Pages": [r"\bgithub pages\b", r"\bpages build\b", r"\bpages\b"],
+    "Codespaces": [r"\bcodespaces?\b"],
+    "Copilot": [r"\bcopilot\b"],
 }
+
+try:
+    from gliner2 import GLiNER2
+except ImportError:
+    GLiNER2 = None
+
+_GLINER_MODEL = None
+_GLINER_MODEL_NAME = None
 
 
 def run_git(args):
@@ -241,31 +270,77 @@ def fetch_url(url, timeout=15):
         return resp.read().decode("utf-8", errors="replace")
 
 
-def infer_components_from_text(text):
-    if not text:
+def get_gliner_model(model_name):
+    global _GLINER_MODEL, _GLINER_MODEL_NAME
+    if _GLINER_MODEL is not None and _GLINER_MODEL_NAME == model_name:
+        return _GLINER_MODEL
+    if GLiNER2 is None:
         return None
-    normalized = " ".join(text.split())
-    matches = []
-    for component, patterns in COMPONENT_PATTERNS.items():
-        for pattern in patterns:
-            if re.search(pattern, normalized, re.IGNORECASE):
-                matches.append(component)
-                break
-    return matches or None
+    _GLINER_MODEL = GLiNER2.from_pretrained(model_name)
+    _GLINER_MODEL_NAME = model_name
+    return _GLINER_MODEL
 
 
-def infer_components_for_incident(incident):
+def select_components_from_entities(entities, threshold):
+    if not entities:
+        return None, {}
+    selected = []
+    confidences = {}
+    for label, items in entities.items():
+        if not items:
+            continue
+        max_conf = None
+        if isinstance(items, list):
+            for item in items:
+                if isinstance(item, dict) and "confidence" in item:
+                    max_conf = max(max_conf or 0.0, float(item["confidence"]))
+        if max_conf is None:
+            max_conf = 1.0
+        confidences[label] = max_conf
+        if max_conf >= threshold:
+            selected.append(label)
+    return (selected or None), confidences
+
+
+def filter_components_by_alias(components, text):
+    if not components or not text:
+        return None
+    matched = []
+    for label in components:
+        patterns = COMPONENT_ALIASES.get(label, [])
+        if any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns):
+            matched.append(label)
+    return matched or None
+
+
+def infer_components_with_gliner2(incident, model_name, threshold):
     if incident.get("components"):
+        return
+    if GLiNER2 is None:
+        return
+    model = get_gliner_model(model_name)
+    if model is None:
         return
     parts = [incident.get("title") or ""]
     for update in incident.get("updates") or []:
+        if update.get("status") == "Resolved":
+            continue
         message = update.get("message")
         if message:
             parts.append(message)
-    components = infer_components_from_text(" ".join(parts))
+    text = " ".join(p.strip() for p in parts if p)
+    if not text:
+        return
+    result = model.extract_entities(text, COMPONENT_SCHEMA, include_confidence=True)
+    entities = result.get("entities", {}) if isinstance(result, dict) else {}
+    components, confidences = select_components_from_entities(entities, threshold)
+    components = filter_components_by_alias(components, text)
     if components:
         incident["components"] = components
-        incident["components_source"] = "inferred"
+        incident["components_source"] = "gliner2"
+        incident["components_confidence"] = {
+            label: confidences[label] for label in components if label in confidences
+        }
 
 
 def load_impact_cache(path):
@@ -516,6 +591,23 @@ def main():
     parser.add_argument("--since", help="Filter incidents starting from this ISO date or date-only (UTC).")
     parser.add_argument("--until", help="Filter incidents ending at this ISO date or date-only (UTC).")
     parser.add_argument("--enrich-impact", action="store_true", help="Fetch incident pages to detect impact level.")
+    parser.add_argument(
+        "--infer-components",
+        choices=["off", "gliner2"],
+        default="gliner2",
+        help="Infer components for incidents missing affected components (default: gliner2).",
+    )
+    parser.add_argument(
+        "--gliner-model",
+        default="fastino/gliner2-base-v1",
+        help="GLiNER2 model name for component inference.",
+    )
+    parser.add_argument(
+        "--gliner-threshold",
+        type=float,
+        default=0.75,
+        help="Minimum confidence for inferred components.",
+    )
     parser.add_argument("--impact-cache", default=".cache/impact.json", help="Path to impact cache JSON.")
     parser.add_argument(
         "--impact-delay",
@@ -556,8 +648,16 @@ def main():
     if args.enrich_impact:
         enrich_impacts(finalized, args.impact_cache, args.impact_delay)
 
-    for incident in finalized:
-        infer_components_for_incident(incident)
+    if args.infer_components == "gliner2":
+        if GLiNER2 is None:
+            print("GLiNER2 not installed; skipping component inference.", file=sys.stderr)
+        else:
+            for incident in finalized:
+                infer_components_with_gliner2(
+                    incident,
+                    model_name=args.gliner_model,
+                    threshold=args.gliner_threshold,
+                )
 
     out_dir = args.out
     os.makedirs(out_dir, exist_ok=True)

@@ -134,11 +134,25 @@ class ExtractIncidentsTests(unittest.TestCase):
         html = '<div>No components listed here.</div>'
         self.assertIsNone(ei.extract_components_from_html(html))
 
-    def test_infer_components_from_text(self):
-        self.assertEqual(ei.infer_components_from_text("Incident With Copilot"), ["Copilot"])
+    def test_select_components_from_entities(self):
+        entities = {
+            "Copilot": [{"text": "Copilot", "confidence": 0.88}],
+            "Actions": [{"text": "Actions", "confidence": 0.62}],
+        }
+        selected, confidences = ei.select_components_from_entities(entities, 0.75)
+        self.assertEqual(selected, ["Copilot"])
+        self.assertGreaterEqual(confidences["Copilot"], 0.88)
 
-    def test_infer_components_from_text_none(self):
-        self.assertIsNone(ei.infer_components_from_text("Disruptions in Login and Signup Flows"))
+    def test_select_components_from_entities_empty(self):
+        selected, confidences = ei.select_components_from_entities({}, 0.75)
+        self.assertIsNone(selected)
+        self.assertEqual(confidences, {})
+
+    def test_filter_components_by_alias(self):
+        components = ["Copilot", "Actions"]
+        text = "Incident With Copilot impacting suggestions."
+        filtered = ei.filter_components_by_alias(components, text)
+        self.assertEqual(filtered, ["Copilot"])
 
 
 if __name__ == "__main__":
