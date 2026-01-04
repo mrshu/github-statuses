@@ -243,7 +243,15 @@ const render = async () => {
   const severityToImpact = (severity) =>
     Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
 
-  const attachTooltip = (bars, tooltip, container, severityByDay, incidentsByDay, startDate) => {
+  const attachTooltip = (
+    bars,
+    tooltip,
+    container,
+    severityByDay,
+    incidentsByDay,
+    startDate,
+    placement = 'auto',
+  ) => {
     const state = tooltip._tooltipState || (tooltip._tooltipState = { hideTimeout: null });
 
     const positionTooltip = (target) => {
@@ -257,7 +265,9 @@ const render = async () => {
         Math.min(left, panelRect.width - tooltipRect.width / 2 - padding),
       );
       let top = barRect.top - panelRect.top - tooltipRect.height - 12;
-      if (top < padding) {
+      if (placement === 'below') {
+        top = barRect.bottom - panelRect.top + 12;
+      } else if (top < padding) {
         top = barRect.bottom - panelRect.top + 12;
       }
       tooltip.style.left = `${left}px`;
@@ -435,7 +445,7 @@ const render = async () => {
     row.appendChild(bars);
     serviceStatus.appendChild(row);
 
-    attachTooltip(bars, serviceTooltip, servicePanel, stat.daySeverity, stat.dayIncidents, rangeStart);
+    attachTooltip(bars, serviceTooltip, servicePanel, stat.daySeverity, stat.dayIncidents, rangeStart, 'below');
   });
 
   const historyGrid = document.getElementById('historyGrid');
