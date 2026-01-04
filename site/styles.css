@@ -238,6 +238,7 @@ main {
   box-shadow: var(--shadow);
   position: relative;
   overflow: visible;
+  z-index: 0;
 }
 
 .hero-panel-header {
@@ -308,7 +309,7 @@ main {
   pointer-events: none;
   transform: translate(-50%, 8px);
   transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 200;
+  z-index: 999;
 }
 
 .uptime-tooltip.active {
@@ -453,8 +454,12 @@ main {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   position: relative;
-  z-index: 1;
+  z-index: 0;
   overflow: visible;
+}
+
+.tooltip-open {
+  z-index: 40;
 }
 
 .panel-raise {

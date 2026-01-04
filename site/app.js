@@ -273,6 +273,7 @@ const render = async () => {
         window.clearTimeout(hideTimeout);
         hideTimeout = null;
       }
+      container.classList.add('tooltip-open');
       const index = Number(target.dataset.dayIndex || 0);
       const date = new Date(startDate.getTime() + index * 86400000);
       const incidents = Array.from(incidentsByDay[index]?.values() || []);
@@ -308,6 +309,7 @@ const render = async () => {
     const hideTooltip = () => {
       tooltip.classList.remove('active');
       tooltip.setAttribute('aria-hidden', 'true');
+      container.classList.remove('tooltip-open');
     };
 
     const scheduleHide = () => {
