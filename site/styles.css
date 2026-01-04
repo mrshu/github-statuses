@@ -581,6 +581,7 @@ main {
   flex-direction: column;
   gap: 18px;
   margin-top: 16px;
+  position: relative;
 }
 
 .service-row {

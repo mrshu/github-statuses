@@ -426,15 +426,14 @@ const render = async () => {
       bars.appendChild(span);
     });
     row.appendChild(bars);
+    serviceStatus.appendChild(row);
 
     const tooltip = document.createElement('div');
     tooltip.className = 'uptime-tooltip service-tooltip';
     tooltip.setAttribute('aria-hidden', 'true');
-    row.appendChild(tooltip);
+    serviceStatus.appendChild(tooltip);
 
-    attachTooltip(bars, tooltip, row, stat.daySeverity, stat.dayIncidents, rangeStart);
-
-    serviceStatus.appendChild(row);
+    attachTooltip(bars, tooltip, serviceStatus, stat.daySeverity, stat.dayIncidents, rangeStart);
   });
 
   const historyGrid = document.getElementById('historyGrid');
