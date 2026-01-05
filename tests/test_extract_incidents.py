@@ -154,6 +154,12 @@ class ExtractIncidentsTests(unittest.TestCase):
         filtered = ei.filter_components_by_alias(components, text)
         self.assertEqual(filtered, ["Copilot"])
 
+    def test_filter_components_by_alias_generic_issues(self):
+        components = ["Issues"]
+        text = "We are investigating issues with service reliability."
+        filtered = ei.filter_components_by_alias(components, text)
+        self.assertIsNone(filtered)
+
 
 if __name__ == "__main__":
     unittest.main()

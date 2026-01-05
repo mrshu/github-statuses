@@ -106,10 +106,12 @@ COMPONENT_ALIASES = {
         r"\bapi rate\b",
     ],
     "Issues": [
-        r"\bissues?\b",
+        r"\bgithub issues\b",
         r"\bissues and pull requests\b",
         r"\bissue creation\b",
         r"\bissue comments?\b",
+        r"\bissues tab\b",
+        r"\bissues page\b",
     ],
     "Pull Requests": [r"\bpull requests?\b", r"\bprs?\b", r"\bmerge (pull|requests?)\b"],
     "Actions": [r"\bgithub actions\b", r"\bworkflow runs?\b", r"\bworkflow\b", r"\bactions\b"],
