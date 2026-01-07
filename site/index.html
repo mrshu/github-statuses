@@ -104,24 +104,24 @@
           <h3>About this mirror</h3>
         </div>
         <p class="about-body">
-          GitHub stopped publishing aggregate uptime numbers
+          GitHub stopped updating its status page with aggregate uptime numbers
           <a href="https://web.archive.org/web/20170328180759/https://status.github.com/">some</a>
           <a href="https://web.archive.org/web/20180630225202/https://status.github.com/">time</a>
           <a href="https://web.archive.org/web/20190507223213/https://status.github.com/messages">ago</a>
           — if you use it regularly, you might have a feeling why. This is the missing version.
         </p>
         <p class="about-body">
-          We reconstruct the full history by replaying the Atom feed snapshots committed to git
-          via Flat Data. From there, we rebuild platform‑wide and per‑service uptime, derive
+          We rebuild platform‑wide and per‑service uptime from archived status updates, derive
           minute‑level downtime windows, and map incidents to services whenever the source data allows.
-          Everything is open source, and PRs are very welcome.
+          Everything is open source, and PRs are very welcome!
         </p>
         <div class="about-nerd">
           <p class="about-body">
-            <strong>Nerd notes:</strong> the pipeline parses the Atom feed history from git, reconstructs
-            each incident timeline, and computes uptime using merged downtime windows rather than
-            day‑level buckets. When components are missing, we infer tags with GLiNER2 but only keep
-            labels that are explicitly grounded in the incident text.
+            <strong>Nerd notes:</strong> the pipeline reconstructs history by replaying Atom feed
+            snapshots committed to git via Flat Data. It rebuilds each incident timeline and computes
+            uptime using merged downtime windows rather than day‑level buckets. When components are
+            missing, we infer tags with GLiNER2 but only keep labels that are explicitly grounded in
+            the incident text.
           </p>
         </div>
         <p class="about-links">
