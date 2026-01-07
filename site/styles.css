@@ -539,6 +539,14 @@ main {
   font-size: 0.95rem;
 }
 
+.about-nerd {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(9, 105, 218, 0.06);
+  border: 1px solid rgba(9, 105, 218, 0.16);
+}
+
 .about-links {
   margin: 12px 0 0;
   color: var(--muted);
