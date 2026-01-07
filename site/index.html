@@ -108,8 +108,15 @@
           This is the missing version.
         </p>
         <p class="about-body">
-          We rebuild platform‑wide and per‑service uptime from archived status updates, and we surface
-          the incidents that drive those numbers. Everything is open source, and PRs are very welcome.
+          We rebuild platform‑wide and per‑service uptime from archived status updates, derive
+          minute‑level downtime windows, and map incidents to services whenever the source data allows.
+          Everything is open source, and PRs are very welcome.
+        </p>
+        <p class="about-body">
+          Want to nerd out? The pipeline parses the Atom feed history from git, reconstructs each
+          incident timeline, and computes uptime using merged downtime windows rather than day‑level
+          buckets. When components are missing, we infer tags with GLiNER2 but only keep labels that
+          are explicitly grounded in the incident text.
         </p>
         <p class="about-links">
           Archive trail:
