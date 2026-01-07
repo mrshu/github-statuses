@@ -539,6 +539,21 @@ main {
   font-size: 0.95rem;
 }
 
+.about-links {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.about-links a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .history-header {
   align-items: center;
 }
