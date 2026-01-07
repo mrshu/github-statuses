@@ -117,11 +117,15 @@
         </p>
         <div class="about-nerd">
           <p class="about-body">
-            <strong>Nerd notes:</strong> the pipeline reconstructs history by replaying Atom feed
-            snapshots committed to git via Flat Data. It rebuilds each incident timeline and computes
+            <strong>Nerd notes:</strong> the pipeline reconstructs history by replaying the
+            <a href="https://www.githubstatus.com/history.atom">Atom feed</a>
+            snapshots committed to git via
+            <a href="https://github.com/githubocto/flat">Flat Data</a>.
+            It rebuilds each incident timeline and computes
             uptime using merged downtime windows rather than day‑level buckets. When components are
-            missing, we infer tags with GLiNER2 but only keep labels that are explicitly grounded in
-            the incident text.
+            missing, we infer tags with
+            <a href="https://github.com/fastino-ai/GLiNER2">GLiNER2</a>
+            but only keep labels that are explicitly grounded in the incident text.
           </p>
         </div>
         <p class="about-links">
