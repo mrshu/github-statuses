@@ -668,6 +668,7 @@ const render = async () => {
 
   const entries = Array.from(grouped.entries());
   let showAll = false;
+  const toggleButtons = Array.from(document.querySelectorAll('[data-toggle-timeline]'));
 
   const renderTimeline = () => {
     timeline.innerHTML = '';
@@ -689,11 +690,20 @@ const render = async () => {
   };
 
   renderTimeline();
+  const updateToggleButtons = () => {
+    toggleButtons.forEach((button) => {
+      button.textContent = showAll ? 'Show fewer' : 'Show more';
+    });
+  };
 
-  document.getElementById('togglePast').addEventListener('click', () => {
+  updateToggleButtons();
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener('click', () => {
     showAll = !showAll;
-    document.getElementById('togglePast').textContent = showAll ? 'Show fewer' : 'Show more';
-    renderTimeline();
+      updateToggleButtons();
+      renderTimeline();
+    });
   });
 };
 

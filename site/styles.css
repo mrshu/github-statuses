@@ -60,6 +60,28 @@ a:hover {
   margin: 0 auto;
 }
 
+.site-nav {
+  display: flex;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+  border-color: var(--border);
+  background: #ffffff;
+  text-decoration: none;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -498,6 +520,23 @@ main {
 .panel-actions {
   display: flex;
   gap: 8px;
+}
+
+.timeline-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.about-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.about-body {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .history-header {
