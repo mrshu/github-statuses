@@ -104,57 +104,10 @@
         "truth": [
           "Pull Requests"
         ]
-      },
-      {
-        "title": "Incident with GitHub Packages and GitHub Pages",
-        "url": "https://www.githubstatus.com/incidents/gcqz5grcs4z6",
-        "predicted": [
-          "Packages",
-          "Pages"
-        ],
-        "truth": [
-          "Packages"
-        ]
-      },
-      {
-        "title": "Incident with GitHub Actions and Webhooks",
-        "url": "https://www.githubstatus.com/incidents/gvzcw6sd0xxb",
-        "predicted": [
-          "Actions",
-          "Webhooks"
-        ],
-        "truth": [
-          "Actions"
-        ]
       }
     ],
     "false_negative": [
       {
-        "title": "Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks",
-        "url": "https://www.githubstatus.com/incidents/zhtplv7zd052",
-        "predicted": [
-          "API Requests",
-          "Actions",
-          "Codespaces",
-          "Git Operations",
-          "Packages",
-          "Pages",
-          "Pull Requests",
-          "Webhooks"
-        ],
-        "truth": [
-          "API Requests",
-          "Actions",
-          "Codespaces",
-          "Git Operations",
-          "Issues",
-          "Packages",
-          "Pages",
-          "Pull Requests",
-          "Webhooks"
-        ]
-      },
-      {
         "title": "Incident on 2022-09-06 22:05 UTC",
         "url": "https://www.githubstatus.com/incidents/cwp52gsftl5n",
         "predicted": [],
@@ -175,105 +128,11 @@
         ]
       },
       {
-        "title": "Incident with Issues",
-        "url": "https://www.githubstatus.com/incidents/1nyvf21q5dn7",
+        "title": "Incident with API Requests",
+        "url": "https://www.githubstatus.com/incidents/4vr2qz8lgdmq",
         "predicted": [],
         "truth": [
-          "Issues"
-        ]
-      },
-      {
-        "title": "Incident with Issues",
-        "url": "https://www.githubstatus.com/incidents/3z36qpp2c0z1",
-        "predicted": [],
-        "truth": [
-          "Issues"
-        ]
-      }
-    ],
-    "sample": [
-      {
-        "type": "false_positive",
-        "title": "Incident with GitHub Actions and Codespaces",
-        "url": "https://www.githubstatus.com/incidents/vxvyrmy9w1vp",
-        "predicted": [
-          "Actions",
-          "Codespaces"
-        ],
-        "truth": [
-          "Actions"
-        ]
-      },
-      {
-        "type": "false_positive",
-        "title": "Incident with GitHub Packages and GitHub Pages",
-        "url": "https://www.githubstatus.com/incidents/b40k7ckrs7sp",
-        "predicted": [
-          "Packages",
-          "Pages"
-        ],
-        "truth": [
-          "Packages"
-        ]
-      },
-      {
-        "type": "false_positive",
-        "title": "Incident with Pull Requests and Webhooks",
-        "url": "https://www.githubstatus.com/incidents/d1stj7xcn4fy",
-        "predicted": [
-          "Pull Requests",
-          "Webhooks"
-        ],
-        "truth": [
-          "Pull Requests"
-        ]
-      },
-      {
-        "type": "false_negative",
-        "title": "Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks",
-        "url": "https://www.githubstatus.com/incidents/zhtplv7zd052",
-        "predicted": [
-          "API Requests",
-          "Actions",
-          "Codespaces",
-          "Git Operations",
-          "Packages",
-          "Pages",
-          "Pull Requests",
-          "Webhooks"
-        ],
-        "truth": [
-          "API Requests",
-          "Actions",
-          "Codespaces",
-          "Git Operations",
-          "Issues",
-          "Packages",
-          "Pages",
-          "Pull Requests",
-          "Webhooks"
-        ]
-      },
-      {
-        "type": "false_negative",
-        "title": "Incident on 2022-09-06 22:05 UTC",
-        "url": "https://www.githubstatus.com/incidents/cwp52gsftl5n",
-        "predicted": [],
-        "truth": [
-          "Git Operations",
-          "Visit www",
-          "Webhooks"
-        ]
-      },
-      {
-        "type": "false_negative",
-        "title": "Incident on 2022-09-06 22:56 UTC",
-        "url": "https://www.githubstatus.com/incidents/wl09fvhb20x8",
-        "predicted": [],
-        "truth": [
-          "Git Operations",
-          "Visit www",
-          "Webhooks"
+          "API Requests"
         ]
       }
     ]

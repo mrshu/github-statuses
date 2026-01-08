@@ -162,6 +162,7 @@ def main():
     per_label = defaultdict(lambda: {"tp": 0, "fp": 0, "fn": 0})
     examples_fp = []
     examples_fn = []
+    max_examples = 3
 
     for inc in truth_pool:
         text = incident_text(inc)
@@ -192,19 +193,26 @@ def main():
         for label in fn:
             per_label[label]["fn"] += 1
 
-        if fp and len(examples_fp) < 5:
+        title = inc.get("title") or ""
+        skip_sample = (
+            re.search(r"\bIssues\b", title, re.IGNORECASE)
+            or "Issues" in pred_set
+            or "Issues" in truth_set
+        )
+
+        if fp and len(examples_fp) < max_examples and not skip_sample:
             examples_fp.append(
                 {
-                    "title": inc.get("title"),
+                    "title": title,
                     "url": inc.get("url"),
                     "predicted": sorted(pred_set),
                     "truth": sorted(truth_set),
                 }
             )
-        if fn and len(examples_fn) < 5:
+        if fn and len(examples_fn) < max_examples and not skip_sample:
             examples_fn.append(
                 {
-                    "title": inc.get("title"),
+                    "title": title,
                     "url": inc.get("url"),
                     "predicted": sorted(pred_set),
                     "truth": sorted(truth_set),
