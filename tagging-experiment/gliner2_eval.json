@@ -1,0 +1,196 @@
+{
+  "model": "fastino/gliner2-base-v1",
+  "threshold": 0.75,
+  "as_of": "2026-01-08",
+  "metrics": {
+    "total": 447,
+    "predicted_non_empty": 419,
+    "exact_match": 351,
+    "tp": 688,
+    "fp": 36,
+    "fn": 91,
+    "precision": 0.9502762430939227,
+    "recall": 0.883183568677792,
+    "exact_match_rate": 0.785234899328859
+  },
+  "per_label": {
+    "Codespaces": {
+      "tp": 110,
+      "fp": 2,
+      "fn": 2
+    },
+    "Actions": {
+      "tp": 161,
+      "fp": 7,
+      "fn": 9
+    },
+    "Pages": {
+      "tp": 53,
+      "fp": 9,
+      "fn": 2
+    },
+    "Packages": {
+      "tp": 33,
+      "fp": 3,
+      "fn": 1
+    },
+    "Pull Requests": {
+      "tp": 92,
+      "fp": 5,
+      "fn": 2
+    },
+    "Webhooks": {
+      "tp": 45,
+      "fp": 3,
+      "fn": 4
+    },
+    "API Requests": {
+      "tp": 54,
+      "fp": 5,
+      "fn": 5
+    },
+    "Git Operations": {
+      "tp": 60,
+      "fp": 2,
+      "fn": 6
+    },
+    "Issues": {
+      "tp": 22,
+      "fp": 0,
+      "fn": 55
+    },
+    "Copilot": {
+      "tp": 58,
+      "fp": 0,
+      "fn": 2
+    },
+    "Visit www": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3
+    }
+  },
+  "examples": {
+    "false_positive": [
+      {
+        "title": "Incident with GitHub Actions and Codespaces",
+        "url": "https://www.githubstatus.com/incidents/vxvyrmy9w1vp",
+        "predicted": [
+          "Actions",
+          "Codespaces"
+        ],
+        "truth": [
+          "Actions"
+        ]
+      },
+      {
+        "title": "Incident with GitHub Packages and GitHub Pages",
+        "url": "https://www.githubstatus.com/incidents/b40k7ckrs7sp",
+        "predicted": [
+          "Packages",
+          "Pages"
+        ],
+        "truth": [
+          "Packages"
+        ]
+      },
+      {
+        "title": "Incident with Pull Requests and Webhooks",
+        "url": "https://www.githubstatus.com/incidents/d1stj7xcn4fy",
+        "predicted": [
+          "Pull Requests",
+          "Webhooks"
+        ],
+        "truth": [
+          "Pull Requests"
+        ]
+      },
+      {
+        "title": "Incident with GitHub Packages and GitHub Pages",
+        "url": "https://www.githubstatus.com/incidents/gcqz5grcs4z6",
+        "predicted": [
+          "Packages",
+          "Pages"
+        ],
+        "truth": [
+          "Packages"
+        ]
+      },
+      {
+        "title": "Incident with GitHub Actions and Webhooks",
+        "url": "https://www.githubstatus.com/incidents/gvzcw6sd0xxb",
+        "predicted": [
+          "Actions",
+          "Webhooks"
+        ],
+        "truth": [
+          "Actions"
+        ]
+      }
+    ],
+    "false_negative": [
+      {
+        "title": "Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks",
+        "url": "https://www.githubstatus.com/incidents/zhtplv7zd052",
+        "predicted": [
+          "API Requests",
+          "Actions",
+          "Codespaces",
+          "Git Operations",
+          "Packages",
+          "Pages",
+          "Pull Requests",
+          "Webhooks"
+        ],
+        "truth": [
+          "API Requests",
+          "Actions",
+          "Codespaces",
+          "Git Operations",
+          "Issues",
+          "Packages",
+          "Pages",
+          "Pull Requests",
+          "Webhooks"
+        ]
+      },
+      {
+        "title": "Incident on 2022-09-06 22:05 UTC",
+        "url": "https://www.githubstatus.com/incidents/cwp52gsftl5n",
+        "predicted": [],
+        "truth": [
+          "Git Operations",
+          "Visit www",
+          "Webhooks"
+        ]
+      },
+      {
+        "title": "Incident on 2022-09-06 22:56 UTC",
+        "url": "https://www.githubstatus.com/incidents/wl09fvhb20x8",
+        "predicted": [],
+        "truth": [
+          "Git Operations",
+          "Visit www",
+          "Webhooks"
+        ]
+      },
+      {
+        "title": "Incident with Issues",
+        "url": "https://www.githubstatus.com/incidents/1nyvf21q5dn7",
+        "predicted": [],
+        "truth": [
+          "Issues"
+        ]
+      },
+      {
+        "title": "Incident with Issues",
+        "url": "https://www.githubstatus.com/incidents/3z36qpp2c0z1",
+        "predicted": [],
+        "truth": [
+          "Issues"
+        ]
+      }
+    ]
+  },
+  "audit_count": 51
+}
