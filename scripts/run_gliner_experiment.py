@@ -71,8 +71,8 @@ def main():
     )
     parser.add_argument(
         "--output-dir",
-        default="out",
-        help="Directory to write audit/eval files (default: out)",
+        default="tagging-experiment",
+        help="Directory to write audit/eval files (default: tagging-experiment)",
     )
     parser.add_argument(
         "--as-of",

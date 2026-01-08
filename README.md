@@ -81,13 +81,13 @@ To validate the fallback approach, an experiment is run that produces:
 Reproduce the experiment at a fixed time point (numbers will change as new data arrives):
 
 ```
-uv run python scripts/run_gliner_experiment.py --as-of 2026-01-08 --output-dir out
+uv run python scripts/run_gliner_experiment.py --as-of 2026-01-08 --output-dir tagging-experiment
 ```
 
 Outputs are written to:
 
-- `out/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
-- `out/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
+- `tagging-experiment/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
+- `tagging-experiment/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
 
 Latest results (as-of 2026-01-08, threshold 0.75, alias filter on, non-Resolved text only):
 
@@ -122,6 +122,7 @@ multi-service incident titles.
 ## Outputs
 
 Outputs are written to the directory passed to `--out` (local examples use `out/`).
+The GLiNER2 experiment writes to `tagging-experiment/` by default.
 The automation workflow writes to `parsed/`.
 
 - `<out>/incidents.json`: merged incident timeline records
