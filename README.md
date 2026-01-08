@@ -88,7 +88,15 @@ Outputs are written to:
 
 - `tagging-experiment/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
 - `tagging-experiment/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
-- `tagging-experiment/gliner2_examples.md` (diff-style table of sample errors)
+- `tagging-experiment/error_analysis.md` (sample error analysis with highlighted diffs)
+
+Sample error analysis (from the latest experiment):
+
+| Type | Incident | Predicted | Truth |
+|---|---|---|---|
+| false_positive | Incident with GitHub Actions and Codespaces | Actions, `Codespaces` | Actions |
+| false_positive | Incident with GitHub Packages and GitHub Pages | Packages, `Pages` | Packages |
+| false_negative | Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks | API Requests, Actions, Codespaces, Git Operations, Packages, Pages, Pull Requests, Webhooks | API Requests, Actions, Codespaces, Git Operations, `Issues`, Packages, Pages, Pull Requests, Webhooks |
 
 Latest results (as-of 2026-01-08, threshold 0.75, alias filter on, non-Resolved text only):
 

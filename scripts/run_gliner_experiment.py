@@ -115,6 +115,7 @@ def main():
 
     audit_path = os.path.join(args.output_dir, "gliner2_audit.jsonl")
     eval_path = os.path.join(args.output_dir, "gliner2_eval.json")
+    error_path = os.path.join(args.output_dir, "error_analysis.md")
 
     audit_count = 0
     with open(audit_path, "w", encoding="utf-8") as handle:
@@ -236,8 +237,45 @@ def main():
     with open(eval_path, "w", encoding="utf-8") as handle:
         json.dump(report, handle, indent=2, ensure_ascii=True)
 
+    lines = []
+    lines.append("| Type | Incident | Predicted | Truth |")
+    lines.append("|---|---|---|---|")
+    for item in samples:
+        predicted = item.get("predicted", [])
+        truth = item.get("truth", [])
+        pred_set = set(predicted)
+        truth_set = set(truth)
+        missing = sorted(truth_set - pred_set)
+        extra = sorted(pred_set - truth_set)
+
+        def format_list(items, highlight):
+            out = []
+            for component in items:
+                if component in highlight:
+                    out.append(f"`{component}`")
+                else:
+                    out.append(component)
+            return ", ".join(out) if out else "—"
+
+        title = item.get("title", "")
+        url = item.get("url", "")
+        incident = f"[{title}]({url})" if title and url else title or url
+
+        lines.append(
+            "| {} | {} | {} | {} |".format(
+                item.get("type", ""),
+                incident.replace("|", "\\|"),
+                format_list(predicted, extra),
+                format_list(truth, missing),
+            )
+        )
+
+    with open(error_path, "w", encoding="utf-8") as handle:
+        handle.write("\n".join(lines) + "\n")
+
     print(f"Wrote audit: {audit_path}")
     print(f"Wrote eval: {eval_path}")
+    print(f"Wrote error analysis: {error_path}")
     print(
         f"Precision {precision:.3f} | Recall {recall:.3f} | Exact match {exact_match_rate:.3f} "
         f"| Audit {audit_count} | Evaluated {metrics['total']}"
