@@ -130,7 +130,7 @@ Sample errors (diffs highlighted with `+` for extra and `-` for missing):
 | false_negative | [Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks](https://www.githubstatus.com/incidents/zhtplv7zd052) | API Requests, Actions, Codespaces, Git Operations, Packages, Pages, Pull Requests, Webhooks | API Requests, Actions, Codespaces, Git Operations, `-Issues`, Packages, Pages, Pull Requests, Webhooks |
 | false_negative | [Incident on 2022-09-06 22:05 UTC](https://www.githubstatus.com/incidents/cwp52gsftl5n) | `none` | `-Git Operations`, `-Visit www`, `-Webhooks` |
 | false_negative | [Incident on 2022-09-06 22:56 UTC](https://www.githubstatus.com/incidents/wl09fvhb20x8) | `none` | `-Git Operations`, `-Visit www`, `-Webhooks` |
-| false_negative | [Incident with Issues](https://www.githubstatus.com/incidents/1nyvf21q5dn7) | `none` | `-Issues` |
+| false_negative | [Incident with Issues](https://www.githubstatus.com/incidents/3z36qpp2c0z1) | `none` | `-Issues` |
 
 ## Outputs
 
