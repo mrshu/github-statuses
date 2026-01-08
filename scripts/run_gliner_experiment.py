@@ -237,6 +237,12 @@ def main():
     with open(eval_path, "w", encoding="utf-8") as handle:
         json.dump(report, handle, indent=2, ensure_ascii=True)
 
+    samples = []
+    for item in examples_fp:
+        samples.append({"type": "false_positive", **item})
+    for item in examples_fn:
+        samples.append({"type": "false_negative", **item})
+
     lines = []
     lines.append("| Type | Incident | Predicted | Truth |")
     lines.append("|---|---|---|---|")
@@ -248,14 +254,14 @@ def main():
         missing = sorted(truth_set - pred_set)
         extra = sorted(pred_set - truth_set)
 
-        def format_list(items, highlight):
+        def format_list(items, highlight, prefix):
             out = []
             for component in items:
                 if component in highlight:
-                    out.append(f"`{component}`")
+                    out.append(f"`{prefix}{component}`")
                 else:
                     out.append(component)
-            return ", ".join(out) if out else "—"
+            return ", ".join(out) if out else "`none`"
 
         title = item.get("title", "")
         url = item.get("url", "")
@@ -265,8 +271,8 @@ def main():
             "| {} | {} | {} | {} |".format(
                 item.get("type", ""),
                 incident.replace("|", "\\|"),
-                format_list(predicted, extra),
-                format_list(truth, missing),
+                format_list(predicted, extra, "+"),
+                format_list(truth, missing, "-"),
             )
         )
 

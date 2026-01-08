@@ -88,22 +88,14 @@ Outputs are written to:
 
 - `tagging-experiment/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
 - `tagging-experiment/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
-- `tagging-experiment/error_analysis.md` (sample error analysis with highlighted diffs)
-
-Sample error analysis (from the latest experiment):
-
-| Type | Incident | Predicted | Truth |
-|---|---|---|---|
-| false_positive | Incident with GitHub Actions and Codespaces | Actions, `Codespaces` | Actions |
-| false_positive | Incident with GitHub Packages and GitHub Pages | Packages, `Pages` | Packages |
-| false_negative | Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks | API Requests, Actions, Codespaces, Git Operations, Packages, Pages, Pull Requests, Webhooks | API Requests, Actions, Codespaces, Git Operations, `Issues`, Packages, Pages, Pull Requests, Webhooks |
+- `tagging-experiment/error_analysis.md` (diff-style table of sample errors)
 
 Latest results (as-of 2026-01-08, threshold 0.75, alias filter on, non-Resolved text only):
 
 | Metric | Value |
 |---|---:|
-| Evaluated incidents | 446 |
-| Predicted non-empty | 418 |
+| Evaluated incidents | 447 |
+| Predicted non-empty | 419 |
 | Precision | 0.950 |
 | Recall | 0.883 |
 | Exact match rate | 0.785 |
@@ -122,11 +114,23 @@ Per-label precision/recall (top-level service components):
 | Packages | 0.917 | 0.971 | 33 | 3 | 1 |
 | Pages | 0.855 | 0.964 | 53 | 9 | 2 |
 | Codespaces | 0.982 | 0.982 | 110 | 2 | 2 |
-| Copilot | 1.000 | 0.966 | 57 | 0 | 2 |
+| Copilot | 1.000 | 0.967 | 58 | 0 | 2 |
 
 Summary: the fallback is high-precision and mostly conservative. Most errors are **false negatives**
 (missing a true component), while false positives are typically "extra" components inferred from
 multi-service incident titles.
+
+Sample errors (diffs highlighted with `+` for extra and `-` for missing):
+
+| Type | Incident | Predicted | Truth |
+|---|---|---|---|
+| false_positive | [Incident with GitHub Actions and Codespaces](https://www.githubstatus.com/incidents/vxvyrmy9w1vp) | Actions, `+Codespaces` | Actions |
+| false_positive | [Incident with GitHub Packages and GitHub Pages](https://www.githubstatus.com/incidents/b40k7ckrs7sp) | Packages, `+Pages` | Packages |
+| false_positive | [Incident with Pull Requests and Webhooks](https://www.githubstatus.com/incidents/d1stj7xcn4fy) | Pull Requests, `+Webhooks` | Pull Requests |
+| false_negative | [Incident with GitHub Actions, API Requests, Codespaces, Git Operations, Issues, GitHub Packages, GitHub Pages, Pull Requests, and Webhooks](https://www.githubstatus.com/incidents/zhtplv7zd052) | API Requests, Actions, Codespaces, Git Operations, Packages, Pages, Pull Requests, Webhooks | API Requests, Actions, Codespaces, Git Operations, `-Issues`, Packages, Pages, Pull Requests, Webhooks |
+| false_negative | [Incident on 2022-09-06 22:05 UTC](https://www.githubstatus.com/incidents/cwp52gsftl5n) | `none` | `-Git Operations`, `-Visit www`, `-Webhooks` |
+| false_negative | [Incident on 2022-09-06 22:56 UTC](https://www.githubstatus.com/incidents/wl09fvhb20x8) | `none` | `-Git Operations`, `-Visit www`, `-Webhooks` |
+| false_negative | [Incident with Issues](https://www.githubstatus.com/incidents/1nyvf21q5dn7) | `none` | `-Issues` |
 
 ## Outputs
 
