@@ -4,7 +4,7 @@ A Flat Data attempt at historically documenting GitHub statuses.
 
 ## About
 
-This project builds the **“missing GitHub status page”**: a historical mirror that shows actual uptime
+This project builds the **"missing GitHub status page"**: a historical mirror that shows actual uptime
 percentages and incidents across the entire platform, plus per-service uptime based on the incident data.
 It reconstructs timelines from the Atom feed history and turns them into structured outputs and a static site.
 
@@ -39,7 +39,7 @@ Enrich incidents with impact level by scraping the incident pages (cached):
 uv run python scripts/extract_incidents.py --out out --enrich-impact
 ```
 
-Infer missing components with GLiNER2 (used only when the incident page lacks “affected components”):
+Infer missing components with GLiNER2 (used only when the incident page lacks "affected components"):
 
 ```
 uv run python scripts/extract_incidents.py --out out --infer-components gliner2
@@ -62,9 +62,9 @@ Serve the repo root with any static server to view it locally.
 
 ## GLiNER2 component inference
 
-Some incident pages do not list “affected components”. In those cases we use GLiNER2 as a fallback:
+Some incident pages do not list "affected components". In those cases we use GLiNER2 as a fallback:
 
-- Input text: incident title + non‑Resolved updates.
+- Input text: incident title + non-Resolved updates.
 - Labels: the 10 GitHub services with short descriptions.
 - Thresholded inference (default: 0.75 confidence).
 - Final filter: the label must also appear via explicit service aliases in the text.
@@ -73,21 +73,51 @@ This keeps HTML tags as the source of truth and uses ML only to fill gaps.
 
 ### GLiNER2 experiment (evaluation + audit)
 
-To validate the fallback approach, an experiment was run:
+To validate the fallback approach, an experiment is run that produces:
 
-- **Audit**: every GLiNER2‑tagged incident is written with text evidence snippets.
-- **Evaluation**: GLiNER2 predictions are compared against incidents that *do* have HTML “affected components”.
+- **Audit**: every GLiNER2-tagged incident with text evidence snippets.
+- **Evaluation**: GLiNER2 predictions compared against incidents that *do* have HTML "affected components".
 
-Latest results (threshold 0.75, alias filter on, non‑Resolved text only):
+Reproduce the experiment at a fixed time point (numbers will change as new data arrives):
 
-- Precision: **0.95**
-- Recall: **0.884**
-- Exact match rate: **0.786**
-- Evaluated incidents: **444**
+```
+uv run python scripts/run_gliner_experiment.py --as-of 2026-01-08 --output-dir out
+```
 
-Summary: the fallback is high‑precision and mostly conservative. Most errors are **false negatives**
-(missing a true component), while false positives are typically “extra” components inferred from
-multi‑service incident titles.
+Outputs are written to:
+
+- `out/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
+- `out/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
+
+Latest results (as-of 2026-01-08, threshold 0.75, alias filter on, non-Resolved text only):
+
+| Metric | Value |
+|---|---:|
+| Evaluated incidents | 446 |
+| Predicted non-empty | 418 |
+| Precision | 0.950 |
+| Recall | 0.883 |
+| Exact match rate | 0.785 |
+| Audit count (missing-tag incidents) | 51 |
+
+Per-label precision/recall (top-level service components):
+
+| Label | Precision | Recall | TP | FP | FN |
+|---|---:|---:|---:|---:|---:|
+| Git Operations | 0.968 | 0.909 | 60 | 2 | 6 |
+| Webhooks | 0.938 | 0.918 | 45 | 3 | 4 |
+| API Requests | 0.915 | 0.915 | 54 | 5 | 5 |
+| Issues | 1.000 | 0.286 | 22 | 0 | 55 |
+| Pull Requests | 0.948 | 0.979 | 92 | 5 | 2 |
+| Actions | 0.958 | 0.947 | 161 | 7 | 9 |
+| Packages | 0.917 | 0.971 | 33 | 3 | 1 |
+| Pages | 0.855 | 0.964 | 53 | 9 | 2 |
+| Codespaces | 0.982 | 0.982 | 110 | 2 | 2 |
+| Copilot | 1.000 | 0.966 | 57 | 0 | 2 |
+
+Summary: the fallback is high-precision and mostly conservative. Most errors are **false negatives**
+(missing a true component), while false positives are typically "extra" components inferred from
+multi-service incident titles.
 
 ## Outputs
 
@@ -103,6 +133,6 @@ The automation workflow writes to `parsed/`.
 Incident records include optional `impact` and `components` fields when enrichment is enabled.
 Service components are sourced as follows:
 
-- **Primary**: the incident page “affected components” section (if present).
+- **Primary**: the incident page "affected components" section (if present).
 - **Fallback**: GLiNER2 schema-driven extraction from the incident title + non-resolved updates, filtered
   by explicit service aliases to avoid generic matches.
