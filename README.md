@@ -88,6 +88,7 @@ Outputs are written to:
 
 - `tagging-experiment/gliner2_audit.jsonl` (tagged incidents + evidence snippets)
 - `tagging-experiment/gliner2_eval.json` (metrics, per-label breakdown, sample mismatches)
+- `tagging-experiment/gliner2_examples.md` (diff-style table of sample errors)
 
 Latest results (as-of 2026-01-08, threshold 0.75, alias filter on, non-Resolved text only):
 
