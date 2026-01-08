@@ -52,34 +52,12 @@ a:hover {
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 48px 24px 32px;
   gap: 24px;
   max-width: 850px;
   margin: 0 auto;
-}
-
-.site-nav {
-  display: flex;
-  gap: 16px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.site-nav a {
-  color: var(--muted);
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-}
-
-.site-nav a:hover {
-  color: var(--ink);
-  border-color: var(--border);
-  background: #ffffff;
-  text-decoration: none;
 }
 
 .brand {
@@ -128,15 +106,6 @@ a:hover {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-}
-
-.eyebrow {
-  margin: 0 0 6px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.7rem;
-  color: var(--muted);
 }
 
 .ghost-button {
@@ -487,6 +456,47 @@ main {
 
 .dot.maintenance {
   background: var(--maintenance);
+}
+
+.about-prompt {
+  text-align: center;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.about-prompt a {
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.about-prompt a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.about-prompt a .status-operational {
+  color: var(--operational);
+}
+
+.about-prompt a .status-minor {
+  color: var(--minor);
+}
+
+.about-prompt a .status-major {
+  color: var(--major);
+}
+
+.about-prompt a .status-maintenance {
+  color: var(--maintenance);
 }
 
 .panel {
@@ -904,11 +914,6 @@ details ul {
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .hero-panel-header {
