@@ -606,7 +606,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
 27719490,2025-12-23T09:15:00Z,2025-12-23T10:32:00Z,77,postmortem,Incident with Issues and Pull Requests,minor
-27843035,2026-01-01T21:24:00Z,2026-01-01T22:31:00Z,67,updates,Disruption with some GitHub services,minor
+27843035,2025-12-31T04:00:00Z,2025-12-31T22:31:00Z,1111,postmortem,Disruption with some GitHub services,minor
 27897480,2026-01-06T08:56:00Z,2026-01-06T10:08:00Z,72,updates,Incident with Copilot,minor
 27903123,2026-01-06T16:41:00Z,2026-01-06T17:06:00Z,25,updates,Incident with Actions,minor
 27920382,2026-01-07T18:32:00Z,2026-01-07T21:07:00Z,155,updates,Some models missing in Copilot,minor
