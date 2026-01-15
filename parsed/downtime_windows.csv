@@ -615,3 +615,6 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27986880,2026-01-12T10:02:00Z,2026-01-12T10:17:00Z,15,updates,Disruption with some GitHub services,major
 28003053,2026-01-13T09:38:00Z,2026-01-13T10:46:00Z,68,updates,GitHub Copilot failures,major
 28012493,2026-01-13T22:21:00Z,2026-01-14T00:18:00Z,117,updates,Disruption with some GitHub services,minor
+28019251,2026-01-14T09:24:00Z,2026-01-14T10:52:00Z,88,updates,Copilot's GPT-5.1 model has degraded performance,minor
+28020169,2026-01-14T10:56:00Z,2026-01-14T12:23:00Z,87,updates,Claude Opus 4.5 model experiencing degraded performance,minor
+28026970,2026-01-14T20:21:00Z,2026-01-14T21:38:00Z,77,updates,Incident with Webhooks,minor
