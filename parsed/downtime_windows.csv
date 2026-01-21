@@ -618,7 +618,9 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28019251,2026-01-14T09:24:00Z,2026-01-14T10:52:00Z,88,updates,Copilot's GPT-5.1 model has degraded performance,minor
 28020169,2026-01-14T10:56:00Z,2026-01-14T12:23:00Z,87,updates,Claude Opus 4.5 model experiencing degraded performance,minor
 28059713,2026-01-14T18:00:00Z,2026-01-14T18:00:00Z,0,updates,[Retroactive] Incident with GitHub Copilot (GPT-5 model),minor
-28026970,2026-01-14T20:21:00Z,2026-01-14T21:38:00Z,77,updates,Incident with Webhooks,minor
+28026970,2026-01-14T19:34:00Z,2026-01-14T21:36:00Z,122,postmortem,Incident with Webhooks,minor
 28039944,2026-01-15T14:24:00Z,2026-01-15T15:26:00Z,62,updates,Actions workflow run and job status updates are experiencing delays,minor
 28041975,2026-01-15T16:40:00Z,2026-01-15T18:20:00Z,100,postmortem,Incident with Issues and Pull Requests,major
 28063262,2026-01-16T23:53:00Z,2026-01-17T02:54:00Z,181,updates,Disruption with some GitHub services,minor
+28114471,2026-01-20T16:02:00Z,2026-01-20T16:23:00Z,21,updates,Incident affecting actions-runner-controller,minor
+28117134,2026-01-20T19:49:00Z,2026-01-20T20:10:00Z,21,updates,Run start delays in Actions,minor
