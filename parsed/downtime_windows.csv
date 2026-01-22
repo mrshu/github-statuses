@@ -624,3 +624,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28063262,2026-01-16T23:53:00Z,2026-01-17T02:54:00Z,181,updates,Disruption with some GitHub services,minor
 28114471,2026-01-20T16:02:00Z,2026-01-20T16:23:00Z,21,updates,Incident affecting actions-runner-controller,minor
 28117134,2026-01-20T19:49:00Z,2026-01-20T20:10:00Z,21,updates,Run start delays in Actions,minor
+28127260,2026-01-21T11:33:00Z,2026-01-21T12:38:00Z,65,updates,Copilot Chat - Grok Code Fast 1 Outage,minor
+28132875,2026-01-21T19:31:00Z,2026-01-21T20:53:00Z,82,updates,Policy pages for Copilot are timing out,minor
