@@ -4,10 +4,26 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-01-21T03:00:04Z</updated>
+  <updated>2026-01-22T00:36:06Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/28132875</id>
+    <published>2026-01-21T20:53:06Z</published>
+    <updated>2026-01-21T20:53:06Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6d5kv6l8d8q3"/>
+    <title>Policy pages for Copilot are timing out</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;20:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;20:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are rolling out a fix to reduce latency and timeouts on policy pages and are continuing to monitor impact.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;20:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate latency and timeout issues affecting Copilot policy pages.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;19:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating timeouts for customers visiting the Copilot policy pages for organizations and enterprises.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;19:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/28127260</id>
+    <published>2026-01-21T12:38:59Z</published>
+    <updated>2026-01-21T12:38:59Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/qq1gg4klp5vm"/>
+    <title>Copilot Chat - Grok Code Fast 1 Outage</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;12:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;12:09&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Grok Code Fast 1 model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;br /&gt;&lt;br /&gt;Other models are available and working as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Jan &lt;var data-var='date'&gt;21&lt;/var&gt;, &lt;var data-var='time'&gt;11:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/28117134</id>
     <published>2026-01-20T20:10:54Z</published>
@@ -191,21 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lctp4bzd37h2"/>
     <title>Incident With Copilot</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;16&lt;/var&gt;, &lt;var data-var='time'&gt;12:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - From 11:50-12:25 UTC, Copilot Coding Agent was unable to process new agent requests.  This affected all users creating new jobs during this timeframe, while existing jobs remained unaffected.  The cause of this issue was a change to the actions configuration where Copilot Coding Agent runs, which caused the setup of the Actions runner to fail, and the issue was resolved by rolling back this change.&lt;br /&gt;As a short term solution, we hope to increase our alerting criteria so that we can be alerted more quickly when an incident occurs, and in the long term we hope to harden our runner configuration to be more resilient against errors.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/27602231</id>
-    <published>2025-12-15T18:22:12Z</published>
-    <updated>2025-12-19T22:30:23Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/qkr3gcys0lzx"/>
-    <title>Copilot Code Review is degraded, and not returning responses to users</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On December 15, 2025, between 15:15 UTC and 18:22 UTC, Copilot Code Review experienced a service degradation that caused 46.97% of pull request review requests to fail, requiring users to re-request a review. Impacted users saw the error message: “Copilot encountered an error and was unable to review this pull request. You can try again by re-requesting a review.” The remaining requests completed successfully.&lt;br /&gt;&lt;br /&gt;The degradation was caused by elevated response times in an internal, model-backed dependency, which led to request timeouts and backpressure in the review processing pipeline, resulting in sustained queue growth and failed review completion.&lt;br /&gt;&lt;br /&gt;We mitigated the issue by temporarily bypassing fix suggestions to reduce latency, increasing worker capacity to drain the backlog, and rolling out a model configuration change that reduced end-to-end latency. Queue depth and request success rates returned to normal and remained stable through peak traffic.&lt;br /&gt;&lt;br /&gt;Following the incident, we increased baseline worker capacity, added instrumentation for worker utilization and queue health, and are improving automatic load-shedding, fallback behavior, and alerting to reduce time to detection and mitigation for similar issues.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have seen recovery for Copilot Code Review requests and are investigating long-term availability and scaling strategies&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;17:43&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/27599440</id>
-    <published>2025-12-15T15:45:52Z</published>
-    <updated>2025-12-19T14:26:09Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/jcbsbbfd1x9r"/>
-    <title>Incident with Copilot Grok Code Fast 1</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;15:45&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On Dec 15th, 2025, between 14:00 UTC and 15:45 UTC the Copilot service was degraded for Grok Code Fast 1 model. On average, 4% of the requests to this model failed due to an issue with our upstream provider. No other models were impacted.&lt;br /&gt;&lt;br /&gt;The issue was resolved after the upstream provider fixed the problem that caused the disruption. GitHub will continue to enhance our monitoring and alerting systems to reduce the time it takes to detect and mitigate similar issues in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;15:06&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are continuing to work with our provider on resolving the incident with Grok Code Fast 1. Users can expect some requests to intermittently fail until all issues are resolved.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;14:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the Grok Code Fast 1 model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;br /&gt;&lt;br /&gt;Other models are available and working as expected.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Dec &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;14:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
   </entry>
 </feed>
