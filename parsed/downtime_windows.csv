@@ -628,3 +628,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28132875,2026-01-21T19:31:00Z,2026-01-21T20:53:00Z,82,updates,Policy pages for Copilot are timing out,minor
 28144456,2026-01-22T14:12:00Z,2026-01-22T15:22:00Z,70,updates,Disruption with some GitHub services,minor
 28179262,2026-01-25T02:43:00Z,2026-01-25T03:08:00Z,25,updates,Disruption with repo creation,minor
+28200617,2026-01-26T19:25:00Z,2026-01-26T23:51:00Z,266,updates,Regression in windows runners for public repositories,minor
