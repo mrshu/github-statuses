@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,major
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -631,3 +631,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28200617,2026-01-26T19:25:00Z,2026-01-26T23:51:00Z,266,updates,Regression in windows runners for public repositories,minor
 28240905,2026-01-28T15:12:00Z,2026-01-28T15:54:00Z,42,updates,Actions Workflows Run Start Delays,minor
 28296378,2026-01-30T20:59:00Z,2026-01-30T21:22:00Z,23,updates,Degraded Experience - Failing to finalize some CCA Jobs,minor
+28328561,2026-02-02T17:34:00Z,2026-02-02T17:43:00Z,9,updates,Disruption with some GitHub services,minor
+28328662,2026-02-02T17:41:00Z,2026-02-02T18:46:00Z,65,updates,Disruption with some GitHub services,major
+28330655,2026-02-02T20:17:00Z,2026-02-03T00:54:00Z,277,updates,Incident with Codespaces,major
+28329719,2026-02-02T19:03:00Z,2026-02-03T00:56:00Z,353,updates,Incident with Actions,major
