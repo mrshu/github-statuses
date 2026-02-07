@@ -637,3 +637,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28329719,2026-02-02T18:35:00Z,2026-02-02T22:15:00Z,220,postmortem,Incident with Actions,major
 28339403,2026-02-03T09:35:00Z,2026-02-03T10:15:00Z,40,postmortem,Incident with Copilot,minor
 28343178,2026-02-03T14:00:00Z,2026-02-03T17:40:00Z,220,postmortem,Delays in UI updates for Actions Runs,minor
+28387833,2026-02-06T11:16:00Z,2026-02-06T11:58:00Z,42,updates,Incident with Copilot,minor
+28391567,2026-02-06T17:49:00Z,2026-02-06T18:36:00Z,47,updates,Incident with Pull Requests,minor
