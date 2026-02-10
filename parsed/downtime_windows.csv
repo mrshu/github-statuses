@@ -639,3 +639,10 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28343178,2026-02-03T14:00:00Z,2026-02-03T17:40:00Z,220,postmortem,Delays in UI updates for Actions Runs,minor
 28387833,2026-02-06T11:16:00Z,2026-02-06T11:58:00Z,42,updates,Incident with Copilot,minor
 28391567,2026-02-06T17:49:00Z,2026-02-06T18:36:00Z,47,updates,Incident with Pull Requests,minor
+28422220,2026-02-09T08:15:00Z,2026-02-09T11:26:00Z,191,updates,"Degraded Performance in Webhooks API and UI, Pull Requests",minor
+28423324,2026-02-09T10:01:00Z,2026-02-09T12:12:00Z,131,updates,Degraded performance for Copilot Coding Agent,minor
+28425999,2026-02-09T14:17:00Z,2026-02-09T15:46:00Z,89,updates,Incident with Actions,minor
+28427396,2026-02-09T16:19:00Z,2026-02-09T17:40:00Z,81,updates,Incident with Pull Requests,major
+28427090,2026-02-09T15:54:00Z,2026-02-09T19:29:00Z,215,updates,Notifications are delayed,minor
+28429325,2026-02-09T19:01:00Z,2026-02-09T20:09:00Z,68,updates,"Incident with Issues, Actions and Git Operations",major
+28427520,2026-02-09T16:29:00Z,2026-02-10T00:51:00Z,502,updates,Copilot Policy Propagation Delays,minor
