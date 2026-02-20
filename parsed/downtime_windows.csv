@@ -648,7 +648,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28427520,2026-02-09T16:29:00Z,2026-02-10T09:57:00Z,1048,updates,Copilot Policy Propagation Delays,minor
 28442863,2026-02-10T15:07:00Z,2026-02-10T15:58:00Z,51,updates,Disruption with some GitHub services,minor
 28456612,2025-02-11T14:30:00Z,2025-02-11T15:30:00Z,60,postmortem,Incident with Copilot,minor
-28456613,2026-02-11T15:26:00Z,2026-02-11T17:15:00Z,109,updates,Incident with API Requests,minor
+28456613,2026-02-11T13:51:00Z,2026-02-11T17:03:00Z,192,postmortem,Incident with API Requests,minor
 28458937,2026-02-11T18:58:00Z,2026-02-12T00:59:00Z,361,updates,Disruption with some GitHub services,minor
 28465240,2026-02-12T00:51:00Z,2026-02-12T09:35:00Z,524,postmortem,Incident with Codespaces,major
 28466893,2026-02-12T10:38:00Z,2026-02-12T11:12:00Z,34,updates,Disruption with some GitHub services,major
