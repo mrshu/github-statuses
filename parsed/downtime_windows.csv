@@ -654,6 +654,8 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28466893,2026-02-12T10:38:00Z,2026-02-12T11:12:00Z,34,updates,Disruption with some GitHub services,major
 28469110,2026-02-12T14:06:00Z,2026-02-12T16:50:00Z,164,updates,Intermittent disruption with Copilot completions and inline suggestions,minor
 28471802,2026-02-12T18:36:00Z,2026-02-12T20:34:00Z,118,updates,Disruption with some GitHub services,minor
-28487533,2026-02-13T22:30:00Z,2026-02-13T22:58:00Z,28,updates,Disruption with some GitHub services regarding file upload,minor
+28487533,2026-02-13T21:46:00Z,2026-02-13T22:58:00Z,72,postmortem,Disruption with some GitHub services regarding file upload,minor
 28530813,2026-02-17T17:46:00Z,2026-02-17T19:06:00Z,80,updates,Intermittent authentication failures on GitHub,minor
 28546747,2026-02-18T18:25:00Z,2026-02-18T19:20:00Z,55,updates,Degraded performance in merge queue,minor
+28573454,2026-02-20T10:02:00Z,2026-02-20T11:41:00Z,99,updates,Incident with Copilot GPT-5.1-Codex,minor
+28581207,2026-02-20T20:00:00Z,2026-02-20T20:41:00Z,41,updates,Extended job start delays for larger hosted runners,minor
