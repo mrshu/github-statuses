@@ -60,10 +60,28 @@ a:hover {
   margin: 0 auto;
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: auto;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.github-link:hover {
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
 .brand {
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 100%;
 }
 
 .brand-mark {
