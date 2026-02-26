@@ -1,0 +1,32 @@
+name: Retry Parse
+
+on:
+  workflow_run:
+    workflows:
+      - Parse
+    types:
+      - completed
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  rerun_failed_parse_once:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run failed Parse jobs once
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runId = context.payload.workflow_run.id;
+            await github.request(
+              "POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs",
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: runId
+              }
+            );
+            core.info(`Triggered retry for Parse run ${runId}`);

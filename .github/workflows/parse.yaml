@@ -27,45 +27,11 @@ jobs:
         uses: astral-sh/setup-uv@v3
       - name: Run parser
         run: |
-          set -euo pipefail
-
-          max_attempts=3
-          attempt=1
-          while true; do
-            echo "Parser attempt ${attempt}/${max_attempts}"
-
-            set +e
-            output="$(
-              uv run python scripts/extract_incidents.py \
-                --out parsed \
-                --incidents-format jsonl \
-                --enrich-impact \
-                --impact-delay 0.1 2>&1
-            )"
-            status=$?
-            set -e
-
-            printf '%s\n' "$output"
-
-            if [ "$status" -eq 0 ]; then
-              break
-            fi
-
-            if ! printf '%s' "$output" | grep -Eqi "timeouterror|timed out"; then
-              echo "Parser failed with non-timeout error; not retrying."
-              exit "$status"
-            fi
-
-            if [ "$attempt" -ge "$max_attempts" ]; then
-              echo "Parser failed after ${max_attempts} timeout attempts."
-              exit "$status"
-            fi
-
-            sleep_seconds=$(( attempt * 15 ))
-            echo "Timeout detected; retrying in ${sleep_seconds}s..."
-            sleep "$sleep_seconds"
-            attempt=$(( attempt + 1 ))
-          done
+          uv run python scripts/extract_incidents.py \
+            --out parsed \
+            --incidents-format jsonl \
+            --enrich-impact \
+            --impact-delay 0.1
       - name: Commit outputs
         run: |
           if git status --porcelain | grep .; then
