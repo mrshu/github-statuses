@@ -26,12 +26,18 @@ jobs:
       - name: Setup uv
         uses: astral-sh/setup-uv@v3
       - name: Run parser
-        run: |
-          uv run python scripts/extract_incidents.py \
-            --out parsed \
-            --incidents-format jsonl \
-            --enrich-impact \
-            --impact-delay 0.1
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 20
+          max_attempts: 3
+          retry_on: error
+          retry_wait_seconds: 20
+          command: |
+            uv run python scripts/extract_incidents.py \
+              --out parsed \
+              --incidents-format jsonl \
+              --enrich-impact \
+              --impact-delay 0.1
       - name: Commit outputs
         run: |
           if git status --porcelain | grep .; then
