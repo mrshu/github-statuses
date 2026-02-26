@@ -45,7 +45,22 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add parsed .cache/impact.json
             git commit -m "automation: update parsed incidents"
-            git push
+            max_attempts=3
+            attempt=1
+            while true; do
+              if git push origin HEAD:master; then
+                break
+              fi
+
+              if [ "$attempt" -ge "$max_attempts" ]; then
+                echo "Push failed after ${max_attempts} attempts."
+                exit 1
+              fi
+
+              echo "Push rejected; rebasing on origin/master and retrying..."
+              git pull --rebase origin master
+              attempt=$(( attempt + 1 ))
+            done
           else
             echo "No changes to commit."
           fi
