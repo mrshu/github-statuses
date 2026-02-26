@@ -663,3 +663,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28627142,2026-02-23T16:17:00Z,2026-02-23T17:03:00Z,46,updates,Incident with Actions,minor
 28630931,2026-02-23T21:16:00Z,2026-02-23T21:30:00Z,14,updates,Incident with Issues and Pull Requests Search,minor
 28630011,2026-02-23T19:59:00Z,2026-02-24T00:46:00Z,287,updates,Code search experiencing degraded performance,minor
+28663359,2026-02-25T16:38:00Z,2026-02-25T16:44:00Z,6,updates,Incident with Copilot Agent Sessions impacting CCA/CCR,minor
