@@ -8,10 +8,44 @@ This project builds the **"missing GitHub status page"**: a historical mirror th
 percentages and incidents across the entire platform, plus per-service uptime based on the incident data.
 It reconstructs timelines from the Atom feed history and turns them into structured outputs and a static site.
 
+## Prerequisites
+
+### uv
+
+Install [uv](https://github.com/astral-sh/uv) per the [installation docs](https://docs.astral.sh/uv/getting-started/installation/).
+
+### Python (for running the extractor)
+
+The extractor depends on `onnxruntime`, which supports **Python 3.11–3.13** (not 3.14+).
+Check your version: `python --version` or `python3 --version`.
+
+If you need a compatible version, uv can install it:
+
+```bash
+uv python install 3.13
+```
+
+Then create the virtual environment with that Python:
+
+```bash
+uv venv --python 3.13
+uv sync
+```
+
+Or use `uv sync` with an existing venv. If `uv sync` fails with an `onnxruntime` error, your Python is
+likely 3.14+; switch to 3.11–3.13 as above.
+
+### Dependencies
+
+Run `uv sync` before using the extractor scripts. **To view the static site only**, no dependencies are
+needed—the `parsed/` directory in the repo contains pre-generated data; just serve the repo root with
+any HTTP server.
+
 ## Quick start (uv)
 
 ```
 uv venv
+uv sync
 ```
 
 Run the extractor across all history:
@@ -58,7 +92,14 @@ uv run python -m unittest discover -s tests
 ## Status site
 
 Static site lives in `site/` and reads data from `parsed/`.
-Serve the repo root with any static server to view it locally.
+No build step—serve the repo root with any static HTTP server:
+
+```bash
+python -m http.server 8000
+# or: python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000/site/> in your browser.
 
 ## GLiNER2 component inference
 
