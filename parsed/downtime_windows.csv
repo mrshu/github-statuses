@@ -657,16 +657,18 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28487533,2026-02-13T21:46:00Z,2026-02-13T22:58:00Z,72,postmortem,Disruption with some GitHub services regarding file upload,minor
 28530813,2026-02-17T17:07:00Z,2026-02-17T19:06:00Z,119,postmortem,Intermittent authentication failures on GitHub,minor
 28546747,2026-02-18T18:25:00Z,2026-02-18T19:20:00Z,55,updates,Degraded performance in merge queue,minor
-28573454,2026-02-20T10:02:00Z,2026-02-20T11:41:00Z,99,updates,Incident with Copilot GPT-5.1-Codex,minor
+28573454,2026-02-20T07:30:00Z,2026-02-20T11:21:00Z,231,postmortem,Incident with Copilot GPT-5.1-Codex,minor
 28581207,2026-02-20T17:45:00Z,2026-02-20T20:41:00Z,176,postmortem,Extended job start delays for larger hosted runners,minor
-28625959,2026-02-23T14:56:00Z,2026-02-23T16:19:00Z,83,updates,Incident with Copilot,minor
-28627142,2026-02-23T16:17:00Z,2026-02-23T17:03:00Z,46,updates,Incident with Actions,minor
+28625959,2026-02-23T14:45:00Z,2026-02-23T16:19:00Z,94,postmortem,Incident with Copilot,minor
+28627142,2026-02-23T15:00:00Z,2026-02-23T17:00:00Z,120,postmortem,Incident with Actions,minor
 28630931,2026-02-23T21:01:00Z,2026-02-23T21:30:00Z,29,postmortem,Incident with Issues and Pull Requests Search,minor
 28630011,2026-02-23T19:59:00Z,2026-02-24T00:46:00Z,287,updates,Code search experiencing degraded performance,minor
 28663359,2026-02-25T16:38:00Z,2026-02-25T16:44:00Z,6,updates,Incident with Copilot Agent Sessions impacting CCA/CCR,minor
-28676547,2026-02-26T10:22:00Z,2026-02-26T11:06:00Z,44,updates,Incident with Copilot,minor
+28676547,2026-02-26T09:27:00Z,2026-02-26T10:36:00Z,69,postmortem,Incident with Copilot,minor
 28686655,2026-02-27T00:01:00Z,2026-02-27T00:04:00Z,3,updates,High latency on webhook API requests,minor
 28688857,2026-02-27T03:08:00Z,2026-02-27T06:04:00Z,176,updates,Code view fails to load when content contains some non-ASCII characters,minor
 28703281,2026-02-27T23:18:00Z,2026-02-27T23:49:00Z,31,updates,Incident with Copilot agent sessions,minor
 28750704,2026-03-02T19:11:00Z,2026-03-02T22:04:00Z,173,updates,Incident with Pull Requests /pulls,minor
-28753588,2026-03-02T23:10:00Z,2026-03-03T04:36:00Z,326,updates,Delayed visibility of newly added issues on project boards,minor
+28753588,2026-03-02T23:10:00Z,2026-03-03T05:54:00Z,404,updates,Delayed visibility of newly added issues on project boards,minor
+28769993,2026-03-03T18:59:00Z,2026-03-03T20:09:00Z,70,updates,Incident with Copilot and Actions,major
+28771344,2026-03-03T19:44:00Z,2026-03-03T21:05:00Z,81,postmortem,Claude Opus 4.6 Fast not appearing for some Copilot users,minor
