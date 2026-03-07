@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,major
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -673,6 +673,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28769993,2026-03-03T18:46:00Z,2026-03-03T20:09:00Z,83,postmortem,Incident with all GitHub services,major
 28771344,2026-03-03T19:44:00Z,2026-03-03T21:05:00Z,81,postmortem,Claude Opus 4.6 Fast not appearing for some Copilot users,minor
 28794783,2026-03-05T00:47:00Z,2026-03-05T01:13:00Z,26,updates,Some OpenAI models degraded in Copilot,minor
-28795113,2026-03-05T01:13:00Z,2026-03-05T01:30:00Z,17,updates,Disruption with some GitHub services,minor
+28795113,2026-03-05T12:53:00Z,2026-03-05T13:35:00Z,42,postmortem,Disruption with some GitHub services,minor
 28808429,2026-03-05T16:35:00Z,2026-03-05T19:30:00Z,175,updates,"Multiple services are affected, service degradation",major
 28813935,2026-03-05T22:53:00Z,2026-03-05T23:55:00Z,62,updates,Actions is experiencing degraded availability,major
+28829528,2026-03-06T16:58:00Z,2026-03-06T23:28:00Z,390,updates,Incident with Webhooks,minor
