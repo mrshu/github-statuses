@@ -52,8 +52,8 @@ a:hover {
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 48px 24px 32px;
   gap: 24px;
   max-width: 850px;
@@ -106,6 +106,61 @@ a:hover {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+}
+
+.feature-spotlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 240px;
+  max-width: 290px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(207, 34, 46, 0.2);
+  background:
+    linear-gradient(135deg, rgba(207, 34, 46, 0.08), rgba(255, 255, 255, 0.96)),
+    #ffffff;
+  box-shadow: 0 18px 40px -30px rgba(207, 34, 46, 0.55);
+  text-decoration: none;
+}
+
+.feature-spotlight:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 24px 48px -32px rgba(207, 34, 46, 0.7);
+}
+
+.feature-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--major);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.feature-label::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4d4d, #cf222e);
+  box-shadow: 0 0 0 4px rgba(207, 34, 46, 0.12);
+}
+
+.feature-spotlight strong {
+  font-family: var(--display);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.feature-meta {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .ghost-button {
@@ -912,6 +967,10 @@ details ul {
 }
 
 @media (max-width: 980px) {
+  .site-header {
+    align-items: stretch;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
@@ -923,6 +982,17 @@ details ul {
 }
 
 @media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feature-spotlight {
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+  }
+
   .uptime-bars {
     grid-template-columns: repeat(30, 1fr);
     grid-auto-rows: 10px;
