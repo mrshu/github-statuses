@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-03-09T03:51:42Z</updated>
+  <updated>2026-03-10T03:38:37Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/28882382</id>
+    <published>2026-03-09T17:03:40Z</published>
+    <updated>2026-03-09T17:03:40Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/7k92rcz4f1zq"/>
+    <title>Incident with Webhooks</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;17:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;17:03&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Webhooks is operating normally.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;15:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing latency on the API and UI endpoints. We are working to resolve the issue.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 9&lt;/var&gt;, &lt;var data-var='time'&gt;15:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Webhooks&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/28870787</id>
     <published>2026-03-09T03:51:42Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/lvf95rlzkxrr"/>
     <title>Disruption with some GitHub services regarding file upload</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;22:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On February 13, 2026, between 21:46 UTC and 22:58 UTC (72 minutes), the GitHub file upload service was degraded and users uploading from a web browser on GitHub.com were unable to upload files to repositories, create release assets, or upload manifest files. During the incident, successful upload completions dropped by ~85% from baseline levels. This was due to a code change that inadvertently modified browser request behavior and violated CORS (Cross-Origin Resource Sharing) policy requirements, causing upload requests to be blocked before reaching the upload service.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by reverting the code change that introduced the issue.&lt;br /&gt;&lt;br /&gt;We are working to improve automated testing for browser-side request changes and to add monitoring/automated safeguards for upload flows to reduce our time to detection and mitigation of similar issues in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;22:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/28471802</id>
-    <published>2026-02-12T20:34:55Z</published>
-    <updated>2026-02-19T16:47:14Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/y7kzv1ps2qrm"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;20:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - Between February 11th 21:30 UTC and February 12th 15:40 UTC, users in Western Europe experienced degraded quality for all Next Edit Suggestions requests. Additionally, on February 12th, between 18:40 UTC and 20:30 UTC, users in Australia and South America experienced degraded quality and increased latency of up to 500ms for all Next Edit Suggestions requests. The root cause was a newly introduced regression in an upstream service dependency.&lt;br /&gt; &lt;br /&gt;The incident was mitigated by failing over Next Edit Suggestions traffic to unaffected regions, which caused the increased latency. Once the regression was identified and rolled back, we restored the impacted capacity. We have improved our quality analysis tooling and are working on more robust quality impact alerting to accelerate detection of these issues in the future.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;19:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - Next Edit Suggestions availability is recovering. We are continuing to monitor until fully restored.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;19:18&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability in Australia and Brazil for Copilot completions and suggestions. We are working to resolve the issue&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;18:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability in Australia for Copilot completions and suggestions. We are working to resolve the issue&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Feb &lt;var data-var='date'&gt;12&lt;/var&gt;, &lt;var data-var='time'&gt;18:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services.&lt;/p&gt;</content>
   </entry>
 </feed>
