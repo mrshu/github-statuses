@@ -677,4 +677,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28808429,2026-03-05T16:35:00Z,2026-03-05T19:30:00Z,175,updates,"Multiple services are affected, service degradation",major
 28813935,2026-03-05T22:53:00Z,2026-03-05T23:55:00Z,62,updates,Actions is experiencing degraded availability,major
 28829528,2026-03-06T16:58:00Z,2026-03-06T23:28:00Z,390,updates,Incident with Webhooks,minor
-28870787,2026-03-09T03:04:00Z,2026-03-09T03:51:00Z,47,updates,Incident with Codespaces,minor
+28870787,2026-03-09T01:23:00Z,2026-03-09T03:25:00Z,122,postmortem,Incident with Codespaces,minor
+28882382,2026-03-09T15:50:00Z,2026-03-09T17:03:00Z,73,updates,Incident with Webhooks,minor
