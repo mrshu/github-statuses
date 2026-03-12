@@ -679,3 +679,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28829528,2026-03-06T16:58:00Z,2026-03-06T23:28:00Z,390,updates,Incident with Webhooks,minor
 28870787,2026-03-09T01:23:00Z,2026-03-09T03:25:00Z,122,postmortem,Incident with Codespaces,minor
 28882382,2026-03-09T15:50:00Z,2026-03-09T17:03:00Z,73,updates,Incident with Webhooks,minor
+28922599,2026-03-11T14:37:00Z,2026-03-11T15:02:00Z,25,updates,Incident with API Requests,minor
+28922400,2026-03-11T14:25:00Z,2026-03-11T15:53:00Z,88,updates,Degraded experience with Copilot Code Review,minor
+28933013,2026-03-12T01:54:00Z,2026-03-12T02:45:00Z,51,updates,Disruption with some GitHub services,minor
+28935006,2026-03-12T04:46:00Z,2026-03-12T06:02:00Z,76,updates,Actions failures to download (401 Unauthorized),minor
