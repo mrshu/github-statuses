@@ -683,5 +683,6 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28922400,2026-03-11T13:00:00Z,2026-03-11T15:23:00Z,143,postmortem,Degraded experience with Copilot Code Review,minor
 28933013,2026-03-12T01:54:00Z,2026-03-12T02:45:00Z,51,updates,Disruption with some GitHub services,minor
 28935006,2026-03-12T04:46:00Z,2026-03-12T06:02:00Z,76,updates,Actions failures to download (401 Unauthorized),minor
-28942649,2026-03-12T13:06:00Z,2026-03-12T18:53:00Z,347,updates,Degraded Codespaces experience,minor
+28942649,2026-03-12T01:00:00Z,2026-03-12T18:53:00Z,1073,postmortem,Degraded Codespaces experience,minor
 28968105,2026-03-13T15:12:00Z,2026-03-13T16:15:00Z,63,updates,Degraded performance for various services,minor
+29034976,2026-03-16T15:01:00Z,2026-03-16T15:28:00Z,27,updates,Errors starting and connecting to Codespaces,minor
