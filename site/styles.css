@@ -109,13 +109,6 @@ a:hover {
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
 }
 
-.feature-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: min(100%, 290px);
-}
-
 .feature-spotlight {
   display: flex;
   flex-direction: column;
@@ -134,9 +127,20 @@ a:hover {
 }
 
 .feature-spotlight:hover {
-  text-decoration: none;
   transform: translateY(-1px);
   box-shadow: 0 24px 48px -32px rgba(207, 34, 46, 0.7);
+}
+
+.feature-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.feature-link:hover {
+  text-decoration: none;
 }
 
 .site-live-pill,
@@ -327,6 +331,10 @@ a:hover {
 }
 
 .feature-spotlight strong {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-family: var(--display);
   font-size: 1rem;
   line-height: 1.2;
@@ -336,6 +344,33 @@ a:hover {
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.35;
+}
+
+.feature-carousel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.feature-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(87, 96, 106, 0.28);
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.18s ease, width 0.18s ease;
+}
+
+.feature-dot[data-active="true"] {
+  width: 22px;
+  background: linear-gradient(90deg, #cf222e, #f1a23a);
+}
+
+.feature-dot:hover {
+  transform: translateY(-1px);
 }
 
 .ghost-button {
@@ -1420,10 +1455,6 @@ details ul {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .feature-stack {
-    width: 100%;
   }
 
   .feature-spotlight {

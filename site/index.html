@@ -33,27 +33,22 @@
           <h1>The Missing GitHub Status Page</h1>
         </div>
       </div>
-      <div class="feature-stack">
+      <div class="feature-spotlight" id="featureSpotlight">
+        <span class="feature-label">Featured In</span>
         <a
-          class="feature-spotlight"
+          class="feature-link"
+          id="featureLink"
           href="https://www.theregister.com/2026/02/10/github_outages/"
           target="_blank"
           rel="noreferrer"
         >
-          <span class="feature-label">Featured In</span>
-          <strong>GitHub seems to be struggling with three nines availability</strong>
-          <span class="feature-meta">The Register, 2026-02-10 ↗</span>
+          <strong id="featureTitle">GitHub seems to be struggling with three nines availability</strong>
+          <span class="feature-meta" id="featureMeta">The Register, Feb 10, 2026 ↗</span>
         </a>
-        <a
-          class="feature-spotlight"
-          href="https://www.youtube.com/watch?v=f3u57jkwBFE"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="feature-label">Featured In</span>
-          <strong>“Github might be in trouble”</strong>
-          <span class="feature-meta">The PrimeTime on YouTube ↗</span>
-        </a>
+        <div class="feature-carousel" role="tablist" aria-label="Choose a featured mention">
+          <button class="feature-dot" type="button" data-index="0" aria-label="Show The Register"></button>
+          <button class="feature-dot" type="button" data-index="1" aria-label="Show The PrimeTime"></button>
+        </div>
       </div>
     </header>
 
@@ -191,5 +186,56 @@
     </footer>
 
     <script src="app.js" defer></script>
+    <script>
+      (() => {
+        const items = [
+          {
+            title: "GitHub seems to be struggling with three nines availability",
+            meta: "The Register, Feb 10, 2026 ↗",
+            href: "https://www.theregister.com/2026/02/10/github_outages/",
+          },
+          {
+            title: "Github might be in trouble",
+            meta: "The PrimeTime on YouTube, Mar 9, 2026 ↗",
+            href: "https://www.youtube.com/watch?v=f3u57jkwBFE",
+          },
+        ];
+
+        const titleEl = document.getElementById("featureTitle");
+        const metaEl = document.getElementById("featureMeta");
+        const linkEl = document.getElementById("featureLink");
+        const dots = Array.from(document.querySelectorAll(".feature-dot"));
+
+        if (!titleEl || !metaEl || !linkEl || dots.length !== items.length) {
+          return;
+        }
+
+        let activeIndex = Math.floor(Math.random() * items.length);
+
+        const render = () => {
+          const item = items[activeIndex];
+          titleEl.textContent = item.title;
+          metaEl.textContent = item.meta;
+          linkEl.href = item.href;
+          dots.forEach((dot, index) => {
+            const active = index === activeIndex;
+            dot.dataset.active = String(active);
+            dot.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const nextIndex = Number(dot.dataset.index);
+            if (!Number.isNaN(nextIndex)) {
+              activeIndex = nextIndex;
+              render();
+            }
+          });
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>
