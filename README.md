@@ -13,6 +13,8 @@ It reconstructs timelines from the Atom feed history and turns them into structu
 - [GitHub seems to be struggling with three nines availability](https://www.theregister.com/2026/02/10/github_outages/)
   (The Register, 2026-02-10), which cites this project's reconstructed "missing GitHub status page" as
   an unofficial historical source.
+- ["Github might be in trouble"](https://www.youtube.com/watch?v=f3u57jkwBFE)
+  (The PrimeTime on YouTube), which featured the project on the website before the Register write-up.
 
 ## Prerequisites
 
