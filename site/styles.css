@@ -126,6 +126,14 @@ a:hover {
   text-decoration: none;
 }
 
+.feature-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .feature-spotlight:hover {
   transform: translateY(-1px);
   box-shadow: 0 24px 48px -32px rgba(207, 34, 46, 0.7);
@@ -346,11 +354,39 @@ a:hover {
   line-height: 1.35;
 }
 
+.feature-meta-split {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.feature-outlet-meta {
+  font-weight: 600;
+  color: rgba(36, 41, 47, 0.86);
+}
+
+.date-chip {
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(208, 215, 222, 0.92);
+  background: rgba(36, 41, 47, 0.05);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.feature-meta-arrow {
+  color: var(--muted);
+}
+
 .feature-carousel {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 4px;
+  flex: 0 0 auto;
 }
 
 .feature-dot {
@@ -1461,6 +1497,10 @@ details ul {
     min-width: 0;
     width: 100%;
     max-width: none;
+  }
+
+  .feature-head {
+    align-items: flex-start;
   }
 
   .site-live-pill,

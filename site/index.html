@@ -34,7 +34,13 @@
         </div>
       </div>
       <div class="feature-spotlight" id="featureSpotlight">
-        <span class="feature-label">Featured In</span>
+        <div class="feature-head">
+          <span class="feature-label">Featured In</span>
+          <div class="feature-carousel" role="tablist" aria-label="Choose a featured mention">
+            <button class="feature-dot" type="button" data-index="0" aria-label="Show The Register"></button>
+            <button class="feature-dot" type="button" data-index="1" aria-label="Show The PrimeTime"></button>
+          </div>
+        </div>
         <a
           class="feature-link"
           id="featureLink"
@@ -43,12 +49,12 @@
           rel="noreferrer"
         >
           <strong id="featureTitle">GitHub seems to be struggling with three nines availability</strong>
-          <span class="feature-meta" id="featureMeta">The Register, Feb 10, 2026 ↗</span>
+          <span class="feature-meta feature-meta-split">
+            <span class="feature-outlet-meta" id="featureOutlet">The Register</span>
+            <span class="date-chip" id="featureDate">Feb 10, 2026</span>
+            <span class="feature-meta-arrow" aria-hidden="true">↗</span>
+          </span>
         </a>
-        <div class="feature-carousel" role="tablist" aria-label="Choose a featured mention">
-          <button class="feature-dot" type="button" data-index="0" aria-label="Show The Register"></button>
-          <button class="feature-dot" type="button" data-index="1" aria-label="Show The PrimeTime"></button>
-        </div>
       </div>
     </header>
 
@@ -191,22 +197,25 @@
         const items = [
           {
             title: "GitHub seems to be struggling with three nines availability",
-            meta: "The Register, Feb 10, 2026 ↗",
+            outlet: "The Register",
+            date: "Feb 10, 2026",
             href: "https://www.theregister.com/2026/02/10/github_outages/",
           },
           {
             title: "Github might be in trouble",
-            meta: "The PrimeTime on YouTube, Mar 9, 2026 ↗",
+            outlet: "The PrimeTime on YouTube",
+            date: "Mar 9, 2026",
             href: "https://www.youtube.com/watch?v=f3u57jkwBFE",
           },
         ];
 
         const titleEl = document.getElementById("featureTitle");
-        const metaEl = document.getElementById("featureMeta");
+        const outletEl = document.getElementById("featureOutlet");
+        const dateEl = document.getElementById("featureDate");
         const linkEl = document.getElementById("featureLink");
         const dots = Array.from(document.querySelectorAll(".feature-dot"));
 
-        if (!titleEl || !metaEl || !linkEl || dots.length !== items.length) {
+        if (!titleEl || !outletEl || !dateEl || !linkEl || dots.length !== items.length) {
           return;
         }
 
@@ -215,7 +224,8 @@
         const render = () => {
           const item = items[activeIndex];
           titleEl.textContent = item.title;
-          metaEl.textContent = item.meta;
+          outletEl.textContent = item.outlet;
+          dateEl.textContent = item.date;
           linkEl.href = item.href;
           dots.forEach((dot, index) => {
             const active = index === activeIndex;
