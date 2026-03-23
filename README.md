@@ -14,7 +14,7 @@ It reconstructs timelines from the Atom feed history and turns them into structu
   (The Register, 2026-02-10), which cites this project's reconstructed "missing GitHub status page" as
   an unofficial historical source.
 - ["Github might be in trouble"](https://www.youtube.com/watch?v=f3u57jkwBFE)
-  (The PrimeTime on YouTube), which featured the project on the website before the Register write-up.
+  (The PrimeTime on YouTube, 2026-03-09), which later covered this project in a YouTube video.
 
 ## Prerequisites
 
