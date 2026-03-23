@@ -8,6 +8,12 @@ This project builds the **"missing GitHub status page"**: a historical mirror th
 percentages and incidents across the entire platform, plus per-service uptime based on the incident data.
 It reconstructs timelines from the Atom feed history and turns them into structured outputs and a static site.
 
+## Mentioned in
+
+- [GitHub seems to be struggling with three nines availability](https://www.theregister.com/2026/02/10/github_outages/)
+  (The Register, 2026-02-10), which cites this project's reconstructed "missing GitHub status page" as
+  an unofficial historical source.
+
 ## Prerequisites
 
 ### uv

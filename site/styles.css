@@ -109,6 +109,13 @@ a:hover {
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
 }
 
+.feature-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 290px);
+}
+
 .feature-spotlight {
   display: flex;
   flex-direction: column;
@@ -1413,6 +1420,10 @@ details ul {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .feature-stack {
+    width: 100%;
   }
 
   .feature-spotlight {
