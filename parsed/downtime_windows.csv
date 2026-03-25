@@ -694,3 +694,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29114079,2026-03-19T16:25:00Z,2026-03-20T00:05:00Z,460,updates,Git operations for users in the west coast are experiencing an increase in latency,minor
 29123267,2026-03-20T00:58:00Z,2026-03-20T01:58:00Z,60,updates,Disruption with Copilot Coding Agent Sessions,major
 29179438,2026-03-22T09:08:00Z,2026-03-22T10:02:00Z,54,updates,Disruption with some GitHub services,minor
+29235644,2026-03-24T16:59:00Z,2026-03-24T19:51:00Z,172,updates,Teams Github Notifications App is down,major
+29239164,2026-03-24T20:18:00Z,2026-03-24T20:56:00Z,38,updates,Disruption with some GitHub services,minor
