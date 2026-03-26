@@ -759,6 +759,24 @@ main {
   background: var(--maintenance);
 }
 
+.hero-attribution {
+  margin-top: 14px;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hero-attribution a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-attribution a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .about-prompt {
   text-align: center;
   font-family: var(--display);
