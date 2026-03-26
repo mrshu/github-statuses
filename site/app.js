@@ -36,6 +36,22 @@ const SERVICES = [
   'Copilot',
 ];
 
+const STATUS_META_VARIANTS = new Set(['default', 'stacked', 'cards', 'compact']);
+const DEFAULT_STATUS_META_VARIANT = 'cards';
+const STATUS_META_MOBILE_QUERY = window.matchMedia('(max-width: 520px)');
+
+const getStatusMetaVariant = () => {
+  const variant = new URLSearchParams(window.location.search).get('meta') || DEFAULT_STATUS_META_VARIANT;
+  return STATUS_META_VARIANTS.has(variant) ? variant : DEFAULT_STATUS_META_VARIANT;
+};
+
+const statusMetaVariant = getStatusMetaVariant();
+document.documentElement.dataset.statusMeta = statusMetaVariant;
+const statusMetaState = {
+  lastUpdated: null,
+  recentIncidentCount: 0,
+};
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en-US', {
     month: 'short',
@@ -147,6 +163,76 @@ const formatDuration = (minutes) => {
 };
 
 const countsAsDowntime = (impact) => impact !== 'maintenance';
+
+const formatIncidentCount = (count) => `${count} incident${count === 1 ? '' : 's'}`;
+const shouldUseAlternateStatusMeta = () =>
+  statusMetaVariant !== 'default' && STATUS_META_MOBILE_QUERY.matches;
+
+const setStatusMetaItem = (element, label, value) => {
+  if (!element) return;
+  element.replaceChildren();
+  if (label) {
+    const labelEl = document.createElement('span');
+    labelEl.className = 'status-meta-label';
+    labelEl.textContent = label;
+    element.appendChild(labelEl);
+  }
+  const valueEl = document.createElement('span');
+  valueEl.className = 'status-meta-value';
+  valueEl.textContent = value;
+  element.appendChild(valueEl);
+  element.setAttribute('aria-label', label ? `${label} ${value}` : value);
+};
+
+const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
+  statusMetaState.lastUpdated = lastUpdated;
+  statusMetaState.recentIncidentCount = recentIncidentCount;
+
+  const lastUpdatedEl = document.getElementById('lastUpdated');
+  const incidentCountEl = document.getElementById('incidentCount');
+  if (!lastUpdatedEl || !incidentCountEl) return;
+
+  const dateText = formatDate(lastUpdated);
+  const incidentText = formatIncidentCount(recentIncidentCount);
+
+  if (!shouldUseAlternateStatusMeta()) {
+    lastUpdatedEl.textContent = `Last updated ${dateText}`;
+    incidentCountEl.textContent = `${incidentText} in last 90 days`;
+    lastUpdatedEl.removeAttribute('aria-label');
+    incidentCountEl.removeAttribute('aria-label');
+    return;
+  }
+
+  switch (statusMetaVariant) {
+    case 'stacked':
+      setStatusMetaItem(lastUpdatedEl, 'Updated', dateText);
+      setStatusMetaItem(incidentCountEl, 'Incidents', `${recentIncidentCount} in last 90 days`);
+      break;
+    case 'cards':
+      setStatusMetaItem(lastUpdatedEl, 'Last updated', dateText);
+      setStatusMetaItem(incidentCountEl, 'Last 90 days', incidentText);
+      break;
+    case 'compact':
+      setStatusMetaItem(lastUpdatedEl, null, `Updated ${dateText}`);
+      setStatusMetaItem(incidentCountEl, null, `${incidentText} / 90d`);
+      break;
+    default:
+      lastUpdatedEl.textContent = `Last updated ${dateText}`;
+      incidentCountEl.textContent = `${incidentText} in last 90 days`;
+      break;
+  }
+};
+
+const rerenderStatusMeta = () => {
+  if (!statusMetaState.lastUpdated) return;
+  renderStatusMeta(statusMetaState.lastUpdated, statusMetaState.recentIncidentCount);
+};
+
+if (typeof STATUS_META_MOBILE_QUERY.addEventListener === 'function') {
+  STATUS_META_MOBILE_QUERY.addEventListener('change', rerenderStatusMeta);
+} else if (typeof STATUS_META_MOBILE_QUERY.addListener === 'function') {
+  STATUS_META_MOBILE_QUERY.addListener(rerenderStatusMeta);
+}
 
 const monthStartUTC = (date) =>
   new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1));
@@ -391,14 +477,13 @@ const render = async () => {
   attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents, rangeStart);
 
   const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
-  document.getElementById('lastUpdated').textContent = `Last updated ${formatDate(lastUpdated)}`;
 
   const since = rangeStart.getTime();
   const recentIncidents = incidents.filter((incident) => {
     const start = incidentStartDate(incident).getTime();
     return start >= since;
   });
-  document.getElementById('incidentCount').textContent = `${recentIncidents.length} incidents in last 90 days`;
+  renderStatusMeta(lastUpdated, recentIncidents.length);
 
   const serviceStatus = document.getElementById('serviceStatus');
   serviceStatus.innerHTML = '';

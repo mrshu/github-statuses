@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Status Meta Options</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="status-meta-options.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="meta-picker-page">
+    <div class="grain"></div>
+    <main class="picker-shell">
+      <header class="picker-header">
+        <div>
+          <span class="picker-kicker">Small-screen hero meta</span>
+          <h1>Compare the small-screen hero meta layouts</h1>
+          <p>
+            The homepage now keeps the original inline row through medium widths and
+            switches to the <code>cards</code> layout only on narrower phones
+            (520px and below). These previews stay here as a quick way to compare the
+            three mobile fallback treatments on the real page.
+          </p>
+        </div>
+        <div class="picker-links">
+          <a class="picker-link" href="./index.html" target="_blank" rel="noreferrer">Homepage</a>
+        </div>
+      </header>
+
+      <section class="picker-grid meta-picker-grid">
+        <article class="picker-card">
+          <span class="picker-kicker">Option 1</span>
+          <h3>Stacked pills</h3>
+          <p class="picker-copy">
+            Two full-width rows with labels above the values. Safest and most readable.
+          </p>
+          <div class="meta-option-preview">
+            <iframe
+              src="./index.html?meta=stacked&preview=status-meta-options"
+              title="Stacked pills preview"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="picker-note">
+            Best if we want the hero header to feel calm and explicit, even if it gets a
+            little taller.
+          </p>
+          <div class="picker-actions">
+            <a
+              class="ghost-button"
+              href="./index.html?meta=stacked&preview=status-meta-options"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open full preview
+            </a>
+          </div>
+        </article>
+
+        <article class="picker-card">
+          <span class="picker-kicker">Option 2</span>
+          <h3>Mini stat cards</h3>
+          <p class="picker-copy">
+            Splits the row into two compact cards so the date and count read like dashboard
+            stats.
+          </p>
+          <div class="meta-option-preview">
+            <iframe
+              src="./index.html?meta=cards&preview=status-meta-options"
+              title="Mini stat cards preview"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="picker-note">
+            Best if we want the metadata to feel more intentional and data-forward.
+            This is the current default for very small screens.
+          </p>
+          <div class="picker-actions">
+            <a
+              class="ghost-button"
+              href="./index.html?meta=cards&preview=status-meta-options"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open full preview
+            </a>
+          </div>
+        </article>
+
+        <article class="picker-card">
+          <span class="picker-kicker">Option 3</span>
+          <h3>Compact chips</h3>
+          <p class="picker-copy">
+            Turns both items into short pills that wrap cleanly without adding much height.
+          </p>
+          <div class="meta-option-preview">
+            <iframe
+              src="./index.html?meta=compact&preview=status-meta-options"
+              title="Compact chips preview"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="picker-note">
+            Best if we want the smallest footprint and the least visual interruption in the
+            hero.
+          </p>
+          <div class="picker-actions">
+            <a
+              class="ghost-button"
+              href="./index.html?meta=compact&preview=status-meta-options"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open full preview
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
