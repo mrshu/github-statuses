@@ -680,7 +680,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 28870787,2026-03-09T01:23:00Z,2026-03-09T03:25:00Z,122,postmortem,Incident with Codespaces,minor
 28882382,2026-03-09T15:50:00Z,2026-03-09T17:03:00Z,73,updates,Incident with Webhooks,minor
 29087337,2026-03-10T23:00:00Z,2026-03-10T23:40:00Z,40,postmortem,Incident With Webhooks,none
-28922599,2026-03-11T14:37:00Z,2026-03-11T15:02:00Z,25,updates,Incident with API Requests,minor
+28922599,2026-03-11T14:25:00Z,2026-03-11T14:34:00Z,9,postmortem,Incident with API Requests,minor
 28922400,2026-03-11T13:00:00Z,2026-03-11T15:23:00Z,143,postmortem,Degraded experience with Copilot Code Review,minor
 28933013,2026-03-12T01:54:00Z,2026-03-12T02:45:00Z,51,updates,Disruption with some GitHub services,minor
 28935006,2026-03-12T04:46:00Z,2026-03-12T06:02:00Z,76,updates,Actions failures to download (401 Unauthorized),minor
@@ -689,10 +689,10 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29034976,2026-03-16T15:01:00Z,2026-03-16T15:28:00Z,27,updates,Errors starting and connecting to Codespaces,minor
 29090596,2026-03-18T18:18:00Z,2026-03-18T19:46:00Z,88,postmortem,Webhook delivery is delayed,minor
 29094936,2026-03-18T22:36:00Z,2026-03-19T01:44:00Z,188,updates,Disruption with some GitHub services,minor
-29098832,2026-03-19T02:05:00Z,2026-03-19T02:52:00Z,47,updates,Disruption with Copilot Coding Agent sessions,minor
-29110999,2026-03-19T13:44:00Z,2026-03-19T14:32:00Z,48,updates,Issues with Copilot Coding Agent,major
+29098832,2026-03-19T01:05:00Z,2026-03-19T02:52:00Z,107,postmortem,Disruption with Copilot Coding Agent sessions,minor
+29110999,2026-03-19T01:05:00Z,2026-03-19T02:52:00Z,107,postmortem,Issues with Copilot Coding Agent,major
 29114079,2026-03-19T16:25:00Z,2026-03-20T00:05:00Z,460,updates,Git operations for users in the west coast are experiencing an increase in latency,minor
-29123267,2026-03-20T00:58:00Z,2026-03-20T01:58:00Z,60,updates,Disruption with Copilot Coding Agent Sessions,major
+29123267,2026-03-19T01:05:00Z,2026-03-19T02:52:00Z,107,postmortem,Disruption with Copilot Coding Agent Sessions,major
 29179438,2026-03-22T09:08:00Z,2026-03-22T10:02:00Z,54,updates,Disruption with some GitHub services,minor
 29235644,2026-03-24T16:59:00Z,2026-03-24T19:51:00Z,172,updates,Teams Github Notifications App is down,major
 29239164,2026-03-24T20:18:00Z,2026-03-24T20:56:00Z,38,updates,Disruption with some GitHub services,minor
