@@ -779,15 +779,16 @@ main {
   text-decoration: none;
   padding: 12px 20px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
+  background: #ffffff;
   border: 1px solid var(--border);
+  box-shadow: 0 16px 28px -24px rgba(17, 18, 26, 0.32);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .about-prompt a:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px -15px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 18px 30px -22px rgba(17, 18, 26, 0.38);
+  background: #ffffff;
 }
 
 .about-prompt a .status-operational {
