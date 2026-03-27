@@ -65,42 +65,16 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #11121a;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.brand-mark span {
-  position: absolute;
-  width: 42px;
-  height: 4px;
-  background: linear-gradient(90deg, #8fd18a, #f1a23a, #e0564a);
-  border-radius: 999px;
-  opacity: 0.9;
-}
-
-.brand-mark span:nth-child(1) {
-  transform: rotate(20deg);
-}
-
-.brand-mark span:nth-child(2) {
-  transform: rotate(-20deg);
-}
-
-.brand-mark span:nth-child(3) {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ffffff;
-  mix-blend-mode: screen;
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 .brand-text h1 {
@@ -1518,6 +1492,12 @@ details ul {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .brand-mark {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
   }
 
   .feature-spotlight {
