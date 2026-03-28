@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-03-27T04:18:38Z</updated>
+  <updated>2026-03-28T04:28:38Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/29310827</id>
+    <published>2026-03-27T05:00:00Z</published>
+    <updated>2026-03-27T18:42:58Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/9vyj2jwsk8by"/>
+    <title>Incident with Copilot</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;05:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 27, 2026, from 02:30 to 04:56 UTC, a misconfiguration in our rate limiting system caused users on Copilot Free, Student, Pro, and Pro+ plans to experience unexpected rate limit errors. The configuration that was incorrectly applied was intended solely for internal staff testing of rate-limiting experiences. Copilot Business and Copilot Enterprise accounts were not affected.&lt;br /&gt;&lt;br /&gt;During this period, affected users received error messages instructing them to retry after a certain time. Approximately 32% of active Free users, 35% of active Student users, 46% of active Pro users, and 66% of active Pro+ users were affected.&lt;br /&gt;&lt;br /&gt;After identifying the root cause, we reverted the change and restored the expected rate limits. We are reviewing our deployment and validation processes to help ensure configurations used for internal testing cannot be inadvertently applied to production environments.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/29239164</id>
     <published>2026-03-24T20:56:05Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/t2p9yhsww5lc"/>
     <title>Some OpenAI models degraded in Copilot</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;01:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 5th, 2026, between approximately 00:26 and 00:44 UTC, the Copilot service experienced a degradation of the GPT 3.5 Codex model due to an issue with our upstream provider. Users encountered elevated error rates when using GPT 3.5 Codex, impacting approximately 30% of requests. No other models were impacted.&lt;br /&gt;&lt;br /&gt;The issue was resolved by a mitigation put in place by our provider.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;01:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - The issues with our upstream model provider have been resolved, and gpt-5.3-codex is once again available in Copilot Chat and across IDE integrations. We will continue monitoring to ensure stability, but mitigation is complete.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;00:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for the gpt-5.3-codex model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 5&lt;/var&gt;, &lt;var data-var='time'&gt;00:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/28771344</id>
-    <published>2026-03-03T21:11:30Z</published>
-    <updated>2026-03-03T23:03:29Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/nglcmhr2kfb0"/>
-    <title>Claude Opus 4.6 Fast not appearing for some Copilot users</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;21:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On March 3, 2026, between 19:44 UTC and 21:05 UTC, some GitHub Copilot users reported that the Claude Opus 4.6 Fast model was no longer available in their IDE model selection. After investigation, we confirmed that this was caused by enterprise administrators adjusting their organization's model policies, which correctly removed the model for users in those organizations. No users outside the affected organizations lost access.&lt;br /&gt;&lt;br /&gt;We confirmed that the Copilot settings were functioning as designed, and all expected users retained access to the model. The incident was resolved once we verified that the change was intentional and no platform regression had occurred.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;21:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We believe that all expected users still have access to Claude Opus 4.6. We confirm that no users have lost access.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Mar &lt;var data-var='date'&gt; 3&lt;/var&gt;, &lt;var data-var='time'&gt;20:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Copilot&lt;/p&gt;</content>
   </entry>
 </feed>
