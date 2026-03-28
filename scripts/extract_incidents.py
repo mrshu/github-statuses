@@ -73,6 +73,12 @@ IMPACT_RE_2 = re.compile(
     r"(\d{1,2}),\s+(\d{4})",
     re.IGNORECASE,
 )
+IMPACT_RE_3 = re.compile(
+    r"On\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+"
+    r"(\d{1,2}),\s+(\d{4}),\s+from\s+(\d{1,2}:\d{2})\s+(?:UTC\s+)?to\s+"
+    r"(\d{1,2}:\d{2})\s+UTC",
+    re.IGNORECASE,
+)
 CLASS_ATTR_RE = re.compile(r"class=[\"']([^\"']+)[\"']", re.IGNORECASE)
 COMPONENTS_RE = re.compile(r"This incident affected:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_ALT_RE = re.compile(r"Affected components?:\s*([^.]+)", re.IGNORECASE)
@@ -228,6 +234,20 @@ def parse_impact_window(messages):
             month = MONTH_FULL[match.group(3).title()]
             day = int(match.group(4))
             year = int(match.group(5))
+            start_hour, start_min = map(int, start_time.split(":"))
+            end_hour, end_min = map(int, end_time.split(":"))
+            start_at = datetime(year, month, day, start_hour, start_min, tzinfo=timezone.utc)
+            end_at = datetime(year, month, day, end_hour, end_min, tzinfo=timezone.utc)
+            if end_at <= start_at:
+                end_at = end_at + timedelta(days=1)
+            return start_at, end_at, message
+        match = IMPACT_RE_3.search(message)
+        if match:
+            month = MONTH_FULL[match.group(1).title()]
+            day = int(match.group(2))
+            year = int(match.group(3))
+            start_time = match.group(4)
+            end_time = match.group(5)
             start_hour, start_min = map(int, start_time.split(":"))
             end_hour, end_min = map(int, end_time.split(":"))
             start_at = datetime(year, month, day, start_hour, start_min, tzinfo=timezone.utc)

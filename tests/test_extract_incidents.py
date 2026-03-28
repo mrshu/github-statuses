@@ -33,6 +33,24 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertEqual(start_at.isoformat(), "2024-01-28T01:00:00+00:00")
         self.assertEqual(end_at.isoformat(), "2024-01-28T14:00:00+00:00")
 
+    def test_impact_window_from_to_utc(self):
+        message = (
+            "On March 27, 2026, from 02:30 to 04:56 UTC, "
+            "a misconfiguration in our rate limiting system caused errors."
+        )
+        start_at, end_at, _ = ei.parse_impact_window([message])
+        self.assertEqual(start_at.isoformat(), "2026-03-27T02:30:00+00:00")
+        self.assertEqual(end_at.isoformat(), "2026-03-27T04:56:00+00:00")
+
+    def test_impact_window_from_utc_to_utc(self):
+        message = (
+            "On August 28, 2024, from 22:37 UTC to 04:47 UTC, "
+            "some GitHub services were degraded."
+        )
+        start_at, end_at, _ = ei.parse_impact_window([message])
+        self.assertEqual(start_at.isoformat(), "2024-08-28T22:37:00+00:00")
+        self.assertEqual(end_at.isoformat(), "2024-08-29T04:47:00+00:00")
+
     def test_finalize_prefers_postmortem_window(self):
         published = datetime(2025, 1, 13, 23, 44, tzinfo=timezone.utc)
         updates = [
