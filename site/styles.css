@@ -1543,30 +1543,39 @@ details ul {
   }
 
   .site-live-corner-tab {
-    position: static;
-    order: -1;
-    min-width: 0;
-    width: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 18px;
+    top: auto;
+    min-width: 78px;
+    width: auto;
     max-width: none;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border-radius: 999px;
-    box-shadow: 0 18px 30px -22px rgba(17, 18, 26, 0.82);
+    gap: 4px;
+    padding: 8px 8px 10px;
+    border-radius: 14px 0 0 14px;
+    box-shadow: 0 16px 26px -22px rgba(17, 18, 26, 0.82);
     transform: none;
+    z-index: 25;
   }
 
   .site-live-corner-tab::after {
-    display: none;
+    display: block;
+    width: 8px;
+    height: 8px;
   }
 
   .site-live-corner-tab strong {
-    font-size: 0.92rem;
+    font-size: 0.74rem;
+    text-align: center;
+    line-height: 1;
   }
 
   .site-live-corner-tab span:last-child {
-    font-size: 0.62rem;
+    font-size: 0.52rem;
+    text-align: center;
+    line-height: 1;
   }
 
   .cta-options {
