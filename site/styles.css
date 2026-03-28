@@ -599,19 +599,28 @@ main {
   pointer-events: auto;
 }
 
-.uptime-tooltip::before {
+.uptime-tooltip::before,
+.uptime-tooltip::after {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #fffdf9;
-  border: 1px solid var(--border);
   left: var(--arrow-left, 50%);
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
 }
 
 .uptime-tooltip[data-arrow="top"]::before {
-  top: -7px;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--border);
+}
+
+.uptime-tooltip[data-arrow="top"]::after {
+  top: -8px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fffdf9;
 }
 
 .tooltip-date {
@@ -748,8 +757,161 @@ main {
   background: var(--maintenance);
 }
 
-.hero-attribution {
+.hero-footer {
   margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hero-share {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.hero-share-tooltip {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(17, 18, 26, 0.94);
+  color: #f6f8fa;
+  font: 500 0.72rem/1.25 var(--mono);
+  white-space: nowrap;
+  box-shadow: 0 16px 34px -26px rgba(17, 18, 26, 0.72);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.hero-share:focus-within .hero-share-tooltip,
+.hero-share:hover .hero-share-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-share-button[data-state="copied"] + .hero-share-tooltip,
+.hero-share-button[data-state="downloaded"] + .hero-share-tooltip,
+.hero-share-button[data-state="error"] + .hero-share-tooltip,
+.hero-share-button[data-state="loading"] + .hero-share-tooltip {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.hero-share-download[hidden] {
+  display: none;
+}
+
+.hero-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: auto;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: 600 0.76rem/1 var(--mono);
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.hero-share-button:hover {
+  background: rgba(36, 41, 47, 0.06);
+  color: var(--ink);
+}
+
+.hero-share-button:focus-visible {
+  outline: 2px solid rgba(9, 105, 218, 0.26);
+  outline-offset: 2px;
+}
+
+.hero-share-button[data-state="loading"] {
+  color: var(--muted);
+  cursor: progress;
+  background: rgba(36, 41, 47, 0.05);
+}
+
+.hero-share-button[data-state="copied"] {
+  color: #1b5f33;
+  background: rgba(45, 164, 78, 0.12);
+}
+
+.hero-share-button[data-state="fallback"],
+.hero-share-button[data-state="downloaded"] {
+  color: #8a4b00;
+  background: rgba(217, 119, 6, 0.12);
+}
+
+.hero-share-button[data-state="error"] {
+  color: #8a1f24;
+  background: rgba(207, 34, 46, 0.1);
+}
+
+.hero-share-icon {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.hero-share-button[data-state="loading"] .hero-share-icon {
+  animation: hero-share-pulse 0.9s ease-in-out infinite;
+}
+
+.hero-share-label {
+  white-space: nowrap;
+}
+
+.hero-share-feedback {
+  display: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  flex: 0 0 100%;
+  text-align: right;
+}
+
+.hero-share-feedback[data-visible="true"] {
+  display: block;
+}
+
+.hero-share-feedback[data-tone="success"] {
+  color: var(--operational);
+}
+
+.hero-share-feedback[data-tone="fallback"],
+.hero-share-feedback[data-tone="downloaded"] {
+  color: var(--minor);
+}
+
+.hero-share-feedback[data-tone="error"] {
+  color: var(--major);
+}
+
+@keyframes hero-share-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-attribution {
   text-align: right;
   font-size: 0.75rem;
   color: var(--muted);
@@ -1619,6 +1781,23 @@ details ul {
 
   .uptime-label {
     font-size: 0.98rem;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-attribution {
+    text-align: left;
+  }
+
+  .hero-share-feedback {
+    text-align: left;
+  }
+
+  .hero-share-tooltip {
+    display: none;
   }
 
   .service-bars {
