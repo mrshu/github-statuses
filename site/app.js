@@ -51,6 +51,65 @@ const statusMetaState = {
   lastUpdated: null,
   recentIncidentCount: 0,
 };
+const SHARE_IMAGE_SIZE = {
+  width: 1600,
+  height: 840,
+};
+const SHARE_FILE_NAME = 'github-status-90-day-uptime.png';
+const SHARE_ICON_PATHS = {
+  ready:
+    'M5 2.75C5 1.78 5.78 1 6.75 1h5.5C13.22 1 14 1.78 14 2.75v6.5c0 .97-.78 1.75-1.75 1.75h-5.5C5.78 11 5 10.22 5 9.25v-6.5Zm1.75-.25a.25.25 0 0 0-.25.25v6.5c0 .14.11.25.25.25h5.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-5.5ZM3.75 5A.75.75 0 0 1 4.5 5.75v6c0 .41.34.75.75.75h5a.75.75 0 0 1 0 1.5h-5A2.25 2.25 0 0 1 3 11.75v-6A.75.75 0 0 1 3.75 5Z',
+  loading:
+    'M5 2.75C5 1.78 5.78 1 6.75 1h5.5C13.22 1 14 1.78 14 2.75v6.5c0 .97-.78 1.75-1.75 1.75h-5.5C5.78 11 5 10.22 5 9.25v-6.5Zm1.75-.25a.25.25 0 0 0-.25.25v6.5c0 .14.11.25.25.25h5.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-5.5ZM3.75 5A.75.75 0 0 1 4.5 5.75v6c0 .41.34.75.75.75h5a.75.75 0 0 1 0 1.5h-5A2.25 2.25 0 0 1 3 11.75v-6A.75.75 0 0 1 3.75 5Z',
+  copied: 'M13.78 3.72a.75.75 0 0 1 0 1.06L6.81 11.75a.75.75 0 0 1-1.06 0L2.22 8.22a.75.75 0 1 1 1.06-1.06l3 3 6.44-6.44a.75.75 0 0 1 1.06 0Z',
+  downloaded:
+    'M8 1.75a.75.75 0 0 1 .75.75v6.19l1.72-1.72a.75.75 0 1 1 1.06 1.06L8.53 11.1a.75.75 0 0 1-1.06 0L4.47 8.03a.75.75 0 1 1 1.06-1.06L7.25 8.69V2.5A.75.75 0 0 1 8 1.75Zm-4.5 11a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5h-9Z',
+  error:
+    'M8 1.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 3a.75.75 0 0 0-.75.75v3.4c0 .41.34.75.75.75s.75-.34.75-.75v-3.4A.75.75 0 0 0 8 4.5Zm0 6.75a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z',
+};
+const shareState = {
+  lastUpdated: null,
+  recentIncidentCount: 0,
+  uptime: null,
+  daySeverity: [],
+  imageBlob: null,
+  imageReady: false,
+  imagePreparing: false,
+};
+let shareResetTimeout = null;
+let shareDownloadUrl = null;
+const shareStateMeta = {
+  ready: {
+    label: 'Copy card',
+    tooltip: 'Copy a clean PNG to clipboard',
+    feedback: '',
+    tone: '',
+  },
+  loading: {
+    label: 'Preparing…',
+    tooltip: 'Preparing a shareable PNG',
+    feedback: 'Preparing a shareable PNG…',
+    tone: '',
+  },
+  copied: {
+    label: 'Copied',
+    tooltip: 'Image copied',
+    feedback: 'Image copied. Paste it anywhere.',
+    tone: 'success',
+  },
+  downloaded: {
+    label: 'Downloaded',
+    tooltip: 'PNG downloaded',
+    feedback: 'Clipboard was unavailable, so the PNG was downloaded instead.',
+    tone: 'downloaded',
+  },
+  error: {
+    label: 'Try again',
+    tooltip: 'Unable to copy right now',
+    feedback: 'Unable to create the share image right now.',
+    tone: 'error',
+  },
+};
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en-US', {
@@ -226,6 +285,382 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
 const rerenderStatusMeta = () => {
   if (!statusMetaState.lastUpdated) return;
   renderStatusMeta(statusMetaState.lastUpdated, statusMetaState.recentIncidentCount);
+};
+
+const clearShareDownloadUrl = () => {
+  if (!shareDownloadUrl) return;
+  URL.revokeObjectURL(shareDownloadUrl);
+  shareDownloadUrl = null;
+};
+
+const setShareFeedback = (message = '', tone = '') => {
+  const feedback = document.getElementById('heroShareStatus');
+  if (!feedback) return;
+  feedback.textContent = message;
+  if (message) {
+    feedback.dataset.visible = 'true';
+  } else {
+    delete feedback.dataset.visible;
+  }
+  if (tone) {
+    feedback.dataset.tone = tone;
+  } else {
+    delete feedback.dataset.tone;
+  }
+};
+
+const setShareButtonState = (state, override = {}) => {
+  const button = document.getElementById('copyHeroImage');
+  const labelEl = document.getElementById('copyHeroImageLabel');
+  const icon = document.getElementById('copyHeroImageIcon');
+  if (!button || !labelEl || !icon) return;
+  const meta = {
+    ...(shareStateMeta[state] || shareStateMeta.ready),
+    ...override,
+  };
+  button.dataset.state = state;
+  button.dataset.tooltip = meta.tooltip || '';
+  labelEl.textContent = meta.label;
+  icon.setAttribute('d', SHARE_ICON_PATHS[state] || SHARE_ICON_PATHS.ready);
+  setShareFeedback(meta.feedback ?? '', meta.tone || '');
+};
+
+const queueShareButtonReset = () => {
+  if (shareResetTimeout) {
+    window.clearTimeout(shareResetTimeout);
+  }
+  shareResetTimeout = window.setTimeout(() => {
+    if (shareState.imageReady) {
+      setShareButtonState('ready');
+    } else if (shareState.imagePreparing) {
+      setShareButtonState('loading');
+    } else {
+      setShareButtonState('ready');
+    }
+  }, 2200);
+};
+
+const setShareDownloadLink = (blob) => {
+  const download = document.getElementById('downloadHeroImage');
+  if (!download) return null;
+  clearShareDownloadUrl();
+  shareDownloadUrl = URL.createObjectURL(blob);
+  download.href = shareDownloadUrl;
+  download.hidden = false;
+  return download;
+};
+
+const triggerShareDownload = (blob) => {
+  const download = setShareDownloadLink(blob);
+  if (download) {
+    download.click();
+  }
+};
+
+const dataUrlToBlob = (dataUrl) => {
+  const [meta, encoded] = dataUrl.split(',');
+  const mimeMatch = meta.match(/data:(.*?);base64/);
+  const mime = mimeMatch ? mimeMatch[1] : 'image/png';
+  const binary = window.atob(encoded);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return new Blob([bytes], { type: mime });
+};
+
+const roundedRectPath = (ctx, x, y, width, height, radius) => {
+  const r = Math.min(radius, width / 2, height / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + width, y, x + width, y + height, r);
+  ctx.arcTo(x + width, y + height, x, y + height, r);
+  ctx.arcTo(x, y + height, x, y, r);
+  ctx.arcTo(x, y, x + width, y, r);
+  ctx.closePath();
+};
+
+const fillRadialGlow = (ctx, x, y, radius, color) => {
+  const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+  gradient.addColorStop(0, color);
+  gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+};
+
+const drawRoundedRect = (ctx, x, y, width, height, radius, fillStyle, strokeStyle = null, lineWidth = 1) => {
+  ctx.save();
+  roundedRectPath(ctx, x, y, width, height, radius);
+  ctx.fillStyle = fillStyle;
+  ctx.fill();
+  if (strokeStyle) {
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = strokeStyle;
+    ctx.stroke();
+  }
+  ctx.restore();
+};
+
+const drawMetaPill = (ctx, x, y, width, height, label, value) => {
+  const pillGradient = ctx.createLinearGradient(x, y, x, y + height);
+  pillGradient.addColorStop(0, 'rgba(255, 255, 255, 0.98)');
+  pillGradient.addColorStop(1, 'rgba(246, 248, 250, 0.96)');
+  drawRoundedRect(ctx, x, y, width, height, 22, pillGradient, 'rgba(208, 215, 222, 0.92)', 2);
+
+  ctx.fillStyle = '#57606a';
+  ctx.font = '700 15px "IBM Plex Sans", system-ui, sans-serif';
+  ctx.fillText(label.toUpperCase(), x + 22, y + 28);
+
+  ctx.fillStyle = '#24292f';
+  ctx.font = '600 26px "IBM Plex Sans", system-ui, sans-serif';
+  ctx.fillText(value, x + 22, y + 64);
+};
+
+const drawLegendItem = (ctx, x, y, color, label) => {
+  ctx.save();
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y - 5, 8, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#57606a';
+  ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
+  ctx.fillText(label, x + 20, y + 4);
+  ctx.restore();
+};
+
+const renderShareImageCanvas = () => {
+  if (!shareState.daySeverity.length || shareState.uptime === null || !shareState.lastUpdated) {
+    throw new Error('Share image is not ready yet.');
+  }
+
+  const canvas = document.createElement('canvas');
+  canvas.width = SHARE_IMAGE_SIZE.width;
+  canvas.height = SHARE_IMAGE_SIZE.height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    throw new Error('Canvas is not available.');
+  }
+
+  const { width, height } = canvas;
+  const backgroundGradient = ctx.createLinearGradient(0, height, width, 0);
+  backgroundGradient.addColorStop(0, '#edf5fb');
+  backgroundGradient.addColorStop(0.45, '#f7f8fc');
+  backgroundGradient.addColorStop(1, '#fff1eb');
+  ctx.fillStyle = backgroundGradient;
+  ctx.fillRect(0, 0, width, height);
+
+  fillRadialGlow(ctx, width * 0.18, height * 0.78, 300, 'rgba(31, 111, 235, 0.22)');
+  fillRadialGlow(ctx, width * 0.18, height * 0.18, 220, 'rgba(45, 164, 78, 0.15)');
+  fillRadialGlow(ctx, width * 0.83, height * 0.2, 260, 'rgba(207, 34, 46, 0.18)');
+  fillRadialGlow(ctx, width * 0.62, height * 0.56, 240, 'rgba(217, 119, 6, 0.14)');
+
+  ctx.save();
+  ctx.filter = 'blur(72px)';
+  const ambientGradient = ctx.createLinearGradient(260, 240, 1340, 520);
+  ambientGradient.addColorStop(0, 'rgba(31, 111, 235, 0.18)');
+  ambientGradient.addColorStop(0.28, 'rgba(45, 164, 78, 0.16)');
+  ambientGradient.addColorStop(0.65, 'rgba(217, 119, 6, 0.16)');
+  ambientGradient.addColorStop(1, 'rgba(207, 34, 46, 0.18)');
+  drawRoundedRect(ctx, 260, 222, 1080, 360, 64, ambientGradient);
+  ctx.restore();
+
+  const frameMarginX = 110;
+  const frameMarginY = 118;
+  const cardX = frameMarginX;
+  const cardY = frameMarginY;
+  const cardWidth = width - frameMarginX * 2;
+  const cardHeight = height - frameMarginY * 2;
+
+  ctx.save();
+  ctx.shadowColor = 'rgba(17, 18, 26, 0.18)';
+  ctx.shadowBlur = 70;
+  ctx.shadowOffsetY = 28;
+  const cardGradient = ctx.createLinearGradient(cardX, cardY, cardX, cardY + cardHeight);
+  cardGradient.addColorStop(0, 'rgba(255, 255, 255, 0.99)');
+  cardGradient.addColorStop(1, 'rgba(248, 250, 252, 0.98)');
+  drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 40, cardGradient);
+  ctx.restore();
+  drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 40, 'rgba(255, 255, 255, 0)', 'rgba(208, 215, 222, 0.95)', 2);
+
+  const insetX = cardX + 64;
+  const insetRight = cardX + cardWidth - 64;
+  const titleBaselineY = cardY + 104;
+  const pillWidth = 238;
+  const pillHeight = 80;
+  const pillGap = 16;
+  const pillsWidth = pillWidth * 2 + pillGap;
+  const pillX = insetRight - pillsWidth;
+  const pillY = cardY + 40;
+
+  ctx.fillStyle = '#24292f';
+  ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
+  ctx.fillText('Last 90 days uptime', insetX, titleBaselineY);
+
+  drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated));
+  drawMetaPill(
+    ctx,
+    pillX + pillWidth + pillGap,
+    pillY,
+    pillWidth,
+    pillHeight,
+    'Last 90 days',
+    `${shareState.recentIncidentCount} incident${shareState.recentIncidentCount === 1 ? '' : 's'}`,
+  );
+
+  const rowBaselineY = cardY + 204;
+  ctx.fillStyle = '#24292f';
+  ctx.font = '600 38px "Space Grotesk", "IBM Plex Sans", sans-serif';
+  ctx.fillText('GitHub Platform', insetX, rowBaselineY);
+
+  const uptimeLabel = `${(shareState.uptime * 100).toFixed(2)}% uptime`;
+  ctx.fillStyle = '#57606a';
+  ctx.font = '600 42px "IBM Plex Sans", system-ui, sans-serif';
+  const uptimeWidth = ctx.measureText(uptimeLabel).width;
+  ctx.fillText(uptimeLabel, insetRight - uptimeWidth, rowBaselineY);
+
+  const barsTop = cardY + 252;
+  const barsHeight = 64;
+  const barGap = 4;
+  const barWidth = (cardWidth - 128 - barGap * (shareState.daySeverity.length - 1)) / shareState.daySeverity.length;
+  const barColors = {
+    0: 'rgba(45, 164, 78, 0.82)',
+    1: 'rgba(31, 111, 235, 0.82)',
+    2: 'rgba(217, 119, 6, 0.84)',
+    3: 'rgba(207, 34, 46, 0.84)',
+  };
+
+  shareState.daySeverity.forEach((severity, index) => {
+    const x = insetX + index * (barWidth + barGap);
+    drawRoundedRect(ctx, x, barsTop, barWidth, barsHeight, 5, barColors[severity] || barColors[0]);
+  });
+
+  ctx.fillStyle = '#57606a';
+  ctx.font = '500 24px "IBM Plex Sans", system-ui, sans-serif';
+  ctx.fillText('90 days ago', insetX, barsTop + barsHeight + 40);
+  const todayLabel = 'Today';
+  const todayWidth = ctx.measureText(todayLabel).width;
+  ctx.fillText(todayLabel, insetRight - todayWidth, barsTop + barsHeight + 40);
+
+  const legendY = cardY + cardHeight - 84;
+  let legendX = insetX;
+  const legendItems = [
+    ['rgba(45, 164, 78, 0.92)', 'Operational'],
+    ['rgba(31, 111, 235, 0.92)', 'Maintenance'],
+    ['rgba(217, 119, 6, 0.92)', 'Minor'],
+    ['rgba(207, 34, 46, 0.92)', 'Major'],
+  ];
+  ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
+  legendItems.forEach(([color, label]) => {
+    drawLegendItem(ctx, legendX, legendY, color, label);
+    legendX += ctx.measureText(label).width + 62;
+  });
+
+  const attribution = 'by Marek Šuppa · @mareksuppa';
+  ctx.fillStyle = '#57606a';
+  ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
+  const attributionWidth = ctx.measureText(attribution).width;
+  ctx.fillText(attribution, insetRight - attributionWidth, legendY + 4);
+
+  return canvas;
+};
+
+const createShareImageBlob = () => {
+  const canvas = renderShareImageCanvas();
+  return dataUrlToBlob(canvas.toDataURL('image/png'));
+};
+
+const getShareImageBlob = () => {
+  if (shareState.imageBlob) {
+    return shareState.imageBlob;
+  }
+  const blob = createShareImageBlob();
+  shareState.imageBlob = blob;
+  shareState.imageReady = true;
+  return blob;
+};
+
+const primeShareImage = async () => {
+  if (shareState.imagePreparing || shareState.imageReady || !shareState.daySeverity.length) return;
+  shareState.imagePreparing = true;
+  try {
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready.catch(() => {});
+    }
+    shareState.imageBlob = createShareImageBlob();
+    shareState.imageReady = true;
+    setShareButtonState('ready');
+  } catch (error) {
+    console.error(error);
+    shareState.imageBlob = null;
+    shareState.imageReady = false;
+    setShareButtonState('ready');
+  } finally {
+    shareState.imagePreparing = false;
+  }
+};
+
+const scheduleSharePrime = () => {
+  const runner = () => {
+    void primeShareImage();
+  };
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(runner, { timeout: 600 });
+  } else {
+    window.setTimeout(runner, 60);
+  }
+};
+
+const bindShareAction = () => {
+  const copyButton = document.getElementById('copyHeroImage');
+  if (!copyButton || copyButton.dataset.bound === 'true') return;
+
+  copyButton.dataset.bound = 'true';
+  copyButton.addEventListener('click', async () => {
+    if (shareState.imagePreparing) {
+      setShareButtonState('loading', {
+        feedback: 'Preparing the PNG. Try again in a moment.',
+      });
+      return;
+    }
+
+    try {
+      if (!shareState.imageReady) {
+        setShareButtonState('loading');
+        await primeShareImage();
+      }
+
+      const blob = getShareImageBlob();
+
+      if (navigator.clipboard?.write && typeof ClipboardItem !== 'undefined') {
+        clearShareDownloadUrl();
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            [blob.type]: blob,
+          }),
+        ]);
+        setShareButtonState('copied');
+        queueShareButtonReset();
+      } else {
+        triggerShareDownload(blob);
+        setShareButtonState('downloaded');
+        queueShareButtonReset();
+      }
+    } catch (error) {
+      console.error(error);
+      try {
+        const blob = getShareImageBlob();
+        triggerShareDownload(blob);
+        setShareButtonState('downloaded', {
+          feedback: 'Clipboard was blocked here, so the PNG was downloaded instead.',
+        });
+        queueShareButtonReset();
+      } catch (fallbackError) {
+        console.error(fallbackError);
+        setShareButtonState('error');
+        queueShareButtonReset();
+      }
+    }
+  });
 };
 
 if (typeof STATUS_META_MOBILE_QUERY.addEventListener === 'function') {
@@ -484,6 +919,12 @@ const render = async () => {
     return start >= since;
   });
   renderStatusMeta(lastUpdated, recentIncidents.length);
+  shareState.lastUpdated = lastUpdated;
+  shareState.recentIncidentCount = recentIncidents.length;
+  shareState.uptime = uptime;
+  shareState.daySeverity = daySeverity.slice();
+  bindShareAction();
+  scheduleSharePrime();
 
   const serviceStatus = document.getElementById('serviceStatus');
   serviceStatus.innerHTML = '';

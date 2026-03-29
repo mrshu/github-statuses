@@ -89,8 +89,36 @@
             <span class="legend-item"><span class="dot minor"></span>Minor</span>
             <span class="legend-item"><span class="dot major"></span>Major</span>
           </div>
-          <div class="hero-attribution">
-            by <a href="https://mareksuppa.com" target="_blank" rel="noreferrer">Marek Šuppa</a> · <a href="https://x.com/mareksuppa" target="_blank" rel="noreferrer">@mareksuppa</a>
+          <div class="hero-footer">
+            <div class="hero-attribution">
+              by <a href="https://mareksuppa.com" target="_blank" rel="noreferrer">Marek Šuppa</a> · <a href="https://x.com/mareksuppa" target="_blank" rel="noreferrer">@mareksuppa</a>
+            </div>
+            <div class="hero-share">
+              <button
+                class="hero-share-button"
+                type="button"
+                id="copyHeroImage"
+                data-state="ready"
+                aria-live="polite"
+              >
+                <svg class="hero-share-icon" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    id="copyHeroImageIcon"
+                    d="M5 3.75C5 2.78 5.78 2 6.75 2h4.5C12.22 2 13 2.78 13 3.75v5.5c0 .97-.78 1.75-1.75 1.75h-4.5C5.78 11 5 10.22 5 9.25v-5.5Zm-2 1A1.75 1.75 0 0 0 1.25 6.5v4.75C1.25 12.22 2.03 13 3 13h4.75c.97 0 1.75-.78 1.75-1.75V11h-2.75A1.75 1.75 0 0 1 5 9.25V6.5h-.25C3.78 6.5 3 5.72 3 4.75Z"
+                  ></path>
+                </svg>
+                <span class="hero-share-label" id="copyHeroImageLabel">Copy card</span>
+              </button>
+              <span class="hero-share-tooltip" aria-hidden="true">Copy a clean PNG to clipboard</span>
+              <a
+                class="hero-share-download"
+                id="downloadHeroImage"
+                href="#"
+                download="github-status-90-day-uptime.png"
+                hidden
+            ></a>
+            </div>
+            <div class="hero-share-feedback" id="heroShareStatus" role="status" aria-live="polite"></div>
           </div>
         </div>
       </section>
