@@ -1819,6 +1819,10 @@ details ul {
   .status-meta .divider {
     display: none;
   }
+
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
