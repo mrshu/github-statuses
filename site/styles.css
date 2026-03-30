@@ -1822,6 +1822,42 @@ details ul {
 }
 
 @media (max-width: 560px) {
+  .site-header {
+    padding: 32px 12px 20px;
+    gap: 16px;
+  }
+
+  main {
+    padding: 0 12px 40px;
+    gap: 20px;
+  }
+
+  .hero-panel,
+  .panel {
+    padding: 18px 12px;
+  }
+
+  .hero-panel-header,
+  .panel-header {
+    gap: 12px;
+  }
+
+  .hero-panel-header {
+    margin-bottom: 12px;
+  }
+
+  .legend {
+    margin-top: 12px;
+  }
+
+  .about-prompt a {
+    padding: 10px 14px;
+  }
+
+  .site-footer {
+    padding: 20px 12px 28px;
+  }
+
   .uptime-bars {
     grid-template-columns: repeat(45, minmax(0, 1fr));
     column-gap: 2px;
