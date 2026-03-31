@@ -15,6 +15,9 @@ It reconstructs timelines from the Atom feed history and turns them into structu
   an unofficial historical source.
 - ["Github might be in trouble"](https://www.youtube.com/watch?v=f3u57jkwBFE)
   (The PrimeTime on YouTube, 2026-03-09), which later covered this project in a YouTube video.
+- ["AI Has Broken the Internet"](https://www.youtube.com/watch?v=44JBZwAsfJI&t=78s)
+  (ForrestKnight on YouTube, 2026-03-30), which referenced this project's 90-day uptime and
+  incident counts while discussing GitHub's recent outage pattern.
 
 ## Prerequisites
 
