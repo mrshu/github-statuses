@@ -694,7 +694,9 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29114079,2026-03-19T16:25:00Z,2026-03-20T00:05:00Z,460,updates,Git operations for users in the west coast are experiencing an increase in latency,minor
 29123267,2026-03-19T01:05:00Z,2026-03-19T02:52:00Z,107,postmortem,Disruption with Copilot Coding Agent Sessions,major
 29179438,2026-03-22T09:05:00Z,2026-03-22T10:02:00Z,57,postmortem,Disruption with some GitHub services,minor
-29235644,2026-03-24T16:59:00Z,2026-03-24T19:51:00Z,172,updates,Teams Github Notifications App is down,major
+29235644,2026-03-24T15:57:00Z,2026-03-24T19:51:00Z,234,postmortem,Teams Github Notifications App is down,major
 29239164,2026-03-24T20:18:00Z,2026-03-24T20:56:00Z,38,updates,Disruption with some GitHub services,minor
 29310827,2026-03-27T02:30:00Z,2026-03-27T04:56:00Z,146,postmortem,Incident with Copilot,none
 29373948,2026-03-30T13:02:00Z,2026-03-30T13:25:00Z,23,updates,Elevated delays in Actions workflow runs and Pull Request status updates,minor
+29400668,2026-03-31T13:47:00Z,2026-03-31T15:10:00Z,83,updates,Issues with metered billing report generation,minor
+29402257,2026-03-31T15:05:00Z,2026-03-31T21:23:00Z,378,updates,Incident with Pull Requests: High percentage of 500s,minor
