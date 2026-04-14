@@ -72,6 +72,83 @@
   --source-tab-notch: rgba(255, 255, 255, 0.12);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #111827;
+    --bg-top: #0d1117;
+    --bg-bottom: #111827;
+    --bg-2: #0d1117;
+    --ink: #f0f6fc;
+    --muted: #9da7b3;
+    --card: #161b22;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --operational: #3fb950;
+    --minor: #d29922;
+    --major: #ff7b72;
+    --maintenance: #58a6ff;
+    --shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.72);
+    --card-border-soft: #21262d;
+    --feature-border: rgba(255, 123, 114, 0.28);
+    --feature-bg:
+      linear-gradient(135deg, rgba(255, 123, 114, 0.14), rgba(22, 27, 34, 0.98)),
+      #161b22;
+    --feature-shadow: 0 20px 44px -30px rgba(0, 0, 0, 0.72);
+    --feature-shadow-hover: 0 24px 52px -30px rgba(0, 0, 0, 0.82);
+    --feature-outlet: rgba(240, 246, 252, 0.88);
+    --date-chip-border: rgba(99, 110, 123, 0.9);
+    --date-chip-bg: rgba(240, 246, 252, 0.06);
+    --feature-dot-idle: rgba(157, 167, 179, 0.4);
+    --button-hover-bg: rgba(240, 246, 252, 0.08);
+    --button-loading-bg: rgba(240, 246, 252, 0.06);
+    --button-success-bg: rgba(63, 185, 80, 0.14);
+    --button-warning-bg: rgba(210, 153, 34, 0.16);
+    --button-error-bg: rgba(255, 123, 114, 0.14);
+    --button-success-ink: #7ee787;
+    --button-warning-ink: #e3b341;
+    --button-error-ink: #ffa198;
+    --status-pill-ok-bg: rgba(63, 185, 80, 0.14);
+    --status-pill-none-bg: rgba(63, 185, 80, 0.14);
+    --status-pill-ring: rgba(63, 185, 80, 0.22);
+    --bars-empty: #30363d;
+    --tooltip-bg: #1c2128;
+    --tooltip-shadow: 0 20px 44px -28px rgba(0, 0, 0, 0.82);
+    --tooltip-summary-bg: rgba(240, 246, 252, 0.06);
+    --prompt-bg: #161b22;
+    --prompt-shadow: 0 18px 34px -24px rgba(0, 0, 0, 0.64);
+    --prompt-shadow-hover: 0 20px 38px -22px rgba(0, 0, 0, 0.74);
+    --cta-option-bg: linear-gradient(180deg, #161b22 0%, #11161d 100%);
+    --cta-preview-border: rgba(240, 246, 252, 0.12);
+    --cta-preview-bg:
+      radial-gradient(circle at top left, rgba(88, 166, 255, 0.12), transparent 38%),
+      linear-gradient(180deg, #0f141b 0%, #161b22 100%);
+    --about-panel-bg: linear-gradient(135deg, #161b22 0%, #11161d 100%);
+    --about-nerd-bg: rgba(88, 166, 255, 0.08);
+    --about-nerd-border: rgba(88, 166, 255, 0.18);
+    --month-card-bg: #161b22;
+    --month-future-bg: #262c36;
+    --empty-bg: #11161d;
+    --incident-card-bg: #161b22;
+    --timeline-chip-bg: #21262d;
+    --component-chip-bg: #11161d;
+    --icon-button-bg: #161b22;
+    --badge-minor-ink: #e3b341;
+    --badge-major-ink: #ffa198;
+    --badge-maintenance-ink: #79c0ff;
+    --badge-operational-ink: #7ee787;
+    --source-tab-bg: linear-gradient(180deg, #161b22 0%, #24292f 100%);
+    --source-tab-border: rgba(255, 123, 114, 0.22);
+    --source-tab-shadow: 0 20px 34px -22px rgba(0, 0, 0, 0.88);
+    --source-tab-notch: rgba(255, 123, 114, 0.24);
+  }
+
+  .grain {
+    opacity: 0.45;
+    mix-blend-mode: screen;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
