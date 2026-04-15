@@ -711,4 +711,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29564143,2026-04-10T13:07:00Z,2026-04-10T13:28:00Z,21,updates,Problems with third-party Claude and Codex Agent sessions not being listed in the agents tab dashboard,minor
 29603482,2026-04-13T16:41:00Z,2026-04-13T17:40:00Z,59,updates,Disruption with some GitHub services,minor
 29605402,2026-04-13T19:56:00Z,2026-04-13T20:35:00Z,39,updates,Incident with Pages,major
-29608623,2026-04-14T01:57:00Z,2026-04-14T04:40:00Z,163,updates,Disruption with some GitHub services,minor
+29608623,2026-04-14T01:57:00Z,2026-04-14T06:08:00Z,251,updates,Disruption with some GitHub services,minor
