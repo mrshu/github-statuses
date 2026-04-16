@@ -705,7 +705,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29427760,2026-04-01T15:02:00Z,2026-04-01T23:45:00Z,523,updates,Disruption with GitHub's code search,major
 29451471,2026-04-02T16:18:00Z,2026-04-02T16:30:00Z,12,updates,Copilot Coding Agent failing to start some jobs,minor
 29453016,2026-04-02T17:49:00Z,2026-04-02T21:48:00Z,239,updates,Disruption with some GitHub services,minor
-29544717,2026-04-09T04:42:00Z,2026-04-09T04:57:00Z,15,updates,Disruption with GitHub notifications,minor
+29544717,2026-04-09T03:22:00Z,2026-04-09T04:49:00Z,87,postmortem,Disruption with GitHub notifications,minor
 29547216,2026-04-09T09:50:00Z,2026-04-09T10:15:00Z,25,updates,Disruption with some GitHub services,major
 29551263,2026-04-09T16:20:00Z,2026-04-09T20:36:00Z,256,updates,Disruption with some GitHub services,major
 29564143,2026-04-10T13:07:00Z,2026-04-10T13:28:00Z,21,updates,Problems with third-party Claude and Codex Agent sessions not being listed in the agents tab dashboard,minor
