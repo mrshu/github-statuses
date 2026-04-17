@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,major
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -706,9 +706,10 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29451471,2026-04-02T16:18:00Z,2026-04-02T16:30:00Z,12,updates,Copilot Coding Agent failing to start some jobs,minor
 29453016,2026-04-02T17:49:00Z,2026-04-02T21:48:00Z,239,updates,Disruption with some GitHub services,minor
 29544717,2026-04-09T03:22:00Z,2026-04-09T04:49:00Z,87,postmortem,Disruption with GitHub notifications,minor
-29547216,2026-04-09T09:50:00Z,2026-04-09T10:15:00Z,25,updates,Disruption with some GitHub services,major
-29551263,2026-04-09T16:20:00Z,2026-04-09T20:36:00Z,256,updates,Disruption with some GitHub services,major
+29547216,2026-04-09T09:05:00Z,2026-04-09T19:05:00Z,600,postmortem,Disruption with some GitHub services,major
+29551263,2026-04-09T16:05:00Z,2026-04-09T20:36:00Z,271,postmortem,Disruption with some GitHub services,major
 29564143,2026-04-10T13:07:00Z,2026-04-10T13:28:00Z,21,updates,Problems with third-party Claude and Codex Agent sessions not being listed in the agents tab dashboard,minor
-29603482,2026-04-13T16:41:00Z,2026-04-13T17:40:00Z,59,updates,Disruption with some GitHub services,minor
+29603482,2026-04-13T14:41:00Z,2026-04-13T17:29:00Z,168,postmortem,Disruption with some GitHub services,minor
 29605402,2026-04-13T19:56:00Z,2026-04-13T20:35:00Z,39,updates,Incident with Pages,major
 29608623,2026-04-14T01:57:00Z,2026-04-14T06:08:00Z,251,updates,Disruption with some GitHub services,minor
+29654075,2026-04-16T15:06:00Z,2026-04-16T18:28:00Z,202,updates,Incident with Codespaces,major
