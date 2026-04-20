@@ -12,10 +12,8 @@
   height: 690px;
   padding: 18px 12px;
   border-radius: 24px;
-  border: 1px solid rgba(36, 41, 47, 0.08);
-  background:
-    radial-gradient(circle at top left, rgba(9, 105, 218, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 248, 250, 0.98));
+  border: 1px solid var(--picker-preview-border);
+  background: var(--picker-preview-bg);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -27,8 +25,8 @@
   height: 770px;
   border: 0;
   border-radius: 30px;
-  background: #ffffff;
-  box-shadow: 0 22px 40px -28px rgba(17, 18, 26, 0.38);
+  background: var(--card);
+  box-shadow: var(--shadow);
   transform: scale(0.89);
   transform-origin: top center;
   pointer-events: none;
