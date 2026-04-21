@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,major
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -714,3 +714,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29608623,2026-04-14T01:57:00Z,2026-04-14T06:08:00Z,251,updates,Disruption with some GitHub services,minor
 29654075,2026-04-16T15:06:00Z,2026-04-16T18:28:00Z,202,updates,Incident with Codespaces,major
 29672768,2026-04-17T14:56:00Z,2026-04-17T15:18:00Z,22,updates,Disruption with some GitHub services,minor
+29727887,2026-04-20T13:28:00Z,2026-04-21T05:04:00Z,936,updates,Partial degradation for code scanning default setup and for code quality,major
