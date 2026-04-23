@@ -716,3 +716,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29672768,2026-04-17T14:46:00Z,2026-04-17T15:12:00Z,26,postmortem,Disruption with some GitHub services,minor
 29727887,2026-04-20T13:28:00Z,2026-04-21T05:04:00Z,936,updates,Partial degradation for code scanning default setup and for code quality,major
 29746013,2026-04-21T15:03:00Z,2026-04-22T01:24:00Z,621,updates,Disruption with projects service,minor
+29763808,2026-04-22T15:35:00Z,2026-04-22T19:18:00Z,223,updates,Disruption with Copilot chat and Copilot Coding Agent,critical
+29767293,2026-04-22T19:53:00Z,2026-04-22T22:43:00Z,170,updates,Disruption with some GitHub services,minor
