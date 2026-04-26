@@ -721,5 +721,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29780522,2026-04-23T14:40:00Z,2026-04-23T15:18:00Z,38,updates,Investigating errors on GitHub,minor
 29782041,2026-04-23T16:12:00Z,2026-04-23T17:30:00Z,78,updates,Incident with multiple GitHub services,critical
 29785006,2026-04-23T19:28:00Z,2026-04-23T19:42:00Z,14,updates,Disruption with users unable to start Claude and Codex agent task from the web,minor
-29785409,2026-04-23T19:50:00Z,2026-04-23T21:43:00Z,113,updates,Incident with Pull Requests,minor
+29785409,2026-04-23T16:05:00Z,2026-04-23T20:43:00Z,278,postmortem,Incident with Pull Requests,minor
 29800669,2026-04-24T19:02:00Z,2026-04-25T00:36:00Z,334,updates,Delays with Actions Jobs for Larger Runners using VNet Injection in the East US region,minor
