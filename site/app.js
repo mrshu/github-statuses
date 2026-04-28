@@ -678,6 +678,67 @@ const addMonthsUTC = (date, delta) =>
 const daysInMonthUTC = (date) =>
   new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
 
+const renderAllTimeUptime = (windowEntries, rangeEnd) => {
+  if (!window.UptimeHistoryChart || typeof window.UptimeHistoryChart.render !== 'function') {
+    console.warn('UptimeHistoryChart module not loaded; skipping all-time render.');
+    return;
+  }
+  window.UptimeHistoryChart.render(windowEntries, rangeEnd);
+};
+
+const setupUptimeViewToggle = () => {
+  const panel = document.querySelector('.hero-panel');
+  const toggle = document.getElementById('uptimeViewToggle');
+  const buttons = toggle ? Array.from(toggle.querySelectorAll('.view-toggle-btn')) : [];
+  const views = {
+    '90d': document.getElementById('uptimeView90d'),
+    all: document.getElementById('uptimeViewAll'),
+  };
+  const title = document.getElementById('uptimeViewTitle');
+  const titleByView = {
+    '90d': 'Last 90 days uptime',
+    all: 'All-time uptime',
+  };
+  if (!panel || !toggle || buttons.length === 0 || !views['90d'] || !views.all) {
+    return;
+  }
+
+  const setView = (view) => {
+    if (!views[view]) return;
+    panel.dataset.uptimeView = view;
+    if (title && titleByView[view]) {
+      title.textContent = titleByView[view];
+    }
+    Object.entries(views).forEach(([key, node]) => {
+      const active = key === view;
+      node.hidden = !active;
+    });
+    buttons.forEach((btn) => {
+      const active = btn.dataset.view === view;
+      btn.setAttribute('aria-selected', String(active));
+      btn.tabIndex = active ? 0 : -1;
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => setView(btn.dataset.view));
+    btn.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const currentIndex = buttons.findIndex(
+        (b) => b.getAttribute('aria-selected') === 'true',
+      );
+      const nextIndex = (currentIndex + direction + buttons.length) % buttons.length;
+      const nextBtn = buttons[nextIndex];
+      setView(nextBtn.dataset.view);
+      nextBtn.focus();
+    });
+  });
+
+  setView('90d');
+};
+
 const render = async () => {
   const [incidentsText, windowsText] = await Promise.all([
     fetch(INCIDENTS_URL).then((res) => res.text()),
@@ -763,6 +824,8 @@ const render = async () => {
 
   const uptimePercent = document.getElementById('uptimePercent');
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
+
+  renderAllTimeUptime(windowEntries, rangeEnd);
 
   const uptimeBars = document.getElementById('uptimeBars');
   const uptimeTooltip = document.getElementById('uptimeTooltip');
@@ -1307,6 +1370,8 @@ const renderIncidentCard = (incident, compact = false) => {
 
   return card;
 };
+
+setupUptimeViewToggle();
 
 render().catch((error) => {
   console.error(error);
