@@ -154,15 +154,19 @@
         <div class="panel-header">
           <h3>Incident timeline</h3>
           <div class="panel-actions">
-            <button class="ghost-button" type="button" id="togglePast" data-toggle-timeline>Show more</button>
+            <div class="pagination" id="paginationTop">
+              <button class="icon-button pagination-clear" type="button" data-range-clear aria-label="Clear date filter" title="Clear filter">✕</button>
+              <input class="pagination-date" type="date" data-range-from aria-label="From date" title="From" />
+              <span class="pagination-range-sep">–</span>
+              <input class="pagination-date" type="date" data-range-to aria-label="To date" title="To" />
+              <span class="pagination-separator" aria-hidden="true"></span>
+              <button class="icon-button" type="button" data-page-prev aria-label="Previous page">‹</button>
+              <span class="pagination-label" data-page-label>Page 1 of 1</span>
+              <button class="icon-button" type="button" data-page-next aria-label="Next page">›</button>
+            </div>
           </div>
         </div>
         <div id="incidentTimeline"></div>
-        <div class="timeline-footer">
-          <button class="ghost-button" type="button" id="togglePastBottom" data-toggle-timeline>
-            Show more
-          </button>
-        </div>
       </section>
 
       <section class="panel panel-raise about-panel" id="about" data-animate>
