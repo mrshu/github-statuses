@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,critical
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -725,3 +725,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29800669,2026-04-24T19:02:00Z,2026-04-25T00:36:00Z,334,updates,Delays with Actions Jobs for Larger Runners using VNet Injection in the East US region,minor
 29838967,2026-04-27T16:48:00Z,2026-04-27T19:02:00Z,134,updates,Disruption with some GitHub services,minor
 29838715,2026-04-27T16:31:00Z,2026-04-27T22:46:00Z,375,updates,GitHub search is degraded,critical
+29855010,2026-04-28T13:59:00Z,2026-04-28T17:09:00Z,190,updates,Disruption with some GitHub services,minor
+29855242,2026-04-28T14:17:00Z,2026-04-29T00:40:00Z,623,updates,Incomplete pull request results in repositories,minor
