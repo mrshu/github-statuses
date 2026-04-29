@@ -185,10 +185,20 @@
 body {
   margin: 0;
   font-family: var(--mono);
-  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 55%, var(--bg-bottom) 100%);
+  background: var(--bg);
   color: var(--ink);
   min-height: 100vh;
   position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 55%, var(--bg-bottom) 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 a {
