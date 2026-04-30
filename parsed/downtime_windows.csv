@@ -726,4 +726,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29838967,2026-04-27T16:48:00Z,2026-04-27T19:02:00Z,134,updates,Disruption with some GitHub services,minor
 29838715,2026-04-27T16:31:00Z,2026-04-27T22:46:00Z,375,updates,GitHub search is degraded,critical
 29855010,2026-04-28T13:59:00Z,2026-04-28T17:09:00Z,190,updates,Disruption with some GitHub services,minor
-29855242,2026-04-28T14:17:00Z,2026-04-29T00:40:00Z,623,updates,Incomplete pull request results in repositories,minor
+29855242,2026-04-28T14:17:00Z,2026-04-30T03:49:00Z,2252,updates,Incomplete pull request results in repositories,minor
