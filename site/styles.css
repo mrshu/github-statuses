@@ -162,6 +162,7 @@
     --timeline-chip-bg: #21262d;
     --component-chip-bg: #11161d;
     --icon-button-bg: #161b22;
+    --date-picker-filter: invert(0.7) brightness(1.5);
     --badge-minor-ink: #e3b341;
     --badge-major-ink: #ffa198;
     --badge-maintenance-ink: #79c0ff;
@@ -1420,6 +1421,57 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 18px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-label {
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 100px;
+  text-align: center;
+  user-select: none;
+}
+
+.pagination-date {
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--icon-button-bg);
+  color: var(--ink);
+  padding: 0 10px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.pagination-date::-webkit-calendar-picker-indicator {
+  filter: var(--date-picker-filter, none);
+  cursor: pointer;
+}
+
+.pagination-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.pagination-range-sep {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.pagination-clear {
+  font-size: 0.75rem;
+}
+
+.pagination-clear[hidden] {
+  display: none;
 }
 
 .about-panel {

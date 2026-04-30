@@ -1193,12 +1193,53 @@ const render = async () => {
   });
 
   const entries = Array.from(grouped.entries());
-  let showAll = false;
-  const toggleButtons = Array.from(document.querySelectorAll('[data-toggle-timeline]'));
+  const ITEMS_PER_PAGE = 4;
+  let currentPage = 0;
+  let filteredEntries = entries;
+
+  const prevButtons = Array.from(document.querySelectorAll('[data-page-prev]'));
+  const nextButtons = Array.from(document.querySelectorAll('[data-page-next]'));
+  const pageLabels = Array.from(document.querySelectorAll('[data-page-label]'));
+  const rangeFromInputs = Array.from(document.querySelectorAll('[data-range-from]'));
+  const rangeToInputs = Array.from(document.querySelectorAll('[data-range-to]'));
+  const rangeClearButtons = Array.from(document.querySelectorAll('[data-range-clear]'));
+
+  // Build a lookup from each entry index to its raw Date
+  const entryDates = entries.map(([, list]) => incidentStartDate(list[0]));
+
+  // Set min/max on date inputs from incident range
+  const toISO = (d) => d.toISOString().slice(0, 10);
+  if (entryDates.length) {
+    const newest = entryDates[0];
+    const oldest = entryDates[entryDates.length - 1];
+    [...rangeFromInputs, ...rangeToInputs].forEach((input) => {
+      input.min = toISO(oldest);
+      input.max = toISO(newest);
+    });
+  }
+
+  const getTotalPages = () => Math.max(1, Math.ceil(filteredEntries.length / ITEMS_PER_PAGE));
+
+  const updatePaginationControls = () => {
+    const totalPages = getTotalPages();
+    prevButtons.forEach((btn) => (btn.disabled = currentPage <= 0));
+    nextButtons.forEach((btn) => (btn.disabled = currentPage >= totalPages - 1));
+    pageLabels.forEach((label) => (label.textContent = `Page ${currentPage + 1} of ${totalPages}`));
+    rangeClearButtons.forEach((btn) => (btn.hidden = filteredEntries === entries));
+  };
 
   const renderTimeline = () => {
     timeline.innerHTML = '';
-    const slice = showAll ? entries : entries.slice(0, 8);
+    const start = currentPage * ITEMS_PER_PAGE;
+    const slice = filteredEntries.slice(start, start + ITEMS_PER_PAGE);
+    if (slice.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'muted';
+      empty.textContent = 'No incidents in this date range.';
+      empty.style.textAlign = 'center';
+      empty.style.padding = '24px 0';
+      timeline.appendChild(empty);
+    }
     slice.forEach(([date, list]) => {
       const group = document.createElement('div');
       group.className = 'incident-group';
@@ -1213,24 +1254,43 @@ const render = async () => {
 
       timeline.appendChild(group);
     });
+    updatePaginationControls();
   };
+
+  const goToPage = (page) => {
+    const totalPages = getTotalPages();
+    currentPage = Math.max(0, Math.min(totalPages - 1, page));
+    renderTimeline();
+  };
+
+  const applyDateFilter = () => {
+    const fromVal = rangeFromInputs[0]?.value;
+    const toVal = rangeToInputs[0]?.value;
+    if (!fromVal && !toVal) {
+      filteredEntries = entries;
+    } else {
+      const from = fromVal ? new Date(fromVal + 'T00:00:00Z') : new Date(0);
+      const to = toVal ? new Date(toVal + 'T23:59:59Z') : new Date();
+      filteredEntries = entries.filter(([, list]) => {
+        const d = incidentStartDate(list[0]);
+        return d >= from && d <= to;
+      });
+    }
+    currentPage = 0;
+    renderTimeline();
+  };
+
+  prevButtons.forEach((btn) => btn.addEventListener('click', () => goToPage(currentPage - 1)));
+  nextButtons.forEach((btn) => btn.addEventListener('click', () => goToPage(currentPage + 1)));
+  rangeFromInputs.forEach((input) => input.addEventListener('change', applyDateFilter));
+  rangeToInputs.forEach((input) => input.addEventListener('change', applyDateFilter));
+  rangeClearButtons.forEach((btn) => btn.addEventListener('click', () => {
+    rangeFromInputs.forEach((i) => (i.value = ''));
+    rangeToInputs.forEach((i) => (i.value = ''));
+    applyDateFilter();
+  }));
 
   renderTimeline();
-  const updateToggleButtons = () => {
-    toggleButtons.forEach((button) => {
-      button.textContent = showAll ? 'Show fewer' : 'Show more';
-    });
-  };
-
-  updateToggleButtons();
-
-  toggleButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-    showAll = !showAll;
-      updateToggleButtons();
-      renderTimeline();
-    });
-  });
 };
 
 const renderIncidentCard = (incident, compact = false) => {
