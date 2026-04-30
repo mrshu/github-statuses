@@ -21,6 +21,9 @@ It reconstructs timelines from the Atom feed history and turns them into structu
 - ["The painful death of Github"](https://www.youtube.com/watch?v=R7ex-Gt8dtw&t=279s)
   (Theo - t3.gg on YouTube, 2026-04-30), which highlighted this project as an alternative
   GitHub status page and discussed its platform-wide uptime tracking.
+- ["GitHub is having some major issues right now..."](https://www.youtube.com/watch?v=d53Zk28esmU&t=117s)
+  (Fireship on YouTube, 2026-04-30), which referenced this project's outage data while
+  discussing recent GitHub reliability issues.
 
 ## Prerequisites
 
