@@ -65,32 +65,94 @@
 
     <main>
       <section class="hero panel-raise" data-animate>
-        <div class="hero-panel hero-panel-full">
+        <div class="hero-panel hero-panel-full" data-uptime-view="90d">
           <div class="hero-panel-header">
-            <h3>Last 90 days uptime</h3>
+            <h3 id="uptimeViewTitle" class="hero-panel-title">Last 90 days uptime</h3>
+            <div
+              class="view-toggle"
+              role="tablist"
+              aria-label="Uptime view"
+              id="uptimeViewToggle"
+            >
+              <button
+                class="view-toggle-btn"
+                type="button"
+                role="tab"
+                data-view="90d"
+                aria-selected="true"
+                aria-controls="uptimeView90d"
+                id="uptimeViewBtn90d"
+              >
+                90 days
+              </button>
+              <button
+                class="view-toggle-btn"
+                type="button"
+                role="tab"
+                data-view="all"
+                aria-selected="false"
+                aria-controls="uptimeViewAll"
+                id="uptimeViewBtnAll"
+                tabindex="-1"
+              >
+                All time
+              </button>
+            </div>
             <div class="status-meta" id="statusMeta">
               <span class="status-meta-item" id="lastUpdated">Last updated —</span>
               <span class="divider" aria-hidden="true"></span>
               <span class="status-meta-item" id="incidentCount">0 incidents in last 90 days</span>
             </div>
           </div>
-          <div class="uptime-row">
-            <div class="uptime-label">
-              <span>GitHub Platform</span>
-              <span class="uptime-percent" id="uptimePercent">—</span>
+          <div
+            class="uptime-view"
+            id="uptimeView90d"
+            role="tabpanel"
+            aria-labelledby="uptimeViewBtn90d"
+          >
+            <div class="uptime-row">
+              <div class="uptime-label">
+                <span>GitHub Platform</span>
+                <span class="uptime-percent" id="uptimePercent">—</span>
+              </div>
+              <div class="uptime-bars" id="uptimeBars"></div>
+              <div class="uptime-tooltip" id="uptimeTooltip" aria-hidden="true"></div>
+              <div class="uptime-axis">
+                <span>90 days ago</span>
+                <span>Today</span>
+              </div>
             </div>
-            <div class="uptime-bars" id="uptimeBars"></div>
-            <div class="uptime-tooltip" id="uptimeTooltip" aria-hidden="true"></div>
-            <div class="uptime-axis">
-              <span>90 days ago</span>
-              <span>Today</span>
+            <div class="legend" id="legend">
+              <span class="legend-item"><span class="dot operational"></span>Operational</span>
+              <span class="legend-item"><span class="dot maintenance"></span>Maintenance</span>
+              <span class="legend-item"><span class="dot minor"></span>Minor</span>
+              <span class="legend-item"><span class="dot major"></span>Major</span>
             </div>
           </div>
-          <div class="legend" id="legend">
-            <span class="legend-item"><span class="dot operational"></span>Operational</span>
-            <span class="legend-item"><span class="dot maintenance"></span>Maintenance</span>
-            <span class="legend-item"><span class="dot minor"></span>Minor</span>
-            <span class="legend-item"><span class="dot major"></span>Major</span>
+          <div
+            class="uptime-view uptime-view-all"
+            id="uptimeViewAll"
+            role="tabpanel"
+            aria-labelledby="uptimeViewBtnAll"
+            hidden
+          >
+            <div class="uptime-row uptime-row-all">
+              <div class="uptime-label">
+                <span>GitHub Platform · all time</span>
+                <span class="uptime-percent" id="uptimePercentAll">—</span>
+              </div>
+              <figure class="uptime-history-figure">
+                <div
+                  class="uptime-history-chart"
+                  id="uptimeHistoryImage"
+                  role="img"
+                  aria-label="GitHub Platform 90-day rolling uptime since project start"
+                ></div>
+                <figcaption class="uptime-history-caption" id="uptimeHistoryCaption">
+                  90-day rolling uptime since the project began on Jun 11, 2022.
+                </figcaption>
+              </figure>
+            </div>
           </div>
           <div class="hero-footer">
             <div class="hero-attribution">
@@ -231,6 +293,7 @@
       </p>
     </footer>
 
+    <script src="uptime-history-chart.js" defer></script>
     <script src="app.js" defer></script>
     <script>
       (() => {
