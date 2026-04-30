@@ -764,6 +764,35 @@ const render = async () => {
   const uptimePercent = document.getElementById('uptimePercent');
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
 
+  const acquisitionDate = new Date('2018-10-26T00:00:00Z'); // https://blogs.microsoft.com/blog/2018/10/26/microsoft-completes-github-acquisition/
+
+  const acquisitionDowntimeIntervals = windowEntries
+    .filter((entry) => {
+      return countsAsDowntime(entry.impact) && entry.end instanceof Date && entry.end > acquisitionDate;
+    })
+    .map((entry) => {
+      const start = entry.start < acquisitionDate ? acquisitionDate : entry.start;
+      return [start, entry.end];
+    });
+
+  const mergedAcquisitionDowntime = mergeIntervals(acquisitionDowntimeIntervals);
+
+  const acquisitionDowntimeMinutes = mergedAcquisitionDowntime.reduce(
+    (total, [start, end]) => total + minutesBetween(start, end),
+    0
+  );
+
+  const acquisitionTotalMinutes = Math.max(1, minutesBetween(acquisitionDate, now));
+  const acquisitionUptime = 1 - acquisitionDowntimeMinutes / acquisitionTotalMinutes;
+
+  const sinceAcquisitionEl = document.getElementById('sinceAcquisitionStat');
+  if (sinceAcquisitionEl) {
+    sinceAcquisitionEl.innerHTML =
+      `${(acquisitionUptime * 100).toFixed(2)}% uptime since ` +
+      `<a href="https://blogs.microsoft.com/blog/2018/10/26/microsoft-completes-github-acquisition/" ` +
+      `target="_blank" rel="noreferrer">Microsoft acquired GitHub</a>`;
+  }
+
   const uptimeBars = document.getElementById('uptimeBars');
   const uptimeTooltip = document.getElementById('uptimeTooltip');
   const heroPanel = document.querySelector('.hero-panel');

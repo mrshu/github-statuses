@@ -893,6 +893,19 @@ main {
   gap: 6px;
 }
 
+.since-acquisition-panel .since-acquisition-uptime {
+  margin: 16px 0 4px;
+  font-size: 1.5rem;
+  font-family: var(--display);
+  font-weight: 700;
+}
+
+.since-acquisition-panel .since-acquisition-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .dot {
   width: 10px;
   height: 10px;
