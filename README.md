@@ -18,6 +18,9 @@ It reconstructs timelines from the Atom feed history and turns them into structu
 - ["AI Has Broken the Internet"](https://www.youtube.com/watch?v=44JBZwAsfJI&t=78s)
   (ForrestKnight on YouTube, 2026-03-30), which referenced this project's 90-day uptime and
   incident counts while discussing GitHub's recent outage pattern.
+- ["The painful death of Github"](https://www.youtube.com/watch?v=R7ex-Gt8dtw&t=279s)
+  (Theo - t3.gg on YouTube, 2026-04-30), which highlighted this project as an alternative
+  GitHub status page and discussed its platform-wide uptime tracking.
 
 ## Prerequisites
 
