@@ -1,6 +1,6 @@
 # github-statuses
 
-A Flat Data attempt at historically documenting GitHub statuses.
+The "Missing GitHub Status Page" -- a Flat Data attempt at historically documenting GitHub statuses.
 
 ## About
 
