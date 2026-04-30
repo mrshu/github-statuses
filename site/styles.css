@@ -1492,10 +1492,16 @@ main {
 
 .history-controls {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   gap: 8px;
   font-weight: 600;
   color: var(--muted);
+}
+
+#historyRange {
+  flex-grow: 1;
+  text-align: center;
 }
 
 .icon-button {
