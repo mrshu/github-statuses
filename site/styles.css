@@ -1486,10 +1486,6 @@ main {
   text-decoration: none;
 }
 
-.history-header {
-  align-items: center;
-}
-
 .history-controls {
   display: flex;
   align-items: center;
@@ -2001,6 +1997,8 @@ details ul {
   .hero-panel-header,
   .panel-header {
     gap: 12px;
+    flex-direction: column;
+    align-items: start;
   }
 
   .hero-panel-header {
