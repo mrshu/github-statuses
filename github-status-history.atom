@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-05-11T02:08:43Z</updated>
+  <updated>2026-05-12T02:48:48Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/30063689</id>
+    <published>2026-05-11T14:33:52Z</published>
+    <updated>2026-05-11T14:33:52Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/81b05nqkhylj"/>
+    <title>Incident with high errors on Git Operations</title>
+    <content type="html">&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;11&lt;/var&gt;, &lt;var data-var='time'&gt;14:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.&lt;/p&gt;&lt;p&gt;&lt;small&gt;May &lt;var data-var='date'&gt;11&lt;/var&gt;, &lt;var data-var='time'&gt;14:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Git Operations&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/29998148</id>
     <published>2026-05-07T06:56:16Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/96r9hyz795sv"/>
     <title>Incident with Pages</title>
     <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;20:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On Sunday April 13th, 2026, between 18:53 UTC and 20:30 UTC, the GitHub Pages service experienced elevated error rates. On average, the error rate was 10.58% and peaked at 12.77% of requests to the service, resulting in approximately 17.5 million failed requests returning HTTP 500 errors. This was due to an automated DNS management tool (octodns) erroneously deleting a DNS record for a Pages backend storage host after its upstream data source intermittently failed to return the record, causing the tool to treat it as stale and remove it.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by re-creating the deleted DNS record. To prevent future incidents, we are implementing availability-zone-tolerant routing in the Pages frontend so that an unresolvable backend host triggers failover to healthy hosts rather than returning errors, adding safeguards to prevent automated deletion of DNS records owned by other systems, and improving logging and alerting for DNS resolution failures in the Pages serving path.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;20:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have mitigated the issue with Pages.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;20:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Monitoring&lt;/strong&gt; - The degradation affecting Pages has been mitigated. We are monitoring to ensure stability.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;19:57&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We are investigating reports of issues with Pages. We will continue to keep users updated on progress towards mitigation.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;19:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Pages&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/29603482</id>
-    <published>2026-04-13T17:40:09Z</published>
-    <updated>2026-04-17T01:48:32Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/1ghdqdbyyjmt"/>
-    <title>Disruption with some GitHub services</title>
-    <content type="html">&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;17:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - On April 13, 2026, between 14:41 UTC and 17:29 UTC, the Copilot service experienced degraded performance. All Copilot users were impacted by increased latency, and approximately 20% experienced request failures when interacting with Copilot Cloud Agent (CCA). On average, request latency increased to approximately 950ms. The GitHub User Dashboard also displayed intermittent errors loading Copilot quota information. CCA and the User Dashboard were impacted for approximately 2 hours and 56 minutes. &lt;br /&gt;&lt;br /&gt;This was due to an infrastructure change that reduced the available compute capacity for a backend service responsible for Copilot rate limiting and quota management. The reduced capacity caused resource exhaustion under normal traffic load, leading to cascading failures in downstream request processing. &lt;br /&gt;&lt;br /&gt;We mitigated the incident by increasing compute resources allocated to the affected service and scaling out the number of service instances to distribute load more effectively. &lt;br /&gt;&lt;br /&gt;We are working to improve proactive capacity monitoring to detect resource degradation before it impacts users, reviewing retry and timeout configurations across dependent services to reduce amplification during degraded states, and evaluating connection management strategies to improve resilience under constrained resources.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;16:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Update&lt;/strong&gt; - We have identified the root cause and are rolling out a fix for Copilot. The services should now be in recovery, with expected full recovery in 5 to 10 minutes.&lt;/p&gt;&lt;p&gt;&lt;small&gt;Apr &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;16:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt;&lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services.&lt;/p&gt;</content>
   </entry>
 </feed>
