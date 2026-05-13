@@ -735,3 +735,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 29989092,2026-05-06T15:25:00Z,2026-05-06T19:04:00Z,219,updates,Incident with Pull Requests,critical
 29998148,2026-05-07T05:02:00Z,2026-05-07T06:56:00Z,114,updates,CCR and CCA failing to start for PR comments,critical
 30063689,2026-05-11T14:25:00Z,2026-05-11T14:33:00Z,8,updates,Incident with high errors on Git Operations,minor
+30081781,2026-05-12T14:38:00Z,2026-05-12T17:43:00Z,185,updates,"Incident with CodeQL, Webhooks, Notifications, and Slack Integration",minor
