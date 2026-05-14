@@ -619,6 +619,12 @@ a:hover {
   font-family: inherit;
 }
 
+.filter-pill-critical {
+  background: rgba(136, 19, 55, 0.12);
+  color: var(--badge-critical-ink);
+  border: 1px solid rgba(136, 19, 55, 0.3);
+}
+
 .filter-pill-major {
   background: rgba(207, 34, 46, 0.12);
   color: var(--badge-major-ink);
