@@ -1193,8 +1193,8 @@ const render = async () => {
       : incidents.filter((i) => activeFilters.has(i.impact || 'none'));
 
   let showAll = false;
-  let sortOrder = 'date-desc';
   const sortSelect = document.getElementById('timelineSort');
+  let sortOrder = sortSelect ? sortSelect.value : 'date-desc';
   const toggleButtons = Array.from(document.querySelectorAll('[data-toggle-timeline]'));
 
   const renderTimeline = () => {
