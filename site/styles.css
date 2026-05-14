@@ -568,6 +568,88 @@ a:hover {
   box-shadow: 0 10px 22px -15px rgba(0, 0, 0, 0.3);
 }
 
+.timeline-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 14px 0 2px;
+  position: relative;
+  margin-top: 4px;
+}
+
+.timeline-filters::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+.filter-pill {
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: opacity 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+
+.filter-pill-major {
+  background: rgba(207, 34, 46, 0.12);
+  color: var(--badge-major-ink);
+  border: 1px solid rgba(207, 34, 46, 0.3);
+}
+
+.filter-pill-minor {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--badge-minor-ink);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+.filter-pill-maintenance {
+  background: rgba(31, 111, 235, 0.12);
+  color: var(--badge-maintenance-ink);
+  border: 1px solid rgba(31, 111, 235, 0.3);
+}
+
+.filter-pill-operational {
+  background: rgba(45, 164, 78, 0.12);
+  color: var(--badge-operational-ink);
+  border: 1px solid rgba(45, 164, 78, 0.3);
+}
+
+.filter-pill[aria-pressed="false"] {
+  opacity: 0.38;
+}
+
+.filter-pill[aria-pressed="true"] {
+  opacity: 1;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.sort-select {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 10px 36px 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
 main {
   position: relative;
   z-index: 1;

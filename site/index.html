@@ -158,8 +158,19 @@
         <div class="panel-header">
           <h3>Incident timeline</h3>
           <div class="panel-actions">
+            <select class="sort-select" id="timelineSort" aria-label="Sort incidents by">
+              <option value="date-desc">Date (newest first)</option>
+              <option value="duration-desc">Duration (longest first)</option>
+              <option value="duration-asc">Duration (shortest first)</option>
+            </select>
             <button class="ghost-button" type="button" id="togglePast" data-toggle-timeline>Show more</button>
           </div>
+        </div>
+        <div class="timeline-filters">
+          <button class="filter-pill filter-pill-major" type="button" data-filter="major" aria-pressed="false">Major</button>
+          <button class="filter-pill filter-pill-minor" type="button" data-filter="minor" aria-pressed="false">Minor</button>
+          <button class="filter-pill filter-pill-maintenance" type="button" data-filter="maintenance" aria-pressed="false">Maintenance</button>
+          <button class="filter-pill filter-pill-operational" type="button" data-filter="none" aria-pressed="false">Operational</button>
         </div>
         <div id="incidentTimeline"></div>
         <div class="timeline-footer">
