@@ -14,6 +14,7 @@ const impactLabel = {
   maintenance: 'Maintenance',
   minor: 'Minor',
   major: 'Major',
+  critical: 'Critical',
 };
 
 const impactSummary = {
@@ -21,6 +22,7 @@ const impactSummary = {
   maintenance: 'Maintenance',
   minor: 'Partial outage',
   major: 'Major outage',
+  critical: 'Critical outage',
 };
 
 const SERVICES = [
