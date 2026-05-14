@@ -130,18 +130,19 @@ const incidentStartDate = (incident) =>
   incident.downtime_start ? new Date(incident.downtime_start) : new Date(incident.published_at);
 
 const summarizeStatuses = (statuses = []) => {
-  const counts = new Map();
-  const ordered = [];
+  if (!Array.isArray(statuses)) return [];
 
-  statuses.filter(Boolean).forEach((status) => {
-    if (!counts.has(status)) ordered.push(status);
-    counts.set(status, (counts.get(status) || 0) + 1);
-  });
+  return statuses.filter(Boolean).reduce((summary, status) => {
+    const previous = summary[summary.length - 1];
 
-  return ordered.map((status) => {
-    const count = counts.get(status);
-    return count > 1 ? `${status} (${count})` : status;
-  });
+    if (previous?.status === status) {
+      previous.count += 1;
+    } else {
+      summary.push({ status, count: 1 });
+    }
+
+    return summary;
+  }, []).map(({ status, count }) => (count > 1 ? `${status} (${count})` : status));
 };
 
 const parseJSONL = (text) =>
