@@ -129,6 +129,22 @@ const formatTime = (date) =>
 const incidentStartDate = (incident) =>
   incident.downtime_start ? new Date(incident.downtime_start) : new Date(incident.published_at);
 
+const summarizeStatuses = (statuses = []) => {
+  if (!Array.isArray(statuses)) return [];
+
+  return statuses.filter(Boolean).reduce((summary, status) => {
+    const previous = summary[summary.length - 1];
+
+    if (previous?.status === status) {
+      previous.count += 1;
+    } else {
+      summary.push({ status, count: 1 });
+    }
+
+    return summary;
+  }, []).map(({ status, count }) => (count > 1 ? `${status} (${count})` : status));
+};
+
 const parseJSONL = (text) =>
   text
     .split(/\r?\n/)
@@ -1265,7 +1281,7 @@ const renderIncidentCard = (incident, compact = false) => {
 
   const timeline = document.createElement('div');
   timeline.className = 'timeline';
-  (incident.status_sequence || []).forEach((status) => {
+  summarizeStatuses(incident.status_sequence).forEach((status) => {
     const pill = document.createElement('span');
     pill.textContent = status;
     timeline.appendChild(pill);
