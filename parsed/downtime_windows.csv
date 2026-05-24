@@ -740,3 +740,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30126676,2026-05-15T02:30:00Z,2026-05-15T02:30:00Z,0,updates,[Retroactive] Incident with GitHub.com,none
 30131939,2026-05-15T08:13:00Z,2026-05-15T08:48:00Z,35,updates,Actions is experiencing degraded availability,critical
 30221212,2026-05-20T16:00:00Z,2026-05-20T17:45:00Z,105,postmortem,Incident with Actions,minor
+30277925,2026-05-23T16:00:00Z,2026-05-23T19:32:00Z,212,updates,Intermittent errors with app installation token authentication,minor
