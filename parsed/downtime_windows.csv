@@ -743,3 +743,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30277925,2026-05-23T16:00:00Z,2026-05-23T19:32:00Z,212,updates,Intermittent errors with app installation token authentication,minor
 30315048,2026-05-26T10:57:00Z,2026-05-26T13:18:00Z,141,updates,Incident with Actions and Pages,critical
 30319790,2026-05-26T15:44:00Z,2026-05-26T16:35:00Z,51,updates,Disruption with some GitHub services,minor
+30333877,2026-05-27T12:10:00Z,2026-05-27T13:16:00Z,66,updates,"Incident with Pull Requests, Issues, Git Operations and API Requests",minor
+30344393,2026-05-28T01:13:00Z,2026-05-28T01:32:00Z,19,updates,Webhook APIs and UI Degraded,minor
