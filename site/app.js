@@ -14,6 +14,7 @@ const impactLabel = {
   maintenance: 'Maintenance',
   minor: 'Minor',
   major: 'Major',
+  critical: 'Critical',
 };
 
 const impactSummary = {
@@ -21,6 +22,7 @@ const impactSummary = {
   maintenance: 'Maintenance',
   minor: 'Partial outage',
   major: 'Major outage',
+  critical: 'Critical outage',
 };
 
 const SERVICES = [
@@ -1201,34 +1203,64 @@ const render = async () => {
   const timeline = document.getElementById('incidentTimeline');
   timeline.innerHTML = '';
 
-  const grouped = new Map();
-  incidents.forEach((incident) => {
-    const date = formatDate(incidentStartDate(incident));
-    if (!grouped.has(date)) grouped.set(date, []);
-    grouped.get(date).push(incident);
-  });
+  const activeFilters = new Set();
 
-  const entries = Array.from(grouped.entries());
+  const getFilteredIncidents = () =>
+    activeFilters.size === 0
+      ? incidents
+      : incidents.filter((i) => activeFilters.has(i.impact || 'none'));
+
   let showAll = false;
+  const sortSelect = document.getElementById('timelineSort');
+  let sortOrder = sortSelect ? sortSelect.value : 'date-desc';
   const toggleButtons = Array.from(document.querySelectorAll('[data-toggle-timeline]'));
 
   const renderTimeline = () => {
     timeline.innerHTML = '';
-    const slice = showAll ? entries : entries.slice(0, 8);
-    slice.forEach(([date, list]) => {
-      const group = document.createElement('div');
-      group.className = 'incident-group';
-
-      const heading = document.createElement('h4');
-      heading.textContent = date;
-      group.appendChild(heading);
-
-      list.forEach((incident) => {
-        group.appendChild(renderIncidentCard(incident));
+    const filtered = getFilteredIncidents();
+    if (sortOrder === 'date-desc') {
+      const grouped = new Map();
+      filtered.forEach((incident) => {
+        const date = formatDate(incidentStartDate(incident));
+        if (!grouped.has(date)) grouped.set(date, []);
+        grouped.get(date).push(incident);
       });
-
-      timeline.appendChild(group);
-    });
+      const entries = Array.from(grouped.entries());
+      const slice = showAll ? entries : entries.slice(0, 8);
+      slice.forEach(([date, list]) => {
+        const group = document.createElement('div');
+        group.className = 'incident-group';
+        const heading = document.createElement('h4');
+        heading.textContent = date;
+        group.appendChild(heading);
+        list.forEach((incident) => {
+          group.appendChild(renderIncidentCard(incident));
+        });
+        timeline.appendChild(group);
+      });
+    } else {
+      const sorted = filtered.slice().sort((a, b) => {
+        const aDur = a.duration_minutes ?? 0;
+        const bDur = b.duration_minutes ?? 0;
+        return sortOrder === 'duration-desc' ? bDur - aDur : aDur - bDur;
+      });
+      const slice = showAll ? sorted : sorted.slice(0, 20);
+      let lastDate = null;
+      let currentGroup = null;
+      slice.forEach((incident) => {
+        const date = formatDate(incidentStartDate(incident));
+        if (date !== lastDate) {
+          currentGroup = document.createElement('div');
+          currentGroup.className = 'incident-group';
+          const heading = document.createElement('h4');
+          heading.textContent = date;
+          currentGroup.appendChild(heading);
+          timeline.appendChild(currentGroup);
+          lastDate = date;
+        }
+        currentGroup.appendChild(renderIncidentCard(incident));
+      });
+    }
   };
 
   renderTimeline();
@@ -1240,9 +1272,31 @@ const render = async () => {
 
   updateToggleButtons();
 
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+      sortOrder = sortSelect.value;
+      renderTimeline();
+    });
+  }
+
+  const filterPills = Array.from(document.querySelectorAll('[data-filter]'));
+  filterPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      const filter = pill.dataset.filter;
+      if (activeFilters.has(filter)) {
+        activeFilters.delete(filter);
+        pill.setAttribute('aria-pressed', 'false');
+      } else {
+        activeFilters.add(filter);
+        pill.setAttribute('aria-pressed', 'true');
+      }
+      renderTimeline();
+    });
+  });
+
   toggleButtons.forEach((button) => {
     button.addEventListener('click', () => {
-    showAll = !showAll;
+      showAll = !showAll;
       updateToggleButtons();
       renderTimeline();
     });
