@@ -749,3 +749,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30362420,2026-05-28T19:07:00Z,2026-05-28T19:16:00Z,9,postmortem,Elevated error rates across multiple services,none
 30359252,2026-05-28T19:01:00Z,2026-05-28T20:41:00Z,100,updates,Disruption with OpenAI Models,critical
 30415018,2026-06-01T15:17:00Z,2026-06-02T00:17:00Z,540,updates,Delays with Code Scanning and Billing,minor
+30432107,2026-06-03T03:13:00Z,2026-06-03T06:46:00Z,213,updates,Disruption with some GitHub services,minor
