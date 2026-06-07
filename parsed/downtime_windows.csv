@@ -745,8 +745,14 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30315048,2026-05-26T10:40:00Z,2026-05-26T12:56:00Z,136,postmortem,Incident with Actions and Pages,critical
 30319790,2026-05-26T15:10:00Z,2026-05-26T16:35:00Z,85,postmortem,Disruption with some GitHub services,minor
 30333877,2026-05-27T12:07:00Z,2026-05-27T13:16:00Z,69,postmortem,"Incident with Pull Requests, Issues, Git Operations and API Requests",minor
-30344393,2026-05-28T01:13:00Z,2026-05-28T01:32:00Z,19,updates,Webhook APIs and UI Degraded,minor
+30344393,2026-05-28T00:54:00Z,2026-05-28T01:19:00Z,25,postmortem,Webhook APIs and UI Degraded,minor
 30362420,2026-05-28T19:07:00Z,2026-05-28T19:16:00Z,9,postmortem,Elevated error rates across multiple services,none
 30359252,2026-05-28T19:01:00Z,2026-05-28T20:41:00Z,100,updates,Disruption with OpenAI Models,critical
 30415018,2026-06-01T15:17:00Z,2026-06-02T00:17:00Z,540,updates,Delays with Code Scanning and Billing,minor
 30432107,2026-06-03T03:13:00Z,2026-06-03T06:46:00Z,213,updates,Disruption with some GitHub services,minor
+30441946,2026-06-03T19:42:00Z,2026-06-04T04:11:00Z,509,updates,Disruption with some GitHub services,minor
+30452936,2026-06-04T18:02:00Z,2026-06-04T19:59:00Z,117,updates,Copilot Code Review Failing,critical
+30453760,2026-06-04T20:20:00Z,2026-06-04T20:32:00Z,12,updates,Live updates degraded,critical
+30463506,2026-06-05T17:20:00Z,2026-06-05T22:21:00Z,301,updates,"Auth issue resulting in API impacts, including some Slack and Teams channel subscriptions",minor
+30472791,2026-06-06T16:53:00Z,2026-06-06T17:07:00Z,14,updates,Disruption with some GitHub services in the EU region,minor
+30472501,2026-06-06T15:31:00Z,2026-06-06T18:49:00Z,198,updates,EU Network Maintenance,minor
