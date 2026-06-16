@@ -758,7 +758,9 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30472791,2026-06-06T16:53:00Z,2026-06-06T17:07:00Z,14,updates,Disruption with some GitHub services in the EU region,minor
 30472501,2026-06-06T15:31:00Z,2026-06-06T18:49:00Z,198,updates,EU Network Maintenance,minor
 30483966,2026-06-08T07:11:00Z,2026-06-08T08:36:00Z,85,updates,Pull Requests and Issues unavailable for signed-out users,critical
-30485297,2026-06-08T09:05:00Z,2026-06-08T10:03:00Z,58,updates,Disruption with Claude Opus 4.7,minor
+30485297,2026-06-08T08:40:00Z,2026-06-08T09:30:00Z,50,postmortem,Disruption with Claude Opus 4.7,minor
 30503883,2026-06-08T15:00:00Z,2026-06-08T15:00:00Z,0,updates,"Degraded availability for GitHub.com, GraphQL API, and Webhooks UI/API",none
 30518049,2026-06-10T15:20:00Z,2026-06-10T16:39:00Z,79,updates,Authentication issues related to API requests,critical
 30534817,2026-06-11T19:42:00Z,2026-06-11T22:19:00Z,157,updates,Incident with Webhooks,minor
+30575175,2026-06-15T15:37:00Z,2026-06-15T17:37:00Z,120,updates,Increased latency with webhooks,minor
+30576567,2026-06-15T18:32:00Z,2026-06-15T19:10:00Z,38,updates,Multiple services have elevated errors and endpoint failures when checking feature flags,minor
