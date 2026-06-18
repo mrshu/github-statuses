@@ -43,7 +43,7 @@
     "https://www.githubstatus.com/incidents/jbhcrj5xtggx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:39.517921Z"
+      "fetched_at": "2026-06-18T08:52:50.058943Z"
     },
     "https://www.githubstatus.com/incidents/qd96yfgvmcf9": {
       "impact": "major",
@@ -78,17 +78,17 @@
     "https://www.githubstatus.com/incidents/7p05r5610bqd": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:39.983322Z"
+      "fetched_at": "2026-06-18T08:52:50.606788Z"
     },
     "https://www.githubstatus.com/incidents/r6j3fnl9j58q": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:40.518570Z"
+      "fetched_at": "2026-06-18T08:52:51.228847Z"
     },
     "https://www.githubstatus.com/incidents/wg7n9ns64dsd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:41.073194Z"
+      "fetched_at": "2026-06-18T08:52:51.748270Z"
     },
     "https://www.githubstatus.com/incidents/nm83zrdky73y": {
       "impact": "major",
@@ -101,12 +101,12 @@
     "https://www.githubstatus.com/incidents/m8ntcjv1w4pr": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:41.493136Z"
+      "fetched_at": "2026-06-18T08:52:52.344461Z"
     },
     "https://www.githubstatus.com/incidents/4s0n40wj3l02": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:42.143851Z"
+      "fetched_at": "2026-06-18T08:52:52.943548Z"
     },
     "https://www.githubstatus.com/incidents/yhn3m0yqdxmc": {
       "impact": "minor",
@@ -125,7 +125,7 @@
     "https://www.githubstatus.com/incidents/x07y6vhlvqg2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:42.569968Z"
+      "fetched_at": "2026-06-18T08:52:53.537389Z"
     },
     "https://www.githubstatus.com/incidents/zxtwqgc613rl": {
       "impact": "minor",
@@ -158,7 +158,7 @@
     "https://www.githubstatus.com/incidents/135x076mn3tf": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:43.006372Z"
+      "fetched_at": "2026-06-18T08:52:54.082072Z"
     },
     "https://www.githubstatus.com/incidents/9qsgrx7yc13z": {
       "impact": "minor",
@@ -184,7 +184,7 @@
     "https://www.githubstatus.com/incidents/flt2rxl1dg1t": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:43.506335Z"
+      "fetched_at": "2026-06-18T08:52:54.591862Z"
     },
     "https://www.githubstatus.com/incidents/2lxm4wb8wy3r": {
       "impact": "minor",
@@ -260,12 +260,12 @@
     "https://www.githubstatus.com/incidents/yz50lpc8d4xq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:43.957741Z"
+      "fetched_at": "2026-06-18T08:52:55.141064Z"
     },
     "https://www.githubstatus.com/incidents/fpkvkrdmh033": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:44.457548Z"
+      "fetched_at": "2026-06-18T08:52:55.696015Z"
     },
     "https://www.githubstatus.com/incidents/tldgc85p3q2d": {
       "impact": "maintenance",
@@ -313,7 +313,7 @@
     "https://www.githubstatus.com/incidents/cyf5mhwh42tt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:44.942505Z"
+      "fetched_at": "2026-06-18T08:52:56.225306Z"
     },
     "https://www.githubstatus.com/incidents/lnvht7g03czs": {
       "impact": "minor",
@@ -325,22 +325,22 @@
     "https://www.githubstatus.com/incidents/vhzbr55p9jtx": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:46.686344Z"
+      "fetched_at": "2026-06-18T08:52:56.858278Z"
     },
     "https://www.githubstatus.com/incidents/7s7z64qbl194": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:47.106061Z"
+      "fetched_at": "2026-06-18T08:52:57.506259Z"
     },
     "https://www.githubstatus.com/incidents/thpkk85p1sjy": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:47.549636Z"
+      "fetched_at": "2026-06-18T08:52:58.200710Z"
     },
     "https://www.githubstatus.com/incidents/mr6vzllykhmw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:47.964857Z"
+      "fetched_at": "2026-06-18T08:52:58.827361Z"
     },
     "https://www.githubstatus.com/incidents/xb49wskhzrm2": {
       "impact": "maintenance",
@@ -352,12 +352,12 @@
     "https://www.githubstatus.com/incidents/d3t3d2jn3b0j": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:48.451640Z"
+      "fetched_at": "2026-06-18T08:52:59.408703Z"
     },
     "https://www.githubstatus.com/incidents/6xn7r7hhrq72": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:48.976177Z"
+      "fetched_at": "2026-06-18T08:53:00.021478Z"
     },
     "https://www.githubstatus.com/incidents/cjq2q04mfydp": {
       "impact": "minor",
@@ -369,7 +369,7 @@
     "https://www.githubstatus.com/incidents/mdfybxmvbp0z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:49.416125Z"
+      "fetched_at": "2026-06-18T08:53:00.581774Z"
     },
     "https://www.githubstatus.com/incidents/mb56b2qv4pyz": {
       "impact": "minor",
@@ -395,17 +395,17 @@
     "https://www.githubstatus.com/incidents/jfvgcls9swln": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:49.888632Z"
+      "fetched_at": "2026-06-18T08:53:01.073311Z"
     },
     "https://www.githubstatus.com/incidents/0r3t35cbghdy": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:50.300375Z"
+      "fetched_at": "2026-06-18T08:53:01.615509Z"
     },
     "https://www.githubstatus.com/incidents/jmfzh1p2yrg2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:50.745684Z"
+      "fetched_at": "2026-06-18T08:53:02.115117Z"
     },
     "https://www.githubstatus.com/incidents/jhs2z7c69yfd": {
       "impact": "minor",
@@ -435,7 +435,7 @@
     "https://www.githubstatus.com/incidents/7hdyxpt7sdzm": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:51.235273Z"
+      "fetched_at": "2026-06-18T08:53:02.662052Z"
     },
     "https://www.githubstatus.com/incidents/7lbnm9mg6549": {
       "impact": "minor",
@@ -450,7 +450,7 @@
     "https://www.githubstatus.com/incidents/jvyb8cp9h0lh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:51.692101Z"
+      "fetched_at": "2026-06-18T08:53:03.254520Z"
     },
     "https://www.githubstatus.com/incidents/7r0jg1plygfm": {
       "impact": "minor",
@@ -485,7 +485,7 @@
     "https://www.githubstatus.com/incidents/gxf0jzns6rn2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:52.118325Z"
+      "fetched_at": "2026-06-18T08:53:03.792522Z"
     },
     "https://www.githubstatus.com/incidents/bs901hhxgw33": {
       "impact": "maintenance",
@@ -497,27 +497,27 @@
     "https://www.githubstatus.com/incidents/kpv13bbn84n5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:52.609086Z"
+      "fetched_at": "2026-06-18T08:53:04.389337Z"
     },
     "https://www.githubstatus.com/incidents/hjylhb7b8zcq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:53.039965Z"
+      "fetched_at": "2026-06-18T08:53:04.951328Z"
     },
     "https://www.githubstatus.com/incidents/pzrqw1n5ynw3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:53.526981Z"
+      "fetched_at": "2026-06-18T08:53:05.509472Z"
     },
     "https://www.githubstatus.com/incidents/3nn1p9h5b76h": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:53.981634Z"
+      "fetched_at": "2026-06-18T08:53:06.194360Z"
     },
     "https://www.githubstatus.com/incidents/71tl7pkqysgw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:54.467596Z"
+      "fetched_at": "2026-06-18T08:53:06.747074Z"
     },
     "https://www.githubstatus.com/incidents/rkkhrht3j3y3": {
       "impact": "minor",
@@ -536,7 +536,7 @@
     "https://www.githubstatus.com/incidents/89gkzpf9fc20": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:54.974936Z"
+      "fetched_at": "2026-06-18T08:53:07.272077Z"
     },
     "https://www.githubstatus.com/incidents/cbdzqm5fw0fm": {
       "impact": "minor",
@@ -567,12 +567,12 @@
     "https://www.githubstatus.com/incidents/tyjjp463pg91": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:55.425309Z"
+      "fetched_at": "2026-06-18T08:53:07.851821Z"
     },
     "https://www.githubstatus.com/incidents/2fk03fzv6zk0": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:55.822928Z"
+      "fetched_at": "2026-06-18T08:53:08.503516Z"
     },
     "https://www.githubstatus.com/incidents/9hzy25gws8vh": {
       "impact": "minor",
@@ -605,7 +605,7 @@
     "https://www.githubstatus.com/incidents/p1rf575rlqml": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:56.276652Z"
+      "fetched_at": "2026-06-18T08:53:09.084641Z"
     },
     "https://www.githubstatus.com/incidents/v7vmwf4pyx6y": {
       "impact": "minor",
@@ -632,7 +632,7 @@
     "https://www.githubstatus.com/incidents/5g8smlrj5ynp": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:56.769339Z"
+      "fetched_at": "2026-06-18T08:53:09.667024Z"
     },
     "https://www.githubstatus.com/incidents/5n51wd9mnkz0": {
       "impact": "minor",
@@ -644,12 +644,12 @@
     "https://www.githubstatus.com/incidents/6nxmxxqcgmh7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:57.256354Z"
+      "fetched_at": "2026-06-18T08:53:10.218778Z"
     },
     "https://www.githubstatus.com/incidents/gj9d2m9x4mff": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:57.779033Z"
+      "fetched_at": "2026-06-18T08:53:10.776837Z"
     },
     "https://www.githubstatus.com/incidents/d9xd9k1j6sl0": {
       "impact": "minor",
@@ -689,7 +689,7 @@
     "https://www.githubstatus.com/incidents/9qcwpy3ckdrf": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:58.316307Z"
+      "fetched_at": "2026-06-18T08:53:11.273679Z"
     },
     "https://www.githubstatus.com/incidents/z8pt03f02ddv": {
       "impact": "minor",
@@ -701,57 +701,57 @@
     "https://www.githubstatus.com/incidents/sd4v95zxm3np": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:58.781664Z"
+      "fetched_at": "2026-06-18T08:53:11.808927Z"
     },
     "https://www.githubstatus.com/incidents/p7mzl65jm7q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:59.260604Z"
+      "fetched_at": "2026-06-18T08:53:12.416676Z"
     },
     "https://www.githubstatus.com/incidents/hw33b7tc1lv2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:59.697927Z"
+      "fetched_at": "2026-06-18T08:53:12.987834Z"
     },
     "https://www.githubstatus.com/incidents/3l5g70d16ldz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:00.161659Z"
+      "fetched_at": "2026-06-18T08:53:13.630213Z"
     },
     "https://www.githubstatus.com/incidents/crd2y6xy6knn": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:00.633951Z"
+      "fetched_at": "2026-06-18T08:53:14.212115Z"
     },
     "https://www.githubstatus.com/incidents/kkm7hd89m0yt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:01.127131Z"
+      "fetched_at": "2026-06-18T08:53:14.823287Z"
     },
     "https://www.githubstatus.com/incidents/x10xvvl5kk4q": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:01.535844Z"
+      "fetched_at": "2026-06-18T08:53:16.132889Z"
     },
     "https://www.githubstatus.com/incidents/txt7rjw95rhx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:01.973532Z"
+      "fetched_at": "2026-06-18T08:53:16.741956Z"
     },
     "https://www.githubstatus.com/incidents/zltys99f2lgq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:02.471774Z"
+      "fetched_at": "2026-06-18T08:53:17.334941Z"
     },
     "https://www.githubstatus.com/incidents/djpyjb19cfjd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:02.928067Z"
+      "fetched_at": "2026-06-18T08:53:17.925896Z"
     },
     "https://www.githubstatus.com/incidents/f9rjhk3zh62b": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:03.407753Z"
+      "fetched_at": "2026-06-18T08:53:18.504486Z"
     },
     "https://www.githubstatus.com/incidents/k20s3qvr28zw": {
       "impact": "minor",
@@ -763,17 +763,17 @@
     "https://www.githubstatus.com/incidents/c66qtgw0r1lk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:03.821585Z"
+      "fetched_at": "2026-06-18T08:53:19.030441Z"
     },
     "https://www.githubstatus.com/incidents/8pk9qxksg7cj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:04.244641Z"
+      "fetched_at": "2026-06-18T08:53:19.567316Z"
     },
     "https://www.githubstatus.com/incidents/j3byj17b8m1t": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:04.637569Z"
+      "fetched_at": "2026-06-18T08:53:20.125016Z"
     },
     "https://www.githubstatus.com/incidents/btl2cjm2pzkj": {
       "impact": "minor",
@@ -821,7 +821,7 @@
     "https://www.githubstatus.com/incidents/qjbc2h6dfyvc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:05.099820Z"
+      "fetched_at": "2026-06-18T08:53:20.676932Z"
     },
     "https://www.githubstatus.com/incidents/spbr5ff8hyt2": {
       "impact": "minor",
@@ -834,7 +834,7 @@
     "https://www.githubstatus.com/incidents/j630wwvgw9kb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:05.673018Z"
+      "fetched_at": "2026-06-18T08:53:21.251509Z"
     },
     "https://www.githubstatus.com/incidents/6swp0zf7lk8h": {
       "impact": "major",
@@ -857,7 +857,7 @@
     "https://www.githubstatus.com/incidents/j2fdyn2v9df9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:06.116842Z"
+      "fetched_at": "2026-06-18T08:53:21.763862Z"
     },
     "https://www.githubstatus.com/incidents/9rfydl2xdqqj": {
       "impact": "major",
@@ -895,7 +895,7 @@
     "https://www.githubstatus.com/incidents/2cl0fjn559ty": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:06.598821Z"
+      "fetched_at": "2026-06-18T08:53:22.345918Z"
     },
     "https://www.githubstatus.com/incidents/g0bsmfqmq8xt": {
       "impact": "minor",
@@ -923,7 +923,7 @@
     "https://www.githubstatus.com/incidents/mj067hg9slb4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:07.051554Z"
+      "fetched_at": "2026-06-18T08:53:22.846194Z"
     },
     "https://www.githubstatus.com/incidents/mdj41rgqwjx5": {
       "impact": "minor",
@@ -942,17 +942,17 @@
     "https://www.githubstatus.com/incidents/n3vgjzqv7d18": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:07.530419Z"
+      "fetched_at": "2026-06-18T08:53:23.416331Z"
     },
     "https://www.githubstatus.com/incidents/ffh1r1w0hj6h": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:07.951568Z"
+      "fetched_at": "2026-06-18T08:53:23.934794Z"
     },
     "https://www.githubstatus.com/incidents/3kjv06tdxxfn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:08.394570Z"
+      "fetched_at": "2026-06-18T08:53:24.509187Z"
     },
     "https://www.githubstatus.com/incidents/nh22ywy9dh84": {
       "impact": "minor",
@@ -971,7 +971,7 @@
     "https://www.githubstatus.com/incidents/6kcgrd38691w": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:08.788338Z"
+      "fetched_at": "2026-06-18T08:53:25.084819Z"
     },
     "https://www.githubstatus.com/incidents/zlzvt6h3ck58": {
       "impact": "minor",
@@ -991,27 +991,27 @@
     "https://www.githubstatus.com/incidents/nv48dwqdzd54": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:09.259248Z"
+      "fetched_at": "2026-06-18T08:53:25.602990Z"
     },
     "https://www.githubstatus.com/incidents/pm0l7tdd6nyk": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:09.734764Z"
+      "fetched_at": "2026-06-18T08:53:26.132881Z"
     },
     "https://www.githubstatus.com/incidents/xcn454p4wqtz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:10.349233Z"
+      "fetched_at": "2026-06-18T08:53:26.641773Z"
     },
     "https://www.githubstatus.com/incidents/t291vx7m731z": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:10.865062Z"
+      "fetched_at": "2026-06-18T08:53:27.265234Z"
     },
     "https://www.githubstatus.com/incidents/0s5rb1l03m76": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:11.339954Z"
+      "fetched_at": "2026-06-18T08:53:27.800731Z"
     },
     "https://www.githubstatus.com/incidents/071h21gptcp0": {
       "impact": "minor",
@@ -1037,12 +1037,12 @@
     "https://www.githubstatus.com/incidents/9f6pfjj0scrd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:11.830322Z"
+      "fetched_at": "2026-06-18T08:53:28.339318Z"
     },
     "https://www.githubstatus.com/incidents/kk58nfytx0c7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:12.277128Z"
+      "fetched_at": "2026-06-18T08:53:28.891235Z"
     },
     "https://www.githubstatus.com/incidents/k7bhmjkblcwp": {
       "impact": "major",
@@ -1067,12 +1067,12 @@
     "https://www.githubstatus.com/incidents/g8rmr5p85tzv": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:12.731741Z"
+      "fetched_at": "2026-06-18T08:53:29.428877Z"
     },
     "https://www.githubstatus.com/incidents/vs7qnzbydz2p": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:13.183563Z"
+      "fetched_at": "2026-06-18T08:53:29.950139Z"
     },
     "https://www.githubstatus.com/incidents/krd9y2m82fbn": {
       "impact": "major",
@@ -1098,7 +1098,7 @@
     "https://www.githubstatus.com/incidents/v61nk2fpysnq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:13.637679Z"
+      "fetched_at": "2026-06-18T08:53:30.505148Z"
     },
     "https://www.githubstatus.com/incidents/dlvf3sfmz7dm": {
       "impact": "minor",
@@ -1117,27 +1117,27 @@
     "https://www.githubstatus.com/incidents/n7hf73qtpz2l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:14.083292Z"
+      "fetched_at": "2026-06-18T08:53:31.050188Z"
     },
     "https://www.githubstatus.com/incidents/jkll48jj78zv": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:14.550687Z"
+      "fetched_at": "2026-06-18T08:53:31.584509Z"
     },
     "https://www.githubstatus.com/incidents/t6fcxny6yf14": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:14.986788Z"
+      "fetched_at": "2026-06-18T08:53:32.093285Z"
     },
     "https://www.githubstatus.com/incidents/jlhnszknd9pj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:15.432078Z"
+      "fetched_at": "2026-06-18T08:53:32.649672Z"
     },
     "https://www.githubstatus.com/incidents/pch0flk719dj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:15.884637Z"
+      "fetched_at": "2026-06-18T08:53:33.225604Z"
     },
     "https://www.githubstatus.com/incidents/4jxdz4m769gy": {
       "impact": "major",
@@ -1150,7 +1150,7 @@
     "https://www.githubstatus.com/incidents/6hygvwpw2vr3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:16.353960Z"
+      "fetched_at": "2026-06-18T08:53:33.776050Z"
     },
     "https://www.githubstatus.com/incidents/xkvk1yhmqfdl": {
       "impact": "minor",
@@ -1169,7 +1169,7 @@
     "https://www.githubstatus.com/incidents/0xpyl7hs9hm6": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:16.844082Z"
+      "fetched_at": "2026-06-18T08:53:34.381799Z"
     },
     "https://www.githubstatus.com/incidents/d5c8rxcwt7xw": {
       "impact": "minor",
@@ -1188,17 +1188,17 @@
     "https://www.githubstatus.com/incidents/htcm010tcwjq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:17.322841Z"
+      "fetched_at": "2026-06-18T08:53:34.886682Z"
     },
     "https://www.githubstatus.com/incidents/l0brgg302bf5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:17.756587Z"
+      "fetched_at": "2026-06-18T08:53:35.452725Z"
     },
     "https://www.githubstatus.com/incidents/br7kz68t38cl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:18.182580Z"
+      "fetched_at": "2026-06-18T08:53:36.041680Z"
     },
     "https://www.githubstatus.com/incidents/1jw8ltnr1qrj": {
       "impact": "minor",
@@ -1210,12 +1210,12 @@
     "https://www.githubstatus.com/incidents/3bmqzkljz8s3": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:18.641902Z"
+      "fetched_at": "2026-06-18T08:53:36.627135Z"
     },
     "https://www.githubstatus.com/incidents/ql19qqqmdf99": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:19.155919Z"
+      "fetched_at": "2026-06-18T08:53:37.207483Z"
     },
     "https://www.githubstatus.com/incidents/5q7nmlxz30sk": {
       "impact": "major",
@@ -1228,7 +1228,7 @@
     "https://www.githubstatus.com/incidents/zzl9nl31lb35": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:19.596333Z"
+      "fetched_at": "2026-06-18T08:53:37.742512Z"
     },
     "https://www.githubstatus.com/incidents/zs5ccnvqv64m": {
       "impact": "minor",
@@ -1240,7 +1240,7 @@
     "https://www.githubstatus.com/incidents/cg3wwz9dw5dg": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:20.052394Z"
+      "fetched_at": "2026-06-18T08:53:38.274230Z"
     },
     "https://www.githubstatus.com/incidents/v6sx0dv6rv2x": {
       "impact": "minor",
@@ -1259,22 +1259,22 @@
     "https://www.githubstatus.com/incidents/k95d6yq4tmly": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:20.586304Z"
+      "fetched_at": "2026-06-18T08:53:38.792481Z"
     },
     "https://www.githubstatus.com/incidents/3hdjjpkvz895": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:21.059142Z"
+      "fetched_at": "2026-06-18T08:53:39.398073Z"
     },
     "https://www.githubstatus.com/incidents/r6fc6tyzr430": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:21.578069Z"
+      "fetched_at": "2026-06-18T08:53:39.912290Z"
     },
     "https://www.githubstatus.com/incidents/n4fpndtvbmwb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:21.996981Z"
+      "fetched_at": "2026-06-18T08:53:40.424229Z"
     },
     "https://www.githubstatus.com/incidents/znmz4zmsg1rv": {
       "impact": "minor",
@@ -1309,7 +1309,7 @@
     "https://www.githubstatus.com/incidents/40730vhmg6y8": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:22.435507Z"
+      "fetched_at": "2026-06-18T08:53:40.951808Z"
     },
     "https://www.githubstatus.com/incidents/jcbsbbfd1x9r": {
       "impact": "minor",
@@ -1321,17 +1321,17 @@
     "https://www.githubstatus.com/incidents/qkr3gcys0lzx": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:22.889529Z"
+      "fetched_at": "2026-06-18T08:53:41.510497Z"
     },
     "https://www.githubstatus.com/incidents/lctp4bzd37h2": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:23.358193Z"
+      "fetched_at": "2026-06-18T08:53:42.068905Z"
     },
     "https://www.githubstatus.com/incidents/vkr22005hg0x": {
-      "impact": "critical",
+      "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:23.963990Z"
+      "fetched_at": "2026-06-18T08:53:42.629939Z"
     },
     "https://www.githubstatus.com/incidents/x696x0g4t85l": {
       "impact": "major",
@@ -1365,7 +1365,7 @@
     "https://www.githubstatus.com/incidents/d5t56pdnjxhd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:24.461578Z"
+      "fetched_at": "2026-06-18T08:53:43.155226Z"
     },
     "https://www.githubstatus.com/incidents/5jfkz8q1mlql": {
       "impact": "minor",
@@ -1377,12 +1377,12 @@
     "https://www.githubstatus.com/incidents/qdh0m7tdrh80": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:05.489160Z"
+      "fetched_at": "2026-06-18T08:52:09.228742Z"
     },
     "https://www.githubstatus.com/incidents/n2vqnsg14tw2": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:05.932270Z"
+      "fetched_at": "2026-06-18T08:52:09.838513Z"
     },
     "https://www.githubstatus.com/incidents/9nmsrrxb5brs": {
       "impact": "maintenance",
@@ -1478,7 +1478,7 @@
     "https://www.githubstatus.com/incidents/rw3k5dz04rqj": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:06.422693Z"
+      "fetched_at": "2026-06-18T08:52:10.425695Z"
     },
     "https://www.githubstatus.com/incidents/bq3s2sp6sfch": {
       "impact": "minor",
@@ -1617,7 +1617,7 @@
     "https://www.githubstatus.com/incidents/33gh4sqgw547": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:06.936872Z"
+      "fetched_at": "2026-06-18T08:52:11.020545Z"
     },
     "https://www.githubstatus.com/incidents/dsj40hwxnldc": {
       "impact": "minor",
@@ -1759,7 +1759,7 @@
     "https://www.githubstatus.com/incidents/pz0bvrjx9ztp": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:07.376075Z"
+      "fetched_at": "2026-06-18T08:52:11.591068Z"
     },
     "https://www.githubstatus.com/incidents/p38y9j23bt7b": {
       "impact": "minor",
@@ -1771,7 +1771,7 @@
     "https://www.githubstatus.com/incidents/8blgv351d71j": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:07.825229Z"
+      "fetched_at": "2026-06-18T08:52:12.138352Z"
     },
     "https://www.githubstatus.com/incidents/3z36qpp2c0z1": {
       "impact": "minor",
@@ -1790,7 +1790,7 @@
     "https://www.githubstatus.com/incidents/v5bcd4pzckky": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:08.323909Z"
+      "fetched_at": "2026-06-18T08:52:12.707340Z"
     },
     "https://www.githubstatus.com/incidents/2n0tnk7tt6q9": {
       "impact": "minor",
@@ -1837,7 +1837,7 @@
     "https://www.githubstatus.com/incidents/6w7lf30qkgqq": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:08.771216Z"
+      "fetched_at": "2026-06-18T08:52:13.264073Z"
     },
     "https://www.githubstatus.com/incidents/r5zfm12w4mbb": {
       "impact": "major",
@@ -1935,7 +1935,7 @@
     "https://www.githubstatus.com/incidents/lpslbfcw2czs": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:09.252736Z"
+      "fetched_at": "2026-06-18T08:52:13.820085Z"
     },
     "https://www.githubstatus.com/incidents/gw33xm0hbl00": {
       "impact": "minor",
@@ -1962,7 +1962,7 @@
     "https://www.githubstatus.com/incidents/3ktldkb3r6f8": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:09.776670Z"
+      "fetched_at": "2026-06-18T08:52:14.437590Z"
     },
     "https://www.githubstatus.com/incidents/9x0hxrdj9crr": {
       "impact": "minor",
@@ -1996,7 +1996,7 @@
     "https://www.githubstatus.com/incidents/jrzkpt9g8zm6": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:10.283847Z"
+      "fetched_at": "2026-06-18T08:52:14.974331Z"
     },
     "https://www.githubstatus.com/incidents/74y4xlr09qll": {
       "impact": "minor",
@@ -2074,7 +2074,7 @@
     "https://www.githubstatus.com/incidents/f6nzhphqf37p": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:10.798861Z"
+      "fetched_at": "2026-06-18T08:52:15.566745Z"
     },
     "https://www.githubstatus.com/incidents/01g5rt6z89q2": {
       "impact": "minor",
@@ -2117,7 +2117,7 @@
     "https://www.githubstatus.com/incidents/d5158f5wh1ly": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:11.314286Z"
+      "fetched_at": "2026-06-18T08:52:16.163338Z"
     },
     "https://www.githubstatus.com/incidents/3y3y8nnbyt2d": {
       "impact": "minor",
@@ -2278,12 +2278,12 @@
     "https://www.githubstatus.com/incidents/1cdsggtd2q5k": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:11.786789Z"
+      "fetched_at": "2026-06-18T08:52:16.734676Z"
     },
     "https://www.githubstatus.com/incidents/ll8gxx3svld7": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:12.250722Z"
+      "fetched_at": "2026-06-18T08:52:17.370816Z"
     },
     "https://www.githubstatus.com/incidents/dyt4c3n4bqc2": {
       "impact": "minor",
@@ -2433,7 +2433,7 @@
     "https://www.githubstatus.com/incidents/sr7zptjd0b07": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:12.722087Z"
+      "fetched_at": "2026-06-18T08:52:17.864522Z"
     },
     "https://www.githubstatus.com/incidents/by9x6zbmfx8y": {
       "impact": "minor",
@@ -2807,7 +2807,7 @@
     "https://www.githubstatus.com/incidents/psdymfgt6p7q": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:13.168441Z"
+      "fetched_at": "2026-06-18T08:52:18.398623Z"
     },
     "https://www.githubstatus.com/incidents/22qm4j1kvn0h": {
       "impact": "minor",
@@ -2915,7 +2915,7 @@
     "https://www.githubstatus.com/incidents/98fs1552d2nw": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:13.638037Z"
+      "fetched_at": "2026-06-18T08:52:18.948414Z"
     },
     "https://www.githubstatus.com/incidents/mbvjmqbcb1xk": {
       "impact": "minor",
@@ -2971,7 +2971,7 @@
     "https://www.githubstatus.com/incidents/sz8pjjhzcy3t": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:14.143555Z"
+      "fetched_at": "2026-06-18T08:52:19.528658Z"
     },
     "https://www.githubstatus.com/incidents/fjj29dxw0m7c": {
       "impact": "minor",
@@ -2997,7 +2997,7 @@
     "https://www.githubstatus.com/incidents/nj39bg7wbgdq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:14.693466Z"
+      "fetched_at": "2026-06-18T08:52:20.040917Z"
     },
     "https://www.githubstatus.com/incidents/q8swpy90g6pp": {
       "impact": "minor",
@@ -3039,7 +3039,7 @@
     "https://www.githubstatus.com/incidents/99rhjnxq99tp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:15.160738Z"
+      "fetched_at": "2026-06-18T08:52:20.572052Z"
     },
     "https://www.githubstatus.com/incidents/wqv4yvlgtq62": {
       "impact": "minor",
@@ -3058,7 +3058,7 @@
     "https://www.githubstatus.com/incidents/cbhwcvtkfr34": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:15.607007Z"
+      "fetched_at": "2026-06-18T08:52:21.124456Z"
     },
     "https://www.githubstatus.com/incidents/wz41ffzj8937": {
       "impact": "minor",
@@ -3164,7 +3164,7 @@
     "https://www.githubstatus.com/incidents/ndjt4zhsr7q9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:16.071923Z"
+      "fetched_at": "2026-06-18T08:52:21.622173Z"
     },
     "https://www.githubstatus.com/incidents/00lscqwb6ht5": {
       "impact": "minor",
@@ -3294,12 +3294,12 @@
     "https://www.githubstatus.com/incidents/knl5pxnx0byt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:16.547464Z"
+      "fetched_at": "2026-06-18T08:52:22.212137Z"
     },
     "https://www.githubstatus.com/incidents/mnv0g944fncw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:17.031805Z"
+      "fetched_at": "2026-06-18T08:52:22.785307Z"
     },
     "https://www.githubstatus.com/incidents/x39xrr5m11b3": {
       "impact": "minor",
@@ -3329,7 +3329,7 @@
     "https://www.githubstatus.com/incidents/dq9m4n5tfyr6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:17.505520Z"
+      "fetched_at": "2026-06-18T08:52:23.317378Z"
     },
     "https://www.githubstatus.com/incidents/fj7v3z6fy7ym": {
       "impact": "minor",
@@ -3381,12 +3381,12 @@
     "https://www.githubstatus.com/incidents/lt4kyp4tgx45": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:18.004969Z"
+      "fetched_at": "2026-06-18T08:52:23.853809Z"
     },
     "https://www.githubstatus.com/incidents/1h37j1mb9xnx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:18.467844Z"
+      "fetched_at": "2026-06-18T08:52:24.446702Z"
     },
     "https://www.githubstatus.com/incidents/464b7g25n77j": {
       "impact": "minor",
@@ -3398,12 +3398,12 @@
     "https://www.githubstatus.com/incidents/1ksntt4bk3bq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:18.978280Z"
+      "fetched_at": "2026-06-18T08:52:25.014265Z"
     },
     "https://www.githubstatus.com/incidents/zzy7pdshgqk0": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:19.426564Z"
+      "fetched_at": "2026-06-18T08:52:25.629181Z"
     },
     "https://www.githubstatus.com/incidents/35pgg0gc75nv": {
       "impact": "minor",
@@ -3415,7 +3415,7 @@
     "https://www.githubstatus.com/incidents/dxthh9653wkk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:19.881090Z"
+      "fetched_at": "2026-06-18T08:52:26.152794Z"
     },
     "https://www.githubstatus.com/incidents/pxg3dz4yg7lp": {
       "impact": "major",
@@ -3449,22 +3449,22 @@
     "https://www.githubstatus.com/incidents/bsk6hmj0d7nv": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:20.349588Z"
+      "fetched_at": "2026-06-18T08:52:26.740563Z"
     },
     "https://www.githubstatus.com/incidents/g6drnqm54qd4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:20.769423Z"
+      "fetched_at": "2026-06-18T08:52:27.332613Z"
     },
     "https://www.githubstatus.com/incidents/5y8b8lsqbbyq": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:21.255909Z"
+      "fetched_at": "2026-06-18T08:52:27.934445Z"
     },
     "https://www.githubstatus.com/incidents/7k5wl5j4f1t4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:21.780622Z"
+      "fetched_at": "2026-06-18T08:52:28.513521Z"
     },
     "https://www.githubstatus.com/incidents/3k40h28fkb2r": {
       "impact": "minor",
@@ -3514,7 +3514,7 @@
     "https://www.githubstatus.com/incidents/f9ntcnd3fdvs": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:22.242578Z"
+      "fetched_at": "2026-06-18T08:52:29.091939Z"
     },
     "https://www.githubstatus.com/incidents/5lc3f39mjcq8": {
       "impact": "minor",
@@ -3614,7 +3614,7 @@
     "https://www.githubstatus.com/incidents/syg5c6b5ls76": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:22.664048Z"
+      "fetched_at": "2026-06-18T08:52:29.890256Z"
     },
     "https://www.githubstatus.com/incidents/5ly0psff2s5d": {
       "impact": "major",
@@ -3638,7 +3638,7 @@
     "https://www.githubstatus.com/incidents/6tgmk1j7b4rn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:23.081145Z"
+      "fetched_at": "2026-06-18T08:52:30.453669Z"
     },
     "https://www.githubstatus.com/incidents/xcjgp37zx5dt": {
       "impact": "minor",
@@ -3677,7 +3677,7 @@
     "https://www.githubstatus.com/incidents/b6f4j9ljz9r6": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:23.510791Z"
+      "fetched_at": "2026-06-18T08:52:30.990199Z"
     },
     "https://www.githubstatus.com/incidents/clgh4y84qzc8": {
       "impact": "minor",
@@ -3729,12 +3729,12 @@
     "https://www.githubstatus.com/incidents/84bxn520qg2m": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:23.957796Z"
+      "fetched_at": "2026-06-18T08:52:31.522527Z"
     },
     "https://www.githubstatus.com/incidents/6wlqmlpsn6by": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:24.388961Z"
+      "fetched_at": "2026-06-18T08:52:32.071315Z"
     },
     "https://www.githubstatus.com/incidents/tsrh60nkbchl": {
       "impact": "minor",
@@ -3762,7 +3762,7 @@
     "https://www.githubstatus.com/incidents/bfkxf0w61z1n": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:24.864677Z"
+      "fetched_at": "2026-06-18T08:52:32.603320Z"
     },
     "https://www.githubstatus.com/incidents/2bglpcjvg7xb": {
       "impact": "minor",
@@ -3774,7 +3774,7 @@
     "https://www.githubstatus.com/incidents/915nn7rmqth9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:25.385771Z"
+      "fetched_at": "2026-06-18T08:52:33.129807Z"
     },
     "https://www.githubstatus.com/incidents/nj47vccwm2zj": {
       "impact": "minor",
@@ -3829,7 +3829,7 @@
     "https://www.githubstatus.com/incidents/k1mlxlmdhqqp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:25.890061Z"
+      "fetched_at": "2026-06-18T08:52:33.772611Z"
     },
     "https://www.githubstatus.com/incidents/nzc328r69wrv": {
       "impact": "minor",
@@ -3841,7 +3841,7 @@
     "https://www.githubstatus.com/incidents/538zgs80s3zg": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:26.373381Z"
+      "fetched_at": "2026-06-18T08:52:34.299561Z"
     },
     "https://www.githubstatus.com/incidents/y0frtmhd9n2z": {
       "impact": "minor",
@@ -3875,7 +3875,7 @@
     "https://www.githubstatus.com/incidents/8532wfbvwqgr": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:26.844530Z"
+      "fetched_at": "2026-06-18T08:52:34.901919Z"
     },
     "https://www.githubstatus.com/incidents/5yx1d67vq9hg": {
       "impact": "major",
@@ -3910,7 +3910,7 @@
     "https://www.githubstatus.com/incidents/p55k2jdgsrgc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:27.361447Z"
+      "fetched_at": "2026-06-18T08:52:35.769445Z"
     },
     "https://www.githubstatus.com/incidents/88003ngctf1z": {
       "impact": "minor",
@@ -3947,17 +3947,17 @@
     "https://www.githubstatus.com/incidents/4s161kygs873": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:27.816379Z"
+      "fetched_at": "2026-06-18T08:52:36.318658Z"
     },
     "https://www.githubstatus.com/incidents/n2969465tx0b": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:28.384950Z"
+      "fetched_at": "2026-06-18T08:52:36.907189Z"
     },
     "https://www.githubstatus.com/incidents/q1yjht6mt3zn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:28.839952Z"
+      "fetched_at": "2026-06-18T08:52:37.427235Z"
     },
     "https://www.githubstatus.com/incidents/h2mghb83nt00": {
       "impact": "minor",
@@ -3969,7 +3969,7 @@
     "https://www.githubstatus.com/incidents/y0gqch2dhw5l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:29.295875Z"
+      "fetched_at": "2026-06-18T08:52:38.059755Z"
     },
     "https://www.githubstatus.com/incidents/s4bvfmfm297p": {
       "impact": "minor",
@@ -3988,17 +3988,17 @@
     "https://www.githubstatus.com/incidents/cr44n0knc7xj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:29.717057Z"
+      "fetched_at": "2026-06-18T08:52:38.615982Z"
     },
     "https://www.githubstatus.com/incidents/1kn4kywmvgz4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:30.170191Z"
+      "fetched_at": "2026-06-18T08:52:39.445047Z"
     },
     "https://www.githubstatus.com/incidents/fnj6l879tbtw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:30.737390Z"
+      "fetched_at": "2026-06-18T08:52:40.325208Z"
     },
     "https://www.githubstatus.com/incidents/ndlzqycv0dh8": {
       "impact": "minor",
@@ -4061,17 +4061,17 @@
     "https://www.githubstatus.com/incidents/345t4sjty6q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:31.228705Z"
+      "fetched_at": "2026-06-18T08:52:40.861191Z"
     },
     "https://www.githubstatus.com/incidents/djwfzglh2dyq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:31.751397Z"
+      "fetched_at": "2026-06-18T08:52:41.436671Z"
     },
     "https://www.githubstatus.com/incidents/9dyp7zt86rp5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:32.183396Z"
+      "fetched_at": "2026-06-18T08:52:41.998364Z"
     },
     "https://www.githubstatus.com/incidents/v677w7xlvkss": {
       "impact": "minor",
@@ -4093,7 +4093,7 @@
     "https://www.githubstatus.com/incidents/r3x7x31k7nn1": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:32.640483Z"
+      "fetched_at": "2026-06-18T08:52:42.641240Z"
     },
     "https://www.githubstatus.com/incidents/69sb0f8lydp4": {
       "impact": "major",
@@ -4135,7 +4135,7 @@
     "https://www.githubstatus.com/incidents/wlb83pxg009y": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:33.159614Z"
+      "fetched_at": "2026-06-18T08:52:43.210742Z"
     },
     "https://www.githubstatus.com/incidents/bdzwt47fwg51": {
       "impact": "major",
@@ -4162,7 +4162,7 @@
     "https://www.githubstatus.com/incidents/xy3hrpmg4r3k": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:33.538685Z"
+      "fetched_at": "2026-06-18T08:52:43.777944Z"
     },
     "https://www.githubstatus.com/incidents/9yk1fbk0qjjc": {
       "impact": "minor",
@@ -4174,27 +4174,27 @@
     "https://www.githubstatus.com/incidents/17yzcr45rg2x": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:33.988181Z"
+      "fetched_at": "2026-06-18T08:52:44.510577Z"
     },
     "https://www.githubstatus.com/incidents/b85tj3x6n4vz": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:34.425352Z"
+      "fetched_at": "2026-06-18T08:52:45.029327Z"
     },
     "https://www.githubstatus.com/incidents/dnq4lp93t62f": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:35.351180Z"
+      "fetched_at": "2026-06-18T08:52:45.568395Z"
     },
     "https://www.githubstatus.com/incidents/nbscbkxwxjrx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:35.773158Z"
+      "fetched_at": "2026-06-18T08:52:46.122323Z"
     },
     "https://www.githubstatus.com/incidents/ltyqfp67463z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:36.586781Z"
+      "fetched_at": "2026-06-18T08:52:46.647738Z"
     },
     "https://www.githubstatus.com/incidents/y5pb0bxhlcxz": {
       "impact": "minor",
@@ -4213,12 +4213,12 @@
     "https://www.githubstatus.com/incidents/qq1m7mqcl6zk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:37.030691Z"
+      "fetched_at": "2026-06-18T08:52:47.218855Z"
     },
     "https://www.githubstatus.com/incidents/v4d2jbm842p4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:37.511313Z"
+      "fetched_at": "2026-06-18T08:52:47.832197Z"
     },
     "https://www.githubstatus.com/incidents/w6g0cmvyx3vm": {
       "impact": "minor",
@@ -4232,7 +4232,7 @@
     "https://www.githubstatus.com/incidents/lbdsk3990lz5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:37.971254Z"
+      "fetched_at": "2026-06-18T08:52:48.364976Z"
     },
     "https://www.githubstatus.com/incidents/4349zxvb8stp": {
       "impact": "minor",
@@ -4247,7 +4247,7 @@
     "https://www.githubstatus.com/incidents/d33mtmnttgsh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:38.575933Z"
+      "fetched_at": "2026-06-18T08:52:48.940979Z"
     },
     "https://www.githubstatus.com/incidents/fnq063tqh7cc": {
       "impact": "major",
@@ -4259,7 +4259,7 @@
     "https://www.githubstatus.com/incidents/5hjghvwvqztc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:07:39.066434Z"
+      "fetched_at": "2026-06-18T08:52:49.463203Z"
     },
     "https://www.githubstatus.com/incidents/d6pkw798c0f0": {
       "impact": "minor",
@@ -4292,7 +4292,7 @@
     "https://www.githubstatus.com/incidents/8bcsk6c4prjl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:24.874529Z"
+      "fetched_at": "2026-06-18T08:53:43.713934Z"
     },
     "https://www.githubstatus.com/incidents/zcxwznlbgzr7": {
       "impact": "major",
@@ -4311,7 +4311,7 @@
     "https://www.githubstatus.com/incidents/zwlfnp5z0r4s": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:25.403773Z"
+      "fetched_at": "2026-06-18T08:53:44.233153Z"
     },
     "https://www.githubstatus.com/incidents/j8t05z0nh91f": {
       "impact": "minor",
@@ -4323,7 +4323,7 @@
     "https://www.githubstatus.com/incidents/4htf8bgy1xlz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:25.882979Z"
+      "fetched_at": "2026-06-18T08:53:44.797301Z"
     },
     "https://www.githubstatus.com/incidents/j7yjswzyrktp": {
       "impact": "minor",
@@ -4352,12 +4352,12 @@
     "https://www.githubstatus.com/incidents/sq20c7lrwjrp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:26.344399Z"
+      "fetched_at": "2026-06-18T08:53:45.335594Z"
     },
     "https://www.githubstatus.com/incidents/zltcsbhqmvqq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:26.863437Z"
+      "fetched_at": "2026-06-18T08:53:45.985425Z"
     },
     "https://www.githubstatus.com/incidents/m4xfyzd8mn2n": {
       "impact": "minor",
@@ -4383,7 +4383,7 @@
     "https://www.githubstatus.com/incidents/6d5kv6l8d8q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:27.348360Z"
+      "fetched_at": "2026-06-18T08:53:46.492681Z"
     },
     "https://www.githubstatus.com/incidents/cqb5hcy0gx18": {
       "impact": "minor",
@@ -4395,12 +4395,12 @@
     "https://www.githubstatus.com/incidents/g697qcy5dsks": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:27.771294Z"
+      "fetched_at": "2026-06-18T08:53:47.116218Z"
     },
     "https://www.githubstatus.com/incidents/90hj03y5tj3c": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:28.250683Z"
+      "fetched_at": "2026-06-18T08:53:47.736545Z"
     },
     "https://www.githubstatus.com/incidents/22zx8fw9qt4t": {
       "impact": "minor",
@@ -4426,7 +4426,7 @@
     "https://www.githubstatus.com/incidents/g9mdtzd4rt72": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:28.744237Z"
+      "fetched_at": "2026-06-18T08:53:48.272630Z"
     },
     "https://www.githubstatus.com/incidents/t4s6xgbwv60j": {
       "impact": "major",
@@ -4486,7 +4486,7 @@
     "https://www.githubstatus.com/incidents/qrlc0jjgw517": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:29.153231Z"
+      "fetched_at": "2026-06-18T08:53:48.759345Z"
     },
     "https://www.githubstatus.com/incidents/tkz0ptx49rl0": {
       "impact": "minor",
@@ -4510,7 +4510,7 @@
     "https://www.githubstatus.com/incidents/54hndjxft5bx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:29.567481Z"
+      "fetched_at": "2026-06-18T08:53:49.304637Z"
     },
     "https://www.githubstatus.com/incidents/lcw3tg2f6zsd": {
       "impact": "major",
@@ -4557,7 +4557,7 @@
     "https://www.githubstatus.com/incidents/7ylfn6fnwgrq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:30.006614Z"
+      "fetched_at": "2026-06-18T08:53:49.941018Z"
     },
     "https://www.githubstatus.com/incidents/7m8kxmjq0y7m": {
       "impact": "major",
@@ -4569,22 +4569,22 @@
     "https://www.githubstatus.com/incidents/5txsjlt9299p": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:30.409991Z"
+      "fetched_at": "2026-06-18T08:53:50.428809Z"
     },
     "https://www.githubstatus.com/incidents/1x0f4x1wwqmb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:30.817293Z"
+      "fetched_at": "2026-06-18T08:53:50.918281Z"
     },
     "https://www.githubstatus.com/incidents/y7kzv1ps2qrm": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:31.276587Z"
+      "fetched_at": "2026-06-18T08:53:51.450202Z"
     },
     "https://www.githubstatus.com/incidents/lvf95rlzkxrr": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:31.669797Z"
+      "fetched_at": "2026-06-18T08:53:51.989270Z"
     },
     "https://www.githubstatus.com/incidents/xs6xtcv196g7": {
       "impact": "minor",
@@ -4611,7 +4611,7 @@
     "https://www.githubstatus.com/incidents/zhfdlzldgh51": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:32.058207Z"
+      "fetched_at": "2026-06-18T08:53:52.493949Z"
     },
     "https://www.githubstatus.com/incidents/h8z3w9ycj0pm": {
       "impact": "minor",
@@ -4638,7 +4638,7 @@
     "https://www.githubstatus.com/incidents/jn8kcmg5ydch": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:32.526209Z"
+      "fetched_at": "2026-06-18T08:53:53.013532Z"
     },
     "https://www.githubstatus.com/incidents/l1bt9psnsqpg": {
       "impact": "minor",
@@ -4664,7 +4664,7 @@
     "https://www.githubstatus.com/incidents/kv1lzpgzr9yp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:32.937614Z"
+      "fetched_at": "2026-06-18T08:53:53.597127Z"
     },
     "https://www.githubstatus.com/incidents/kw5jh58jh24k": {
       "impact": "minor",
@@ -4718,7 +4718,7 @@
     "https://www.githubstatus.com/incidents/nlmpksjb2ll7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:33.331937Z"
+      "fetched_at": "2026-06-18T08:53:54.095974Z"
     },
     "https://www.githubstatus.com/incidents/g5gnt5l5hf56": {
       "impact": "major",
@@ -4766,12 +4766,12 @@
     "https://www.githubstatus.com/incidents/78s4l7y4tn2v": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:34.177160Z"
+      "fetched_at": "2026-06-18T08:53:55.230510Z"
     },
     "https://www.githubstatus.com/incidents/lw6j95nyw3py": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:34.657309Z"
+      "fetched_at": "2026-06-18T08:53:55.739452Z"
     },
     "https://www.githubstatus.com/incidents/02z04m335tvv": {
       "impact": "minor",
@@ -4799,12 +4799,12 @@
     "https://www.githubstatus.com/incidents/2lh36qcrd7l6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:35.115467Z"
+      "fetched_at": "2026-06-18T08:53:56.209561Z"
     },
     "https://www.githubstatus.com/incidents/8jx0t5c136x2": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:33.762777Z"
+      "fetched_at": "2026-06-18T08:53:54.662782Z"
     },
     "https://www.githubstatus.com/incidents/x1g78jx4sgfk": {
       "impact": "minor",
@@ -4823,7 +4823,7 @@
     "https://www.githubstatus.com/incidents/djmkyscrj9jh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:35.529240Z"
+      "fetched_at": "2026-06-18T08:53:56.729176Z"
     },
     "https://www.githubstatus.com/incidents/3gflh59mjhmf": {
       "impact": "major",
@@ -4842,17 +4842,17 @@
     "https://www.githubstatus.com/incidents/9jyjvxkz735j": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:35.955290Z"
+      "fetched_at": "2026-06-18T08:53:57.223269Z"
     },
     "https://www.githubstatus.com/incidents/7vwbds3snh28": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:36.368353Z"
+      "fetched_at": "2026-06-18T08:53:57.771959Z"
     },
     "https://www.githubstatus.com/incidents/z7gsp4wd05c5": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:36.763761Z"
+      "fetched_at": "2026-06-18T08:53:58.321067Z"
     },
     "https://www.githubstatus.com/incidents/kp06czybl7dw": {
       "impact": "minor",
@@ -4867,7 +4867,7 @@
     "https://www.githubstatus.com/incidents/9vyj2jwsk8by": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:37.172579Z"
+      "fetched_at": "2026-06-18T08:53:58.801336Z"
     },
     "https://www.githubstatus.com/incidents/c3ctbhdcvcc8": {
       "impact": "minor",
@@ -4880,7 +4880,7 @@
     "https://www.githubstatus.com/incidents/2yb2tvwny50l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:37.612016Z"
+      "fetched_at": "2026-06-18T08:53:59.316068Z"
     },
     "https://www.githubstatus.com/incidents/ml7wplmxbt5l": {
       "impact": "minor",
@@ -4899,47 +4899,47 @@
     "https://www.githubstatus.com/incidents/00h92ct3ggvv": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:37.986893Z"
+      "fetched_at": "2026-06-18T08:53:59.879933Z"
     },
     "https://www.githubstatus.com/incidents/xs2p9z3b73r3": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:38.402942Z"
+      "fetched_at": "2026-06-18T08:54:00.463224Z"
     },
     "https://www.githubstatus.com/incidents/j3sgbdw2lw3c": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:38.786612Z"
+      "fetched_at": "2026-06-18T08:54:01.028759Z"
     },
     "https://www.githubstatus.com/incidents/d96l71t3h63k": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:39.215833Z"
+      "fetched_at": "2026-06-18T08:54:01.610652Z"
     },
     "https://www.githubstatus.com/incidents/bnvg7qml7krl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:39.602287Z"
+      "fetched_at": "2026-06-18T08:54:02.141084Z"
     },
     "https://www.githubstatus.com/incidents/zn1t56bfxdzg": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:40.052849Z"
+      "fetched_at": "2026-06-18T08:54:02.684449Z"
     },
     "https://www.githubstatus.com/incidents/2rqwxl8y7m0j": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:40.485547Z"
+      "fetched_at": "2026-06-18T08:54:03.258872Z"
     },
     "https://www.githubstatus.com/incidents/8hn4vclxz1lq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:40.887938Z"
+      "fetched_at": "2026-06-18T08:54:03.818881Z"
     },
     "https://www.githubstatus.com/incidents/1ghdqdbyyjmt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:41.371597Z"
+      "fetched_at": "2026-06-18T08:54:04.310524Z"
     },
     "https://www.githubstatus.com/incidents/96r9hyz795sv": {
       "impact": "major",
@@ -4951,7 +4951,7 @@
     "https://www.githubstatus.com/incidents/gldshbt8tvdg": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:41.773265Z"
+      "fetched_at": "2026-06-18T08:54:04.810370Z"
     },
     "https://www.githubstatus.com/incidents/bjyfg0yz1lwj": {
       "impact": "major",
@@ -4970,17 +4970,17 @@
     "https://www.githubstatus.com/incidents/m7pgzw1wlfq7": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:42.256012Z"
+      "fetched_at": "2026-06-18T08:54:05.398250Z"
     },
     "https://www.githubstatus.com/incidents/b4235qyfzx2z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:42.663139Z"
+      "fetched_at": "2026-06-18T08:54:05.906788Z"
     },
     "https://www.githubstatus.com/incidents/8790jgb3ky6t": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:43.134349Z"
+      "fetched_at": "2026-06-18T08:54:06.446744Z"
     },
     "https://www.githubstatus.com/incidents/c53mty24vwg8": {
       "impact": "minor",
@@ -5011,7 +5011,7 @@
     "https://www.githubstatus.com/incidents/40f3r1jvjwl2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:43.570040Z"
+      "fetched_at": "2026-06-18T08:54:06.969620Z"
     },
     "https://www.githubstatus.com/incidents/zsg1lk7w13cf": {
       "impact": "minor",
@@ -5023,12 +5023,12 @@
     "https://www.githubstatus.com/incidents/3dqg0nhwnxs2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:43.965258Z"
+      "fetched_at": "2026-06-18T08:54:07.543643Z"
     },
     "https://www.githubstatus.com/incidents/vq183jvj6vrw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:44.378601Z"
+      "fetched_at": "2026-06-18T08:54:08.049985Z"
     },
     "https://www.githubstatus.com/incidents/ql942tw29yl6": {
       "impact": "critical",
@@ -5092,7 +5092,7 @@
     "https://www.githubstatus.com/incidents/n8htfgj6wv3t": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:44.841162Z"
+      "fetched_at": "2026-06-18T08:54:08.718242Z"
     },
     "https://www.githubstatus.com/incidents/f5pb5d5mr9yh": {
       "impact": "critical",
@@ -5104,7 +5104,7 @@
     "https://www.githubstatus.com/incidents/qp0lxr014sw8": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:45.259687Z"
+      "fetched_at": "2026-06-18T08:54:09.296109Z"
     },
     "https://www.githubstatus.com/incidents/81b05nqkhylj": {
       "impact": "minor",
@@ -5124,12 +5124,12 @@
     "https://www.githubstatus.com/incidents/8wxkrmhm6744": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:45.703525Z"
+      "fetched_at": "2026-06-18T08:54:09.951092Z"
     },
     "https://www.githubstatus.com/incidents/t5mch8tlq6vl": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:46.110871Z"
+      "fetched_at": "2026-06-18T08:54:10.535174Z"
     },
     "https://www.githubstatus.com/incidents/ctf7nxpq5jzn": {
       "impact": "critical",
@@ -5149,7 +5149,7 @@
     "https://www.githubstatus.com/incidents/k5z4d1v1tqmt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:46.919916Z"
+      "fetched_at": "2026-06-18T08:54:11.777776Z"
     },
     "https://www.githubstatus.com/incidents/gnftqj9htp0g": {
       "impact": "critical",
@@ -5186,12 +5186,12 @@
     "https://www.githubstatus.com/incidents/ykb44v068g8v": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:46.513953Z"
+      "fetched_at": "2026-06-18T08:54:11.046921Z"
     },
     "https://www.githubstatus.com/incidents/11n51rf8tf27": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:47.948373Z"
+      "fetched_at": "2026-06-18T08:54:12.752239Z"
     },
     "https://www.githubstatus.com/incidents/rhqcgg8lg6mm": {
       "impact": "critical",
@@ -5203,32 +5203,32 @@
     "https://www.githubstatus.com/incidents/5wdgxw2rvbt3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:48.406587Z"
+      "fetched_at": "2026-06-18T08:54:13.296811Z"
     },
     "https://www.githubstatus.com/incidents/j240y90h4g0r": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:48.841358Z"
+      "fetched_at": "2026-06-18T08:54:13.870677Z"
     },
     "https://www.githubstatus.com/incidents/tf25qs8wdw5h": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:49.328040Z"
+      "fetched_at": "2026-06-18T08:54:14.489178Z"
     },
     "https://www.githubstatus.com/incidents/5h5lmbffp07c": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:49.736784Z"
+      "fetched_at": "2026-06-18T08:54:14.997255Z"
     },
     "https://www.githubstatus.com/incidents/tkqxdgjlm6b5": {
-      "impact": "critical",
+      "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:50.083876Z"
+      "fetched_at": "2026-06-18T08:54:15.705795Z"
     },
     "https://www.githubstatus.com/incidents/2nmfnbknhlnv": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:50.490786Z"
+      "fetched_at": "2026-06-18T08:54:16.224885Z"
     },
     "https://www.githubstatus.com/incidents/b0plzff6yl6f": {
       "impact": "minor",
@@ -5240,7 +5240,7 @@
     "https://www.githubstatus.com/incidents/4843jm0lsls6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:50.954798Z"
+      "fetched_at": "2026-06-18T08:54:16.715464Z"
     },
     "https://www.githubstatus.com/incidents/m7n7sm0sr1pz": {
       "impact": "critical",
@@ -5254,7 +5254,7 @@
     "https://www.githubstatus.com/incidents/tm84vy58jq0h": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:47.303913Z"
+      "fetched_at": "2026-06-18T08:54:12.272204Z"
     },
     "https://www.githubstatus.com/incidents/71hv2q6tk693": {
       "impact": "minor",
@@ -5266,7 +5266,7 @@
     "https://www.githubstatus.com/incidents/jpd6l1jq0r54": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:51.387548Z"
+      "fetched_at": "2026-06-18T08:54:17.301667Z"
     },
     "https://www.githubstatus.com/incidents/fcj3088jg1wx": {
       "impact": "critical",
@@ -5293,7 +5293,7 @@
     "https://www.githubstatus.com/incidents/d9b4dsg8d0r6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-06-17T09:08:51.802568Z"
+      "fetched_at": "2026-06-18T08:54:17.804781Z"
     },
     "https://www.githubstatus.com/incidents/1s444p9sf9wg": {
       "impact": "major",
@@ -5308,6 +5308,11 @@
         "Copilot"
       ],
       "fetched_at": "2026-06-17T09:08:52.645884Z"
+    },
+    "https://www.githubstatus.com/incidents/5t81zk0vrk3z": {
+      "impact": "minor",
+      "components": null,
+      "fetched_at": "2026-06-18T08:54:18.301042Z"
     }
   }
 }
