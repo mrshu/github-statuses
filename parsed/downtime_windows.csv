@@ -764,7 +764,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30534817,2026-06-11T19:42:00Z,2026-06-11T22:19:00Z,157,updates,Incident with Webhooks,minor
 30575175,2026-06-15T15:37:00Z,2026-06-15T17:37:00Z,120,updates,Increased latency with webhooks,minor
 30576567,2026-06-15T18:32:00Z,2026-06-15T19:10:00Z,38,updates,Multiple services have elevated errors and endpoint failures when checking feature flags,minor
-30588415,2026-06-16T17:45:00Z,2026-06-16T18:15:00Z,30,updates,Disruption with some GitHub services,major
+30588415,2026-06-16T17:20:00Z,2026-06-16T18:15:00Z,55,postmortem,Disruption with some GitHub services,major
 30591734,2026-06-17T03:50:00Z,2026-06-17T04:44:00Z,54,updates,Incident with Copilot Availability,critical
 30621475,2026-06-17T11:35:00Z,2026-06-17T19:20:00Z,465,postmortem,Incident With Webhooks,none
 30598322,2026-06-17T16:57:00Z,2026-06-17T19:14:00Z,137,postmortem,Disruption with Copilot next edit suggestions,minor
