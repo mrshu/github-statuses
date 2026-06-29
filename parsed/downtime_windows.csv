@@ -771,3 +771,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30662625,2026-06-23T23:04:00Z,2026-06-23T23:29:00Z,25,updates,We are seeing elevated errors with Next Edit Suggestions and Completions,minor
 30685836,2026-06-25T17:50:00Z,2026-06-25T18:27:00Z,37,updates,"Degradation with Webhooks, Pull Requests and Actions",major
 30706282,2026-06-27T14:02:00Z,2026-06-27T20:33:00Z,391,updates,Disruption with some GitHub services,minor
+30715981,2026-06-28T17:50:00Z,2026-06-28T20:55:00Z,185,updates,Disruption with some GitHub services,minor
