@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-06-28T04:43:51Z</updated>
+  <updated>2026-06-29T06:19:13Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/30715981</id>
+    <published>2026-06-28T20:55:58Z</published>
+    <updated>2026-06-28T20:55:58Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/0rkjjs2ssp7z"/>
+    <title>Disruption with some GitHub services</title>
+    <content type="html">&lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;20:55&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;20:02&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - Copilot cloud agent had been experiencing intermittent problems with opening pull requests, pushing changes and replying to comments. A fix has been deployed and we are validating that fix. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;18:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - Copilot cloud agent is experiencing intermittent problems with opening pull requests, pushing changes and replying to comments. We have validated a fix and are deploying that fix now. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;17:59&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - Copilot cloud agent is experiencing intermittent problems with opening pull requests, pushing changes and replying to comments. We have identified the issue and are validating a fix. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;17:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services. &lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/30706282</id>
     <published>2026-06-27T20:33:11Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/f3kmjlk25vhd"/>
     <title>Webhook APIs and UI Degraded</title>
     <content type="html">&lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On May 28, 2026, between 00:54 UTC and 01:19 UTC, some users experienced errors when interacting with the Webhooks API, including webhook delivery history and configuration endpoints. On average, the error rate was 0.28% and peaked at 0.45%. This was due to a bug that caused a single Kubernetes pod to enter a CrashLoopBackOff after receiving a 500 with an empty response body from Cosmos DB.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by restarting the service. To prevent future incidents, we are pushing a change to handle this response scenario from Cosmos DB appropriately. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - The degradation affecting Webhooks has been mitigated. We are monitoring to ensure stability. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Webhooks &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/30333877</id>
-    <published>2026-05-27T13:16:54Z</published>
-    <updated>2026-05-29T18:28:56Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/xy1tt3hs572m"/>
-    <title>Incident with Pull Requests, Issues, Git Operations and API Requests</title>
-    <content type="html">&lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;13:16&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On May 27, 2026, between 12:07 UTC and 13:16 UTC, users experienced degraded performance for Git operations, Pull Requests, Issues, GraphQL API, and related services on github.com. During this time, operations that depended on Git file servers experienced elevated error rates (3.5% of pushes via HTTPS and 0.2% of pushes via SSH failed; no fetches/clones failed). An internal analytics component generated unexpectedly high load, which caused CPU saturation on the underlying infrastructure. This led to cascading slowdowns and errors across services that depend on Git operations. The issue was mitigated by stopping the offending component. Services began recovering shortly after mitigation and were fully restored by 13:16 UTC. We are taking steps to add resource limits and kill switches for internal analytics components to prevent similar issues in the future. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;12:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We're continuing to investigate degraded performance of Git operations, Issues and Pull requests. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;27&lt;/var&gt;, &lt;var data-var='time'&gt;12:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for API Requests, Git Operations, Issues and Pull Requests &lt;/p&gt;</content>
   </entry>
 </feed>
