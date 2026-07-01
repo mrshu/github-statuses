@@ -772,3 +772,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30685836,2026-06-25T17:50:00Z,2026-06-25T18:27:00Z,37,updates,"Degradation with Webhooks, Pull Requests and Actions",major
 30706282,2026-06-27T14:02:00Z,2026-06-27T20:33:00Z,391,updates,Disruption with some GitHub services,minor
 30715981,2026-06-28T17:50:00Z,2026-06-28T20:55:00Z,185,updates,Disruption with some GitHub services,minor
+30739639,2026-06-30T15:38:00Z,2026-06-30T15:49:00Z,11,updates,Disruption with some GitHub services - Signup Flow,minor
