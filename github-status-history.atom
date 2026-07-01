@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-06-30T04:49:03Z</updated>
+  <updated>2026-07-01T07:57:34Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/30739639</id>
+    <published>2026-06-30T15:49:18Z</published>
+    <updated>2026-06-30T15:49:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/mc4yx9f8x1hk"/>
+    <title>Disruption with some GitHub services - Signup Flow</title>
+    <content type="html">&lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;15:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;30&lt;/var&gt;, &lt;var data-var='time'&gt;15:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services. &lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/30715981</id>
     <published>2026-06-28T20:55:58Z</published>
@@ -59,10 +67,10 @@
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/30591734</id>
     <published>2026-06-17T04:44:07Z</published>
-    <updated>2026-06-17T04:44:07Z</updated>
+    <updated>2026-06-30T12:50:29Z</updated>
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/rfmjwng33vjf"/>
     <title>Incident with Copilot Availability</title>
-    <content type="html">&lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - Copilot is operating normally. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We've applied a mitigation to unblock Copilot functionality. Users may start to see signs of recovery. Relaunching your client should accelerate signs of recovery. We will continue to monitor the situation. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;03:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for chat &amp; agent models in Copilot. Multiple models are impacted and customers may experience requests failing. We are investigating and will provide an update as soon as possible. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;03:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Copilot &lt;/p&gt;</content>
+    <content type="html">&lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On June 17, 2026, between approximately 03:35 UTC and 04:44 UTC, GitHub Copilot was degraded and most of its frontier chat models were temporarily unavailable across all regions. During this window, affected models either disappeared from the model picker in the web, editor, and CLI experiences, or returned a "model not available" error when selected. Customers could continue using GitHub Copilot by selecting one of the models that remained available. The incident occurred during off-peak hours, which limited the number of customers affected.&lt;br /&gt;&lt;br /&gt;This was due to a configuration change that our production system deemed invalid. We mitigated the incident by reverting the configuration change, after which the affected models returned automatically as the service reloaded the previous configuration.&lt;br /&gt;&lt;br /&gt;We are working to roll out configuration changes gradually with stronger validations, alerts on sudden drops in the number of available models, and automatically rolls back configuration changes that produce these alerts. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - Copilot is operating normally. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;04:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We've applied a mitigation to unblock Copilot functionality. Users may start to see signs of recovery. Relaunching your client should accelerate signs of recovery. We will continue to monitor the situation. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;03:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are experiencing degraded availability for chat &amp; agent models in Copilot. Multiple models are impacted and customers may experience requests failing. We are investigating and will provide an update as soon as possible. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var='date'&gt;17&lt;/var&gt;, &lt;var data-var='time'&gt;03:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded availability for Copilot &lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/30588415</id>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/11n51rf8tf27"/>
     <title>Elevated error rates across multiple services</title>
     <content type="html">&lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;19:07&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On May 28, 2026, between 19:07 UTC and 19:16 UTC, multiple GitHub services experienced elevated error rates. This was due to a change that was partially deployed to an authentication service, causing errors for dependent services including the web experience, REST API, Git operations, and GitHub Actions. At peak impact, 10% of GitHub Actions runs failed to queue or encountered errors while downloading actions. We mitigated the incident by rolling back the change. &lt;br /&gt;&lt;br /&gt;We are expanding test coverage and improving our deployment validation process to prevent recurrence of this issue in the future. &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/30344393</id>
-    <published>2026-05-28T01:32:27Z</published>
-    <updated>2026-06-04T15:58:07Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/f3kmjlk25vhd"/>
-    <title>Webhook APIs and UI Degraded</title>
-    <content type="html">&lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On May 28, 2026, between 00:54 UTC and 01:19 UTC, some users experienced errors when interacting with the Webhooks API, including webhook delivery history and configuration endpoints. On average, the error rate was 0.28% and peaked at 0.45%. This was due to a bug that caused a single Kubernetes pod to enter a CrashLoopBackOff after receiving a 500 with an empty response body from Cosmos DB.&lt;br /&gt;&lt;br /&gt;We mitigated the incident by restarting the service. To prevent future incidents, we are pushing a change to handle this response scenario from Cosmos DB appropriately. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - The degradation affecting Webhooks has been mitigated. We are monitoring to ensure stability. &lt;/p&gt; &lt;p&gt; &lt;small&gt;May &lt;var data-var='date'&gt;28&lt;/var&gt;, &lt;var data-var='time'&gt;01:13&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of degraded performance for Webhooks &lt;/p&gt;</content>
   </entry>
 </feed>
