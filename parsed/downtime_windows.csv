@@ -774,3 +774,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30715981,2026-06-28T17:50:00Z,2026-06-28T20:55:00Z,185,updates,Disruption with some GitHub services,minor
 30739639,2026-06-30T15:38:00Z,2026-06-30T15:49:00Z,11,updates,Disruption with some GitHub services - Signup Flow,minor
 30748837,2026-07-01T10:51:00Z,2026-07-01T13:26:00Z,155,updates,Delays in copilot budget limits resets for some users,minor
+30767107,2026-07-02T16:54:00Z,2026-07-02T18:25:00Z,91,updates,Incident with Pages,minor
