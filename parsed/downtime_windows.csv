@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,major
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -753,7 +753,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30432107,2026-06-03T03:13:00Z,2026-06-03T06:46:00Z,213,updates,Disruption with some GitHub services,minor
 30441946,2026-06-03T19:42:00Z,2026-06-04T04:11:00Z,509,updates,Disruption with some GitHub services,minor
 30452936,2026-06-04T17:30:00Z,2026-06-04T18:55:00Z,85,postmortem,Copilot Code Review Failing,critical
-30453760,2026-06-04T20:20:00Z,2026-06-04T20:32:00Z,12,updates,Live updates degraded,major
+30453760,2026-06-04T20:20:00Z,2026-06-04T20:32:00Z,12,updates,Live updates degraded,minor
 30463506,2026-06-05T15:35:00Z,2026-06-05T16:45:00Z,70,postmortem,"Auth issue resulting in API impacts, including some Slack and Teams channel subscriptions",minor
 30472791,2026-06-06T16:53:00Z,2026-06-06T17:07:00Z,14,updates,Disruption with some GitHub services in the EU region,minor
 30472501,2026-06-06T15:31:00Z,2026-06-06T18:49:00Z,198,updates,EU Network Maintenance,minor
@@ -778,3 +778,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30818171,2026-07-07T14:01:00Z,2026-07-07T16:17:00Z,136,postmortem,Actions and Codespaces APIs experiencing partial failures,major
 30837849,2026-07-09T03:29:00Z,2026-07-09T13:39:00Z,610,postmortem,Delays starting Actions runs,critical
 30876997,2026-07-13T13:32:00Z,2026-07-13T13:53:00Z,21,updates,Actions runs are experiencing failures to start,major
+30884564,2026-07-14T08:21:00Z,2026-07-14T09:56:00Z,95,updates,Disruption with some GitHub services,minor
+30888808,2026-07-14T17:38:00Z,2026-07-14T18:01:00Z,23,updates,Incident with Webhooks,minor
