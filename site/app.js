@@ -417,28 +417,34 @@ const drawRoundedRect = (ctx, x, y, width, height, radius, fillStyle, strokeStyl
   ctx.restore();
 };
 
-const drawMetaPill = (ctx, x, y, width, height, label, value) => {
+const drawMetaPill = (ctx, x, y, width, height, label, value, isDark) => {
   const pillGradient = ctx.createLinearGradient(x, y, x, y + height);
-  pillGradient.addColorStop(0, 'rgba(255, 255, 255, 0.98)');
-  pillGradient.addColorStop(1, 'rgba(246, 248, 250, 0.96)');
-  drawRoundedRect(ctx, x, y, width, height, 22, pillGradient, 'rgba(208, 215, 222, 0.92)', 2);
+  if (isDark) {
+    pillGradient.addColorStop(0, 'rgba(22, 27, 34, 0.96)');
+    pillGradient.addColorStop(1, 'rgba(17, 22, 29, 0.92)');
+    drawRoundedRect(ctx, x, y, width, height, 22, pillGradient, 'rgba(99, 110, 123, 0.9)', 2);
+  } else {
+    pillGradient.addColorStop(0, 'rgba(255, 255, 255, 0.98)');
+    pillGradient.addColorStop(1, 'rgba(246, 248, 250, 0.96)');
+    drawRoundedRect(ctx, x, y, width, height, 22, pillGradient, 'rgba(208, 215, 222, 0.92)', 2);
+  }
 
-  ctx.fillStyle = '#57606a';
+  ctx.fillStyle = isDark ? '#9da7b3' : '#57606a';
   ctx.font = '700 15px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillText(label.toUpperCase(), x + 22, y + 28);
 
-  ctx.fillStyle = '#24292f';
+  ctx.fillStyle = isDark ? '#f0f6fc' : '#24292f';
   ctx.font = '600 26px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillText(value, x + 22, y + 64);
 };
 
-const drawLegendItem = (ctx, x, y, color, label) => {
+const drawLegendItem = (ctx, x, y, color, label, isDark) => {
   ctx.save();
   ctx.fillStyle = color;
   ctx.beginPath();
   ctx.arc(x, y - 5, 8, 0, Math.PI * 2);
   ctx.fill();
-  ctx.fillStyle = '#57606a';
+  ctx.fillStyle = isDark ? '#9da7b3' : '#57606a';
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillText(label, x + 20, y + 4);
   ctx.restore();
@@ -448,6 +454,8 @@ const renderShareImageCanvas = () => {
   if (!shareState.daySeverity.length || shareState.uptime === null || !shareState.lastUpdated) {
     throw new Error('Share image is not ready yet.');
   }
+
+  const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   const canvas = document.createElement('canvas');
   canvas.width = SHARE_IMAGE_SIZE.width;
@@ -459,24 +467,44 @@ const renderShareImageCanvas = () => {
 
   const { width, height } = canvas;
   const backgroundGradient = ctx.createLinearGradient(0, height, width, 0);
-  backgroundGradient.addColorStop(0, '#edf5fb');
-  backgroundGradient.addColorStop(0.45, '#f7f8fc');
-  backgroundGradient.addColorStop(1, '#fff1eb');
+  if (isDark) {
+    backgroundGradient.addColorStop(0, '#0d1117');
+    backgroundGradient.addColorStop(0.45, '#111827');
+    backgroundGradient.addColorStop(1, '#161b22');
+  } else {
+    backgroundGradient.addColorStop(0, '#edf5fb');
+    backgroundGradient.addColorStop(0.45, '#f7f8fc');
+    backgroundGradient.addColorStop(1, '#fff1eb');
+  }
   ctx.fillStyle = backgroundGradient;
   ctx.fillRect(0, 0, width, height);
 
-  fillRadialGlow(ctx, width * 0.18, height * 0.78, 300, 'rgba(31, 111, 235, 0.22)');
-  fillRadialGlow(ctx, width * 0.18, height * 0.18, 220, 'rgba(45, 164, 78, 0.15)');
-  fillRadialGlow(ctx, width * 0.83, height * 0.2, 260, 'rgba(207, 34, 46, 0.18)');
-  fillRadialGlow(ctx, width * 0.62, height * 0.56, 240, 'rgba(217, 119, 6, 0.14)');
+  if (isDark) {
+    fillRadialGlow(ctx, width * 0.18, height * 0.78, 300, 'rgba(88, 166, 255, 0.15)');
+    fillRadialGlow(ctx, width * 0.18, height * 0.18, 220, 'rgba(63, 185, 80, 0.15)');
+    fillRadialGlow(ctx, width * 0.83, height * 0.2, 260, 'rgba(255, 123, 114, 0.15)');
+    fillRadialGlow(ctx, width * 0.62, height * 0.56, 240, 'rgba(210, 153, 34, 0.12)');
+  } else {
+    fillRadialGlow(ctx, width * 0.18, height * 0.78, 300, 'rgba(31, 111, 235, 0.22)');
+    fillRadialGlow(ctx, width * 0.18, height * 0.18, 220, 'rgba(45, 164, 78, 0.15)');
+    fillRadialGlow(ctx, width * 0.83, height * 0.2, 260, 'rgba(207, 34, 46, 0.18)');
+    fillRadialGlow(ctx, width * 0.62, height * 0.56, 240, 'rgba(217, 119, 6, 0.14)');
+  }
 
   ctx.save();
   ctx.filter = 'blur(72px)';
   const ambientGradient = ctx.createLinearGradient(260, 240, 1340, 520);
-  ambientGradient.addColorStop(0, 'rgba(31, 111, 235, 0.18)');
-  ambientGradient.addColorStop(0.28, 'rgba(45, 164, 78, 0.16)');
-  ambientGradient.addColorStop(0.65, 'rgba(217, 119, 6, 0.16)');
-  ambientGradient.addColorStop(1, 'rgba(207, 34, 46, 0.18)');
+  if (isDark) {
+    ambientGradient.addColorStop(0, 'rgba(88, 166, 255, 0.15)');
+    ambientGradient.addColorStop(0.28, 'rgba(63, 185, 80, 0.15)');
+    ambientGradient.addColorStop(0.65, 'rgba(210, 153, 34, 0.15)');
+    ambientGradient.addColorStop(1, 'rgba(255, 123, 114, 0.15)');
+  } else {
+    ambientGradient.addColorStop(0, 'rgba(31, 111, 235, 0.18)');
+    ambientGradient.addColorStop(0.28, 'rgba(45, 164, 78, 0.16)');
+    ambientGradient.addColorStop(0.65, 'rgba(217, 119, 6, 0.16)');
+    ambientGradient.addColorStop(1, 'rgba(207, 34, 46, 0.18)');
+  }
   drawRoundedRect(ctx, 260, 222, 1080, 360, 64, ambientGradient);
   ctx.restore();
 
@@ -488,15 +516,22 @@ const renderShareImageCanvas = () => {
   const cardHeight = height - frameMarginY * 2;
 
   ctx.save();
-  ctx.shadowColor = 'rgba(17, 18, 26, 0.18)';
+  ctx.shadowColor = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(17, 18, 26, 0.18)';
   ctx.shadowBlur = 70;
   ctx.shadowOffsetY = 28;
   const cardGradient = ctx.createLinearGradient(cardX, cardY, cardX, cardY + cardHeight);
-  cardGradient.addColorStop(0, 'rgba(255, 255, 255, 0.99)');
-  cardGradient.addColorStop(1, 'rgba(248, 250, 252, 0.98)');
+  if (isDark) {
+    cardGradient.addColorStop(0, 'rgba(22, 27, 34, 0.96)');
+    cardGradient.addColorStop(1, 'rgba(17, 22, 29, 0.92)');
+  } else {
+    cardGradient.addColorStop(0, 'rgba(255, 255, 255, 0.99)');
+    cardGradient.addColorStop(1, 'rgba(248, 250, 252, 0.98)');
+  }
   drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 40, cardGradient);
   ctx.restore();
-  drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 40, 'rgba(255, 255, 255, 0)', 'rgba(208, 215, 222, 0.95)', 2);
+  
+  const cardBorder = isDark ? 'rgba(48, 54, 61, 0.95)' : 'rgba(208, 215, 222, 0.95)';
+  drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 40, 'rgba(255, 255, 255, 0)', cardBorder, 2);
 
   const insetX = cardX + 64;
   const insetRight = cardX + cardWidth - 64;
@@ -508,11 +543,14 @@ const renderShareImageCanvas = () => {
   const pillX = insetRight - pillsWidth;
   const pillY = cardY + 40;
 
-  ctx.fillStyle = '#24292f';
+  const ink = isDark ? '#f0f6fc' : '#24292f';
+  const muted = isDark ? '#9da7b3' : '#57606a';
+
+  ctx.fillStyle = ink;
   ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
   ctx.fillText('Last 90 days uptime', insetX, titleBaselineY);
 
-  drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated));
+  drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated), isDark);
   drawMetaPill(
     ctx,
     pillX + pillWidth + pillGap,
@@ -521,15 +559,16 @@ const renderShareImageCanvas = () => {
     pillHeight,
     'Last 90 days',
     `${shareState.recentIncidentCount} incident${shareState.recentIncidentCount === 1 ? '' : 's'}`,
+    isDark
   );
 
   const rowBaselineY = cardY + 204;
-  ctx.fillStyle = '#24292f';
+  ctx.fillStyle = ink;
   ctx.font = '600 38px "Space Grotesk", "IBM Plex Sans", sans-serif';
   ctx.fillText('GitHub Platform', insetX, rowBaselineY);
 
   const uptimeLabel = `${(shareState.uptime * 100).toFixed(2)}% uptime`;
-  ctx.fillStyle = '#57606a';
+  ctx.fillStyle = muted;
   ctx.font = '600 42px "IBM Plex Sans", system-ui, sans-serif';
   const uptimeWidth = ctx.measureText(uptimeLabel).width;
   ctx.fillText(uptimeLabel, insetRight - uptimeWidth, rowBaselineY);
@@ -538,7 +577,13 @@ const renderShareImageCanvas = () => {
   const barsHeight = 64;
   const barGap = 4;
   const barWidth = (cardWidth - 128 - barGap * (shareState.daySeverity.length - 1)) / shareState.daySeverity.length;
-  const barColors = {
+  
+  const barColors = isDark ? {
+    0: 'rgba(63, 185, 80, 0.82)',
+    1: 'rgba(88, 166, 255, 0.82)',
+    2: 'rgba(210, 153, 34, 0.84)',
+    3: 'rgba(255, 123, 114, 0.84)',
+  } : {
     0: 'rgba(45, 164, 78, 0.82)',
     1: 'rgba(31, 111, 235, 0.82)',
     2: 'rgba(217, 119, 6, 0.84)',
@@ -550,7 +595,7 @@ const renderShareImageCanvas = () => {
     drawRoundedRect(ctx, x, barsTop, barWidth, barsHeight, 5, barColors[severity] || barColors[0]);
   });
 
-  ctx.fillStyle = '#57606a';
+  ctx.fillStyle = muted;
   ctx.font = '500 24px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillText('90 days ago', insetX, barsTop + barsHeight + 40);
   const todayLabel = 'Today';
@@ -559,7 +604,12 @@ const renderShareImageCanvas = () => {
 
   const legendY = cardY + cardHeight - 84;
   let legendX = insetX;
-  const legendItems = [
+  const legendItems = isDark ? [
+    ['rgba(63, 185, 80, 0.92)', 'Operational'],
+    ['rgba(88, 166, 255, 0.92)', 'Maintenance'],
+    ['rgba(210, 153, 34, 0.92)', 'Minor'],
+    ['rgba(255, 123, 114, 0.92)', 'Major'],
+  ] : [
     ['rgba(45, 164, 78, 0.92)', 'Operational'],
     ['rgba(31, 111, 235, 0.92)', 'Maintenance'],
     ['rgba(217, 119, 6, 0.92)', 'Minor'],
@@ -567,12 +617,12 @@ const renderShareImageCanvas = () => {
   ];
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
   legendItems.forEach(([color, label]) => {
-    drawLegendItem(ctx, legendX, legendY, color, label);
+    drawLegendItem(ctx, legendX, legendY, color, label, isDark);
     legendX += ctx.measureText(label).width + 62;
   });
 
   const attribution = 'by Marek Šuppa · @mareksuppa';
-  ctx.fillStyle = '#57606a';
+  ctx.fillStyle = muted;
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
   const attributionWidth = ctx.measureText(attribution).width;
   ctx.fillText(attribution, insetRight - attributionWidth, legendY + 4);
@@ -683,6 +733,21 @@ if (typeof STATUS_META_MOBILE_QUERY.addEventListener === 'function') {
   STATUS_META_MOBILE_QUERY.addEventListener('change', rerenderStatusMeta);
 } else if (typeof STATUS_META_MOBILE_QUERY.addListener === 'function') {
   STATUS_META_MOBILE_QUERY.addListener(rerenderStatusMeta);
+}
+
+const DARK_MODE_QUERY = window.matchMedia('(prefers-color-scheme: dark)');
+const handleThemeChange = () => {
+  shareState.imageBlob = null;
+  shareState.imageReady = false;
+  if (shareState.daySeverity && shareState.daySeverity.length > 0) {
+    scheduleSharePrime();
+  }
+};
+
+if (typeof DARK_MODE_QUERY.addEventListener === 'function') {
+  DARK_MODE_QUERY.addEventListener('change', handleThemeChange);
+} else if (typeof DARK_MODE_QUERY.addListener === 'function') {
+  DARK_MODE_QUERY.addListener(handleThemeChange);
 }
 
 const monthStartUTC = (date) =>
