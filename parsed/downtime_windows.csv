@@ -792,3 +792,6 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30985294,2026-07-24T11:00:00Z,2026-07-24T11:00:00Z,0,updates,Incident With Blocked GitHub.com Traffic,none
 30985470,2026-07-24T16:17:00Z,2026-07-24T17:36:00Z,79,updates,Disruption with some GitHub services,major
 30986969,2026-07-24T19:37:00Z,2026-07-24T20:23:00Z,46,updates,Incident with Pull Requests,critical
+30991819,2026-07-25T08:59:00Z,2026-07-25T09:25:00Z,26,updates,Incident with Actions,minor
+30992214,2026-07-25T09:42:00Z,2026-07-25T10:11:00Z,29,updates,Several GPT models degraded,major
+30993375,2026-07-25T12:31:00Z,2026-07-25T13:13:00Z,42,updates,Actions run failures and delays,critical
