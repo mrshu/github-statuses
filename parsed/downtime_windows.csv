@@ -799,3 +799,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31013816,2026-07-27T19:31:00Z,2026-07-27T19:37:00Z,6,updates,Test Incident Posted in Error – No Customer Impact (Will Be Removed),minor
 31032174,2026-07-29T14:51:00Z,2026-07-29T15:28:00Z,37,postmortem,Incident with Actions,major
 31034742,2026-07-29T20:07:00Z,2026-07-29T21:51:00Z,104,updates,Incident with Copilot AI Model Providers,minor
+31040145,2026-07-30T09:07:00Z,2026-07-30T10:12:00Z,65,updates,Copilot model Claude Fable 5 experiencing elevated errors,minor
