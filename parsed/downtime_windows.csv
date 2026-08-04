@@ -802,3 +802,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31040145,2026-07-30T09:07:00Z,2026-07-30T10:12:00Z,65,updates,Copilot model Claude Fable 5 experiencing elevated errors,minor
 31062353,2026-08-01T11:16:00Z,2026-08-01T12:30:00Z,74,updates,Degraded availability GPT 5.6 Luna,minor
 31064249,2026-08-01T18:03:00Z,2026-08-01T18:44:00Z,41,updates,Incident with Copilot AI Model Providers,minor
+31077734,2026-08-03T09:53:00Z,2026-08-03T11:25:00Z,92,updates,Incident with Copilot,minor
