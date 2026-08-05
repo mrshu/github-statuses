@@ -428,20 +428,41 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
     if (active >= 0) focusTimelineOn(series[active]);
   });
 
+  // Replacing innerHTML discards the old SVG along with its listeners, but the
+  // container survives every redraw. Publish the current controller and bind the
+  // container-level handlers exactly once, or each resize would stack another
+  // closure still holding the detached SVG and the previous geometry.
+  container.uptimeCursor = {
+    show,
+    hide,
+    lastIndex: () => series.length - 1,
+    activeIndex: () => active,
+    pointAt: (index) => series[index],
+  };
+
   container.tabIndex = 0;
-  container.addEventListener('focus', () => show(series.length - 1));
-  container.addEventListener('blur', hide);
+  if (container.dataset.cursorBound === 'true') return;
+  container.dataset.cursorBound = 'true';
+
+  container.addEventListener('focus', () => {
+    const c = container.uptimeCursor;
+    c.show(c.lastIndex());
+  });
+  container.addEventListener('blur', () => container.uptimeCursor.hide());
   container.addEventListener('keydown', (event) => {
+    const c = container.uptimeCursor;
     const step = event.shiftKey ? 30 : 1;
+    const current = c.activeIndex();
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault();
-      const base = active < 0 ? series.length - 1 : active;
-      show(Math.min(series.length - 1, Math.max(0, base + (event.key === 'ArrowRight' ? step : -step))));
-    } else if (event.key === 'Enter' && active >= 0) {
+      const base = current < 0 ? c.lastIndex() : current;
+      const next = base + (event.key === 'ArrowRight' ? step : -step);
+      c.show(Math.min(c.lastIndex(), Math.max(0, next)));
+    } else if (event.key === 'Enter' && current >= 0) {
       event.preventDefault();
-      focusTimelineOn(series[active]);
+      focusTimelineOn(c.pointAt(current));
     } else if (event.key === 'Escape') {
-      hide();
+      c.hide();
     }
   });
 };
@@ -457,14 +478,12 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
   const chartSelector = options.chartTarget || '#uptimeHistoryImage';
 
-  // All of the chart's prose now lives here, at body-text size, instead of being
-  // baked into the SVG where it was scaled down to 6px. The lifetime figure stays out
-  // of it: the stat strip above already carries that number.
+  // Only the methodology is left. The start date is already on the x-axis as
+  // "start: Jun 11, 2022", the lifetime figure is in the stat strip, and the hover
+  // hint is redundant with the crosshair cursor and the container's aria-label.
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    caption.textContent =
-      `90-day rolling uptime since ${formatUptimeHistoryDate(new Date(projectStartMs))} · ` +
-      `non-maintenance downtime, merged windows · hover or focus the chart to read any day.`;
+    caption.textContent = '90-day rolling window · non-maintenance downtime, merged windows';
   }
 
   const chartContainer = document.querySelector(chartSelector);
@@ -480,24 +499,49 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
         chartContainer.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
       return inner > 0 ? Math.round(inner) : UPTIME_HISTORY_LAYOUT.width;
     };
+    // Track the width actually drawn rather than the last width measured. The two can
+    // desync -- a redraw deferred to the next frame may run after another resize, or
+    // fall back when the container measures zero -- and comparing against the measured
+    // value can then suppress the redraw that would have corrected it.
+    let drawnWidth = -1;
+    let correcting = false;
     const draw = () => {
-      const layout = options.layout || layoutForWidth(contentWidth());
+      const width = contentWidth();
+      const layout = options.layout || layoutForWidth(width);
       const { markup, geometry } = buildUptimeHistorySVG(series, layout);
       chartContainer.innerHTML = markup;
+      drawnWidth = layout.width;
       attachUptimeHistoryInteraction(chartContainer, series, geometry);
+
+      // A draw can land while the container measures zero (hidden panel, mid-layout
+      // reflow) and fall back to the default width. Nothing resizes afterwards, so the
+      // observer would never fire again to correct it -- re-check once instead.
+      if (correcting) {
+        correcting = false;
+        return;
+      }
+      window.requestAnimationFrame(() => {
+        if (Math.abs(contentWidth() - drawnWidth) < 8) return;
+        correcting = true;
+        draw();
+      });
     };
     draw();
-    if (typeof ResizeObserver === 'function' && !chartContainer.dataset.observed) {
-      chartContainer.dataset.observed = 'true';
-      let last = contentWidth();
-      // Redraw on the next frame: mutating the SVG inside the callback is what
-      // produces "ResizeObserver loop completed with undelivered notifications".
-      new ResizeObserver(() => {
-        const next = contentWidth();
-        if (Math.abs(next - last) < 8) return;
-        last = next;
+
+    // The tabpanel is hidden on first render, so the reveal — not a resize — is what
+    // must trigger the real draw. setView calls this directly rather than trusting the
+    // observer, which some engines collect when nothing holds a reference to it.
+    chartContainer.redrawUptimeHistory = draw;
+
+    if (typeof ResizeObserver === 'function' && !chartContainer.uptimeResizeObserver) {
+      // Keep the reference: an unreferenced ResizeObserver is collectable in WebKit,
+      // which silently stops the redraws.
+      const observer = new ResizeObserver(() => {
+        if (Math.abs(contentWidth() - drawnWidth) < 8) return;
         window.requestAnimationFrame(draw);
-      }).observe(chartContainer);
+      });
+      chartContainer.uptimeResizeObserver = observer;
+      observer.observe(chartContainer);
     }
   }
 

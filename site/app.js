@@ -866,6 +866,12 @@ const setupUptimeViewToggle = () => {
     });
     // The incident count is scoped to the active view.
     rerenderStatusMeta();
+    // The chart sizes its viewBox to the container, which measures zero while the
+    // tabpanel is hidden. Redraw at the real width the moment it is shown.
+    if (view === 'all') {
+      const chart = document.getElementById('uptimeHistoryImage');
+      if (chart && typeof chart.redrawUptimeHistory === 'function') chart.redrawUptimeHistory();
+    }
   };
 
   buttons.forEach((btn) => {
