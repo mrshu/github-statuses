@@ -14,6 +14,13 @@
   --major: #cf222e;
   --critical: #82071e;
   --maintenance: #1f6feb;
+  /* Timeline bars are softened against the card; per-theme so dark mode stops
+     drawing light-theme colours that disagree with its own legend. */
+  --bar-operational: rgba(45, 164, 78, 0.85);
+  --bar-minor: rgba(217, 119, 6, 0.85);
+  --bar-major: rgba(207, 34, 46, 0.85);
+  --bar-critical: rgba(130, 7, 30, 0.95);
+  --bar-maintenance: rgba(31, 111, 235, 0.85);
   --shadow: 0 20px 40px -30px rgba(0, 0, 0, 0.35);
   --radius: 18px;
   --radius-sm: 12px;
@@ -105,8 +112,16 @@
     --operational: #3fb950;
     --minor: #d29922;
     --major: #ff7b72;
-    --critical: #f85149;
+    /* #f85149 sits one step from --major on Primer's red ramp and is
+       indistinguishable from it in a bar strip; go deeper so critical still reads
+       as the more severe of the two, matching the light theme's ordering. */
+    --critical: #da3633;
     --maintenance: #58a6ff;
+    --bar-operational: rgba(63, 185, 80, 0.85);
+    --bar-minor: rgba(210, 153, 34, 0.85);
+    --bar-major: rgba(255, 123, 114, 0.85);
+    --bar-critical: rgba(218, 54, 51, 0.95);
+    --bar-maintenance: rgba(88, 166, 255, 0.85);
     --shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.72);
     --card-border-soft: #21262d;
     --feature-border: rgba(255, 123, 114, 0.28);
@@ -878,23 +893,23 @@ main {
 }
 
 .uptime-bars span.operational {
-  background: rgba(45, 164, 78, 0.85);
+  background: var(--bar-operational);
 }
 
 .uptime-bars span.minor {
-  background: rgba(217, 119, 6, 0.85);
+  background: var(--bar-minor);
 }
 
 .uptime-bars span.major {
-  background: rgba(207, 34, 46, 0.85);
+  background: var(--bar-major);
 }
 
 .uptime-bars span.critical {
-  background: var(--critical);
+  background: var(--bar-critical);
 }
 
 .uptime-bars span.maintenance {
-  background: rgba(31, 111, 235, 0.85);
+  background: var(--bar-maintenance);
 }
 
 .uptime-axis {
@@ -1589,23 +1604,23 @@ main {
 }
 
 .month-day.operational {
-  background: rgba(45, 164, 78, 0.8);
+  background: var(--bar-operational);
 }
 
 .month-day.minor {
-  background: rgba(217, 119, 6, 0.85);
+  background: var(--bar-minor);
 }
 
 .month-day.major {
-  background: rgba(207, 34, 46, 0.85);
+  background: var(--bar-major);
 }
 
 .month-day.critical {
-  background: var(--critical);
+  background: var(--bar-critical);
 }
 
 .month-day.maintenance {
-  background: rgba(31, 111, 235, 0.85);
+  background: var(--bar-maintenance);
 }
 
 .month-day.future {
@@ -1664,23 +1679,23 @@ main {
 }
 
 .service-bars span.operational {
-  background: rgba(45, 164, 78, 0.8);
+  background: var(--bar-operational);
 }
 
 .service-bars span.minor {
-  background: rgba(217, 119, 6, 0.85);
+  background: var(--bar-minor);
 }
 
 .service-bars span.major {
-  background: rgba(207, 34, 46, 0.85);
+  background: var(--bar-major);
 }
 
 .service-bars span.critical {
-  background: var(--critical);
+  background: var(--bar-critical);
 }
 
 .service-bars span.maintenance {
-  background: rgba(31, 111, 235, 0.85);
+  background: var(--bar-maintenance);
 }
 
 .empty {
