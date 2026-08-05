@@ -212,17 +212,6 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
       `non-maintenance downtime, merged windows</text>`,
   );
 
-  // Variant D folds the headline figure into the figure itself so the panel above
-  // does not have to repeat it.
-  if (layout.overallLabel) {
-    parts.push(
-      `<text x="${width - marginRight}" y="38" font-size="20" font-weight="600" ` +
-        `text-anchor="end" fill="var(--ink)" ` +
-        `font-family="var(--display, 'Space Grotesk', sans-serif)">` +
-        `${layout.overallLabel}</text>`,
-    );
-  }
-
   for (let i = 0; i < yTicks.length; i += 1) {
     const yv = yTicks[i];
     const gy = yAt(yv);
@@ -328,40 +317,25 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
   const chartSelector = options.chartTarget || '#uptimeHistoryImage';
 
-  const target = options.silentPercent ? null : document.querySelector(targetSelector);
+  const target = document.querySelector(targetSelector);
   if (target) {
     target.textContent = `${lifetimeUptime.toFixed(2)}% lifetime uptime`;
   }
 
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    // Repeating the headline figure here is redundant wherever the panel already
-    // shows it, so callers can ask for the methodology sentence alone.
-    caption.textContent = options.silentCaptionPercent
-      ? `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
-          new Date(projectStartMs),
-        )}.`
-      : `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
-          new Date(projectStartMs),
-        )}. Lifetime uptime: ${lifetimeUptime.toFixed(2)}%.`;
+    caption.textContent =
+      `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
+        new Date(projectStartMs),
+      )}. Lifetime uptime: ${lifetimeUptime.toFixed(2)}%.`;
   }
 
   const chartContainer = document.querySelector(chartSelector);
   if (chartContainer) {
-    const layout = options.overallLabel
-      ? { ...UPTIME_HISTORY_LAYOUT, overallLabel: options.overallLabel }
-      : UPTIME_HISTORY_LAYOUT;
-    chartContainer.innerHTML = buildUptimeHistorySVG(series, layout);
+    chartContainer.innerHTML = buildUptimeHistorySVG(series);
   }
 
-  let peak = series[0];
-  let low = series[0];
-  for (let i = 1; i < series.length; i += 1) {
-    if (series[i].uptime > peak.uptime) peak = series[i];
-    if (series[i].uptime < low.uptime) low = series[i];
-  }
-
-  return { lifetimeUptime, series, peak, low, latest: series[series.length - 1] };
+  return { lifetimeUptime, series };
 };
 
 var UptimeHistoryChart = {
