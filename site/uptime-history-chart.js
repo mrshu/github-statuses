@@ -104,7 +104,7 @@ const computeLifetimeUptime = (intervals, startMs, endMs) => {
 };
 
 const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
-  if (!series.length) return '';
+  if (!series.length) return { markup: '', geometry: null };
 
   const { width, height, marginLeft, marginRight, marginTop, marginBottom } = layout;
   const plotW = width - marginLeft - marginRight;
@@ -169,9 +169,14 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
     const cx = xAt(point.time);
     const cy = yAt(point.uptime);
     const { anchor, dx } = labelAnchor(point.time);
-    return (
+    const marker =
       `<circle cx="${cx.toFixed(2)}" cy="${cy.toFixed(2)}" r="4" ` +
-      `fill="var(${colorVar})" style="stroke: var(--card); stroke-width: 1.5"/>` +
+      `fill="var(${colorVar})" style="stroke: var(--card); stroke-width: 1.5"/>`;
+    // On narrow layouts these labels collide, and the stat strip above already
+    // reports the same three figures. Keep the markers, drop the text.
+    if (layout.compact) return marker;
+    return (
+      marker +
       `<text x="${(cx + dx).toFixed(2)}" y="${(cy + dy).toFixed(2)}" ` +
       `font-size="12" font-weight="600" text-anchor="${anchor}" ` +
       `fill="var(${colorVar})">${label}</text>`
@@ -201,16 +206,9 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
       '</defs>',
   );
 
-  parts.push(
-    `<text x="${marginLeft}" y="38" font-size="20" font-weight="600" ` +
-      `fill="var(--ink)" font-family="var(--display, 'Space Grotesk', sans-serif)">` +
-      `GitHub Platform &#8212; 90-day rolling uptime</text>`,
-  );
-  parts.push(
-    `<text x="${marginLeft}" y="58" font-size="12" fill="var(--muted)">` +
-      `${formatUptimeHistoryDate(startDate)} &#8594; ${formatUptimeHistoryDate(endDate)} &#183; ` +
-      `non-maintenance downtime, merged windows</text>`,
-  );
+  // No title or subtitle inside the SVG: the panel heading says "All-time uptime"
+  // above it and the caption carries the date range and methodology below it, both at
+  // real body-text size. Dropping them returns ~50px of vertical space to the plot.
 
   for (let i = 0; i < yTicks.length; i += 1) {
     const yv = yTicks[i];
@@ -301,8 +299,151 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
   }
   parts.push(annotate(lastPoint, `today: ${lastPoint.uptime.toFixed(2)}%`, lastColor, -12));
 
+  // Cursor layer, moved by the interaction code rather than re-rendered.
+  parts.push(
+    `<g class="uptime-cursor" opacity="0">` +
+      `<line class="uptime-cursor-line" x1="0" y1="${marginTop}" x2="0" y2="${(marginTop + plotH).toFixed(2)}" ` +
+      `stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>` +
+      `<circle class="uptime-cursor-dot" r="5" fill="var(--accent)" ` +
+      `style="stroke: var(--card); stroke-width: 2"/>` +
+      `</g>`,
+  );
+
   parts.push('</svg>');
-  return parts.join('');
+  return {
+    markup: parts.join(''),
+    geometry: { marginLeft, marginTop, plotW, plotH, xMin, xSpan, yMin, yMax, width, height },
+  };
+};
+
+// The chart used to be drawn into a fixed 1200x480 viewBox and then scaled down by
+// CSS to whatever the panel was wide. At 660px that is a 0.55x scale, so 12px axis
+// labels reached the screen at 6.6px; on a phone the scale was 0.275x and they
+// arrived at 3.3px. Sizing the viewBox to the measured container instead keeps the
+// scale at 1, so declared font sizes are the sizes users actually get.
+const layoutForWidth = (width) => {
+  const compact = width < 560;
+  return {
+    width,
+    height: Math.round(Math.min(Math.max(width * (compact ? 0.78 : 0.42), 300), 460)),
+    marginLeft: compact ? 44 : 60,
+    marginRight: compact ? 16 : 28,
+    marginTop: compact ? 20 : 26,
+    marginBottom: compact ? 48 : 58,
+    compact,
+  };
+};
+
+const nearestUptimePoint = (series, geometry, clientX, svgEl) => {
+  const box = svgEl.getBoundingClientRect();
+  const scale = box.width / geometry.width;
+  const localX = (clientX - box.left) / scale;
+  const ratio = (localX - geometry.marginLeft) / geometry.plotW;
+  const clamped = Math.min(1, Math.max(0, ratio));
+  const index = Math.round(clamped * (series.length - 1));
+  return { index, point: series[index] };
+};
+
+// Clicking a point scopes the incident timeline to the 90-day window that produced
+// it, turning "there is a dip in May 2026" into the incidents that caused it.
+const focusTimelineOn = (point) => {
+  const from = document.querySelector('[data-range-from]');
+  const to = document.querySelector('[data-range-to]');
+  if (!from || !to) return false;
+  const end = new Date(point.time);
+  const start = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+  const iso = (d) => d.toISOString().slice(0, 10);
+  from.value = iso(start);
+  to.value = iso(end);
+  to.dispatchEvent(new Event('change', { bubbles: true }));
+  const timeline = document.getElementById('incidentTimeline');
+  if (timeline) timeline.closest('.panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  return true;
+};
+
+const attachUptimeHistoryInteraction = (container, series, geometry) => {
+  const svgEl = container.querySelector('svg');
+  const cursor = svgEl && svgEl.querySelector('.uptime-cursor');
+  const line = cursor && cursor.querySelector('.uptime-cursor-line');
+  const dot = cursor && cursor.querySelector('.uptime-cursor-dot');
+  const tooltip = container.parentElement?.querySelector('.uptime-history-tooltip');
+  if (!svgEl || !cursor || !tooltip) return;
+
+  const xAt = (time) => geometry.marginLeft + ((time - geometry.xMin) / geometry.xSpan) * geometry.plotW;
+  let active = -1;
+
+  const hide = () => {
+    active = -1;
+    cursor.setAttribute('opacity', '0');
+    tooltip.classList.remove('active');
+    tooltip.setAttribute('aria-hidden', 'true');
+  };
+
+  const show = (index) => {
+    const point = series[index];
+    if (!point) return;
+    active = index;
+    const cx = xAt(point.time);
+    const box = svgEl.getBoundingClientRect();
+    const scale = box.width / geometry.width;
+
+    line.setAttribute('x1', cx.toFixed(2));
+    line.setAttribute('x2', cx.toFixed(2));
+    const clamped = Math.min(geometry.yMax, Math.max(geometry.yMin, point.uptime));
+    const cy =
+      geometry.marginTop +
+      (1 - (clamped - geometry.yMin) / (geometry.yMax - geometry.yMin)) * geometry.plotH;
+    dot.setAttribute('cx', cx.toFixed(2));
+    dot.setAttribute('cy', cy.toFixed(2));
+    cursor.setAttribute('opacity', '1');
+
+    const windowStart = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+    tooltip.innerHTML =
+      `<div class="tooltip-date">${formatUptimeHistoryDate(point.time)}</div>` +
+      `<div class="tooltip-summary"><strong>${point.uptime.toFixed(2)}%</strong>` +
+      `<span>over the 90 days from ${formatUptimeHistoryDate(windowStart)}</span></div>` +
+      `<div class="tooltip-related">Click to list these incidents</div>`;
+    tooltip.classList.add('active');
+    tooltip.setAttribute('aria-hidden', 'false');
+
+    const left = Math.min(Math.max(cx * scale, 110), box.width - 110);
+    const top = cy * scale;
+    // Above the point by default, but flip below rather than escaping the chart and
+    // covering the stat strip.
+    const below = top - tooltip.offsetHeight - 16 < 0;
+    tooltip.classList.toggle('below', below);
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  };
+
+  const onMove = (event) => {
+    const { index } = nearestUptimePoint(series, geometry, event.clientX, svgEl);
+    if (index !== active) show(index);
+  };
+
+  svgEl.addEventListener('pointermove', onMove);
+  svgEl.addEventListener('pointerdown', onMove);
+  svgEl.addEventListener('pointerleave', hide);
+  svgEl.addEventListener('click', () => {
+    if (active >= 0) focusTimelineOn(series[active]);
+  });
+
+  container.tabIndex = 0;
+  container.addEventListener('focus', () => show(series.length - 1));
+  container.addEventListener('blur', hide);
+  container.addEventListener('keydown', (event) => {
+    const step = event.shiftKey ? 30 : 1;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      const base = active < 0 ? series.length - 1 : active;
+      show(Math.min(series.length - 1, Math.max(0, base + (event.key === 'ArrowRight' ? step : -step))));
+    } else if (event.key === 'Enter' && active >= 0) {
+      event.preventDefault();
+      focusTimelineOn(series[active]);
+    } else if (event.key === 'Escape') {
+      hide();
+    }
+  });
 };
 
 const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
@@ -316,18 +457,48 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
   const chartSelector = options.chartTarget || '#uptimeHistoryImage';
 
-  // The lifetime figure belongs to the panel's stat strip; repeating it here put the
-  // same number on screen twice.
+  // All of the chart's prose now lives here, at body-text size, instead of being
+  // baked into the SVG where it was scaled down to 6px. The lifetime figure stays out
+  // of it: the stat strip above already carries that number.
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    caption.textContent = `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
-      new Date(projectStartMs),
-    )}.`;
+    caption.textContent =
+      `90-day rolling uptime since ${formatUptimeHistoryDate(new Date(projectStartMs))} · ` +
+      `non-maintenance downtime, merged windows · hover or focus the chart to read any day.`;
   }
 
   const chartContainer = document.querySelector(chartSelector);
-  if (chartContainer) {
-    chartContainer.innerHTML = buildUptimeHistorySVG(series);
+  if (chartContainer && series.length) {
+    // clientWidth includes the container's padding; feeding that back as the viewBox
+    // width leaves the SVG 8px wider than its box, which resizes it and retriggers
+    // the observer. Measure the content box instead. The all-time tabpanel is hidden
+    // on first render, so guard the zero (and the negative it becomes once padding is
+    // subtracted) -- the ResizeObserver redraws at the real width once it is shown.
+    const contentWidth = () => {
+      const cs = window.getComputedStyle(chartContainer);
+      const inner =
+        chartContainer.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
+      return inner > 0 ? Math.round(inner) : UPTIME_HISTORY_LAYOUT.width;
+    };
+    const draw = () => {
+      const layout = options.layout || layoutForWidth(contentWidth());
+      const { markup, geometry } = buildUptimeHistorySVG(series, layout);
+      chartContainer.innerHTML = markup;
+      attachUptimeHistoryInteraction(chartContainer, series, geometry);
+    };
+    draw();
+    if (typeof ResizeObserver === 'function' && !chartContainer.dataset.observed) {
+      chartContainer.dataset.observed = 'true';
+      let last = contentWidth();
+      // Redraw on the next frame: mutating the SVG inside the callback is what
+      // produces "ResizeObserver loop completed with undelivered notifications".
+      new ResizeObserver(() => {
+        const next = contentWidth();
+        if (Math.abs(next - last) < 8) return;
+        last = next;
+        window.requestAnimationFrame(draw);
+      }).observe(chartContainer);
+    }
   }
 
   // The extremes are already found while annotating the chart; hand them back so the

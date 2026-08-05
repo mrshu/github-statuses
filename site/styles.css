@@ -961,6 +961,10 @@ main {
   gap: 8px;
 }
 
+.uptime-history-stage {
+  position: relative;
+}
+
 .uptime-history-chart {
   display: block;
   width: 100%;
@@ -969,12 +973,67 @@ main {
   background: var(--card);
   padding: 4px;
   overflow: hidden;
+  cursor: crosshair;
 }
 
+.uptime-history-chart:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* The viewBox is generated at the container's own pixel width, so the SVG must not
+   be rescaled here — that is exactly what shrank the labels to 6px. */
 .uptime-history-chart svg {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.uptime-history-tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 16px));
+  min-width: 210px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 3;
+}
+
+.uptime-history-tooltip.active {
+  opacity: 1;
+}
+
+.uptime-history-tooltip.below {
+  transform: translate(-50%, 16px);
+}
+
+.uptime-history-tooltip .tooltip-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.uptime-history-tooltip .tooltip-summary strong {
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+
+.uptime-history-tooltip .tooltip-summary span,
+.uptime-history-tooltip .tooltip-related {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.uptime-history-tooltip .tooltip-related {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
 }
 
 .uptime-history-caption {

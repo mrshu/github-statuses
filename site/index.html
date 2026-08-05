@@ -142,12 +142,15 @@
             <div class="uptime-row uptime-row-all">
               <div class="alltime-stats" id="allTimeStats"></div>
               <figure class="uptime-history-figure">
-                <div
-                  class="uptime-history-chart"
-                  id="uptimeHistoryImage"
-                  role="img"
-                  aria-label="GitHub Platform 90-day rolling uptime since project start"
-                ></div>
+                <div class="uptime-history-stage">
+                  <div
+                    class="uptime-history-chart"
+                    id="uptimeHistoryImage"
+                    role="application"
+                    aria-label="GitHub Platform 90-day rolling uptime since project start. Use arrow keys to read a day, Enter to list its incidents."
+                  ></div>
+                  <div class="uptime-history-tooltip" aria-hidden="true"></div>
+                </div>
                 <figcaption class="uptime-history-caption" id="uptimeHistoryCaption">
                   90-day rolling uptime since the project began on Jun 11, 2022.
                 </figcaption>
