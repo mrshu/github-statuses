@@ -96,7 +96,6 @@
   --source-tab-bg: linear-gradient(180deg, #11121a 0%, #24292f 100%);
   --source-tab-border: transparent;
   --source-tab-shadow: 0 18px 28px -22px rgba(17, 18, 26, 0.8);
-  --source-tab-notch: rgba(255, 255, 255, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -193,7 +192,6 @@
     --source-tab-bg: linear-gradient(180deg, #161b22 0%, #24292f 100%);
     --source-tab-border: rgba(255, 123, 114, 0.22);
     --source-tab-shadow: 0 20px 34px -22px rgba(0, 0, 0, 0.88);
-    --source-tab-notch: rgba(255, 123, 114, 0.24);
   }
 
   .grain {
@@ -442,18 +440,6 @@ a:hover {
   text-decoration: none;
   box-shadow: var(--source-tab-shadow);
   z-index: 2;
-}
-
-.site-live-corner-tab::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  background: var(--source-tab-notch);
-  border-radius: 50%;
-  transform: translate(-50%, 50%);
 }
 
 .site-live-corner-tab strong {
@@ -2306,12 +2292,6 @@ details ul {
     box-shadow: 0 16px 26px -22px rgba(17, 18, 26, 0.82);
     transform: none;
     z-index: 25;
-  }
-
-  .site-live-corner-tab::after {
-    display: block;
-    width: 8px;
-    height: 8px;
   }
 
   .site-live-corner-tab strong {
