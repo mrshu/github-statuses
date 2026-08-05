@@ -100,6 +100,10 @@ const SHARE_IMAGE_SIZE = {
   width: 1600,
   height: 840,
 };
+// The card is meant to be pasted into issues, slides and social posts, all of which
+// resample it. Exporting at 2x keeps the type crisp on HiDPI displays; 3x roughly
+// triples the PNG for no visible gain at the sizes it actually gets viewed.
+const SHARE_PIXEL_RATIO = 2;
 const SHARE_FILE_NAME = 'github-status-90-day-uptime.png';
 const SHARE_FILE_NAME_ALL = 'github-status-all-time-uptime.png';
 // The card mirrors the active tab, so the saved file should say which one it is.
@@ -640,15 +644,18 @@ const renderShareImageCanvas = () => {
 
   const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+  // Draw at SHARE_PIXEL_RATIO and scale the context, so every coordinate below stays
+  // in the 1600x840 design space while the exported PNG is that many times sharper.
   const canvas = document.createElement('canvas');
-  canvas.width = SHARE_IMAGE_SIZE.width;
-  canvas.height = SHARE_IMAGE_SIZE.height;
+  canvas.width = SHARE_IMAGE_SIZE.width * SHARE_PIXEL_RATIO;
+  canvas.height = SHARE_IMAGE_SIZE.height * SHARE_PIXEL_RATIO;
   const ctx = canvas.getContext('2d');
   if (!ctx) {
     throw new Error('Canvas is not available.');
   }
+  ctx.scale(SHARE_PIXEL_RATIO, SHARE_PIXEL_RATIO);
 
-  const { width, height } = canvas;
+  const { width, height } = SHARE_IMAGE_SIZE;
   const backgroundGradient = ctx.createLinearGradient(0, height, width, 0);
   if (isDark) {
     backgroundGradient.addColorStop(0, '#0d1117');
