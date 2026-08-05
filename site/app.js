@@ -90,9 +90,27 @@ const getStatusMetaVariant = () => {
 
 const statusMetaVariant = getStatusMetaVariant();
 document.documentElement.dataset.statusMeta = statusMetaVariant;
+
+// Competing treatments for the all-time panel header, previewable side by side via
+// ?alltime=a|b|c|d before one is chosen and the rest deleted. 'current' is today's
+// layout, kept as the default so the live page is unaffected while we compare.
+const ALLTIME_VARIANTS = new Set(['current', 'a', 'b', 'c', 'd']);
+const DEFAULT_ALLTIME_VARIANT = 'current';
+const allTimeVariant = (() => {
+  const variant = new URLSearchParams(window.location.search).get('alltime');
+  return variant && ALLTIME_VARIANTS.has(variant) ? variant : DEFAULT_ALLTIME_VARIANT;
+})();
+document.documentElement.dataset.alltime = allTimeVariant;
+
+// ?embed=alltime renders the hero panel alone, already switched to the all-time
+// view, so pick-alltime.html can iframe every variant side by side at real widths.
+const embedMode = new URLSearchParams(window.location.search).get('embed');
+if (embedMode) document.documentElement.dataset.embed = embedMode;
 const statusMetaState = {
   lastUpdated: null,
   recentIncidentCount: 0,
+  totalIncidentCount: 0,
+  projectStartLabel: null,
 };
 const SHARE_IMAGE_SIZE = {
   width: 1600,
@@ -311,11 +329,23 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
   if (!lastUpdatedEl || !incidentCountEl) return;
 
   const dateText = formatDate(lastUpdated);
-  const incidentText = formatIncidentCount(recentIncidentCount);
+
+  // The header sat above whichever tab was open but always reported the 90-day
+  // count, so the all-time view claimed "69 incidents in last 90 days" over four
+  // years of data. Every proposed variant scopes the figure to the active view.
+  const allTimeActive =
+    allTimeVariant !== 'current' &&
+    document.querySelector('.hero-panel')?.dataset.uptimeView === 'all';
+  const scopedCount = allTimeActive ? statusMetaState.totalIncidentCount : recentIncidentCount;
+  const scopeLabel = allTimeActive
+    ? `since ${statusMetaState.projectStartLabel || 'launch'}`
+    : 'in last 90 days';
+  const shortScope = allTimeActive ? 'all time' : 'last 90 days';
+  const incidentText = formatIncidentCount(scopedCount);
 
   if (!shouldUseAlternateStatusMeta()) {
     lastUpdatedEl.textContent = `Last updated ${dateText}`;
-    incidentCountEl.textContent = `${incidentText} in last 90 days`;
+    incidentCountEl.textContent = `${incidentText} ${scopeLabel}`;
     lastUpdatedEl.removeAttribute('aria-label');
     incidentCountEl.removeAttribute('aria-label');
     return;
@@ -324,19 +354,23 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
   switch (statusMetaVariant) {
     case 'stacked':
       setStatusMetaItem(lastUpdatedEl, 'Updated', dateText);
-      setStatusMetaItem(incidentCountEl, 'Incidents', `${recentIncidentCount} in last 90 days`);
+      setStatusMetaItem(incidentCountEl, 'Incidents', `${scopedCount} ${scopeLabel}`);
       break;
     case 'cards':
       setStatusMetaItem(lastUpdatedEl, 'Last updated', dateText);
-      setStatusMetaItem(incidentCountEl, 'Last 90 days', incidentText);
+      setStatusMetaItem(incidentCountEl, shortScope, incidentText);
       break;
     case 'compact':
       setStatusMetaItem(lastUpdatedEl, null, `Updated ${dateText}`);
-      setStatusMetaItem(incidentCountEl, null, `${incidentText} / 90d`);
+      setStatusMetaItem(
+        incidentCountEl,
+        null,
+        allTimeActive ? `${incidentText} all time` : `${incidentText} / 90d`,
+      );
       break;
     default:
       lastUpdatedEl.textContent = `Last updated ${dateText}`;
-      incidentCountEl.textContent = `${incidentText} in last 90 days`;
+      incidentCountEl.textContent = `${incidentText} ${scopeLabel}`;
       break;
   }
 };
@@ -782,12 +816,80 @@ const addMonthsUTC = (date, delta) =>
 const daysInMonthUTC = (date) =>
   new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
 
+const formatMonthYearUTC = (value) =>
+  new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
+    value instanceof Date ? value : new Date(value),
+  );
+
+const buildStat = (value, label, tone) => {
+  const cell = document.createElement('div');
+  cell.className = tone ? `alltime-stat alltime-stat-${tone}` : 'alltime-stat';
+  const figure = document.createElement('span');
+  figure.className = 'alltime-stat-value';
+  figure.textContent = value;
+  const caption = document.createElement('span');
+  caption.className = 'alltime-stat-label';
+  caption.textContent = label;
+  cell.append(figure, caption);
+  return cell;
+};
+
+const renderAllTimeSummary = (stats) => {
+  const host = document.getElementById('allTimeSummary');
+  if (!host) return;
+  host.innerHTML = '';
+  host.className = `alltime-summary alltime-summary-${allTimeVariant}`;
+
+  const pct = (point) => `${point.uptime.toFixed(2)}%`;
+
+  if (allTimeVariant === 'b') {
+    const lead = document.createElement('div');
+    lead.className = 'alltime-lead';
+    const value = document.createElement('span');
+    value.className = 'alltime-lead-value';
+    value.textContent = `${stats.lifetimeUptime.toFixed(2)}%`;
+    const label = document.createElement('span');
+    label.className = 'alltime-lead-label';
+    label.textContent = 'lifetime uptime';
+    lead.append(value, label);
+    host.appendChild(lead);
+    return;
+  }
+
+  if (allTimeVariant === 'c') {
+    host.append(
+      buildStat(`${stats.lifetimeUptime.toFixed(2)}%`, 'lifetime'),
+      // The chart already annotates both extremes with their exact dates; repeating
+      // the month here only forces the label onto a second line.
+      buildStat(pct(stats.peak), 'best 90d', 'good'),
+      buildStat(pct(stats.low), 'worst 90d', 'bad'),
+      buildStat(pct(stats.latest), 'today', 'now'),
+    );
+  }
+};
+
 const renderAllTimeUptime = (windowEntries, rangeEnd) => {
   if (!window.UptimeHistoryChart || typeof window.UptimeHistoryChart.render !== 'function') {
     console.warn('UptimeHistoryChart module not loaded; skipping all-time render.');
     return;
   }
-  window.UptimeHistoryChart.render(windowEntries, rangeEnd);
+  const chart = window.UptimeHistoryChart;
+  // Every variant except 'current' drops the duplicated "GitHub Platform · all time"
+  // row, so the chart must not write into a percentage element that is gone.
+  let overallLabel;
+  if (allTimeVariant === 'd') {
+    const intervals = chart.collectDowntimeIntervals(windowEntries);
+    const endMs = rangeEnd instanceof Date ? rangeEnd.getTime() : Number(rangeEnd);
+    const lifetime = chart.computeLifetimeUptime(intervals, chart.PROJECT_START_UTC, endMs);
+    overallLabel = `${lifetime.toFixed(2)}% overall`;
+  }
+  const stats = chart.render(windowEntries, rangeEnd, {
+    silentPercent: allTimeVariant !== 'current',
+    silentCaptionPercent: allTimeVariant !== 'current' && allTimeVariant !== 'a',
+    overallLabel,
+  });
+  renderAllTimeSummary(stats);
+  return stats;
 };
 
 const setupUptimeViewToggle = () => {
@@ -822,6 +924,8 @@ const setupUptimeViewToggle = () => {
       btn.setAttribute('aria-selected', String(active));
       btn.tabIndex = active ? 0 : -1;
     });
+    // The header's incident count is scoped to the active view.
+    rerenderStatusMeta();
   };
 
   buttons.forEach((btn) => {
@@ -840,7 +944,7 @@ const setupUptimeViewToggle = () => {
     });
   });
 
-  setView('90d');
+  setView(embedMode === 'alltime' ? 'all' : '90d');
 };
 
 const render = async () => {
@@ -1084,6 +1188,10 @@ const render = async () => {
     const start = incidentStartDate(incident).getTime();
     return start >= since;
   });
+  statusMetaState.totalIncidentCount = incidents.length;
+  statusMetaState.projectStartLabel = window.UptimeHistoryChart
+    ? formatMonthYearUTC(window.UptimeHistoryChart.PROJECT_START_UTC)
+    : null;
   renderStatusMeta(lastUpdated, recentIncidents.length);
   shareState.lastUpdated = lastUpdated;
   shareState.recentIncidentCount = recentIncidents.length;

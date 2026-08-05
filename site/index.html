@@ -66,7 +66,7 @@
     </header>
 
     <main>
-      <section class="hero panel-raise" data-animate>
+      <section class="hero panel-raise" id="uptime" data-animate>
         <div class="hero-panel hero-panel-full" data-uptime-view="90d">
           <div class="hero-panel-header">
             <h3 id="uptimeViewTitle" class="hero-panel-title">Last 90 days uptime</h3>
@@ -140,10 +140,11 @@
             hidden
           >
             <div class="uptime-row uptime-row-all">
-              <div class="uptime-label">
+              <div class="uptime-label uptime-label-all">
                 <span>GitHub Platform · all time</span>
                 <span class="uptime-percent" id="uptimePercentAll">—</span>
               </div>
+              <div class="alltime-summary" id="allTimeSummary"></div>
               <figure class="uptime-history-figure">
                 <div
                   class="uptime-history-chart"
