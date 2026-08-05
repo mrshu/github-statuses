@@ -313,21 +313,16 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const series = computeUptimeHistorySeries(intervals, projectStartMs, endMs);
   const lifetimeUptime = computeLifetimeUptime(intervals, projectStartMs, endMs);
 
-  const targetSelector = options.percentTarget || '#uptimePercentAll';
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
   const chartSelector = options.chartTarget || '#uptimeHistoryImage';
 
-  const target = document.querySelector(targetSelector);
-  if (target) {
-    target.textContent = `${lifetimeUptime.toFixed(2)}% lifetime uptime`;
-  }
-
+  // The lifetime figure belongs to the panel's stat strip; repeating it here put the
+  // same number on screen twice.
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    caption.textContent =
-      `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
-        new Date(projectStartMs),
-      )}. Lifetime uptime: ${lifetimeUptime.toFixed(2)}%.`;
+    caption.textContent = `90-day rolling uptime since the project began on ${formatUptimeHistoryDate(
+      new Date(projectStartMs),
+    )}.`;
   }
 
   const chartContainer = document.querySelector(chartSelector);
@@ -335,7 +330,16 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     chartContainer.innerHTML = buildUptimeHistorySVG(series);
   }
 
-  return { lifetimeUptime, series };
+  // The extremes are already found while annotating the chart; hand them back so the
+  // panel does not have to walk the series again.
+  let peak = series[0];
+  let low = series[0];
+  for (let i = 1; i < series.length; i += 1) {
+    if (series[i].uptime > peak.uptime) peak = series[i];
+    if (series[i].uptime < low.uptime) low = series[i];
+  }
+
+  return { lifetimeUptime, series, peak, low, latest: series[series.length - 1] };
 };
 
 var UptimeHistoryChart = {
