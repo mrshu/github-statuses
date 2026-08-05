@@ -2,6 +2,7 @@
 import argparse
 import csv
 import html
+import hashlib
 import json
 import os
 import re
@@ -138,6 +139,7 @@ except ImportError:
 
 _GLINER_MODEL = None
 _GLINER_MODEL_NAME = None
+_GLINER_LOAD_FAILED = False
 
 
 def run_git(args):
@@ -304,12 +306,25 @@ def fetch_url(url, timeout=15):
 
 
 def get_gliner_model(model_name):
-    global _GLINER_MODEL, _GLINER_MODEL_NAME
+    global _GLINER_MODEL, _GLINER_MODEL_NAME, _GLINER_LOAD_FAILED
     if _GLINER_MODEL is not None and _GLINER_MODEL_NAME == model_name:
         return _GLINER_MODEL
-    if GLiNER2 is None:
+    if GLiNER2 is None or _GLINER_LOAD_FAILED:
         return None
-    _GLINER_MODEL = GLiNER2.from_pretrained(model_name)
+    try:
+        _GLINER_MODEL = GLiNER2.from_pretrained(model_name)
+    except Exception as exc:  # noqa: BLE001 - any load failure must degrade, not abort
+        # Component inference is an enhancement; dates, durations, impacts and downtime
+        # windows need no model. A HuggingFace outage previously aborted the entire
+        # daily run (LocalEntryNotFoundError, 2026-06-21), leaving the site stale.
+        # Remember the failure so 800+ incidents don't each retry the download.
+        _GLINER_LOAD_FAILED = True
+        print(
+            f"warning: could not load GLiNER2 model {model_name!r} ({exc}); "
+            "falling back to cached component inferences for this run.",
+            file=sys.stderr,
+        )
+        return None
     _GLINER_MODEL_NAME = model_name
     return _GLINER_MODEL
 
@@ -346,14 +361,17 @@ def filter_components_by_alias(components, text):
     return matched or None
 
 
-def infer_components_with_gliner2(incident, model_name, threshold):
-    if incident.get("components"):
+def apply_inferred_components(incident, components, confidences):
+    if not components:
         return
-    if GLiNER2 is None:
-        return
-    model = get_gliner_model(model_name)
-    if model is None:
-        return
+    incident["components"] = components
+    incident["components_source"] = "gliner2"
+    incident["components_confidence"] = {
+        label: confidences[label] for label in components if label in confidences
+    }
+
+
+def gliner_input_text(incident):
     parts = [incident.get("title") or ""]
     for update in incident.get("updates") or []:
         if update.get("status") == "Resolved":
@@ -361,19 +379,58 @@ def infer_components_with_gliner2(incident, model_name, threshold):
         message = update.get("message")
         if message:
             parts.append(message)
-    text = " ".join(p.strip() for p in parts if p)
+    return " ".join(p.strip() for p in parts if p)
+
+
+def gliner_fingerprint(text, model_name, threshold):
+    payload = f"{model_name}|{threshold}|{text}".encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()[:16]
+
+
+def infer_components_with_gliner2(incident, model_name, threshold, cache=None):
+    if incident.get("components"):
+        return False
+
+    text = gliner_input_text(incident)
     if not text:
-        return
+        return False
+
+    url = incident.get("url")
+    entry = cache.get(url) if cache is not None and url else None
+    fingerprint = gliner_fingerprint(text, model_name, threshold)
+    cached = entry.get("components_gliner_confidence") or {} if entry else {}
+
+    # Reuse a cached inference only when the inputs are byte-identical. An incident
+    # first parsed mid-flight carries far less text than the same incident once it has
+    # resolved, so a URL-keyed cache would freeze that first, thinner result — often no
+    # components at all — forever. The fingerprint also invalidates on model/threshold
+    # changes.
+    if entry is not None and entry.get("components_gliner_fp") == fingerprint:
+        apply_inferred_components(incident, entry.get("components_gliner"), cached)
+        return False
+
+    model = get_gliner_model(model_name)
+    if model is None:
+        # Model unavailable (see get_gliner_model): fall back to whatever inference we
+        # last recorded, even if it came from different text. Slightly stale component
+        # tags for a day beat dropping them from the site entirely.
+        if entry is not None and "components_gliner" in entry:
+            apply_inferred_components(incident, entry.get("components_gliner"), cached)
+        return False
+
     result = model.extract_entities(text, COMPONENT_SCHEMA, include_confidence=True)
     entities = result.get("entities", {}) if isinstance(result, dict) else {}
     components, confidences = select_components_from_entities(entities, threshold)
     components = filter_components_by_alias(components, text)
-    if components:
-        incident["components"] = components
-        incident["components_source"] = "gliner2"
-        incident["components_confidence"] = {
-            label: confidences[label] for label in components if label in confidences
-        }
+    apply_inferred_components(incident, components, confidences)
+
+    if cache is None or not url:
+        return False
+    entry = cache.setdefault(url, {})
+    entry["components_gliner"] = components
+    entry["components_gliner_confidence"] = incident.get("components_confidence") or {}
+    entry["components_gliner_fp"] = fingerprint
+    return True
 
 
 def load_impact_cache(path):
@@ -425,11 +482,13 @@ def enrich_impacts(incidents, cache_path, delay_seconds):
             incident["impact"] = impact
         if components:
             incident["components"] = components
-        cache[url] = {
-            "impact": impact,
-            "components": components,
-            "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        }
+        # Update in place: incidents whose page lists no components are re-fetched on
+        # every run, and replacing the entry wholesale would discard the cached GLiNER2
+        # inference for exactly those incidents that depend on it.
+        entry = cache.setdefault(url, {})
+        entry["impact"] = impact
+        entry["components"] = components
+        entry["fetched_at"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         updated = True
         save_impact_cache(cache_path, cache)
         if delay_seconds:
@@ -502,13 +561,27 @@ def merge_incident(existing, incoming):
         existing["entry_id"] = incoming["entry_id"] or existing["entry_id"]
 
     for update in incoming["updates"]:
-        existing["updates"].setdefault(update_key(update), update)
+        key = update_key(update)
+        if update["status"] == "Resolved":
+            # An edited resolution supersedes the one already stored; snapshots are
+            # replayed oldest-first, so the last write is the most recent revision.
+            existing["updates"][key] = update
+        else:
+            existing["updates"].setdefault(key, update)
 
     return existing
 
 
 def update_key(update):
     at = update["at"].isoformat().replace("+00:00", "Z")
+    # GitHub edits the resolution in place to append a root-cause analysis, which the
+    # feed republishes under the original timestamp. Statuspage resolves an incident
+    # exactly once (checked: 478 incidents carried a duplicate Resolved update and all
+    # of them shared a single timestamp), so key resolutions on time alone and let the
+    # newest text win. Other statuses keep the message, because several components can
+    # legitimately report at the same instant.
+    if update["status"] == "Resolved":
+        return f"{at}|Resolved"
     return f"{at}|{update['status']}|{update['message']}"
 
 
@@ -516,10 +589,14 @@ def finalize_incident(incident):
     updates_by_key = incident["updates"]
 
     ordered = list(updates_by_key.values())
+    # The feed lists updates newest-first, so a lower _order is more recent; negate it
+    # to break same-timestamp ties in GitHub's own order rather than alphabetically.
+    # message is the final tiebreak so the committed output stays byte-stable.
     ordered.sort(
         key=lambda item: (
             item["at"],
             STATUS_ORDER.get(item["status"], 99),
+            -item.get("_order", 0),
             item["message"],
         )
     )
@@ -683,14 +760,21 @@ def main():
 
     if args.infer_components == "gliner2":
         if GLiNER2 is None:
-            print("GLiNER2 not installed; skipping component inference.", file=sys.stderr)
-        else:
-            for incident in finalized:
-                infer_components_with_gliner2(
-                    incident,
-                    model_name=args.gliner_model,
-                    threshold=args.gliner_threshold,
-                )
+            print(
+                "GLiNER2 not installed; using cached component inferences only.",
+                file=sys.stderr,
+            )
+        cache = load_impact_cache(args.impact_cache)
+        dirty = False
+        for incident in finalized:
+            dirty |= infer_components_with_gliner2(
+                incident,
+                model_name=args.gliner_model,
+                threshold=args.gliner_threshold,
+                cache=cache,
+            )
+        if dirty:
+            save_impact_cache(args.impact_cache, cache)
 
     out_dir = args.out
     os.makedirs(out_dir, exist_ok=True)

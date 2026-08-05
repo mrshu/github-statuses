@@ -178,6 +178,94 @@ class ExtractIncidentsTests(unittest.TestCase):
         filtered = ei.filter_components_by_alias(components, text)
         self.assertIsNone(filtered)
 
+    def test_update_key_collapses_edited_resolution(self):
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
+        terse = {"at": at, "status": "Resolved", "message": "This incident has been resolved."}
+        rca = {"at": at, "status": "Resolved", "message": "On 2026-06-10 a config change..."}
+        self.assertEqual(ei.update_key(terse), ei.update_key(rca))
+
+    def test_update_key_keeps_simultaneous_component_updates(self):
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
+        pages = {"at": at, "status": "Update", "message": "GitHub Pages is operating normally."}
+        packages = {"at": at, "status": "Update", "message": "GitHub Packages is degraded."}
+        self.assertNotEqual(ei.update_key(pages), ei.update_key(packages))
+
+    def test_merge_incident_lets_edited_resolution_win(self):
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
+        existing = {
+            "id": "1",
+            "title": "Incident",
+            "updates": {},
+            "published_at": None,
+            "updated_at": None,
+            "url": "https://example/1",
+            "entry_id": "1",
+        }
+        for message in ("This incident has been resolved.", "On 2026-06-10 a config change..."):
+            ei.merge_incident(
+                existing,
+                {
+                    "id": "1",
+                    "title": "Incident",
+                    "updates": [{"at": at, "status": "Resolved", "message": message}],
+                    "published_at": None,
+                    "updated_at": None,
+                    "url": "https://example/1",
+                    "entry_id": "1",
+                },
+            )
+        self.assertEqual(len(existing["updates"]), 1)
+        kept = next(iter(existing["updates"].values()))
+        self.assertEqual(kept["message"], "On 2026-06-10 a config change...")
+
+    def test_gliner_fingerprint_tracks_inputs(self):
+        base = ei.gliner_fingerprint("some text", "model-a", 0.5)
+        self.assertEqual(base, ei.gliner_fingerprint("some text", "model-a", 0.5))
+        self.assertNotEqual(base, ei.gliner_fingerprint("some text!", "model-a", 0.5))
+        self.assertNotEqual(base, ei.gliner_fingerprint("some text", "model-b", 0.5))
+        self.assertNotEqual(base, ei.gliner_fingerprint("some text", "model-a", 0.9))
+
+    def test_inference_reruns_when_incident_text_grows(self):
+        calls = []
+
+        class Model:
+            def extract_entities(self, text, schema, include_confidence=True):
+                calls.append(text)
+                return {"entities": {}}
+
+        original = ei.get_gliner_model
+        ei.get_gliner_model = lambda name: Model()
+        try:
+            cache = {}
+            thin = {"url": "https://example/1", "title": "Incident with Actions", "updates": []}
+            ei.infer_components_with_gliner2(thin, "m", 0.5, cache)
+            ei.infer_components_with_gliner2(dict(thin), "m", 0.5, cache)
+            self.assertEqual(len(calls), 1, "identical text must reuse the cached inference")
+
+            grown = dict(thin, updates=[{"status": "Update", "message": "Runs are delayed."}])
+            ei.infer_components_with_gliner2(grown, "m", 0.5, cache)
+            self.assertEqual(len(calls), 2, "a cached empty result must not freeze the incident")
+        finally:
+            ei.get_gliner_model = original
+
+    def test_inference_falls_back_to_cache_when_model_unavailable(self):
+        original = ei.get_gliner_model
+        ei.get_gliner_model = lambda name: None
+        try:
+            cache = {
+                "https://example/1": {
+                    "components_gliner": ["Actions"],
+                    "components_gliner_confidence": {"Actions": 0.9},
+                    "components_gliner_fp": "stale",
+                }
+            }
+            incident = {"url": "https://example/1", "title": "Incident with Actions", "updates": []}
+            ei.infer_components_with_gliner2(incident, "m", 0.5, cache)
+            self.assertEqual(incident["components"], ["Actions"])
+            self.assertEqual(incident["components_source"], "gliner2")
+        finally:
+            ei.get_gliner_model = original
+
 
 if __name__ == "__main__":
     unittest.main()
