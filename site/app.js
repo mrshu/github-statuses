@@ -2,18 +2,20 @@ const DATA_ROOT = window.location.pathname.includes('/site/') ? '../parsed' : 'p
 const INCIDENTS_URL = `${DATA_ROOT}/incidents.jsonl`;
 const WINDOWS_URL = `${DATA_ROOT}/downtime_windows.csv`;
 
-const impactRank = {
-  none: 0,
-  maintenance: 1,
-  minor: 2,
-  major: 3,
-};
+// Ordered from least to most severe; the array index IS the rank, so this is the
+// single source of truth for ranking, reverse lookup and CSS class names.
+// Keep in sync with the `impact-*` classes scraped by scripts/extract_incidents.py.
+const IMPACT_ORDER = ['none', 'maintenance', 'minor', 'major', 'critical'];
+const MAX_IMPACT_RANK = IMPACT_ORDER.length - 1;
+
+const impactRank = Object.fromEntries(IMPACT_ORDER.map((impact, rank) => [impact, rank]));
 
 const impactLabel = {
   none: 'Operational',
   maintenance: 'Maintenance',
   minor: 'Minor',
   major: 'Major',
+  critical: 'Critical',
 };
 
 const impactSummary = {
@@ -21,6 +23,39 @@ const impactSummary = {
   maintenance: 'Maintenance',
   minor: 'Partial outage',
   major: 'Major outage',
+  critical: 'Critical outage',
+};
+
+const reportedUnknownImpacts = new Set();
+
+// githubstatus.com only assigns an impact to things it already considers incidents,
+// so an unrecognized value is never "operational". Falling back to rank 0 would paint
+// a real outage green, so escalate to the most severe known rank and say so loudly.
+const rankOf = (impact) => {
+  const rank = impactRank[impact];
+  if (rank !== undefined) return rank;
+  if (!reportedUnknownImpacts.has(impact)) {
+    reportedUnknownImpacts.add(impact);
+    console.warn(`Unknown incident impact "${impact}"; treating it as "${IMPACT_ORDER[MAX_IMPACT_RANK]}".`);
+  }
+  return MAX_IMPACT_RANK;
+};
+
+const impactAtRank = (rank) => IMPACT_ORDER[rank] ?? 'none';
+
+// Normalizes any raw feed value onto a known impact, so callers can safely index
+// into impactLabel/impactSummary and emit a CSS class that actually has styling.
+const knownImpact = (impact) => impactAtRank(rankOf(impact));
+
+// The share card is drawn on a canvas and cannot read CSS variables; keep these in
+// sync with the light-theme --operational/--maintenance/--minor/--major/--critical
+// values in styles.css.
+const IMPACT_SHARE_RGB = {
+  none: '45, 164, 78',
+  maintenance: '31, 111, 235',
+  minor: '217, 119, 6',
+  major: '207, 34, 46',
+  critical: '130, 7, 30',
 };
 
 const SERVICES = [
@@ -538,16 +573,11 @@ const renderShareImageCanvas = () => {
   const barsHeight = 64;
   const barGap = 4;
   const barWidth = (cardWidth - 128 - barGap * (shareState.daySeverity.length - 1)) / shareState.daySeverity.length;
-  const barColors = {
-    0: 'rgba(45, 164, 78, 0.82)',
-    1: 'rgba(31, 111, 235, 0.82)',
-    2: 'rgba(217, 119, 6, 0.84)',
-    3: 'rgba(207, 34, 46, 0.84)',
-  };
+  const barColor = (severity, alpha) => `rgba(${IMPACT_SHARE_RGB[impactAtRank(severity)]}, ${alpha})`;
 
   shareState.daySeverity.forEach((severity, index) => {
     const x = insetX + index * (barWidth + barGap);
-    drawRoundedRect(ctx, x, barsTop, barWidth, barsHeight, 5, barColors[severity] || barColors[0]);
+    drawRoundedRect(ctx, x, barsTop, barWidth, barsHeight, 5, barColor(severity, 0.84));
   });
 
   ctx.fillStyle = '#57606a';
@@ -559,12 +589,7 @@ const renderShareImageCanvas = () => {
 
   const legendY = cardY + cardHeight - 84;
   let legendX = insetX;
-  const legendItems = [
-    ['rgba(45, 164, 78, 0.92)', 'Operational'],
-    ['rgba(31, 111, 235, 0.92)', 'Maintenance'],
-    ['rgba(217, 119, 6, 0.92)', 'Minor'],
-    ['rgba(207, 34, 46, 0.92)', 'Major'],
-  ];
+  const legendItems = IMPACT_ORDER.map((impact, rank) => [barColor(rank, 0.92), impactLabel[impact]]);
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
   legendItems.forEach(([color, label]) => {
     drawLegendItem(ctx, legendX, legendY, color, label);
@@ -752,11 +777,11 @@ const render = async () => {
     while (current <= lastDay) {
       const index = Math.floor((current - rangeStart) / 86400000);
       if (index >= 0 && index < daySeverity.length) {
-        daySeverity[index] = Math.max(daySeverity[index], impactRank[impact] ?? 0);
+        daySeverity[index] = Math.max(daySeverity[index], rankOf(impact));
         const incidentId = entry.id || entry.title;
         if (incidentId) {
           const existing = dayIncidents[index].get(incidentId);
-          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+          if (!existing || rankOf(impact) > rankOf(existing.impact)) {
             dayIncidents[index].set(incidentId, {
               id: incidentId,
               title: entry.title,
@@ -788,15 +813,14 @@ const render = async () => {
 
   daySeverity.forEach((severity, index) => {
     const span = document.createElement('span');
-    const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+    const impact = impactAtRank(severity);
     span.className = impact === 'none' ? 'operational' : impact;
     span.dataset.dayIndex = String(index);
     span.tabIndex = 0;
     uptimeBars.appendChild(span);
   });
 
-  const severityToImpact = (severity) =>
-    Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+  const severityToImpact = impactAtRank;
 
   const attachTooltip = (
     bars,
@@ -880,7 +904,7 @@ const render = async () => {
         <div class=\"tooltip-date\">${formatDate(date)}</div>
         <div class=\"tooltip-summary\">
           <span class=\"tooltip-dot ${impact}\"></span>
-          <span>${impactSummary[impact] || 'Operational'}</span>
+          <span>${impactSummary[impact]}</span>
           ${duration ? `<span class=\"tooltip-duration\">${duration}</span>` : ''}
         </div>
         ${incidents.length ? '<div class=\"tooltip-related\">Related</div>' : ''}
@@ -979,9 +1003,9 @@ const render = async () => {
       while (current <= lastDay) {
         const index = Math.floor((current - rangeStart) / 86400000);
         if (index >= 0 && index < stat.daySeverity.length) {
-          stat.daySeverity[index] = Math.max(stat.daySeverity[index], impactRank[impact] ?? 0);
+          stat.daySeverity[index] = Math.max(stat.daySeverity[index], rankOf(impact));
           const existing = stat.dayIncidents[index].get(incident.id);
-          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+          if (!existing || rankOf(impact) > rankOf(existing.impact)) {
             stat.dayIncidents[index].set(incident.id, {
               id: incident.id,
               title: incident.title,
@@ -1022,7 +1046,7 @@ const render = async () => {
     bars.className = 'service-bars';
     stat.daySeverity.forEach((severity, index) => {
       const span = document.createElement('span');
-      const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+      const impact = impactAtRank(severity);
       span.className = impact === 'none' ? 'operational' : impact;
       span.dataset.dayIndex = String(index);
       span.tabIndex = 0;
@@ -1093,9 +1117,9 @@ const render = async () => {
         const index = (current - monthStart) / 86400000;
         if (index >= 0 && index < dayCount) {
           const impact = entry.impact || 'none';
-          daySeverity[index] = Math.max(daySeverity[index], impactRank[impact] ?? 0);
+          daySeverity[index] = Math.max(daySeverity[index], rankOf(impact));
           const existing = dayIncidents[index].get(entry.id);
-          if (!existing || (impactRank[impact] ?? 0) > (impactRank[existing.impact] ?? 0)) {
+          if (!existing || rankOf(impact) > rankOf(existing.impact)) {
             dayIncidents[index].set(entry.id, {
               id: entry.id,
               title: entry.title,
@@ -1158,7 +1182,7 @@ const render = async () => {
           square.className = 'month-day future';
         } else {
           const severity = monthData.daySeverity[dayIndex];
-          const impact = Object.keys(impactRank).find((key) => impactRank[key] === severity) || 'none';
+          const impact = impactAtRank(severity);
           square.className = `month-day ${impact === 'none' ? 'operational' : impact}`;
           square.dataset.dayIndex = String(dayIndex);
           square.tabIndex = 0;
@@ -1266,9 +1290,9 @@ const renderIncidentCard = (incident, compact = false) => {
   titleRow.appendChild(title);
 
   const badge = document.createElement('span');
-  const impact = incident.impact || 'none';
+  const impact = knownImpact(incident.impact || 'none');
   badge.className = `badge ${impact}`;
-  badge.textContent = impactLabel[impact] || 'Operational';
+  badge.textContent = impactLabel[impact];
   titleRow.appendChild(badge);
 
   card.appendChild(titleRow);

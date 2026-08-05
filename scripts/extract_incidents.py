@@ -84,6 +84,10 @@ COMPONENTS_RE = re.compile(r"This incident affected:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_ALT_RE = re.compile(r"Affected components?:\s*([^.]+)", re.IGNORECASE)
 COMPONENTS_MAINT_RE = re.compile(r"This scheduled maintenance affected:\s*([^.]+)", re.IGNORECASE)
 
+# Statuspage severities, mirrored by IMPACT_ORDER in site/app.js. Anything outside
+# this set renders with no severity styling, so surface it rather than emit it silently.
+KNOWN_IMPACTS = {"none", "maintenance", "minor", "major", "critical"}
+
 COMPONENT_SCHEMA = {
     "Git Operations": "Git operations like git push, pull, clone, or fetch failures.",
     "Webhooks": "Webhook delivery failures, delays, or retries.",
@@ -263,7 +267,14 @@ def extract_impact_from_html(html_text):
         classes = match.group(1).split()
         for cls in classes:
             if cls.startswith("impact-"):
-                return cls.replace("impact-", "")
+                impact = cls.replace("impact-", "")
+                if impact not in KNOWN_IMPACTS:
+                    print(
+                        f"warning: unknown incident impact {impact!r}; "
+                        f"add it to KNOWN_IMPACTS here and to IMPACT_ORDER in site/app.js",
+                        file=sys.stderr,
+                    )
+                return impact
     return None
 
 
