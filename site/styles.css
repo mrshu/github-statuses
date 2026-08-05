@@ -86,6 +86,8 @@
   --timeline-chip-bg: #f0ede7;
   --component-chip-bg: #f6f8fa;
   --icon-button-bg: #ffffff;
+  --view-toggle-track: #d8dfe6;
+  --view-toggle-selected-border: #8c959f;
   --badge-minor-ink: #8a4b00;
   --badge-major-ink: #8a1f24;
   --badge-critical-ink: #6b0616;
@@ -180,6 +182,8 @@
     --timeline-chip-bg: #21262d;
     --component-chip-bg: #11161d;
     --icon-button-bg: #161b22;
+    --view-toggle-track: #0b0f14;
+    --view-toggle-selected-border: rgba(240, 246, 252, 0.22);
     --date-picker-filter: invert(0.7) brightness(1.5);
     --badge-minor-ink: #e3b341;
     --badge-major-ink: #ffa198;
@@ -844,6 +848,9 @@ main {
   justify-self: end;
 }
 
+/* The track and the selected pill were both #ffffff in light mode, separated only by
+   a 0.08-alpha shadow, so the active tab was effectively invisible. Recess the track
+   and give the pill a real border and stronger type contrast. */
 .view-toggle {
   display: inline-flex;
   align-items: center;
@@ -851,13 +858,12 @@ main {
   gap: 2px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: var(--icon-button-bg);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: var(--view-toggle-track);
 }
 
 .view-toggle-btn {
   appearance: none;
-  border: 0;
+  border: 1px solid transparent;
   background: transparent;
   color: var(--muted);
   font: inherit;
@@ -882,16 +888,15 @@ main {
 
 .view-toggle-btn[aria-selected="true"] {
   color: var(--ink);
+  font-weight: 700;
   background: var(--card);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 1px 0 rgba(15, 23, 42, 0.04);
+  border-color: var(--view-toggle-selected-border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
-  .view-toggle {
-    box-shadow: inset 0 1px 0 rgba(240, 246, 252, 0.05);
-  }
   .view-toggle-btn[aria-selected="true"] {
-    background: rgba(240, 246, 252, 0.08);
+    background: rgba(240, 246, 252, 0.12);
     box-shadow: none;
   }
 }
