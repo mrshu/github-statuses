@@ -101,6 +101,9 @@ const SHARE_IMAGE_SIZE = {
   height: 840,
 };
 const SHARE_FILE_NAME = 'github-status-90-day-uptime.png';
+const SHARE_FILE_NAME_ALL = 'github-status-all-time-uptime.png';
+// The card mirrors the active tab, so the saved file should say which one it is.
+const shareFileName = () => (shareState.view === 'all' ? SHARE_FILE_NAME_ALL : SHARE_FILE_NAME);
 const SHARE_ICON_PATHS = {
   ready:
     'M5 2.75C5 1.78 5.78 1 6.75 1h5.5C13.22 1 14 1.78 14 2.75v6.5c0 .97-.78 1.75-1.75 1.75h-5.5C5.78 11 5 10.22 5 9.25v-6.5Zm1.75-.25a.25.25 0 0 0-.25.25v6.5c0 .14.11.25.25.25h5.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-5.5ZM3.75 5A.75.75 0 0 1 4.5 5.75v6c0 .41.34.75.75.75h5a.75.75 0 0 1 0 1.5h-5A2.25 2.25 0 0 1 3 11.75v-6A.75.75 0 0 1 3.75 5Z',
@@ -120,6 +123,10 @@ const shareState = {
   imageBlob: null,
   imageReady: false,
   imagePreparing: false,
+  // All-time view: the card mirrors whichever tab is open, so it needs that data too.
+  view: '90d',
+  allTime: null,
+  totalIncidentCount: 0,
 };
 let shareResetTimeout = null;
 let shareDownloadUrl = null;
@@ -420,6 +427,7 @@ const setShareDownloadLink = (blob) => {
   clearShareDownloadUrl();
   shareDownloadUrl = URL.createObjectURL(blob);
   download.href = shareDownloadUrl;
+  download.download = shareFileName();
   download.hidden = false;
   return download;
 };
@@ -505,6 +513,86 @@ const drawLegendItem = (ctx, x, y, color, label, isDark) => {
   ctx.fillStyle = isDark ? '#9da7b3' : '#57606a';
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillText(label, x + 20, y + 4);
+  ctx.restore();
+};
+
+// The all-time card carries the same rolling-uptime line as the page, redrawn on the
+// canvas because the on-page version is an SVG the canvas cannot rasterize directly.
+const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted }) => {
+  if (!series || series.length < 2) return;
+
+  const axisW = 74;
+  const plotX = x + axisW;
+  const plotW = w - axisW;
+  const plotH = h - 34;
+
+  let dataMin = 100;
+  series.forEach((point) => {
+    if (point.uptime < dataMin) dataMin = point.uptime;
+  });
+  const yMin = Math.max(0, Math.min(85, Math.floor(dataMin / 5) * 5 - 5));
+  const xMin = series[0].time;
+  const xSpan = Math.max(1, series[series.length - 1].time - xMin);
+  const at = (point) => [
+    plotX + ((point.time - xMin) / xSpan) * plotW,
+    y + (1 - (Math.min(100, Math.max(yMin, point.uptime)) - yMin) / (100 - yMin)) * plotH,
+  ];
+
+  ctx.save();
+  ctx.font = '500 20px "IBM Plex Sans", system-ui, sans-serif';
+  ctx.fillStyle = muted;
+  ctx.strokeStyle = isDark ? 'rgba(240, 246, 252, 0.12)' : 'rgba(15, 23, 42, 0.1)';
+  ctx.lineWidth = 1;
+  for (let tick = 100; tick >= yMin - 1e-9; tick -= 5) {
+    const gy = y + (1 - (tick - yMin) / (100 - yMin)) * plotH;
+    ctx.beginPath();
+    ctx.moveTo(plotX, gy);
+    ctx.lineTo(plotX + plotW, gy);
+    ctx.stroke();
+    const label = `${tick}%`;
+    ctx.fillText(label, plotX - 12 - ctx.measureText(label).width, gy + 7);
+  }
+
+  const area = ctx.createLinearGradient(0, y, 0, y + plotH);
+  area.addColorStop(0, `rgba(${IMPACT_SHARE_RGB.none}, 0.34)`);
+  area.addColorStop(1, `rgba(${IMPACT_SHARE_RGB.none}, 0)`);
+  ctx.beginPath();
+  ctx.moveTo(plotX, y + plotH);
+  series.forEach((point) => {
+    const [px, py] = at(point);
+    ctx.lineTo(px, py);
+  });
+  ctx.lineTo(plotX + plotW, y + plotH);
+  ctx.closePath();
+  ctx.fillStyle = area;
+  ctx.fill();
+
+  const stroke = ctx.createLinearGradient(0, y, 0, y + plotH);
+  stroke.addColorStop(0, `rgb(${IMPACT_SHARE_RGB.none})`);
+  stroke.addColorStop(0.55, `rgb(${IMPACT_SHARE_RGB.minor})`);
+  stroke.addColorStop(1, `rgb(${IMPACT_SHARE_RGB.major})`);
+  ctx.beginPath();
+  series.forEach((point, index) => {
+    const [px, py] = at(point);
+    if (index === 0) ctx.moveTo(px, py);
+    else ctx.lineTo(px, py);
+  });
+  ctx.strokeStyle = stroke;
+  ctx.lineWidth = 3;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  ctx.fillStyle = muted;
+  ctx.font = '500 20px "IBM Plex Sans", system-ui, sans-serif';
+  const start = new Date(xMin);
+  const end = new Date(series[series.length - 1].time);
+  for (let year = start.getUTCFullYear() + 1; year <= end.getUTCFullYear(); year += 1) {
+    const time = Date.UTC(year, 0, 1);
+    if (time < xMin || time > end.getTime()) continue;
+    const px = plotX + ((time - xMin) / xSpan) * plotW;
+    const label = String(year);
+    ctx.fillText(label, px - ctx.measureText(label).width / 2, y + plotH + 26);
+  }
   ctx.restore();
 };
 
@@ -603,10 +691,14 @@ const renderShareImageCanvas = () => {
 
   const ink = isDark ? '#f0f6fc' : '#24292f';
   const muted = isDark ? '#9da7b3' : '#57606a';
+  const palette = isDark ? IMPACT_SHARE_RGB_DARK : IMPACT_SHARE_RGB;
+  const rgb = (impact, alpha) => `rgba(${palette[impact]}, ${alpha})`;
+  const attribution = 'by Marek Šuppa · @mareksuppa';
+  const allTime = shareState.view === 'all' && shareState.allTime;
 
   ctx.fillStyle = ink;
   ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
-  ctx.fillText('Last 90 days uptime', insetX, titleBaselineY);
+  ctx.fillText(allTime ? 'All-time uptime' : 'Last 90 days uptime', insetX, titleBaselineY);
 
   drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated), isDark);
   drawMetaPill(
@@ -615,10 +707,62 @@ const renderShareImageCanvas = () => {
     pillY,
     pillWidth,
     pillHeight,
-    'Last 90 days',
-    `${shareState.recentIncidentCount} incident${shareState.recentIncidentCount === 1 ? '' : 's'}`,
-    isDark
+    allTime ? 'All time' : 'Last 90 days',
+    allTime
+      ? `${shareState.totalIncidentCount} incidents`
+      : `${shareState.recentIncidentCount} incident${shareState.recentIncidentCount === 1 ? '' : 's'}`,
+    isDark,
   );
+
+  if (allTime) {
+    const stats = [
+      [`${allTime.lifetimeUptime.toFixed(2)}%`, 'LIFETIME', ink],
+      [`${allTime.peak.uptime.toFixed(2)}%`, 'BEST 90D', rgb('none', 1)],
+      [`${allTime.low.uptime.toFixed(2)}%`, 'WORST 90D', rgb('major', 1)],
+      [`${allTime.latest.uptime.toFixed(2)}%`, 'TODAY', ink],
+    ];
+    const statGap = 16;
+    const statW = (cardWidth - 128 - statGap * (stats.length - 1)) / stats.length;
+    const statY = cardY + 148;
+    const statH = 104;
+    stats.forEach(([value, label, color], index) => {
+      const x = insetX + index * (statW + statGap);
+      drawRoundedRect(
+        ctx,
+        x,
+        statY,
+        statW,
+        statH,
+        18,
+        isDark ? 'rgba(240, 246, 252, 0.04)' : 'rgba(246, 248, 250, 0.9)',
+        isDark ? 'rgba(48, 54, 61, 0.9)' : 'rgba(208, 215, 222, 0.9)',
+        2,
+      );
+      ctx.fillStyle = color;
+      ctx.font = '700 40px "Space Grotesk", "IBM Plex Sans", sans-serif';
+      ctx.fillText(value, x + 22, statY + 52);
+      ctx.fillStyle = muted;
+      ctx.font = '700 20px "IBM Plex Sans", system-ui, sans-serif';
+      ctx.fillText(label, x + 22, statY + 82);
+    });
+
+    drawShareLineChart(
+      ctx,
+      insetX,
+      statY + statH + 34,
+      cardWidth - 128,
+      cardY + cardHeight - 96 - (statY + statH + 34),
+      allTime.series,
+      { isDark, ink, muted },
+    );
+
+    ctx.fillStyle = muted;
+    ctx.font = '500 24px "IBM Plex Sans", system-ui, sans-serif';
+    ctx.fillText('90-day rolling window', insetX, cardY + cardHeight - 52);
+    ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
+    ctx.fillText(attribution, insetRight - ctx.measureText(attribution).width, cardY + cardHeight - 52);
+    return canvas;
+  }
 
   const rowBaselineY = cardY + 204;
   ctx.fillStyle = ink;
@@ -635,8 +779,7 @@ const renderShareImageCanvas = () => {
   const barsHeight = 64;
   const barGap = 4;
   const barWidth = (cardWidth - 128 - barGap * (shareState.daySeverity.length - 1)) / shareState.daySeverity.length;
-  const palette = isDark ? IMPACT_SHARE_RGB_DARK : IMPACT_SHARE_RGB;
-  const barColor = (severity, alpha) => `rgba(${palette[impactAtRank(severity)]}, ${alpha})`;
+  const barColor = (severity, alpha) => rgb(impactAtRank(severity), alpha);
 
   shareState.daySeverity.forEach((severity, index) => {
     const x = insetX + index * (barWidth + barGap);
@@ -659,11 +802,9 @@ const renderShareImageCanvas = () => {
     legendX += ctx.measureText(label).width + 62;
   });
 
-  const attribution = 'by Marek Šuppa · @mareksuppa';
   ctx.fillStyle = muted;
   ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
-  const attributionWidth = ctx.measureText(attribution).width;
-  ctx.fillText(attribution, insetRight - attributionWidth, legendY + 4);
+  ctx.fillText(attribution, insetRight - ctx.measureText(attribution).width, legendY + 4);
 
   return canvas;
 };
@@ -817,19 +958,22 @@ const renderAllTimeUptime = (windowEntries, rangeEnd) => {
   }
   const stats = window.UptimeHistoryChart.render(windowEntries, rangeEnd);
   const host = document.getElementById('allTimeStats');
-  if (!host || !stats || !stats.series.length) return;
+  if (!stats || !stats.series.length) return null;
 
   // A lone headline percentage invites being read as "how often GitHub works" and
   // quoted without context. The best and worst rolling windows are already computed
   // for the chart's annotations, so showing them alongside costs nothing and makes
   // the figure legible as one point in a range.
   const pct = (point) => `${point.uptime.toFixed(2)}%`;
-  host.replaceChildren(
-    buildAllTimeStat(`${stats.lifetimeUptime.toFixed(2)}%`, 'lifetime'),
-    buildAllTimeStat(pct(stats.peak), 'best 90d', 'good'),
-    buildAllTimeStat(pct(stats.low), 'worst 90d', 'bad'),
-    buildAllTimeStat(pct(stats.latest), 'today'),
-  );
+  if (host) {
+    host.replaceChildren(
+      buildAllTimeStat(`${stats.lifetimeUptime.toFixed(2)}%`, 'lifetime'),
+      buildAllTimeStat(pct(stats.peak), 'best 90d', 'good'),
+      buildAllTimeStat(pct(stats.low), 'worst 90d', 'bad'),
+      buildAllTimeStat(pct(stats.latest), 'today'),
+    );
+  }
+  return stats;
 };
 
 const setupUptimeViewToggle = () => {
@@ -871,6 +1015,16 @@ const setupUptimeViewToggle = () => {
     if (view === 'all') {
       const chart = document.getElementById('uptimeHistoryImage');
       if (chart && typeof chart.redrawUptimeHistory === 'function') chart.redrawUptimeHistory();
+    }
+    // The card mirrors the active tab, so the cached PNG is stale the moment the
+    // view changes.
+    if (shareState.view !== view) {
+      shareState.view = view;
+      shareState.imageBlob = null;
+      shareState.imageReady = false;
+      const download = document.getElementById('downloadHeroImage');
+      if (download) download.download = shareFileName();
+      if (shareState.daySeverity.length) scheduleSharePrime();
     }
   };
 
@@ -979,7 +1133,7 @@ const render = async () => {
   const uptimePercent = document.getElementById('uptimePercent');
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
 
-  renderAllTimeUptime(windowEntries, rangeEnd);
+  shareState.allTime = renderAllTimeUptime(windowEntries, rangeEnd) || null;
 
   const uptimeBars = document.getElementById('uptimeBars');
   const uptimeTooltip = document.getElementById('uptimeTooltip');
@@ -1145,6 +1299,7 @@ const render = async () => {
   shareState.recentIncidentCount = recentIncidents.length;
   shareState.uptime = uptime;
   shareState.daySeverity = daySeverity.slice();
+  shareState.totalIncidentCount = incidents.length;
   bindShareAction();
   scheduleSharePrime();
 

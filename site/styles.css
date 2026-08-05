@@ -1047,11 +1047,6 @@ main {
   text-align: center;
 }
 
-.hero-panel[data-uptime-view="all"] .hero-share,
-.hero-panel[data-uptime-view="all"] .hero-share-feedback {
-  display: none;
-}
-
 .uptime-label {
   display: flex;
   justify-content: space-between;
