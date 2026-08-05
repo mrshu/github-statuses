@@ -797,12 +797,8 @@ main {
 }
 
 /* A standalone divider element strands itself as a stray rule at the end of a line
-   when the meta wraps. Inside the panel header the separator is drawn by the
-   following item instead, so it can never outlive its neighbour. */
-.hero-panel-header .divider {
-  display: none;
-}
-
+   when the meta wraps, so the panel header has no divider span at all -- the
+   separator is drawn by the following item and cannot outlive its neighbour. */
 .hero-panel-header .status-meta-item + .status-meta-item::before {
   content: "·";
   margin-right: 12px;

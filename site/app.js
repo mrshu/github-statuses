@@ -330,23 +330,30 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
   // "69 incidents in last 90 days" over four years of data.
   const allTimeActive = document.querySelector('.hero-panel')?.dataset.uptimeView === 'all';
   const count = allTimeActive ? statusMetaState.totalIncidentCount : recentIncidentCount;
-  const scope = allTimeActive
+  const longScope = allTimeActive
     ? `since ${statusMetaState.projectStartLabel || 'launch'}`
-    : 'in last 90 days';
+    : 'in the last 90 days';
   const incidentText = formatIncidentCount(count);
 
   if (!shouldUseAlternateStatusMeta()) {
-    lastUpdatedEl.textContent = `Last updated ${dateText}`;
-    incidentCountEl.textContent = `${incidentText} ${scope}`;
-    lastUpdatedEl.removeAttribute('aria-label');
-    incidentCountEl.removeAttribute('aria-label');
+    // No scope suffix here: the selected tab and the panel title both already say
+    // which window this is, so repeating it was noise. Dropping it leaves room for
+    // the full date, which is the one thing nothing else on the page states.
+    // The separator comes from the `+ .status-meta-item::before` rule, so this
+    // renders as "Updated Aug 3, 2026 · 804 incidents".
+    lastUpdatedEl.textContent = `Updated ${dateText}`;
+    incidentCountEl.textContent = incidentText;
+    lastUpdatedEl.title = `Last updated ${dateText}`;
+    incidentCountEl.title = `${incidentText} ${longScope}`;
+    lastUpdatedEl.setAttribute('aria-label', `Last updated ${dateText}`);
+    incidentCountEl.setAttribute('aria-label', `${incidentText} ${longScope}`);
     return;
   }
 
   switch (statusMetaVariant) {
     case 'stacked':
       setStatusMetaItem(lastUpdatedEl, 'Updated', dateText);
-      setStatusMetaItem(incidentCountEl, 'Incidents', `${count} ${scope}`);
+      setStatusMetaItem(incidentCountEl, allTimeActive ? 'Incidents · all time' : 'Incidents · 90 days', String(count));
       break;
     case 'cards':
       setStatusMetaItem(lastUpdatedEl, 'Last updated', dateText);
@@ -362,7 +369,7 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
       break;
     default:
       lastUpdatedEl.textContent = `Last updated ${dateText}`;
-      incidentCountEl.textContent = `${incidentText} ${scope}`;
+      incidentCountEl.textContent = `${incidentText} ${longScope}`;
       break;
   }
 };
