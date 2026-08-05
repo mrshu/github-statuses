@@ -518,7 +518,7 @@ const drawLegendItem = (ctx, x, y, color, label, isDark) => {
 
 // The all-time card carries the same rolling-uptime line as the page, redrawn on the
 // canvas because the on-page version is an SVG the canvas cannot rasterize directly.
-const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted }) => {
+const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotations }) => {
   if (!series || series.length < 2) return;
 
   const axisW = 74;
@@ -592,6 +592,43 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted }) => {
     const px = plotX + ((time - xMin) / xSpan) * plotW;
     const label = String(year);
     ctx.fillText(label, px - ctx.measureText(label).width / 2, y + plotH + 26);
+  }
+
+  // Same peak / low / today callouts the on-page chart carries. The stat strip gives
+  // the numbers; these say *when*, which is the part the strip cannot show.
+  const annotate = (point, text, color, dy) => {
+    if (!point) return;
+    const [px, py] = at(point);
+    ctx.beginPath();
+    ctx.arc(px, py, 6, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.lineWidth = 2.5;
+    ctx.strokeStyle = isDark ? '#161b22' : '#ffffff';
+    ctx.stroke();
+
+    ctx.font = '700 21px "IBM Plex Sans", system-ui, sans-serif';
+    const textW = ctx.measureText(text).width;
+    // Keep the label inside the plot: centre it, then clamp to either edge.
+    let tx = px - textW / 2;
+    tx = Math.max(plotX, Math.min(tx, plotX + plotW - textW));
+    ctx.fillStyle = color;
+    ctx.fillText(text, tx, py + dy);
+  };
+
+  const fmt = (point) =>
+    new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
+      new Date(point.time),
+    );
+  const rgbOf = (impact) => `rgb(${(isDark ? IMPACT_SHARE_RGB_DARK : IMPACT_SHARE_RGB)[impact]})`;
+
+  if (annotations) {
+    const { peak, low, latest } = annotations;
+    annotate(peak, `peak ${peak.uptime.toFixed(2)}% · ${fmt(peak)}`, rgbOf('none'), -18);
+    if (low && Math.abs(low.time - latest.time) > 7 * 86400000) {
+      annotate(low, `low ${low.uptime.toFixed(2)}% · ${fmt(low)}`, rgbOf('major'), 32);
+    }
+    annotate(latest, `today ${latest.uptime.toFixed(2)}%`, rgbOf(latest.uptime < 99 ? 'major' : 'none'), -18);
   }
   ctx.restore();
 };
@@ -698,7 +735,9 @@ const renderShareImageCanvas = () => {
 
   ctx.fillStyle = ink;
   ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
-  ctx.fillText(allTime ? 'All-time uptime' : 'Last 90 days uptime', insetX, titleBaselineY);
+  // The card gets shared out of context, so it has to name the platform itself. The
+  // 90-day card already does, in its "GitHub Platform" row below the title.
+  ctx.fillText(allTime ? 'GitHub all-time uptime' : 'Last 90 days uptime', insetX, titleBaselineY);
 
   drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated), isDark);
   drawMetaPill(
@@ -753,7 +792,7 @@ const renderShareImageCanvas = () => {
       cardWidth - 128,
       cardY + cardHeight - 96 - (statY + statH + 34),
       allTime.series,
-      { isDark, ink, muted },
+      { isDark, ink, muted, annotations: allTime },
     );
 
     ctx.fillStyle = muted;
