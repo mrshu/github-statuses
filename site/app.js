@@ -1353,76 +1353,137 @@ const render = async () => {
 
   const activeFilters = new Set();
 
-  const getFilteredIncidents = () =>
-    activeFilters.size === 0
-      ? incidents
-      : incidents.filter((i) => activeFilters.has(i.impact || 'none'));
-
-  let showAll = false;
   const sortSelect = document.getElementById('timelineSort');
   let sortOrder = sortSelect ? sortSelect.value : 'date-desc';
-  const toggleButtons = Array.from(document.querySelectorAll('[data-toggle-timeline]'));
+
+  const GROUPS_PER_PAGE = 4;
+  let currentPage = 0;
+  let rangeFrom = null;
+  let rangeTo = null;
+
+  const prevButtons = Array.from(document.querySelectorAll('[data-page-prev]'));
+  const nextButtons = Array.from(document.querySelectorAll('[data-page-next]'));
+  const pageLabels = Array.from(document.querySelectorAll('[data-page-label]'));
+  const rangeFromInputs = Array.from(document.querySelectorAll('[data-range-from]'));
+  const rangeToInputs = Array.from(document.querySelectorAll('[data-range-to]'));
+  const rangeClearButtons = Array.from(document.querySelectorAll('[data-range-clear]'));
+
+  // Bound the date pickers to the data that actually exists.
+  if (incidents.length) {
+    const times = incidents.map((incident) => incidentStartDate(incident).getTime());
+    const toISODate = (ms) => new Date(ms).toISOString().slice(0, 10);
+    const earliest = toISODate(Math.min(...times));
+    const latest = toISODate(Math.max(...times));
+    [...rangeFromInputs, ...rangeToInputs].forEach((input) => {
+      input.min = earliest;
+      input.max = latest;
+    });
+  }
+
+  // Severity pills, the date range, the sort order and pagination all narrow the
+  // same list, so they run as one pipeline rather than each slicing its own view.
+  const selectIncidents = () =>
+    incidents.filter((incident) => {
+      if (activeFilters.size && !activeFilters.has(incident.impact || 'none')) return false;
+      const at = incidentStartDate(incident);
+      if (rangeFrom && at < rangeFrom) return false;
+      if (rangeTo && at > rangeTo) return false;
+      return true;
+    });
+
+  const sortIncidents = (list) =>
+    list.slice().sort((a, b) => {
+      if (sortOrder === 'date-desc') return incidentStartDate(b) - incidentStartDate(a);
+      const aDuration = a.duration_minutes ?? 0;
+      const bDuration = b.duration_minutes ?? 0;
+      return sortOrder === 'duration-desc' ? bDuration - aDuration : aDuration - bDuration;
+    });
+
+  // Groups runs of same-day incidents in whatever order the sort produced, so a
+  // date heading never repeats inside a page and duration sorts stay contiguous.
+  const groupByDate = (list) => {
+    const groups = [];
+    list.forEach((incident) => {
+      const date = formatDate(incidentStartDate(incident));
+      const last = groups[groups.length - 1];
+      if (last && last[0] === date) last[1].push(incident);
+      else groups.push([date, [incident]]);
+    });
+    return groups;
+  };
+
+  const updatePaginationControls = (totalPages) => {
+    prevButtons.forEach((button) => (button.disabled = currentPage <= 0));
+    nextButtons.forEach((button) => (button.disabled = currentPage >= totalPages - 1));
+    pageLabels.forEach((label) => {
+      label.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+    });
+    rangeClearButtons.forEach((button) => (button.hidden = !rangeFrom && !rangeTo));
+  };
 
   const renderTimeline = () => {
+    const groups = groupByDate(sortIncidents(selectIncidents()));
+    const totalPages = Math.max(1, Math.ceil(groups.length / GROUPS_PER_PAGE));
+    currentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
+
     timeline.innerHTML = '';
-    const filtered = getFilteredIncidents();
-    if (sortOrder === 'date-desc') {
-      const grouped = new Map();
-      filtered.forEach((incident) => {
-        const date = formatDate(incidentStartDate(incident));
-        if (!grouped.has(date)) grouped.set(date, []);
-        grouped.get(date).push(incident);
-      });
-      const entries = Array.from(grouped.entries());
-      const slice = showAll ? entries : entries.slice(0, 8);
-      slice.forEach(([date, list]) => {
-        const group = document.createElement('div');
-        group.className = 'incident-group';
-        const heading = document.createElement('h4');
-        heading.textContent = date;
-        group.appendChild(heading);
-        list.forEach((incident) => {
-          group.appendChild(renderIncidentCard(incident));
-        });
-        timeline.appendChild(group);
-      });
-    } else {
-      const sorted = filtered.slice().sort((a, b) => {
-        const aDur = a.duration_minutes ?? 0;
-        const bDur = b.duration_minutes ?? 0;
-        return sortOrder === 'duration-desc' ? bDur - aDur : aDur - bDur;
-      });
-      const slice = showAll ? sorted : sorted.slice(0, 20);
-      let lastDate = null;
-      let currentGroup = null;
-      slice.forEach((incident) => {
-        const date = formatDate(incidentStartDate(incident));
-        if (date !== lastDate) {
-          currentGroup = document.createElement('div');
-          currentGroup.className = 'incident-group';
-          const heading = document.createElement('h4');
-          heading.textContent = date;
-          currentGroup.appendChild(heading);
-          timeline.appendChild(currentGroup);
-          lastDate = date;
-        }
-        currentGroup.appendChild(renderIncidentCard(incident));
-      });
+    const start = currentPage * GROUPS_PER_PAGE;
+    const slice = groups.slice(start, start + GROUPS_PER_PAGE);
+
+    if (!slice.length) {
+      const empty = document.createElement('p');
+      empty.className = 'timeline-empty';
+      empty.textContent = 'No incidents match these filters.';
+      timeline.appendChild(empty);
     }
+
+    slice.forEach(([date, list]) => {
+      const group = document.createElement('div');
+      group.className = 'incident-group';
+      const heading = document.createElement('h4');
+      heading.textContent = date;
+      group.appendChild(heading);
+      list.forEach((incident) => {
+        group.appendChild(renderIncidentCard(incident));
+      });
+      timeline.appendChild(group);
+    });
+
+    updatePaginationControls(totalPages);
   };
+
+  const goToPage = (page) => {
+    currentPage = Math.max(0, page);
+    renderTimeline();
+  };
+
+  const applyDateRange = () => {
+    const fromValue = rangeFromInputs[0]?.value;
+    const toValue = rangeToInputs[0]?.value;
+    rangeFrom = fromValue ? new Date(`${fromValue}T00:00:00Z`) : null;
+    rangeTo = toValue ? new Date(`${toValue}T23:59:59Z`) : null;
+    currentPage = 0;
+    renderTimeline();
+  };
+
+  prevButtons.forEach((button) => button.addEventListener('click', () => goToPage(currentPage - 1)));
+  nextButtons.forEach((button) => button.addEventListener('click', () => goToPage(currentPage + 1)));
+  rangeFromInputs.forEach((input) => input.addEventListener('change', applyDateRange));
+  rangeToInputs.forEach((input) => input.addEventListener('change', applyDateRange));
+  rangeClearButtons.forEach((button) =>
+    button.addEventListener('click', () => {
+      rangeFromInputs.forEach((input) => (input.value = ''));
+      rangeToInputs.forEach((input) => (input.value = ''));
+      applyDateRange();
+    }),
+  );
 
   renderTimeline();
-  const updateToggleButtons = () => {
-    toggleButtons.forEach((button) => {
-      button.textContent = showAll ? 'Show fewer' : 'Show more';
-    });
-  };
-
-  updateToggleButtons();
 
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
       sortOrder = sortSelect.value;
+      currentPage = 0;
       renderTimeline();
     });
   }
@@ -1438,14 +1499,7 @@ const render = async () => {
         activeFilters.add(filter);
         pill.setAttribute('aria-pressed', 'true');
       }
-      renderTimeline();
-    });
-  });
-
-  toggleButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      showAll = !showAll;
-      updateToggleButtons();
+      currentPage = 0;
       renderTimeline();
     });
   });

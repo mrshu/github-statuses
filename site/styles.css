@@ -180,6 +180,7 @@
     --timeline-chip-bg: #21262d;
     --component-chip-bg: #11161d;
     --icon-button-bg: #161b22;
+    --date-picker-filter: invert(0.7) brightness(1.5);
     --badge-minor-ink: #e3b341;
     --badge-major-ink: #ffa198;
     --badge-critical-ink: #ff8177;
@@ -1398,6 +1399,11 @@ main {
 .panel-actions {
   display: flex;
   gap: 8px;
+  /* The timeline header carries a sort select plus the pagination cluster; let
+     them wrap rather than clipping the next-page button off the panel edge. */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .muted {
@@ -1658,6 +1664,66 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 18px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pagination-label {
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 100px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.pagination-date {
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--icon-button-bg);
+  color: var(--ink);
+  padding: 0 10px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.pagination-date::-webkit-calendar-picker-indicator {
+  filter: var(--date-picker-filter, none);
+  cursor: pointer;
+}
+
+.pagination-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.pagination-range-sep {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.pagination-clear {
+  font-size: 0.75rem;
+}
+
+.pagination-clear[hidden] {
+  display: none;
+}
+
+.timeline-empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 0;
 }
 
 .about-panel {
