@@ -1399,6 +1399,11 @@ main {
 .panel-actions {
   display: flex;
   gap: 8px;
+  /* The timeline header carries a sort select plus the pagination cluster; let
+     them wrap rather than clipping the next-page button off the panel edge. */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .muted {
@@ -1665,6 +1670,8 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .pagination-label {
@@ -1673,6 +1680,7 @@ main {
   min-width: 100px;
   text-align: center;
   user-select: none;
+  white-space: nowrap;
 }
 
 .pagination-date {
