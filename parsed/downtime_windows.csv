@@ -601,7 +601,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 27599440,2025-12-15T14:12:00Z,2025-12-15T15:45:00Z,93,updates,Incident with Copilot Grok Code Fast 1,minor
 27602231,2025-12-15T15:15:00Z,2025-12-15T18:22:00Z,187,postmortem,"Copilot Code Review is degraded, and not returning responses to users",major
 27635148,2025-12-16T12:00:00Z,2025-12-16T12:00:00Z,0,updates,Incident With Copilot,none
-27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,minor
+27649291,2025-12-18T16:32:00Z,2025-12-18T16:42:00Z,10,updates,Intermittent networking issues across hosted runners,critical
 27649413,2025-12-18T16:33:00Z,2025-12-18T17:41:00Z,68,updates,Intermittent networking failures across GitHub-hosted Actions runners,major
 27650049,2025-12-18T16:25:00Z,2025-12-18T19:09:00Z,164,postmortem,Disruption with some GitHub services,major
 27712968,2025-12-22T22:01:00Z,2025-12-22T22:32:00Z,31,postmortem,Disruption with some GitHub services,major
@@ -753,7 +753,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30432107,2026-06-03T03:13:00Z,2026-06-03T06:46:00Z,213,updates,Disruption with some GitHub services,minor
 30441946,2026-06-03T19:42:00Z,2026-06-04T04:11:00Z,509,updates,Disruption with some GitHub services,minor
 30452936,2026-06-04T17:30:00Z,2026-06-04T18:55:00Z,85,postmortem,Copilot Code Review Failing,critical
-30453760,2026-06-04T20:20:00Z,2026-06-04T20:32:00Z,12,updates,Live updates degraded,minor
+30453760,2026-06-04T20:20:00Z,2026-06-04T20:32:00Z,12,updates,Live updates degraded,critical
 30463506,2026-06-05T15:35:00Z,2026-06-05T16:45:00Z,70,postmortem,"Auth issue resulting in API impacts, including some Slack and Teams channel subscriptions",minor
 30472791,2026-06-06T16:53:00Z,2026-06-06T17:07:00Z,14,updates,Disruption with some GitHub services in the EU region,minor
 30472501,2026-06-06T15:31:00Z,2026-06-06T18:49:00Z,198,updates,EU Network Maintenance,minor
@@ -796,7 +796,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 30992214,2026-07-25T09:42:00Z,2026-07-25T10:11:00Z,29,updates,Several GPT models degraded,major
 30993375,2026-07-25T12:31:00Z,2026-07-25T13:13:00Z,42,updates,Actions run failures and delays,critical
 31006582,2026-07-27T03:53:00Z,2026-07-27T04:09:00Z,16,updates,Incident with GraphQL API Requests,minor
-31013816,2026-07-27T19:31:00Z,2026-07-27T19:37:00Z,6,updates,Test Incident Posted in Error – No Customer Impact (Will Be Removed),minor
+31013816,2026-07-27T19:31:00Z,2026-07-27T19:37:00Z,6,updates,Test Incident Posted in Error – No Customer Impact (Will Be Removed),critical
 31032174,2026-07-29T14:51:00Z,2026-07-29T15:28:00Z,37,postmortem,Incident with Actions,major
 31034742,2026-07-29T20:07:00Z,2026-07-29T21:51:00Z,104,updates,Incident with Copilot AI Model Providers,minor
 31040145,2026-07-30T09:07:00Z,2026-07-30T10:12:00Z,65,updates,Copilot model Claude Fable 5 experiencing elevated errors,minor
@@ -804,3 +804,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31064249,2026-08-01T18:03:00Z,2026-08-01T18:44:00Z,41,updates,Incident with Copilot AI Model Providers,minor
 31077734,2026-08-03T09:53:00Z,2026-08-03T11:25:00Z,92,updates,Incident with Copilot,minor
 31096975,2026-08-05T11:38:00Z,2026-08-05T13:00:00Z,82,updates,Some Copilot Cloud Agent jobs not starting,minor
+31107586,2026-08-06T15:03:00Z,2026-08-06T16:22:00Z,79,updates,Incident with Pages - Deployment Lag,minor
+31107739,2026-08-06T15:22:00Z,2026-08-07T02:04:00Z,642,updates,Incident with Actions,critical
