@@ -43,7 +43,7 @@
     "https://www.githubstatus.com/incidents/jbhcrj5xtggx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:22.879711Z",
+      "fetched_at": "2026-08-12T05:43:21.848688Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "1a626b7a59ed3ae9"
@@ -81,7 +81,7 @@
     "https://www.githubstatus.com/incidents/7p05r5610bqd": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:23.267706Z",
+      "fetched_at": "2026-08-12T05:43:22.306278Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "5e87ab6acfaab296"
@@ -89,7 +89,7 @@
     "https://www.githubstatus.com/incidents/r6j3fnl9j58q": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:23.644112Z",
+      "fetched_at": "2026-08-12T05:43:22.759025Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d887c4c8c1706322"
@@ -97,7 +97,7 @@
     "https://www.githubstatus.com/incidents/wg7n9ns64dsd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:24.450799Z",
+      "fetched_at": "2026-08-12T05:43:23.231814Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -117,7 +117,7 @@
     "https://www.githubstatus.com/incidents/m8ntcjv1w4pr": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:24.833564Z",
+      "fetched_at": "2026-08-12T05:43:23.678638Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8f8c9c077432ba41"
@@ -125,7 +125,7 @@
     "https://www.githubstatus.com/incidents/4s0n40wj3l02": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:25.219114Z",
+      "fetched_at": "2026-08-12T05:43:24.151645Z",
       "components_gliner": [
         "Actions"
       ],
@@ -151,7 +151,7 @@
     "https://www.githubstatus.com/incidents/x07y6vhlvqg2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:25.615945Z",
+      "fetched_at": "2026-08-12T05:43:24.633751Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "09c935048ec4a542"
@@ -187,7 +187,7 @@
     "https://www.githubstatus.com/incidents/135x076mn3tf": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:26.049934Z",
+      "fetched_at": "2026-08-12T05:43:25.094557Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "ef493daf262870d7"
@@ -216,7 +216,7 @@
     "https://www.githubstatus.com/incidents/flt2rxl1dg1t": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:26.469483Z",
+      "fetched_at": "2026-08-12T05:43:25.564655Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a401a847fe159c78"
@@ -295,7 +295,7 @@
     "https://www.githubstatus.com/incidents/yz50lpc8d4xq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:26.878931Z",
+      "fetched_at": "2026-08-12T05:43:25.994427Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "bf360cd2dfca26ed"
@@ -303,7 +303,7 @@
     "https://www.githubstatus.com/incidents/fpkvkrdmh033": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:27.270797Z",
+      "fetched_at": "2026-08-12T05:43:26.428855Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -358,7 +358,7 @@
     "https://www.githubstatus.com/incidents/cyf5mhwh42tt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:27.667535Z",
+      "fetched_at": "2026-08-12T05:43:26.953742Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "99a7cc0c0e2dea10"
@@ -373,7 +373,7 @@
     "https://www.githubstatus.com/incidents/vhzbr55p9jtx": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:28.065101Z",
+      "fetched_at": "2026-08-12T05:43:27.589942Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -381,7 +381,7 @@
     "https://www.githubstatus.com/incidents/7s7z64qbl194": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:28.514854Z",
+      "fetched_at": "2026-08-12T05:43:28.095138Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b0f60f74b28b38b9"
@@ -389,7 +389,7 @@
     "https://www.githubstatus.com/incidents/thpkk85p1sjy": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:28.870284Z",
+      "fetched_at": "2026-08-12T05:43:28.560393Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "529b7ae7cf13a644"
@@ -397,7 +397,7 @@
     "https://www.githubstatus.com/incidents/mr6vzllykhmw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:29.236724Z",
+      "fetched_at": "2026-08-12T05:43:29.005325Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "02f14e31ba160497"
@@ -412,7 +412,7 @@
     "https://www.githubstatus.com/incidents/d3t3d2jn3b0j": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:29.604482Z",
+      "fetched_at": "2026-08-12T05:43:29.641620Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d6875b96718c0566"
@@ -420,7 +420,7 @@
     "https://www.githubstatus.com/incidents/6xn7r7hhrq72": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:30.071175Z",
+      "fetched_at": "2026-08-12T05:43:30.080830Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9d24e523ddcc0a16"
@@ -435,7 +435,7 @@
     "https://www.githubstatus.com/incidents/mdfybxmvbp0z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:30.494768Z",
+      "fetched_at": "2026-08-12T05:43:30.548404Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -468,7 +468,7 @@
     "https://www.githubstatus.com/incidents/jfvgcls9swln": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:30.860633Z",
+      "fetched_at": "2026-08-12T05:43:31.006444Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "df07b60c54cb3101"
@@ -476,7 +476,7 @@
     "https://www.githubstatus.com/incidents/0r3t35cbghdy": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:31.262087Z",
+      "fetched_at": "2026-08-12T05:43:31.516200Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d7c9f63cad7e252c"
@@ -484,7 +484,7 @@
     "https://www.githubstatus.com/incidents/jmfzh1p2yrg2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:31.730704Z",
+      "fetched_at": "2026-08-12T05:43:31.987397Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -521,7 +521,7 @@
     "https://www.githubstatus.com/incidents/7hdyxpt7sdzm": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:32.123212Z",
+      "fetched_at": "2026-08-12T05:43:32.436611Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "6529b5e05a2ea98a"
@@ -539,7 +539,7 @@
     "https://www.githubstatus.com/incidents/jvyb8cp9h0lh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:32.514022Z",
+      "fetched_at": "2026-08-12T05:43:32.891750Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "96ee083696ae24ef"
@@ -577,7 +577,7 @@
     "https://www.githubstatus.com/incidents/gxf0jzns6rn2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:32.963335Z",
+      "fetched_at": "2026-08-12T05:43:33.480109Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -592,7 +592,7 @@
     "https://www.githubstatus.com/incidents/kpv13bbn84n5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:33.390027Z",
+      "fetched_at": "2026-08-12T05:43:34.004377Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -604,7 +604,7 @@
     "https://www.githubstatus.com/incidents/hjylhb7b8zcq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:33.944860Z",
+      "fetched_at": "2026-08-12T05:43:34.564836Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "1616c62071738f76"
@@ -612,7 +612,7 @@
     "https://www.githubstatus.com/incidents/pzrqw1n5ynw3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:34.447185Z",
+      "fetched_at": "2026-08-12T05:43:35.118982Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -624,7 +624,7 @@
     "https://www.githubstatus.com/incidents/3nn1p9h5b76h": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:34.840767Z",
+      "fetched_at": "2026-08-12T05:43:35.564685Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "62eca2fb7afd6e7a"
@@ -632,7 +632,7 @@
     "https://www.githubstatus.com/incidents/71tl7pkqysgw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:35.243097Z",
+      "fetched_at": "2026-08-12T05:43:36.034482Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "626c461de7457c4e"
@@ -654,7 +654,7 @@
     "https://www.githubstatus.com/incidents/89gkzpf9fc20": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:35.609607Z",
+      "fetched_at": "2026-08-12T05:43:36.484349Z",
       "components_gliner": [
         "Webhooks"
       ],
@@ -692,7 +692,7 @@
     "https://www.githubstatus.com/incidents/tyjjp463pg91": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:35.983175Z",
+      "fetched_at": "2026-08-12T05:43:36.925597Z",
       "components_gliner": [
         "Git Operations"
       ],
@@ -704,7 +704,7 @@
     "https://www.githubstatus.com/incidents/2fk03fzv6zk0": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:36.365089Z",
+      "fetched_at": "2026-08-12T05:43:37.379304Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -740,7 +740,7 @@
     "https://www.githubstatus.com/incidents/p1rf575rlqml": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:36.782001Z",
+      "fetched_at": "2026-08-12T05:43:37.983378Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "f0716cc988fe8cb1"
@@ -770,7 +770,7 @@
     "https://www.githubstatus.com/incidents/5g8smlrj5ynp": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:37.156807Z",
+      "fetched_at": "2026-08-12T05:43:38.479060Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -789,7 +789,7 @@
     "https://www.githubstatus.com/incidents/6nxmxxqcgmh7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:37.540088Z",
+      "fetched_at": "2026-08-12T05:43:38.941736Z",
       "components_gliner": [
         "Codespaces"
       ],
@@ -801,7 +801,7 @@
     "https://www.githubstatus.com/incidents/gj9d2m9x4mff": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:37.928102Z",
+      "fetched_at": "2026-08-12T05:43:39.413677Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "40dfa57712509df0"
@@ -844,7 +844,7 @@
     "https://www.githubstatus.com/incidents/9qcwpy3ckdrf": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:38.288327Z",
+      "fetched_at": "2026-08-12T05:43:39.901801Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "19d08b754ec81221"
@@ -859,7 +859,7 @@
     "https://www.githubstatus.com/incidents/sd4v95zxm3np": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:38.664935Z",
+      "fetched_at": "2026-08-12T05:43:40.349969Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e8d44f18314b270a"
@@ -867,7 +867,7 @@
     "https://www.githubstatus.com/incidents/p7mzl65jm7q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:39.044602Z",
+      "fetched_at": "2026-08-12T05:43:40.806820Z",
       "components_gliner": [
         "Pages"
       ],
@@ -879,7 +879,7 @@
     "https://www.githubstatus.com/incidents/hw33b7tc1lv2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:39.461862Z",
+      "fetched_at": "2026-08-12T05:43:41.325490Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b62a4683a7f335c3"
@@ -887,7 +887,7 @@
     "https://www.githubstatus.com/incidents/3l5g70d16ldz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:39.872653Z",
+      "fetched_at": "2026-08-12T05:43:41.765485Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8dd8d130ce105012"
@@ -895,7 +895,7 @@
     "https://www.githubstatus.com/incidents/crd2y6xy6knn": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:40.225362Z",
+      "fetched_at": "2026-08-12T05:43:42.216879Z",
       "components_gliner": [
         "Actions"
       ],
@@ -907,7 +907,7 @@
     "https://www.githubstatus.com/incidents/kkm7hd89m0yt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:40.634016Z",
+      "fetched_at": "2026-08-12T05:43:42.699147Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -919,7 +919,7 @@
     "https://www.githubstatus.com/incidents/x10xvvl5kk4q": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:41.023829Z",
+      "fetched_at": "2026-08-12T05:43:43.156713Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -931,7 +931,7 @@
     "https://www.githubstatus.com/incidents/txt7rjw95rhx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:41.400332Z",
+      "fetched_at": "2026-08-12T05:43:43.654042Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "62ebe6a33bf50825"
@@ -939,7 +939,7 @@
     "https://www.githubstatus.com/incidents/zltys99f2lgq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:41.776358Z",
+      "fetched_at": "2026-08-12T05:43:44.154029Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "33ac2c7f9a799e1c"
@@ -947,7 +947,7 @@
     "https://www.githubstatus.com/incidents/djpyjb19cfjd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:42.160992Z",
+      "fetched_at": "2026-08-12T05:43:44.633134Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "78afcb44cca1253c"
@@ -955,7 +955,7 @@
     "https://www.githubstatus.com/incidents/f9rjhk3zh62b": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:42.560341Z",
+      "fetched_at": "2026-08-12T05:43:45.158509Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -974,7 +974,7 @@
     "https://www.githubstatus.com/incidents/c66qtgw0r1lk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:42.965854Z",
+      "fetched_at": "2026-08-12T05:43:45.645540Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4ec6d989d00967d4"
@@ -982,7 +982,7 @@
     "https://www.githubstatus.com/incidents/8pk9qxksg7cj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:43.401470Z",
+      "fetched_at": "2026-08-12T05:43:46.096211Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -994,7 +994,7 @@
     "https://www.githubstatus.com/incidents/j3byj17b8m1t": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:43.818804Z",
+      "fetched_at": "2026-08-12T05:43:46.555689Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1049,7 +1049,7 @@
     "https://www.githubstatus.com/incidents/qjbc2h6dfyvc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:44.276172Z",
+      "fetched_at": "2026-08-12T05:43:47.063724Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "bc124d03d5905b5f"
@@ -1065,7 +1065,7 @@
     "https://www.githubstatus.com/incidents/j630wwvgw9kb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:44.636930Z",
+      "fetched_at": "2026-08-12T05:43:47.572885Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9f1449cb38fdca3b"
@@ -1091,7 +1091,7 @@
     "https://www.githubstatus.com/incidents/j2fdyn2v9df9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:45.004499Z",
+      "fetched_at": "2026-08-12T05:43:48.024018Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0819056e2f066c9c"
@@ -1132,7 +1132,7 @@
     "https://www.githubstatus.com/incidents/2cl0fjn559ty": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:45.385802Z",
+      "fetched_at": "2026-08-12T05:43:48.532151Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "5c6d1f42cd95e0a1"
@@ -1163,7 +1163,7 @@
     "https://www.githubstatus.com/incidents/mj067hg9slb4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:45.741758Z",
+      "fetched_at": "2026-08-12T05:43:49.001555Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "58fa01afbd8e1fe7"
@@ -1185,7 +1185,7 @@
     "https://www.githubstatus.com/incidents/n3vgjzqv7d18": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:46.192416Z",
+      "fetched_at": "2026-08-12T05:43:49.464155Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8ac6f1f46fe39b48"
@@ -1193,7 +1193,7 @@
     "https://www.githubstatus.com/incidents/ffh1r1w0hj6h": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:46.564034Z",
+      "fetched_at": "2026-08-12T05:43:49.920461Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -1201,7 +1201,7 @@
     "https://www.githubstatus.com/incidents/3kjv06tdxxfn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:46.931655Z",
+      "fetched_at": "2026-08-12T05:43:50.359310Z",
       "components_gliner": [
         "API Requests"
       ],
@@ -1227,7 +1227,7 @@
     "https://www.githubstatus.com/incidents/6kcgrd38691w": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:47.314053Z",
+      "fetched_at": "2026-08-12T05:43:50.814420Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8349bb1c25aa831d"
@@ -1250,7 +1250,7 @@
     "https://www.githubstatus.com/incidents/nv48dwqdzd54": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:47.706012Z",
+      "fetched_at": "2026-08-12T05:43:51.260059Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "f00157bf2c0e7130"
@@ -1258,7 +1258,7 @@
     "https://www.githubstatus.com/incidents/pm0l7tdd6nyk": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:48.066796Z",
+      "fetched_at": "2026-08-12T05:43:51.698218Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "98a0ab65792a8106"
@@ -1266,7 +1266,7 @@
     "https://www.githubstatus.com/incidents/xcn454p4wqtz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:48.459490Z",
+      "fetched_at": "2026-08-12T05:43:52.173596Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "237ab8d5860982b5"
@@ -1274,7 +1274,7 @@
     "https://www.githubstatus.com/incidents/t291vx7m731z": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:48.884464Z",
+      "fetched_at": "2026-08-12T05:43:52.663068Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "c757848f5ae54933"
@@ -1282,7 +1282,7 @@
     "https://www.githubstatus.com/incidents/0s5rb1l03m76": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:49.276057Z",
+      "fetched_at": "2026-08-12T05:43:53.104489Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1315,7 +1315,7 @@
     "https://www.githubstatus.com/incidents/9f6pfjj0scrd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:49.648739Z",
+      "fetched_at": "2026-08-12T05:43:53.572116Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "121e954114ad1d37"
@@ -1323,7 +1323,7 @@
     "https://www.githubstatus.com/incidents/kk58nfytx0c7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:50.066550Z",
+      "fetched_at": "2026-08-12T05:43:54.051882Z",
       "components_gliner": [
         "API Requests"
       ],
@@ -1355,7 +1355,7 @@
     "https://www.githubstatus.com/incidents/g8rmr5p85tzv": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:50.421952Z",
+      "fetched_at": "2026-08-12T05:43:54.545002Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -1363,7 +1363,7 @@
     "https://www.githubstatus.com/incidents/vs7qnzbydz2p": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:50.844004Z",
+      "fetched_at": "2026-08-12T05:43:55.038093Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "55fc15973588e429"
@@ -1392,7 +1392,7 @@
     "https://www.githubstatus.com/incidents/v61nk2fpysnq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:51.238397Z",
+      "fetched_at": "2026-08-12T05:43:55.528301Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "1df40bec5f0d6649"
@@ -1414,7 +1414,7 @@
     "https://www.githubstatus.com/incidents/n7hf73qtpz2l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:51.615497Z",
+      "fetched_at": "2026-08-12T05:43:56.001326Z",
       "components_gliner": [
         "Git Operations"
       ],
@@ -1426,7 +1426,7 @@
     "https://www.githubstatus.com/incidents/jkll48jj78zv": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:52.024851Z",
+      "fetched_at": "2026-08-12T05:43:56.514036Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4bc6b603165b38af"
@@ -1434,7 +1434,7 @@
     "https://www.githubstatus.com/incidents/t6fcxny6yf14": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:52.402619Z",
+      "fetched_at": "2026-08-12T05:43:57.019013Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -1446,7 +1446,7 @@
     "https://www.githubstatus.com/incidents/jlhnszknd9pj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:52.866796Z",
+      "fetched_at": "2026-08-12T05:43:57.487285Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "811d3cafa396f711"
@@ -1454,7 +1454,7 @@
     "https://www.githubstatus.com/incidents/pch0flk719dj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:53.260034Z",
+      "fetched_at": "2026-08-12T05:43:57.926016Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1474,7 +1474,7 @@
     "https://www.githubstatus.com/incidents/6hygvwpw2vr3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:53.674913Z",
+      "fetched_at": "2026-08-12T05:43:58.360255Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "58fdf5e245612dab"
@@ -1496,7 +1496,7 @@
     "https://www.githubstatus.com/incidents/0xpyl7hs9hm6": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:54.051213Z",
+      "fetched_at": "2026-08-12T05:43:58.812271Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3613883295fcde5d"
@@ -1518,7 +1518,7 @@
     "https://www.githubstatus.com/incidents/htcm010tcwjq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:54.458218Z",
+      "fetched_at": "2026-08-12T05:43:59.329293Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "467fccb03beeca54"
@@ -1526,7 +1526,7 @@
     "https://www.githubstatus.com/incidents/l0brgg302bf5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:54.869653Z",
+      "fetched_at": "2026-08-12T05:43:59.796300Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "186a07aee6704a13"
@@ -1534,7 +1534,7 @@
     "https://www.githubstatus.com/incidents/br7kz68t38cl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:55.255398Z",
+      "fetched_at": "2026-08-12T05:44:00.308046Z",
       "components_gliner": [
         "Codespaces"
       ],
@@ -1553,7 +1553,7 @@
     "https://www.githubstatus.com/incidents/3bmqzkljz8s3": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:55.690811Z",
+      "fetched_at": "2026-08-12T05:44:00.761118Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "1bbe972ad235ba89"
@@ -1561,7 +1561,7 @@
     "https://www.githubstatus.com/incidents/ql19qqqmdf99": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:56.064419Z",
+      "fetched_at": "2026-08-12T05:44:01.206934Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "52059840d1728f17"
@@ -1577,7 +1577,7 @@
     "https://www.githubstatus.com/incidents/zzl9nl31lb35": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:56.445271Z",
+      "fetched_at": "2026-08-12T05:44:01.659110Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "5740654420230694"
@@ -1592,7 +1592,7 @@
     "https://www.githubstatus.com/incidents/cg3wwz9dw5dg": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:56.819654Z",
+      "fetched_at": "2026-08-12T05:44:02.123096Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "2ca0d964d64c43ee"
@@ -1614,7 +1614,7 @@
     "https://www.githubstatus.com/incidents/k95d6yq4tmly": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:57.201124Z",
+      "fetched_at": "2026-08-12T05:44:02.635719Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "6a0aca74199fcefe"
@@ -1622,7 +1622,7 @@
     "https://www.githubstatus.com/incidents/3hdjjpkvz895": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:57.653559Z",
+      "fetched_at": "2026-08-12T05:44:03.088049Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4aebea91bc0cfca3"
@@ -1630,7 +1630,7 @@
     "https://www.githubstatus.com/incidents/r6fc6tyzr430": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:58.037967Z",
+      "fetched_at": "2026-08-12T05:44:03.563549Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "f65addd80782e4cc"
@@ -1638,7 +1638,7 @@
     "https://www.githubstatus.com/incidents/n4fpndtvbmwb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:58.429218Z",
+      "fetched_at": "2026-08-12T05:44:04.188342Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1680,7 +1680,7 @@
     "https://www.githubstatus.com/incidents/40730vhmg6y8": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:58.808089Z",
+      "fetched_at": "2026-08-12T05:44:04.639382Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9b956e52c530a5f1"
@@ -1695,7 +1695,7 @@
     "https://www.githubstatus.com/incidents/qkr3gcys0lzx": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:59.228824Z",
+      "fetched_at": "2026-08-12T05:44:05.237961Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1707,7 +1707,7 @@
     "https://www.githubstatus.com/incidents/lctp4bzd37h2": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:59.609652Z",
+      "fetched_at": "2026-08-12T05:44:05.673555Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1719,7 +1719,7 @@
     "https://www.githubstatus.com/incidents/vkr22005hg0x": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:59.990684Z",
+      "fetched_at": "2026-08-12T05:44:06.324278Z",
       "components_gliner": [
         "Actions"
       ],
@@ -1760,7 +1760,7 @@
     "https://www.githubstatus.com/incidents/d5t56pdnjxhd": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:00.434437Z",
+      "fetched_at": "2026-08-12T05:44:06.784943Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -1779,7 +1779,7 @@
     "https://www.githubstatus.com/incidents/qdh0m7tdrh80": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:52.546858Z",
+      "fetched_at": "2026-08-12T05:42:47.284359Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "113810f755cd9112"
@@ -1787,7 +1787,7 @@
     "https://www.githubstatus.com/incidents/n2vqnsg14tw2": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:53.032828Z",
+      "fetched_at": "2026-08-12T05:42:47.739428Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "248be4e331eeb886"
@@ -1886,7 +1886,7 @@
     "https://www.githubstatus.com/incidents/rw3k5dz04rqj": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:53.966085Z",
+      "fetched_at": "2026-08-12T05:42:48.200789Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e8f22c9afea6b47e"
@@ -2028,7 +2028,7 @@
     "https://www.githubstatus.com/incidents/33gh4sqgw547": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:54.430707Z",
+      "fetched_at": "2026-08-12T05:42:48.672125Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "659af67ca4958b5c"
@@ -2173,7 +2173,7 @@
     "https://www.githubstatus.com/incidents/pz0bvrjx9ztp": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:54.886462Z",
+      "fetched_at": "2026-08-12T05:42:49.131274Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "802417fc4f5373f6"
@@ -2188,7 +2188,7 @@
     "https://www.githubstatus.com/incidents/8blgv351d71j": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:55.344864Z",
+      "fetched_at": "2026-08-12T05:42:49.585232Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "de1e366a43c0d857"
@@ -2210,7 +2210,7 @@
     "https://www.githubstatus.com/incidents/v5bcd4pzckky": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:55.741879Z",
+      "fetched_at": "2026-08-12T05:42:50.066847Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b3ebf25f1e09983b"
@@ -2260,7 +2260,7 @@
     "https://www.githubstatus.com/incidents/6w7lf30qkgqq": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:56.230399Z",
+      "fetched_at": "2026-08-12T05:42:50.538178Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "5242ae729c32bd49"
@@ -2361,7 +2361,7 @@
     "https://www.githubstatus.com/incidents/lpslbfcw2czs": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:56.660142Z",
+      "fetched_at": "2026-08-12T05:42:51.064202Z",
       "components_gliner": [
         "API Requests"
       ],
@@ -2395,7 +2395,7 @@
     "https://www.githubstatus.com/incidents/3ktldkb3r6f8": {
       "impact": "maintenance",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:57.059039Z",
+      "fetched_at": "2026-08-12T05:42:51.562782Z",
       "components_gliner": [
         "API Requests"
       ],
@@ -2436,7 +2436,7 @@
     "https://www.githubstatus.com/incidents/jrzkpt9g8zm6": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:57.540339Z",
+      "fetched_at": "2026-08-12T05:42:52.016844Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e1f156c0c6104592"
@@ -2517,7 +2517,7 @@
     "https://www.githubstatus.com/incidents/f6nzhphqf37p": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:57.933989Z",
+      "fetched_at": "2026-08-12T05:42:52.456594Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "f59c088ba01bfd93"
@@ -2563,7 +2563,7 @@
     "https://www.githubstatus.com/incidents/d5158f5wh1ly": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:58.364199Z",
+      "fetched_at": "2026-08-12T05:42:52.910667Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "eca5f6936ae11e15"
@@ -2727,7 +2727,7 @@
     "https://www.githubstatus.com/incidents/1cdsggtd2q5k": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:58.748665Z",
+      "fetched_at": "2026-08-12T05:42:53.402628Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "29355ff22a164c48"
@@ -2735,7 +2735,7 @@
     "https://www.githubstatus.com/incidents/ll8gxx3svld7": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:59.121825Z",
+      "fetched_at": "2026-08-12T05:42:53.854138Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4225c5665c487593"
@@ -2888,7 +2888,7 @@
     "https://www.githubstatus.com/incidents/sr7zptjd0b07": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:59.491318Z",
+      "fetched_at": "2026-08-12T05:42:54.351264Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "61f0af08e61f2553"
@@ -3265,7 +3265,7 @@
     "https://www.githubstatus.com/incidents/psdymfgt6p7q": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:15:59.949014Z",
+      "fetched_at": "2026-08-12T05:42:54.820011Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "91b96681cb3e6709"
@@ -3376,7 +3376,7 @@
     "https://www.githubstatus.com/incidents/98fs1552d2nw": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:00.358410Z",
+      "fetched_at": "2026-08-12T05:42:55.292523Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b6f60696071eb4e8"
@@ -3435,7 +3435,7 @@
     "https://www.githubstatus.com/incidents/sz8pjjhzcy3t": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:00.755181Z",
+      "fetched_at": "2026-08-12T05:42:55.863800Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "965224ef9d1f73fb"
@@ -3464,7 +3464,7 @@
     "https://www.githubstatus.com/incidents/nj39bg7wbgdq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:01.831208Z",
+      "fetched_at": "2026-08-12T05:42:56.426339Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "ca2b6689ae375521"
@@ -3509,7 +3509,7 @@
     "https://www.githubstatus.com/incidents/99rhjnxq99tp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:02.192625Z",
+      "fetched_at": "2026-08-12T05:42:56.883735Z",
       "components_gliner": [
         "Codespaces"
       ],
@@ -3535,7 +3535,7 @@
     "https://www.githubstatus.com/incidents/cbhwcvtkfr34": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:02.634799Z",
+      "fetched_at": "2026-08-12T05:42:57.404551Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "347ec86fd469b079"
@@ -3644,7 +3644,7 @@
     "https://www.githubstatus.com/incidents/ndjt4zhsr7q9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:03.025884Z",
+      "fetched_at": "2026-08-12T05:42:57.839932Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "7a24a0d26d32fea4"
@@ -3777,7 +3777,7 @@
     "https://www.githubstatus.com/incidents/knl5pxnx0byt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:03.419492Z",
+      "fetched_at": "2026-08-12T05:42:58.405501Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9470d41728180b56"
@@ -3785,7 +3785,7 @@
     "https://www.githubstatus.com/incidents/mnv0g944fncw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:03.837827Z",
+      "fetched_at": "2026-08-12T05:42:58.868687Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -3822,7 +3822,7 @@
     "https://www.githubstatus.com/incidents/dq9m4n5tfyr6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:04.245229Z",
+      "fetched_at": "2026-08-12T05:42:59.370377Z",
       "components_gliner": [
         "Git Operations",
         "Webhooks",
@@ -3885,7 +3885,7 @@
     "https://www.githubstatus.com/incidents/lt4kyp4tgx45": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:04.679337Z",
+      "fetched_at": "2026-08-12T05:42:59.896595Z",
       "components_gliner": [
         "Pull Requests",
         "Actions"
@@ -3899,7 +3899,7 @@
     "https://www.githubstatus.com/incidents/1h37j1mb9xnx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:05.070571Z",
+      "fetched_at": "2026-08-12T05:43:00.417561Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e582f327d3621d44"
@@ -3914,7 +3914,7 @@
     "https://www.githubstatus.com/incidents/1ksntt4bk3bq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:05.490916Z",
+      "fetched_at": "2026-08-12T05:43:00.859879Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4808519739d994cb"
@@ -3922,7 +3922,7 @@
     "https://www.githubstatus.com/incidents/zzy7pdshgqk0": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:05.893680Z",
+      "fetched_at": "2026-08-12T05:43:01.353594Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "03fcbf49ffebfd05"
@@ -3937,7 +3937,7 @@
     "https://www.githubstatus.com/incidents/dxthh9653wkk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:06.299788Z",
+      "fetched_at": "2026-08-12T05:43:01.815228Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "cbd06c9853e2d8ff"
@@ -3974,7 +3974,7 @@
     "https://www.githubstatus.com/incidents/bsk6hmj0d7nv": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:06.695595Z",
+      "fetched_at": "2026-08-12T05:43:02.273439Z",
       "components_gliner": [
         "Pull Requests",
         "Actions"
@@ -3988,7 +3988,7 @@
     "https://www.githubstatus.com/incidents/g6drnqm54qd4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:07.061135Z",
+      "fetched_at": "2026-08-12T05:43:02.733222Z",
       "components_gliner": [
         "Pages"
       ],
@@ -4000,7 +4000,7 @@
     "https://www.githubstatus.com/incidents/5y8b8lsqbbyq": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:07.475138Z",
+      "fetched_at": "2026-08-12T05:43:03.205098Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e554f9fc1a797982"
@@ -4008,7 +4008,7 @@
     "https://www.githubstatus.com/incidents/7k5wl5j4f1t4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:07.895958Z",
+      "fetched_at": "2026-08-12T05:43:03.754365Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8d0367c6cd105e32"
@@ -4061,7 +4061,7 @@
     "https://www.githubstatus.com/incidents/f9ntcnd3fdvs": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:08.347130Z",
+      "fetched_at": "2026-08-12T05:43:04.274019Z",
       "components_gliner": [
         "Packages"
       ],
@@ -4168,7 +4168,7 @@
     "https://www.githubstatus.com/incidents/syg5c6b5ls76": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:08.710122Z",
+      "fetched_at": "2026-08-12T05:43:04.766631Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "347ec86fd469b079"
@@ -4195,7 +4195,7 @@
     "https://www.githubstatus.com/incidents/6tgmk1j7b4rn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:09.101589Z",
+      "fetched_at": "2026-08-12T05:43:05.225211Z",
       "components_gliner": [
         "Packages"
       ],
@@ -4241,7 +4241,7 @@
     "https://www.githubstatus.com/incidents/b6f4j9ljz9r6": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:09.541665Z",
+      "fetched_at": "2026-08-12T05:43:05.756488Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "36811453d32d8e55"
@@ -4296,7 +4296,7 @@
     "https://www.githubstatus.com/incidents/84bxn520qg2m": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:10.025532Z",
+      "fetched_at": "2026-08-12T05:43:06.218203Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3b269c45ffbbfd7d"
@@ -4304,7 +4304,7 @@
     "https://www.githubstatus.com/incidents/6wlqmlpsn6by": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:10.441020Z",
+      "fetched_at": "2026-08-12T05:43:06.720970Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "17d68023042e2127"
@@ -4335,7 +4335,7 @@
     "https://www.githubstatus.com/incidents/bfkxf0w61z1n": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:10.973375Z",
+      "fetched_at": "2026-08-12T05:43:07.203025Z",
       "components_gliner": [
         "Actions"
       ],
@@ -4354,7 +4354,7 @@
     "https://www.githubstatus.com/incidents/915nn7rmqth9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:11.410327Z",
+      "fetched_at": "2026-08-12T05:43:07.706505Z",
       "components_gliner": [
         "Pages"
       ],
@@ -4416,7 +4416,7 @@
     "https://www.githubstatus.com/incidents/k1mlxlmdhqqp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:11.783993Z",
+      "fetched_at": "2026-08-12T05:43:08.139747Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "de4b8427c961c87a"
@@ -4431,7 +4431,7 @@
     "https://www.githubstatus.com/incidents/538zgs80s3zg": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:12.280142Z",
+      "fetched_at": "2026-08-12T05:43:08.596494Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "ac1e2d0bfdfff7fb"
@@ -4468,7 +4468,7 @@
     "https://www.githubstatus.com/incidents/8532wfbvwqgr": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:12.680675Z",
+      "fetched_at": "2026-08-12T05:43:09.052366Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "efde571e35e15434"
@@ -4506,7 +4506,7 @@
     "https://www.githubstatus.com/incidents/p55k2jdgsrgc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:13.139434Z",
+      "fetched_at": "2026-08-12T05:43:09.567747Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -4550,7 +4550,7 @@
     "https://www.githubstatus.com/incidents/4s161kygs873": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:13.534417Z",
+      "fetched_at": "2026-08-12T05:43:10.125969Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -4562,7 +4562,7 @@
     "https://www.githubstatus.com/incidents/n2969465tx0b": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:14.054438Z",
+      "fetched_at": "2026-08-12T05:43:10.605669Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "ca5dcef0ea4793ab"
@@ -4570,7 +4570,7 @@
     "https://www.githubstatus.com/incidents/q1yjht6mt3zn": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:14.426456Z",
+      "fetched_at": "2026-08-12T05:43:11.086665Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0c51b9d6fa2f957c"
@@ -4585,7 +4585,7 @@
     "https://www.githubstatus.com/incidents/y0gqch2dhw5l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:14.884155Z",
+      "fetched_at": "2026-08-12T05:43:11.589103Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "6bdc2add93d035c8"
@@ -4607,7 +4607,7 @@
     "https://www.githubstatus.com/incidents/cr44n0knc7xj": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:15.315602Z",
+      "fetched_at": "2026-08-12T05:43:12.056060Z",
       "components_gliner": [
         "Pages"
       ],
@@ -4619,7 +4619,7 @@
     "https://www.githubstatus.com/incidents/1kn4kywmvgz4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:15.789354Z",
+      "fetched_at": "2026-08-12T05:43:12.544612Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -4631,7 +4631,7 @@
     "https://www.githubstatus.com/incidents/fnj6l879tbtw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:16.217671Z",
+      "fetched_at": "2026-08-12T05:43:13.372176Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9acab83405ef12ae"
@@ -4697,7 +4697,7 @@
     "https://www.githubstatus.com/incidents/345t4sjty6q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:16.650750Z",
+      "fetched_at": "2026-08-12T05:43:13.837058Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "418c00c4807edcd4"
@@ -4705,7 +4705,7 @@
     "https://www.githubstatus.com/incidents/djwfzglh2dyq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:17.045142Z",
+      "fetched_at": "2026-08-12T05:43:14.353356Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8d732a579d7944b9"
@@ -4713,7 +4713,7 @@
     "https://www.githubstatus.com/incidents/9dyp7zt86rp5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:17.399651Z",
+      "fetched_at": "2026-08-12T05:43:14.830121Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a5d8d08deac81b8a"
@@ -4738,7 +4738,7 @@
     "https://www.githubstatus.com/incidents/r3x7x31k7nn1": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:17.849297Z",
+      "fetched_at": "2026-08-12T05:43:15.290798Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "840dfdb741834e36"
@@ -4783,7 +4783,7 @@
     "https://www.githubstatus.com/incidents/wlb83pxg009y": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:18.226259Z",
+      "fetched_at": "2026-08-12T05:43:15.801043Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a334f4df7f146f07"
@@ -4813,7 +4813,7 @@
     "https://www.githubstatus.com/incidents/xy3hrpmg4r3k": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:18.596897Z",
+      "fetched_at": "2026-08-12T05:43:16.323125Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "cbde1305a557542c"
@@ -4828,7 +4828,7 @@
     "https://www.githubstatus.com/incidents/17yzcr45rg2x": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:18.987246Z",
+      "fetched_at": "2026-08-12T05:43:16.809405Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -4840,7 +4840,7 @@
     "https://www.githubstatus.com/incidents/b85tj3x6n4vz": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:19.397947Z",
+      "fetched_at": "2026-08-12T05:43:17.622927Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0cbecff23ec32d83"
@@ -4848,7 +4848,7 @@
     "https://www.githubstatus.com/incidents/dnq4lp93t62f": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:19.778767Z",
+      "fetched_at": "2026-08-12T05:43:18.078965Z",
       "components_gliner": [
         "Issues"
       ],
@@ -4860,7 +4860,7 @@
     "https://www.githubstatus.com/incidents/nbscbkxwxjrx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:20.183280Z",
+      "fetched_at": "2026-08-12T05:43:18.564092Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -4872,7 +4872,7 @@
     "https://www.githubstatus.com/incidents/ltyqfp67463z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:20.552774Z",
+      "fetched_at": "2026-08-12T05:43:19.035743Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d7b42c51d3eed21c"
@@ -4894,7 +4894,7 @@
     "https://www.githubstatus.com/incidents/qq1m7mqcl6zk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:20.961549Z",
+      "fetched_at": "2026-08-12T05:43:19.552927Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "11219d0b6ffe0656"
@@ -4902,7 +4902,7 @@
     "https://www.githubstatus.com/incidents/v4d2jbm842p4": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:21.330605Z",
+      "fetched_at": "2026-08-12T05:43:20.008067Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d8122149d790f5be"
@@ -4919,7 +4919,7 @@
     "https://www.githubstatus.com/incidents/lbdsk3990lz5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:21.707260Z",
+      "fetched_at": "2026-08-12T05:43:20.483568Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -4941,7 +4941,7 @@
     "https://www.githubstatus.com/incidents/d33mtmnttgsh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:22.101461Z",
+      "fetched_at": "2026-08-12T05:43:20.929570Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e5bb24ffea3a0d11"
@@ -4956,7 +4956,7 @@
     "https://www.githubstatus.com/incidents/5hjghvwvqztc": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:16:22.489622Z",
+      "fetched_at": "2026-08-12T05:43:21.379562Z",
       "components_gliner": [
         "Pages"
       ],
@@ -4996,7 +4996,7 @@
     "https://www.githubstatus.com/incidents/8bcsk6c4prjl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:00.878438Z",
+      "fetched_at": "2026-08-12T05:44:07.270695Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4af84dc1a77ff62a"
@@ -5018,7 +5018,7 @@
     "https://www.githubstatus.com/incidents/zwlfnp5z0r4s": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:01.275736Z",
+      "fetched_at": "2026-08-12T05:44:07.726119Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "6a695770fea664bc"
@@ -5033,7 +5033,7 @@
     "https://www.githubstatus.com/incidents/4htf8bgy1xlz": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:01.671688Z",
+      "fetched_at": "2026-08-12T05:44:08.219918Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "2b83ac37e7c101a3"
@@ -5065,7 +5065,7 @@
     "https://www.githubstatus.com/incidents/sq20c7lrwjrp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:02.082703Z",
+      "fetched_at": "2026-08-12T05:44:08.773604Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5077,7 +5077,7 @@
     "https://www.githubstatus.com/incidents/zltcsbhqmvqq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:02.493919Z",
+      "fetched_at": "2026-08-12T05:44:09.278700Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5110,7 +5110,7 @@
     "https://www.githubstatus.com/incidents/6d5kv6l8d8q3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:02.862897Z",
+      "fetched_at": "2026-08-12T05:44:10.021522Z",
       "components_gliner": [
         "Pages",
         "Copilot"
@@ -5131,7 +5131,7 @@
     "https://www.githubstatus.com/incidents/g697qcy5dsks": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:03.279301Z",
+      "fetched_at": "2026-08-12T05:44:10.536553Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "613cd37303a7a1ae"
@@ -5139,7 +5139,7 @@
     "https://www.githubstatus.com/incidents/90hj03y5tj3c": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:03.937573Z",
+      "fetched_at": "2026-08-12T05:44:11.036337Z",
       "components_gliner": [
         "Actions"
       ],
@@ -5172,7 +5172,7 @@
     "https://www.githubstatus.com/incidents/g9mdtzd4rt72": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:04.317820Z",
+      "fetched_at": "2026-08-12T05:44:11.504890Z",
       "components_gliner": [
         "Pull Requests"
       ],
@@ -5239,7 +5239,7 @@
     "https://www.githubstatus.com/incidents/qrlc0jjgw517": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:04.717441Z",
+      "fetched_at": "2026-08-12T05:44:11.961449Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5270,7 +5270,7 @@
     "https://www.githubstatus.com/incidents/54hndjxft5bx": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:05.121629Z",
+      "fetched_at": "2026-08-12T05:44:12.464785Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "600f84980c128110"
@@ -5320,7 +5320,7 @@
     "https://www.githubstatus.com/incidents/7ylfn6fnwgrq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:05.521307Z",
+      "fetched_at": "2026-08-12T05:44:12.929674Z",
       "components_gliner": [
         "Actions"
       ],
@@ -5339,7 +5339,7 @@
     "https://www.githubstatus.com/incidents/5txsjlt9299p": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:05.948978Z",
+      "fetched_at": "2026-08-12T05:44:13.467350Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "2f8c7b36c44fbdc1"
@@ -5347,7 +5347,7 @@
     "https://www.githubstatus.com/incidents/1x0f4x1wwqmb": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:06.314210Z",
+      "fetched_at": "2026-08-12T05:44:13.944911Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5359,7 +5359,7 @@
     "https://www.githubstatus.com/incidents/y7kzv1ps2qrm": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:06.703064Z",
+      "fetched_at": "2026-08-12T05:44:14.397164Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5371,7 +5371,7 @@
     "https://www.githubstatus.com/incidents/lvf95rlzkxrr": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:07.109515Z",
+      "fetched_at": "2026-08-12T05:44:14.849059Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "afe286f35003f69a"
@@ -5401,7 +5401,7 @@
     "https://www.githubstatus.com/incidents/zhfdlzldgh51": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:07.510578Z",
+      "fetched_at": "2026-08-12T05:44:15.323187Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e09c826a108fb59a"
@@ -5431,7 +5431,7 @@
     "https://www.githubstatus.com/incidents/jn8kcmg5ydch": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:07.931294Z",
+      "fetched_at": "2026-08-12T05:44:15.767674Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "1460338f777b0203"
@@ -5460,7 +5460,7 @@
     "https://www.githubstatus.com/incidents/kv1lzpgzr9yp": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:08.340111Z",
+      "fetched_at": "2026-08-12T05:44:16.272008Z",
       "components_gliner": [
         "Pages"
       ],
@@ -5521,7 +5521,7 @@
     "https://www.githubstatus.com/incidents/nlmpksjb2ll7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:08.718549Z",
+      "fetched_at": "2026-08-12T05:44:16.784382Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "41c0b7b6ef9b3f75"
@@ -5572,7 +5572,7 @@
     "https://www.githubstatus.com/incidents/78s4l7y4tn2v": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:09.558874Z",
+      "fetched_at": "2026-08-12T05:44:17.781755Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5584,7 +5584,7 @@
     "https://www.githubstatus.com/incidents/lw6j95nyw3py": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:09.932021Z",
+      "fetched_at": "2026-08-12T05:44:18.270408Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b109c545fbbc4483"
@@ -5615,7 +5615,7 @@
     "https://www.githubstatus.com/incidents/2lh36qcrd7l6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:10.325830Z",
+      "fetched_at": "2026-08-12T05:44:18.751276Z",
       "components_gliner": [
         "Codespaces"
       ],
@@ -5627,7 +5627,7 @@
     "https://www.githubstatus.com/incidents/8jx0t5c136x2": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:09.155824Z",
+      "fetched_at": "2026-08-12T05:44:17.238536Z",
       "components_gliner": [
         "Webhooks"
       ],
@@ -5653,7 +5653,7 @@
     "https://www.githubstatus.com/incidents/djmkyscrj9jh": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:10.744646Z",
+      "fetched_at": "2026-08-12T05:44:19.219856Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5679,7 +5679,7 @@
     "https://www.githubstatus.com/incidents/9jyjvxkz735j": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:11.141362Z",
+      "fetched_at": "2026-08-12T05:44:19.708700Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4c4514b5ec0c8141"
@@ -5687,7 +5687,7 @@
     "https://www.githubstatus.com/incidents/7vwbds3snh28": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:11.524320Z",
+      "fetched_at": "2026-08-12T05:44:20.246484Z",
       "components_gliner": [
         "Git Operations"
       ],
@@ -5699,7 +5699,7 @@
     "https://www.githubstatus.com/incidents/z7gsp4wd05c5": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:11.903868Z",
+      "fetched_at": "2026-08-12T05:44:20.727166Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "2bf1e88cdf993aeb"
@@ -5717,7 +5717,7 @@
     "https://www.githubstatus.com/incidents/9vyj2jwsk8by": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:12.267919Z",
+      "fetched_at": "2026-08-12T05:44:21.189173Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5737,7 +5737,7 @@
     "https://www.githubstatus.com/incidents/2yb2tvwny50l": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:12.657627Z",
+      "fetched_at": "2026-08-12T05:44:21.675228Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a9f6d57768851414"
@@ -5759,7 +5759,7 @@
     "https://www.githubstatus.com/incidents/00h92ct3ggvv": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:13.019056Z",
+      "fetched_at": "2026-08-12T05:44:22.121817Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "d54c6dec2ac01220"
@@ -5767,7 +5767,7 @@
     "https://www.githubstatus.com/incidents/xs2p9z3b73r3": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:13.412167Z",
+      "fetched_at": "2026-08-12T05:44:22.601798Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3cde257c61e3baa9"
@@ -5775,7 +5775,7 @@
     "https://www.githubstatus.com/incidents/j3sgbdw2lw3c": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:13.809659Z",
+      "fetched_at": "2026-08-12T05:44:23.100290Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5787,7 +5787,7 @@
     "https://www.githubstatus.com/incidents/d96l71t3h63k": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:14.189380Z",
+      "fetched_at": "2026-08-12T05:44:23.586372Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5799,7 +5799,7 @@
     "https://www.githubstatus.com/incidents/bnvg7qml7krl": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:14.598491Z",
+      "fetched_at": "2026-08-12T05:44:24.067249Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "546633792e744716"
@@ -5807,7 +5807,7 @@
     "https://www.githubstatus.com/incidents/zn1t56bfxdzg": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:15.020046Z",
+      "fetched_at": "2026-08-12T05:44:24.523207Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5819,7 +5819,7 @@
     "https://www.githubstatus.com/incidents/2rqwxl8y7m0j": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:15.443482Z",
+      "fetched_at": "2026-08-12T05:44:25.142222Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5831,7 +5831,7 @@
     "https://www.githubstatus.com/incidents/8hn4vclxz1lq": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:15.815731Z",
+      "fetched_at": "2026-08-12T05:44:25.629696Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "150946de4d086abc"
@@ -5839,7 +5839,7 @@
     "https://www.githubstatus.com/incidents/1ghdqdbyyjmt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:16.186693Z",
+      "fetched_at": "2026-08-12T05:44:26.129163Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5858,7 +5858,7 @@
     "https://www.githubstatus.com/incidents/gldshbt8tvdg": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:16.558209Z",
+      "fetched_at": "2026-08-12T05:44:26.612950Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5884,7 +5884,7 @@
     "https://www.githubstatus.com/incidents/m7pgzw1wlfq7": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:16.976610Z",
+      "fetched_at": "2026-08-12T05:44:27.150221Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "84ecd2fb3d9c72c7"
@@ -5892,7 +5892,7 @@
     "https://www.githubstatus.com/incidents/b4235qyfzx2z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:17.375836Z",
+      "fetched_at": "2026-08-12T05:44:27.660073Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3fdcfaf1dba9e757"
@@ -5900,7 +5900,7 @@
     "https://www.githubstatus.com/incidents/8790jgb3ky6t": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:17.789733Z",
+      "fetched_at": "2026-08-12T05:44:28.147185Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -5938,7 +5938,7 @@
     "https://www.githubstatus.com/incidents/40f3r1jvjwl2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:18.164675Z",
+      "fetched_at": "2026-08-12T05:44:28.596460Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0360827e95f01381"
@@ -5953,7 +5953,7 @@
     "https://www.githubstatus.com/incidents/3dqg0nhwnxs2": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:18.556809Z",
+      "fetched_at": "2026-08-12T05:44:29.085949Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "f5b9d926fc612d53"
@@ -5961,7 +5961,7 @@
     "https://www.githubstatus.com/incidents/vq183jvj6vrw": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:18.976297Z",
+      "fetched_at": "2026-08-12T05:44:29.604915Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6032,7 +6032,7 @@
     "https://www.githubstatus.com/incidents/n8htfgj6wv3t": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:19.374671Z",
+      "fetched_at": "2026-08-12T05:44:30.094838Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "cc75a320393b5ca5"
@@ -6047,7 +6047,7 @@
     "https://www.githubstatus.com/incidents/qp0lxr014sw8": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:19.758360Z",
+      "fetched_at": "2026-08-12T05:44:30.699707Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6074,7 +6074,7 @@
     "https://www.githubstatus.com/incidents/8wxkrmhm6744": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:20.158125Z",
+      "fetched_at": "2026-08-12T05:44:31.212668Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "e01c06fa110b10e0"
@@ -6082,7 +6082,7 @@
     "https://www.githubstatus.com/incidents/t5mch8tlq6vl": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:20.541065Z",
+      "fetched_at": "2026-08-12T05:44:31.666292Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9ea3c4675c810557"
@@ -6105,7 +6105,7 @@
     "https://www.githubstatus.com/incidents/k5z4d1v1tqmt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:21.333225Z",
+      "fetched_at": "2026-08-12T05:44:32.649207Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a0581359bd58eae3"
@@ -6145,7 +6145,7 @@
     "https://www.githubstatus.com/incidents/ykb44v068g8v": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:20.948966Z",
+      "fetched_at": "2026-08-12T05:44:32.152301Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6157,7 +6157,7 @@
     "https://www.githubstatus.com/incidents/11n51rf8tf27": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:22.095748Z",
+      "fetched_at": "2026-08-12T05:44:33.582331Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "4daa9858d5007c63"
@@ -6172,7 +6172,7 @@
     "https://www.githubstatus.com/incidents/5wdgxw2rvbt3": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:22.511153Z",
+      "fetched_at": "2026-08-12T05:44:34.091115Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "594063e161610b30"
@@ -6180,7 +6180,7 @@
     "https://www.githubstatus.com/incidents/j240y90h4g0r": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:22.891140Z",
+      "fetched_at": "2026-08-12T05:44:34.647058Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0ec6883fe6838c1b"
@@ -6188,7 +6188,7 @@
     "https://www.githubstatus.com/incidents/tf25qs8wdw5h": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:23.307863Z",
+      "fetched_at": "2026-08-12T05:44:35.120434Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3d44038b2e754ff3"
@@ -6196,7 +6196,7 @@
     "https://www.githubstatus.com/incidents/5h5lmbffp07c": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:23.720965Z",
+      "fetched_at": "2026-08-12T05:44:35.663722Z",
       "components_gliner": [
         "Actions",
         "Copilot"
@@ -6210,7 +6210,7 @@
     "https://www.githubstatus.com/incidents/tkqxdgjlm6b5": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:24.009877Z",
+      "fetched_at": "2026-08-12T05:44:36.329586Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "43e2ae69c83f8d20"
@@ -6218,7 +6218,7 @@
     "https://www.githubstatus.com/incidents/2nmfnbknhlnv": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:24.438562Z",
+      "fetched_at": "2026-08-12T05:44:36.829196Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "0681fd598c0013d7"
@@ -6233,7 +6233,7 @@
     "https://www.githubstatus.com/incidents/4843jm0lsls6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:24.847487Z",
+      "fetched_at": "2026-08-12T05:44:37.322869Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "210aacf5401b90f5"
@@ -6250,7 +6250,7 @@
     "https://www.githubstatus.com/incidents/tm84vy58jq0h": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:21.715981Z",
+      "fetched_at": "2026-08-12T05:44:33.130782Z",
       "components_gliner": [
         "Git Operations"
       ],
@@ -6269,7 +6269,7 @@
     "https://www.githubstatus.com/incidents/jpd6l1jq0r54": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:25.245945Z",
+      "fetched_at": "2026-08-12T05:44:37.789121Z",
       "components_gliner": [
         "Webhooks"
       ],
@@ -6303,7 +6303,7 @@
     "https://www.githubstatus.com/incidents/d9b4dsg8d0r6": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:25.640599Z",
+      "fetched_at": "2026-08-12T05:44:38.250511Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6329,7 +6329,7 @@
     "https://www.githubstatus.com/incidents/5t81zk0vrk3z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:26.377046Z",
+      "fetched_at": "2026-08-12T05:44:39.262609Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b5da59272fa212ba"
@@ -6337,7 +6337,7 @@
     "https://www.githubstatus.com/incidents/kn7gv3tlfc54": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:26.018423Z",
+      "fetched_at": "2026-08-12T05:44:38.739659Z",
       "components_gliner": [
         "Webhooks"
       ],
@@ -6349,7 +6349,7 @@
     "https://www.githubstatus.com/incidents/9n670kvk0vw9": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:26.830156Z",
+      "fetched_at": "2026-08-12T05:44:39.703367Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "8b748f7dd8de2767"
@@ -6367,7 +6367,7 @@
     "https://www.githubstatus.com/incidents/v0b3bpsyvqtk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:27.253966Z",
+      "fetched_at": "2026-08-12T05:44:40.328993Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "a14d5aeb5ea9494c"
@@ -6375,7 +6375,7 @@
     "https://www.githubstatus.com/incidents/0rkjjs2ssp7z": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:27.656760Z",
+      "fetched_at": "2026-08-12T05:44:40.810976Z",
       "components_gliner": [
         "Pull Requests",
         "Copilot"
@@ -6389,7 +6389,7 @@
     "https://www.githubstatus.com/incidents/mc4yx9f8x1hk": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:28.034765Z",
+      "fetched_at": "2026-08-12T05:44:41.515935Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "fd69248608dad8ff"
@@ -6449,7 +6449,7 @@
     "https://www.githubstatus.com/incidents/d35pngcy6sb9": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:28.423919Z",
+      "fetched_at": "2026-08-12T05:44:42.046476Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "9c9c58e7c9b4ba17"
@@ -6471,7 +6471,7 @@
     "https://www.githubstatus.com/incidents/ph5nns5y4gxj": {
       "impact": "major",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:28.842935Z",
+      "fetched_at": "2026-08-12T05:44:42.511010Z",
       "components_gliner": [
         "Git Operations"
       ],
@@ -6500,7 +6500,7 @@
     "https://www.githubstatus.com/incidents/g40zcbvchny4": {
       "impact": "critical",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:29.228554Z",
+      "fetched_at": "2026-08-12T05:44:42.969378Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "b2d42c77126bc0ec"
@@ -6525,7 +6525,7 @@
     "https://www.githubstatus.com/incidents/594m87r8sw13": {
       "impact": "none",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:29.588693Z",
+      "fetched_at": "2026-08-12T05:44:43.495941Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "3fb218103fd79b52"
@@ -6580,7 +6580,7 @@
     "https://www.githubstatus.com/incidents/9lsvw3fcpbxm": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:29.894992Z",
+      "fetched_at": "2026-08-12T05:44:43.854390Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "87c49ad9120f9e6c"
@@ -6630,7 +6630,7 @@
     "https://www.githubstatus.com/incidents/9wzhl5jr80jt": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:30.306496Z",
+      "fetched_at": "2026-08-12T05:44:44.319289Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6657,7 +6657,7 @@
     "https://www.githubstatus.com/incidents/s19bth7wzkf7": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:30.692336Z",
+      "fetched_at": "2026-08-12T05:44:44.742436Z",
       "components_gliner": null,
       "components_gliner_confidence": {},
       "components_gliner_fp": "6d72ec0c4bb332fb"
@@ -6665,7 +6665,7 @@
     "https://www.githubstatus.com/incidents/1t7x65n7kvt1": {
       "impact": "minor",
       "components": null,
-      "fetched_at": "2026-08-11T05:17:31.086859Z",
+      "fetched_at": "2026-08-12T05:44:45.275060Z",
       "components_gliner": [
         "Copilot"
       ],
@@ -6673,6 +6673,13 @@
         "Copilot": 0.9256063103675842
       },
       "components_gliner_fp": "4e72be19d4d35dac"
+    },
+    "https://www.githubstatus.com/incidents/vm1w8zq95wkt": {
+      "impact": "minor",
+      "components": [
+        "API Requests"
+      ],
+      "fetched_at": "2026-08-12T05:44:45.777431Z"
     }
   }
 }
