@@ -67,9 +67,9 @@
 
     <main>
       <section class="hero panel-raise" data-animate>
-        <div class="hero-panel hero-panel-full" data-uptime-view="90d">
+        <div class="hero-panel hero-panel-full" data-uptime-view="daily">
           <div class="hero-panel-header">
-            <h3 id="uptimeViewTitle" class="hero-panel-title">Last 90 days uptime</h3>
+            <h3 id="uptimeViewTitle" class="hero-panel-title">Daily uptime</h3>
             <div
               class="view-toggle"
               role="tablist"
@@ -80,10 +80,22 @@
                 class="view-toggle-btn"
                 type="button"
                 role="tab"
-                data-view="90d"
+                data-view="daily"
                 aria-selected="true"
+                aria-controls="uptimeViewDaily"
+                id="uptimeViewBtnDaily"
+              >
+                Daily
+              </button>
+              <button
+                class="view-toggle-btn"
+                type="button"
+                role="tab"
+                data-view="90d"
+                aria-selected="false"
                 aria-controls="uptimeView90d"
                 id="uptimeViewBtn90d"
+                tabindex="-1"
               >
                 90 days
               </button>
@@ -97,7 +109,7 @@
                 id="uptimeViewBtnAll"
                 tabindex="-1"
               >
-                All time
+                Rolling 90d
               </button>
             </div>
             <div class="status-meta" id="statusMeta">
@@ -106,10 +118,71 @@
             </div>
           </div>
           <div
+            class="uptime-view uptime-view-all"
+            id="uptimeViewDaily"
+            role="tabpanel"
+            aria-labelledby="uptimeViewBtnDaily"
+          >
+            <div class="uptime-row uptime-row-all">
+              <div class="alltime-stats" id="dailyStats"></div>
+              <div class="daily-filters" role="group" aria-label="Daily uptime filters">
+                <label class="daily-filter-item" for="dailyRange">
+                  <span>Show</span>
+                </label>
+                <select id="dailyRange" aria-label="Date range">
+                  <option value="2m">Last 2 months</option>
+                  <option value="6m" selected>Last 6 months</option>
+                  <option value="1y">Last year</option>
+                  <option value="all">All time</option>
+                </select>
+                <label class="daily-filter-item">
+                  <input type="checkbox" id="dailyWorkHoursToggle" />
+                  <span>Work hours</span>
+                </label>
+                <span class="daily-filter-controls">
+                  <input
+                    type="time"
+                    id="dailyWorkStart"
+                    value="09:00"
+                    disabled
+                    aria-label="Work day start"
+                  />
+                  <span aria-hidden="true">–</span>
+                  <input
+                    type="time"
+                    id="dailyWorkEnd"
+                    value="17:00"
+                    disabled
+                    aria-label="Work day end"
+                  />
+                </span>
+                <label class="daily-filter-item">
+                  <input type="checkbox" id="dailyWeekdaysToggle" />
+                  <span>Weekdays only</span>
+                </label>
+              </div>
+              <figure class="uptime-history-figure">
+                <div class="uptime-history-stage">
+                  <div
+                    class="uptime-history-chart"
+                    id="uptimeDailyImage"
+                    role="application"
+                    aria-label="GitHub Platform daily uptime. Use arrow keys to read a day, Enter to list its incidents."
+                  ></div>
+                  <div class="uptime-history-tooltip" aria-hidden="true"></div>
+                </div>
+                <figcaption class="uptime-history-caption" id="uptimeDailyCaption">
+                  uptime per UTC day · non-maintenance downtime, merged windows
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div
             class="uptime-view"
             id="uptimeView90d"
             role="tabpanel"
             aria-labelledby="uptimeViewBtn90d"
+            hidden
           >
             <div class="uptime-row">
               <div class="uptime-label">

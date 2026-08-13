@@ -19,6 +19,11 @@ const uptimeHistoryDateFormatter = new Intl.DateTimeFormat(undefined, {
   timeZone: 'UTC',
 });
 
+const uptimeHistoryMonthFormatter = new Intl.DateTimeFormat(undefined, {
+  month: 'short',
+  timeZone: 'UTC',
+});
+
 const formatUptimeHistoryDate = (value) =>
   uptimeHistoryDateFormatter.format(value instanceof Date ? value : new Date(value));
 
@@ -40,51 +45,19 @@ const collectUptimeHistoryIntervals = (entries) =>
     )
     .sort((a, b) => a[0] - b[0]);
 
-const computeUptimeHistorySeries = (intervals, startMs, endMs) => {
-  const series = [];
-  for (let dayStart = startMs; dayStart < endMs; dayStart += UPTIME_HISTORY_ONE_DAY_MS) {
-    const windowEnd = dayStart + UPTIME_HISTORY_ONE_DAY_MS;
-    const windowStart = windowEnd - UPTIME_HISTORY_WINDOW_MS;
-
-    let downtimeMs = 0;
-    let mergedStart = -1;
-    let mergedEnd = -1;
-    for (let i = 0; i < intervals.length; i += 1) {
-      const [entryStart, entryEnd] = intervals[i];
-      if (entryEnd <= windowStart) continue;
-      if (entryStart >= windowEnd) break;
-      const clipStart = entryStart > windowStart ? entryStart : windowStart;
-      const clipEnd = entryEnd < windowEnd ? entryEnd : windowEnd;
-      if (clipEnd <= clipStart) continue;
-      if (mergedStart < 0) {
-        mergedStart = clipStart;
-        mergedEnd = clipEnd;
-      } else if (clipStart <= mergedEnd) {
-        if (clipEnd > mergedEnd) mergedEnd = clipEnd;
-      } else {
-        downtimeMs += mergedEnd - mergedStart;
-        mergedStart = clipStart;
-        mergedEnd = clipEnd;
-      }
-    }
-    if (mergedStart >= 0) downtimeMs += mergedEnd - mergedStart;
-
-    const uptime = Math.max(0, 1 - downtimeMs / UPTIME_HISTORY_WINDOW_MS) * 100;
-    series.push({ time: dayStart, uptime });
-  }
-  return series;
-};
-
-const computeLifetimeUptime = (intervals, startMs, endMs) => {
+// Merged downtime inside [windowStart, windowEnd). Intervals must be sorted by
+// start; overlapping entries are merged as they are clipped so double-reported
+// incidents never count twice.
+const uptimeHistoryDowntimeWithin = (intervals, windowStart, windowEnd) => {
   let downtimeMs = 0;
   let mergedStart = -1;
   let mergedEnd = -1;
   for (let i = 0; i < intervals.length; i += 1) {
     const [entryStart, entryEnd] = intervals[i];
-    if (entryEnd <= startMs) continue;
-    if (entryStart >= endMs) break;
-    const clipStart = entryStart > startMs ? entryStart : startMs;
-    const clipEnd = entryEnd < endMs ? entryEnd : endMs;
+    if (entryEnd <= windowStart) continue;
+    if (entryStart >= windowEnd) break;
+    const clipStart = entryStart > windowStart ? entryStart : windowStart;
+    const clipEnd = entryEnd < windowEnd ? entryEnd : windowEnd;
     if (clipEnd <= clipStart) continue;
     if (mergedStart < 0) {
       mergedStart = clipStart;
@@ -98,13 +71,126 @@ const computeLifetimeUptime = (intervals, startMs, endMs) => {
     }
   }
   if (mergedStart >= 0) downtimeMs += mergedEnd - mergedStart;
+  return downtimeMs;
+};
 
+// windowMs is the trailing window each point summarizes: 90 days for the rolling
+// view, one day for the daily view (where the window IS the day itself).
+const computeUptimeHistorySeries = (intervals, startMs, endMs, windowMs = UPTIME_HISTORY_WINDOW_MS) => {
+  const series = [];
+  for (let dayStart = startMs; dayStart < endMs; dayStart += UPTIME_HISTORY_ONE_DAY_MS) {
+    const windowEnd = dayStart + UPTIME_HISTORY_ONE_DAY_MS;
+    const windowStart = windowEnd - windowMs;
+    const downtimeMs = uptimeHistoryDowntimeWithin(intervals, windowStart, windowEnd);
+    const uptime = Math.max(0, 1 - downtimeMs / windowMs) * 100;
+    series.push({ time: dayStart, uptime });
+  }
+  return series;
+};
+
+// Wall-clock time in an arbitrary IANA zone -> epoch ms, DST-aware. Formatters are
+// cached because the work-hours series calls this twice per day over ~1500 days.
+const uptimeHistoryTzFormatters = new Map();
+const uptimeHistoryTzFormatter = (timeZone) => {
+  let formatter = uptimeHistoryTzFormatters.get(timeZone);
+  if (!formatter) {
+    formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone,
+      hourCycle: 'h23',
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    });
+    uptimeHistoryTzFormatters.set(timeZone, formatter);
+  }
+  return formatter;
+};
+
+const uptimeHistoryTzOffsetMs = (ts, timeZone) => {
+  const values = {};
+  uptimeHistoryTzFormatter(timeZone)
+    .formatToParts(ts)
+    .forEach((part) => {
+      if (part.type !== 'literal') values[part.type] = Number(part.value);
+    });
+  const asUTC = Date.UTC(
+    values.year,
+    values.month - 1,
+    values.day,
+    values.hour,
+    values.minute,
+    values.second,
+  );
+  return asUTC - ts;
+};
+
+const uptimeHistoryZonedMs = (year, month, day, minutes, timeZone) => {
+  const naive = Date.UTC(year, month, day, 0, minutes);
+  // First guess assumes the zone's offset at the naive instant; the second pass
+  // corrects the guess when the window straddles a DST transition.
+  let ts = naive - uptimeHistoryTzOffsetMs(naive, timeZone);
+  ts = naive - uptimeHistoryTzOffsetMs(ts, timeZone);
+  return ts;
+};
+
+// Daily series restricted to working hours: each point covers only
+// [startMinutes, endMinutes) of its calendar day, evaluated in `timeZone`.
+// Points carry their downtime and window length so the caller can aggregate a
+// work-hours lifetime figure without recomputing.
+const computeWorkHoursDailySeries = (intervals, startMs, endMs, workWindow) => {
+  const { startMinutes, endMinutes, timeZone, weekdaysOnly } = workWindow;
+  const series = [];
+  for (let dayStart = startMs; dayStart < endMs; dayStart += UPTIME_HISTORY_ONE_DAY_MS) {
+    const date = new Date(dayStart);
+    if (weekdaysOnly) {
+      const weekday = date.getUTCDay();
+      if (weekday === 0 || weekday === 6) continue;
+    }
+    const windowStart = uptimeHistoryZonedMs(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      startMinutes,
+      timeZone,
+    );
+    const windowEnd = uptimeHistoryZonedMs(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      endMinutes,
+      timeZone,
+    );
+    const windowMs = windowEnd - windowStart;
+    if (windowMs <= 0) continue;
+    const downtimeMs = uptimeHistoryDowntimeWithin(intervals, windowStart, windowEnd);
+    const uptime = Math.max(0, 1 - downtimeMs / windowMs) * 100;
+    series.push({ time: dayStart, uptime, downtimeMs, windowMs });
+  }
+  return series;
+};
+
+const computeLifetimeUptime = (intervals, startMs, endMs) => {
+  const downtimeMs = uptimeHistoryDowntimeWithin(intervals, startMs, endMs);
   const totalMs = Math.max(1, endMs - startMs);
   return Math.max(0, 1 - downtimeMs / totalMs) * 100;
 };
 
-const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
+const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT, opts = {}) => {
   if (!series.length) return { markup: '', geometry: null };
+
+  const {
+    ariaLabel = 'GitHub Platform 90-day rolling uptime since project start',
+    // The daily series pins its peak at 100% for most of its life, so a "peak"
+    // annotation says nothing there; the rolling view keeps it.
+    showPeak = true,
+    lowLabel = 'low',
+    // Two SVGs share the page (daily and rolling); gradient ids must not collide or
+    // the hidden chart's defs would answer the visible chart's url() references.
+    gradientId = 'uptimeHistory',
+  } = opts;
 
   const { width, height, marginLeft, marginRight, marginTop, marginBottom } = layout;
   const plotW = width - marginLeft - marginRight;
@@ -139,15 +225,39 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
       .join(' ') +
     ` L ${xAt(series[series.length - 1].time).toFixed(2)},${baselineY.toFixed(2)} Z`;
 
+  // The rolling view spans a few percent; the daily view spans the full 0-100%.
+  // A fixed 5% step is right for the first and draws 21 gridlines for the second,
+  // so pick the smallest step that lands on both edges with at most 8 lines.
+  const tickStep =
+    [5, 10, 20, 25].find((step) => ySpan % step === 0 && ySpan / step <= 8) || 5;
   const yTicks = [];
-  for (let tick = 100; tick >= yMin - 1e-9; tick -= 5) yTicks.push(tick);
+  for (let tick = 100; tick >= yMin - 1e-9; tick -= tickStep) yTicks.push(tick);
 
   const startDate = new Date(xMin);
   const endDate = new Date(xMax);
-  const xTicks = [];
-  for (let year = startDate.getUTCFullYear(); year <= endDate.getUTCFullYear(); year += 1) {
-    const candidate = Date.UTC(year, 0, 1);
-    if (candidate >= xMin && candidate <= xMax) xTicks.push({ year, time: candidate });
+  // Year ticks label a multi-year span but leave a two-month window with a bare
+  // axis, so short ranges tick by month instead (thinned to at most 8 labels).
+  let xTicks = [];
+  if (xSpan / UPTIME_HISTORY_ONE_DAY_MS <= 400) {
+    let year = startDate.getUTCFullYear();
+    let month = startDate.getUTCMonth() + 1;
+    for (;;) {
+      const candidate = Date.UTC(year, month, 1);
+      if (candidate > xMax) break;
+      if (candidate >= xMin) {
+        xTicks.push({ label: uptimeHistoryMonthFormatter.format(candidate), time: candidate });
+      }
+      month += 1;
+    }
+    const stride = Math.ceil(xTicks.length / 8);
+    if (stride > 1) xTicks = xTicks.filter((_, index) => index % stride === 0);
+  } else {
+    for (let year = startDate.getUTCFullYear(); year <= endDate.getUTCFullYear(); year += 1) {
+      const candidate = Date.UTC(year, 0, 1);
+      if (candidate >= xMin && candidate <= xMax) {
+        xTicks.push({ label: String(year), time: candidate });
+      }
+    }
   }
 
   const lastPoint = series[series.length - 1];
@@ -189,16 +299,16 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
   parts.push(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" ` +
       `preserveAspectRatio="xMidYMid meet" role="img" ` +
-      `aria-label="GitHub Platform 90-day rolling uptime since project start">`,
+      `aria-label="${ariaLabel}">`,
   );
 
   parts.push(
     '<defs>' +
-      '<linearGradient id="uptimeHistoryArea" x1="0" y1="0" x2="0" y2="1">' +
+      `<linearGradient id="${gradientId}Area" x1="0" y1="0" x2="0" y2="1">` +
       '<stop offset="0%" stop-color="var(--operational)" stop-opacity="0.32"/>' +
       '<stop offset="100%" stop-color="var(--operational)" stop-opacity="0"/>' +
       '</linearGradient>' +
-      '<linearGradient id="uptimeHistoryStroke" x1="0" y1="0" x2="0" y2="1">' +
+      `<linearGradient id="${gradientId}Stroke" x1="0" y1="0" x2="0" y2="1">` +
       '<stop offset="0%" stop-color="var(--operational)"/>' +
       '<stop offset="55%" stop-color="var(--minor)"/>' +
       '<stop offset="100%" stop-color="var(--major)"/>' +
@@ -242,7 +352,7 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
     );
     parts.push(
       `<text x="${gx.toFixed(2)}" y="${(baselineY + 22).toFixed(2)}" ` +
-        `font-size="12" text-anchor="middle" fill="var(--muted)">${tick.year}</text>`,
+        `font-size="12" text-anchor="middle" fill="var(--muted)">${tick.label}</text>`,
     );
   }
 
@@ -257,9 +367,11 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
       `today: ${formatUptimeHistoryDate(endDate)}</text>`,
   );
 
-  parts.push(`<path d="${areaD}" fill="url(#uptimeHistoryArea)" stroke="none"/>`);
+  parts.push(`<path d="${areaD}" fill="url(#${gradientId}Area)" stroke="none"/>`);
 
-  if (yMin <= 99 && 99 <= yMax) {
+  // On the daily view's 0-100% axis the 99% line would hug the top gridline and
+  // read as clutter; only draw it when the span is tight enough to separate them.
+  if (yMin <= 99 && 99 <= yMax && ySpan <= 25) {
     const ry = yAt(99);
     parts.push(
       `<line x1="${marginLeft}" y1="${ry.toFixed(2)}" ` +
@@ -275,25 +387,30 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
 
   parts.push(
     `<polyline points="${points}" fill="none" ` +
-      `stroke="url(#uptimeHistoryStroke)" stroke-width="2" ` +
+      `stroke="url(#${gradientId}Stroke)" stroke-width="2" ` +
       `stroke-linejoin="round" stroke-linecap="round"/>`,
   );
 
-  parts.push(
-    annotate(
-      maxPoint,
-      `peak: ${maxPoint.uptime.toFixed(2)}% (${formatUptimeHistoryDate(maxPoint.time)})`,
-      '--operational',
-      -12,
-    ),
-  );
+  if (showPeak) {
+    parts.push(
+      annotate(
+        maxPoint,
+        `peak: ${maxPoint.uptime.toFixed(2)}% (${formatUptimeHistoryDate(maxPoint.time)})`,
+        '--operational',
+        -12,
+      ),
+    );
+  }
   if (Math.abs(minPoint.time - lastPoint.time) > 7 * UPTIME_HISTORY_ONE_DAY_MS) {
+    // A daily low can sit on the baseline itself; a label below it would land on the
+    // x-axis year labels, so flip it above the marker there.
+    const lowDy = yAt(minPoint.uptime) > marginTop + plotH - 28 ? -14 : 18;
     parts.push(
       annotate(
         minPoint,
-        `low: ${minPoint.uptime.toFixed(2)}% (${formatUptimeHistoryDate(minPoint.time)})`,
+        `${lowLabel}: ${minPoint.uptime.toFixed(2)}% (${formatUptimeHistoryDate(minPoint.time)})`,
         '--major',
-        18,
+        lowDy,
       ),
     );
   }
@@ -340,18 +457,30 @@ const nearestUptimePoint = (series, geometry, clientX, svgEl) => {
   const localX = (clientX - box.left) / scale;
   const ratio = (localX - geometry.marginLeft) / geometry.plotW;
   const clamped = Math.min(1, Math.max(0, ratio));
-  const index = Math.round(clamped * (series.length - 1));
+  // Search by time, not by index-as-ratio: the weekdays-only series has weekend
+  // gaps, so points are not uniformly spaced along the x axis.
+  const target = geometry.xMin + clamped * geometry.xSpan;
+  let lo = 0;
+  let hi = series.length - 1;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (series[mid].time < target) lo = mid + 1;
+    else hi = mid;
+  }
+  const index =
+    lo > 0 && target - series[lo - 1].time <= series[lo].time - target ? lo - 1 : lo;
   return { index, point: series[index] };
 };
 
-// Clicking a point scopes the incident timeline to the 90-day window that produced
-// it, turning "there is a dip in May 2026" into the incidents that caused it.
-const focusTimelineOn = (point) => {
+// Clicking a point scopes the incident timeline to the window that produced it,
+// turning "there is a dip in May 2026" into the incidents that caused it. For the
+// daily view that window is the single clicked day.
+const focusTimelineOn = (point, windowDays = UPTIME_HISTORY_WINDOW_DAYS) => {
   const from = document.querySelector('[data-range-from]');
   const to = document.querySelector('[data-range-to]');
   if (!from || !to) return false;
   const end = new Date(point.time);
-  const start = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+  const start = new Date(point.time - (windowDays - 1) * UPTIME_HISTORY_ONE_DAY_MS);
   const iso = (d) => d.toISOString().slice(0, 10);
   from.value = iso(start);
   to.value = iso(end);
@@ -361,7 +490,8 @@ const focusTimelineOn = (point) => {
   return true;
 };
 
-const attachUptimeHistoryInteraction = (container, series, geometry) => {
+const attachUptimeHistoryInteraction = (container, series, geometry, opts = {}) => {
+  const windowDays = opts.windowDays || UPTIME_HISTORY_WINDOW_DAYS;
   const svgEl = container.querySelector('svg');
   const cursor = svgEl && svgEl.querySelector('.uptime-cursor');
   const line = cursor && cursor.querySelector('.uptime-cursor-line');
@@ -397,11 +527,16 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
     dot.setAttribute('cy', cy.toFixed(2));
     cursor.setAttribute('opacity', '1');
 
-    const windowStart = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+    const windowStart = new Date(point.time - (windowDays - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+    const scope =
+      opts.tooltipScope ||
+      (windowDays === 1
+        ? 'uptime on this day (UTC)'
+        : `over the ${windowDays} days from ${formatUptimeHistoryDate(windowStart)}`);
     tooltip.innerHTML =
       `<div class="tooltip-date">${formatUptimeHistoryDate(point.time)}</div>` +
       `<div class="tooltip-summary"><strong>${point.uptime.toFixed(2)}%</strong>` +
-      `<span>over the 90 days from ${formatUptimeHistoryDate(windowStart)}</span></div>` +
+      `<span>${scope}</span></div>` +
       `<div class="tooltip-related">Click to list these incidents</div>`;
     tooltip.classList.add('active');
     tooltip.setAttribute('aria-hidden', 'false');
@@ -425,7 +560,7 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
   svgEl.addEventListener('pointerdown', onMove);
   svgEl.addEventListener('pointerleave', hide);
   svgEl.addEventListener('click', () => {
-    if (active >= 0) focusTimelineOn(series[active]);
+    if (active >= 0) focusTimelineOn(series[active], windowDays);
   });
 
   // Replacing innerHTML discards the old SVG along with its listeners, but the
@@ -438,6 +573,9 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
     lastIndex: () => series.length - 1,
     activeIndex: () => active,
     pointAt: (index) => series[index],
+    // The container-level keydown handler is bound once but must use the window of
+    // whichever render published this controller last.
+    windowDays,
   };
 
   container.tabIndex = 0;
@@ -460,7 +598,7 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
       c.show(Math.min(c.lastIndex(), Math.max(0, next)));
     } else if (event.key === 'Enter' && current >= 0) {
       event.preventDefault();
-      focusTimelineOn(c.pointAt(current));
+      focusTimelineOn(c.pointAt(current), c.windowDays);
     } else if (event.key === 'Escape') {
       c.hide();
     }
@@ -470,20 +608,59 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
 const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const projectStartMs = options.projectStartUTC ?? PROJECT_START_UTC;
   const endMs = rangeEnd instanceof Date ? rangeEnd.getTime() : Number(rangeEnd);
+  const windowDays = options.windowDays || UPTIME_HISTORY_WINDOW_DAYS;
+  const daily = windowDays === 1;
 
   const intervals = collectUptimeHistoryIntervals(windowEntries);
-  const series = computeUptimeHistorySeries(intervals, projectStartMs, endMs);
-  const lifetimeUptime = computeLifetimeUptime(intervals, projectStartMs, endMs);
+  const workWindow = daily ? options.workWindow || null : null;
+  const series = workWindow
+    ? computeWorkHoursDailySeries(intervals, projectStartMs, endMs, workWindow)
+    : computeUptimeHistorySeries(
+        intervals,
+        projectStartMs,
+        endMs,
+        windowDays * UPTIME_HISTORY_ONE_DAY_MS,
+      );
+
+  // With a work-hours filter the lifetime figure must honor it too: total downtime
+  // inside the filtered windows over total filtered time, not calendar time.
+  let lifetimeUptime;
+  if (workWindow) {
+    let downtimeMs = 0;
+    let totalMs = 0;
+    series.forEach((point) => {
+      downtimeMs += point.downtimeMs;
+      totalMs += point.windowMs;
+    });
+    lifetimeUptime = totalMs > 0 ? Math.max(0, 1 - downtimeMs / totalMs) * 100 : 100;
+  } else {
+    lifetimeUptime = computeLifetimeUptime(intervals, projectStartMs, endMs);
+  }
 
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
   const chartSelector = options.chartTarget || '#uptimeHistoryImage';
+
+  const svgOpts = {
+    ariaLabel:
+      options.ariaLabel ||
+      (daily
+        ? 'GitHub Platform daily uptime since project start'
+        : 'GitHub Platform 90-day rolling uptime since project start'),
+    showPeak: !daily,
+    lowLabel: daily ? 'worst day' : 'low',
+    gradientId: daily ? 'uptimeDaily' : 'uptimeHistory',
+  };
 
   // Only the methodology is left. The start date is already on the x-axis as
   // "start: Jun 11, 2022", the lifetime figure is in the stat strip, and the hover
   // hint is redundant with the crosshair cursor and the container's aria-label.
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    caption.textContent = '90-day rolling window · non-maintenance downtime, merged windows';
+    caption.textContent =
+      options.caption ||
+      (daily
+        ? 'uptime per UTC day · non-maintenance downtime, merged windows'
+        : '90-day rolling window · non-maintenance downtime, merged windows');
   }
 
   const chartContainer = document.querySelector(chartSelector);
@@ -508,10 +685,13 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     const draw = () => {
       const width = contentWidth();
       const layout = options.layout || layoutForWidth(width);
-      const { markup, geometry } = buildUptimeHistorySVG(series, layout);
+      const { markup, geometry } = buildUptimeHistorySVG(series, layout, svgOpts);
       chartContainer.innerHTML = markup;
       drawnWidth = layout.width;
-      attachUptimeHistoryInteraction(chartContainer, series, geometry);
+      attachUptimeHistoryInteraction(chartContainer, series, geometry, {
+        windowDays,
+        tooltipScope: options.tooltipScope,
+      });
 
       // A draw can land while the container measures zero (hidden panel, mid-layout
       // reflow) and fall back to the default width. Nothing resizes afterwards, so the
@@ -560,6 +740,7 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
 var UptimeHistoryChart = {
   render: renderUptimeHistoryChart,
   computeUptimeHistorySeries,
+  computeWorkHoursDailySeries,
   computeLifetimeUptime,
   collectDowntimeIntervals: collectUptimeHistoryIntervals,
   buildSVG: buildUptimeHistorySVG,
