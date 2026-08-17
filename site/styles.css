@@ -964,7 +964,9 @@ main {
   accent-color: var(--accent);
 }
 
-.daily-filter-controls {
+.daily-filter-controls,
+/* Keeps a label and its select on the same line when the row wraps. */
+.daily-filter-group {
   display: inline-flex;
   align-items: center;
   gap: 6px;

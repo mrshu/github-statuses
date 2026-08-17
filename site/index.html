@@ -126,40 +126,65 @@
             <div class="uptime-row uptime-row-all">
               <div class="alltime-stats" id="dailyStats"></div>
               <div class="daily-filters" role="group" aria-label="Daily uptime filters">
-                <label class="daily-filter-item" for="dailyRange">
-                  <span>Show</span>
-                </label>
-                <select id="dailyRange" aria-label="Date range">
-                  <option value="2m">Last 2 months</option>
-                  <option value="6m" selected>Last 6 months</option>
-                  <option value="1y">Last year</option>
-                  <option value="all">All time</option>
-                </select>
+                <!-- autocomplete="off" throughout: browsers restore form state across a
+                     reload, which silently overrides the defaults below with whatever
+                     the viewer last picked. -->
+                <span class="daily-filter-group">
+                  <label class="daily-filter-item" for="dailyRange">
+                    <span>Show</span>
+                  </label>
+                  <select id="dailyRange" aria-label="Date range" autocomplete="off">
+                    <option value="2m" selected>Last 2 months</option>
+                    <option value="6m">Last 6 months</option>
+                    <option value="1y">Last year</option>
+                    <option value="all">All time</option>
+                  </select>
+                </span>
                 <label class="daily-filter-item">
-                  <input type="checkbox" id="dailyWorkHoursToggle" />
+                  <input type="checkbox" id="dailyWorkHoursToggle" checked autocomplete="off" />
                   <span>Work hours</span>
                 </label>
                 <span class="daily-filter-controls">
+                  <!-- Enabled to match the toggle above; setupDailyFilters disables them
+                       whenever it is unchecked. -->
                   <input
                     type="time"
                     id="dailyWorkStart"
                     value="09:00"
-                    disabled
                     aria-label="Work day start"
+                    autocomplete="off"
                   />
                   <span aria-hidden="true">–</span>
                   <input
                     type="time"
                     id="dailyWorkEnd"
                     value="17:00"
-                    disabled
                     aria-label="Work day end"
+                    autocomplete="off"
                   />
                 </span>
                 <label class="daily-filter-item">
-                  <input type="checkbox" id="dailyWeekdaysToggle" />
+                  <input type="checkbox" id="dailyWeekdaysToggle" checked autocomplete="off" />
                   <span>Weekdays only</span>
                 </label>
+                <span class="daily-filter-group">
+                  <label class="daily-filter-item" for="dailyYScale">
+                    <span>Y axis</span>
+                  </label>
+                  <select id="dailyYScale" aria-label="Y axis scale" autocomplete="off">
+                    <option
+                      value="log-uptime"
+                      selected
+                      title="Spreads the low end: a 3% day separates from a 0.3% day"
+                    >
+                      log(uptime)
+                    </option>
+                    <option value="log-downtime" title="The nines: 99.9% separates from 99%">
+                      log(downtime)
+                    </option>
+                    <option value="linear">linear</option>
+                  </select>
+                </span>
               </div>
               <figure class="uptime-history-figure">
                 <div class="uptime-history-stage">

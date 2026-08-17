@@ -539,7 +539,7 @@ const drawLegendItem = (ctx, x, y, color, label, isDark) => {
 
 // The all-time card carries the same rolling-uptime line as the page, redrawn on the
 // canvas because the on-page version is an SVG the canvas cannot rasterize directly.
-const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotations }) => {
+const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotations, yScaleMode }) => {
   if (!series || series.length < 2) return;
 
   const axisW = 74;
@@ -547,37 +547,30 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
   const plotW = w - axisW;
   const plotH = h - 34;
 
-  let dataMin = 100;
-  series.forEach((point) => {
-    if (point.uptime < dataMin) dataMin = point.uptime;
-  });
-  const yMin = Math.max(0, Math.min(85, Math.floor(dataMin / 5) * 5 - 5));
+  // Borrowed from the chart module so the card and the page cannot disagree about the
+  // axis -- including which of the three scales is in play.
+  const yScale = window.UptimeHistoryChart.makeYScale(series, yScaleMode);
+  const yAt = (value) => y + (1 - yScale.ratio(value)) * plotH;
   const xMin = series[0].time;
   const xSpan = Math.max(1, series[series.length - 1].time - xMin);
-  const at = (point) => [
-    plotX + ((point.time - xMin) / xSpan) * plotW,
-    y + (1 - (Math.min(100, Math.max(yMin, point.uptime)) - yMin) / (100 - yMin)) * plotH,
-  ];
+  const at = (point) => [plotX + ((point.time - xMin) / xSpan) * plotW, yAt(point.uptime)];
 
   ctx.save();
   ctx.font = '500 20px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillStyle = muted;
   ctx.strokeStyle = isDark ? 'rgba(240, 246, 252, 0.12)' : 'rgba(15, 23, 42, 0.1)';
   ctx.lineWidth = 1;
-  // Same rule as the on-page SVG: the daily series spans the full 0-100% axis, where
-  // the rolling view's 5% step would draw 21 gridlines.
-  const ySpan = 100 - yMin;
-  const tickStep =
-    [5, 10, 20, 25].find((step) => ySpan % step === 0 && ySpan / step <= 8) || 5;
-  for (let tick = 100; tick >= yMin - 1e-9; tick -= tickStep) {
-    const gy = y + (1 - (tick - yMin) / (100 - yMin)) * plotH;
+  // The card's gridlines need more clearance than the page's: its labels are 20px, not
+  // 12px, and this plot is the taller of the two.
+  yScale.ticks(plotH, 40).forEach((tick) => {
+    const gy = yAt(tick);
     ctx.beginPath();
     ctx.moveTo(plotX, gy);
     ctx.lineTo(plotX + plotW, gy);
     ctx.stroke();
-    const label = `${tick}%`;
+    const label = yScale.format(tick);
     ctx.fillText(label, plotX - 12 - ctx.measureText(label).width, gy + 7);
-  }
+  });
 
   const area = ctx.createLinearGradient(0, y, 0, y + plotH);
   area.addColorStop(0, `rgba(${IMPACT_SHARE_RGB.none}, 0.34)`);
@@ -864,7 +857,13 @@ const renderShareImageCanvas = () => {
       cardWidth - 128,
       cardY + cardHeight - 96 - (statY + statH + 34),
       lineView.series,
-      { isDark, ink, muted, annotations: { ...lineView, daily: Boolean(daily) } },
+      {
+        isDark,
+        ink,
+        muted,
+        annotations: { ...lineView, daily: Boolean(daily) },
+        yScaleMode: (daily && daily.yScaleMode) || 'linear',
+      },
     );
 
     ctx.fillStyle = muted;
@@ -1106,6 +1105,14 @@ const DAILY_RANGES = {
   all: { months: null, label: 'lifetime' },
 };
 
+// Spoken form of each y-axis mode, for the chart's aria-label. The axis is a display
+// choice, so it stays off the caption and the share-card footer.
+const Y_SCALE_LABELS = {
+  'log-uptime': 'logarithmic uptime axis',
+  'log-downtime': 'logarithmic downtime axis',
+  linear: 'linear axis',
+};
+
 const parseTimeInputMinutes = (value) => {
   const match = /^(\d{2}):(\d{2})$/.exec(value || '');
   return match ? Number(match[1]) * 60 + Number(match[2]) : null;
@@ -1159,9 +1166,14 @@ const renderDailyUptime = (windowEntries, rangeEnd) => {
     return null;
   }
   const filters = readDailyFilters();
+  // A display choice rather than a filter on the data, so it stays out of
+  // readDailyFilters and off the caption and share-card footer.
+  const yScaleSelect = document.getElementById('dailyYScale');
+  const yScaleMode = (yScaleSelect && yScaleSelect.value) || 'log-uptime';
 
   const rangeSelect = document.getElementById('dailyRange');
-  const range = DAILY_RANGES[rangeSelect && rangeSelect.value] || DAILY_RANGES['6m'];
+  // Fallback matches the option marked selected in the markup.
+  const range = DAILY_RANGES[rangeSelect && rangeSelect.value] || DAILY_RANGES['2m'];
   let projectStartUTC;
   if (range.months) {
     const end = new Date(rangeEnd instanceof Date ? rangeEnd.getTime() : rangeEnd);
@@ -1179,7 +1191,8 @@ const renderDailyUptime = (windowEntries, rangeEnd) => {
     tooltipScope: filters ? filters.tooltipScope : null,
     workWindow: filters ? filters.workWindow : null,
     projectStartUTC,
-    ariaLabel: `GitHub Platform daily uptime, ${range.label}`,
+    yScaleMode,
+    ariaLabel: `GitHub Platform daily uptime, ${range.label}, ${Y_SCALE_LABELS[yScaleMode]}`,
   });
   const host = document.getElementById('dailyStats');
   if (!stats || !stats.series.length) return null;
@@ -1199,6 +1212,7 @@ const renderDailyUptime = (windowEntries, rangeEnd) => {
   return {
     ...stats,
     cleanDays,
+    yScaleMode,
     cardFooter: filters ? filters.cardFooter : 'uptime per UTC day',
     latestLabel,
     rangeLabel: range.label,
@@ -1212,6 +1226,7 @@ let dailyRenderData = null;
 const setupDailyFilters = () => {
   const workToggle = document.getElementById('dailyWorkHoursToggle');
   const weekdaysToggle = document.getElementById('dailyWeekdaysToggle');
+  const yScaleSelect = document.getElementById('dailyYScale');
   const rangeSelect = document.getElementById('dailyRange');
   const hourControls = [
     document.getElementById('dailyWorkStart'),
@@ -1234,7 +1249,7 @@ const setupDailyFilters = () => {
     }
   };
 
-  [workToggle, weekdaysToggle, rangeSelect, ...hourControls].forEach((el) => {
+  [workToggle, weekdaysToggle, yScaleSelect, rangeSelect, ...hourControls].forEach((el) => {
     if (el) el.addEventListener('change', applyFilters);
   });
 };
