@@ -941,6 +941,52 @@ main {
   }
 }
 
+/* Work-day filters on the daily view. Muted chrome so the chart stays the focus;
+   the time/zone inputs light up only while the work-hours toggle is on. */
+.daily-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.daily-filter-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.daily-filter-item input[type='checkbox'] {
+  accent-color: var(--accent);
+}
+
+.daily-filter-controls,
+/* Keeps a label and its select on the same line when the row wraps. */
+.daily-filter-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.daily-filters input[type='time'],
+.daily-filters select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--icon-button-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 6px;
+}
+
+.daily-filters input[type='time']:disabled,
+.daily-filters select:disabled {
+  opacity: 0.45;
+}
+
 .uptime-history-figure {
   margin: 0;
   display: flex;

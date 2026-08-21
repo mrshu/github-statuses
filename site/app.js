@@ -106,8 +106,14 @@ const SHARE_IMAGE_SIZE = {
 const SHARE_PIXEL_RATIO = 2;
 const SHARE_FILE_NAME = 'github-status-90-day-uptime.png';
 const SHARE_FILE_NAME_ALL = 'github-status-all-time-uptime.png';
+const SHARE_FILE_NAME_DAILY = 'github-status-daily-uptime.png';
 // The card mirrors the active tab, so the saved file should say which one it is.
-const shareFileName = () => (shareState.view === 'all' ? SHARE_FILE_NAME_ALL : SHARE_FILE_NAME);
+const shareFileName = () =>
+  shareState.view === 'all'
+    ? SHARE_FILE_NAME_ALL
+    : shareState.view === 'daily'
+      ? SHARE_FILE_NAME_DAILY
+      : SHARE_FILE_NAME;
 const SHARE_ICON_PATHS = {
   ready:
     'M5 2.75C5 1.78 5.78 1 6.75 1h5.5C13.22 1 14 1.78 14 2.75v6.5c0 .97-.78 1.75-1.75 1.75h-5.5C5.78 11 5 10.22 5 9.25v-6.5Zm1.75-.25a.25.25 0 0 0-.25.25v6.5c0 .14.11.25.25.25h5.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-5.5ZM3.75 5A.75.75 0 0 1 4.5 5.75v6c0 .41.34.75.75.75h5a.75.75 0 0 1 0 1.5h-5A2.25 2.25 0 0 1 3 11.75v-6A.75.75 0 0 1 3.75 5Z',
@@ -127,9 +133,11 @@ const shareState = {
   imageBlob: null,
   imageReady: false,
   imagePreparing: false,
-  // All-time view: the card mirrors whichever tab is open, so it needs that data too.
-  view: '90d',
+  // Line-chart views: the card mirrors whichever tab is open, so it needs that
+  // data too. `daily` and `allTime` are the stats returned by UptimeHistoryChart.
+  view: 'daily',
   allTime: null,
+  daily: null,
   totalIncidentCount: 0,
 };
 let shareResetTimeout = null;
@@ -327,8 +335,10 @@ const renderStatusMeta = (lastUpdated, recentIncidentCount) => {
 
   // This line sits above whichever tab is open, so scope it to that tab. It used to
   // report the 90-day count unconditionally, which meant the all-time view claimed
-  // "69 incidents in last 90 days" over four years of data.
-  const allTimeActive = document.querySelector('.hero-panel')?.dataset.uptimeView === 'all';
+  // "69 incidents in last 90 days" over four years of data. The daily view spans the
+  // project's whole life too, so it gets the all-time count.
+  const activeView = document.querySelector('.hero-panel')?.dataset.uptimeView;
+  const allTimeActive = activeView === 'all' || activeView === 'daily';
   const count = allTimeActive ? statusMetaState.totalIncidentCount : recentIncidentCount;
   const longScope = allTimeActive
     ? `since ${statusMetaState.projectStartLabel || 'launch'}`
@@ -529,7 +539,7 @@ const drawLegendItem = (ctx, x, y, color, label, isDark) => {
 
 // The all-time card carries the same rolling-uptime line as the page, redrawn on the
 // canvas because the on-page version is an SVG the canvas cannot rasterize directly.
-const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotations }) => {
+const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotations, yScaleMode }) => {
   if (!series || series.length < 2) return;
 
   const axisW = 74;
@@ -537,32 +547,30 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
   const plotW = w - axisW;
   const plotH = h - 34;
 
-  let dataMin = 100;
-  series.forEach((point) => {
-    if (point.uptime < dataMin) dataMin = point.uptime;
-  });
-  const yMin = Math.max(0, Math.min(85, Math.floor(dataMin / 5) * 5 - 5));
+  // Borrowed from the chart module so the card and the page cannot disagree about the
+  // axis -- including which of the three scales is in play.
+  const yScale = window.UptimeHistoryChart.makeYScale(series, yScaleMode);
+  const yAt = (value) => y + (1 - yScale.ratio(value)) * plotH;
   const xMin = series[0].time;
   const xSpan = Math.max(1, series[series.length - 1].time - xMin);
-  const at = (point) => [
-    plotX + ((point.time - xMin) / xSpan) * plotW,
-    y + (1 - (Math.min(100, Math.max(yMin, point.uptime)) - yMin) / (100 - yMin)) * plotH,
-  ];
+  const at = (point) => [plotX + ((point.time - xMin) / xSpan) * plotW, yAt(point.uptime)];
 
   ctx.save();
   ctx.font = '500 20px "IBM Plex Sans", system-ui, sans-serif';
   ctx.fillStyle = muted;
   ctx.strokeStyle = isDark ? 'rgba(240, 246, 252, 0.12)' : 'rgba(15, 23, 42, 0.1)';
   ctx.lineWidth = 1;
-  for (let tick = 100; tick >= yMin - 1e-9; tick -= 5) {
-    const gy = y + (1 - (tick - yMin) / (100 - yMin)) * plotH;
+  // The card's gridlines need more clearance than the page's: its labels are 20px, not
+  // 12px, and this plot is the taller of the two.
+  yScale.ticks(plotH, 40).forEach((tick) => {
+    const gy = yAt(tick);
     ctx.beginPath();
     ctx.moveTo(plotX, gy);
     ctx.lineTo(plotX + plotW, gy);
     ctx.stroke();
-    const label = `${tick}%`;
+    const label = yScale.format(tick);
     ctx.fillText(label, plotX - 12 - ctx.measureText(label).width, gy + 7);
-  }
+  });
 
   const area = ctx.createLinearGradient(0, y, 0, y + plotH);
   area.addColorStop(0, `rgba(${IMPACT_SHARE_RGB.none}, 0.34)`);
@@ -597,13 +605,30 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
   ctx.font = '500 20px "IBM Plex Sans", system-ui, sans-serif';
   const start = new Date(xMin);
   const end = new Date(series[series.length - 1].time);
-  for (let year = start.getUTCFullYear() + 1; year <= end.getUTCFullYear(); year += 1) {
-    const time = Date.UTC(year, 0, 1);
-    if (time < xMin || time > end.getTime()) continue;
-    const px = plotX + ((time - xMin) / xSpan) * plotW;
-    const label = String(year);
-    ctx.fillText(label, px - ctx.measureText(label).width / 2, y + plotH + 26);
+  // Same rule as the on-page SVG: short ranges tick by month, long ones by year.
+  let axisTicks = [];
+  if (xSpan <= 400 * 86400000) {
+    const monthFmt = new Intl.DateTimeFormat(undefined, { month: 'short', timeZone: 'UTC' });
+    let tickYear = start.getUTCFullYear();
+    let tickMonth = start.getUTCMonth() + 1;
+    for (;;) {
+      const time = Date.UTC(tickYear, tickMonth, 1);
+      if (time > end.getTime()) break;
+      if (time >= xMin) axisTicks.push({ time, label: monthFmt.format(time) });
+      tickMonth += 1;
+    }
+    const stride = Math.ceil(axisTicks.length / 8);
+    if (stride > 1) axisTicks = axisTicks.filter((_, index) => index % stride === 0);
+  } else {
+    for (let year = start.getUTCFullYear() + 1; year <= end.getUTCFullYear(); year += 1) {
+      const time = Date.UTC(year, 0, 1);
+      if (time >= xMin && time <= end.getTime()) axisTicks.push({ time, label: String(year) });
+    }
   }
+  axisTicks.forEach(({ time, label }) => {
+    const px = plotX + ((time - xMin) / xSpan) * plotW;
+    ctx.fillText(label, px - ctx.measureText(label).width / 2, y + plotH + 26);
+  });
 
   // Same peak / low / today callouts the on-page chart carries. The stat strip gives
   // the numbers; these say *when*, which is the part the strip cannot show.
@@ -627,17 +652,28 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
     ctx.fillText(text, tx, py + dy);
   };
 
+  // Month/year locates a 90-day window; a single day needs the day itself.
   const fmt = (point) =>
-    new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
-      new Date(point.time),
-    );
+    new Intl.DateTimeFormat(undefined, {
+      ...(annotations && annotations.daily ? { day: 'numeric' } : {}),
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(point.time));
   const rgbOf = (impact) => `rgb(${(isDark ? IMPACT_SHARE_RGB_DARK : IMPACT_SHARE_RGB)[impact]})`;
 
   if (annotations) {
     const { peak, low, latest } = annotations;
-    annotate(peak, `peak ${peak.uptime.toFixed(2)}% · ${fmt(peak)}`, rgbOf('none'), -18);
+    const lowLabel = annotations.daily ? 'worst day' : 'low';
+    // The daily series pins its peak at 100% for most of its life; no peak there.
+    if (peak && !annotations.daily) {
+      annotate(peak, `peak ${peak.uptime.toFixed(2)}% · ${fmt(peak)}`, rgbOf('none'), -18);
+    }
     if (low && Math.abs(low.time - latest.time) > 7 * 86400000) {
-      annotate(low, `low ${low.uptime.toFixed(2)}% · ${fmt(low)}`, rgbOf('major'), 32);
+      // A daily low can sit on the baseline; a label below it would land on the
+      // year labels, so flip it above the marker there.
+      const lowDy = at(low)[1] > y + plotH - 40 ? -20 : 32;
+      annotate(low, `${lowLabel} ${low.uptime.toFixed(2)}% · ${fmt(low)}`, rgbOf('major'), lowDy);
     }
     annotate(latest, `today ${latest.uptime.toFixed(2)}%`, rgbOf(latest.uptime < 99 ? 'major' : 'none'), -18);
   }
@@ -745,13 +781,21 @@ const renderShareImageCanvas = () => {
   const palette = isDark ? IMPACT_SHARE_RGB_DARK : IMPACT_SHARE_RGB;
   const rgb = (impact, alpha) => `rgba(${palette[impact]}, ${alpha})`;
   const attribution = 'by Marek Šuppa · @mareksuppa';
+  const daily = shareState.view === 'daily' && shareState.daily;
   const allTime = shareState.view === 'all' && shareState.allTime;
+  // Both line-chart tabs (daily and rolling) share the card layout; only the title,
+  // stat tiles and methodology line differ.
+  const lineView = daily || allTime;
 
   ctx.fillStyle = ink;
   ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
   // The card gets shared out of context, so it has to name the platform itself. The
   // 90-day card already does, in its "GitHub Platform" row below the title.
-  ctx.fillText(allTime ? 'GitHub all-time uptime' : 'Last 90 days uptime', insetX, titleBaselineY);
+  ctx.fillText(
+    daily ? 'GitHub daily uptime' : allTime ? 'GitHub all-time uptime' : 'Last 90 days uptime',
+    insetX,
+    titleBaselineY,
+  );
 
   drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated), isDark);
   drawMetaPill(
@@ -760,20 +804,27 @@ const renderShareImageCanvas = () => {
     pillY,
     pillWidth,
     pillHeight,
-    allTime ? 'All time' : 'Last 90 days',
-    allTime
+    lineView ? 'All time' : 'Last 90 days',
+    lineView
       ? `${shareState.totalIncidentCount} incidents`
       : `${shareState.recentIncidentCount} incident${shareState.recentIncidentCount === 1 ? '' : 's'}`,
     isDark,
   );
 
-  if (allTime) {
-    const stats = [
-      [`${allTime.lifetimeUptime.toFixed(2)}%`, 'LIFETIME', ink],
-      [`${allTime.peak.uptime.toFixed(2)}%`, 'BEST 90D', rgb('none', 1)],
-      [`${allTime.low.uptime.toFixed(2)}%`, 'WORST 90D', rgb('major', 1)],
-      [`${allTime.latest.uptime.toFixed(2)}%`, 'TODAY', ink],
-    ];
+  if (lineView) {
+    const stats = daily
+      ? [
+          [`${daily.lifetimeUptime.toFixed(2)}%`, (daily.rangeLabel || 'lifetime').toUpperCase(), ink],
+          [`${daily.cleanDays} of ${daily.series.length}`, 'DAYS AT 100%', rgb('none', 1)],
+          [`${daily.low.uptime.toFixed(2)}%`, 'WORST DAY', rgb('major', 1)],
+          [`${daily.latest.uptime.toFixed(2)}%`, (daily.latestLabel || 'today').toUpperCase(), ink],
+        ]
+      : [
+          [`${allTime.lifetimeUptime.toFixed(2)}%`, 'LIFETIME', ink],
+          [`${allTime.peak.uptime.toFixed(2)}%`, 'BEST 90D', rgb('none', 1)],
+          [`${allTime.low.uptime.toFixed(2)}%`, 'WORST 90D', rgb('major', 1)],
+          [`${allTime.latest.uptime.toFixed(2)}%`, 'TODAY', ink],
+        ];
     const statGap = 16;
     const statW = (cardWidth - 128 - statGap * (stats.length - 1)) / stats.length;
     const statY = cardY + 148;
@@ -805,13 +856,23 @@ const renderShareImageCanvas = () => {
       statY + statH + 34,
       cardWidth - 128,
       cardY + cardHeight - 96 - (statY + statH + 34),
-      allTime.series,
-      { isDark, ink, muted, annotations: allTime },
+      lineView.series,
+      {
+        isDark,
+        ink,
+        muted,
+        annotations: { ...lineView, daily: Boolean(daily) },
+        yScaleMode: (daily && daily.yScaleMode) || 'linear',
+      },
     );
 
     ctx.fillStyle = muted;
     ctx.font = '500 24px "IBM Plex Sans", system-ui, sans-serif';
-    ctx.fillText('90-day rolling window', insetX, cardY + cardHeight - 52);
+    const dailyFooter =
+      daily && daily.rangeLabel !== 'lifetime'
+        ? `${daily.cardFooter || 'uptime per UTC day'} · ${daily.rangeLabel}`
+        : daily && (daily.cardFooter || 'uptime per UTC day');
+    ctx.fillText(daily ? dailyFooter : '90-day rolling window', insetX, cardY + cardHeight - 52);
     ctx.font = '600 24px "IBM Plex Sans", system-ui, sans-serif';
     ctx.fillText(attribution, insetRight - ctx.measureText(attribution).width, cardY + cardHeight - 52);
     return canvas;
@@ -1029,20 +1090,186 @@ const renderAllTimeUptime = (windowEntries, rangeEnd) => {
   return stats;
 };
 
+// Work hours are evaluated in the viewer's timezone. There is no region control:
+// the status feed carries no structured geography (only ~5% of incidents even name
+// a region in prose), so a region filter could not report anything accurate.
+const DAILY_WORK_TIME_ZONE = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+// Date ranges for the daily chart. Multi-year daily data compresses every dip into
+// a wall of spikes, so the chart defaults to a recent window with the full history
+// one selection away.
+const DAILY_RANGES = {
+  '2m': { months: 2, label: 'last 2 months' },
+  '6m': { months: 6, label: 'last 6 months' },
+  '1y': { months: 12, label: 'last year' },
+  all: { months: null, label: 'lifetime' },
+};
+
+// Spoken form of each y-axis mode, for the chart's aria-label. The axis is a display
+// choice, so it stays off the caption and the share-card footer.
+const Y_SCALE_LABELS = {
+  'log-uptime': 'logarithmic uptime axis',
+  'log-downtime': 'logarithmic downtime axis',
+  linear: 'linear axis',
+};
+
+const parseTimeInputMinutes = (value) => {
+  const match = /^(\d{2}):(\d{2})$/.exec(value || '');
+  return match ? Number(match[1]) * 60 + Number(match[2]) : null;
+};
+
+// Reads the daily filter controls into a workWindow for the chart module plus the
+// human-readable strings (caption, tooltip, share-card footer) describing it.
+// Returns null when no filter is active.
+const readDailyFilters = () => {
+  const workToggle = document.getElementById('dailyWorkHoursToggle');
+  const weekdaysToggle = document.getElementById('dailyWeekdaysToggle');
+  const startInput = document.getElementById('dailyWorkStart');
+  const endInput = document.getElementById('dailyWorkEnd');
+
+  const weekdaysOnly = Boolean(weekdaysToggle && weekdaysToggle.checked);
+  const hoursActive = Boolean(workToggle && workToggle.checked);
+  const startMinutes = hoursActive ? parseTimeInputMinutes(startInput && startInput.value) : null;
+  const endMinutes = hoursActive ? parseTimeInputMinutes(endInput && endInput.value) : null;
+  const hoursValid =
+    hoursActive && startMinutes !== null && endMinutes !== null && endMinutes > startMinutes;
+  // An inverted range (end before start) cannot mean anything; flag it and fall
+  // back to full days rather than rendering an empty chart.
+  if (endInput) endInput.setAttribute('aria-invalid', String(hoursActive && !hoursValid));
+
+  if (!hoursValid && !weekdaysOnly) return null;
+
+  const hoursLabel = hoursValid
+    ? `${startInput.value}–${endInput.value} (${DAILY_WORK_TIME_ZONE})`
+    : null;
+  const scopeLabel = hoursLabel
+    ? `uptime ${hoursLabel}${weekdaysOnly ? ', weekdays' : ''}`
+    : `uptime per UTC day, weekdays only`;
+
+  return {
+    workWindow: {
+      startMinutes: hoursValid ? startMinutes : 0,
+      endMinutes: hoursValid ? endMinutes : 24 * 60,
+      timeZone: hoursValid ? DAILY_WORK_TIME_ZONE : 'UTC',
+      weekdaysOnly,
+    },
+    caption: `${scopeLabel} · non-maintenance downtime, merged windows`,
+    tooltipScope: hoursLabel ? `uptime ${hoursLabel} this day` : null,
+    cardFooter: scopeLabel,
+    latestLabel: weekdaysOnly ? 'latest day' : 'today',
+  };
+};
+
+const renderDailyUptime = (windowEntries, rangeEnd) => {
+  if (!window.UptimeHistoryChart || typeof window.UptimeHistoryChart.render !== 'function') {
+    console.warn('UptimeHistoryChart module not loaded; skipping daily render.');
+    return null;
+  }
+  const filters = readDailyFilters();
+  // A display choice rather than a filter on the data, so it stays out of
+  // readDailyFilters and off the caption and share-card footer.
+  const yScaleSelect = document.getElementById('dailyYScale');
+  const yScaleMode = (yScaleSelect && yScaleSelect.value) || 'log-uptime';
+
+  const rangeSelect = document.getElementById('dailyRange');
+  // Fallback matches the option marked selected in the markup.
+  const range = DAILY_RANGES[rangeSelect && rangeSelect.value] || DAILY_RANGES['2m'];
+  let projectStartUTC;
+  if (range.months) {
+    const end = new Date(rangeEnd instanceof Date ? rangeEnd.getTime() : rangeEnd);
+    projectStartUTC = Math.max(
+      window.UptimeHistoryChart.PROJECT_START_UTC,
+      Date.UTC(end.getUTCFullYear(), end.getUTCMonth() - range.months, end.getUTCDate()),
+    );
+  }
+
+  const stats = window.UptimeHistoryChart.render(windowEntries, rangeEnd, {
+    windowDays: 1,
+    chartTarget: '#uptimeDailyImage',
+    captionTarget: '#uptimeDailyCaption',
+    caption: filters ? filters.caption : null,
+    tooltipScope: filters ? filters.tooltipScope : null,
+    workWindow: filters ? filters.workWindow : null,
+    projectStartUTC,
+    yScaleMode,
+    ariaLabel: `GitHub Platform daily uptime, ${range.label}, ${Y_SCALE_LABELS[yScaleMode]}`,
+  });
+  const host = document.getElementById('dailyStats');
+  if (!stats || !stats.series.length) return null;
+
+  const latestLabel = filters ? filters.latestLabel : 'today';
+  // "Best day" would read 100.00% for most of the project's life, so the strip
+  // shows how often that happens instead: the count of days with zero downtime.
+  const cleanDays = stats.series.filter((point) => point.uptime === 100).length;
+  if (host) {
+    host.replaceChildren(
+      buildAllTimeStat(`${stats.lifetimeUptime.toFixed(2)}%`, range.label),
+      buildAllTimeStat(`${cleanDays} of ${stats.series.length}`, 'days at 100%', 'good'),
+      buildAllTimeStat(`${stats.low.uptime.toFixed(2)}%`, 'worst day', 'bad'),
+      buildAllTimeStat(`${stats.latest.uptime.toFixed(2)}%`, latestLabel),
+    );
+  }
+  return {
+    ...stats,
+    cleanDays,
+    yScaleMode,
+    cardFooter: filters ? filters.cardFooter : 'uptime per UTC day',
+    latestLabel,
+    rangeLabel: range.label,
+  };
+};
+
+// The daily filters re-render the chart from the already-fetched data; render()
+// stows it here so the change handlers do not need to refetch.
+let dailyRenderData = null;
+
+const setupDailyFilters = () => {
+  const workToggle = document.getElementById('dailyWorkHoursToggle');
+  const weekdaysToggle = document.getElementById('dailyWeekdaysToggle');
+  const yScaleSelect = document.getElementById('dailyYScale');
+  const rangeSelect = document.getElementById('dailyRange');
+  const hourControls = [
+    document.getElementById('dailyWorkStart'),
+    document.getElementById('dailyWorkEnd'),
+  ];
+  if (!workToggle) return;
+
+  const applyFilters = () => {
+    hourControls.forEach((el) => {
+      if (el) el.disabled = !workToggle.checked;
+    });
+    if (!dailyRenderData) return;
+    shareState.daily =
+      renderDailyUptime(dailyRenderData.windowEntries, dailyRenderData.rangeEnd) || null;
+    // The share card mirrors the daily tab, so the cached PNG is stale now.
+    if (shareState.view === 'daily') {
+      shareState.imageBlob = null;
+      shareState.imageReady = false;
+      if (shareState.daySeverity.length) scheduleSharePrime();
+    }
+  };
+
+  [workToggle, weekdaysToggle, yScaleSelect, rangeSelect, ...hourControls].forEach((el) => {
+    if (el) el.addEventListener('change', applyFilters);
+  });
+};
+
 const setupUptimeViewToggle = () => {
   const panel = document.querySelector('.hero-panel');
   const toggle = document.getElementById('uptimeViewToggle');
   const buttons = toggle ? Array.from(toggle.querySelectorAll('.view-toggle-btn')) : [];
   const views = {
+    daily: document.getElementById('uptimeViewDaily'),
     '90d': document.getElementById('uptimeView90d'),
     all: document.getElementById('uptimeViewAll'),
   };
   const title = document.getElementById('uptimeViewTitle');
   const titleByView = {
+    daily: 'Daily uptime',
     '90d': 'Last 90 days uptime',
-    all: 'All-time uptime',
+    all: 'All-time uptime (90-day rolling)',
   };
-  if (!panel || !toggle || buttons.length === 0 || !views['90d'] || !views.all) {
+  if (!panel || !toggle || buttons.length === 0 || !views.daily || !views['90d'] || !views.all) {
     return;
   }
 
@@ -1065,8 +1292,10 @@ const setupUptimeViewToggle = () => {
     rerenderStatusMeta();
     // The chart sizes its viewBox to the container, which measures zero while the
     // tabpanel is hidden. Redraw at the real width the moment it is shown.
-    if (view === 'all') {
-      const chart = document.getElementById('uptimeHistoryImage');
+    if (view === 'all' || view === 'daily') {
+      const chart = document.getElementById(
+        view === 'all' ? 'uptimeHistoryImage' : 'uptimeDailyImage',
+      );
       if (chart && typeof chart.redrawUptimeHistory === 'function') chart.redrawUptimeHistory();
     }
     // The card mirrors the active tab, so the cached PNG is stale the moment the
@@ -1097,7 +1326,7 @@ const setupUptimeViewToggle = () => {
     });
   });
 
-  setView('90d');
+  setView('daily');
 };
 
 const render = async () => {
@@ -1187,6 +1416,8 @@ const render = async () => {
   uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
 
   shareState.allTime = renderAllTimeUptime(windowEntries, rangeEnd) || null;
+  dailyRenderData = { windowEntries, rangeEnd };
+  shareState.daily = renderDailyUptime(windowEntries, rangeEnd) || null;
 
   const uptimeBars = document.getElementById('uptimeBars');
   const uptimeTooltip = document.getElementById('uptimeTooltip');
@@ -1845,6 +2076,7 @@ const renderIncidentCard = (incident, compact = false) => {
 };
 
 setupUptimeViewToggle();
+setupDailyFilters();
 
 render().catch((error) => {
   console.error(error);
