@@ -1048,6 +1048,7 @@ const setupUptimeViewToggle = () => {
 
   const setView = (view) => {
     if (!views[view]) return;
+    uptimeViewUrl.sync(view, window.location.href, window.history);
     panel.dataset.uptimeView = view;
     if (title && titleByView[view]) {
       title.textContent = titleByView[view];
@@ -1097,7 +1098,7 @@ const setupUptimeViewToggle = () => {
     });
   });
 
-  setView('90d');
+  setView(uptimeViewUrl.read(window.location.href));
 };
 
 const render = async () => {
