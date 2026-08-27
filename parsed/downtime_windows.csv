@@ -821,3 +821,8 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31261643,2026-08-21T14:00:00Z,2026-08-21T14:00:00Z,0,updates,Degraded Git Operations over SSH,none
 31261609,2026-08-24T07:12:00Z,2026-08-24T07:58:00Z,46,updates,Elevated errors on Fable 5 due to upstream provider,major
 31264380,2026-08-24T13:33:00Z,2026-08-24T14:04:00Z,31,postmortem,Actions delays in starting runs,minor
+31282826,2026-08-26T15:09:00Z,2026-08-26T16:07:00Z,58,updates,Disruption with some GitHub services,minor
+31282847,2026-08-26T15:11:00Z,2026-08-26T18:01:00Z,170,updates,Incident with Actions,critical
+31285277,2026-08-26T22:56:00Z,2026-08-27T00:26:00Z,90,updates,Incident with Actions and Pull Requests,minor
+31289196,2026-08-27T10:04:00Z,2026-08-27T12:12:00Z,128,updates,Incident with Copilot AI Model Providers,critical
+31285481,2026-08-26T23:37:00Z,2026-08-27T14:49:00Z,912,updates,Disruption with GitHub Billing,minor
