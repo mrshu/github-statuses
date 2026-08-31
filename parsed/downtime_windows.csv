@@ -826,3 +826,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31285277,2026-08-26T21:55:00Z,2026-08-26T23:58:00Z,123,postmortem,Incident with Actions and Pull Requests,minor
 31289196,2026-08-27T10:04:00Z,2026-08-27T12:12:00Z,128,updates,Incident with Copilot AI Model Providers,critical
 31285481,2026-08-26T23:37:00Z,2026-08-27T19:44:00Z,1207,updates,Disruption with GitHub Billing,minor
+31316411,2026-08-31T09:15:00Z,2026-08-31T09:58:00Z,43,updates,Elevated rate of errors for OpenAI models provided by Copilot,minor
