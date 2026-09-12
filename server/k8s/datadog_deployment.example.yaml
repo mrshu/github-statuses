@@ -1,0 +1,126 @@
+# Example Deployment + Service for the "live server" (server/app.py) --
+# see the README's "Live server (Kubernetes / Docker)" section.
+#
+# The `ad.datadoghq.com/github-statuses.checks` annotation configures the
+# Datadog Agent's OpenMetrics Autodiscovery check to scrape GET /metrics
+#
+#   github.status.overall                    (tag: none)
+#   github.status.component                  (tag: component:<name>)
+#   github.status.components_degraded_total   (tag: none)
+#   github.incidents.open                     (tag: impact:<level>)
+#   github.incidents.open_total                (tag: none)
+#   github.incidents.created                   (tag: impact:<level>)
+#   github.incidents.resolved                  (tag: impact:<level>)
+#   github.incidents.duration_seconds          (tag: impact:<level>)
+#   github.collector.last_success_ts           (tag: none)
+#
+# `namespace: github` in the check config auto-prefixes every renamed metric
+# with `github.`, so the `metrics` list below only needs to spell out what
+# comes after that -- e.g. `github_status_overall` -> `status.overall`
+# becomes `github.status.overall`.
+#
+# Prometheus labels (impact, component) pass through as Datadog tags automatically
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-statuses
+  labels:
+    app: github-statuses
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-statuses-service
+  template:
+    metadata:
+      labels:
+        app: github-statuses
+        tags.datadoghq.com/env: "prod"
+        tags.datadoghq.com/service: "github-statuses-service"
+        tags.datadoghq.com/version: "1.0.0"
+      annotations:
+        ad.datadoghq.com/github-statuses.checks: |
+          {
+            "openmetrics": {
+              "init_config": {},
+              "instances": [
+                {
+                  "openmetrics_endpoint": "http://%%host%%:8000/metrics",
+                  "namespace": "github",
+                  "metrics": [
+                    {"github_status_overall": "status.overall"},
+                    {"github_status_component": "status.component"},
+                    {"github_status_components_degraded_total": "status.components_degraded_total"},
+                    {"github_incidents_open": "incidents.open"},
+                    {"github_incidents_open_total": "incidents.open_total"},
+                    {"github_incidents_created": "incidents.created"},
+                    {"github_incidents_resolved": "incidents.resolved"},
+                    {"github_incidents_duration_seconds": "incidents.duration_seconds"},
+                    {"github_status_collector_last_success_ts": "collector.last_success_ts"}
+                  ]
+                }
+              ]
+            }
+          }
+    spec:
+      containers:
+        - name: github-statuses
+          image: github-statuses-service:latest
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "8000"
+            - name: METRICS_TAGS
+              value: "team:sre"
+            - name: METRICS_POLL_INTERVAL_SECONDS
+              value: "30"
+            - name: INCIDENTS_POLL_INTERVAL_SECONDS
+              value: "600"
+            - name: DD_ENV
+              value: "prod"
+            - name: DD_SERVICE
+              value: "github-statuses-service"
+            - name: DD_VERSION
+              value: "1.0.0"
+          livenessProbe:
+            httpGet:
+              path: /health/liveness
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: http
+            # incidents_last_success_ts (see server/app.py:readiness) isn't set
+            # until the first incidents refresh completes, which includes a
+            # one-off GLiNER2 model load -- give it room before the first check.
+            initialDelaySeconds: 20
+            periodSeconds: 15
+            failureThreshold: 6
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-statuses
+  labels:
+    app: github-statuses
+spec:
+  selector:
+    app: github-statuses
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
