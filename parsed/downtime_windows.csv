@@ -831,4 +831,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31343987,2026-09-03T14:17:00Z,2026-09-03T17:11:00Z,174,updates,Incident with Grok Copilot AI Model Provider,minor
 31355785,2026-09-04T22:02:00Z,2026-09-04T22:23:00Z,21,updates,Degradation in repos contents API,minor
 31355391,2026-09-04T20:39:00Z,2026-09-04T22:26:00Z,107,updates,Disruption with Copilot Code Review,major
-31422503,2026-09-13T09:16:00Z,2026-09-13T09:16:00Z,0,updates,Incident with several GitHub Services,critical
+31422503,2026-09-13T09:16:00Z,2026-09-13T10:44:00Z,88,updates,Incident with several GitHub Services,critical
