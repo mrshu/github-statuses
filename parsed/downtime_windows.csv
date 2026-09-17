@@ -835,4 +835,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31432539,2026-09-14T18:40:00Z,2026-09-14T19:35:00Z,55,updates,Actions Larger Runner Jobs for some customers may be slow to start,minor
 31437529,2026-09-15T09:47:00Z,2026-09-15T11:17:00Z,90,updates,Disruption with some GitHub services,minor
 31441612,2026-09-15T19:11:00Z,2026-09-15T20:00:00Z,49,updates,Disruption with some GitHub services,minor
-31445480,2026-09-16T07:21:00Z,2026-09-16T08:28:00Z,67,updates,Degradation with Gemini 3.8 Flash,major
+31445480,2026-09-16T07:21:00Z,2026-09-16T17:48:00Z,627,updates,Degradation with Gemini 3.8 Flash,major
