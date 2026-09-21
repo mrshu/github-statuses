@@ -837,3 +837,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31441612,2026-09-15T19:11:00Z,2026-09-15T20:00:00Z,49,updates,Disruption with some GitHub services,minor
 31445480,2026-09-16T07:21:00Z,2026-09-16T17:48:00Z,627,updates,Degradation with Gemini 3.8 Flash,major
 31460688,2026-09-17T20:59:00Z,2026-09-17T21:49:00Z,50,updates,Elevated rate of errors for OpenAI models provided by Copilot,minor
+31483381,2026-09-20T22:13:00Z,2026-09-20T23:22:00Z,69,updates,Incident with Pull Requests,minor
