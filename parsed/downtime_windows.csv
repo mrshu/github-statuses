@@ -839,3 +839,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31460688,2026-09-17T20:59:00Z,2026-09-17T21:49:00Z,50,updates,Elevated rate of errors for OpenAI models provided by Copilot,minor
 31483381,2026-09-20T22:13:00Z,2026-09-20T23:22:00Z,69,updates,Incident with Pull Requests,minor
 31506733,2026-09-23T10:11:00Z,2026-09-24T04:55:00Z,1124,updates,Incident across several services,minor
+31518101,2026-09-24T16:51:00Z,2026-09-24T20:41:00Z,230,updates,Disruption with billing information updates,minor
