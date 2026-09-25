@@ -1,0 +1,26 @@
+services:
+  github-statuses-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: github-statuses-service
+    ports:
+      - "8000:8000"
+    environment:
+      # Extra Prometheus labels, comma-separated key:value pairs (see server/app.py).
+      - METRICS_TAGS=provider:github
+      - METRICS_POLL_INTERVAL_SECONDS=30
+      - INCIDENTS_POLL_INTERVAL_SECONDS=300
+      - DD_ENV=local
+      - DD_SERVICE=fbg-github-statuses-service
+      - DD_VERSION=dev
+      - DD_LOGS_INJECTION=true
+      - DD_TRACE_SAMPLE_RATE=1.0
+      - DD_PROFILING_ENABLED=true
+      - DEBUG=1
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health/liveness"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
