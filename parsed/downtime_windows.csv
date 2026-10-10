@@ -845,7 +845,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31572352,2026-10-01T13:04:00Z,2026-10-01T13:34:00Z,30,postmortem,Elevated request latency,minor
 31572804,2026-10-01T14:47:00Z,2026-10-01T17:56:00Z,189,updates,Actions Job Delays,minor
 31599550,2026-10-05T19:11:00Z,2026-10-05T22:49:00Z,218,updates,Incident with Actions,critical
-31601012,2026-10-05T23:47:00Z,2026-10-06T01:32:00Z,105,updates,Disruption with some GitHub services,major
+31601012,2026-10-05T23:05:00Z,2026-10-06T00:11:00Z,66,postmortem,Disruption with some GitHub services,major
 31608762,2026-10-06T19:57:00Z,2026-10-06T23:40:00Z,223,updates,Several services are degraded,critical
 31614710,2026-10-07T15:14:00Z,2026-10-07T16:25:00Z,71,updates,"Incident with Git Operations, Pull Requests and Actions",critical
 31615622,2026-10-07T17:17:00Z,2026-10-07T18:04:00Z,47,updates,"Incident with Git Operations, Issues, Actions and Pull Requests",critical
