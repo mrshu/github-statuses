@@ -132,6 +132,29 @@ COMPONENT_ALIASES = {
     "Copilot": [r"\bcopilot\b"],
 }
 
+# Statuspage writes one status message per component change. These patterns read the
+# messages that open or close a component's own impact, so a component can have a
+# shorter window than the incident that mentions it.
+COMPONENT_BY_LOWER = {name.lower(): name for name in COMPONENT_SCHEMA}
+COMPONENT_NAME_RE = "|".join(
+    re.escape(name) for name in sorted(COMPONENT_SCHEMA, key=len, reverse=True)
+)
+COMPONENT_DEGRADED_RE = re.compile(
+    rf"^(?:GitHub\s+)?({COMPONENT_NAME_RE})\s+is\s+(?:now\s+)?experiencing\b", re.IGNORECASE
+)
+COMPONENT_NORMAL_RE = re.compile(
+    rf"^(?:GitHub\s+)?({COMPONENT_NAME_RE})\s+is\s+operating\s+normally\b", re.IGNORECASE
+)
+COMPONENT_MITIGATED_RE = re.compile(
+    r"^The\s+(?:degradation|disruption|outage|impact)\s+affecting\s+(.+?)\s+(?:has|have)\s+been\s+mitigated",
+    re.IGNORECASE,
+)
+COMPONENT_INVESTIGATING_RE = re.compile(
+    r"investigating\s+reports\s+of\s+degraded\s+(?:performance|availability)\s+for\s+([^.]+)",
+    re.IGNORECASE,
+)
+COMPONENT_LIST_SPLIT_RE = re.compile(r",\s*(?:and\s+)?|\s+and\s+", re.IGNORECASE)
+
 try:
     from gliner2 import GLiNER2
 except ImportError:
@@ -585,6 +608,67 @@ def update_key(update):
     return f"{at}|{update['status']}|{update['message']}"
 
 
+def split_component_names(text):
+    # Known top-level components in a list like "Actions, Pages and Pull Requests".
+    #
+    # Names that are not top-level components (sub-components, free text) are ignored, so
+    # a sentence we only half understand never opens or closes the wrong window.
+    names = []
+    for part in COMPONENT_LIST_SPLIT_RE.split(text.strip()):
+        part = re.sub(r"^GitHub\s+", "", part.strip(), flags=re.IGNORECASE)
+        name = COMPONENT_BY_LOWER.get(part.lower())
+        if name and name not in names:
+            names.append(name)
+    return names
+
+
+def derive_component_windows(updates, resolved_at):
+    # `updates` are chronological dicts with ISO-8601 "Z" `at`, `status` and `message`.
+    #
+    # A window opens at the first message that says a component is degraded and closes at
+    # the message that says it is operating normally or that its degradation has been
+    # mitigated.
+    # A window still open at the end closes at `resolved_at`.
+    # Returns a list of {component, start_at, end_at, source} sorted by start, or [] when
+    # no message names a component
+    open_since = {}
+    windows = []
+
+    def close(name, at):
+        start = open_since.pop(name, None)
+        if start is not None and at >= start:
+            windows.append({"component": name, "start_at": start, "end_at": at, "source": "updates"})
+
+    for update in updates:
+        message = update["message"]
+        at = update["at"]
+        if update["status"] == "Resolved":
+            continue
+        match = COMPONENT_NORMAL_RE.match(message)
+        if match:
+            close(COMPONENT_BY_LOWER[match.group(1).lower()], at)
+            continue
+        match = COMPONENT_MITIGATED_RE.match(message)
+        if match:
+            for name in split_component_names(match.group(1)):
+                close(name, at)
+            continue
+        match = COMPONENT_DEGRADED_RE.match(message)
+        if match:
+            open_since.setdefault(COMPONENT_BY_LOWER[match.group(1).lower()], at)
+            continue
+        match = COMPONENT_INVESTIGATING_RE.search(message)
+        if match:
+            for name in split_component_names(match.group(1)):
+                open_since.setdefault(name, at)
+
+    for name in list(open_since):
+        if resolved_at:
+            close(name, resolved_at)
+    windows.sort(key=lambda w: (w["start_at"], w["component"]))
+    return windows
+
+
 def finalize_incident(incident):
     updates_by_key = incident["updates"]
 
@@ -652,6 +736,7 @@ def finalize_incident(incident):
         "downtime_start": downtime_start,
         "downtime_end": downtime_end,
         "duration_minutes": duration_minutes,
+        "component_windows": derive_component_windows(ordered, resolved_at),
         "updates": ordered,
     }
 
