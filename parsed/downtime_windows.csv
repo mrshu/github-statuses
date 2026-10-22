@@ -853,3 +853,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31661370,2026-10-13T20:30:00Z,2026-10-13T20:30:00Z,0,updates,[Retroactive] Actions workflow run logs delayed,minor
 31677899,2026-10-15T18:31:00Z,2026-10-15T18:56:00Z,25,updates,CCA Automations are delayed when starting an Automation,minor
 31704796,2026-10-19T15:49:00Z,2026-10-19T16:56:00Z,67,updates,"Degraded availability for GitHub Actions, GitHub Pages and Webhooks",critical
+31723521,2026-10-21T14:52:00Z,2026-10-21T19:22:00Z,270,updates,Delays for Pull Requests and Webhook deliveries,critical
