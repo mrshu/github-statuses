@@ -854,7 +854,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31677899,2026-10-15T18:31:00Z,2026-10-15T18:56:00Z,25,updates,CCA Automations are delayed when starting an Automation,minor
 31704796,2026-10-19T15:49:00Z,2026-10-19T16:56:00Z,67,updates,"Degraded availability for GitHub Actions, GitHub Pages and Webhooks",critical
 31723521,2026-10-21T14:52:00Z,2026-10-21T19:22:00Z,270,updates,Delays for Pull Requests and Webhook deliveries,critical
-31733190,2026-10-22T14:18:00Z,2026-10-22T15:18:00Z,60,updates,Incident with Actions Results,minor
+31733190,2026-10-22T14:18:00Z,2026-10-22T15:18:00Z,60,updates,Incident with Actions,minor
 31733703,2026-10-22T15:28:00Z,2026-10-23T02:30:00Z,662,updates,Project updates delayed,minor
 31740631,2026-10-23T07:06:00Z,2026-10-23T07:27:00Z,21,postmortem,Delayed Actions status check results,minor
 31743615,2026-10-23T14:58:00Z,2026-10-23T18:51:00Z,233,updates,Disruption with Dependabot Alerts,minor
@@ -862,4 +862,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31766065,2026-10-26T18:48:00Z,2026-10-26T18:57:00Z,9,updates,"Incident with Actions, Issues, API Requests and Pull Requests",minor
 31775419,2026-10-27T08:00:00Z,2026-10-27T08:00:00Z,0,updates,Elevated 404s for GitHub App s2s tokens in git/API,none
 31782775,2026-10-28T14:12:00Z,2026-10-28T15:28:00Z,76,updates,Disruption with some Copilot services,critical
-31792798,2026-10-29T10:19:00Z,2026-10-29T10:22:00Z,3,updates,Disruption with Copilot Cloud services,minor
+31792798,2026-10-29T10:19:00Z,2026-10-29T12:49:00Z,150,updates,Disruption with Copilot Cloud services,minor
