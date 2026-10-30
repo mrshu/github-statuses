@@ -9,6 +9,10 @@ sys.path.append(str(ROOT / "scripts"))
 import extract_incidents as ei  # noqa: E402
 
 
+def _update(at, status, message):
+    return {"at": at, "status": status, "message": message}
+
+
 class ExtractIncidentsTests(unittest.TestCase):
     def test_infer_year_boundary(self):
         reference = datetime(2025, 1, 2, 12, 0, tzinfo=timezone.utc)
@@ -50,6 +54,103 @@ class ExtractIncidentsTests(unittest.TestCase):
         start_at, end_at, _ = ei.parse_impact_window([message])
         self.assertEqual(start_at.isoformat(), "2024-08-28T22:37:00+00:00")
         self.assertEqual(end_at.isoformat(), "2024-08-29T04:47:00+00:00")
+
+    def test_component_windows_end_when_the_component_recovers(self):
+        # Modelled on the Sep 23 2026 incident: the API recovered in under an hour, the
+        # incident itself stayed open for another 18 hours for a Projects backlog.
+        updates = [
+            _update("2026-09-23T10:11:00Z", "Investigating",
+                    "We are investigating reports of degraded performance for API Requests"),
+            _update("2026-09-23T10:58:00Z", "Update",
+                    "The degradation affecting API Requests has been mitigated. "
+                    "We are monitoring to ensure stability."),
+            _update("2026-09-24T04:55:00Z", "Resolved", "Full service was restored."),
+        ]
+        windows = ei.derive_component_windows(updates, "2026-09-24T04:55:00Z")
+        self.assertEqual(
+            windows,
+            [{"component": "API Requests", "start_at": "2026-09-23T10:11:00Z",
+              "end_at": "2026-09-23T10:58:00Z", "source": "updates"}],
+        )
+
+    def test_component_windows_track_each_component_separately(self):
+        updates = [
+            _update("2026-08-17T13:41:00Z", "Update", "API Requests is experiencing degraded performance."),
+            _update("2026-08-17T15:21:00Z", "Update", "Git Operations is experiencing degraded performance."),
+            _update("2026-08-17T16:59:00Z", "Update",
+                    "The degradation affecting API Requests, Git Operations and Pages has been mitigated."),
+            _update("2026-08-17T17:30:00Z", "Update", "Git Operations is experiencing degraded performance."),
+            _update("2026-08-17T18:23:00Z", "Update", "Git Operations is operating normally."),
+            _update("2026-08-17T21:15:00Z", "Resolved", "On August 17, 2026 ..."),
+        ]
+        windows = ei.derive_component_windows(updates, "2026-08-17T21:15:00Z")
+        self.assertEqual(
+            [(w["component"], w["start_at"][11:16], w["end_at"][11:16]) for w in windows],
+            [("API Requests", "13:41", "16:59"),
+             ("Git Operations", "15:21", "16:59"),
+             ("Git Operations", "17:30", "18:23")],
+        )
+
+    def test_component_windows_parse_lists_and_prefixed_names(self):
+        updates = [
+            _update("2026-01-01T10:00:00Z", "Investigating",
+                    "We are investigating reports of degraded performance for "
+                    "Actions, GitHub Pages and Pull Requests."),
+            _update("2026-01-01T11:00:00Z", "Update",
+                    "The disruption affecting Actions, Pages, and Pull Requests has been mitigated."),
+        ]
+        windows = ei.derive_component_windows(updates, "2026-01-01T12:00:00Z")
+        self.assertEqual(
+            sorted((w["component"], w["end_at"][11:16]) for w in windows),
+            [("Actions", "11:00"), ("Pages", "11:00"), ("Pull Requests", "11:00")],
+        )
+
+    def test_component_windows_close_at_resolution_when_never_marked_recovered(self):
+        updates = [
+            _update("2026-01-01T10:00:00Z", "Investigating",
+                    "We are investigating reports of degraded availability for Copilot"),
+            _update("2026-01-01T12:30:00Z", "Resolved", "This incident has been resolved."),
+        ]
+        windows = ei.derive_component_windows(updates, "2026-01-01T12:30:00Z")
+        self.assertEqual([(w["start_at"][11:16], w["end_at"][11:16]) for w in windows],
+                         [("10:00", "12:30")])
+
+    def test_component_windows_ignore_unknown_names_and_generic_messages(self):
+        updates = [
+            _update("2026-01-01T10:00:00Z", "Investigating",
+                    "We are investigating reports of impacted performance for some GitHub services."),
+            _update("2026-01-01T10:05:00Z", "Update", "Visit www.githubstatus.com is experiencing degraded performance."),
+            _update("2026-01-01T10:30:00Z", "Update", "We are investigating reports of timeouts for Codespaces users."),
+            _update("2026-01-01T11:00:00Z", "Resolved", "This incident has been resolved."),
+        ]
+        self.assertEqual(ei.derive_component_windows(updates, "2026-01-01T11:00:00Z"), [])
+
+    def test_component_windows_ignore_recovery_for_a_component_that_never_opened(self):
+        updates = [_update("2026-01-01T10:00:00Z", "Update", "Actions is operating normally.")]
+        self.assertEqual(ei.derive_component_windows(updates, "2026-01-01T11:00:00Z"), [])
+
+    def test_finalize_includes_component_windows_without_changing_the_incident_window(self):
+        published = datetime(2026, 9, 23, 10, 11, tzinfo=timezone.utc)
+        incident = {
+            "id": "1", "entry_id": "e", "title": "t", "url": "u",
+            "published_at": published, "updated_at": published,
+            "updates": {
+                "a": {"at": datetime(2026, 9, 23, 10, 11, tzinfo=timezone.utc), "status": "Investigating",
+                      "message": "We are investigating reports of degraded performance for API Requests",
+                      "_order": 2},
+                "b": {"at": datetime(2026, 9, 23, 10, 58, tzinfo=timezone.utc), "status": "Update",
+                      "message": "The degradation affecting API Requests has been mitigated.", "_order": 1},
+                "c": {"at": datetime(2026, 9, 24, 4, 55, tzinfo=timezone.utc), "status": "Resolved",
+                      "message": "Full service was restored.", "_order": 0},
+            },
+        }
+        finalized = ei.finalize_incident(incident)
+        self.assertEqual(finalized["downtime_start"], "2026-09-23T10:11:00Z")
+        self.assertEqual(finalized["downtime_end"], "2026-09-24T04:55:00Z")
+        self.assertEqual(
+            [(w["component"], w["end_at"]) for w in finalized["component_windows"]],
+            [("API Requests", "2026-09-23T10:58:00Z")],
+        )
 
     def test_finalize_prefers_postmortem_window(self):
         published = datetime(2025, 1, 13, 23, 44, tzinfo=timezone.utc)
