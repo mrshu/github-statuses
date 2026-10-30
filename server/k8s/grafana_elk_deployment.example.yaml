@@ -1,0 +1,135 @@
+# Example Deployment + Service for the "live server" (server/app.py) --
+# see the README's "Live server (Kubernetes / Docker)" section. This is the
+# same app as server/k8s/datadog_deployment.example.yaml, wired for a
+# Prometheus + Grafana metrics stack (e.g. kube-prometheus-stack) and an
+# ELK logging stack (Filebeat/Elastic Agent -> Logstash -> Elasticsearch
+# -> Kibana) instead of Datadog.
+#
+# Grafana dashboards/PromQL just query these names as-is,
+# e.g. `github_incidents_open{impact="major"}`.
+#
+# This assumes two things are already running cluster-wide (neither is
+# included here, same as the Datadog example assumes a Datadog Agent
+# DaemonSet already exists):
+#   1. Prometheus, either the Prometheus Operator (kube-prometheus-stack,
+#      which bundles Grafana) watching ServiceMonitors, or a bare
+#      Prometheus configured with the common `kubernetes_sd_configs` +
+#      `prometheus.io/*` annotation relabeling rules. Both are set up below
+#      -- use whichever matches your cluster, you don't need both.
+#   2. Filebeat or Elastic Agent as a DaemonSet with Kubernetes autodiscover
+#      hints enabled (`hints.enabled: true`), shipping to Logstash or
+#      directly to Elasticsearch. Its own config (not shown here) looks
+#      roughly like:
+#        filebeat.autodiscover:
+#          providers:
+#            - type: kubernetes
+#              node: ${NODE_NAME}
+#              hints.enabled: true
+#        output.logstash:
+#          hosts: ["logstash.logging.svc:5044"]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-statuses-service
+  labels:
+    app: github-statuses-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-statuses-service
+  template:
+    metadata:
+      labels:
+        app: github-statuses-service
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+        # Filebeat/Elastic Agent hints-based autodiscover: ships this pod's
+        # stdout, tagged with a `service`/`env` field for filtering in
+        # Kibana. multiline.pattern groups indented continuation lines
+        # (Python tracebacks, GLiNER2's banner) under the log line that
+        # started them, instead of one Elasticsearch document per line.
+        co.elastic.logs/enabled: "true"
+        co.elastic.logs/fields_under_root: "true"
+        co.elastic.logs/fields.service: "github-statuses-service"
+        co.elastic.logs/fields.env: "prod"
+        co.elastic.logs/multiline.pattern: '^[[:space:]]'
+        co.elastic.logs/multiline.negate: "false"
+        co.elastic.logs/multiline.match: "after"
+    spec:
+      containers:
+        - name: github-statuses
+          image: github-statuses-service:latest
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "8000"
+            - name: METRICS_TAGS
+              value: "team:sre"
+            - name: METRICS_POLL_INTERVAL_SECONDS
+              value: "30"
+            - name: INCIDENTS_POLL_INTERVAL_SECONDS
+              value: "600"
+          livenessProbe:
+            httpGet:
+              path: /health/liveness
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: http
+            # incidents_last_success_ts (see server/app.py:readiness) isn't set
+            # until the first incidents refresh completes, which includes a
+            # one-off GLiNER2 model load -- give it room before the first check.
+            initialDelaySeconds: 20
+            periodSeconds: 15
+            failureThreshold: 6
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-statuses-service
+  labels:
+    app: github-statuses-service
+spec:
+  selector:
+    app: github-statuses-service
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+---
+# Prometheus Operator / kube-prometheus-stack scrape config. Only needed if
+# your Prometheus is managed by the Operator (its serviceMonitorSelector
+# must match this ServiceMonitor's labels -- "release: kube-prometheus-stack"
+# is the default Helm chart's expectation; adjust to your install).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: github-statuses-service
+  labels:
+    app: github-statuses-service
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: github-statuses-service
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s
