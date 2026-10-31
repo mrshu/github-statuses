@@ -863,3 +863,6 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31775419,2026-10-27T08:00:00Z,2026-10-27T08:00:00Z,0,updates,Elevated 404s for GitHub App s2s tokens in git/API,none
 31782775,2026-10-28T14:12:00Z,2026-10-28T15:28:00Z,76,updates,Disruption with some Copilot services,critical
 31792798,2026-10-29T10:19:00Z,2026-10-29T12:49:00Z,150,updates,Disruption with Copilot Cloud services,minor
+31803952,2026-10-30T14:31:00Z,2026-10-30T15:02:00Z,31,updates,Disruption with GitHub services,critical
+31805513,2026-10-30T17:50:00Z,2026-10-30T19:23:00Z,93,updates,"Incident with Actions, Pages, and Webhooks",major
+31806869,2026-10-30T20:59:00Z,2026-10-30T23:29:00Z,150,updates,Incident with Dependabot,minor
