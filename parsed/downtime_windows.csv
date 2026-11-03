@@ -866,3 +866,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31803952,2026-10-30T14:31:00Z,2026-10-30T15:02:00Z,31,updates,Disruption with GitHub services,critical
 31805513,2026-10-30T17:50:00Z,2026-10-30T19:23:00Z,93,updates,"Incident with Actions, Pages, and Webhooks",major
 31806869,2026-10-30T20:59:00Z,2026-10-30T23:29:00Z,150,updates,Incident with Dependabot,minor
+31825862,2026-11-02T17:46:00Z,2026-11-02T18:24:00Z,38,updates,Elevated errors on GPT-5.4 Nano,minor
