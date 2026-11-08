@@ -4,10 +4,18 @@
   <link rel="alternate" type="text/html" href="https://www.githubstatus.com"/>
   <link rel="self" type="application/atom+xml" href="https://www.githubstatus.com/history.atom"/>
   <title>GitHub Status - Incident History</title>
-  <updated>2026-11-07T10:19:15Z</updated>
+  <updated>2026-11-08T11:04:28Z</updated>
   <author>
     <name>GitHub</name>
   </author>
+  <entry>
+    <id>tag:www.githubstatus.com,2005:Incident/31874571</id>
+    <published>2026-11-08T10:36:05Z</published>
+    <updated>2026-11-08T10:36:05Z</updated>
+    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/pyynvrm1vskw"/>
+    <title>Increase in timeouts for some unauthenticated users</title>
+    <content type="html">&lt;p&gt; &lt;small&gt;Nov &lt;var data-var='date'&gt; 8&lt;/var&gt;, &lt;var data-var='time'&gt;10:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services. &lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:www.githubstatus.com,2005:Incident/31857373</id>
     <published>2026-11-06T00:20:49Z</published>
@@ -199,13 +207,5 @@
     <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/vlxrztp88101"/>
     <title>CCA Automations are delayed when starting an Automation</title>
     <content type="html">&lt;p&gt; &lt;small&gt;Oct &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - We suspected that CCA Automations were experiencing delays when users start an Automation, but further investigation found that there was no delay or impact to CCA Automations.&lt;br /&gt; &lt;/p&gt; &lt;p&gt; &lt;small&gt;Oct &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - The degradation has been mitigated. We are monitoring to ensure stability. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Oct &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - CCA Automations are experiencing delays when users start an Automation &lt;/p&gt; &lt;p&gt; &lt;small&gt;Oct &lt;var data-var='date'&gt;15&lt;/var&gt;, &lt;var data-var='time'&gt;18:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating reports of impacted performance for some GitHub services. &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:www.githubstatus.com,2005:Incident/31661370</id>
-    <published>2026-10-13T20:30:00Z</published>
-    <updated>2026-10-14T00:13:11Z</updated>
-    <link rel="alternate" type="text/html" href="https://www.githubstatus.com/incidents/6yk962mhlr3h"/>
-    <title>[Retroactive] Actions workflow run logs delayed</title>
-    <content type="html">&lt;p&gt; &lt;small&gt;Oct &lt;var data-var='date'&gt;13&lt;/var&gt;, &lt;var data-var='time'&gt;20:30&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - On October 13, around 20:42 UTC, an infrastructure failure caused GitHub Actions to have delays showing logs for workflow runs. No logs were lost and the issue has now been resolved and log processing has caught up.&lt;br /&gt;&lt;br /&gt;The actual workflows producing the logs were not impacted and ran normally and no run delays or check delays occurred. &lt;/p&gt;</content>
   </entry>
 </feed>
