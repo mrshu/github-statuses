@@ -8,7 +8,34 @@ dependencies = [
     "gliner2>=1.2.3",
     "torch==2.9.1+cpu ; sys_platform == 'linux'",
     "torch==2.9.1 ; sys_platform != 'linux'",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "prometheus-client>=0.26.0",
 ]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.12.0",
+    "ruff>=0.16.6",
+]
+
+[tool.ruff]
+# Matches the interpreter this project actually runs on (see the
+# Dockerfile/docker-compose.yml and README's "Python (for running the
+# extractor)" section) -- onnxruntime doesn't support 3.14+ yet, and ruff
+# only takes one version (the floor), unlike black's list of targets.
+target-version = "py313"
+# scripts/ (extract_incidents.py, run_gliner_experiment.py) must stay
+# untouched -- excluded from both linting and formatting, not just left
+# unfixed, so `ruff format`/`ruff check` never flag or reformat it either.
+extend-exclude = ["scripts"]
+
+[tool.ruff.lint]
+# This ruff version defaults to ~800 enabled rules unconfigured (far more
+# than classic pyflakes+pycodestyle). Pinned explicitly to the standard,
+# low-noise baseline instead: pyflakes (F), pycodestyle (E/W), and import
+# sorting (I, which black never did).
+select = ["E", "F", "I", "W"]
 
 [tool.uv]
 package = false
