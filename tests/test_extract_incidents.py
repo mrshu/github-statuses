@@ -51,6 +51,24 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertEqual(start_at.isoformat(), "2024-08-28T22:37:00+00:00")
         self.assertEqual(end_at.isoformat(), "2024-08-29T04:47:00+00:00")
 
+    def test_impact_window_from_range_with_dash(self):
+        # GitHub's Aug 17 2026 postmortem writes the range as "13:28–21:15 UTC".
+        for dash in ("–", "—", "-", " – "):
+            with self.subTest(dash=dash):
+                message = (
+                    f"On August 17, 2026, from 13:28{dash}21:15 UTC (7h 47m), "
+                    "GitHub.com experienced elevated errors and latency."
+                )
+                start_at, end_at, _ = ei.parse_impact_window([message])
+                self.assertEqual(start_at.isoformat(), "2026-08-17T13:28:00+00:00")
+                self.assertEqual(end_at.isoformat(), "2026-08-17T21:15:00+00:00")
+
+    def test_impact_window_dash_range_crosses_midnight(self):
+        message = "On May 1, 2026, from 23:10–00:20 UTC, pushes were delayed."
+        start_at, end_at, _ = ei.parse_impact_window([message])
+        self.assertEqual(start_at.isoformat(), "2026-05-01T23:10:00+00:00")
+        self.assertEqual(end_at.isoformat(), "2026-05-02T00:20:00+00:00")
+
     def test_finalize_prefers_postmortem_window(self):
         published = datetime(2025, 1, 13, 23, 44, tzinfo=timezone.utc)
         updates = [
