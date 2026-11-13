@@ -113,8 +113,24 @@
           >
             <div class="uptime-row">
               <div class="uptime-label">
-                <span>GitHub Platform</span>
+                <button
+                  type="button"
+                  class="product-filter-toggle"
+                  id="productFilterToggle"
+                  aria-expanded="false"
+                  aria-controls="productFilterPanel"
+                >All GitHub Platform</button>
                 <span class="uptime-percent" id="uptimePercent">—</span>
+              </div>
+              <div class="product-filter-panel" id="productFilterPanel" hidden>
+                <div class="product-filter-options" id="productFilterOptions"></div>
+                <div class="product-filter-footer">
+                  <button type="button" class="product-filter-all" id="productFilterAll">All products</button>
+                  <span class="product-filter-note">
+                    Incidents are matched to products by the tags GitHub lists, and by an inferred
+                    guess when it lists none, so a single product's figure is less exact.
+                  </span>
+                </div>
               </div>
               <div class="uptime-bars" id="uptimeBars"></div>
               <div class="uptime-tooltip" id="uptimeTooltip" aria-hidden="true"></div>
@@ -315,6 +331,7 @@
 
     <script src="uptime-history-chart.js" defer></script>
     <script src="uptime-view-url.js" defer></script>
+    <script src="product-filter.js" defer></script>
     <script src="app.js" defer></script>
     <script>
       (() => {

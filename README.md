@@ -118,6 +118,9 @@ python -m http.server 8000
 
 Then open <http://localhost:8000/site/> in your browser.
 
+Click the platform name above the 90-day bars to count only the GitHub products you use. The choice is
+remembered in `localStorage` and written to the URL (e.g. `?products=actions,pages`), so the link can be shared.
+
 ## GLiNER2 component inference
 
 Some incident pages do not list "affected components". In those cases we use GLiNER2 as a fallback:
