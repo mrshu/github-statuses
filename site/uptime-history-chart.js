@@ -40,11 +40,12 @@ const collectUptimeHistoryIntervals = (entries) =>
     )
     .sort((a, b) => a[0] - b[0]);
 
-const computeUptimeHistorySeries = (intervals, startMs, endMs) => {
+const computeUptimeHistorySeries = (intervals, startMs, endMs, windowDays = UPTIME_HISTORY_WINDOW_DAYS) => {
+  const windowMs = windowDays * UPTIME_HISTORY_ONE_DAY_MS;
   const series = [];
   for (let dayStart = startMs; dayStart < endMs; dayStart += UPTIME_HISTORY_ONE_DAY_MS) {
     const windowEnd = dayStart + UPTIME_HISTORY_ONE_DAY_MS;
-    const windowStart = windowEnd - UPTIME_HISTORY_WINDOW_MS;
+    const windowStart = windowEnd - windowMs;
 
     let downtimeMs = 0;
     let mergedStart = -1;
@@ -69,11 +70,19 @@ const computeUptimeHistorySeries = (intervals, startMs, endMs) => {
     }
     if (mergedStart >= 0) downtimeMs += mergedEnd - mergedStart;
 
-    const uptime = Math.max(0, 1 - downtimeMs / UPTIME_HISTORY_WINDOW_MS) * 100;
+    const uptime = Math.max(0, 1 - downtimeMs / windowMs) * 100;
     series.push({ time: dayStart, uptime });
   }
   return series;
 };
+
+// The 90-day default is the deepest lookback the chart trusts before project start.
+// A longer window starts once its own lookback fits inside that span.
+const uptimeSeriesStartMs = (projectStartMs, windowDays = UPTIME_HISTORY_WINDOW_DAYS) =>
+  Math.max(
+    projectStartMs,
+    projectStartMs - UPTIME_HISTORY_WINDOW_MS + (windowDays - 1) * UPTIME_HISTORY_ONE_DAY_MS,
+  );
 
 const computeLifetimeUptime = (intervals, startMs, endMs) => {
   let downtimeMs = 0;
@@ -103,7 +112,11 @@ const computeLifetimeUptime = (intervals, startMs, endMs) => {
   return Math.max(0, 1 - downtimeMs / totalMs) * 100;
 };
 
-const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
+const buildUptimeHistorySVG = (
+  series,
+  layout = UPTIME_HISTORY_LAYOUT,
+  windowDays = UPTIME_HISTORY_WINDOW_DAYS,
+) => {
   if (!series.length) return { markup: '', geometry: null };
 
   const { width, height, marginLeft, marginRight, marginTop, marginBottom } = layout;
@@ -184,12 +197,15 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
   };
 
   const lastColor = lastPoint.uptime < 99 ? '--major' : '--operational';
+  // On wide layouts, a high today label collides with the 99% label.
+  // Keep the dashed line and drop the explanation.
+  const showNinesLabel = layout.compact || lastPoint.uptime < 97;
 
   const parts = [];
   parts.push(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" ` +
       `preserveAspectRatio="xMidYMid meet" role="img" ` +
-      `aria-label="GitHub Platform 90-day rolling uptime since project start">`,
+      `aria-label="GitHub Platform ${windowDays}-day rolling uptime">`,
   );
 
   parts.push(
@@ -266,11 +282,13 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
         `x2="${marginLeft + plotW}" y2="${ry.toFixed(2)}" ` +
         `stroke="var(--major)" stroke-width="1" stroke-dasharray="4 4" opacity="0.55"/>`,
     );
-    parts.push(
-      `<text x="${(marginLeft + plotW - 6).toFixed(2)}" y="${(ry - 6).toFixed(2)}" ` +
-        `font-size="11" text-anchor="end" fill="var(--major)" opacity="0.85">` +
-        `99% (&#8220;two nines&#8221;)</text>`,
-    );
+    if (showNinesLabel) {
+      parts.push(
+        `<text x="${(marginLeft + plotW - 6).toFixed(2)}" y="${(ry - 6).toFixed(2)}" ` +
+          `font-size="11" text-anchor="end" fill="var(--major)" opacity="0.85">` +
+          `99% (&#8220;two nines&#8221;)</text>`,
+      );
+    }
   }
 
   parts.push(
@@ -344,14 +362,14 @@ const nearestUptimePoint = (series, geometry, clientX, svgEl) => {
   return { index, point: series[index] };
 };
 
-// Clicking a point scopes the incident timeline to the 90-day window that produced
-// it, turning "there is a dip in May 2026" into the incidents that caused it.
-const focusTimelineOn = (point) => {
+// Clicking a point scopes the incident timeline to the window that produced it,
+// turning "there is a dip in May 2026" into the incidents that caused it.
+const focusTimelineOn = (point, windowDays = UPTIME_HISTORY_WINDOW_DAYS) => {
   const from = document.querySelector('[data-range-from]');
   const to = document.querySelector('[data-range-to]');
   if (!from || !to) return false;
   const end = new Date(point.time);
-  const start = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+  const start = new Date(point.time - (windowDays - 1) * UPTIME_HISTORY_ONE_DAY_MS);
   const iso = (d) => d.toISOString().slice(0, 10);
   from.value = iso(start);
   to.value = iso(end);
@@ -361,7 +379,12 @@ const focusTimelineOn = (point) => {
   return true;
 };
 
-const attachUptimeHistoryInteraction = (container, series, geometry) => {
+const attachUptimeHistoryInteraction = (
+  container,
+  series,
+  geometry,
+  windowDays = UPTIME_HISTORY_WINDOW_DAYS,
+) => {
   const svgEl = container.querySelector('svg');
   const cursor = svgEl && svgEl.querySelector('.uptime-cursor');
   const line = cursor && cursor.querySelector('.uptime-cursor-line');
@@ -397,11 +420,15 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
     dot.setAttribute('cy', cy.toFixed(2));
     cursor.setAttribute('opacity', '1');
 
-    const windowStart = new Date(point.time - (UPTIME_HISTORY_WINDOW_DAYS - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+    const windowStart = new Date(point.time - (windowDays - 1) * UPTIME_HISTORY_ONE_DAY_MS);
+    const period =
+      windowDays === 1
+        ? `on ${formatUptimeHistoryDate(point.time)}`
+        : `over the ${windowDays} days from ${formatUptimeHistoryDate(windowStart)}`;
     tooltip.innerHTML =
       `<div class="tooltip-date">${formatUptimeHistoryDate(point.time)}</div>` +
       `<div class="tooltip-summary"><strong>${point.uptime.toFixed(2)}%</strong>` +
-      `<span>over the 90 days from ${formatUptimeHistoryDate(windowStart)}</span></div>` +
+      `<span>${period}</span></div>` +
       `<div class="tooltip-related">Click to list these incidents</div>`;
     tooltip.classList.add('active');
     tooltip.setAttribute('aria-hidden', 'false');
@@ -425,7 +452,7 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
   svgEl.addEventListener('pointerdown', onMove);
   svgEl.addEventListener('pointerleave', hide);
   svgEl.addEventListener('click', () => {
-    if (active >= 0) focusTimelineOn(series[active]);
+    if (active >= 0) focusTimelineOn(series[active], windowDays);
   });
 
   // Replacing innerHTML discards the old SVG along with its listeners, but the
@@ -460,19 +487,24 @@ const attachUptimeHistoryInteraction = (container, series, geometry) => {
       c.show(Math.min(c.lastIndex(), Math.max(0, next)));
     } else if (event.key === 'Enter' && current >= 0) {
       event.preventDefault();
-      focusTimelineOn(c.pointAt(current));
+      focusTimelineOn(c.pointAt(current), windowDays);
     } else if (event.key === 'Escape') {
       c.hide();
     }
   });
 };
 
+const uptimeHistoryCaption = (windowDays) =>
+  `${windowDays === 1 ? 'Daily uptime' : `${windowDays}-day rolling window`} · non-maintenance downtime, merged windows`;
+
 const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   const projectStartMs = options.projectStartUTC ?? PROJECT_START_UTC;
   const endMs = rangeEnd instanceof Date ? rangeEnd.getTime() : Number(rangeEnd);
+  const windowDays = options.windowDays ?? UPTIME_HISTORY_WINDOW_DAYS;
 
   const intervals = collectUptimeHistoryIntervals(windowEntries);
-  const series = computeUptimeHistorySeries(intervals, projectStartMs, endMs);
+  const seriesStartMs = uptimeSeriesStartMs(projectStartMs, windowDays);
+  const series = computeUptimeHistorySeries(intervals, seriesStartMs, endMs, windowDays);
   const lifetimeUptime = computeLifetimeUptime(intervals, projectStartMs, endMs);
 
   const captionSelector = options.captionTarget || '#uptimeHistoryCaption';
@@ -483,10 +515,16 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
   // hint is redundant with the crosshair cursor and the container's aria-label.
   const caption = document.querySelector(captionSelector);
   if (caption) {
-    caption.textContent = '90-day rolling window · non-maintenance downtime, merged windows';
+    caption.textContent = uptimeHistoryCaption(windowDays);
   }
 
   const chartContainer = document.querySelector(chartSelector);
+  if (chartContainer) {
+    chartContainer.setAttribute(
+      'aria-label',
+      `GitHub Platform ${windowDays}-day rolling uptime. Use arrow keys to read a day, Enter to list its incidents.`,
+    );
+  }
   if (chartContainer && series.length) {
     // clientWidth includes the container's padding; feeding that back as the viewBox
     // width leaves the SVG 8px wider than its box, which resizes it and retriggers
@@ -508,10 +546,10 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     const draw = () => {
       const width = contentWidth();
       const layout = options.layout || layoutForWidth(width);
-      const { markup, geometry } = buildUptimeHistorySVG(series, layout);
+      const { markup, geometry } = buildUptimeHistorySVG(series, layout, windowDays);
       chartContainer.innerHTML = markup;
       drawnWidth = layout.width;
-      attachUptimeHistoryInteraction(chartContainer, series, geometry);
+      attachUptimeHistoryInteraction(chartContainer, series, geometry, windowDays);
 
       // A draw can land while the container measures zero (hidden panel, mid-layout
       // reflow) and fall back to the default width. Nothing resizes afterwards, so the
@@ -533,9 +571,10 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     // observer, which some engines collect when nothing holds a reference to it.
     chartContainer.redrawUptimeHistory = draw;
 
-    if (typeof ResizeObserver === 'function' && !chartContainer.uptimeResizeObserver) {
-      // Keep the reference: an unreferenced ResizeObserver is collectable in WebKit,
-      // which silently stops the redraws.
+    if (typeof ResizeObserver === 'function') {
+      // A new window redraws the chart, so the old observer would keep calling the
+      // previous draw closure and restore the old window. Replace it on every render.
+      chartContainer.uptimeResizeObserver?.disconnect();
       const observer = new ResizeObserver(() => {
         if (Math.abs(contentWidth() - drawnWidth) < 8) return;
         window.requestAnimationFrame(draw);
@@ -554,7 +593,7 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     if (series[i].uptime < low.uptime) low = series[i];
   }
 
-  return { lifetimeUptime, series, peak, low, latest: series[series.length - 1] };
+  return { lifetimeUptime, series, peak, low, latest: series[series.length - 1], windowDays };
 };
 
 var UptimeHistoryChart = {
@@ -567,3 +606,11 @@ var UptimeHistoryChart = {
   PROJECT_START_UTC,
   WINDOW_DAYS: UPTIME_HISTORY_WINDOW_DAYS,
 };
+
+if (typeof module !== 'undefined') {
+  module.exports = {
+    computeUptimeHistorySeries,
+    uptimeSeriesStartMs,
+    DEFAULT_WINDOW_DAYS: UPTIME_HISTORY_WINDOW_DAYS,
+  };
+}
