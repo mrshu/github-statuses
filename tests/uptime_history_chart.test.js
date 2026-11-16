@@ -52,3 +52,23 @@ test('long windows start only after their lookback fits trusted history', () => 
   assert.equal(chart.uptimeSeriesStartMs?.(START, 180), START + 89 * DAY);
   assert.equal(chart.uptimeSeriesStartMs?.(START, 365), START + 274 * DAY);
 });
+
+test('a wide uptime range uses fewer y-axis labels', () => {
+  const series = [
+    { time: START, uptime: 100 },
+    { time: START + DAY, uptime: 0 },
+    { time: START + 2 * DAY, uptime: 100 },
+  ];
+  const layout = {
+    width: 1200,
+    height: 480,
+    marginLeft: 64,
+    marginRight: 32,
+    marginTop: 78,
+    marginBottom: 64,
+  };
+  const markup = chart.buildUptimeHistorySVG?.(series, layout, 1)?.markup || '';
+  const labels = Array.from(markup.matchAll(/>(\d+)%<\/text>/g), (match) => Number(match[1]));
+
+  assert.deepEqual(labels, [100, 75, 50, 25, 0]);
+});

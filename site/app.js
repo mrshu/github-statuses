@@ -577,15 +577,20 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
   ctx.fillStyle = muted;
   ctx.strokeStyle = isDark ? 'rgba(240, 246, 252, 0.12)' : 'rgba(15, 23, 42, 0.1)';
   ctx.lineWidth = 1;
-  for (let tick = 100; tick >= yMin - 1e-9; tick -= 5) {
-    const gy = y + (1 - (tick - yMin) / (100 - yMin)) * plotH;
+  const yTicks = [];
+  const ySpan = 100 - yMin;
+  const tickStep = ySpan > 80 ? 25 : ySpan > 50 ? 10 : 5;
+  for (let tick = 100; tick >= yMin - 1e-9; tick -= tickStep) yTicks.push(tick);
+  if (yTicks[yTicks.length - 1] > yMin + 1e-9) yTicks.push(yMin);
+  yTicks.forEach((tick) => {
+    const gy = y + (1 - (tick - yMin) / ySpan) * plotH;
     ctx.beginPath();
     ctx.moveTo(plotX, gy);
     ctx.lineTo(plotX + plotW, gy);
     ctx.stroke();
     const label = `${tick}%`;
     ctx.fillText(label, plotX - 12 - ctx.measureText(label).width, gy + 7);
-  }
+  });
 
   const area = ctx.createLinearGradient(0, y, 0, y + plotH);
   area.addColorStop(0, `rgba(${IMPACT_SHARE_RGB.none}, 0.34)`);
@@ -643,11 +648,12 @@ const drawShareLineChart = (ctx, x, y, w, h, series, { isDark, muted, annotation
 
     ctx.font = '700 21px "IBM Plex Sans", system-ui, sans-serif';
     const textW = ctx.measureText(text).width;
-    // Keep the label inside the plot: centre it, then clamp to either edge.
+    // Keep the label inside the plot: centre it, then clamp to the edges and baseline.
     let tx = px - textW / 2;
     tx = Math.max(plotX, Math.min(tx, plotX + plotW - textW));
+    const labelY = Math.min(py + dy, y + plotH - 8);
     ctx.fillStyle = color;
-    ctx.fillText(text, tx, py + dy);
+    ctx.fillText(text, tx, labelY);
   };
 
   const fmt = (point) =>

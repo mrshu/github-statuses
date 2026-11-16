@@ -153,7 +153,9 @@ const buildUptimeHistorySVG = (
     ` L ${xAt(series[series.length - 1].time).toFixed(2)},${baselineY.toFixed(2)} Z`;
 
   const yTicks = [];
-  for (let tick = 100; tick >= yMin - 1e-9; tick -= 5) yTicks.push(tick);
+  const tickStep = ySpan > 80 ? 25 : ySpan > 50 ? 10 : 5;
+  for (let tick = 100; tick >= yMin - 1e-9; tick -= tickStep) yTicks.push(tick);
+  if (yTicks[yTicks.length - 1] > yMin + 1e-9) yTicks.push(yMin);
 
   const startDate = new Date(xMin);
   const endDate = new Date(xMax);
@@ -188,9 +190,10 @@ const buildUptimeHistorySVG = (
     // On narrow layouts these labels collide, and the stat strip above already
     // reports the same three figures. Keep the markers, drop the text.
     if (layout.compact) return marker;
+    const labelY = Math.min(cy + dy, baselineY - 8);
     return (
       marker +
-      `<text x="${(cx + dx).toFixed(2)}" y="${(cy + dy).toFixed(2)}" ` +
+      `<text x="${(cx + dx).toFixed(2)}" y="${labelY.toFixed(2)}" ` +
       `font-size="12" font-weight="600" text-anchor="${anchor}" ` +
       `fill="var(${colorVar})">${label}</text>`
     );
@@ -611,6 +614,7 @@ if (typeof module !== 'undefined') {
   module.exports = {
     computeUptimeHistorySeries,
     uptimeSeriesStartMs,
+    buildUptimeHistorySVG,
     DEFAULT_WINDOW_DAYS: UPTIME_HISTORY_WINDOW_DAYS,
   };
 }
