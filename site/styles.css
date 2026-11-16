@@ -893,6 +893,22 @@ main {
   gap: 14px;
 }
 
+/* The window control sits above the stats. It wraps on narrow screens so the
+   six presets never push the panel wider than the viewport. */
+.uptime-window-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.uptime-window-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
 /* Lifetime uptime alongside the best and worst rolling windows, so the headline
    figure reads as one point in a range rather than a verdict on its own. */
 .alltime-stats {
