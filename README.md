@@ -202,6 +202,14 @@ The automation workflow writes to `parsed/`.
 - `<out>/downtime_windows.csv`: downtime windows for incident bar charts
 
 Incident records include optional `impact` and `components` fields when enrichment is enabled.
+
+If incident messages mention one of the top-level components, records will also include `component_windows`
+to provide the time window for each individual service. These record the start and end separately,
+for the situation that several services are mentioned in an incident but individual services resolve before
+the incident itself is.
+
+A service that is never marked recovered stays open until the incident is resolved.
+
 Service components are sourced as follows:
 
 - **Primary**: the incident page "affected components" section (if present).

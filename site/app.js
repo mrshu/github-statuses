@@ -1383,32 +1383,35 @@ const render = async () => {
     const impact = incident.impact || 'none';
     incident.components.forEach((component) => {
       if (!serviceIndex.has(component)) return;
-      const clipped = clipInterval(start, end, rangeStart, rangeEnd);
-      if (!clipped) return;
       const stat = serviceStats[serviceIndex.get(component)];
-      if (countsAsDowntime(impact)) {
-        stat.intervals.push(clipped);
-      }
-      let current = getDayStartUTC(clipped[0]);
-      const lastDay = getDayStartUTC(clipped[1]);
-      while (current <= lastDay) {
-        const index = Math.floor((current - rangeStart) / 86400000);
-        if (index >= 0 && index < stat.daySeverity.length) {
-          stat.daySeverity[index] = Math.max(stat.daySeverity[index], rankOf(impact));
-          const existing = stat.dayIncidents[index].get(incident.id);
-          if (!existing || rankOf(impact) > rankOf(existing.impact)) {
-            stat.dayIncidents[index].set(incident.id, {
-              id: incident.id,
-              title: incident.title,
-              impact,
-              start,
-              end,
-              url: incident.url,
-            });
-          }
+
+      componentWindows.forIncident(incident, component).forEach(([windowStart, windowEnd]) => {
+        const clipped = clipInterval(windowStart, windowEnd, rangeStart, rangeEnd);
+        if (!clipped) return;
+        if (countsAsDowntime(impact)) {
+          stat.intervals.push(clipped);
         }
-        current = new Date(current.getTime() + 86400000);
-      }
+        let current = getDayStartUTC(clipped[0]);
+        const lastDay = getDayStartUTC(clipped[1]);
+        while (current <= lastDay) {
+          const index = Math.floor((current - rangeStart) / 86400000);
+          if (index >= 0 && index < stat.daySeverity.length) {
+            stat.daySeverity[index] = Math.max(stat.daySeverity[index], rankOf(impact));
+            const existing = stat.dayIncidents[index].get(incident.id);
+            if (!existing || rankOf(impact) > rankOf(existing.impact)) {
+              stat.dayIncidents[index].set(incident.id, {
+                id: incident.id,
+                title: incident.title,
+                impact,
+                start,
+                end,
+                url: incident.url,
+              });
+            }
+          }
+          current = new Date(current.getTime() + 86400000);
+        }
+      });
     });
   });
 
