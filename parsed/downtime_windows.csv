@@ -868,10 +868,24 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31806869,2026-10-30T20:59:00Z,2026-10-30T23:29:00Z,150,updates,Incident with Dependabot,minor
 31825862,2026-11-02T17:46:00Z,2026-11-02T18:24:00Z,38,updates,Elevated errors on GPT-5.4 Nano,minor
 31833829,2026-11-03T13:25:00Z,2026-11-03T13:56:00Z,31,updates,"Incident with API, Git, and Copilot requests",minor
-31837529,2026-11-03T20:57:00Z,2026-11-03T22:41:00Z,104,updates,Incident with Git Operations,minor
+31837529,2026-11-03T15:00:00Z,2026-11-03T22:37:00Z,457,postmortem,Incident with Git Operations,minor
 31841274,2026-11-04T08:45:00Z,2026-11-04T10:01:00Z,76,updates,Increased task-related errors for Copilot Mission Control,minor
 31841627,2026-11-04T09:49:00Z,2026-11-04T11:50:00Z,121,updates,"Incident with Pull Requests, Git Operations and Issues",major
-31844248,2026-11-04T16:05:00Z,2026-11-04T17:01:00Z,56,updates,Incident with Actions and Pages,major
+31844248,2026-11-04T15:49:00Z,2026-11-04T16:48:00Z,59,postmortem,Incident with Actions and Pages,major
 31844934,2026-11-04T17:40:00Z,2026-11-04T18:16:00Z,36,updates,Incident with Actions,major
 31854660,2026-11-05T16:50:00Z,2026-11-05T17:42:00Z,52,updates,Incident with Actions,minor
 31857373,2026-11-05T23:36:00Z,2026-11-06T00:20:00Z,44,updates,Degraded performance for multiple GitHub services,minor
+31874571,2026-11-08T10:36:00Z,2026-11-08T12:32:00Z,116,updates,Increase in timeouts for some unauthenticated users,minor
+31879094,2026-11-09T05:59:00Z,2026-11-09T09:09:00Z,190,updates,Increased timeouts due to surge in anonymous users,minor
+31880516,2026-11-09T09:23:00Z,2026-11-09T11:40:00Z,137,postmortem,Incident with Webhooks and Actions,major
+31884249,2026-11-09T18:12:00Z,2026-11-09T18:59:00Z,47,updates,Incident with Actions and Checks API,critical
+31885980,2026-11-09T23:16:00Z,2026-11-10T00:05:00Z,49,updates,Degraded availability for GPT-5.3 Codex and GPT-5.6 models in Copilot,major
+31892604,2026-11-10T16:10:00Z,2026-11-10T17:55:00Z,105,updates,Incident with Git Operations and Pull Requests,critical
+31903493,2026-11-11T20:22:00Z,2026-11-11T20:26:00Z,4,updates,Incident with Webhooks,minor
+31903699,2026-11-11T20:48:00Z,2026-11-11T21:21:00Z,33,updates,"Impact across multiple GitHub products including Actions, Pages, and Copilot products.",critical
+31914148,2026-11-12T17:59:00Z,2026-11-12T19:05:00Z,66,postmortem,Incident with Webhooks API,minor
+31914997,2026-11-12T19:36:00Z,2026-11-12T21:43:00Z,127,updates,Disruption with Email Delivery,minor
+31929979,2026-11-13T15:47:00Z,2026-11-13T18:29:00Z,162,updates,Incident with Pull Requests,major
+31933105,2026-11-13T20:13:00Z,2026-11-13T21:27:00Z,74,updates,Copilot experiencing degraded model availability for some GPT models,minor
+31953610,2026-11-16T11:59:00Z,2026-11-16T16:26:00Z,267,updates,Incident with Pull Requests,minor
+31973856,2026-11-18T09:00:00Z,2026-11-18T09:34:00Z,34,updates,Degraded Availability for MAI Code 2 Flash in Copilot,minor
