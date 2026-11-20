@@ -118,6 +118,56 @@ python -m http.server 8000
 
 Then open <http://localhost:8000/site/> in your browser.
 
+## Live server (Kubernetes / Docker)
+
+`server/` is a second, independent way to run this project -- a FastAPI app
+for deploying to Kubernetes (or anywhere else that isn't GitHub Pages) as a
+genuinely live service, instead of a nightly static rebuild. It does not
+change how the GitHub Pages deploy works; both exist side by side. See
+`server/app.py`'s module docstring for the full design.
+
+It serves the same `site/` and `parsed/` content as the static deploy, plus:
+
+- `GET /metrics` -- live Prometheus metrics, polled from githubstatus.com's
+  `summary.json`/`components.json`/`incidents.json` on a background timer
+  (`server/metrics.py`), not a stale build-time snapshot.
+- `GET /health`, `/health/liveness`, `/health/readiness` -- for Kubernetes
+  probes.
+- A background task keeps `parsed/incidents.jsonl` (and related files) updated in
+  place by running `scripts/extract_incidents.py` -- unmodified, with the
+  same flags `.github/workflows/parse.yaml` uses -- so the pod never needs
+  redeploying just to pick up new incidents.
+
+Run it locally:
+
+```bash
+uv run uvicorn server.app:app --reload --port 8000
+```
+
+Then open <http://localhost:8000/>. Add extra Prometheus labels via the
+`METRICS_TAGS` env var (comma-separated `key:value` pairs):
+
+```bash
+METRICS_TAGS=env:prod,team:platform uv run uvicorn server.app:app --port 8000
+```
+
+Build and run the Docker image (see `Dockerfile` for what's inside, including
+why it deliberately isn't a slim image):
+
+```bash
+docker build -t github-statuses-service .
+docker run -p 8000:8000 github-statuses-service
+```
+
+Or via Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Example Kubernetes manifests, including a Datadog `openmetrics_endpoint`
+annotation, live under `server/k8s/`.
+
 ## GLiNER2 component inference
 
 Some incident pages do not list "affected components". In those cases we use GLiNER2 as a fallback:

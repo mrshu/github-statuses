@@ -1,7 +1,7 @@
 import pathlib
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT / "scripts"))
@@ -11,7 +11,7 @@ import extract_incidents as ei  # noqa: E402
 
 class ExtractIncidentsTests(unittest.TestCase):
     def test_infer_year_boundary(self):
-        reference = datetime(2025, 1, 2, 12, 0, tzinfo=timezone.utc)
+        reference = datetime(2025, 1, 2, 12, 0, tzinfo=UTC)
         result = ei.infer_year(reference, 12, 31, 23, 0)
         self.assertEqual(result.year, 2024)
 
@@ -52,15 +52,15 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertEqual(end_at.isoformat(), "2024-08-29T04:47:00+00:00")
 
     def test_finalize_prefers_postmortem_window(self):
-        published = datetime(2025, 1, 13, 23, 44, tzinfo=timezone.utc)
+        published = datetime(2025, 1, 13, 23, 44, tzinfo=UTC)
         updates = [
             {
-                "at": datetime(2025, 1, 13, 23, 44, tzinfo=timezone.utc),
+                "at": datetime(2025, 1, 13, 23, 44, tzinfo=UTC),
                 "status": "Investigating",
                 "message": "Investigating reports of an outage.",
             },
             {
-                "at": datetime(2025, 1, 14, 0, 28, tzinfo=timezone.utc),
+                "at": datetime(2025, 1, 14, 0, 28, tzinfo=UTC),
                 "status": "Resolved",
                 "message": (
                     "On January 13, 2025, between 23:35 UTC and 00:24 UTC "
@@ -83,11 +83,15 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertIsNotNone(finalized["impact_window"])
 
     def test_finalize_orders_by_status(self):
-        published = datetime(2026, 1, 1, 22, 0, tzinfo=timezone.utc)
-        same_time = datetime(2026, 1, 1, 22, 31, tzinfo=timezone.utc)
+        published = datetime(2026, 1, 1, 22, 0, tzinfo=UTC)
+        same_time = datetime(2026, 1, 1, 22, 31, tzinfo=UTC)
         updates = [
             {"at": same_time, "status": "Update", "message": "Update text."},
-            {"at": same_time, "status": "Investigating", "message": "Investigation started."},
+            {
+                "at": same_time,
+                "status": "Investigating",
+                "message": "Investigation started.",
+            },
             {"at": same_time, "status": "Resolved", "message": "Resolved."},
         ]
         incident = {
@@ -105,7 +109,11 @@ class ExtractIncidentsTests(unittest.TestCase):
 
     def test_build_segments(self):
         updates = [
-            {"at": "2025-01-01T00:00:00Z", "status": "Investigating", "message": "Start."},
+            {
+                "at": "2025-01-01T00:00:00Z",
+                "status": "Investigating",
+                "message": "Start.",
+            },
             {"at": "2025-01-01T00:10:00Z", "status": "Update", "message": "Update."},
             {"at": "2025-01-01T00:20:00Z", "status": "Resolved", "message": "Done."},
         ]
@@ -123,10 +131,10 @@ class ExtractIncidentsTests(unittest.TestCase):
             "published_at": "2025-01-10T00:00:00Z",
             "updated_at": "2025-01-10T02:00:00Z",
         }
-        since = datetime(2025, 1, 9, 0, 0, tzinfo=timezone.utc)
-        until = datetime(2025, 1, 11, 0, 0, tzinfo=timezone.utc)
+        since = datetime(2025, 1, 9, 0, 0, tzinfo=UTC)
+        until = datetime(2025, 1, 11, 0, 0, tzinfo=UTC)
         self.assertTrue(ei.overlaps_window(incident, since, until))
-        since = datetime(2025, 1, 11, 0, 0, tzinfo=timezone.utc)
+        since = datetime(2025, 1, 11, 0, 0, tzinfo=UTC)
         self.assertFalse(ei.overlaps_window(incident, since, None))
 
     def test_extract_impact_from_html(self):
@@ -138,18 +146,21 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertIsNone(ei.extract_impact_from_html(html))
 
     def test_extract_components_from_html(self):
-        html = '<div>This incident affected: Git Operations, Webhooks, and API Requests.</div>'
+        html = (
+            "<div>This incident affected: Git Operations, Webhooks, "
+            "and API Requests.</div>"
+        )
         self.assertEqual(
             ei.extract_components_from_html(html),
             ["Git Operations", "Webhooks", "API Requests"],
         )
 
     def test_extract_components_from_html_scheduled(self):
-        html = '<div>This scheduled maintenance affected: Actions.</div>'
+        html = "<div>This scheduled maintenance affected: Actions.</div>"
         self.assertEqual(ei.extract_components_from_html(html), ["Actions"])
 
     def test_extract_components_from_html_none(self):
-        html = '<div>No components listed here.</div>'
+        html = "<div>No components listed here.</div>"
         self.assertIsNone(ei.extract_components_from_html(html))
 
     def test_select_components_from_entities(self):
@@ -179,19 +190,35 @@ class ExtractIncidentsTests(unittest.TestCase):
         self.assertIsNone(filtered)
 
     def test_update_key_collapses_edited_resolution(self):
-        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
-        terse = {"at": at, "status": "Resolved", "message": "This incident has been resolved."}
-        rca = {"at": at, "status": "Resolved", "message": "On 2026-06-10 a config change..."}
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=UTC)
+        terse = {
+            "at": at,
+            "status": "Resolved",
+            "message": "This incident has been resolved.",
+        }
+        rca = {
+            "at": at,
+            "status": "Resolved",
+            "message": "On 2026-06-10 a config change...",
+        }
         self.assertEqual(ei.update_key(terse), ei.update_key(rca))
 
     def test_update_key_keeps_simultaneous_component_updates(self):
-        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
-        pages = {"at": at, "status": "Update", "message": "GitHub Pages is operating normally."}
-        packages = {"at": at, "status": "Update", "message": "GitHub Packages is degraded."}
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=UTC)
+        pages = {
+            "at": at,
+            "status": "Update",
+            "message": "GitHub Pages is operating normally.",
+        }
+        packages = {
+            "at": at,
+            "status": "Update",
+            "message": "GitHub Packages is degraded.",
+        }
         self.assertNotEqual(ei.update_key(pages), ei.update_key(packages))
 
     def test_merge_incident_lets_edited_resolution_win(self):
-        at = datetime(2026, 6, 10, 16, 39, tzinfo=timezone.utc)
+        at = datetime(2026, 6, 10, 16, 39, tzinfo=UTC)
         existing = {
             "id": "1",
             "title": "Incident",
@@ -201,7 +228,10 @@ class ExtractIncidentsTests(unittest.TestCase):
             "url": "https://example/1",
             "entry_id": "1",
         }
-        for message in ("This incident has been resolved.", "On 2026-06-10 a config change..."):
+        for message in (
+            "This incident has been resolved.",
+            "On 2026-06-10 a config change...",
+        ):
             ei.merge_incident(
                 existing,
                 {
@@ -237,14 +267,24 @@ class ExtractIncidentsTests(unittest.TestCase):
         ei.get_gliner_model = lambda name: Model()
         try:
             cache = {}
-            thin = {"url": "https://example/1", "title": "Incident with Actions", "updates": []}
+            thin = {
+                "url": "https://example/1",
+                "title": "Incident with Actions",
+                "updates": [],
+            }
             ei.infer_components_with_gliner2(thin, "m", 0.5, cache)
             ei.infer_components_with_gliner2(dict(thin), "m", 0.5, cache)
-            self.assertEqual(len(calls), 1, "identical text must reuse the cached inference")
+            self.assertEqual(
+                len(calls), 1, "identical text must reuse the cached inference"
+            )
 
-            grown = dict(thin, updates=[{"status": "Update", "message": "Runs are delayed."}])
+            grown = dict(
+                thin, updates=[{"status": "Update", "message": "Runs are delayed."}]
+            )
             ei.infer_components_with_gliner2(grown, "m", 0.5, cache)
-            self.assertEqual(len(calls), 2, "a cached empty result must not freeze the incident")
+            self.assertEqual(
+                len(calls), 2, "a cached empty result must not freeze the incident"
+            )
         finally:
             ei.get_gliner_model = original
 
@@ -259,7 +299,11 @@ class ExtractIncidentsTests(unittest.TestCase):
                     "components_gliner_fp": "stale",
                 }
             }
-            incident = {"url": "https://example/1", "title": "Incident with Actions", "updates": []}
+            incident = {
+                "url": "https://example/1",
+                "title": "Incident with Actions",
+                "updates": [],
+            }
             ei.infer_components_with_gliner2(incident, "m", 0.5, cache)
             self.assertEqual(incident["components"], ["Actions"])
             self.assertEqual(incident["components_source"], "gliner2")
