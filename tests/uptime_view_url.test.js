@@ -42,3 +42,47 @@ test('syncs tab changes while preserving other URL state', () => {
     [{ retained: true }, '', '/github-statuses/?meta=compact#uptime'],
   ]);
 });
+
+test('reads a rolling window from a permalink', () => {
+  assert.equal(
+    uptimeViewUrl.readWindow?.('https://mrshu.github.io/github-statuses/?view=all&window=30'),
+    30,
+  );
+  assert.equal(
+    uptimeViewUrl.readWindow?.('https://mrshu.github.io/github-statuses/?window=2.5'),
+    90,
+  );
+  assert.equal(
+    uptimeViewUrl.readWindow?.('https://mrshu.github.io/github-statuses/?window=0'),
+    90,
+  );
+  assert.equal(uptimeViewUrl.readWindow?.('https://mrshu.github.io/github-statuses/'), 90);
+  assert.equal(
+    uptimeViewUrl.readWindow?.('https://mrshu.github.io/github-statuses/?window=abc'),
+    90,
+  );
+});
+
+test('syncs the rolling window while preserving other URL state', () => {
+  const replacements = [];
+  const history = {
+    state: { retained: true },
+    replaceState: (...args) => replacements.push(args),
+  };
+
+  uptimeViewUrl.syncWindow?.(
+    30,
+    'https://mrshu.github.io/github-statuses/?view=all&meta=compact#uptime',
+    history,
+  );
+  uptimeViewUrl.syncWindow?.(
+    90,
+    'https://mrshu.github.io/github-statuses/?view=all&meta=compact&window=30#uptime',
+    history,
+  );
+
+  assert.deepEqual(replacements, [
+    [{ retained: true }, '', '/github-statuses/?view=all&meta=compact&window=30#uptime'],
+    [{ retained: true }, '', '/github-statuses/?view=all&meta=compact#uptime'],
+  ]);
+});
