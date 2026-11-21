@@ -131,6 +131,9 @@ const shareState = {
   view: '90d',
   allTime: null,
   totalIncidentCount: 0,
+  // Set while only some products are counted, so the card does not pass a subset off
+  // as the whole platform.
+  platformLabel: null,
 };
 let shareResetTimeout = null;
 let shareDownloadUrl = null;
@@ -294,6 +297,16 @@ const formatDuration = (minutes) => {
 };
 
 const countsAsDowntime = (impact) => impact !== 'maintenance';
+
+// Storage is optional: it can be absent or throw when blocked, and the page works
+// without remembering the product selection.
+const safeLocalStorage = () => {
+  try {
+    return window.localStorage;
+  } catch (error) {
+    return null;
+  }
+};
 
 const formatIncidentCount = (count) => `${count} incident${count === 1 ? '' : 's'}`;
 const shouldUseAlternateStatusMeta = () =>
@@ -751,7 +764,10 @@ const renderShareImageCanvas = () => {
   ctx.font = '700 52px "Space Grotesk", "IBM Plex Sans", sans-serif';
   // The card gets shared out of context, so it has to name the platform itself. The
   // 90-day card already does, in its "GitHub Platform" row below the title.
-  ctx.fillText(allTime ? 'GitHub all-time uptime' : 'Last 90 days uptime', insetX, titleBaselineY);
+  const allTimeTitle = shareState.platformLabel
+    ? `${shareState.platformLabel} all-time uptime`
+    : 'GitHub all-time uptime';
+  ctx.fillText(allTime ? allTimeTitle : 'Last 90 days uptime', insetX, titleBaselineY);
 
   drawMetaPill(ctx, pillX, pillY, pillWidth, pillHeight, 'Last updated', formatDate(shareState.lastUpdated), isDark);
   drawMetaPill(
@@ -820,7 +836,7 @@ const renderShareImageCanvas = () => {
   const rowBaselineY = cardY + 204;
   ctx.fillStyle = ink;
   ctx.font = '600 38px "Space Grotesk", "IBM Plex Sans", sans-serif';
-  ctx.fillText('GitHub Platform', insetX, rowBaselineY);
+  ctx.fillText(shareState.platformLabel || 'GitHub Platform', insetX, rowBaselineY);
 
   const uptimeLabel = `${(shareState.uptime * 100).toFixed(2)}% uptime`;
   ctx.fillStyle = muted;
@@ -1004,12 +1020,17 @@ const buildAllTimeStat = (value, label, tone) => {
   return cell;
 };
 
-const renderAllTimeUptime = (windowEntries, rangeEnd) => {
+const renderAllTimeUptime = (windowEntries, rangeEnd, scopeLabel) => {
   if (!window.UptimeHistoryChart || typeof window.UptimeHistoryChart.render !== 'function') {
     console.warn('UptimeHistoryChart module not loaded; skipping all-time render.');
     return;
   }
-  const stats = window.UptimeHistoryChart.render(windowEntries, rangeEnd);
+  const stats = window.UptimeHistoryChart.render(windowEntries, rangeEnd, { scopeLabel });
+  // This tab has no label of its own, so say here when the figures cover a subset.
+  const caption = document.getElementById('uptimeHistoryCaption');
+  if (caption && scopeLabel !== 'All GitHub Platform') {
+    caption.textContent += ` · ${scopeLabel} (change in the 90-day tab)`;
+  }
   const host = document.getElementById('allTimeStats');
   if (!stats || !stats.series.length) return null;
 
@@ -1125,7 +1146,7 @@ const render = async () => {
   const rangeEnd = new Date(today);
   rangeEnd.setUTCDate(rangeEnd.getUTCDate() + 1);
 
-  const windowEntries = windows
+  const allWindowEntries = windows
     .map((row) => {
       if (!row.downtime_start || !row.downtime_end) return null;
       const start = new Date(row.downtime_start);
@@ -1138,71 +1159,24 @@ const render = async () => {
         start,
         end,
         url: incidentById.get(String(row.incident_id || ''))?.url || null,
+        components: incidentById.get(String(row.incident_id || ''))?.components || [],
       };
     })
     .filter(Boolean);
 
-  const daySeverity = new Array(90).fill(0);
-  const dayIncidents = Array.from({ length: 90 }, () => new Map());
-  const clippedIntervals = [];
-
-  windowEntries.forEach((entry) => {
-    const clipped = clipInterval(entry.start, entry.end, rangeStart, rangeEnd);
-    if (!clipped) return;
-    const impact = entry.impact || 'none';
-    if (countsAsDowntime(impact)) {
-      clippedIntervals.push(clipped);
-    }
-
-    let current = getDayStartUTC(clipped[0]);
-    const lastDay = getDayStartUTC(clipped[1]);
-    while (current <= lastDay) {
-      const index = Math.floor((current - rangeStart) / 86400000);
-      if (index >= 0 && index < daySeverity.length) {
-        daySeverity[index] = Math.max(daySeverity[index], rankOf(impact));
-        const incidentId = entry.id || entry.title;
-        if (incidentId) {
-          const existing = dayIncidents[index].get(incidentId);
-          if (!existing || rankOf(impact) > rankOf(existing.impact)) {
-            dayIncidents[index].set(incidentId, {
-              id: incidentId,
-              title: entry.title,
-              impact,
-              start: entry.start,
-              end: entry.end,
-              url: entry.url,
-            });
-          }
-        }
-      }
-      current = new Date(current.getTime() + 86400000);
-    }
-  });
-
-  const merged = mergeIntervals(clippedIntervals);
-  const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
-  const totalMinutes = 90 * 24 * 60;
-  const uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
-
-  const uptimePercent = document.getElementById('uptimePercent');
-  uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
-
-  shareState.allTime = renderAllTimeUptime(windowEntries, rangeEnd) || null;
-
-  const uptimeBars = document.getElementById('uptimeBars');
-  const uptimeTooltip = document.getElementById('uptimeTooltip');
-  const heroPanel = document.querySelector('.hero-panel');
-  uptimeBars.innerHTML = '';
-  uptimeTooltip.classList.remove('active');
-
-  daySeverity.forEach((severity, index) => {
-    const span = document.createElement('span');
-    const impact = impactAtRank(severity);
-    span.className = impact === 'none' ? 'operational' : impact;
-    span.dataset.dayIndex = String(index);
-    span.tabIndex = 0;
-    uptimeBars.appendChild(span);
-  });
+  // Which products the visitor counts. The platform figures, the calendar, the incident
+  // counts and the timeline are all derived from these two, so changing the selection
+  // is one call to applySelection() plus a redraw.
+  const products = SERVICES;
+  let selected = productFilter.read(window.location.href, products, safeLocalStorage());
+  let windowEntries = allWindowEntries;
+  let visibleIncidents = incidents;
+  const inSelection = (components) => productFilter.includes(components, selected, products);
+  const applySelection = () => {
+    windowEntries = allWindowEntries.filter((entry) => inSelection(entry.components));
+    visibleIncidents = incidents.filter((incident) => inSelection(incident.components));
+  };
+  applySelection();
 
   const severityToImpact = impactAtRank;
 
@@ -1333,29 +1307,102 @@ const render = async () => {
     }
   };
 
-  attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents, rangeStart);
+  const drawPlatform = () => {
+    const scopeLabel = productFilter.label(selected, products);
+    const heroLabel = document.getElementById('productFilterToggle');
+    if (heroLabel) heroLabel.textContent = scopeLabel;
+    const daySeverity = new Array(90).fill(0);
+    const dayIncidents = Array.from({ length: 90 }, () => new Map());
+    const clippedIntervals = [];
 
-  const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
+    windowEntries.forEach((entry) => {
+      const clipped = clipInterval(entry.start, entry.end, rangeStart, rangeEnd);
+      if (!clipped) return;
+      const impact = entry.impact || 'none';
+      if (countsAsDowntime(impact)) {
+        clippedIntervals.push(clipped);
+      }
 
-  const since = rangeStart.getTime();
-  const recentIncidents = incidents.filter((incident) => {
-    const start = incidentStartDate(incident).getTime();
-    return start >= since;
-  });
-  statusMetaState.totalIncidentCount = incidents.length;
-  statusMetaState.projectStartLabel = window.UptimeHistoryChart
-    ? new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
-        new Date(window.UptimeHistoryChart.PROJECT_START_UTC),
-      )
-    : null;
-  renderStatusMeta(lastUpdated, recentIncidents.length);
-  shareState.lastUpdated = lastUpdated;
-  shareState.recentIncidentCount = recentIncidents.length;
-  shareState.uptime = uptime;
-  shareState.daySeverity = daySeverity.slice();
-  shareState.totalIncidentCount = incidents.length;
-  bindShareAction();
-  scheduleSharePrime();
+      let current = getDayStartUTC(clipped[0]);
+      const lastDay = getDayStartUTC(clipped[1]);
+      while (current <= lastDay) {
+        const index = Math.floor((current - rangeStart) / 86400000);
+        if (index >= 0 && index < daySeverity.length) {
+          daySeverity[index] = Math.max(daySeverity[index], rankOf(impact));
+          const incidentId = entry.id || entry.title;
+          if (incidentId) {
+            const existing = dayIncidents[index].get(incidentId);
+            if (!existing || rankOf(impact) > rankOf(existing.impact)) {
+              dayIncidents[index].set(incidentId, {
+                id: incidentId,
+                title: entry.title,
+                impact,
+                start: entry.start,
+                end: entry.end,
+                url: entry.url,
+              });
+            }
+          }
+        }
+        current = new Date(current.getTime() + 86400000);
+      }
+    });
+
+    const merged = mergeIntervals(clippedIntervals);
+    const downtimeMinutes = merged.reduce((sum, [start, end]) => sum + minutesBetween(start, end), 0);
+    const totalMinutes = 90 * 24 * 60;
+    const uptime = Math.max(0, 1 - downtimeMinutes / totalMinutes);
+
+    const uptimePercent = document.getElementById('uptimePercent');
+    uptimePercent.textContent = `${(uptime * 100).toFixed(2)}% uptime`;
+
+    shareState.allTime = renderAllTimeUptime(windowEntries, rangeEnd, scopeLabel) || null;
+
+    const uptimeBars = document.getElementById('uptimeBars');
+    const uptimeTooltip = document.getElementById('uptimeTooltip');
+    const heroPanel = document.querySelector('.hero-panel');
+    uptimeBars.innerHTML = '';
+    uptimeTooltip.classList.remove('active');
+
+    daySeverity.forEach((severity, index) => {
+      const span = document.createElement('span');
+      const impact = impactAtRank(severity);
+      span.className = impact === 'none' ? 'operational' : impact;
+      span.dataset.dayIndex = String(index);
+      span.tabIndex = 0;
+      uptimeBars.appendChild(span);
+    });
+
+    attachTooltip(uptimeBars, uptimeTooltip, heroPanel, daySeverity, dayIncidents, rangeStart);
+
+    const lastUpdated = incidents[0]?.updated_at ? new Date(incidents[0].updated_at) : now;
+
+    const since = rangeStart.getTime();
+    const recentIncidents = visibleIncidents.filter((incident) => {
+      const start = incidentStartDate(incident).getTime();
+      return start >= since;
+    });
+    statusMetaState.totalIncidentCount = visibleIncidents.length;
+    statusMetaState.projectStartLabel = window.UptimeHistoryChart
+      ? new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
+          new Date(window.UptimeHistoryChart.PROJECT_START_UTC),
+        )
+      : null;
+    renderStatusMeta(lastUpdated, recentIncidents.length);
+    shareState.lastUpdated = lastUpdated;
+    shareState.recentIncidentCount = recentIncidents.length;
+    shareState.uptime = uptime;
+    shareState.daySeverity = daySeverity.slice();
+    shareState.totalIncidentCount = visibleIncidents.length;
+    shareState.platformLabel = productFilter.isAll(selected, products) ? null : scopeLabel;
+    // The card shows these figures, so a cached PNG of the previous selection is stale.
+    shareState.imageBlob = null;
+    shareState.imageReady = false;
+    bindShareAction();
+    scheduleSharePrime();
+
+  };
+  drawPlatform();
 
   const serviceStatus = document.getElementById('serviceStatus');
   serviceStatus.innerHTML = '';
@@ -1649,6 +1696,7 @@ const render = async () => {
   // same list, so they run as one pipeline rather than each slicing its own view.
   const selectIncidents = () =>
     incidents.filter((incident) => {
+      if (!inSelection(incident.components)) return false;
       if (activeFilters.size && !activeFilters.has(incident.impact || 'none')) return false;
       const at = incidentStartDate(incident);
       if (rangeFrom && at < rangeFrom) return false;
@@ -1753,6 +1801,70 @@ const render = async () => {
     });
   }
 
+  const setupProductFilter = () => {
+    const toggle = document.getElementById('productFilterToggle');
+    const panel = document.getElementById('productFilterPanel');
+    const optionsHost = document.getElementById('productFilterOptions');
+    const allButton = document.getElementById('productFilterAll');
+    if (!toggle || !panel || !optionsHost || !allButton) return;
+
+    const checkboxes = new Map();
+    products.forEach((product) => {
+      const label = document.createElement('label');
+      label.className = 'product-filter-option';
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.value = product;
+      label.append(input, document.createTextNode(product));
+      optionsHost.appendChild(label);
+      checkboxes.set(product, input);
+    });
+
+    const syncControls = () => {
+      checkboxes.forEach((input, product) => {
+        input.checked = selected.includes(product);
+        // Zero products would be a meaningless 100%, so the last one cannot be cleared.
+        input.disabled = input.checked && selected.length === 1;
+        input.title = input.disabled ? 'At least one product must stay selected' : '';
+      });
+      allButton.disabled = productFilter.isAll(selected, products);
+    };
+
+    const commit = (next) => {
+      selected = products.filter((product) => next.includes(product));
+      productFilter.sync(selected, products, window.location.href, window.history, safeLocalStorage());
+      applySelection();
+      drawPlatform();
+      renderHistory();
+      currentPage = 0;
+      renderTimeline();
+      syncControls();
+    };
+
+    checkboxes.forEach((input) =>
+      input.addEventListener('change', () =>
+        commit(products.filter((product) => checkboxes.get(product).checked)),
+      ),
+    );
+    allButton.addEventListener('click', () => commit(products));
+
+    toggle.addEventListener('click', () => {
+      const open = panel.hidden;
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    panel.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      panel.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    });
+
+    syncControls();
+    // A remembered selection should also be in the address bar, so the link can be shared.
+    productFilter.sync(selected, products, window.location.href, window.history, safeLocalStorage());
+  };
+
   const filterPills = Array.from(document.querySelectorAll('[data-filter]'));
   filterPills.forEach((pill) => {
     pill.addEventListener('click', () => {
@@ -1768,6 +1880,8 @@ const render = async () => {
       renderTimeline();
     });
   });
+
+  setupProductFilter();
 };
 
 const renderIncidentCard = (incident, compact = false) => {
