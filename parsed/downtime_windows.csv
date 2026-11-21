@@ -882,7 +882,7 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31885980,2026-11-09T23:16:00Z,2026-11-10T00:05:00Z,49,updates,Degraded availability for GPT-5.3 Codex and GPT-5.6 models in Copilot,major
 31892604,2026-11-10T16:10:00Z,2026-11-10T17:55:00Z,105,updates,Incident with Git Operations and Pull Requests,critical
 31903493,2026-11-11T20:22:00Z,2026-11-11T20:26:00Z,4,updates,Incident with Webhooks,minor
-31903699,2026-11-11T20:48:00Z,2026-11-11T21:21:00Z,33,updates,"Impact across multiple GitHub products including Actions, Pages, and Copilot products.",critical
+31903699,2026-11-11T20:05:00Z,2026-11-11T21:02:00Z,57,postmortem,"Impact across multiple GitHub products including Actions, Pages, and Copilot products.",critical
 31914148,2026-11-12T17:59:00Z,2026-11-12T19:05:00Z,66,postmortem,Incident with Webhooks API,minor
 31914997,2026-11-12T19:36:00Z,2026-11-12T21:43:00Z,127,updates,Disruption with Email Delivery,minor
 31929979,2026-11-13T15:47:00Z,2026-11-13T18:29:00Z,162,updates,Incident with Pull Requests,major
