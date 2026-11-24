@@ -891,3 +891,4 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 31973856,2026-11-18T09:00:00Z,2026-11-18T09:34:00Z,34,updates,Degraded Availability for MAI Code 2 Flash in Copilot,minor
 31987137,2026-11-19T15:56:00Z,2026-11-19T16:37:00Z,41,updates,Degraded availability for GPT-6 Luna in Copilot,minor
 31987662,2026-11-19T17:06:00Z,2026-11-19T18:17:00Z,71,updates,Disruption with some GitHub services,minor
+32029876,2026-11-24T13:44:00Z,2026-11-24T14:14:00Z,30,updates,Degraded Availability for MAI Code 2 in Copilot,minor
