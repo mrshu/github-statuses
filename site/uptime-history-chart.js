@@ -103,7 +103,7 @@ const computeLifetimeUptime = (intervals, startMs, endMs) => {
   return Math.max(0, 1 - downtimeMs / totalMs) * 100;
 };
 
-const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
+const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT, scopeLabel = 'GitHub Platform') => {
   if (!series.length) return { markup: '', geometry: null };
 
   const { width, height, marginLeft, marginRight, marginTop, marginBottom } = layout;
@@ -189,7 +189,7 @@ const buildUptimeHistorySVG = (series, layout = UPTIME_HISTORY_LAYOUT) => {
   parts.push(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" ` +
       `preserveAspectRatio="xMidYMid meet" role="img" ` +
-      `aria-label="GitHub Platform 90-day rolling uptime since project start">`,
+      `aria-label="${scopeLabel} 90-day rolling uptime since project start">`,
   );
 
   parts.push(
@@ -508,7 +508,7 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     const draw = () => {
       const width = contentWidth();
       const layout = options.layout || layoutForWidth(width);
-      const { markup, geometry } = buildUptimeHistorySVG(series, layout);
+      const { markup, geometry } = buildUptimeHistorySVG(series, layout, options.scopeLabel);
       chartContainer.innerHTML = markup;
       drawnWidth = layout.width;
       attachUptimeHistoryInteraction(chartContainer, series, geometry);
@@ -532,13 +532,17 @@ const renderUptimeHistoryChart = (windowEntries, rangeEnd, options = {}) => {
     // must trigger the real draw. setView calls this directly rather than trusting the
     // observer, which some engines collect when nothing holds a reference to it.
     chartContainer.redrawUptimeHistory = draw;
+    // render() can run again with different data (the product selection changes it) while
+    // the observer below is created only once, so it must reach the latest closures
+    // through the container instead of capturing the first call's.
+    chartContainer.needsUptimeRedraw = () => Math.abs(contentWidth() - drawnWidth) >= 8;
 
     if (typeof ResizeObserver === 'function' && !chartContainer.uptimeResizeObserver) {
       // Keep the reference: an unreferenced ResizeObserver is collectable in WebKit,
       // which silently stops the redraws.
       const observer = new ResizeObserver(() => {
-        if (Math.abs(contentWidth() - drawnWidth) < 8) return;
-        window.requestAnimationFrame(draw);
+        if (!chartContainer.needsUptimeRedraw()) return;
+        window.requestAnimationFrame(chartContainer.redrawUptimeHistory);
       });
       chartContainer.uptimeResizeObserver = observer;
       observer.observe(chartContainer);

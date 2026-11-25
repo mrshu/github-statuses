@@ -1041,6 +1041,87 @@ main {
   font-weight: 600;
 }
 
+/* The platform name doubles as the control for choosing which products count, so it
+   keeps the label's typography and is only distinguished by its underline. */
+.product-filter-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.product-filter-toggle:hover {
+  text-decoration-thickness: 2px;
+}
+
+.product-filter-toggle:focus-visible,
+.product-filter-all:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.product-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.product-filter-panel[hidden] {
+  display: none;
+}
+
+.product-filter-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px 16px;
+}
+
+.product-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.product-filter-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.product-filter-all {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.product-filter-all:disabled {
+  color: var(--muted);
+  cursor: default;
+  text-decoration: none;
+}
+
 .uptime-bars {
   display: grid;
   grid-template-columns: repeat(90, minmax(0, 1fr));
