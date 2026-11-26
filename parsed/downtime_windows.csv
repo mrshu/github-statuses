@@ -894,3 +894,5 @@ incident_id,downtime_start,downtime_end,duration_minutes,source,title,impact
 32029876,2026-11-24T13:44:00Z,2026-11-24T14:14:00Z,30,updates,Degraded Availability for MAI Code 2 in Copilot,minor
 32034821,2026-11-25T00:08:00Z,2026-11-25T01:15:00Z,67,updates,Disruption with Code Completions and Next Edit Suggestions,critical
 32041052,2026-11-25T11:58:00Z,2026-11-25T12:03:00Z,5,updates,MAI Code 2 Degredation,minor
+32044273,2026-11-25T15:55:00Z,2026-11-25T16:52:00Z,57,updates,Investigating degraded experiences across GitHub products,critical
+32050175,2026-11-25T21:30:00Z,2026-11-26T00:28:00Z,178,postmortem,LFS degradation for some customers,minor
